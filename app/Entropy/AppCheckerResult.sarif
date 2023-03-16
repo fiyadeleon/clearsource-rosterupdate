@@ -374,19 +374,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHire_FirstPage.drpNHCampaign_1.AccessibleLabel"
+                  "fullyQualifiedName": "NewHire_FirstPage.drpNHLOB.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "NewHire_FirstPage.drpNHCampaign_1.AccessibleLabel",
+                  "fullyQualifiedName": "NewHire_FirstPage.drpNHLOB.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "NewHire_FirstPage",
-                "type": "NewHire_FirstPage.drpNHCampaign_1"
+                "type": "NewHire_FirstPage.drpNHLOB"
               }
             }
           ],
@@ -398,6 +398,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewHire_SecondPage.PrintButton5.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHire_SecondPage.PrintButton5.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "NewHire_SecondPage",
+                "type": "NewHire_SecondPage.PrintButton5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 0
         }
       ],
       "tool": {
