@@ -66,6 +66,7 @@
         ZIndex: =8
 
     txtNHLastName As text:
+        Clear: =true
         Default: =""
         HintText: ="Enter your answer"
         Width: =650
@@ -74,6 +75,7 @@
         ZIndex: =9
 
     txtNHFirstName As text:
+        Clear: =true
         Default: =""
         HintText: ="Enter your answer"
         Width: =650
@@ -82,6 +84,7 @@
         ZIndex: =10
 
     txtNHMiddleName As text:
+        Clear: =true
         Default: =""
         HintText: ="Enter your answer"
         Width: =650
@@ -102,6 +105,7 @@
     drpNHClientInternal As dropdown:
         Default: =""
         Items: =["Client", "Internal"]
+        OnChange: =
         X: =68
         Y: =749
         ZIndex: =14
@@ -111,4 +115,10 @@
         X: =68
         Y: =860
         ZIndex: =15
+
+    Button1 As button:
+        Text: ="Button"
+        X: =579
+        Y: =1035
+        ZIndex: =16
 

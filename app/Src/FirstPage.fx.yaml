@@ -17,13 +17,13 @@
 
     drpRosterSelection As dropdown:
         Default: =""
-        Items: =["New Hire", "Termination", "Promotion", "Lateral Transfer", "Other User Status"]
+        Items: =["Select your answer", "New Hire", "Termination", "Promotion", "Lateral Transfer", "Other User Status"]
         X: =187
         Y: =390
         ZIndex: =3
 
     btnFirstPageNext As button:
-        OnSelect: =If(drpRosterSelection.Selected.Value = "New Hire", Navigate(NewHire_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.CoverRight), drpRosterSelection.Selected.Value = "Other User Status", Navigate(Other_FirstPage,ScreenTransition.Cover))
+        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "New Hire", Navigate(NewHire_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.CoverRight), drpRosterSelection.Selected.Value = "Other User Status", Navigate(Other_FirstPage,ScreenTransition.Cover)))
         Text: ="Next"
         X: =355
         Y: =455
