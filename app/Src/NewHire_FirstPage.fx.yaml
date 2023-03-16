@@ -142,7 +142,7 @@
         ZIndex: =18
 
     drpNHLOB As dropdown:
-        Items: =Filter(Campaign, Campaign = drpNHCampaign.Selected.Value)
+        Items: =If(drpNHCampaign.Selected.Value = "EMI Health",DisplayMode.Disabled,DisplayMode.Edit)
         X: =68
         Y: =877
         ZIndex: =19
