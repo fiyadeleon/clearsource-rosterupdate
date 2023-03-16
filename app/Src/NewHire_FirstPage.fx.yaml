@@ -111,7 +111,7 @@
         ZIndex: =14
 
     drpNHCampaign As dropdown:
-        Items: =Filter(Campaign, Title = drpNHClientInternal.Selected.Value)
+        Items: =Distinct(Filter(Campaign, Title = drpNHClientInternal.Selected.Value), Campaign)
         X: =68
         Y: =769
         ZIndex: =15
@@ -142,7 +142,7 @@
         ZIndex: =18
 
     drpNHLOB As dropdown:
-        Items: =Campaign
+        Items: =Filter(Campaign, Campaign = drpNHCampaign.Selected.Value)
         X: =68
         Y: =877
         ZIndex: =19
