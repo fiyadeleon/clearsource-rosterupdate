@@ -26,7 +26,7 @@
             ="First Name of Employee:"
         Width: =300
         X: =68
-        Y: =249
+        Y: =228
         ZIndex: =3
 
     "'Middle Name of Employee' As label":
@@ -34,35 +34,35 @@
             ="Middle Name of Employee:"
         Width: =300
         X: =68
-        Y: =368
+        Y: =326
         ZIndex: =4
 
     "'Hire Date' As label":
         Text: |-
             ="Hire Date:"
         X: =68
-        Y: =478
+        Y: =422
         ZIndex: =5
 
     "'Start Date' As label":
         Text: |-
             ="Start Date:"
         X: =68
-        Y: =594
+        Y: =524
         ZIndex: =6
 
     "'Client/Internal' As label":
         Text: |-
             ="Client/Internal:"
         X: =68
-        Y: =709
+        Y: =625
         ZIndex: =7
 
     "'Client Campaign' As label":
         Text: |-
             ="Client Campaign:"
         X: =68
-        Y: =820
+        Y: =729
         ZIndex: =8
 
     txtNHLastName As text:
@@ -80,7 +80,7 @@
         HintText: ="Enter your answer"
         Width: =650
         X: =68
-        Y: =289
+        Y: =268
         ZIndex: =10
 
     txtNHMiddleName As text:
@@ -89,17 +89,17 @@
         HintText: ="Enter your answer"
         Width: =650
         X: =68
-        Y: =408
+        Y: =366
         ZIndex: =11
 
     dateNHHire As datepicker:
         X: =68
-        Y: =518
+        Y: =462
         ZIndex: =12
 
     dateNHStart As datepicker:
         X: =68
-        Y: =634
+        Y: =564
         ZIndex: =13
 
     drpNHClientInternal As dropdown:
@@ -107,18 +107,39 @@
         Items: =["Client", "Internal"]
         OnChange: =
         X: =68
-        Y: =749
+        Y: =665
         ZIndex: =14
 
     drpNHCampaign As dropdown:
         Items: =Filter(Campaign, Title = drpNHClientInternal.Selected.Value)
         X: =68
-        Y: =860
+        Y: =769
         ZIndex: =15
 
     Button1 As button:
         Text: ="Button"
-        X: =579
+        X: =558
         Y: =1035
         ZIndex: =16
+
+    Button2 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(215, 223, 240, 1)
+        Text: ="Back"
+        X: =361
+        Y: =1035
+        ZIndex: =17
+
+    "'Client Campaign_1' As label":
+        Text: |-
+            ="Client Campaign:"
+        X: =68
+        Y: =837
+        ZIndex: =18
+
+    drpNHCampaign_1 As dropdown:
+        Items: =Filter(Campaign, Title = drpNHClientInternal.Selected.Value)
+        X: =68
+        Y: =877
+        ZIndex: =19
 
