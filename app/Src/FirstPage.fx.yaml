@@ -1,0 +1,24 @@
+"FirstPage As screen.'tabletLayout_Tutorial_ver3.0'":
+
+    RectTextBkg1 As rectangle:
+        Height: =Parent.Height
+        Width: =Parent.Width / 2
+        X: =Parent.Width/2
+        ZIndex: =1
+
+    "'Roster Update Selection' As label":
+        Height: =39
+        Text: ="Roster Update Selection"
+        Width: =328
+        X: =187
+        Y: =337
+        ZIndex: =2
+
+    drpRosterSelection As dropdown:
+        Default: =""
+        Items: =["New Hire", "Termination", "Promotion", "Lateral Transfer", "Other User Status"]
+        OnChange: =If(drpRosterSelection.Selected.Value = "New Hire", Navigate(NewHire_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.CoverRight), drpRosterSelection.Selected.Value = "Other User Status", Navigate(Other_FirstPage,ScreenTransition.Cover))
+        X: =187
+        Y: =390
+        ZIndex: =3
+

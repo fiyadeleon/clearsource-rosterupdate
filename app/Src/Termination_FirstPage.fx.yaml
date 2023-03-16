@@ -1,0 +1,17 @@
+"Termination_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    Height: =1123
+    Width: =794
+
+    PrintButton1 As label:
+        Align: =Align.Center
+        Height: =32
+        OnSelect: =Print()
+        Size: =13
+        TabIndex: =0
+        Text: ="Print"
+        Visible: =Not(Parent.Printing)
+        Width: =96
+        X: =Parent.Width - Self.Width - 25
+        Y: =25
+        ZIndex: =2
+

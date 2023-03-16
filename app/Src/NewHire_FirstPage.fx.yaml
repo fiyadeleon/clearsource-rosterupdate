@@ -1,0 +1,114 @@
+"NewHire_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    Height: =1123
+    Width: =794
+
+    "'New Hire Details' As label":
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: |-
+            ="New Hire Details:"
+        Width: =453
+        X: =68
+        Y: =48
+        ZIndex: =1
+
+    "'Last Name of Employee' As label":
+        Text: |-
+            ="Last Name of Employee:"
+        Width: =300
+        X: =68
+        Y: =131
+        ZIndex: =2
+
+    "'First Name of Employee' As label":
+        Text: |-
+            ="First Name of Employee:"
+        Width: =300
+        X: =68
+        Y: =249
+        ZIndex: =3
+
+    "'Middle Name of Employee' As label":
+        Text: |-
+            ="Middle Name of Employee:"
+        Width: =300
+        X: =68
+        Y: =368
+        ZIndex: =4
+
+    "'Hire Date' As label":
+        Text: |-
+            ="Hire Date:"
+        X: =68
+        Y: =478
+        ZIndex: =5
+
+    "'Start Date' As label":
+        Text: |-
+            ="Start Date:"
+        X: =68
+        Y: =594
+        ZIndex: =6
+
+    "'Client/Internal' As label":
+        Text: |-
+            ="Client/Internal:"
+        X: =68
+        Y: =709
+        ZIndex: =7
+
+    "'Client Campaign' As label":
+        Text: |-
+            ="Client Campaign:"
+        X: =68
+        Y: =820
+        ZIndex: =8
+
+    txtNHLastName As text:
+        Default: =""
+        HintText: ="Enter your answer"
+        Width: =650
+        X: =68
+        Y: =171
+        ZIndex: =9
+
+    txtNHFirstName As text:
+        Default: =""
+        HintText: ="Enter your answer"
+        Width: =650
+        X: =68
+        Y: =289
+        ZIndex: =10
+
+    txtNHMiddleName As text:
+        Default: =""
+        HintText: ="Enter your answer"
+        Width: =650
+        X: =68
+        Y: =408
+        ZIndex: =11
+
+    dateNHHire As datepicker:
+        X: =68
+        Y: =518
+        ZIndex: =12
+
+    dateNHStart As datepicker:
+        X: =68
+        Y: =634
+        ZIndex: =13
+
+    drpNHClientInternal As dropdown:
+        Default: =""
+        Items: =["Client", "Internal"]
+        X: =68
+        Y: =749
+        ZIndex: =14
+
+    drpNHCampaign As dropdown:
+        Items: =Filter(Campaign, Title = drpNHClientInternal.Selected.Value)
+        X: =68
+        Y: =860
+        ZIndex: =15
+
