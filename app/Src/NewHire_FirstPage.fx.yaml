@@ -117,7 +117,8 @@
         ZIndex: =15
 
     btnNHNext As button:
-        OnSelect: =Navigate(NewHire_SecondPage,ScreenTransition.Cover)
+        FontWeight: =FontWeight.Bold
+        OnSelect: =Office365Outlook.SendEmailV2("sophia.deleon@clearsourcebpo.com","Sample Subject","Sample Body");
         Text: |-
             ="Submit
             "
