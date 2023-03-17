@@ -1,4 +1,5 @@
 "NewHire_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    Fill: =
     Height: =1123
     Width: =794
 
@@ -93,11 +94,13 @@
         ZIndex: =11
 
     dateNHHire As datepicker:
+        DefaultDate: =""
         X: =68
         Y: =462
         ZIndex: =12
 
     dateNHStart As datepicker:
+        DefaultDate: =""
         X: =68
         Y: =564
         ZIndex: =13
