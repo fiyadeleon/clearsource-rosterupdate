@@ -121,7 +121,18 @@
 
     btnNHNext As button:
         FontWeight: =FontWeight.Bold
-        OnSelect: =Office365Outlook.SendEmailV2("sophia.deleon@clearsourcebpo.com","Sample Subject","Sample Body");
+        OnSelect: |-
+            =If(
+                IsBlank(txtNHFirstName) ||
+                IsBlank(txtNHMiddleName) ||
+                IsBlank(txtNHLastName) ||
+                IsBlank(dateNHHire.SelectedDate) ||
+                IsBlank(dateNHStart.SelectedDate) ||
+                IsBlank(drpNHClientInternal.Selected.Value) ||
+                IsBlank(drpNHCampaign.Selected.Value),
+                Notify("Please complete all fields!",NotificationType.Error),
+                Notify("Successfully submitted the information.",NotificationType.Success)
+            )
         Text: |-
             ="Submit
             "
