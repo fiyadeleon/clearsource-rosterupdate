@@ -137,7 +137,14 @@
                    "sophia.deleon@clearsourcebpo.com",
                    "Sample Subject",
                     Concatenate(txtNHMiddleName.Text, "<br>", drpNHClientInternal.Selected.Value)
-                ))
+                ) &&
+                Reset(txtNHFirstName) && 
+                Reset(txtNHMiddleName) && 
+                Reset(txtNHLastName) &&
+                Reset(dateNHHire) &&
+                Reset(dateNHStart) &&
+                drpNHClientInternal.Selected.Value = "Select your answer"
+                )
             )
         Text: |-
             ="Submit
