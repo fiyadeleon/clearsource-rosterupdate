@@ -504,86 +504,6 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 13,
-                  "charOffset": 202,
-                  "snippet": {
-                    "text": "txtLTSchedule"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "LateralTransfer_FirstPage",
-                "type": "LateralTransfer_FirstPage.btnLTSubmit"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "txtLTSchedule"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.btnLTSubmit.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.btnLTSubmit.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 22,
-                  "charOffset": 194,
-                  "snippet": {
-                    "text": "IsBlank(txtLTSchedule)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "LateralTransfer_FirstPage",
-                "type": "LateralTransfer_FirstPage.btnLTSubmit"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "IsBlank"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.btnLTSubmit.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.btnLTSubmit.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
                   "charLength": 15,
                   "charOffset": 233,
                   "snippet": {
@@ -841,46 +761,6 @@
           "message": {
             "arguments": [
               "txtLTBillability"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.btnLTSubmit.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.btnLTSubmit.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 13,
-                  "charOffset": 1323,
-                  "snippet": {
-                    "text": "txtLTSchedule"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "LateralTransfer_FirstPage",
-                "type": "LateralTransfer_FirstPage.btnLTSubmit"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "txtLTSchedule"
             ],
             "id": "issue"
           },
@@ -1605,19 +1485,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.ComboBox5.AccessibleLabel"
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTSupervisor.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.ComboBox5.AccessibleLabel",
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTSupervisor.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "LateralTransfer_FirstPage",
-                "type": "LateralTransfer_FirstPage.ComboBox5"
+                "type": "LateralTransfer_FirstPage.cbLTSupervisor"
               }
             }
           ],
@@ -1629,6 +1509,246 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTSubUnit.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTSubUnit.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LateralTransfer_FirstPage",
+                "type": "LateralTransfer_FirstPage.cbLTSubUnit"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.txtLTSchedule.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.txtLTSchedule.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LateralTransfer_FirstPage",
+                "type": "LateralTransfer_FirstPage.txtLTSchedule"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTBillability.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTBillability.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LateralTransfer_FirstPage",
+                "type": "LateralTransfer_FirstPage.cbLTBillability"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTLOB.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTLOB.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LateralTransfer_FirstPage",
+                "type": "LateralTransfer_FirstPage.cbLTLOB"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTPosition.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTPosition.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LateralTransfer_FirstPage",
+                "type": "LateralTransfer_FirstPage.cbLTPosition"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTClient.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTClient.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LateralTransfer_FirstPage",
+                "type": "LateralTransfer_FirstPage.cbLTClient"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTBusinessUnit.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.cbLTBusinessUnit.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LateralTransfer_FirstPage",
+                "type": "LateralTransfer_FirstPage.cbLTBusinessUnit"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewHire_FirstPage_1.formNH.Item"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHire_FirstPage_1.formNH.Item",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Item",
+                "module": "NewHire_FirstPage_1",
+                "type": "NewHire_FirstPage_1.formNH"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 5
         }
       ],
       "tool": {
@@ -1713,6 +1833,23 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "If the focus isn't visible, people who don't use a mouse won't be able to see it when they're interacting with the app."
+              }
+            },
+            {
+              "id": "app-InefficientDelayLoading",
+              "messageStrings": {
+                "issue": {
+                  "text": "Inefficient delay loading"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Use variables, collections, and navigation context to share state across screens instead."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
               }
             }
           ],
