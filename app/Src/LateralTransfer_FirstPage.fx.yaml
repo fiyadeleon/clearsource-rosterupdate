@@ -283,9 +283,10 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'BUSINESS UNIT')
             DisplayFields: =["BUSINESS UNIT"]
-            Items: =CurrentRoster
+            IsSearchable: =false
+            Items: =Distinct(CurrentRoster,'BUSINESS UNIT')
             SearchFields: =["BUSINESS UNIT"]
-            SearchItems: =Search(CurrentRoster,cbLTBusinessUnit.SearchText,"BUSINESS UNIT")
+            SearchItems: =[]
             Width: =394
             X: =321
             Y: =472
@@ -312,9 +313,10 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'CLIENT')
             DisplayFields: =["CLIENT"]
-            Items: =CurrentRoster
+            IsSearchable: =false
+            Items: =Distinct(CurrentRoster, CLIENT)
             SearchFields: =["CLIENT"]
-            SearchItems: =Search(CurrentRoster,cbLTClient.SearchText,"CLIENT")
+            SearchItems: =[]
             Width: =394
             X: =321
             Y: =532
@@ -340,10 +342,10 @@
         cbLTPosition As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'POSITION')
-            DisplayFields: =["POSITION"]
-            Items: =CurrentRoster
-            SearchFields: =["POSITION"]
-            SearchItems: =Search(CurrentRoster,cbLTPosition.SearchText,"POSITION")
+            DisplayFields: =["Value"]
+            Items: =Distinct(CurrentRoster, POSITION)
+            SearchFields: =["Value"]
+            SearchItems: =Search(Distinct(CurrentRoster, POSITION),cbLTPosition.SearchText,"Value")
             Width: =394
             X: =321
             Y: =592
@@ -369,10 +371,10 @@
         cbLTLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'LOB')
-            DisplayFields: =["LOB"]
-            Items: =CurrentRoster
-            SearchFields: =["LOB"]
-            SearchItems: =Search(CurrentRoster,cbLTLOB.SearchText,"LOB")
+            DisplayFields: =["Value"]
+            Items: =Distinct(CurrentRoster, LOB)
+            SearchFields: =["Value"]
+            SearchItems: =Search(Distinct(CurrentRoster, LOB),cbLTLOB.SearchText,"Value")
             Width: =394
             X: =321
             Y: =652
@@ -398,10 +400,10 @@
         cbLTSubUnit As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
-            DisplayFields: =["SUB-UNIT"]
-            Items: =CurrentRoster
-            SearchFields: =["SUB-UNIT"]
-            SearchItems: =Search(CurrentRoster,cbLTSubUnit.SearchText,"SUB-UNIT")
+            DisplayFields: =["Value"]
+            Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+            SearchFields: =["Value"]
+            SearchItems: =Search(Distinct(CurrentRoster, 'SUB-UNIT'),cbLTSubUnit.SearchText,"Value")
             Width: =394
             X: =321
             Y: =712
@@ -427,10 +429,10 @@
         cbLTBillability As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER), BILLABILITY)
-            DisplayFields: =["BILLABILITY"]
-            Items: =CurrentRoster
-            SearchFields: =["BILLABILITY"]
-            SearchItems: =Search(CurrentRoster,cbLTBillability.SearchText,"BILLABILITY")
+            DisplayFields: =["Value"]
+            Items: =Distinct(CurrentRoster, BILLABILITY)
+            SearchFields: =["Value"]
+            SearchItems: =Search(Distinct(CurrentRoster, BILLABILITY),cbLTBillability.SearchText,"Value")
             Width: =394
             X: =321
             Y: =772
@@ -456,10 +458,10 @@
         cbLTSupervisor As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'TEAM')
-            DisplayFields: =["TEAM"]
-            Items: =CurrentRoster
-            SearchFields: =["TEAM"]
-            SearchItems: =Search(CurrentRoster,cbLTSupervisor.SearchText,"TEAM")
+            DisplayFields: =["Value"]
+            Items: =Distinct(CurrentRoster, TEAM)
+            SearchFields: =["Value"]
+            SearchItems: =Search(Distinct(CurrentRoster, TEAM),cbLTSupervisor.SearchText,"Value")
             Width: =394
             X: =321
             Y: =893
