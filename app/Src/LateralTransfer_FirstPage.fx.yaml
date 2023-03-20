@@ -86,44 +86,6 @@
                 Y: =15
                 ZIndex: =2
 
-        SITE_LTDataCard As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="SITE"
-            Default: =ThisItem.SITE
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Required: =false
-            Width: =736
-            X: =0
-            Y: =3
-            ZIndex: =1
-
-            DataCardKey18 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            txtLTSite As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
-                X: =300
-                Y: =22
-                ZIndex: =2
-
         "'FIRST NAME_LTDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
@@ -198,6 +160,44 @@
                 Width: =(Parent.Width - 60) * 0.6
                 X: =300
                 Y: =20
+                ZIndex: =2
+
+        SITE_LTDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SITE"
+            Default: =ThisItem.SITE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =736
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey18 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTSite As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =300
+                Y: =22
                 ZIndex: =2
 
         "'BUSINESS UNIT_LTDataCard' As typedDataCard.textualEditCard":
@@ -573,7 +573,15 @@
                    Concatenate("Hi Team, Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, "<br>" ,
                         "Employee ID:", txtLTEmployeeId.Text, "<br>", 
                         "Employee Name:", txtLTFirstName, " ", txtLTLastName,
-                        "Site:", txtLTFirstName, " ", txtLTLastName
+                        "Site:", txtLTFirstName, " ", txtLTLastName,
+                        "New Business Unit:", txtLTBusinessUnit,
+                        "New Program/Client:", txtLTClient,
+                        "New Position:", txtLTPosition,
+                        "New LOB:", txtLTLOB,
+                        "New Sub-Unit:", txtLTSubUnit,
+                        "Billability:", txtLTBillability,
+                        "New Schedule:", txtLTSchedule,
+                        "New Supervisor:", txtLTSupervisor
                     )
                 ) &&
                 Reset(cbLTSearch)
