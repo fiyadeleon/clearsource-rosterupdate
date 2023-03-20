@@ -570,17 +570,17 @@
                 Office365Outlook.SendEmailV2(
                    "sophia.deleon@clearsourcebpo.com",
                    Concatenate("[LATERAL TRANSFER] ", txtLTEmployeeId, ": ", txtLTFirstName, " ", txtLTLastName),
-                   Concatenate("Hi Team, Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, "<br>" ,
+                   Concatenate("Hi Team, Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, "<br>",
                         "Employee ID:", txtLTEmployeeId.Text, "<br>", 
-                        "Employee Name:", txtLTFirstName, " ", txtLTLastName,
-                        "Site:", txtLTFirstName, " ", txtLTLastName,
-                        "New Business Unit:", txtLTBusinessUnit,
-                        "New Program/Client:", txtLTClient,
-                        "New Position:", txtLTPosition,
-                        "New LOB:", txtLTLOB,
-                        "New Sub-Unit:", txtLTSubUnit,
-                        "Billability:", txtLTBillability,
-                        "New Schedule:", txtLTSchedule,
+                        "Employee Name:", txtLTFirstName, " ", txtLTLastName, "<br>",
+                        "Site:", txtLTFirstName, " ", txtLTLastName, "<br>",
+                        "New Business Unit:", txtLTBusinessUnit, "<br>",
+                        "New Program/Client:", txtLTClient, "<br>",
+                        "New Position:", txtLTPosition, "<br>",
+                        "New LOB:", txtLTLOB, "<br>",
+                        "New Sub-Unit:", txtLTSubUnit, "<br>",
+                        "Billability:", txtLTBillability, "<br>",
+                        "New Schedule:", txtLTSchedule, "<br>",
                         "New Supervisor:", txtLTSupervisor
                     )
                 ) &&
