@@ -3,7 +3,7 @@
     OnVisible: =
     Width: =794
 
-    "galLTName As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+    "galLTID As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
         Height: =37
         Items: =LookUp(CurrentRoster, USER = txtLTSearch.Text)
         Layout: =Layout.Vertical
@@ -18,7 +18,7 @@
         Y: =173
         ZIndex: =2
 
-        txtLTName As label:
+        txtLTID As label:
             FontWeight: =FontWeight.Normal
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
@@ -28,7 +28,7 @@
             PaddingTop: =0
             Size: =14
             Text: |-
-                =Concatenate("Employee Name: ", ThisItem.SITE, " ", ThisItem.'LAST NAME')
+                =Concatenate("Employee ID: ", ThisItem.'EMPLOYEE ID')
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =24
@@ -38,8 +38,8 @@
     txtLTSearch As text:
         Default: =""
         HintText: ="Search Omnia ID"
-        X: =52
-        Y: =115
+        X: =240
+        Y: =107
         ZIndex: =3
 
     "'Lateral Transfer Form' As label":
@@ -51,4 +51,75 @@
         X: =42
         Y: =40
         ZIndex: =4
+
+    "galLTName As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =37
+        Items: =LookUp(CurrentRoster, USER = txtLTSearch.Text)
+        Layout: =Layout.Vertical
+        NavigationStep: =0
+        ShowScrollbar: =false
+        TabIndex: =0
+        TemplatePadding: =0
+        TemplateSize: =44
+        Width: =605
+        WrapCount: =0
+        X: =37
+        Y: =222
+        ZIndex: =5
+
+        txtLTName As label:
+            FontWeight: =FontWeight.Normal
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: |-
+                =Concatenate("Employee Name: ", ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME')
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =24
+            Y: =12
+            ZIndex: =1
+
+    "galLTSite As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =37
+        Items: =LookUp(CurrentRoster, USER = txtLTSearch.Text)
+        Layout: =Layout.Vertical
+        NavigationStep: =0
+        ShowScrollbar: =false
+        TabIndex: =0
+        TemplatePadding: =0
+        TemplateSize: =44
+        Width: =605
+        WrapCount: =0
+        X: =37
+        Y: =271
+        ZIndex: =6
+
+        txtLTSite As label:
+            FontWeight: =FontWeight.Normal
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: |-
+                =Concatenate("Site: ", ThisItem.SITE)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =24
+            Y: =12
+            ZIndex: =1
+
+    Label1 As label:
+        Text: ="Text"
+        Width: =160
+        X: =56
+        Y: =320
+        ZIndex: =7
 
