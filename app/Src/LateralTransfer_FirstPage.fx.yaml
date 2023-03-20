@@ -1,6 +1,6 @@
 "LateralTransfer_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     Height: |
-        =900
+        =970
     OnVisible: =
     Width: =794
 
@@ -40,7 +40,7 @@
     formLT As form:
         BorderColor: =RGBA(0, 0, 0, 1)
         DataSource: =CurrentRoster
-        Height: =617
+        Height: =654
         Item: =cbLTSearch.Selected
         NumberOfColumns: =1
         Width: =736
@@ -84,6 +84,44 @@
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey9.X + DataCardKey9.Width
                 Y: =15
+                ZIndex: =2
+
+        SITE_LTDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SITE"
+            Default: =ThisItem.SITE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =736
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey18 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTSite As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =300
+                Y: =22
                 ZIndex: =2
 
         "'FIRST NAME_LTDataCard' As typedDataCard.textualViewCard":
@@ -175,7 +213,7 @@
             Update: =txtLTBusinessUnit.Text
             Width: =736
             X: =0
-            Y: =3
+            Y: =4
             ZIndex: =1
 
             DataCardKey1 As label:
@@ -219,7 +257,7 @@
             Update: =txtLTClient.Text
             Width: =736
             X: =0
-            Y: =4
+            Y: =5
             ZIndex: =1
 
             DataCardKey2 As label:
@@ -263,7 +301,7 @@
             Update: =txtLTPosition.Text
             Width: =736
             X: =0
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             DataCardKey3 As label:
@@ -307,7 +345,7 @@
             Update: =txtLTLOB.Text
             Width: =736
             X: =0
-            Y: =6
+            Y: =7
             ZIndex: =1
 
             DataCardKey4 As label:
@@ -351,7 +389,7 @@
             Update: =txtLTSubUnit.Text
             Width: =736
             X: =0
-            Y: =7
+            Y: =8
             ZIndex: =1
 
             DataCardKey5 As label:
@@ -395,7 +433,7 @@
             Update: =txtLTBillability.Text
             Width: =736
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKey6 As label:
@@ -439,7 +477,7 @@
             Update: =txtLTSchedule.Text
             Width: =736
             X: =0
-            Y: =9
+            Y: =10
             ZIndex: =1
 
             DataCardKey10 As label:
@@ -483,14 +521,14 @@
             Update: =txtLTSupervisor.Text
             Width: =736
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
-            DataCardKey11 As label:
+            DataCardKey19 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="SUPERVISOR"
+                Text: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -510,7 +548,7 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey11.X + DataCardKey11.Width
+                X: =DataCardKey19.X + DataCardKey19.Width
                 Y: =10
                 ZIndex: =2
 
@@ -532,15 +570,18 @@
                 Office365Outlook.SendEmailV2(
                    "sophia.deleon@clearsourcebpo.com",
                    Concatenate("[LATERAL TRANSFER] ", txtLTEmployeeId, ": ", txtLTFirstName, " ", txtLTLastName),
-                   Concatenate("Hi Team, Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, 
-                    txtLTEmployeeId.Text, "<br>", txtLTFirstName, " ", txtLTLastName)
+                   Concatenate("Hi Team, Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, "<br>" ,
+                        "Employee ID:", txtLTEmployeeId.Text, "<br>", 
+                        "Employee Name:", txtLTFirstName, " ", txtLTLastName,
+                        "Site:", txtLTFirstName, " ", txtLTLastName
+                    )
                 ) &&
                 Reset(cbLTSearch)
                 )
             )
         Text: ="Submit"
         X: =566
-        Y: =787
+        Y: =854
         ZIndex: =11
 
     btnLTBack As button:
@@ -548,6 +589,6 @@
         Fill: =RGBA(186, 202, 226, 1)
         Text: ="Back"
         X: =377
-        Y: =787
+        Y: =854
         ZIndex: =12
 
