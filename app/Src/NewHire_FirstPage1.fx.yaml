@@ -1,54 +1,19 @@
-"LateralTransfer_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
-    Height: |
-        =900
-    OnVisible: =
+"NewHire_FirstPage1 As screen.'printableLayout_A4Portrait_ver1.0'":
+    Height: =1123
     Width: =794
 
-    "'Lateral Transfer Form' As label":
-        Color: =RGBA(0, 18, 107, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =67
-        Size: =20
-        Text: ="LATERAL TRANSFER FORM"
-        Width: =453
-        X: =42
-        Y: =40
-        ZIndex: =4
-
-    txtLTOmnia As label:
-        Color: =RGBA(0, 18, 107, 1)
-        FontWeight: =FontWeight.Bold
-        Text: |-
-            ="OMNIA ID:"
-        Width: =160
-        X: =51
-        Y: =122
-        ZIndex: =8
-
-    cbLTSearch As combobox:
-        ChevronBackground: =RGBA(0, 18, 107, 1)
-        DisplayFields: =["USER"]
-        Items: =CurrentRoster
-        SearchFields: =["USER"]
-        SearchItems: =Search(CurrentRoster,cbLTSearch.SearchText,"USER")
-        SelectMultiple: =false
-        Width: =405.6
-        X: =321
-        Y: =122
-        ZIndex: =9
-
-    formLT As form:
+    formNH As form:
         BorderColor: =RGBA(0, 0, 0, 1)
         DataSource: =CurrentRoster
         Height: =617
         Item: =cbLTSearch.Selected
         NumberOfColumns: =1
         Width: =736
-        X: =22
-        Y: =170
-        ZIndex: =10
+        X: =18
+        Y: =107
+        ZIndex: =3
 
-        "'EMPLOYEE ID_LTDataCard' As typedDataCard.textualViewCard":
+        "'EMPLOYEE ID_NHDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="EMPLOYEE ID"
             Default: =ThisItem.'EMPLOYEE ID'
@@ -62,7 +27,7 @@
             Y: =0
             ZIndex: =1
 
-            DataCardKey9 As label:
+            DataCardKey9_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -73,7 +38,7 @@
                 Y: =12
                 ZIndex: =1
 
-            txtLTEmployeeId As label:
+            DataCardValue9_1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -82,25 +47,25 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey9.X + DataCardKey9.Width
+                X: =DataCardKey9_1.X + DataCardKey9_1.Width
                 Y: =15
                 ZIndex: =2
 
-        "'FIRST NAME_LTDataCard' As typedDataCard.textualViewCard":
+        "'FIRST NAME_NHDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"FIRST NAME")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
+            Height: =40
             Required: =false
             Width: =736
             X: =0
             Y: =1
             ZIndex: =1
 
-            DataCardKey7 As label:
+            DataCardKey16 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -108,10 +73,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =12
+                Y: =10 + (DataCardValue16.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTFirstName As label:
+            DataCardValue16 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -120,11 +85,11 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =300
-                Y: =20
+                X: =DataCardKey16.X + DataCardKey16.Width
+                Y: =10
                 ZIndex: =2
 
-        "'LAST NAME_LTDataCard' As typedDataCard.textualViewCard":
+        "'LAST NAME_NHDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="LAST NAME"
             Default: =ThisItem.'LAST NAME'
@@ -138,7 +103,7 @@
             Y: =2
             ZIndex: =1
 
-            DataCardKey8 As label:
+            DataCardKey8_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -149,7 +114,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTLastName As label:
+            DataCardValue8_1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -162,7 +127,7 @@
                 Y: =20
                 ZIndex: =2
 
-        "'BUSINESS UNIT_LTDataCard' As typedDataCard.textualEditCard":
+        "'BUSINESS UNIT_NHDataCard' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
             Default: =ThisItem.'BUSINESS UNIT'
@@ -172,13 +137,13 @@
             Height: =50
             MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "BUSINESS UNIT")
             Required: =false
-            Update: =txtLTBusinessUnit.Text
+            Update: =DataCardValue1_1.Text
             Width: =736
             X: =0
             Y: =3
             ZIndex: =1
 
-            DataCardKey1 As label:
+            DataCardKey1_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -186,10 +151,10 @@
                 Width: =270
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTBusinessUnit.Height / 2) - (Self.Height / 2)
+                Y: =10 + (DataCardValue1_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTBusinessUnit As text:
+            DataCardValue1_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -202,11 +167,11 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey1.X + DataCardKey1.Width
+                X: =DataCardKey1_1.X + DataCardKey1_1.Width
                 Y: =10
                 ZIndex: =2
 
-        CLIENT_LTDataCard As typedDataCard.textualEditCard:
+        CLIENT_NHDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
             Default: =ThisItem.CLIENT
@@ -216,13 +181,13 @@
             Height: =50
             MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "CLIENT")
             Required: =false
-            Update: =txtLTClient.Text
+            Update: =DataCardValue2_1.Text
             Width: =736
             X: =0
             Y: =4
             ZIndex: =1
 
-            DataCardKey2 As label:
+            DataCardKey2_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -230,10 +195,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTClient.Height / 2) - (Self.Height / 2)
+                Y: =10 + (DataCardValue2_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTClient As text:
+            DataCardValue2_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -246,11 +211,11 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey2.X + DataCardKey2.Width
+                X: =DataCardKey2_1.X + DataCardKey2_1.Width
                 Y: =10
                 ZIndex: =2
 
-        POSITION_LTDataCard As typedDataCard.textualEditCard:
+        POSITION_NHDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
@@ -260,13 +225,13 @@
             Height: =50
             MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "POSITION")
             Required: =false
-            Update: =txtLTPosition.Text
+            Update: =DataCardValue3_1.Text
             Width: =736
             X: =0
             Y: =5
             ZIndex: =1
 
-            DataCardKey3 As label:
+            DataCardKey3_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -274,10 +239,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTPosition.Height / 2) - (Self.Height / 2)
+                Y: =10 + (DataCardValue3_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTPosition As text:
+            DataCardValue3_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -290,11 +255,11 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey3.X + DataCardKey3.Width
+                X: =DataCardKey3_1.X + DataCardKey3_1.Width
                 Y: =10
                 ZIndex: =2
 
-        LOB_LTDataCard As typedDataCard.textualEditCard:
+        LOB_NHDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="LOB"
             Default: =ThisItem.LOB
@@ -304,13 +269,13 @@
             Height: =50
             MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "LOB")
             Required: =false
-            Update: =txtLTLOB.Text
+            Update: =DataCardValue4_1.Text
             Width: =736
             X: =0
             Y: =6
             ZIndex: =1
 
-            DataCardKey4 As label:
+            DataCardKey4_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -318,10 +283,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTLOB.Height / 2) - (Self.Height / 2)
+                Y: =10 + (DataCardValue4_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTLOB As text:
+            DataCardValue4_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -334,11 +299,11 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey4.X + DataCardKey4.Width
+                X: =DataCardKey4_1.X + DataCardKey4_1.Width
                 Y: =10
                 ZIndex: =2
 
-        "'SUB-UNIT_LTDataCard' As typedDataCard.textualEditCard":
+        "'SUB-UNIT_NHDataCard' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB-UNIT'
@@ -348,13 +313,13 @@
             Height: =50
             MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "SUB-UNIT")
             Required: =false
-            Update: =txtLTSubUnit.Text
+            Update: =DataCardValue5_1.Text
             Width: =736
             X: =0
             Y: =7
             ZIndex: =1
 
-            DataCardKey5 As label:
+            DataCardKey5_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -362,10 +327,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTSubUnit.Height / 2) - (Self.Height / 2)
+                Y: =10 + (DataCardValue5_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTSubUnit As text:
+            DataCardValue5_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -378,11 +343,11 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey5.X + DataCardKey5.Width
+                X: =DataCardKey5_1.X + DataCardKey5_1.Width
                 Y: =10
                 ZIndex: =2
 
-        BILLABILITY_LTDataCard As typedDataCard.textualEditCard:
+        BILLABILITY_NHDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
             Default: =ThisItem.BILLABILITY
@@ -392,13 +357,13 @@
             Height: =50
             MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "BILLABILITY")
             Required: =false
-            Update: =txtLTBillability.Text
+            Update: =DataCardValue6_1.Text
             Width: =736
             X: =0
             Y: =8
             ZIndex: =1
 
-            DataCardKey6 As label:
+            DataCardKey6_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -406,10 +371,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTBillability.Height / 2) - (Self.Height / 2)
+                Y: =10 + (DataCardValue6_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTBillability As text:
+            DataCardValue6_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -422,11 +387,11 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey6.X + DataCardKey6.Width
+                X: =DataCardKey6_1.X + DataCardKey6_1.Width
                 Y: =10
                 ZIndex: =2
 
-        SCHEDULE_LTDataCard As typedDataCard.textualEditCard:
+        SCHEDULE_NHDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SCHEDULE"
             Default: =ThisItem.SCHEDULE
@@ -436,13 +401,13 @@
             Height: =50
             MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "SCHEDULE")
             Required: =false
-            Update: =txtLTSchedule.Text
+            Update: =DataCardValue10_1.Text
             Width: =736
             X: =0
             Y: =9
             ZIndex: =1
 
-            DataCardKey10 As label:
+            DataCardKey10_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -450,10 +415,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTSchedule.Height / 2) - (Self.Height / 2)
+                Y: =10 + (DataCardValue10_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTSchedule As text:
+            DataCardValue10_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -466,11 +431,11 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey10.X + DataCardKey10.Width
+                X: =DataCardKey10_1.X + DataCardKey10_1.Width
                 Y: =10
                 ZIndex: =2
 
-        TEAM_LTDataCard As typedDataCard.textualEditCard:
+        TEAM_NHDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
             Default: =ThisItem.TEAM
@@ -480,24 +445,24 @@
             Height: =50
             MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "TEAM")
             Required: =false
-            Update: =txtLTSupervisor.Text
+            Update: =DataCardValue11_1.Text
             Width: =736
             X: =0
             Y: =10
             ZIndex: =1
 
-            DataCardKey11 As label:
+            DataCardKey11_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="SUPERVISOR"
+                Text: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTSupervisor.Height / 2) - (Self.Height / 2)
+                Y: =10 + (DataCardValue11_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTSupervisor As text:
+            DataCardValue11_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -510,43 +475,18 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey11.X + DataCardKey11.Width
+                X: =DataCardKey11_1.X + DataCardKey11_1.Width
                 Y: =10
                 ZIndex: =2
 
-    btnLTSubmit As button:
-        Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: |-
-            =If(
-                IsBlank(txtLTBusinessUnit) ||
-                IsBlank(txtLTClient) ||
-                IsBlank(txtLTPosition) ||
-                IsBlank(txtLTLOB) ||
-                IsBlank(txtLTSubUnit) ||
-                IsBlank(txtLTBillability) ||
-                IsBlank(txtLTSchedule) ||
-                IsBlank(txtLTSupervisor),
-                Notify("Please complete all fields!",NotificationType.Error),
-                (Notify("Successfully submitted the information.",NotificationType.Success) &&
-                Navigate(HomePage,ScreenTransition.None) &&
-                Office365Outlook.SendEmailV2(
-                   "sophia.deleon@clearsourcebpo.com",
-                   "Sample Subject",
-                    Concatenate(txtLTEmployeeId.Text, "<br>", txtLTFirstName, " ", txtLTLastName)
-                ) &&
-                Reset(cbLTSearch)
-                )
-            )
-        Text: ="Submit"
-        X: =566
-        Y: =787
-        ZIndex: =11
-
-    btnLTBack As button:
+    "'New Hire Form' As label":
         Color: =RGBA(0, 18, 107, 1)
-        Fill: =RGBA(186, 202, 226, 1)
-        Text: ="Back"
-        X: =377
-        Y: =787
-        ZIndex: =12
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="NEW HIRE FORM"
+        Width: =453
+        X: =42
+        Y: =40
+        ZIndex: =4
 
