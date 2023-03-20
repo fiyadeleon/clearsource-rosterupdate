@@ -38,7 +38,7 @@
     formLT As form:
         BorderColor: =RGBA(0, 0, 0, 1)
         DataSource: =Sort(CurrentRoster, USER, SortOrder.Ascending)
-        Height: =238
+        Height: =247
         Item: =cbLTSearch.Selected
         NumberOfColumns: =1
         Width: =736
@@ -257,7 +257,7 @@
         Underline: =true
         Width: =552
         X: =51
-        Y: =408
+        Y: =417
         ZIndex: =13
 
     grpLTBusinessUnit As group:
@@ -274,7 +274,7 @@
             Text: ="NEW BUSINESS UNIT"
             Width: =270
             X: =51
-            Y: =472
+            Y: =481
             ZIndex: =14
 
         cbLTBusinessUnit As combobox:
@@ -288,7 +288,7 @@
             SelectMultiple: =false
             Width: =394
             X: =321
-            Y: =472
+            Y: =481
             ZIndex: =15
 
     grpLTClient As group:
@@ -305,21 +305,21 @@
             Text: ="NEW CLIENT"
             Width: =270
             X: =51
-            Y: =532
+            Y: =541
             ZIndex: =16
 
         cbLTClient As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
-            DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'CLIENT')
-            DisplayFields: =["CLIENT"]
+            DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),CLIENT)
+            DisplayFields: =["Value"]
             IsSearchable: =false
             Items: =Distinct(CurrentRoster, CLIENT)
-            SearchFields: =["CLIENT"]
+            SearchFields: =["Value"]
             SearchItems: =[]
             SelectMultiple: =false
             Width: =394
             X: =321
-            Y: =532
+            Y: =541
             ZIndex: =17
 
     grpLTPosition As group:
@@ -336,12 +336,12 @@
             Text: ="NEW POSITION"
             Width: =270
             X: =51
-            Y: =592
+            Y: =601
             ZIndex: =18
 
         cbLTPosition As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
-            DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'POSITION')
+            DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),POSITION)
             DisplayFields: =["Value"]
             Items: =Distinct(CurrentRoster, POSITION)
             SearchFields: =["Value"]
@@ -349,7 +349,7 @@
             SelectMultiple: =false
             Width: =394
             X: =321
-            Y: =592
+            Y: =601
             ZIndex: =19
 
     grpLTLOB As group:
@@ -366,12 +366,12 @@
             Text: ="NEW LOB"
             Width: =270
             X: =51
-            Y: =652
+            Y: =661
             ZIndex: =20
 
         cbLTLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
-            DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'LOB')
+            DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),LOB)
             DisplayFields: =["Value"]
             Items: =Distinct(CurrentRoster, LOB)
             SearchFields: =["Value"]
@@ -379,7 +379,7 @@
             SelectMultiple: =false
             Width: =394
             X: =321
-            Y: =652
+            Y: =661
             ZIndex: =21
 
     grpLTSubUnit As group:
@@ -396,7 +396,7 @@
             Text: ="NEW SUB-UNIT"
             Width: =270
             X: =51
-            Y: =712
+            Y: =721
             ZIndex: =22
 
         cbLTSubUnit As combobox:
@@ -409,7 +409,7 @@
             SelectMultiple: =false
             Width: =394
             X: =321
-            Y: =712
+            Y: =721
             ZIndex: =23
 
     grpLTBillability As group:
@@ -426,7 +426,7 @@
             Text: ="NEW BILLABILITY"
             Width: =270
             X: =51
-            Y: =772
+            Y: =781
             ZIndex: =24
 
         cbLTBillability As combobox:
@@ -439,7 +439,7 @@
             SelectMultiple: =false
             Width: =394
             X: =321
-            Y: =772
+            Y: =781
             ZIndex: =25
 
     grpLTSupervisor As group:
@@ -456,12 +456,12 @@
             Text: ="NEW SUPERVISOR"
             Width: =270
             X: =51
-            Y: =893
+            Y: =902
             ZIndex: =28
 
         cbLTSupervisor As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
-            DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'TEAM')
+            DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),TEAM)
             DisplayFields: =["Value"]
             Items: =Distinct(CurrentRoster, TEAM)
             SearchFields: =["Value"]
@@ -469,7 +469,7 @@
             SelectMultiple: =false
             Width: =394
             X: =321
-            Y: =893
+            Y: =902
             ZIndex: =29
 
     grpLTSchedule As group:
@@ -486,7 +486,7 @@
             Text: ="NEW SCHEDULE"
             Width: =270
             X: =51
-            Y: =831
+            Y: =840
             ZIndex: =26
 
         txtLTSchedule As text:
@@ -494,6 +494,6 @@
             HintText: ="e.g. 10PM - 7AM PHT"
             Width: =394
             X: =321
-            Y: =832
+            Y: =841
             ZIndex: =30
 
