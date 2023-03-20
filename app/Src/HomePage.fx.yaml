@@ -7,6 +7,10 @@
         ZIndex: =1
 
     "'Roster Update Selection' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        DisabledBorderColor: =RGBA(0, 18, 107, 1)
+        DisabledColor: =RGBA(0, 18, 107, 1)
+        DisabledFill: =RGBA(0, 18, 107, 1)
         Height: =39
         Text: |-
             ="Roster Update Selection:"
@@ -16,13 +20,19 @@
         ZIndex: =2
 
     drpRosterSelection As dropdown:
+        ChevronBackground: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(0, 18, 107, 1)
         Default: =""
+        DisabledBorderColor: =RGBA(0, 18, 107, 1)
+        DisabledColor: =RGBA(0, 18, 107, 1)
+        DisabledFill: =RGBA(0, 18, 107, 1)
         Items: =["Select your answer", "New Hire", "Termination", "Promotion", "Lateral Transfer", "Other User Status"]
         X: =187
         Y: =390
         ZIndex: =3
 
     btnFirstPageNext As button:
+        Fill: =RGBA(0, 18, 107, 1)
         OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "New Hire", Navigate(NewHire_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.CoverRight), drpRosterSelection.Selected.Value = "Other User Status", Navigate(Other_FirstPage,ScreenTransition.Cover)))
         Text: ="Next"
         X: =355
