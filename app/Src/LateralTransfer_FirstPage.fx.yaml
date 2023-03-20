@@ -3,45 +3,6 @@
     OnVisible: =
     Width: =794
 
-    "galLTID As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
-        Height: =37
-        Items: =LookUp(CurrentRoster, USER = txtLTSearch.Text)
-        Layout: =Layout.Vertical
-        NavigationStep: =0
-        ShowScrollbar: =false
-        TabIndex: =0
-        TemplatePadding: =0
-        TemplateSize: =44
-        Width: =605
-        WrapCount: =0
-        X: =37
-        Y: =173
-        ZIndex: =2
-
-        txtLTID As label:
-            FontWeight: =FontWeight.Normal
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =14
-            Text: |-
-                =Concatenate("Employee ID: ", ThisItem.'EMPLOYEE ID')
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 104
-            X: =24
-            Y: =12
-            ZIndex: =1
-
-    txtLTSearch As text:
-        Default: =""
-        HintText: ="Search Omnia ID"
-        X: =152
-        Y: =107
-        ZIndex: =3
-
     "'Lateral Transfer Form' As label":
         FontWeight: =FontWeight.Bold
         Height: =67
@@ -52,82 +13,175 @@
         Y: =40
         ZIndex: =4
 
-    "galLTName As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
-        Height: =37
-        Items: =LookUp(CurrentRoster, USER = txtLTSearch.Text)
-        Layout: =Layout.Vertical
-        NavigationStep: =0
-        ShowScrollbar: =false
-        TabIndex: =0
-        TemplatePadding: =0
-        TemplateSize: =44
-        Width: =605
-        WrapCount: =0
-        X: =37
-        Y: =222
-        ZIndex: =5
-
-        txtLTName As label:
-            FontWeight: =FontWeight.Normal
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =14
-            Text: |-
-                =Concatenate("Employee Name: ", ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME')
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 104
-            X: =24
-            Y: =12
-            ZIndex: =1
-
-    "galLTSite As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
-        Height: =37
-        Items: =LookUp(CurrentRoster, USER = txtLTSearch.Text)
-        Layout: =Layout.Vertical
-        NavigationStep: =0
-        ShowScrollbar: =false
-        TabIndex: =0
-        TemplatePadding: =0
-        TemplateSize: =44
-        Width: =605
-        WrapCount: =0
-        X: =37
-        Y: =271
-        ZIndex: =6
-
-        txtLTSite As label:
-            FontWeight: =FontWeight.Normal
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =14
-            Text: |-
-                =Concatenate("Site: ", ThisItem.SITE)
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 104
-            X: =24
-            Y: =12
-            ZIndex: =1
-
-    Label1 As label:
-        Text: ="Text"
-        Width: =160
-        X: =56
-        Y: =320
-        ZIndex: =7
-
-    Label1_1 As label:
+    txtLTOmnia As label:
         Text: |-
             ="Omnia ID:"
         Width: =160
         X: =56
         Y: =107
         ZIndex: =8
+
+    cbLTSearch As combobox:
+        DisplayFields: =["BUSINESS UNIT"]
+        Items: =CurrentRoster
+        SearchFields: =["USER"]
+        SearchItems: =Search(CurrentRoster,cbLTSearch.SearchText,"USER")
+        SelectMultiple: =false
+        X: =153
+        Y: =107
+        ZIndex: =9
+
+    formLT As form:
+        DataSource: =CurrentRoster
+        Width: =794
+        Y: =158
+        ZIndex: =10
+
+        "'EMPLOYEE ID_DataCard2' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="EMPLOYEE ID"
+            Default: =ThisItem.'EMPLOYEE ID'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"EMPLOYEE ID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =264
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue5 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                ZIndex: =2
+
+        "'FIRST NAME_DataCard2' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FIRST NAME"
+            Default: =ThisItem.'FIRST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"FIRST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =264
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey6 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue6 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                ZIndex: =2
+
+        "'LAST NAME_DataCard2' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LAST NAME"
+            Default: =ThisItem.'LAST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LAST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =264
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey7 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue7 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                ZIndex: =2
+
+        SITE_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SITE"
+            Default: =ThisItem.SITE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =264
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey8 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue8 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey8.Y + DataCardKey8.Height + 5
+                ZIndex: =2
 
