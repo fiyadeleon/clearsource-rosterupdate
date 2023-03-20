@@ -69,7 +69,7 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (DataCardValue9.Height / 2) - (Self.Height / 2)
+                Y: =12
                 ZIndex: =1
 
             DataCardValue9 As label:
@@ -82,7 +82,7 @@
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey9.X + DataCardKey9.Width
-                Y: =15
+                Y: =20
                 ZIndex: =2
 
         "'FIRST NAME_DataCard' As typedDataCard.textualViewCard":
@@ -107,7 +107,7 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (DataCardValue7.Height / 2) - (Self.Height / 2)
+                Y: =12
                 ZIndex: =1
 
             DataCardValue7 As label:
@@ -119,8 +119,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey7.X + DataCardKey7.Width
-                Y: =15
+                X: =300
+                Y: =20
                 ZIndex: =2
 
         "'LAST NAME_DataCard' As typedDataCard.textualViewCard":
@@ -145,7 +145,7 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (DataCardValue8.Height / 2) - (Self.Height / 2)
+                Y: =13
                 ZIndex: =1
 
             DataCardValue8 As label:
@@ -157,8 +157,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey8.X + DataCardKey8.Width
-                Y: =15
+                X: =300
+                Y: =20
                 ZIndex: =2
 
         "'BUSINESS UNIT_DataCard' As typedDataCard.textualEditCard":
