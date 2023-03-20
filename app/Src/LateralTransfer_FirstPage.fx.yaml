@@ -1,7 +1,5 @@
 "LateralTransfer_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
-    Height: |+
-        =1300
-        
+    Height: =1100
     OnVisible: =
     Width: =794
 
@@ -169,7 +167,7 @@
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =60
             Required: =false
             Width: =736
             X: =0
@@ -184,7 +182,7 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTSite.Height / 2) - (Self.Height / 2)
+                Y: =10
                 ZIndex: =1
 
             txtLTSite As label:
@@ -196,22 +194,22 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey2.X + DataCardKey2.Width
-                Y: =10
+                X: =300
+                Y: =22
                 ZIndex: =2
 
     btnLTSubmit As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
-                IsBlank(lblLTBusinessUnit) ||
-                IsBlank(txtLTClient) ||
-                IsBlank(txtLTPosition) ||
-                IsBlank(txtLTLOB) ||
-                IsBlank(txtLTSubUnit) ||
-                IsBlank(txtLTBillability) ||
+                IsBlank(cbLTBusinessUnit) ||
+                IsBlank(cbLTClient) ||
+                IsBlank(cbLTPosition) ||
+                IsBlank(cbLTLOB) ||
+                IsBlank(cbLTSubUnit) ||
+                IsBlank(cbLTBillability) ||
                 IsBlank(txtLTSchedule) ||
-                IsBlank(txtLTSupervisor),
+                IsBlank(cbLTSupervisor),
                 Notify("Please complete all fields!",NotificationType.Error),
                 (Notify("Successfully submitted the information.",NotificationType.Success) &&
                 Navigate(HomePage,ScreenTransition.None) &&
@@ -219,25 +217,25 @@
                    "sophia.deleon@clearsourcebpo.com",
                    Concatenate("[LATERAL TRANSFER] ", txtLTEmployeeId, ": ", txtLTFirstName, " ", txtLTLastName),
                    Concatenate("Hi Team,", "<br>", "<br>", "Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, ".", "<br>", "<br>",
-                        "Employee ID: ", txtLTEmployeeId.Text, "<br>", 
+                        "Employee ID: ", txtLTEmployeeId, "<br>", 
                         "Employee Name: ", txtLTFirstName, " ", txtLTLastName, "<br>",
                         "Site: ", txtLTSite, "<br>",
-                        "New Business Unit: ", lblLTBusinessUnit, "<br>",
-                        "New Program/Client: ", txtLTClient, "<br>",
-                        "New Position: ", txtLTPosition, "<br>",
-                        "New LOB: ", txtLTLOB, "<br>",
-                        "New Sub-Unit: ", txtLTSubUnit, "<br>",
-                        "Billability: ", txtLTBillability, "<br>",
+                        "New Business Unit: ", cbLTBusinessUnit.Selected.Value, "<br>",
+                        "New Program/Client: ", cbLTClient.Selected.Value, "<br>",
+                        "New Position: ", cbLTPosition.Selected.Value, "<br>",
+                        "New LOB: ", cbLTLOB.Selected.Value, "<br>",
+                        "New Sub-Unit: ", cbLTSubUnit.Selected.Value, "<br>",
+                        "Billability: ", cbLTBillability.Selected.Value, "<br>",
                         "New Schedule: ", txtLTSchedule, "<br>",
-                        "New Supervisor: ", txtLTSupervisor
+                        "New Supervisor: ", cbLTSupervisor.Selected.Value
                     )
                 ) &&
-                Reset(cbLTSearch)
+                Reset(cbLTSearch) && Reset(txtTLSchedule)
                 )
             )
-        Text: ="Submit"
-        X: =584
-        Y: =1190
+        Text: ="Review"
+        X: =555
+        Y: =987
         ZIndex: =11
 
     btnLTBack As button:
@@ -245,8 +243,8 @@
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
-        X: =395
-        Y: =1190
+        X: =366
+        Y: =987
         ZIndex: =12
 
     "'LT NEW EMPLOYEE INFORMATION' As label":
@@ -282,10 +280,10 @@
         cbLTBusinessUnit As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'BUSINESS UNIT')
-            DisplayFields: =["BUSINESS UNIT"]
+            DisplayFields: =["Value"]
             IsSearchable: =false
-            Items: =Distinct(CurrentRoster,'BUSINESS UNIT')
-            SearchFields: =["BUSINESS UNIT"]
+            Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
+            SearchFields: =["Value"]
             SearchItems: =[]
             SelectMultiple: =false
             Width: =394
