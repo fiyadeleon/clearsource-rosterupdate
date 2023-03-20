@@ -47,7 +47,7 @@
         Y: =170
         ZIndex: =10
 
-        "'EMPLOYEE ID_DataCard' As typedDataCard.textualViewCard":
+        "'EMPLOYEE ID_LTDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="EMPLOYEE ID"
             Default: =ThisItem.'EMPLOYEE ID'
@@ -85,7 +85,7 @@
                 Y: =20
                 ZIndex: =2
 
-        "'FIRST NAME_DataCard' As typedDataCard.textualViewCard":
+        "'FIRST NAME_LTDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
@@ -123,7 +123,7 @@
                 Y: =20
                 ZIndex: =2
 
-        "'LAST NAME_DataCard' As typedDataCard.textualViewCard":
+        "'LAST NAME_LTDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="LAST NAME"
             Default: =ThisItem.'LAST NAME'
@@ -161,7 +161,7 @@
                 Y: =20
                 ZIndex: =2
 
-        "'BUSINESS UNIT_DataCard' As typedDataCard.textualEditCard":
+        "'BUSINESS UNIT_LTDataCard' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
             Default: =ThisItem.'BUSINESS UNIT'
@@ -230,7 +230,7 @@
                 Y: =DataCardKey1.Y
                 ZIndex: =4
 
-        CLIENT_DataCard As typedDataCard.textualEditCard:
+        CLIENT_LTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
             Default: =ThisItem.CLIENT
@@ -299,7 +299,7 @@
                 Y: =DataCardKey2.Y
                 ZIndex: =4
 
-        POSITION_DataCard As typedDataCard.textualEditCard:
+        POSITION_LTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
@@ -368,7 +368,7 @@
                 Y: =DataCardKey3.Y
                 ZIndex: =4
 
-        LOB_DataCard As typedDataCard.textualEditCard:
+        LOB_LTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="LOB"
             Default: =ThisItem.LOB
@@ -437,7 +437,7 @@
                 Y: =DataCardKey4.Y
                 ZIndex: =4
 
-        "'SUB-UNIT_DataCard' As typedDataCard.textualEditCard":
+        "'SUB-UNIT_LTDataCard' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB-UNIT'
@@ -506,7 +506,7 @@
                 Y: =DataCardKey5.Y
                 ZIndex: =4
 
-        BILLABILITY_DataCard As typedDataCard.textualEditCard:
+        BILLABILITY_LTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
             Default: =ThisItem.BILLABILITY
@@ -575,7 +575,7 @@
                 Y: =DataCardKey6.Y
                 ZIndex: =4
 
-        SCHEDULE_DataCard As typedDataCard.textualEditCard:
+        SCHEDULE_LTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SCHEDULE"
             Default: =ThisItem.SCHEDULE
@@ -644,7 +644,7 @@
                 Y: =DataCardKey10.Y
                 ZIndex: =4
 
-        TEAM_DataCard As typedDataCard.textualEditCard:
+        TEAM_LTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
             Default: =ThisItem.TEAM
