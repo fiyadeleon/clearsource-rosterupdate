@@ -570,10 +570,10 @@
                 Office365Outlook.SendEmailV2(
                    "sophia.deleon@clearsourcebpo.com",
                    Concatenate("[LATERAL TRANSFER] ", txtLTEmployeeId, ": ", txtLTFirstName, " ", txtLTLastName, "."),
-                   Concatenate("Hi Team,", "<br>", "Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, "<br>",
+                   Concatenate("Hi Team,", "<br>", "<br>", "Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, "<br>", "<br>",
                         "Employee ID: ", txtLTEmployeeId.Text, "<br>", 
                         "Employee Name: ", txtLTFirstName, " ", txtLTLastName, "<br>",
-                        "Site: ", txtLTFirstName, " ", txtLTLastName, "<br>",
+                        "Site: ", txtLTSite, "<br>",
                         "New Business Unit: ", txtLTBusinessUnit, "<br>",
                         "New Program/Client: ", txtLTClient, "<br>",
                         "New Position: ", txtLTPosition, "<br>",
