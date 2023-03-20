@@ -287,6 +287,7 @@
             Items: =Distinct(CurrentRoster,'BUSINESS UNIT')
             SearchFields: =["BUSINESS UNIT"]
             SearchItems: =[]
+            SelectMultiple: =false
             Width: =394
             X: =321
             Y: =472
@@ -317,6 +318,7 @@
             Items: =Distinct(CurrentRoster, CLIENT)
             SearchFields: =["CLIENT"]
             SearchItems: =[]
+            SelectMultiple: =false
             Width: =394
             X: =321
             Y: =532
@@ -346,6 +348,7 @@
             Items: =Distinct(CurrentRoster, POSITION)
             SearchFields: =["Value"]
             SearchItems: =Search(Distinct(CurrentRoster, POSITION),cbLTPosition.SearchText,"Value")
+            SelectMultiple: =false
             Width: =394
             X: =321
             Y: =592
@@ -375,6 +378,7 @@
             Items: =Distinct(CurrentRoster, LOB)
             SearchFields: =["Value"]
             SearchItems: =Search(Distinct(CurrentRoster, LOB),cbLTLOB.SearchText,"Value")
+            SelectMultiple: =false
             Width: =394
             X: =321
             Y: =652
@@ -404,6 +408,7 @@
             Items: =Distinct(CurrentRoster, 'SUB-UNIT')
             SearchFields: =["Value"]
             SearchItems: =Search(Distinct(CurrentRoster, 'SUB-UNIT'),cbLTSubUnit.SearchText,"Value")
+            SelectMultiple: =false
             Width: =394
             X: =321
             Y: =712
@@ -433,6 +438,7 @@
             Items: =Distinct(CurrentRoster, BILLABILITY)
             SearchFields: =["Value"]
             SearchItems: =Search(Distinct(CurrentRoster, BILLABILITY),cbLTBillability.SearchText,"Value")
+            SelectMultiple: =false
             Width: =394
             X: =321
             Y: =772
@@ -462,6 +468,7 @@
             Items: =Distinct(CurrentRoster, TEAM)
             SearchFields: =["Value"]
             SearchItems: =Search(Distinct(CurrentRoster, TEAM),cbLTSupervisor.SearchText,"Value")
+            SelectMultiple: =false
             Width: =394
             X: =321
             Y: =893
