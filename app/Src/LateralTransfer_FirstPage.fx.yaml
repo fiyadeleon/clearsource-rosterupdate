@@ -352,7 +352,7 @@
 
             cbLTPosition As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'POSITION')
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),POSITION)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
                 Items: =Distinct(CurrentRoster, POSITION)
@@ -392,9 +392,9 @@
 
             cbLTClient As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'CLIENT')
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),CLIENT)
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, 'CLIENT')
+                Items: =Distinct(CurrentRoster, CLIENT)
                 SearchFields: =["Value"]
                 SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbLTClient.SearchText,"Value")
                 Width: =401.4
@@ -431,7 +431,7 @@
 
             cbLTLOB As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'LOB')
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),LOB)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
                 Items: =Distinct(CurrentRoster, LOB)
