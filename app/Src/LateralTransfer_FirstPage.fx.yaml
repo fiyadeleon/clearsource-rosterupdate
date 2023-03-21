@@ -249,20 +249,21 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (cbLTBusinessUnit.Height / 2) - (Self.Height / 2)
+                Y: =5
                 ZIndex: =1
 
-            cbLTBusinessUnit As dropdown:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+            cbLTBusinessUnit As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'BUSINESS UNIT')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey23.X + DataCardKey23.Width
-                Y: =10
-                ZIndex: =2
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =3
 
         LOB_LTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
@@ -291,18 +292,6 @@
                 Y: =10 + (cbLTLOB.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            cbLTLOB As dropdown:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Items: =Distinct(CurrentRoster, LOB)
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey25.X + DataCardKey25.Width
-                Y: =10
-                ZIndex: =2
-
         POSITION_LTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "POSITION")
             BorderStyle: =BorderStyle.Solid
@@ -329,18 +318,6 @@
                 X: =30
                 Y: =10 + (cbLTPosition.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
-
-            cbLTPosition As dropdown:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Items: =Filter(Distinct(CurrentRoster, POSITION), Value = cbLTSearch.Selected.USER)
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey26.X + DataCardKey26.Width
-                Y: =10
-                ZIndex: =2
 
         "'SUB-UNIT_LTDataCard' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "SUB-UNIT")
@@ -369,18 +346,6 @@
                 Y: =10 + (cbLTSubUnit.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            cbLTSubUnit As dropdown:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey27.X + DataCardKey27.Width
-                Y: =10
-                ZIndex: =2
-
         BILLABILITY_LTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
             BorderStyle: =BorderStyle.Solid
@@ -407,18 +372,6 @@
                 X: =30
                 Y: =10 + (cbLTBillability.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
-
-            cbLTBillability As dropdown:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Items: =Distinct(CurrentRoster, BILLABILITY)
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey28.X + DataCardKey28.Width
-                Y: =10
-                ZIndex: =2
 
         SCHEDULE_LTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
@@ -447,24 +400,6 @@
                 Y: =10 + (txtLTSchedule.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTSchedule As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
-                DelayOutput: =true
-                DisplayMode: =Parent.DisplayMode
-                HintText: ="e.g., 10PM - 7AM PHT"
-                MaxLength: =Parent.MaxLength
-                PaddingLeft: =5
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey19.X + DataCardKey19.Width
-                Y: =10
-                ZIndex: =2
-
         TEAM_LTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "TEAM")
             BorderStyle: =BorderStyle.Solid
@@ -491,18 +426,6 @@
                 X: =30
                 Y: =10 + (cbLTSupervisor.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
-
-            cbLTSupervisor As dropdown:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Items: =Distinct(CurrentRoster, TEAM)
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey29.X + DataCardKey29.Width
-                Y: =10
-                ZIndex: =2
 
     "'LT NEW EMPLOYEE DETAILS' As label":
         Color: =RGBA(0, 18, 107, 1)
