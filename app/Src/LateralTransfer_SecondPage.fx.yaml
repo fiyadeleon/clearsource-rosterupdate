@@ -101,7 +101,7 @@
 
         Label1_13 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Text: =
+            Text: =cbLTSearch.Selected.USER
             X: =369
             Y: =130
             ZIndex: =20
@@ -126,7 +126,7 @@
 
         Label1_25 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Text: =txtLTEmployeeId
+            Text: =cbLTSupervisor.Selected.Value
             X: =369
             Y: =730
             ZIndex: =32
