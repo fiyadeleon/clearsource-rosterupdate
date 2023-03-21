@@ -73,9 +73,9 @@
             cbNHBusinessUnit As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
+                Items: =Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, 'BUSINESS UNIT'),cbNHBusinessUnit.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'),!IsBlank(Value)),cbNHBusinessUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -112,9 +112,9 @@
             cbNHSubUnit As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                Items: =Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, 'SUB-UNIT'),cbNHSubUnit.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value)),cbNHSubUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -151,9 +151,9 @@
             cbNHClient As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, CLIENT)
+                Items: =Filter(Distinct(CurrentRoster, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbNHClient.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(CurrentRoster, CLIENT), !IsBlank(Value)),cbNHClient.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -191,11 +191,9 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
                 FontWeight: =FontWeight.Lighter
-                Items: =Distinct(CurrentRoster, LOB)
+                Items: =Filter(Distinct(CurrentRoster, LOB), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: |-
-                    =Search(Distinct(CurrentRoster, LOB
-                    ),cbNHLOB.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(CurrentRoster, LOB), !IsBlank(Value)),cbNHLOB.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
