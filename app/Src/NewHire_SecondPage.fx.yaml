@@ -18,7 +18,21 @@
 
     btnNHNext2 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =
+        OnSelect: |-
+            =If(    
+                IsBlank(txtNHOmnia) ||
+                IsBlank(txtNHEmployeeId) ||
+                IsBlank(cbNHPosition) ||
+                IsBlank(dateNHHireDate) ||
+                IsBlank(dateNHRegDate) ||
+                IsBlank(cbNHStatus) ||
+                IsBlank(cbNHEmpStatus) ||
+                IsBlank(cbNHSupervisor) ||
+                IsBlank(txtNHInternalEmail) ||
+                IsBlank(cbNHRole),
+                Notify("Please complete all fields!",NotificationType.Error),
+                Navigate(NewHire_ThirdPage,ScreenTransition.None)
+            )
         Text: ="Next"
         X: =562
         Y: =836

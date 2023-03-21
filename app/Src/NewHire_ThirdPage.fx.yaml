@@ -18,7 +18,15 @@
 
     btnNHNext3 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =
+        OnSelect: |-
+            =If(    
+                IsBlank(cbNHBusinessUnit) ||
+                IsBlank(cbNHSubUnit) ||
+                IsBlank(cbNHClient) ||
+                IsBlank(cbNHLOB),
+                Notify("Please complete all fields!",NotificationType.Error),
+                Navigate(NewHire_FourthPage,ScreenTransition.None)
+            )
         Text: ="Review"
         X: =561
         Y: =768

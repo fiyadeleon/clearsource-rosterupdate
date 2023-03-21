@@ -18,7 +18,16 @@
 
     btnNHNext As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =
+        OnSelect: |-
+            =If(    
+                IsBlank(txtNHFirstName) ||
+                IsBlank(txtNHMiddleName) ||
+                IsBlank(txtNHLastName) ||
+                IsBlank(cbNHCountry) ||
+                IsBlank(cbNHSite),
+                Notify("Please complete all fields!",NotificationType.Error),
+                Navigate(NewHire_SecondPage,ScreenTransition.None)
+            )
         Text: ="Next"
         X: =557
         Y: =778
