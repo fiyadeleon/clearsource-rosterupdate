@@ -177,15 +177,15 @@
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
             Text: ="NEW SUB-UNIT"
-            X: =85
-            Y: =643
+            X: =87
+            Y: =493
             ZIndex: =16
 
         Label1_22 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSubUnit.Selected.Value
-            X: =369
-            Y: =643
+            X: =371
+            Y: =493
             ZIndex: =29
 
     grpLTRPosition As group:
@@ -200,7 +200,7 @@
             FontWeight: =FontWeight.Bold
             Text: ="NEW POSITION"
             X: =85
-            Y: =593
+            Y: =543
             ZIndex: =15
 
         Label1_21 As label:
@@ -208,7 +208,7 @@
             Text: =cbLTPosition.Selected.Value
             Width: =300
             X: =369
-            Y: =593
+            Y: =543
             ZIndex: =28
 
     grpLTRLOB As group:
@@ -223,7 +223,7 @@
             FontWeight: =FontWeight.Bold
             Text: ="NEW LOB"
             X: =85
-            Y: =543
+            Y: =643
             ZIndex: =14
 
         Label1_20 As label:
@@ -231,7 +231,7 @@
             Text: =cbLTLOB.Selected.Value
             Width: =300
             X: =369
-            Y: =543
+            Y: =643
             ZIndex: =27
 
     grpLTRClient As group:
@@ -246,14 +246,14 @@
             FontWeight: =FontWeight.Bold
             Text: ="NEW CLIENT"
             X: =85
-            Y: =493
+            Y: =593
             ZIndex: =13
 
         Label1_19 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTClient.Selected.Value
             X: =369
-            Y: =493
+            Y: =593
             ZIndex: =26
 
     grpLTRBusinessUnit As group:
