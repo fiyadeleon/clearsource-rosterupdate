@@ -35,6 +35,7 @@
 
     formNHSecond As form:
         DataSource: =CurrentRoster
+        DefaultMode: =FormMode.New
         Height: =513
         NumberOfColumns: =1
         Width: =729
@@ -62,7 +63,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="OMNIA ID"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -74,6 +75,7 @@
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                HintText: ="e.g., jdoe"
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -118,6 +120,7 @@
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                HintText: ="e.g., CSPH12345"
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -159,8 +162,11 @@
 
             cbNHPosition As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHPosition.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, POSITION)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, POSITION),cbNHPosition.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =401.4
                 X: =297
                 Y: =10
@@ -279,8 +285,11 @@
 
             cbNHStatus As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHStatus.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, STATUS)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, STATUS),cbNHStatus.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =401.4
                 X: =297
                 Y: =10
@@ -315,8 +324,11 @@
 
             cbNHEmpStatus As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHEmpStatus.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, 'EMPLOYMENT STATUS')
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, 'EMPLOYMENT STATUS'),cbNHEmpStatus.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =401.4
                 X: =297
                 Y: =10
@@ -342,7 +354,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="SUPERVISOR"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -351,8 +363,11 @@
 
             cbNHSupervisor As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHSupervisor.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, TEAM)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, TEAM),cbNHSupervisor.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =401.4
                 X: =297
                 Y: =10
@@ -390,6 +405,7 @@
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                HintText: ="e.g., jane.doe@clearsourcebpo.com"
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -431,8 +447,11 @@
 
             cbNHRole As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHRole.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, ROLE)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, ROLE),cbNHRole.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =401.4
                 X: =297
                 Y: =10

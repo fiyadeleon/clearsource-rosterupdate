@@ -47,6 +47,7 @@
 
     formNHFirst As form:
         DataSource: =CurrentRoster
+        DefaultMode: =FormMode.New
         Height: =280
         NumberOfColumns: =1
         Width: =729
@@ -218,10 +219,11 @@
 
             cbNHCountry As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DisplayFields: =["Value"]
+                DisplayFields: =["COUNTRY"]
+                IsSearchable: =false
                 Items: =Distinct(CurrentRoster, COUNTRY)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, COUNTRY),cbNHCountry.SearchText,"Value")
+                SearchFields: =["COUNTRY"]
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =399.6
                 X: =296
