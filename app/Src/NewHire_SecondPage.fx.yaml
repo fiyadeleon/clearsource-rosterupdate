@@ -23,11 +23,11 @@
                 IsBlank(cbNHBusinessUnit_1) ||
                 IsBlank(cbLTClient_1) ||
                 IsBlank(cbLTPosition_1) ||
-                IsBlank(cbLTLOB_1) ||
+                IsBlank(cbLTCAMPGN_1) ||
                 IsBlank(cbLTSubUnit_1) ||
-                IsBlank(cbLTBillability_1) ||
-                IsBlank(txtLTSchedule_1) ||
-                IsBlank(cbLTSupervisor_1),
+                IsBlank(cbLTSubLOB_1) ||
+                IsBlank(txtLTLOB_1) ||
+                IsBlank(cbLTBillability_1),
                 Notify("Please complete all fields!",NotificationType.Error),
                 Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
             )
