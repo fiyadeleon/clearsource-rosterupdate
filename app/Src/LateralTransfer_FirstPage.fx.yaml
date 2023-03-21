@@ -1,6 +1,6 @@
 "LateralTransfer_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     Height: |
-        =1000
+        =1050
     OnVisible: =
     Width: =794
 
@@ -74,6 +74,7 @@
 
             txtLTEmployeeId As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 18, 107, 1)
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
                 PaddingLeft: =0
@@ -82,7 +83,7 @@
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey9.X + DataCardKey9.Width
-                Y: =15
+                Y: =19
                 ZIndex: =2
 
         "'FIRST NAME_LTDataCard' As typedDataCard.textualViewCard":
@@ -112,6 +113,7 @@
 
             txtLTFirstName As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 18, 107, 1)
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
                 PaddingLeft: =0
@@ -120,7 +122,7 @@
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =300
-                Y: =20
+                Y: =19
                 ZIndex: =2
 
         "'LAST NAME_LTDataCard' As typedDataCard.textualViewCard":
@@ -150,6 +152,7 @@
 
             txtLTLastName As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 18, 107, 1)
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
                 PaddingLeft: =0
@@ -188,6 +191,7 @@
 
             txtLTSite As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 18, 107, 1)
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
                 PaddingLeft: =0
@@ -196,7 +200,7 @@
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =300
-                Y: =22
+                Y: =17
                 ZIndex: =2
 
     btnLTReview As button:
@@ -204,7 +208,7 @@
         OnSelect: =Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
         Text: ="Review"
         X: =562
-        Y: =897
+        Y: =935
         ZIndex: =11
 
     btnLTBack As button:
@@ -213,7 +217,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =373
-        Y: =897
+        Y: =935
         ZIndex: =12
 
     formLTDynamic As form:
@@ -266,6 +270,45 @@
                 Y: =5
                 ZIndex: =3
 
+        CLIENT_LTDataCard As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "CLIENT")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CLIENT"
+            Default: =ThisItem.CLIENT
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"CLIENT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey4 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW CLIENT"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =29
+                Y: =6
+                ZIndex: =1
+
+            cbLTClient As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'CLIENT')
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, 'CLIENT')
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbLTClient.SearchText,"Value")
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
         LOB_LTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
             BorderStyle: =BorderStyle.Solid
@@ -279,7 +322,7 @@
             Update: =
             Width: =729
             X: =0
-            Y: =1
+            Y: =2
             ZIndex: =1
 
             DataCardKey25 As label:
@@ -319,7 +362,7 @@
             Update: =
             Width: =729
             X: =0
-            Y: =2
+            Y: =3
             ZIndex: =1
 
             DataCardKey26 As label:
@@ -359,7 +402,7 @@
             Update: =
             Width: =729
             X: =0
-            Y: =3
+            Y: =4
             ZIndex: =1
 
             DataCardKey27 As label:
@@ -399,7 +442,7 @@
             Update: =
             Width: =729
             X: =0
-            Y: =4
+            Y: =5
             ZIndex: =1
 
             DataCardKey28 As label:
@@ -439,7 +482,7 @@
             Update: =
             Width: =729
             X: =0
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             DataCardKey19 As label:
