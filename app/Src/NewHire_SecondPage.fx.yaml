@@ -1,0 +1,47 @@
+"NewHire_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    BackgroundImage: ='MicrosoftTeams-image (2)'
+    Height: =1050
+    ImagePosition: =ImagePosition.Stretch
+    OnVisible: =
+    Width: =794
+
+    "'New Hire Form_1' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="NEW HIRE FORM"
+        Width: =453
+        X: =42
+        Y: =40
+        ZIndex: =4
+
+    btnNHNext2 As button:
+        Fill: =RGBA(0, 18, 107, 1)
+        OnSelect: |-
+            =If(    
+                IsBlank(cbNHBusinessUnit_1) ||
+                IsBlank(cbLTClient_1) ||
+                IsBlank(cbLTPosition_1) ||
+                IsBlank(cbLTLOB_1) ||
+                IsBlank(cbLTSubUnit_1) ||
+                IsBlank(cbLTBillability_1) ||
+                IsBlank(txtLTSchedule_1) ||
+                IsBlank(cbLTSupervisor_1),
+                Notify("Please complete all fields!",NotificationType.Error),
+                Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
+            )
+        Text: ="Review"
+        X: =562
+        Y: =881
+        ZIndex: =11
+
+    btnNHBack2 As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+        Text: ="Back"
+        X: =373
+        Y: =881
+        ZIndex: =12
+
