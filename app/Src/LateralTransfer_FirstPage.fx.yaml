@@ -217,8 +217,7 @@
                 IsBlank(txtLTSchedule) ||
                 IsBlank(cbLTSupervisor),
                 Notify("Please complete all fields!",NotificationType.Error),
-                (Notify("Successfully submitted the information.",NotificationType.Success) &&
-                Navigate(LateralTransfer_SecondPage,ScreenTransition.None))
+                Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
             )
         Text: ="Review"
         X: =562
