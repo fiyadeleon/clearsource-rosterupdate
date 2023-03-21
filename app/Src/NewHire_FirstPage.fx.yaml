@@ -18,19 +18,7 @@
 
     btnNHNext As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: |-
-            =If(    
-                IsBlank(cbNHBusinessUnit_1) ||
-                IsBlank(cbLTClient_1) ||
-                IsBlank(cbLTPosition_1) ||
-                IsBlank(cbLTLOB_1) ||
-                IsBlank(cbLTSubUnit_1) ||
-                IsBlank(cbLTBillability_1) ||
-                IsBlank(txtLTSchedule_1) ||
-                IsBlank(cbLTSupervisor_1),
-                Notify("Please complete all fields!",NotificationType.Error),
-                Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
-            )
+        OnSelect: =
         Text: ="Next"
         X: =557
         Y: =778
@@ -230,8 +218,10 @@
 
             cbNHCountry As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHCountry.SearchText,"Value1")
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, COUNTRY)
+                SearchItems: =[]
+                SelectMultiple: =false
                 Width: =399.6
                 X: =296
                 Y: =10

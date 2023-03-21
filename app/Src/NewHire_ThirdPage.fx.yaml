@@ -18,118 +18,183 @@
 
     btnNHNext3 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: |-
-            =If(    
-                IsBlank(cbNHBusinessUnit_1) ||
-                IsBlank(cbLTClient_1) ||
-                IsBlank(cbLTPosition_1) ||
-                IsBlank(cbLTLOB_1) ||
-                IsBlank(cbLTSubUnit_1) ||
-                IsBlank(cbLTBillability_1) ||
-                IsBlank(txtLTSchedule_1) ||
-                IsBlank(cbLTSupervisor_1),
-                Notify("Please complete all fields!",NotificationType.Error),
-                Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
-            )
+        OnSelect: =
         Text: ="Review"
-        X: =562
-        Y: =881
+        X: =561
+        Y: =768
         ZIndex: =11
 
     btnNHBack3 As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+        OnSelect: =Navigate(NewHire_SecondPage,ScreenTransition.Cover)
         Text: ="Back"
-        X: =373
-        Y: =881
+        X: =372
+        Y: =768
         ZIndex: =12
 
-    grpNHBusinessUnit As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =15
+    formNHThird As form:
+        DataSource: =CurrentRoster
+        Height: =215
+        NumberOfColumns: =1
+        Width: =729
+        X: =25
+        Y: =426
+        ZIndex: =13
 
-        Label1_46 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="BUSINESS UNIT"
-            X: =85
-            Y: =130
-            ZIndex: =13
+        "'BUSINESS UNIT_NHDataCard' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="BUSINESS UNIT"
+            Default: =ThisItem.'BUSINESS UNIT'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =0
+            ZIndex: =1
 
-        Label1_47 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =130
-            ZIndex: =14
+            DataCardKey33 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =15
+                ZIndex: =1
 
-    grpNHSubUnit As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =18
+            cbNHBusinessUnit As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                Items: =ComboBoxSample
+                SearchItems: =Search(ComboBoxSample,cbNHBusinessUnit.SearchText,"Value1")
+                Width: =401.4
+                X: =297
+                Y: =10
+                ZIndex: =2
 
-        Label1_48 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="SUB-UNIT"
-            X: =85
-            Y: =180
-            ZIndex: =16
+        "'SUB-UNIT_NHDataCard' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SUB-UNIT"
+            Default: =ThisItem.'SUB-UNIT'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SUB-UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "SUB-UNIT")
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =1
+            ZIndex: =1
 
-        Label1_49 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =180
-            ZIndex: =17
+            DataCardKey30 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =15
+                ZIndex: =1
 
-    grpNHClient As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =21
+            cbNHSubUnit As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                Items: =ComboBoxSample
+                SearchItems: =Search(ComboBoxSample,cbNHSubUnit.SearchText,"Value1")
+                Width: =401.4
+                X: =297
+                Y: =10
+                ZIndex: =2
 
-        Label1_54 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="CLIENT"
-            X: =85
-            Y: =230
-            ZIndex: =19
+        CLIENT_NHDataCard As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CLIENT"
+            Default: =ThisItem.CLIENT
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"CLIENT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "CLIENT")
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =2
+            ZIndex: =1
 
-        Label1_55 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =230
-            ZIndex: =20
+            DataCardKey31 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =15
+                ZIndex: =1
 
-    grpNHLOB As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =24
+            cbNHClient As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                Items: =ComboBoxSample
+                SearchItems: =Search(ComboBoxSample,cbNHClient.SearchText,"Value1")
+                Width: =401.4
+                X: =297
+                Y: =10
+                ZIndex: =2
 
-        Label1_56 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="LOB"
-            X: =85
-            Y: =280
-            ZIndex: =22
+        LOB_NHDataCard As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "LOB")
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =3
+            ZIndex: =1
 
-        Label1_57 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =280
-            ZIndex: =23
+            DataCardKey32 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =15
+                ZIndex: =1
+
+            cbNHLOB As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                Items: =ComboBoxSample
+                SearchItems: =Search(ComboBoxSample,cbNHLOB.SearchText,"Value1")
+                Width: =401.4
+                X: =297
+                Y: =10
+                ZIndex: =2
+
+    "'EMPLOYEE''S PERSONAL INFORMATION_2' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =17
+        Text: ="EMPLOYEE'S DEPARTMENT"
+        Underline: =true
+        Width: =309
+        X: =235
+        Y: =233
+        ZIndex: =14
 
