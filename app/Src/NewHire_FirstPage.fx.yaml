@@ -218,9 +218,10 @@
 
             cbNHCountry As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                IsSearchable: =false
+                DisplayFields: =["Value"]
                 Items: =Distinct(CurrentRoster, COUNTRY)
-                SearchItems: =[]
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, COUNTRY),cbNHCountry.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =399.6
                 X: =296
@@ -256,8 +257,11 @@
 
             cbNHSite As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHSite.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, SITE)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, SITE),cbNHSite.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =399.6
                 X: =296
                 Y: =10
