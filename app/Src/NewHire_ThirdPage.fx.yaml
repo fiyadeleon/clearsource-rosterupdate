@@ -75,7 +75,7 @@
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'),!IsBlank(Value)),cbNHBusinessUnit.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'), !IsBlank(Value)),cbNHBusinessUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
