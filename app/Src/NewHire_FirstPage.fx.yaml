@@ -10,7 +10,7 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
-        Text: ="NEW HIRE FORM"
+        Text: ="NEW HIRE FORM Part 1"
         Width: =453
         X: =42
         Y: =40
@@ -32,8 +32,8 @@
                 Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
             )
         Text: ="Review"
-        X: =562
-        Y: =881
+        X: =529
+        Y: =883
         ZIndex: =11
 
     btnNHBack As button:
@@ -41,58 +41,9 @@
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
-        X: =373
-        Y: =881
+        X: =340
+        Y: =883
         ZIndex: =12
-
-    formNH As form:
-        DataSource: =Sort(CurrentRoster, USER, SortOrder.Ascending)
-        Height: =62
-        NumberOfColumns: =1
-        Width: =741
-        X: =53
-        Y: =988
-        ZIndex: =13
-
-        "'REGULARIZATION DATE_NHDataCard' As typedDataCard.dateTimeEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="REGULARIZATION DATE"
-            Default: =ThisItem.'REGULARIZATION DATE'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"REGULARIZATION DATE")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =
-            Width: =741
-            X: =0
-            Y: =0
-            ZIndex: =1
-
-            DataCardKey12 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =14
-                ZIndex: =1
-
-            DateValue1 As datepicker:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DefaultDate: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                EndYear: =Year(Today())+100
-                IsEditable: =true
-                PaddingBottom: =0
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                StartYear: =1899
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =315
-                Y: =10
-                ZIndex: =2
 
     grpNHFirstName As group:
         Height: =5
@@ -106,14 +57,14 @@
             FontWeight: =FontWeight.Bold
             Text: ="FIRST NAME"
             X: =85
-            Y: =140
+            Y: =412
             ZIndex: =16
 
         txtNHFirstName As text:
             Default: =""
-            HintText: ="Jane"
+            HintText: ="e.g., Jane"
             X: =369
-            Y: =140
+            Y: =412
             ZIndex: =54
 
     grpNHSite As group:
@@ -128,13 +79,14 @@
             FontWeight: =FontWeight.Bold
             Text: ="SITE"
             X: =85
-            Y: =340
+            Y: =612
             ZIndex: =48
 
         txtNHSite As text:
-            Default: ="Text input"
+            Default: =""
+            HintText: ="e.g., US"
             X: =369
-            Y: =340
+            Y: =612
             ZIndex: =55
 
     grpNHCountry As group:
@@ -149,13 +101,14 @@
             FontWeight: =FontWeight.Bold
             Text: ="COUNTRY"
             X: =85
-            Y: =290
+            Y: =562
             ZIndex: =46
 
         txtNHCountry As text:
-            Default: ="Text input"
+            Default: =""
+            HintText: ="e.g., United States"
             X: =369
-            Y: =290
+            Y: =562
             ZIndex: =56
 
     grpNHMiddleName As group:
@@ -170,15 +123,27 @@
             FontWeight: =FontWeight.Bold
             Text: ="MIDDLE NAME"
             X: =85
-            Y: =190
+            Y: =462
             ZIndex: =18
 
         txtNHMiddleName As text:
             Default: =""
             HintText: ="Optional"
             X: =369
-            Y: =190
+            Y: =462
             ZIndex: =57
+
+    "'EMPLOYEE''S PERSONAL INFORMATION' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =17
+        Text: ="EMPLOYEE'S PERSONAL INFORMATION"
+        Underline: =true
+        Width: =449
+        X: =162
+        Y: =130
+        ZIndex: =59
 
     grpNHLastName As group:
         Height: =5
@@ -192,13 +157,13 @@
             FontWeight: =FontWeight.Bold
             Text: ="LAST NAME"
             X: =85
-            Y: =240
+            Y: =512
             ZIndex: =20
 
         txtNHLastName As text:
             Default: =""
-            HintText: ="Doe"
+            HintText: ="e.g., Doe"
             X: =369
-            Y: =240
+            Y: =512
             ZIndex: =58
 
