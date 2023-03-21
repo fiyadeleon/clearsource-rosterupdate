@@ -106,14 +106,14 @@
             FontWeight: =FontWeight.Bold
             Text: ="MIDDLE NAME"
             X: =85
-            Y: =253
+            Y: =190
             ZIndex: =18
 
         Label1_31 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =253
+            Y: =190
             ZIndex: =19
 
     grpNHLastName As group:
@@ -128,260 +128,15 @@
             FontWeight: =FontWeight.Bold
             Text: ="LAST NAME"
             X: =85
-            Y: =293
+            Y: =240
             ZIndex: =20
 
         Label1_33 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =293
+            Y: =240
             ZIndex: =21
-
-    grpNHHireDate As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =26
-
-        Label1_36 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="HIRE DATE"
-            X: =85
-            Y: =333
-            ZIndex: =24
-
-        Label1_37 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =333
-            ZIndex: =25
-
-    grpNHRegDate As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =28
-
-        Label1_38 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="REGURALIZATION DATE"
-            Width: =250
-            X: =85
-            Y: =363
-            ZIndex: =26
-
-        Label1_39 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =363
-            ZIndex: =27
-
-    grpNHStatus As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =30
-
-        Label1_40 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="STATUS"
-            X: =85
-            Y: =403
-            ZIndex: =28
-
-        Label1_41 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =403
-            ZIndex: =29
-
-    grpNHBusinessUnit As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =32
-
-        Label1_42 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="BUSINESS UNIT"
-            X: =85
-            Y: =443
-            ZIndex: =30
-
-        Label1_43 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =443
-            ZIndex: =31
-
-    grpNHSubUnit As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =34
-
-        Label1_44 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="SUB-UNIT"
-            X: =85
-            Y: =483
-            ZIndex: =32
-
-        Label1_45 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =483
-            ZIndex: =33
-
-    grpNHPosition As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =36
-
-        Label1_46 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="POSITION"
-            X: =85
-            Y: =523
-            ZIndex: =34
-
-        Label1_47 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =523
-            ZIndex: =35
-
-    grpNHEmpStatus As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =38
-
-        Label1_48 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="EMPLOYMENT STATUS"
-            Width: =250
-            X: =85
-            Y: =563
-            ZIndex: =36
-
-        Label1_49 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =563
-            ZIndex: =37
-
-    grpNHClient As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =40
-
-        Label1_50 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="CLIENT"
-            X: =85
-            Y: =603
-            ZIndex: =38
-
-        Label1_51 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =603
-            ZIndex: =39
-
-    grpNHLOB As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =42
-
-        Label1_52 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="LOB"
-            X: =85
-            Y: =633
-            ZIndex: =40
-
-        Label1_53 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =633
-            ZIndex: =41
-
-    grpNHSupervisor As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =44
-
-        Label1_54 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="SUPERVISOR"
-            X: =85
-            Y: =673
-            ZIndex: =42
-
-        Label1_55 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =673
-            ZIndex: =43
-
-    grpNHInternalEmail As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =46
-
-        Label1_56 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="INTERNAL EMAIL"
-            Width: =200
-            X: =85
-            Y: =713
-            ZIndex: =44
-
-        Label1_57 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =713
-            ZIndex: =45
 
     grpNHCountry As group:
         Height: =5
@@ -395,14 +150,14 @@
             FontWeight: =FontWeight.Bold
             Text: ="COUNTRY"
             X: =85
-            Y: =753
+            Y: =290
             ZIndex: =46
 
         Label1_59 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =753
+            Y: =290
             ZIndex: =47
 
     grpNHSite As group:
@@ -417,79 +172,15 @@
             FontWeight: =FontWeight.Bold
             Text: ="SITE"
             X: =85
-            Y: =793
+            Y: =340
             ZIndex: =48
 
         Label1_61 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =793
+            Y: =340
             ZIndex: =49
-
-    grpNHRole As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =52
-
-        Label1_62 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="ROLE"
-            X: =85
-            Y: =833
-            ZIndex: =50
-
-        Label1_63 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =833
-            ZIndex: =51
-
-    grpNHEmployeeId As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =53
-
-        Label1_26 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="EMPLOYEE ID"
-            X: =85
-            Y: =113
-            ZIndex: =14
-
-        txtNHEmployeeId As text:
-            Default: ="Text input"
-            X: =369
-            Y: =113
-            ZIndex: =52
-
-    grpNHOmnia As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =54
-
-        Label1_34 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
-            X: =85
-            Y: =163
-            ZIndex: =22
-
-        txtNHOmnia As text:
-            Default: ="Text input"
-            X: =369
-            Y: =163
-            ZIndex: =53
 
     grpNHFirstName As group:
         Height: =5
@@ -503,12 +194,12 @@
             FontWeight: =FontWeight.Bold
             Text: ="FIRST NAME"
             X: =85
-            Y: =213
+            Y: =140
             ZIndex: =16
 
         txtNHFirstName As text:
             Default: ="Text input"
             X: =369
-            Y: =213
+            Y: =140
             ZIndex: =54
 

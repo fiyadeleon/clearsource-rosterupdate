@@ -45,3 +45,91 @@
         Y: =881
         ZIndex: =12
 
+    grpNHBusinessUnit As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =15
+
+        Label1_46 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="BUSINESS UNIT"
+            X: =85
+            Y: =130
+            ZIndex: =13
+
+        Label1_47 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Text: =cbLTSearch.Selected.USER
+            X: =369
+            Y: =130
+            ZIndex: =14
+
+    grpNHSubUnit As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        Label1_48 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="SUB-UNIT"
+            X: =85
+            Y: =180
+            ZIndex: =16
+
+        Label1_49 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Text: =cbLTSearch.Selected.USER
+            X: =369
+            Y: =180
+            ZIndex: =17
+
+    grpNHClient As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =21
+
+        Label1_54 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="CLIENT"
+            X: =85
+            Y: =230
+            ZIndex: =19
+
+        Label1_55 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Text: =cbLTSearch.Selected.USER
+            X: =369
+            Y: =230
+            ZIndex: =20
+
+    grpNHLOB As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =24
+
+        Label1_56 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="LOB"
+            X: =85
+            Y: =280
+            ZIndex: =22
+
+        Label1_57 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Text: =cbLTSearch.Selected.USER
+            X: =369
+            Y: =280
+            ZIndex: =23
+
