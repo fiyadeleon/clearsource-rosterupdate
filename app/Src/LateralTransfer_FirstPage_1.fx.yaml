@@ -246,10 +246,10 @@
         ComboBox2 As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'BUSINESS UNIT')
-            DisplayFields: =["BILLABILITY"]
+            DisplayFields: =["Value"]
             IsSearchable: =false
             Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
-            SearchFields: =["BILLABILITY"]
+            SearchFields: =["Value"]
             SearchItems: =[]
             Width: =401.4
             X: =321
