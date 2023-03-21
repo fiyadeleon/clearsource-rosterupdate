@@ -1,5 +1,6 @@
 "LateralTransfer_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
-    Height: =1050
+    Height: |
+        =1000
     OnVisible: =
     Width: =794
 
@@ -203,7 +204,7 @@
         OnSelect: =Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
         Text: ="Review"
         X: =562
-        Y: =950
+        Y: =897
         ZIndex: =11
 
     btnLTBack As button:
@@ -212,7 +213,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =373
-        Y: =950
+        Y: =897
         ZIndex: =12
 
     formLTDynamic As form:
@@ -289,8 +290,21 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (cbLTLOB.Height / 2) - (Self.Height / 2)
+                Y: =8
                 ZIndex: =1
+
+            cbLTLOB As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'LOB')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, LOB)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
 
         POSITION_LTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "POSITION")
@@ -316,8 +330,21 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (cbLTPosition.Height / 2) - (Self.Height / 2)
+                Y: =8
                 ZIndex: =1
+
+            cbLTPosition As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'POSITION')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, POSITION)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
 
         "'SUB-UNIT_LTDataCard' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "SUB-UNIT")
@@ -343,8 +370,21 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (cbLTSubUnit.Height / 2) - (Self.Height / 2)
+                Y: =8
                 ZIndex: =1
+
+            cbLTSubUnit As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
 
         BILLABILITY_LTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
@@ -373,6 +413,19 @@
                 Y: =10 + (cbLTBillability.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
+            cbLTBillability As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
         SCHEDULE_LTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SCHEDULE"
@@ -400,6 +453,13 @@
                 Y: =10 + (txtLTSchedule.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
+            txtLTSchedule As text:
+                Default: ="e.g., 10PM - 7AM PHT"
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
         TEAM_LTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "TEAM")
             BorderStyle: =BorderStyle.Solid
@@ -426,6 +486,19 @@
                 X: =30
                 Y: =10 + (cbLTSupervisor.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
+
+            cbLTSupervisor As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
 
     "'LT NEW EMPLOYEE DETAILS' As label":
         Color: =RGBA(0, 18, 107, 1)
