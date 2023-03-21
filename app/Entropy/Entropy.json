@@ -112,9 +112,7 @@
     "Label1_28": 9,
     "Label1_3": 98,
     "Label1_30": 11,
-    "Label1_31": 12,
     "Label1_32": 13,
-    "Label1_33": 14,
     "Label1_35": 223,
     "Label1_4": 100,
     "Label1_46": 225,
@@ -127,27 +125,17 @@
     "Label1_56": 234,
     "Label1_57": 235,
     "Label1_58": 37,
-    "Label1_59": 38,
     "Label1_6": 108,
     "Label1_60": 39,
-    "Label1_61": 40,
     "Label1_64": 195,
-    "Label1_65": 196,
     "Label1_66": 198,
-    "Label1_67": 199,
     "Label1_68": 201,
-    "Label1_69": 202,
     "Label1_7": 110,
     "Label1_70": 204,
-    "Label1_71": 205,
     "Label1_72": 207,
-    "Label1_73": 208,
     "Label1_74": 210,
-    "Label1_75": 211,
     "Label1_76": 213,
-    "Label1_77": 214,
     "Label1_78": 216,
-    "Label1_79": 217,
     "Label1_8": 106,
     "Label1_9": 104,
     "Last Name of Employee_1": 72,
@@ -189,16 +177,28 @@
     "txtLTOmnia": 147,
     "txtLTSchedule": 183,
     "txtLTSite": 161,
-    "txtNHEmployeeId_1": 219,
+    "txtNHCountry": 38,
+    "txtNHEmployeeId": 219,
+    "txtNHEmpStatus": 208,
     "txtNHFirstName": 10,
     "txtNHFirstName_1": 75,
+    "txtNHHireDate": 196,
+    "txtNHInternalEmail": 214,
+    "txtNHLastName": 14,
     "txtNHLastName_1": 73,
+    "txtNHMiddleName": 12,
     "txtNHMiddleName_1": 77,
-    "txtNHOmnia_1": 222
+    "txtNHOmnia": 222,
+    "txtNHPosition": 205,
+    "txtNHRegDate": 199,
+    "txtNHRole": 217,
+    "txtNHSite": 40,
+    "txtNHStatus": 202,
+    "txtNHSupervisor": 211
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "03/21/2023 21:21:20",
+  "HeaderLastSavedDateTimeUTC": "03/21/2023 21:25:54",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "a98f1ce0-65af-4442-ad24-7697c24f3724": "\"/providers/microsoft.powerapps/apis/shared_office365/connections/shared-office365-2d185264-ead6-415b-aa67-b2a33cc3fd35\"",
@@ -284,15 +284,15 @@
     },
     "grpNHCountry": {
       "Label1_58": 0,
-      "Label1_59": 1
+      "txtNHCountry": 1
     },
     "grpNHEmployeeId": {
       "Label1_27": 1,
-      "txtNHEmployeeId_1": 0
+      "txtNHEmployeeId": 0
     },
     "grpNHEmpStatus": {
       "Label1_72": 0,
-      "Label1_73": 1
+      "txtNHEmpStatus": 1
     },
     "grpNHFirstName": {
       "Label1_28": 1,
@@ -300,15 +300,15 @@
     },
     "grpNHHireDate": {
       "Label1_64": 0,
-      "Label1_65": 1
+      "txtNHHireDate": 1
     },
     "grpNHInternalEmail": {
       "Label1_76": 0,
-      "Label1_77": 1
+      "txtNHInternalEmail": 1
     },
     "grpNHLastName": {
       "Label1_32": 0,
-      "Label1_33": 1
+      "txtNHLastName": 1
     },
     "grpNHLOB": {
       "Label1_56": 0,
@@ -316,31 +316,31 @@
     },
     "grpNHMiddleName": {
       "Label1_30": 0,
-      "Label1_31": 1
+      "txtNHMiddleName": 1
     },
     "grpNHOmnia": {
       "Label1_35": 1,
-      "txtNHOmnia_1": 0
+      "txtNHOmnia": 0
     },
     "grpNHPosition": {
       "Label1_70": 0,
-      "Label1_71": 1
+      "txtNHPosition": 1
     },
     "grpNHRegDate": {
       "Label1_66": 0,
-      "Label1_67": 1
+      "txtNHRegDate": 1
     },
     "grpNHRole": {
       "Label1_78": 0,
-      "Label1_79": 1
+      "txtNHRole": 1
     },
     "grpNHSite": {
       "Label1_60": 0,
-      "Label1_61": 1
+      "txtNHSite": 1
     },
     "grpNHStatus": {
       "Label1_68": 0,
-      "Label1_69": 1
+      "txtNHStatus": 1
     },
     "grpNHSubUnit": {
       "Label1_48": 0,
@@ -348,7 +348,7 @@
     },
     "grpNHSupervisor": {
       "Label1_74": 0,
-      "Label1_75": 1
+      "txtNHSupervisor": 1
     }
   },
   "OrderPcfTemplate": {},
@@ -474,9 +474,7 @@
     "Label1_28": {},
     "Label1_3": {},
     "Label1_30": {},
-    "Label1_31": {},
     "Label1_32": {},
-    "Label1_33": {},
     "Label1_35": {},
     "Label1_4": {},
     "Label1_46": {},
@@ -489,27 +487,17 @@
     "Label1_56": {},
     "Label1_57": {},
     "Label1_58": {},
-    "Label1_59": {},
     "Label1_6": {},
     "Label1_60": {},
-    "Label1_61": {},
     "Label1_64": {},
-    "Label1_65": {},
     "Label1_66": {},
-    "Label1_67": {},
     "Label1_68": {},
-    "Label1_69": {},
     "Label1_7": {},
     "Label1_70": {},
-    "Label1_71": {},
     "Label1_72": {},
-    "Label1_73": {},
     "Label1_74": {},
-    "Label1_75": {},
     "Label1_76": {},
-    "Label1_77": {},
     "Label1_78": {},
-    "Label1_79": {},
     "Label1_8": {},
     "Label1_9": {},
     "Last Name of Employee_1": {},
@@ -551,12 +539,24 @@
     "txtLTOmnia": {},
     "txtLTSchedule": {},
     "txtLTSite": {},
-    "txtNHEmployeeId_1": {},
+    "txtNHCountry": {},
+    "txtNHEmployeeId": {},
+    "txtNHEmpStatus": {},
     "txtNHFirstName": {},
     "txtNHFirstName_1": {},
+    "txtNHHireDate": {},
+    "txtNHInternalEmail": {},
+    "txtNHLastName": {},
     "txtNHLastName_1": {},
+    "txtNHMiddleName": {},
     "txtNHMiddleName_1": {},
-    "txtNHOmnia_1": {}
+    "txtNHOmnia": {},
+    "txtNHPosition": {},
+    "txtNHRegDate": {},
+    "txtNHRole": {},
+    "txtNHSite": {},
+    "txtNHStatus": {},
+    "txtNHSupervisor": {}
   },
   "PCFDynamicSchemaForIRRetrievalEntry": {},
   "PublishOrderIndices": {
@@ -629,7 +629,7 @@
     "grpNHBusinessUnit": 80,
     "grpNHClient": 86,
     "grpNHCountry": 34,
-    "grpNHEmployeeId": 46,
+    "grpNHEmployeeId": 47,
     "grpNHEmpStatus": 65,
     "grpNHFirstName": 25,
     "grpNHHireDate": 53,
@@ -666,13 +666,11 @@
     "Label1_23": 174,
     "Label1_24": 176,
     "Label1_25": 178,
-    "Label1_27": 45,
+    "Label1_27": 46,
     "Label1_28": 24,
     "Label1_3": 159,
     "Label1_30": 27,
-    "Label1_31": 29,
     "Label1_32": 30,
-    "Label1_33": 32,
     "Label1_35": 49,
     "Label1_4": 161,
     "Label1_46": 79,
@@ -685,27 +683,17 @@
     "Label1_56": 88,
     "Label1_57": 90,
     "Label1_58": 33,
-    "Label1_59": 35,
     "Label1_6": 169,
     "Label1_60": 36,
-    "Label1_61": 38,
     "Label1_64": 52,
-    "Label1_65": 54,
     "Label1_66": 55,
-    "Label1_67": 57,
     "Label1_68": 58,
-    "Label1_69": 60,
     "Label1_7": 171,
     "Label1_70": 61,
-    "Label1_71": 63,
     "Label1_72": 64,
-    "Label1_73": 66,
     "Label1_74": 67,
-    "Label1_75": 69,
     "Label1_76": 70,
-    "Label1_77": 72,
     "Label1_78": 73,
-    "Label1_79": 75,
     "Label1_8": 167,
     "Label1_9": 165,
     "Last Name of Employee_1": 5,
@@ -719,7 +707,7 @@
     "Middle Name of Employee_1": 9,
     "New Hire Details_1": 4,
     "New Hire Form": 23,
-    "New Hire Form2": 48,
+    "New Hire Form2": 45,
     "New Hire Form3": 78,
     "NewHire_CascadingDrp": 9,
     "NewHire_FirstPage": 0,
@@ -747,12 +735,24 @@
     "txtLTOmnia": 96,
     "txtLTSchedule": 132,
     "txtLTSite": 110,
-    "txtNHEmployeeId_1": 47,
+    "txtNHCountry": 35,
+    "txtNHEmployeeId": 48,
+    "txtNHEmpStatus": 66,
     "txtNHFirstName": 26,
     "txtNHFirstName_1": 8,
+    "txtNHHireDate": 54,
+    "txtNHInternalEmail": 72,
+    "txtNHLastName": 32,
     "txtNHLastName_1": 6,
+    "txtNHMiddleName": 29,
     "txtNHMiddleName_1": 10,
-    "txtNHOmnia_1": 51
+    "txtNHOmnia": 51,
+    "txtNHPosition": 63,
+    "txtNHRegDate": 57,
+    "txtNHRole": 75,
+    "txtNHSite": 38,
+    "txtNHStatus": 60,
+    "txtNHSupervisor": 69
   },
   "ResourcesJsonIndices": {
     "Image-MicrosoftTeams-image (2)": 1,
