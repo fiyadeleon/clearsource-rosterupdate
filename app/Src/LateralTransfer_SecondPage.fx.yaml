@@ -1,0 +1,529 @@
+"LateralTransfer_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    Height: =990
+    Width: =794
+
+    formLTReview As form:
+        DataSource: =CurrentRoster
+        Height: =726
+        NumberOfColumns: =1
+        Width: =708
+        X: =42
+        Y: =141
+        ZIndex: =3
+
+        "'EMPLOYEE ID_LTRDataCard' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="EMPLOYEE ID"
+            Default: =ThisItem.'EMPLOYEE ID'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"EMPLOYEE ID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey33 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTREmployeeId As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =txtLTEmployeeId
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey33.X + DataCardKey33.Width
+                Y: =22
+                ZIndex: =2
+
+        "'FIRST NAME_LTRDataCard' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FIRST NAME"
+            Default: =ThisItem.'FIRST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"FIRST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey34 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRFirstName As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey34.X + DataCardKey34.Width
+                Y: =22
+                ZIndex: =2
+
+        "'LAST NAME_LTRDataCard' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LAST NAME"
+            Default: =ThisItem.'LAST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LAST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey35 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRLastName As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey35.X + DataCardKey35.Width
+                Y: =22
+                ZIndex: =2
+
+        SITE_LTRDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SITE"
+            Default: =ThisItem.SITE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey36 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRSite As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey36.X + DataCardKey36.Width
+                Y: =22
+                ZIndex: =2
+
+        "'BUSINESS UNIT_LTRDataCard' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="BUSINESS UNIT"
+            Default: =ThisItem.'BUSINESS UNIT'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey37 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRBusinessUnit As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey37.X + DataCardKey37.Width
+                Y: =22
+                ZIndex: =2
+
+        CLIENT_LTRDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CLIENT"
+            Default: =ThisItem.CLIENT
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"CLIENT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey38 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRClient As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey38.X + DataCardKey38.Width
+                Y: =22
+                ZIndex: =2
+
+        LOB_LTRDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey39 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRLOB As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey39.X + DataCardKey39.Width
+                Y: =22
+                ZIndex: =2
+
+        POSITION_LTRDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="POSITION"
+            Default: =ThisItem.POSITION
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"POSITION")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =7
+            ZIndex: =1
+
+            DataCardKey40 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRPosition As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey40.X + DataCardKey40.Width
+                Y: =22
+                ZIndex: =2
+
+        "'SUB-UNIT_LTRDataCard' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SUB-UNIT"
+            Default: =ThisItem.'SUB-UNIT'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SUB-UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            DataCardKey41 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRSubUnit As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey41.X + DataCardKey41.Width
+                Y: =22
+                ZIndex: =2
+
+        BILLABILITY_LTRDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="BILLABILITY"
+            Default: =ThisItem.BILLABILITY
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BILLABILITY")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKey42 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRBillability As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey42.X + DataCardKey42.Width
+                Y: =22
+                ZIndex: =2
+
+        SCHEDULE_LTRDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SCHEDULE"
+            Default: =ThisItem.SCHEDULE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SCHEDULE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            DataCardKey43 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRSchedule As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey43.X + DataCardKey43.Width
+                Y: =22
+                ZIndex: =2
+
+        TEAM_LTRDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAM"
+            Default: =ThisItem.TEAM
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"TEAM")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =708
+            X: =0
+            Y: =11
+            ZIndex: =1
+
+            DataCardKey44 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTRSupervisor As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey44.X + DataCardKey44.Width
+                Y: =22
+                ZIndex: =2
+
+    "'Review Lateral Transfer Form' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="REVIEW LATERAL TRANSFER FORM"
+        Width: =453
+        X: =62
+        Y: =60
+        ZIndex: =4
+
+    btnLTRSubmit As button:
+        Fill: =RGBA(0, 18, 107, 1)
+        OnSelect: |-
+            =If(
+                IsBlank(cbLTBusinessUnit) ||
+                IsBlank(cbLTClient) ||
+                IsBlank(cbLTPosition) ||
+                IsBlank(cbLTLOB) ||
+                IsBlank(cbLTSubUnit) ||
+                IsBlank(cbLTBillability) ||
+                IsBlank(txtLTSchedule) ||
+                IsBlank(cbLTSupervisor),
+                Notify("Please complete all fields!",NotificationType.Error),
+                (Notify("Successfully submitted the information.",NotificationType.Success) &&
+                Navigate(HomePage,ScreenTransition.None) &&
+                Office365Outlook.SendEmailV2(
+                   "sophia.deleon@clearsourcebpo.com",
+                   Concatenate("[LATERAL TRANSFER] ", txtLTEmployeeId, ": ", txtLTFirstName, " ", txtLTLastName),
+                   Concatenate("Hi Team,", "<br>", "<br>", "Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, ".", "<br>", "<br>",
+                        "Employee ID: ", txtLTEmployeeId, "<br>", 
+                        "Employee Name: ", txtLTFirstName, " ", txtLTLastName, "<br>",
+                        "Site: ", txtLTSite, "<br>",
+                        "New Business Unit: ", cbLTBusinessUnit.Selected.Value, "<br>",
+                        "New Program/Client: ", cbLTClient.Selected.Value, "<br>",
+                        "New Position: ", cbLTPosition.Selected.Value, "<br>",
+                        "New LOB: ", cbLTLOB.Selected.Value, "<br>",
+                        "New Sub-Unit: ", cbLTSubUnit.Selected.Value, "<br>",
+                        "Billability: ", cbLTBillability.Selected.Value, "<br>",
+                        "New Schedule: ", txtLTSchedule, "<br>",
+                        "New Supervisor: ", cbLTSupervisor.Selected.Value
+                    )
+                ) &&
+                Reset(cbLTSearch)
+                )
+            )
+        Text: ="Review"
+        X: =565
+        Y: =884
+        ZIndex: =5
+
+    btnLTRBack As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+        Text: ="Back"
+        X: =376
+        Y: =884
+        ZIndex: =6
+

@@ -198,7 +198,7 @@
                 Y: =22
                 ZIndex: =2
 
-    btnLTSubmit As button:
+    btnLTReview As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
@@ -367,7 +367,7 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 Default: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
-                Items: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'LOB')
+                Items: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),LOB)
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey25.X + DataCardKey25.Width
@@ -568,7 +568,7 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 Default: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
-                Items: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'TEAM')
+                Items: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),TEAM)
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey29.X + DataCardKey29.Width
