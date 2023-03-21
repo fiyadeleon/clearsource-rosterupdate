@@ -35,6 +35,7 @@
 
     formNHThird As form:
         DataSource: =CurrentRoster
+        DefaultMode: =FormMode.New
         Height: =215
         NumberOfColumns: =1
         Width: =729
@@ -71,8 +72,11 @@
 
             cbNHBusinessUnit As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHBusinessUnit.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, 'BUSINESS UNIT'),cbNHBusinessUnit.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =401.4
                 X: =297
                 Y: =10
@@ -107,8 +111,11 @@
 
             cbNHSubUnit As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHSubUnit.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, 'SUB-UNIT'),cbNHSubUnit.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =401.4
                 X: =297
                 Y: =10
@@ -143,8 +150,11 @@
 
             cbNHClient As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHClient.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, CLIENT)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbNHClient.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =401.4
                 X: =297
                 Y: =10
@@ -179,8 +189,14 @@
 
             cbNHLOB As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                Items: =ComboBoxSample
-                SearchItems: =Search(ComboBoxSample,cbNHLOB.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                FontWeight: =FontWeight.Lighter
+                Items: =Distinct(CurrentRoster, LOB)
+                SearchFields: =["Value"]
+                SearchItems: |-
+                    =Search(Distinct(CurrentRoster, LOB
+                    ),cbNHLOB.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =401.4
                 X: =297
                 Y: =10
@@ -195,6 +211,6 @@
         Underline: =true
         Width: =309
         X: =235
-        Y: =233
+        Y: =241
         ZIndex: =14
 
