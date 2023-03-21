@@ -17,39 +17,26 @@
 
     btnLTRSubmit As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: |-
-            =If(
-                IsBlank(cbLTBusinessUnit) ||
-                IsBlank(cbLTClient) ||
-                IsBlank(cbLTPosition) ||
-                IsBlank(cbLTLOB) ||
-                IsBlank(cbLTSubUnit) ||
-                IsBlank(cbLTBillability) ||
-                IsBlank(txtLTSchedule) ||
-                IsBlank(cbLTSupervisor),
-                Notify("Please complete all fields!",NotificationType.Error),
-                (Notify("Successfully submitted the information.",NotificationType.Success) &&
-                Navigate(HomePage,ScreenTransition.None) &&
-                Office365Outlook.SendEmailV2(
-                   "sophia.deleon@clearsourcebpo.com",
-                   Concatenate("[LATERAL TRANSFER] ", txtLTEmployeeId, ": ", txtLTFirstName, " ", txtLTLastName),
-                   Concatenate("Hi Team,", "<br>", "<br>", "Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, ".", "<br>", "<br>",
-                        "Employee ID: ", txtLTEmployeeId, "<br>", 
-                        "Employee Name: ", txtLTFirstName, " ", txtLTLastName, "<br>",
-                        "Site: ", txtLTSite, "<br>",
-                        "New Business Unit: ", cbLTBusinessUnit.Selected.Value, "<br>",
-                        "New Program/Client: ", cbLTClient.Selected.Value, "<br>",
-                        "New Position: ", cbLTPosition.Selected.Value, "<br>",
-                        "New LOB: ", cbLTLOB.Selected.Value, "<br>",
-                        "New Sub-Unit: ", cbLTSubUnit.Selected.Value, "<br>",
-                        "Billability: ", cbLTBillability.Selected.Value, "<br>",
-                        "New Schedule: ", txtLTSchedule, "<br>",
-                        "New Supervisor: ", cbLTSupervisor.Selected.Value
-                    )
-                ) &&
-                Reset(cbLTSearch)
+        OnSelect: |
+            =Navigate(HomePage,ScreenTransition.None) &&
+            Office365Outlook.SendEmailV2(
+               "sophia.deleon@clearsourcebpo.com",
+               Concatenate("[LATERAL TRANSFER] ", txtLTEmployeeId, ": ", txtLTFirstName, " ", txtLTLastName),
+                  Concatenate("Hi Team,", "<br>", "<br>", "Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, ".", "<br>", "<br>",
+                    "Employee ID: ", txtLTEmployeeId, "<br>", 
+                    "Employee Name: ", txtLTFirstName, " ", txtLTLastName, "<br>",
+                    "Site: ", txtLTSite, "<br>",
+                    "New Business Unit: ", cbLTBusinessUnit.Selected.Value, "<br>",
+                    "New Program/Client: ", cbLTClient.Selected.Value, "<br>",
+                    "New Position: ", cbLTPosition.Selected.Value, "<br>",
+                    "New LOB: ", cbLTLOB.Selected.Value, "<br>",
+                    "New Sub-Unit: ", cbLTSubUnit.Selected.Value, "<br>",
+                    "Billability: ", cbLTBillability.Selected.Value, "<br>",
+                    "New Schedule: ", txtLTSchedule, "<br>",
+                    "New Supervisor: ", cbLTSupervisor.Selected.Value
                 )
-            )
+            ) &&
+            Reset(cbLTSearch)
         Text: ="Submit"
         X: =558
         Y: =870
