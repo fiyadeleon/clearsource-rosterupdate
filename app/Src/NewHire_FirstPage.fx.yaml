@@ -220,10 +220,9 @@
             cbNHCountry As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, COUNTRY), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(CurrentRoster, COUNTRY), !IsBlank(Value)),cbNHCountry.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =399.6
                 X: =296
