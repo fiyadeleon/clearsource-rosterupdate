@@ -374,7 +374,7 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 Default: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
-                Items: =Distinct(CurrentRoster, POSITION)
+                Items: =CurrentRoster
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey26.X + DataCardKey26.Width
