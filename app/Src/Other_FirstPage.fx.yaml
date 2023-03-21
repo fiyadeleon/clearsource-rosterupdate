@@ -2,7 +2,7 @@
     Height: =1123
     Width: =794
 
-    "'Lateral Transfer Form_1' As label":
+    "'Roster Update Form_1' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
@@ -11,7 +11,7 @@
         Width: =258
         X: =61
         Y: =65
-        ZIndex: =3
+        ZIndex: =1
 
     txtLTOmnia_1 As label:
         Color: =RGBA(0, 18, 107, 1)
@@ -20,7 +20,7 @@
         Width: =160
         X: =87
         Y: =162
-        ZIndex: =5
+        ZIndex: =2
 
     cbLTSearch_1 As combobox:
         ChevronBackground: =RGBA(0, 18, 107, 1)
@@ -32,7 +32,7 @@
         Width: =401.4
         X: =357
         Y: =162
-        ZIndex: =6
+        ZIndex: =3
 
     formLTStatic_1 As form:
         BorderColor: =RGBA(0, 0, 0, 1)
@@ -43,7 +43,7 @@
         Width: =736
         X: =58
         Y: =210
-        ZIndex: =7
+        ZIndex: =4
 
         "'EMPLOYEE ID_LTDataCard_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
@@ -212,14 +212,14 @@
                 IsBlank(cbLTSubUnit_1) ||
                 IsBlank(cbLTSubLOB_1) ||
                 IsBlank(txtLTLOB_1) ||
-                IsBlank(cbLTBillability_1),
+                IsBlank(cbRUBillability_1),
                 Notify("Please complete all fields!",NotificationType.Error),
                 Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
             )
         Text: ="Review"
         X: =598
         Y: =1039
-        ZIndex: =8
+        ZIndex: =5
 
     btnLTBack_1 As button:
         Color: =RGBA(0, 18, 107, 1)
@@ -228,19 +228,31 @@
         Text: ="Back"
         X: =409
         Y: =1039
-        ZIndex: =9
+        ZIndex: =6
 
-    formLTDynamic_1 As form:
+    "'ROSTER EMPLOYEE DETAILS_1' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =17
+        Text: ="EMPLOYEE DETAILS"
+        Underline: =true
+        Width: =240
+        X: =303
+        Y: =448
+        ZIndex: =7
+
+    formRUDynamic_1 As form:
         DataSource: =Sort(CurrentRoster, USER, SortOrder.Ascending)
         Height: =494
         Item: =cbLTSearch_1.Selected
         NumberOfColumns: =1
         Width: =729
-        X: =61
-        Y: =533
-        ZIndex: =10
+        X: =39
+        Y: =528
+        ZIndex: =8
 
-        "'BUSINESS UNIT_LTDataCard_1' As typedDataCard.allowedValuesStringEditCard":
+        BUSINESS_UNIT_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
@@ -280,7 +292,7 @@
                 Y: =5
                 ZIndex: =3
 
-        "'SUB-UNIT_LTDataCard_1' As typedDataCard.allowedValuesStringEditCard":
+        "'SUB-UNIT_RUDataCard_1' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "SUB-UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
@@ -320,7 +332,7 @@
                 Y: =5
                 ZIndex: =2
 
-        POSITION_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+        POSITION_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "POSITION")
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
@@ -360,7 +372,7 @@
                 Y: =5
                 ZIndex: =2
 
-        CLIENT_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+        CLIENT_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "CLIENT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
@@ -399,7 +411,7 @@
                 Y: =5
                 ZIndex: =2
 
-        CAMPAIGN_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+        CAMPAIGN_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
             BorderStyle: =BorderStyle.Solid
             DataField: ="LOB"
@@ -439,7 +451,7 @@
                 Y: =5
                 ZIndex: =2
 
-        SUBLOB_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+        SUBLOB_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
@@ -479,7 +491,7 @@
                 Y: =5
                 ZIndex: =2
 
-        LOB_LTDataCard_1 As typedDataCard.textualEditCard:
+        LOB_RUDataCard_1 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SCHEDULE"
             Default: =ThisItem.SCHEDULE
@@ -519,7 +531,7 @@
                 Y: =5
                 ZIndex: =2
 
-        BILLABILITY_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+        BILLABILITY_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "TEAM")
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
@@ -527,7 +539,7 @@
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"TEAM")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =62
+            Height: =50
             Required: =false
             Update: =
             Width: =729
@@ -543,10 +555,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =14
+                Y: =7
                 ZIndex: =1
 
-            cbLTBillability_1 As combobox:
+            cbRUBillability_1 As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
@@ -556,18 +568,38 @@
                 SearchItems: =[]
                 Width: =401.4
                 X: =297
-                Y: =14
+                Y: =7
                 ZIndex: =2
 
-    "'LT NEW EMPLOYEE DETAILS_1' As label":
-        Color: =RGBA(0, 18, 107, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =67
-        Size: =17
-        Text: ="EMPLOYEE DETAILS"
-        Underline: =true
-        Width: =240
-        X: =303
-        Y: =448
-        ZIndex: =11
+        TEAM_RUDataCard_1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =51
+            Width: =729
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            DataCardKey29_2 As label:
+                FontWeight: =FontWeight.Bold
+                Text: ="TEAM"
+                Width: =237
+                Wrap: =false
+                X: =30
+                Y: =7
+                ZIndex: =1
+
+            cbRUTeam_2 As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =7
+                ZIndex: =2
 
