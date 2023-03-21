@@ -190,7 +190,6 @@
             cbNHLOB As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
-                FontWeight: =FontWeight.Lighter
                 Items: =Filter(Distinct(CurrentRoster, LOB), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(CurrentRoster, LOB), !IsBlank(Value)),cbNHLOB.SearchText,"Value")

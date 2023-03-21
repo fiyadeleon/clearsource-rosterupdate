@@ -275,7 +275,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'BUSINESS UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
+                Items: =Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -315,7 +315,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                Items: =Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -355,7 +355,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),POSITION)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(CurrentRoster, POSITION)
+                Items: =Filter(Distinct(CurrentRoster, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -394,9 +394,9 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),CLIENT)
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, CLIENT)
+                Items: =Filter(Distinct(CurrentRoster, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbLTClient.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(CurrentRoster, CLIENT), !IsBlank(Value)),cbLTClient.SearchText,"Value")
                 Width: =401.4
                 X: =297
                 Y: =5
@@ -434,7 +434,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),LOB)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(CurrentRoster, LOB)
+                Items: =Filter(Distinct(CurrentRoster, LOB), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -474,7 +474,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                Items: =Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -550,7 +550,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                Items: =Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
