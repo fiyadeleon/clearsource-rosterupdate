@@ -2,16 +2,568 @@
     Height: =1123
     Width: =794
 
-    PrintButton4 As label:
-        Align: =Align.Center
-        Height: =32
-        OnSelect: =Print()
-        Size: =13
-        TabIndex: =0
-        Text: ="Print"
-        Visible: =Not(Parent.Printing)
-        Width: =96
-        X: =Parent.Width - Self.Width - 25
-        Y: =25
-        ZIndex: =2
+    "'Lateral Transfer Form_1' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="Roster Updates"
+        Width: =258
+        X: =61
+        Y: =65
+        ZIndex: =3
+
+    txtLTOmnia_1 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Text: ="OMNIA ID"
+        Width: =160
+        X: =87
+        Y: =162
+        ZIndex: =5
+
+    cbLTSearch_1 As combobox:
+        ChevronBackground: =RGBA(0, 18, 107, 1)
+        DisplayFields: =["USER"]
+        Items: =CurrentRoster
+        SearchFields: =["USER"]
+        SearchItems: =Search(CurrentRoster,cbLTSearch_1.SearchText,"USER")
+        SelectMultiple: =false
+        Width: =401.4
+        X: =357
+        Y: =162
+        ZIndex: =6
+
+    formLTStatic_1 As form:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DataSource: =Sort(CurrentRoster, USER, SortOrder.Ascending)
+        Height: =247
+        Item: =cbLTSearch_1.Selected
+        NumberOfColumns: =1
+        Width: =736
+        X: =58
+        Y: =210
+        ZIndex: =7
+
+        "'EMPLOYEE ID_LTDataCard_1' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="EMPLOYEE ID"
+            Default: =ThisItem.'EMPLOYEE ID'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"EMPLOYEE ID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =736
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey9_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =12
+                ZIndex: =1
+
+            txtLTEmployeeId_1 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 18, 107, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey9_1.X + DataCardKey9_1.Width
+                Y: =19
+                ZIndex: =2
+
+        "'FIRST NAME_LTDataCard_1' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FIRST NAME"
+            Default: =ThisItem.'FIRST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"FIRST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =736
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey7_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =12
+                ZIndex: =1
+
+            txtLTFirstName_1 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 18, 107, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =300
+                Y: =19
+                ZIndex: =2
+
+        "'LAST NAME_LTDataCard_1' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LAST NAME"
+            Default: =ThisItem.'LAST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LAST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =736
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey8_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtLTLastName_1 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 18, 107, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =300
+                Y: =20
+                ZIndex: =2
+
+        SITE_LTDataCard_1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SITE"
+            Default: =ThisItem.SITE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =736
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtLTSite_1 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 18, 107, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =300
+                Y: =17
+                ZIndex: =2
+
+    btnLTReview_1 As button:
+        Fill: =RGBA(0, 18, 107, 1)
+        OnSelect: |-
+            =If(    
+                IsBlank(cbLTBusinessUnit_1) ||
+                IsBlank(cbLTClient_1) ||
+                IsBlank(cbLTPosition_1) ||
+                IsBlank(cbLTLOB_1) ||
+                IsBlank(cbLTSubUnit_1) ||
+                IsBlank(cbLTBillability_1) ||
+                IsBlank(txtLTSchedule_1) ||
+                IsBlank(cbLTSupervisor_1),
+                Notify("Please complete all fields!",NotificationType.Error),
+                Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
+            )
+        Text: ="Review"
+        X: =598
+        Y: =975
+        ZIndex: =8
+
+    btnLTBack_1 As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+        Text: ="Back"
+        X: =409
+        Y: =975
+        ZIndex: =9
+
+    formLTDynamic_1 As form:
+        DataSource: =Sort(CurrentRoster, USER, SortOrder.Ascending)
+        Height: =430
+        Item: =cbLTSearch_1.Selected
+        NumberOfColumns: =1
+        Width: =729
+        X: =61
+        Y: =533
+        ZIndex: =10
+
+        "'BUSINESS UNIT_LTDataCard_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="BUSINESS UNIT"
+            Default: =ThisItem.'BUSINESS UNIT'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey23_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW BUSINESS UNIT"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =5
+                ZIndex: =1
+
+            cbLTBusinessUnit_1 As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'BUSINESS UNIT')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =3
+
+        "'SUB-UNIT_LTDataCard_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "SUB-UNIT")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SUB-UNIT"
+            Default: =ThisItem.'SUB-UNIT'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SUB-UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey27_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW SUB-UNIT"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =8
+                ZIndex: =1
+
+            cbLTSubUnit_1 As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
+        POSITION_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "POSITION")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="POSITION"
+            Default: =ThisItem.POSITION
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"POSITION")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey26_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW POSITION"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =8
+                ZIndex: =1
+
+            cbLTPosition_1 As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),POSITION)
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, POSITION)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
+        CLIENT_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "CLIENT")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CLIENT"
+            Default: =ThisItem.CLIENT
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"CLIENT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey4_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW CLIENT"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =29
+                Y: =6
+                ZIndex: =1
+
+            cbLTClient_1 As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),CLIENT)
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, CLIENT)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbLTClient_1.SearchText,"Value")
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
+        LOB_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey25_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW LOB"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =8
+                ZIndex: =1
+
+            cbLTLOB_1 As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),LOB)
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, LOB)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
+        BILLABILITY_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="BILLABILITY"
+            Default: =ThisItem.BILLABILITY
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BILLABILITY")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey28_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW BILLABILITY"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =8
+                ZIndex: =1
+
+            cbLTBillability_1 As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
+        SCHEDULE_LTDataCard_1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SCHEDULE"
+            Default: =ThisItem.SCHEDULE
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SCHEDULE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "SCHEDULE")
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey19_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW SCHEDULE"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =8
+                ZIndex: =1
+
+            txtLTSchedule_1 As text:
+                Default: =""
+                HintText: ="e.g., 10PM - 7AM PHT"
+                Reset: =true
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
+        TEAM_LTDataCard_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "TEAM")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAM"
+            Default: =ThisItem.TEAM
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"TEAM")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =729
+            X: =0
+            Y: =7
+            ZIndex: =1
+
+            DataCardKey29_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW SUPERVISOR"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =8
+                ZIndex: =1
+
+            cbLTSupervisor_1 As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =401.4
+                X: =297
+                Y: =5
+                ZIndex: =2
+
+    "'LT NEW EMPLOYEE DETAILS_1' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =17
+        Text: ="NEW EMPLOYEE DETAILS"
+        Underline: =true
+        Width: =293
+        X: =279
+        Y: =448
+        ZIndex: =11
 
