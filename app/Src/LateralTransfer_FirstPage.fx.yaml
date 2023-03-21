@@ -264,45 +264,6 @@
                 Y: =10
                 ZIndex: =2
 
-        CLIENT_LTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "CLIENT")
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="CLIENT"
-            Default: =ThisItem.CLIENT
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"CLIENT")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =cbLTSearch.Selected.'USER'
-            Width: =729
-            X: =0
-            Y: =1
-            ZIndex: =1
-
-            DataCardKey24 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="NEW CLIENT"
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10 + (cbLTClient.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            cbLTClient As dropdown:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Items: =Distinct(CurrentRoster, CLIENT)
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey24.X + DataCardKey24.Width
-                Y: =10
-                ZIndex: =2
-
         LOB_LTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
             BorderStyle: =BorderStyle.Solid
@@ -313,10 +274,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =cbLTSearch.Selected.'USER'
+            Update: =
             Width: =729
             X: =0
-            Y: =2
+            Y: =1
             ZIndex: =1
 
             DataCardKey25 As label:
@@ -352,10 +313,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =cbLTSearch.Selected.'USER'
+            Update: =
             Width: =729
             X: =0
-            Y: =3
+            Y: =2
             ZIndex: =1
 
             DataCardKey26 As label:
@@ -374,7 +335,7 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 Default: =Parent.Default
                 DisplayMode: =Parent.DisplayMode
-                Items: =CurrentRoster
+                Items: =Distinct(CurrentRoster, POSITION)
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey26.X + DataCardKey26.Width
@@ -391,10 +352,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =cbLTSearch.Selected.'USER'
+            Update: =
             Width: =729
             X: =0
-            Y: =4
+            Y: =3
             ZIndex: =1
 
             DataCardKey27 As label:
@@ -430,10 +391,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =cbLTSearch.Selected.'USER'
+            Update: =
             Width: =729
             X: =0
-            Y: =5
+            Y: =4
             ZIndex: =1
 
             DataCardKey28 As label:
@@ -469,10 +430,10 @@
             Height: =50
             MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "SCHEDULE")
             Required: =false
-            Update: =txtLTSchedule.Text
+            Update: =
             Width: =729
             X: =0
-            Y: =6
+            Y: =5
             ZIndex: =1
 
             DataCardKey19 As label:
@@ -514,7 +475,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =cbLTSearch.Selected.'USER'
+            Update: =
             Width: =729
             X: =0
             Y: =7
