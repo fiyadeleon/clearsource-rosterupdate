@@ -94,94 +94,6 @@
                 Y: =10
                 ZIndex: =2
 
-    grpNHMiddleName As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =20
-
-        Label1_30 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="MIDDLE NAME"
-            X: =85
-            Y: =190
-            ZIndex: =18
-
-        txtNHMiddleName As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =190
-            ZIndex: =19
-
-    grpNHLastName As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =22
-
-        Label1_32 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="LAST NAME"
-            X: =85
-            Y: =240
-            ZIndex: =20
-
-        txtNHLastName As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =240
-            ZIndex: =21
-
-    grpNHCountry As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =48
-
-        Label1_58 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="COUNTRY"
-            X: =85
-            Y: =290
-            ZIndex: =46
-
-        txtNHCountry As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =290
-            ZIndex: =47
-
-    grpNHSite As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =50
-
-        Label1_60 As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Text: ="SITE"
-            X: =85
-            Y: =340
-            ZIndex: =48
-
-        txtNHSite As label:
-            Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
-            X: =369
-            Y: =340
-            ZIndex: =49
-
     grpNHFirstName As group:
         Height: =5
         Width: =5
@@ -198,8 +110,95 @@
             ZIndex: =16
 
         txtNHFirstName As text:
-            Default: ="Text input"
+            Default: =""
+            HintText: ="Jane"
             X: =369
             Y: =140
             ZIndex: =54
+
+    grpNHSite As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =56
+
+        Label1_60 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="SITE"
+            X: =85
+            Y: =340
+            ZIndex: =48
+
+        txtNHSite As text:
+            Default: ="Text input"
+            X: =369
+            Y: =340
+            ZIndex: =55
+
+    grpNHCountry As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =57
+
+        Label1_58 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="COUNTRY"
+            X: =85
+            Y: =290
+            ZIndex: =46
+
+        txtNHCountry As text:
+            Default: ="Text input"
+            X: =369
+            Y: =290
+            ZIndex: =56
+
+    grpNHMiddleName As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =58
+
+        Label1_30 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="MIDDLE NAME"
+            X: =85
+            Y: =190
+            ZIndex: =18
+
+        txtNHMiddleName As text:
+            Default: =""
+            HintText: ="Optional"
+            X: =369
+            Y: =190
+            ZIndex: =57
+
+    grpNHLastName As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =59
+
+        Label1_32 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="LAST NAME"
+            X: =85
+            Y: =240
+            ZIndex: =20
+
+        txtNHLastName As text:
+            Default: =""
+            HintText: ="Doe"
+            X: =369
+            Y: =240
+            ZIndex: =58
 
