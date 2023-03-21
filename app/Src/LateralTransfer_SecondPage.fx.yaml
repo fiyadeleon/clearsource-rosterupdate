@@ -36,7 +36,7 @@
                     "New Supervisor: ", cbLTSupervisor.Selected.Value
                 )
             ) &&
-            Notify("Form has been submitted successfully.",NotificationType.Error) &&
+            Notify("Form has been submitted successfully.",NotificationType.Success) &&
             Reset(cbLTSearch) && Reset(drpRosterSelection)
         Text: ="Submit"
         X: =558

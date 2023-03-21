@@ -104,16 +104,16 @@
         Label1_30 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="MIDDLE NAME"
             X: =85
-            Y: =233
+            Y: =253
             ZIndex: =18
 
         Label1_31 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =233
+            Y: =253
             ZIndex: =19
 
     grpNHLastName As group:
@@ -126,16 +126,16 @@
         Label1_32 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="LAST NAME"
             X: =85
-            Y: =273
+            Y: =293
             ZIndex: =20
 
         Label1_33 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =273
+            Y: =293
             ZIndex: =21
 
     grpNHHireDate As group:
@@ -148,16 +148,16 @@
         Label1_36 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="HIRE DATE"
             X: =85
-            Y: =313
+            Y: =333
             ZIndex: =24
 
         Label1_37 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =313
+            Y: =333
             ZIndex: =25
 
     grpNHRegDate As group:
@@ -170,16 +170,17 @@
         Label1_38 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="REGURALIZATION DATE"
+            Width: =250
             X: =85
-            Y: =353
+            Y: =363
             ZIndex: =26
 
         Label1_39 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =353
+            Y: =363
             ZIndex: =27
 
     grpNHStatus As group:
@@ -192,16 +193,16 @@
         Label1_40 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="STATUS"
             X: =85
-            Y: =393
+            Y: =403
             ZIndex: =28
 
         Label1_41 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =393
+            Y: =403
             ZIndex: =29
 
     grpNHBusinessUnit As group:
@@ -214,16 +215,16 @@
         Label1_42 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="BUSINESS UNIT"
             X: =85
-            Y: =433
+            Y: =443
             ZIndex: =30
 
         Label1_43 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =433
+            Y: =443
             ZIndex: =31
 
     grpNHSubUnit As group:
@@ -236,16 +237,16 @@
         Label1_44 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="SUB-UNIT"
             X: =85
-            Y: =473
+            Y: =483
             ZIndex: =32
 
         Label1_45 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =473
+            Y: =483
             ZIndex: =33
 
     grpNHPosition As group:
@@ -258,16 +259,16 @@
         Label1_46 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="POSITION"
             X: =85
-            Y: =513
+            Y: =523
             ZIndex: =34
 
         Label1_47 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =513
+            Y: =523
             ZIndex: =35
 
     grpNHEmpStatus As group:
@@ -280,16 +281,17 @@
         Label1_48 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="EMPLOYMENT STATUS"
+            Width: =250
             X: =85
-            Y: =553
+            Y: =563
             ZIndex: =36
 
         Label1_49 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =553
+            Y: =563
             ZIndex: =37
 
     grpNHClient As group:
@@ -302,16 +304,16 @@
         Label1_50 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="CLIENT"
             X: =85
-            Y: =593
+            Y: =603
             ZIndex: =38
 
         Label1_51 As label:
             Color: =RGBA(0, 18, 107, 1)
             Text: =cbLTSearch.Selected.USER
             X: =369
-            Y: =593
+            Y: =603
             ZIndex: =39
 
     grpNHLOB As group:
@@ -324,7 +326,7 @@
         Label1_52 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="LOB"
             X: =85
             Y: =633
             ZIndex: =40
@@ -346,7 +348,7 @@
         Label1_54 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="SUPERVISOR"
             X: =85
             Y: =673
             ZIndex: =42
@@ -368,7 +370,8 @@
         Label1_56 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="INTERNAL EMAIL"
+            Width: =200
             X: =85
             Y: =713
             ZIndex: =44
@@ -390,7 +393,7 @@
         Label1_58 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="COUNTRY"
             X: =85
             Y: =753
             ZIndex: =46
@@ -412,7 +415,7 @@
         Label1_60 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="SITE"
             X: =85
             Y: =793
             ZIndex: =48
@@ -434,7 +437,7 @@
         Label1_62 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="ROLE"
             X: =85
             Y: =833
             ZIndex: =50
@@ -456,7 +459,7 @@
         Label1_26 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="EMPLOYEE ID"
             X: =85
             Y: =113
             ZIndex: =14
@@ -479,13 +482,13 @@
             FontWeight: =FontWeight.Bold
             Text: ="OMNIA ID"
             X: =85
-            Y: =153
+            Y: =163
             ZIndex: =22
 
         txtNHOmnia As text:
             Default: ="Text input"
             X: =369
-            Y: =153
+            Y: =163
             ZIndex: =53
 
     grpNHFirstName As group:
@@ -498,14 +501,14 @@
         Label1_28 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="FIRST NAME"
             X: =85
-            Y: =193
+            Y: =213
             ZIndex: =16
 
         txtNHFirstName As text:
             Default: ="Text input"
             X: =369
-            Y: =193
+            Y: =213
             ZIndex: =54
 
