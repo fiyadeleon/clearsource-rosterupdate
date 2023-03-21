@@ -1,11 +1,11 @@
-"NewHire_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"NewHire_ThirdPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image (2)'
     Height: =1050
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =794
 
-    "'New Hire Form2' As label":
+    "'New Hire Form3' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
@@ -16,7 +16,7 @@
         Y: =40
         ZIndex: =4
 
-    btnNHNext2 As button:
+    btnNHNext3 As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(    
@@ -36,7 +36,7 @@
         Y: =881
         ZIndex: =11
 
-    btnNHBack2 As button:
+    btnNHBack3 As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
