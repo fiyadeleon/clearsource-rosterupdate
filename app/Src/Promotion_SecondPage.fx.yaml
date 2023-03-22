@@ -10,7 +10,7 @@
         NumberOfColumns: =1
         Width: =578
         X: =110
-        Y: =250
+        Y: =214
         ZIndex: =1
 
         frPREmployeeID_2 As typedDataCard.textualViewCard:
@@ -170,7 +170,7 @@
         FontWeight: =FontWeight.Bold
         Text: ="OMNIA ID"
         X: =140
-        Y: =213
+        Y: =177
         ZIndex: =3
 
     btnPRSubmitFinal As button:
@@ -188,7 +188,7 @@
                 (Notify("Successfully submitted the information.",NotificationType.Success) &&
                 Navigate(HomePage,ScreenTransition.None) &&
                 Office365Outlook.SendEmailV2(
-                   "mark.baricawa@clearsourcebpo.com",
+                   "sophia.deleon@clearsourcebpo.com",
                    Concatenate("[LATERAL TRANSFER] ", txtPREmployeeID_1, ": ", txtPRFirstName_1, " ", txtPRLastName_1),
                    Concatenate("Hi Team,", "<br>", "<br>", "Please see details for lateral movement of ", txtPRFirstName_1, " ", txtPRLastName_1, ".", "<br>", "<br>",
                         "Employee ID: ", txtPREmployeeID_1, "<br>",
@@ -209,7 +209,7 @@
             )
         Text: ="Submit"
         X: =537
-        Y: =909
+        Y: =873
         ZIndex: =4
 
     frPRDynamic_2 As form:
@@ -219,7 +219,7 @@
         NumberOfColumns: =1
         Width: =578
         X: =110
-        Y: =440
+        Y: =404
         ZIndex: =5
 
         "'BUSINESS UNIT_PRDataCard4_2' As typedDataCard.allowedValuesStringEditCard":
@@ -500,13 +500,24 @@
         OnSelect: =Navigate(Promotion_FirstPage,ScreenTransition.None)
         Text: ="Back"
         X: =347
-        Y: =909
+        Y: =873
         ZIndex: =6
 
     txtPREmployeeIDFinal As label:
         Text: =cbPROmniaID_1.Selected.USER
         Width: =310
         X: =343
-        Y: =213
+        Y: =177
         ZIndex: =7
+
+    "'PROMOTION FORM_1' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="REVIEW PROMOTION FORM"
+        Width: =485
+        X: =62
+        Y: =58
+        ZIndex: =8
 

@@ -166,6 +166,7 @@
                 ZIndex: =2
 
     cbPROmniaID_1 As combobox:
+        ChevronBackground: =RGBA(0, 18, 107, 1)
         DisplayFields: =["USER"]
         Items: =CurrentRoster
         SearchFields: =["USER"]
@@ -185,6 +186,7 @@
         ZIndex: =3
 
     btnPRReview As button:
+        Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
                 IsBlank(cbPRBusiness) ||
@@ -241,6 +243,7 @@
                 ZIndex: =1
 
             cbPRBusiness As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
                 DisplayFields: =["Value"]
                 Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
@@ -279,6 +282,7 @@
                 ZIndex: =1
 
             cbPRClient As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),CLIENT)
                 DisplayFields: =["Value"]
                 Items: =Distinct(CurrentRoster, CLIENT)
@@ -317,6 +321,7 @@
                 ZIndex: =1
 
             cbPRPosition As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
                 DisplayFields: =["Value"]
                 Items: =Distinct(CurrentRoster, POSITION)
@@ -355,6 +360,7 @@
                 ZIndex: =1
 
             cbPRLOB As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),LOB)
                 DisplayFields: =["Value"]
                 Items: =Distinct(CurrentRoster, LOB)
@@ -393,6 +399,7 @@
                 ZIndex: =1
 
             cbPRSubUnit As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 Items: =Distinct(CurrentRoster, 'SUB-UNIT')
@@ -431,6 +438,7 @@
                 ZIndex: =1
 
             cbPRBillability As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),BILLABILITY)
                 DisplayFields: =["Value"]
                 Items: =Distinct(CurrentRoster, BILLABILITY)
@@ -504,6 +512,7 @@
                 ZIndex: =1
 
             cbPRTeam As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),TEAM)
                 DisplayFields: =["Value"]
                 Items: =Distinct(CurrentRoster, TEAM)
@@ -533,12 +542,12 @@
         Y: =403
         ZIndex: =7
 
-    "'REVIEW NEW HIRE FORM_1' As label":
+    "'PROMOTION FORM_2' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
-        Text: ="REVIEW PROMOTION FORM"
+        Text: ="PROMOTION FORM"
         Width: =485
         X: =62
         Y: =58
