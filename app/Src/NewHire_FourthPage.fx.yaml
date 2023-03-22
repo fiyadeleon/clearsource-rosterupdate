@@ -27,7 +27,7 @@
             Office365Outlook.SendEmailV2(
                "sophia.deleon@clearsourcebpo.com",
                Concatenate("[NEW HIRE] ", txtNHEmployeeId, ": ", txtNHFirstName, " ", txtNHLastName),
-               Concatenate("Hi Team,", "<br>", "<br>", "Please see details of the new hire ", txtNHFirstName, " ", txtNHLastName, ".", "<br>", "<br>",
+               Concatenate("Hi Team,", "<br>", "<br>", "Please see details of the new hire, ", txtNHFirstName, " ", txtNHLastName, ".", "<br>", "<br>",
                     "EMPLOYEE'S PERSONAL INFORMATION: ", "<br>",
                     "Employee Name: ", EmpName, "<br>",
                     "Country/Site: ", cbNHCountry.Selected.Value, "/", cbNHSite.Selected.Value, "<br>", "<br>",
