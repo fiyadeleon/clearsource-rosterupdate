@@ -69,7 +69,7 @@
 
         Label1_29 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Text: =txtLTEmployeeId
+            Text: =cbNHCountry.Selected.Value
             X: =369
             Y: =216
             ZIndex: =21
@@ -92,7 +92,12 @@
 
         Label1_27 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Text: =cbLTSearch.Selected.USER
+            Text: |-
+                =If(
+                    IsBlank(txtNHMiddleName),
+                    Concatenate(txtNHFirstName, " ", txtNHLastName),
+                    Concatenate(txtNHFirstName, " ", txtNHMiddleName, " ", txtNHLastName)
+                )
             X: =369
             Y: =166
             ZIndex: =20
@@ -351,7 +356,7 @@
 
         Label1_31 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Text: =txtLTFirstName
+            Text: =cbNHSite.Selected.Value
             X: =369
             Y: =266
             ZIndex: =22
