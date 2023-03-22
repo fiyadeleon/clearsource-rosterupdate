@@ -344,7 +344,7 @@
                 (Notify("Successfully submitted the information.",NotificationType.Success) &&
                 Navigate(HomePage,ScreenTransition.None) &&
                 Office365Outlook.SendEmailV2(
-                   "ralph.magat@clearsourcebpo.com",
+                   "sophia.deleon@clearsourcebpo.com",
                    Concatenate("[Termination Request] ", EmployeeID_Value, ": ", FirstName_Value, " ", LastName_Value),
                   Concatenate("Hi Team,", "<br>", "<br>", "Please see details for Termination Request of ", FirstName_Value, " ", LastName_Value, ".", "<br>", "<br>",
                         "Employee ID: ", EmployeeID_Value, "<br>", 
