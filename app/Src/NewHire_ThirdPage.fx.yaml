@@ -22,7 +22,6 @@
             =If(    
                 IsBlank(cbNHBusinessUnit) ||
                 IsBlank(cbNHSubUnit) ||
-                IsBlank(cbNHClient) ||
                 IsBlank(cbNHLOB),
                 Notify("Please complete all fields!",NotificationType.Error),
                 Navigate(NewHire_FourthPage,ScreenTransition.None)
