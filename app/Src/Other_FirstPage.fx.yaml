@@ -9,8 +9,8 @@
         Size: =20
         Text: ="Roster Updates"
         Width: =258
-        X: =61
-        Y: =65
+        X: =25
+        Y: =20
         ZIndex: =1
 
     txtLTOmnia_1 As label:
@@ -18,8 +18,8 @@
         FontWeight: =FontWeight.Bold
         Text: ="OMNIA ID"
         Width: =160
-        X: =87
-        Y: =162
+        X: =75
+        Y: =108
         ZIndex: =2
 
     cbLTSearch_1 As combobox:
@@ -30,19 +30,19 @@
         SearchItems: =Search(CurrentRoster,cbLTSearch_1.SearchText,"USER")
         SelectMultiple: =false
         Width: =401.4
-        X: =357
-        Y: =162
+        X: =330
+        Y: =99
         ZIndex: =3
 
     formLTStatic_1 As form:
         BorderColor: =RGBA(0, 0, 0, 1)
         DataSource: =Sort(CurrentRoster, USER, SortOrder.Ascending)
-        Height: =247
+        Height: =229
         Item: =cbLTSearch_1.Selected
         NumberOfColumns: =1
-        Width: =736
-        X: =58
-        Y: =210
+        Width: =710
+        X: =40
+        Y: =296
         ZIndex: =4
 
         "'EMPLOYEE ID_LTDataCard_1' As typedDataCard.textualViewCard":
@@ -54,7 +54,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =736
+            Width: =710
             X: =0
             Y: =0
             ZIndex: =1
@@ -93,7 +93,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =736
+            Width: =710
             X: =0
             Y: =1
             ZIndex: =1
@@ -119,7 +119,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =300
+                X: =291
                 Y: =19
                 ZIndex: =2
 
@@ -132,7 +132,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =736
+            Width: =710
             X: =0
             Y: =2
             ZIndex: =1
@@ -158,7 +158,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =300
+                X: =291
                 Y: =20
                 ZIndex: =2
 
@@ -171,7 +171,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =736
+            Width: =710
             X: =0
             Y: =3
             ZIndex: =1
@@ -197,7 +197,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =300
+                X: =291
                 Y: =17
                 ZIndex: =2
 
@@ -218,7 +218,7 @@
             )
         Text: ="Review"
         X: =598
-        Y: =1039
+        Y: =1057
         ZIndex: =5
 
     btnLTBack_1 As button:
@@ -227,7 +227,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =409
-        Y: =1039
+        Y: =1057
         ZIndex: =6
 
     "'ROSTER EMPLOYEE DETAILS_1' As label":
@@ -238,18 +238,18 @@
         Text: ="EMPLOYEE DETAILS"
         Underline: =true
         Width: =240
-        X: =303
-        Y: =448
+        X: =267
+        Y: =514
         ZIndex: =7
 
     formRUDynamic_1 As form:
         DataSource: =Sort(CurrentRoster, USER, SortOrder.Ascending)
-        Height: =494
+        Height: =470
         Item: =cbLTSearch_1.Selected
         NumberOfColumns: =1
         Width: =729
-        X: =39
-        Y: =528
+        X: =38
+        Y: =576
         ZIndex: =8
 
         BUSINESS_UNIT_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
@@ -602,4 +602,59 @@
                 X: =297
                 Y: =7
                 ZIndex: =2
+
+    txtLTOmnia_2 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Text: ="STATUS"
+        Width: =160
+        X: =75
+        Y: =155
+        ZIndex: =9
+
+    cbLTSearch_2 As combobox:
+        ChevronBackground: =RGBA(0, 18, 107, 1)
+        DisplayFields: =["USER"]
+        Items: =CurrentRoster
+        SearchFields: =["USER"]
+        SearchItems: =Search(CurrentRoster,cbLTSearch_2.SearchText,"USER")
+        SelectMultiple: =false
+        Width: =401.4
+        X: =330
+        Y: =155
+        ZIndex: =10
+
+    txtLTOmnia_3 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =41
+        Text: ="Start Date"
+        Width: =105
+        X: =73
+        Y: =223
+        ZIndex: =11
+
+    TextInput1 As text:
+        Default: ="Text input"
+        Width: =200
+        X: =184
+        Y: =223
+        ZIndex: =12
+
+    txtLTOmnia_4 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =41
+        Text: ="END Date"
+        Width: =105
+        X: =417
+        Y: =225
+        ZIndex: =13
+
+    TextInput1_1 As text:
+        Default: ="Text input"
+        Width: =200
+        X: =534
+        Y: =225
+        ZIndex: =14
 
