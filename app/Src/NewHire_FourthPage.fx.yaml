@@ -2,6 +2,7 @@
     BackgroundImage: ='MicrosoftTeams-image (2)'
     Height: =1270
     ImagePosition: =ImagePosition.Stretch
+    OnHidden: =
     Width: =794
 
     "'REVIEW NEW HIRE FORM' As label":
@@ -50,25 +51,7 @@
                 )
             ) &&
             Notify("Form has been submitted successfully.",NotificationType.Success) &&
-            Reset(txtNHFirstName) &&
-            Reset(txtNHMiddleName) &&
-            Reset(txtNHLastName) &&
-            Reset(cbNHCountry) &&
-            Reset(cbNHSite) &&
-            Reset(txtNHOmnia) &&
-            Reset(txtNHEmployeeId) &&
-            Reset(cbNHPosition) &&
-            Reset(dateNHHireDate) &&
-            Reset(dateNHRegDate) &&
-            Reset(cbNHStatus) &&
-            Reset(cbNHEmpStatus) &&
-            Reset(cbNHSupervisor) &&
-            Reset(txtNHInternalEmail) &&
-            Reset(cbNHRole) &&
-            Reset(cbNHBusinessUnit) &&
-            Reset(cbNHSubUnit) &&
-            Reset(cbNHClient) &&
-            Reset(cbNHLOB)
+            ResetForm(NewHire_FirstPage)
         Text: ="Submit"
         X: =558
         Y: =1160
