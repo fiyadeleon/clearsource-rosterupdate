@@ -50,7 +50,25 @@
                 )
             ) &&
             Notify("Form has been submitted successfully.",NotificationType.Success) &&
-            Reset(drpRosterSelection)
+            Reset(txtNHFirstName) &&
+            Reset(txtNHMiddleName) &&
+            Reset(txtNHLastName) &&
+            Reset(cbNHCountry) &&
+            Reset(cbNHSite) &&
+            Reset(txtNHOmnia) &&
+            Reset(txtNHEmployeeId) &&
+            Reset(cbNHPosition) &&
+            Reset(dateNHHireDate) &&
+            Reset(dateNHRegDate) &&
+            Reset(cbNHStatus) &&
+            Reset(cbNHEmpStatus) &&
+            Reset(cbNHSupervisor) &&
+            Reset(txtNHInternalEmail) &&
+            Reset(cbNHRole) &&
+            Reset(cbNHBusinessUnit) &&
+            Reset(cbNHSubUnit) &&
+            Reset(cbNHClient) &&
+            Reset(cbNHLOB)
         Text: ="Submit"
         Underline: =true
         X: =558
