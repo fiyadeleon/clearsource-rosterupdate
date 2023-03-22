@@ -345,7 +345,7 @@
                 Navigate(HomePage,ScreenTransition.None) &&
                 Office365Outlook.SendEmailV2(
                    "sophia.deleon@clearsourcebpo.com",
-                   Concatenate("[Termination Request] ", EmployeeID_Value, ": ", FirstName_Value, " ", LastName_Value),
+                   Concatenate("[TERMINATION - ", Status_Input.Selected.Value, "]", EmployeeID_Value, ": ", FirstName_Value, " ", LastName_Value),
                   Concatenate("Hi Team,", "<br>", "<br>", "Please see details for Termination Request of ", FirstName_Value, " ", LastName_Value, ".", "<br>", "<br>",
                         "Employee ID: ", EmployeeID_Value, "<br>", 
                         "Employee Name: ", FirstName_Value, " ", LastName_Value, "<br>",
