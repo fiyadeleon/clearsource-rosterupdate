@@ -62,7 +62,7 @@
         Label1_28 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="EMPLOYEE ID"
+            Text: ="COUNTRY"
             X: =85
             Y: =243
             ZIndex: =8
@@ -84,7 +84,8 @@
         Label1_26 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="EMPLOYEE NAME"
+            Width: =200
             X: =85
             Y: =193
             ZIndex: =7
@@ -96,7 +97,7 @@
             Y: =193
             ZIndex: =20
 
-    grpLTRSupervisor_1 As group:
+    grpNHSupevisor As group:
         Height: =5
         Width: =5
         X: =40
@@ -266,7 +267,7 @@
         Label1_36 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="NEW BUSINESS UNIT"
+            Text: ="POSITION"
             Width: =200
             X: =85
             Y: =443
@@ -289,7 +290,7 @@
         Label1_34 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="SITE"
+            Text: ="EMPLOYEE ID"
             X: =85
             Y: =393
             ZIndex: =11
@@ -311,7 +312,7 @@
         Label1_32 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="LAST NAME"
+            Text: ="OMNIA ID"
             X: =85
             Y: =343
             ZIndex: =10
@@ -333,7 +334,7 @@
         Label1_30 As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="FIRST NAME"
+            Text: ="SITE"
             X: =85
             Y: =293
             ZIndex: =9
