@@ -5,12 +5,12 @@
 
     frPRStatic_2 As form:
         DataSource: =CurrentRoster
-        Height: =178
+        Height: =203
         Item: =cbPROmniaID_1.Selected
         NumberOfColumns: =1
         Width: =578
-        X: =117
-        Y: =285
+        X: =110
+        Y: =250
         ZIndex: =1
 
         frPREmployeeID_2 As typedDataCard.textualViewCard:
@@ -20,7 +20,7 @@
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"EMPLOYEE ID")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =50
             Required: =false
             Width: =578
             X: =0
@@ -58,7 +58,7 @@
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"FIRST NAME")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =50
             Required: =false
             Width: =578
             X: =0
@@ -96,7 +96,7 @@
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LAST NAME")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =50
             Required: =false
             Width: =578
             X: =0
@@ -134,7 +134,7 @@
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =50
             Required: =false
             Width: =578
             X: =0
@@ -169,7 +169,7 @@
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Text: ="OMNIA ID"
-        X: =144
+        X: =140
         Y: =213
         ZIndex: =3
 
@@ -207,9 +207,9 @@
                 Reset(cbPROmniaID_1)
                 )
             )
-        Text: ="SUBMIT"
-        X: =600
-        Y: =1000
+        Text: ="Submit"
+        X: =537
+        Y: =909
         ZIndex: =4
 
     frPRDynamic_2 As form:
@@ -218,8 +218,8 @@
         Item: =cbPROmniaID_1.Selected
         NumberOfColumns: =1
         Width: =578
-        X: =117
-        Y: =450
+        X: =110
+        Y: =440
         ZIndex: =5
 
         "'BUSINESS UNIT_PRDataCard4_2' As typedDataCard.allowedValuesStringEditCard":
@@ -495,17 +495,18 @@
                 ZIndex: =6
 
     btnPRBack As button:
+        Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: =Navigate(Promotion_FirstPage,ScreenTransition.None)
-        Text: ="BACK"
-        X: =410
-        Y: =1000
+        Text: ="Back"
+        X: =347
+        Y: =909
         ZIndex: =6
 
     txtPREmployeeIDFinal As label:
-        Text: =txtPREmployeeID_1
+        Text: =cbPROmniaID_1.Selected.USER
         Width: =310
-        X: =355
+        X: =343
         Y: =213
         ZIndex: =7
 

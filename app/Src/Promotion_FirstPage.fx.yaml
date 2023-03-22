@@ -9,7 +9,7 @@
         Item: =cbPROmniaID_1.Selected
         NumberOfColumns: =1
         Width: =578
-        X: =117
+        X: =108
         Y: =210
         ZIndex: =1
 
@@ -172,7 +172,7 @@
         SearchItems: =Search(CurrentRoster,cbPROmniaID_1.SearchText,"USER")
         SelectMultiple: =false
         Width: =310
-        X: =355
+        X: =346
         Y: =160
         ZIndex: =2
 
@@ -180,7 +180,7 @@
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Text: ="OMNIA ID"
-        X: =144
+        X: =135
         Y: =160
         ZIndex: =3
 
@@ -198,9 +198,9 @@
                 Notify("Please complete all fields!",NotificationType.Error),
                 Navigate(Promotion_SecondPage,ScreenTransition.None)
                 )
-        Text: ="REVIEW"
-        X: =600
-        Y: =1000
+        Text: ="Review"
+        X: =526
+        Y: =931
         ZIndex: =4
 
     frPRDynamic_1 As form:
@@ -209,7 +209,7 @@
         Item: =cbPROmniaID_1.Selected
         NumberOfColumns: =1
         Width: =578
-        X: =117
+        X: =108
         Y: =468
         ZIndex: =5
 
@@ -515,24 +515,12 @@
                 ZIndex: =5
 
     btnPRBackMP As button:
+        Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: |-
-            =If(
-                IsBlank(cbPRBusiness) ||
-                IsBlank(cbPRClient) ||
-                IsBlank(cbPRPosition) ||
-                IsBlank(cbPRLOB) ||
-                IsBlank(cbPRSubUnit) ||
-                IsBlank(cbPRBillability) ||
-                IsBlank(cbPRTeam),
-                Notify("Please complete all fields!",NotificationType.Error),
-                (Notify("Successfully submitted the information.",NotificationType.Success) &&
-                Navigate(HomePage,ScreenTransition.None)
-                )
-            )
-        Text: ="BACK"
-        X: =410
-        Y: =1000
+        OnSelect: =Navigate(HomePage,ScreenTransition.None)
+        Text: ="Back"
+        X: =336
+        Y: =931
         ZIndex: =6
 
     Label2 As label:
@@ -541,7 +529,18 @@
         Size: =17
         Text: ="NEW EMPLOYEE DETAILS"
         Width: =286
-        X: =259
+        X: =250
         Y: =403
         ZIndex: =7
+
+    "'REVIEW NEW HIRE FORM_1' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="REVIEW PROMOTION FORM"
+        Width: =485
+        X: =62
+        Y: =58
+        ZIndex: =8
 
