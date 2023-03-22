@@ -21,7 +21,6 @@
         OnSelect: |-
             =If(    
                 IsBlank(txtNHFirstName) ||
-                IsBlank(txtNHMiddleName) ||
                 IsBlank(txtNHLastName) ||
                 IsBlank(cbNHCountry) ||
                 IsBlank(cbNHSite),
@@ -234,7 +233,7 @@
                 SearchItems: =Search(Filter(Distinct(CurrentRoster, COUNTRY), !IsBlank(Value)),cbNHCountry.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =399.6
-                X: =296
+                X: =297.6
                 Y: =10
                 ZIndex: =2
 
@@ -273,7 +272,7 @@
                 SearchItems: =Search(Filter(Distinct(CurrentRoster, SITE), !IsBlank(Value)),cbNHSite.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =399.6
-                X: =296
+                X: =297.6
                 Y: =10
                 ZIndex: =2
 
