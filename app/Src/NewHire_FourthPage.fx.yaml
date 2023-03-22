@@ -43,10 +43,10 @@
                     "Internal Email: ", txtNHInternalEmail, "<br>",
                     "Role: ", cbNHRole.Selected.Value, "<br>", "<br>",
                     "EMPLOYEE'S DEDPARTMENT: ", "<br>",
-                    "Business Unit: ", cbNHBusinessUnit.Selected.Value, "<br>", "<br>",
-                    "Sub-Unit: ", cbNHSubUnit.Selected.Value, "<br>", "<br>",
-                    "Client: ", cbNHClient.Selected.Value, "<br>", "<br>",
-                    "LOB: ", cbNHLOB.Selected.Value, "<br>", "<br>"
+                    "Business Unit: ", cbNHBusinessUnit.Selected.Value, "<br>",
+                    "Sub-Unit: ", cbNHSubUnit.Selected.Value, "<br>",
+                    "Client: ", cbNHClient.Selected.Value, "<br>",
+                    "LOB: ", cbNHLOB.Selected.Value, "<br>"
                 )
             ) &&
             Notify("Form has been submitted successfully.",NotificationType.Success) &&
