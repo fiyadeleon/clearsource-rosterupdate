@@ -338,9 +338,7 @@
                 IsBlank(Status_Input) ||
                 IsBlank(EffectiveDate_Input),
                 Notify("Please complete all fields!",NotificationType.Error),
-                (Notify("Please Review the Termination Request.",NotificationType.Success) &&
                 Navigate(Termination_VerificationPage,ScreenTransition.None)
-                )
             )
         Text: ="Proceed"
         X: =511
