@@ -189,8 +189,8 @@
                 Navigate(HomePage,ScreenTransition.None) &&
                 Office365Outlook.SendEmailV2(
                    "sophia.deleon@clearsourcebpo.com",
-                   Concatenate("[LATERAL TRANSFER] ", txtPREmployeeID_1, ": ", txtPRFirstName_1, " ", txtPRLastName_1),
-                   Concatenate("Hi Team,", "<br>", "<br>", "Please see details for lateral movement of ", txtPRFirstName_1, " ", txtPRLastName_1, ".", "<br>", "<br>",
+                   Concatenate("[PROMOTION] ", txtPREmployeeID_1, ": ", txtPRFirstName_1, " ", txtPRLastName_1),
+                   Concatenate("Hi Team,", "<br>", "<br>", "Please see details for promotion of, ", txtPRFirstName_1, " ", txtPRLastName_1, ".", "<br>", "<br>",
                         "Employee ID: ", txtPREmployeeID_1, "<br>",
                         "Employee Name: ", txtPRFirstName_1, " ", txtPRLastName_1, "<br>",
                         "Site: ", txtPRSite_1, "<br>",
