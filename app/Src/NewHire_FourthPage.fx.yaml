@@ -105,7 +105,12 @@
 
         Label1_27 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Text: =c
+            Text: |-
+                =If(
+                    IsBlank(txtNHMiddleName),
+                    Concatenate(txtNHFirstName, " ", txtNHLastName),
+                    Concatenate(txtNHFirstName, " ", txtNHMiddleName, " ", txtNHLastName)
+                )
             X: =369
             Y: =166
             ZIndex: =20
