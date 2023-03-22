@@ -51,7 +51,9 @@
                 )
             ) &&
             Notify("Form has been submitted successfully.",NotificationType.Success) &&
-            ResetForm(NewHire_FirstPage)
+            ResetForm(formNHFirst) &&
+            ResetForm(formNHSecond) &&
+            ResetForm(formNHThird)
         Text: ="Submit"
         X: =558
         Y: =1160
