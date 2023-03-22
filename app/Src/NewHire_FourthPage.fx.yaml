@@ -19,25 +19,38 @@
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |
             =Navigate(HomePage,ScreenTransition.None) &&
+            If(
+                IsBlank(txtNHMiddleName),
+                Set(EmpName, Concatenate(txtNHFirstName, " ", txtNHLastName)),
+                Set(EmpName, Concatenate(txtNHFirstName, " ", txtNHMiddleName, " ", txtNHLastName))
+            ) &&
             Office365Outlook.SendEmailV2(
                "sophia.deleon@clearsourcebpo.com",
-               Concatenate("[NEW HIRE] ", txtLTEmployeeId, ": ", txtLTFirstName, " ", txtLTLastName),
-               Concatenate("Hi Team,", "<br>", "<br>", "Please see details for lateral movement of ", txtLTFirstName, " ", txtLTLastName, ".", "<br>", "<br>",
-                    "Employee ID: ", txtLTEmployeeId, "<br>", 
-                    "Employee Name: ", txtLTFirstName, " ", txtLTLastName, "<br>",
-                    "Site: ", txtLTSite, "<br>",
-                    "New Business Unit: ", cbLTBusinessUnit.Selected.Value, "<br>",
-                    "New Program/Client: ", cbLTClient.Selected.Value, "<br>",
-                    "New Position: ", cbLTPosition.Selected.Value, "<br>",
-                    "New LOB: ", cbLTLOB.Selected.Value, "<br>",
-                    "New Sub-Unit: ", cbLTSubUnit.Selected.Value, "<br>",
-                    "Billability: ", cbLTBillability.Selected.Value, "<br>",
-                    "New Schedule: ", txtLTSchedule, "<br>",
-                    "New Supervisor: ", cbLTSupervisor.Selected.Value
+               Concatenate("[NEW HIRE] ", txtNHEmployeeId, ": ", txtNHFirstName, " ", txtNHLastName),
+               Concatenate("Hi Team,", "<br>", "<br>", "Please see details of the new hire ", txtNHFirstName, " ", txtNHLastName, ".", "<br>", "<br>",
+                    "EMPLOYEE'S PERSONAL INFORMATION: ", "<br>",
+                    "Employee Name: ", EmpName, "<br>",
+                    "Country/Site: ", cbNHCountry.Selected.Value, "/", cbNHSite.Selected.Value, "<br>", "<br>",
+                    "EMPLOYEE'S PROFILE: ", "<br>",
+                    "Omnia ID: ", txtNHOmnia, "<br>",
+                    "Employee ID: ", txtNHEmployeeId, "<br>",
+                    "Position: ", cbNHPosition.Selected.Value, "<br>",
+                    "Hire Date: ", dateNHHireDate.SelectedDate, "<br>",
+                    "Regularization Date: ", dateNHRegDate.SelectedDate, "<br>",
+                    "Status: ", cbNHStatus.Selected.Value, "<br>",
+                    "Employment Status: ", cbNHEmpStatus.Selected.Value, "<br>",
+                    "Supervisor: ", cbNHSupervisor.Selected.Value, "<br>",
+                    "Internal Email: ", txtNHInternalEmail, "<br>",
+                    "Role: ", cbNHRole.Selected.Value, "<br>", "<br>",
+                    "EMPLOYEE'S DEDPARTMENT: ", "<br>",
+                    "Business Unit: ", cbNHBusinessUnit.Selected.Value, "<br>", "<br>",
+                    "Sub-Unit: ", cbNHSubUnit.Selected.Value, "<br>", "<br>",
+                    "Client: ", cbNHClient.Selected.Value, "<br>", "<br>",
+                    "LOB: ", cbNHLOB.Selected.Value, "<br>", "<br>"
                 )
             ) &&
             Notify("Form has been submitted successfully.",NotificationType.Success) &&
-            Reset(cbLTSearch) && Reset(drpRosterSelection)
+            Reset(drpRosterSelection)
         Text: ="Submit"
         X: =558
         Y: =1160
@@ -92,12 +105,7 @@
 
         Label1_27 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Text: |-
-                =If(
-                    IsBlank(txtNHMiddleName),
-                    Concatenate(txtNHFirstName, " ", txtNHLastName),
-                    Concatenate(txtNHFirstName, " ", txtNHMiddleName, " ", txtNHLastName)
-                )
+            Text: =c
             X: =369
             Y: =166
             ZIndex: =20
