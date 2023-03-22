@@ -221,7 +221,7 @@
         Y: =450
         ZIndex: =5
 
-        "'BUSINESS UNIT_DataCard4_2' As typedDataCard.allowedValuesStringEditCard":
+        "'BUSINESS UNIT_PRDataCard4_2' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
@@ -255,7 +255,7 @@
                 Y: =10
                 ZIndex: =6
 
-        CLIENT_DataCard2_2 As typedDataCard.allowedValuesStringEditCard:
+        CLIENT_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "CLIENT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
@@ -289,7 +289,7 @@
                 Y: =10
                 ZIndex: =6
 
-        POSITION_DataCard2_2 As typedDataCard.allowedValuesStringEditCard:
+        POSITION_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "POSITION")
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
@@ -323,7 +323,7 @@
                 Y: =10
                 ZIndex: =6
 
-        LOB_DataCard2_2 As typedDataCard.allowedValuesStringEditCard:
+        LOB_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
             BorderStyle: =BorderStyle.Solid
             DataField: ="LOB"
@@ -357,7 +357,7 @@
                 Y: =10
                 ZIndex: =6
 
-        "'SUB-UNIT_DataCard2_2' As typedDataCard.allowedValuesStringEditCard":
+        "'SUB-UNIT_PRDataCard2_2' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "SUB-UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
@@ -391,7 +391,7 @@
                 Y: =10
                 ZIndex: =6
 
-        BILLABILITY_DataCard2_2 As typedDataCard.allowedValuesStringEditCard:
+        BILLABILITY_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
@@ -425,7 +425,7 @@
                 Y: =10
                 ZIndex: =6
 
-        SCHEDULE_DataCard3_2 As typedDataCard.textualEditCard:
+        SCHEDULE_PRDataCard3_2 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SCHEDULE"
             Default: =ThisItem.SCHEDULE
@@ -459,7 +459,7 @@
                 Y: =7
                 ZIndex: =6
 
-        TEAM_DataCard2_2 As typedDataCard.allowedValuesStringEditCard:
+        TEAM_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "TEAM")
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
@@ -507,3 +507,4 @@
         X: =355
         Y: =213
         ZIndex: =7
+
