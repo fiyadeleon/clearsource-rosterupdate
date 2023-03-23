@@ -14,10 +14,21 @@
         Y: =33
         ZIndex: =1
 
+    EmployeeID_Label As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =14
+        Text: |-
+            ="EMPLOYEE OMNIA ID:"
+        Width: =226
+        X: =90
+        Y: =143
+        ZIndex: =3
+
     EmployeeInfo_Form As form:
         DataSource: =CurrentRoster
         Height: =382
-        Item: =LookUp(CurrentRoster, USER = EmployeeID_Input.Text)
+        Item: =EmployeeID_Input.Selected
         NumberOfColumns: =1
         Width: =675
         X: =57
@@ -198,8 +209,7 @@
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
-                X: =30
-                Y: =10
+                X: =36
                 ZIndex: =1
 
             Position_Value As label:
@@ -355,6 +365,17 @@
         Y: =958
         ZIndex: =12
 
+    EmployeeID_Input As combobox:
+        ChevronBackground: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(0, 18, 107, 1)
+        DisplayFields: =["USER"]
+        Items: =CurrentRoster
+        SearchFields: =["USER"]
+        SearchItems: =Search(CurrentRoster,EmployeeID_Input.SearchText,"USER")
+        X: =343
+        Y: =143
+        ZIndex: =15
+
     Comment As group:
         Height: =5
         Width: =5
@@ -382,33 +403,6 @@
             X: =85
             Y: =818
             ZIndex: =14
-
-    "'EmployeeID Group' As group":
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =15
-
-        EmployeeID_Input As text:
-            Color: =RGBA(0, 18, 107, 1)
-            Default: =""
-            HintText: ="Search Employee ID"
-            Width: =328
-            X: =343
-            Y: =143
-            ZIndex: =2
-
-        EmployeeID_Label As label:
-            Color: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =14
-            Text: |-
-                ="EMPLOYEE OMNIA ID:"
-            Width: =226
-            X: =90
-            Y: =143
-            ZIndex: =3
 
     "'TerminationType Group' As group":
         Height: =5
