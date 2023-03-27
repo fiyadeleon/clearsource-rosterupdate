@@ -1,37 +1,4 @@
 {
-  "6cd612cb-7f41-4181-8da8-a8448613eb66": {
-    "connectionParameters": {
-      "authType": "basic",
-      "database": "clearsourcedev",
-      "server": "clearsourcedev1.cyni4an3gwvk.ap-southeast-1.rds.amazonaws.com",
-      "sku": "Enterprise"
-    },
-    "connectionRef": {
-      "displayName": "PostgreSQL",
-      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3202/postgresql/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_postgresql",
-      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_postgresql/connections/ed70302661e84df0af3e4a81eeb520a4"
-    },
-    "datasets": {
-      "default": {
-        "dataSources": {
-          "public.headcount_roster": {
-            "tableName": "[public].[headcount_roster]"
-          },
-          "public.roster_additional_tracker": {
-            "tableName": "[public].[roster_additional_tracker]"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "public.headcount_roster",
-      "public.roster_additional_tracker"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "6cd612cb-7f41-4181-8da8-a8448613eb66"
-  },
   "a98f1ce0-65af-4442-ad24-7697c24f3724": {
     "connectionParameters": {
       "sku": "Enterprise"
