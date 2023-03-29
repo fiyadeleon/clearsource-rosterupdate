@@ -1,33 +1,33 @@
-"Promotion_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"Promotion_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image (2)'
     Height: =1123
     Width: =794
 
-    frPRStatic_1 As form:
+    frPRStatic_2 As form:
         DataSource: =CurrentRoster
-        Height: =178
+        Height: =203
         Item: =cbPROmniaID_1.Selected
         NumberOfColumns: =1
         Width: =578
-        X: =108
-        Y: =210
+        X: =110
+        Y: =214
         ZIndex: =1
 
-        frPREmployeeID_1 As typedDataCard.textualViewCard:
+        frPREmployeeID_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="EMPLOYEE ID"
             Default: =ThisItem.'EMPLOYEE ID'
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"EMPLOYEE ID")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =50
             Required: =false
             Width: =578
             X: =0
             Y: =0
             ZIndex: =1
 
-            DataCardKey15_1 As label:
+            DataCardKey15_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -35,10 +35,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtPREmployeeID_1.Height / 2) - (Self.Height / 2)
+                Y: =10 + (txtPREmployeeID_2.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtPREmployeeID_1 As label:
+            txtPREmployeeID_2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -47,25 +47,25 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey15_1.X + DataCardKey15_1.Width
+                X: =DataCardKey15_2.X + DataCardKey15_2.Width
                 Y: =10
                 ZIndex: =2
 
-        frPRFirstName_1 As typedDataCard.textualViewCard:
+        frPRFirstName_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"FIRST NAME")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =50
             Required: =false
             Width: =578
             X: =0
             Y: =1
             ZIndex: =1
 
-            DataCardKey16_1 As label:
+            DataCardKey16_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -73,10 +73,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtPRFirstName_1.Height / 2) - (Self.Height / 2)
+                Y: =10 + (txtPRFirstName_2.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtPRFirstName_1 As label:
+            txtPRFirstName_2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -85,25 +85,25 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey16_1.X + DataCardKey16_1.Width
+                X: =DataCardKey16_2.X + DataCardKey16_2.Width
                 Y: =10
                 ZIndex: =2
 
-        frPRLastName_1 As typedDataCard.textualViewCard:
+        frPRLastName_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="LAST NAME"
             Default: =ThisItem.'LAST NAME'
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LAST NAME")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =50
             Required: =false
             Width: =578
             X: =0
             Y: =2
             ZIndex: =1
 
-            DataCardKey9_1 As label:
+            DataCardKey9_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -111,10 +111,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtPRLastName_1.Height / 2) - (Self.Height / 2)
+                Y: =10 + (txtPRLastName_2.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtPRLastName_1 As label:
+            txtPRLastName_2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -123,25 +123,25 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey9_1.X + DataCardKey9_1.Width
+                X: =DataCardKey9_2.X + DataCardKey9_2.Width
                 Y: =10
                 ZIndex: =2
 
-        frPRSite_1 As typedDataCard.textualViewCard:
+        frPRSite_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SITE"
             Default: =ThisItem.SITE
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =50
             Required: =false
             Width: =578
             X: =0
             Y: =3
             ZIndex: =1
 
-            DataCardKey13_1 As label:
+            DataCardKey13_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -149,10 +149,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtPRSite_1.Height / 2) - (Self.Height / 2)
+                Y: =10 + (txtPRSite_2.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtPRSite_1 As label:
+            txtPRSite_2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -161,31 +161,19 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey13_1.X + DataCardKey13_1.Width
+                X: =DataCardKey13_2.X + DataCardKey13_2.Width
                 Y: =10
                 ZIndex: =2
 
-    cbPROmniaID_1 As combobox:
-        ChevronBackground: =RGBA(0, 18, 107, 1)
-        DisplayFields: =["USER"]
-        Items: =CurrentRoster
-        SearchFields: =["USER"]
-        SearchItems: =Search(CurrentRoster,cbPROmniaID_1.SearchText,"USER")
-        SelectMultiple: =false
-        Width: =310
-        X: =346
-        Y: =160
-        ZIndex: =2
-
-    txtPROmniaID_1 As label:
+    txtPROmniaID_2 As label:
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Text: ="OMNIA ID"
-        X: =135
-        Y: =160
+        X: =140
+        Y: =177
         ZIndex: =3
 
-    btnPRReview As button:
+    btnPRSubmitFinal As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
@@ -195,27 +183,46 @@
                 IsBlank(cbPRLOB) ||
                 IsBlank(cbPRSubUnit) ||
                 IsBlank(cbPRBillability) ||
-                IsBlank(txtPRSchedule) ||
                 IsBlank(cbPRTeam),
                 Notify("Please complete all fields!",NotificationType.Error),
-                Navigate(Promotion_SecondPage,ScreenTransition.None)
+                (Notify("Successfully submitted the information.",NotificationType.Success) &&
+                Navigate(HomePage,ScreenTransition.None) &&
+                Office365Outlook.SendEmailV2(
+                   "sophia.deleon@clearsourcebpo.com",
+                   Concatenate("[PROMOTION] ", txtPREmployeeID_1, ": ", txtPRFirstName_1, " ", txtPRLastName_1),
+                   Concatenate("Hi Team,", "<br>", "<br>", "Please see details for promotion of, ", txtPRFirstName_1, " ", txtPRLastName_1, ".", "<br>", "<br>",
+                        "Employee ID: ", txtPREmployeeID_1, "<br>",
+                        "Employee Name: ", txtPRFirstName_1, " ", txtPRLastName_1, "<br>",
+                        "Site: ", txtPRSite_1, "<br>",
+                        "New Business Unit: ", cbPRBusiness.Selected.Value, "<br>",
+                        "New Program/Client: ", cbPRClient.Selected.Value, "<br>",
+                        "New Position: ", cbPRPosition.Selected.Value, "<br>",
+                        "New LOB: ", cbPRLOB.Selected.Value, "<br>",
+                        "New Sub-Unit: ", cbPRSubUnit.Selected.Value, "<br>",
+                        "Billability: ", cbPRBillability.Selected.Value, "<br>",
+                        "New Schedule: ", txtPRSchedule, "<br>",
+                        "New Supervisor: ", cbPRTeam.Selected.Value
                 )
-        Text: ="Review"
-        X: =526
-        Y: =931
+                ) &&
+                Reset(cbPROmniaID_1)
+                )
+            )
+        Text: ="Submit"
+        X: =537
+        Y: =873
         ZIndex: =4
 
-    frPRDynamic_1 As form:
+    frPRDynamic_2 As form:
         DataSource: =CurrentRoster
         Height: =417
         Item: =cbPROmniaID_1.Selected
         NumberOfColumns: =1
         Width: =578
-        X: =108
-        Y: =468
+        X: =110
+        Y: =404
         ZIndex: =5
 
-        "'BUSINESS UNIT_PRDataCard4_1' As typedDataCard.allowedValuesStringEditCard":
+        "'BUSINESS UNIT_PRDataCard4_2' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
@@ -231,30 +238,25 @@
             Y: =0
             ZIndex: =1
 
-            DataCardKey23_1 As label:
+            DataCardKey23_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="NEW BUSINESS UNIT"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =10
                 ZIndex: =1
 
-            cbPRBusiness As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, 'BUSINESS UNIT'),cbPRBusiness.SearchText,"Value")
-                SelectMultiple: =false
+            txtPRBusinessFinal As label:
+                Text: =cbPRBusiness.Selected.Value
+                Width: =328
                 X: =237
                 Y: =10
-                ZIndex: =5
+                ZIndex: =6
 
-        CLIENT_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+        CLIENT_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "CLIENT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
@@ -270,30 +272,25 @@
             Y: =1
             ZIndex: =1
 
-            DataCardKey11_1 As label:
+            DataCardKey11_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="NEW CLIENT"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =10
                 ZIndex: =1
 
-            cbPRClient As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),CLIENT)
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, CLIENT)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbPRClient.SearchText,"Value")
-                SelectMultiple: =false
+            txtPRClient As label:
+                Text: =cbPRClient.Selected.Value
+                Width: =328
                 X: =237
                 Y: =10
-                ZIndex: =5
+                ZIndex: =6
 
-        POSITION_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+        POSITION_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "POSITION")
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
@@ -309,30 +306,25 @@
             Y: =2
             ZIndex: =1
 
-            DataCardKey12_1 As label:
+            DataCardKey12_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="NEW POSITION"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =10
                 ZIndex: =1
 
-            cbPRPosition As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, POSITION)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, POSITION),cbPRPosition.SearchText,"Value")
-                SelectMultiple: =false
+            txtPRPosition As label:
+                Text: =cbPRPosition.Selected.Value
+                Width: =328
                 X: =237
                 Y: =10
-                ZIndex: =5
+                ZIndex: =6
 
-        LOB_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+        LOB_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
             BorderStyle: =BorderStyle.Solid
             DataField: ="LOB"
@@ -348,30 +340,25 @@
             Y: =3
             ZIndex: =1
 
-            DataCardKey14_1 As label:
+            DataCardKey14_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="NEW LOB"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =10
                 ZIndex: =1
 
-            cbPRLOB As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),LOB)
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, LOB)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, LOB),cbPRLOB.SearchText,"Value")
-                SelectMultiple: =false
+            txtPRLOB As label:
+                Text: =cbPRLOB.Selected.Value
+                Width: =328
                 X: =237
                 Y: =10
-                ZIndex: =5
+                ZIndex: =6
 
-        "'SUB-UNIT_PRDataCard2_1' As typedDataCard.allowedValuesStringEditCard":
+        "'SUB-UNIT_PRDataCard2_2' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "SUB-UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
@@ -387,30 +374,25 @@
             Y: =4
             ZIndex: =1
 
-            DataCardKey17_1 As label:
+            DataCardKey17_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="NEW SUB-UNIT"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =10
                 ZIndex: =1
 
-            cbPRSubUnit As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'SUB-UNIT')
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, 'SUB-UNIT'),cbPRSubUnit.SearchText,"Value")
-                SelectMultiple: =false
+            txtPRSubUnit As label:
+                Text: =cbPRSubUnit.Selected.Value
+                Width: =328
                 X: =237
                 Y: =10
-                ZIndex: =5
+                ZIndex: =6
 
-        BILLABILITY_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+        BILLABILITY_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
@@ -426,30 +408,25 @@
             Y: =5
             ZIndex: =1
 
-            DataCardKey19_1 As label:
+            DataCardKey19_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="NEW BILLABILITY"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =10
                 ZIndex: =1
 
-            cbPRBillability As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),BILLABILITY)
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, BILLABILITY)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, BILLABILITY),cbPRBillability.SearchText,"Value")
-                SelectMultiple: =false
+            txtPRBillability As label:
+                Text: =cbPRBillability.Selected.Value
+                Width: =328
                 X: =237
                 Y: =10
-                ZIndex: =5
+                ZIndex: =6
 
-        SCHEDULE_PRDataCard3_1 As typedDataCard.textualEditCard:
+        SCHEDULE_PRDataCard3_2 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SCHEDULE"
             Default: =ThisItem.SCHEDULE
@@ -465,26 +442,25 @@
             Y: =6
             ZIndex: =1
 
-            DataCardKey21_1 As label:
+            DataCardKey21_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="NEW SCHEDULE"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =10
                 ZIndex: =1
 
-            txtPRSchedule As text:
-                Default: =""
-                HintText: ="e.g., 10PM - 7AM PHT"
+            txtPRNewSchedule As label:
+                Text: =txtPRSchedule
                 Width: =330
                 X: =237
-                Y: =10
-                ZIndex: =5
+                Y: =7
+                ZIndex: =6
 
-        TEAM_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+        TEAM_PRDataCard2_2 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "TEAM")
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
@@ -500,54 +476,46 @@
             Y: =7
             ZIndex: =1
 
-            DataCardKey20_1 As label:
+            DataCardKey20_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="NEW TEAM"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =10
                 ZIndex: =1
 
-            cbPRTeam As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),TEAM)
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, TEAM)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, TEAM),cbPRTeam.SearchText,"Value")
-                SelectMultiple: =false
+            txtPRTeamFinal As label:
+                Text: =cbPRTeam.Selected.Value
+                Width: =328
                 X: =237
                 Y: =10
-                ZIndex: =5
+                ZIndex: =6
 
-    btnPRBackMP As button:
+    btnPRBack As button:
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(HomePage,ScreenTransition.None)
+        OnSelect: =Navigate(Promotion_FirstPage,ScreenTransition.None)
         Text: ="Back"
-        X: =336
-        Y: =931
+        X: =347
+        Y: =873
         ZIndex: =6
 
-    Label2 As label:
-        Color: =RGBA(0, 18, 107, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =17
-        Text: ="NEW EMPLOYEE DETAILS"
-        Width: =286
-        X: =250
-        Y: =403
+    txtPREmployeeIDFinal As label:
+        Text: =cbPROmniaID_1.Selected.USER
+        Width: =310
+        X: =343
+        Y: =177
         ZIndex: =7
 
-    "'PROMOTION FORM_2' As label":
+    "'PROMOTION FORM_1' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
-        Text: ="PROMOTION FORM"
+        Text: ="REVIEW PROMOTION FORM"
         Width: =485
         X: =62
         Y: =58
