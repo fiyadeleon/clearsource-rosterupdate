@@ -1,9 +1,9 @@
 "LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image (2)'
-    Height: =1050
+    Height: =1000
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
-    Width: =794
+    Width: =1500
 
     "'Lateral Transfer Form_1' As label":
         Color: =RGBA(0, 18, 107, 1)
@@ -20,8 +20,8 @@
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: =
         Text: ="Review"
-        X: =562
-        Y: =935
+        X: =1288
+        Y: =908
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -29,8 +29,8 @@
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
-        X: =373
-        Y: =935
+        X: =1095
+        Y: =908
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
@@ -61,74 +61,6 @@
             Y: =122
             ZIndex: =9
 
-    DataTable1 As dataTable.datatable:
-        BorderStyle: =BorderStyle.Solid
-        DisplayMode: =DisplayMode.Edit
-        Fill: =RGBA(0, 0, 0, 0)
-        HeadingFill: =RGBA(0, 18, 107, 1)
-        Height: =676
-        Items: =Filter(AddColumns(Headcount_table,"USER2",USER),USER2 in multifilter)
-        Width: =671
-        X: =51
-        Y: =242
-        ZIndex: =15
-
-        "'EMPLOYEE ID_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="EMPLOYEE ID"
-            FieldName: ="EMPLOYEE ID"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =1
-            Text: =ThisItem.'EMPLOYEE ID'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =1
-
-        "'FIRST NAME_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="FIRST NAME"
-            FieldName: ="FIRST NAME"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =2
-            Text: =ThisItem.'FIRST NAME'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =2
-
-        "'LAST NAME_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="LAST NAME"
-            FieldName: ="LAST NAME"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =3
-            Text: =ThisItem.'LAST NAME'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =3
-
-        SITE_Column1 As dataTableColumn.textualColumn:
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="SITE"
-            FieldName: ="SITE"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =4
-            Text: =ThisItem.SITE
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =4
-
     grpLTSearchMultipleOmnia As group:
         Height: =5
         Width: =5
@@ -153,7 +85,6 @@
             OnChange: =ClearCollect(multifilter, Self.SelectedItems)
             SearchFields: =["Value"]
             SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearch.Selected.LOB),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
-            SelectMultiple: =false
             Width: =401.4
             X: =321
             Y: =182
