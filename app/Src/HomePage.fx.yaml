@@ -34,7 +34,7 @@
 
     btnFirstPageNext As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "New Hire", Navigate(NewHire_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Lateral Tranfer", Navigate(LateralTransfer_HomePage,ScreenTransition.Cover)))
+        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "New Hire", Navigate(NewHire_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_HomePage,ScreenTransition.Cover)))
         Text: ="Next"
         X: =355
         Y: =455
