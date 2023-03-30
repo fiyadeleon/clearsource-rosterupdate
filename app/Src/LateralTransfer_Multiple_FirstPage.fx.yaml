@@ -18,19 +18,7 @@
 
     btnLTMultipleReview As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: |-
-            =If(    
-                IsBlank(cbLTBusinessUnit_1) ||
-                IsBlank(cbLTClient_1) ||
-                IsBlank(cbLTPosition_1) ||
-                IsBlank(cbLTLOB_1) ||
-                IsBlank(cbLTSubUnit_1) ||
-                IsBlank(cbLTBillability_1) ||
-                IsBlank(txtLTSchedule_1) ||
-                IsBlank(cbLTSupervisor_1),
-                Notify("Please complete all fields!",NotificationType.Error),
-                Navigate(LateralTransfer_Single_SecondPage,ScreenTransition.None)
-            )
+        OnSelect: =
         Text: ="Review"
         X: =562
         Y: =935
@@ -77,12 +65,69 @@
         BorderStyle: =BorderStyle.Solid
         DisplayMode: =DisplayMode.Edit
         Fill: =RGBA(0, 0, 0, 0)
-        Height: =500
-        Items: =Headcount_table
-        Width: =794
-        X: =0
-        Y: =234
+        HeadingFill: =RGBA(0, 18, 107, 1)
+        Height: =676
+        Items: =Filter(AddColumns(Headcount_table,"USER2",USER),USER2 in multifilter)
+        Width: =671
+        X: =51
+        Y: =242
         ZIndex: =15
+
+        "'EMPLOYEE ID_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="EMPLOYEE ID"
+            FieldName: ="EMPLOYEE ID"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.'EMPLOYEE ID'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        "'FIRST NAME_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="FIRST NAME"
+            FieldName: ="FIRST NAME"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.'FIRST NAME'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        "'LAST NAME_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="LAST NAME"
+            FieldName: ="LAST NAME"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.'LAST NAME'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        SITE_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="SITE"
+            FieldName: ="SITE"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.SITE
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
 
     grpLTSearchMultipleOmnia As group:
         Height: =5
