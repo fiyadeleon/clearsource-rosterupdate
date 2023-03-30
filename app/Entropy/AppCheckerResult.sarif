@@ -9227,168 +9227,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 4,
-                  "charOffset": 65,
-                  "snippet": {
-                    "text": ".LOB"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "LateralTransfer_Multiple_FirstPage",
-                "type": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LOB"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "LateralTransfer_Multiple_FirstPage",
-                "type": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text",
-              "Error"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.SearchItems"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.SearchItems",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 4,
-                  "charOffset": 72,
-                  "snippet": {
-                    "text": ".LOB"
-                  }
-                }
-              },
-              "properties": {
-                "member": "SearchItems",
-                "module": "LateralTransfer_Multiple_FirstPage",
-                "type": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LOB"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.SearchItems"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.SearchItems",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 41,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "SearchItems",
-                "module": "LateralTransfer_Multiple_FirstPage",
-                "type": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text",
-              "Error"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "NewHire_ThirdPage.formNHThird.DataSource"
                 }
               ],
@@ -14167,6 +14005,66 @@
                 "member": "Text",
                 "module": "NewHire_FourthPage",
                 "type": "NewHire_FourthPage.Label1_59"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.SearchItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.SearchItems",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "SearchItems",
+                "module": "LateralTransfer_Multiple_FirstPage",
+                "type": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "LateralTransfer_Multiple_FirstPage",
+                "type": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia"
               }
             }
           ],

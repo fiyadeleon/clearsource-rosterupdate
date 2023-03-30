@@ -93,9 +93,9 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["Value"]
-            Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.LOB),USER)
+            Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearch.Selected.LOB),USER)
             SearchFields: =["Value"]
-            SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.LOB),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
+            SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearch.Selected.LOB),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
             X: =321
