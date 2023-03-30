@@ -28,9 +28,9 @@
     cbLTSearch As combobox:
         ChevronBackground: =RGBA(0, 18, 107, 1)
         DisplayFields: =["USER"]
-        Items: =CurrentRoster
+        Items: =Headcount_table
         SearchFields: =["USER"]
-        SearchItems: =Search(CurrentRoster,cbLTSearch.SearchText,"USER")
+        SearchItems: =Search(Headcount_table,cbLTSearch.SearchText,"USER")
         SelectMultiple: =false
         Width: =401.4
         X: =321
@@ -39,7 +39,7 @@
 
     formLTStatic As form:
         BorderColor: =RGBA(0, 0, 0, 1)
-        DataSource: =Sort(CurrentRoster, USER, SortOrder.Ascending)
+        DataSource: =Sort(Headcount_table, USER, SortOrder.Ascending)
         Height: =247
         Item: =cbLTSearch.Selected
         NumberOfColumns: =1
@@ -53,7 +53,7 @@
             DataField: ="EMPLOYEE ID"
             Default: =ThisItem.'EMPLOYEE ID'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"EMPLOYEE ID")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"EMPLOYEE ID")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -92,7 +92,7 @@
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"FIRST NAME")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -131,7 +131,7 @@
             DataField: ="LAST NAME"
             Default: =ThisItem.'LAST NAME'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LAST NAME")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LAST NAME")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -170,7 +170,7 @@
             DataField: ="SITE"
             Default: =ThisItem.SITE
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SITE")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -234,7 +234,7 @@
         ZIndex: =12
 
     formLTDynamic As form:
-        DataSource: =Sort(CurrentRoster, USER, SortOrder.Ascending)
+        DataSource: =Sort(Headcount_table, USER, SortOrder.Ascending)
         Height: =430
         Item: =cbLTSearch.Selected
         NumberOfColumns: =1
@@ -244,12 +244,12 @@
         ZIndex: =13
 
         "'BUSINESS UNIT_LTDataCard' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
             Default: =ThisItem.'BUSINESS UNIT'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -272,11 +272,11 @@
 
             cbLTBusinessUnit As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'BUSINESS UNIT')
+                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=cbLTSearch.Selected.USER),'BUSINESS UNIT')
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTBusinessUnit.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTBusinessUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -284,12 +284,12 @@
                 ZIndex: =3
 
         "'SUB-UNIT_LTDataCard' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "SUB-UNIT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "SUB-UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB-UNIT'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SUB-UNIT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -312,11 +312,11 @@
 
             cbLTSubUnit As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
+                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value)),cbLTSubUnit.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTSubUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -324,12 +324,12 @@
                 ZIndex: =2
 
         POSITION_LTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "POSITION")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "POSITION")
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"POSITION")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -352,11 +352,11 @@
 
             cbLTPosition As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),POSITION)
+                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=cbLTSearch.Selected.USER),POSITION)
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(CurrentRoster, POSITION), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, POSITION), !IsBlank(Value)),cbLTPosition.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbLTPosition.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -364,12 +364,12 @@
                 ZIndex: =2
 
         CLIENT_LTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "CLIENT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "CLIENT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
             Default: =ThisItem.CLIENT
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"CLIENT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CLIENT")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -392,11 +392,11 @@
 
             cbLTClient As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),CLIENT)
+                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=cbLTSearch.Selected.USER),CLIENT)
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(CurrentRoster, CLIENT), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, CLIENT), !IsBlank(Value)),cbLTClient.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbLTClient.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -404,12 +404,12 @@
                 ZIndex: =2
 
         LOB_LTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "LOB")
             BorderStyle: =BorderStyle.Solid
             DataField: ="LOB"
             Default: =ThisItem.LOB
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LOB")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -432,11 +432,11 @@
 
             cbLTLOB As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),LOB)
+                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=cbLTSearch.Selected.USER),LOB)
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(CurrentRoster, LOB), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, LOB), !IsBlank(Value)),cbLTLOB.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTLOB.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -444,12 +444,12 @@
                 ZIndex: =2
 
         BILLABILITY_LTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BILLABILITY")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
             Default: =ThisItem.BILLABILITY
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BILLABILITY")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -472,11 +472,11 @@
 
             cbLTBillability As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
+                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value)),cbLTBillability.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTBillability.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -486,12 +486,12 @@
         SCHEDULE_LTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SCHEDULE"
-            Default: =ThisItem.SCHEDULE
+            Default: =
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SCHEDULE")
+            DisplayName: =
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
-            MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "SCHEDULE")
+            MaxLength: =
             Required: =false
             Update: =
             Width: =729
@@ -520,12 +520,12 @@
                 ZIndex: =2
 
         TEAM_LTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "TEAM")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "TEAM")
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
             Default: =ThisItem.TEAM
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"TEAM")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -548,11 +548,11 @@
 
             cbLTSupervisor As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch.Selected.USER),'SUB-UNIT')
+                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=cbLTSearch.Selected.USER),TEAM)
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value)),cbLTSupervisor.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTSupervisor.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
