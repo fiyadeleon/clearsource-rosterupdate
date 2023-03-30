@@ -1,4 +1,4 @@
-"LateralTransfer_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"LateralTransfer_Single_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image (2)'
     Height: =1050
     ImagePosition: =ImagePosition.Stretch
@@ -46,7 +46,7 @@
     btnLTRBack As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover)
+        OnSelect: =Navigate(LateralTransfer_Single_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =369
         Y: =870

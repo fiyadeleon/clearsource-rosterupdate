@@ -1,0 +1,68 @@
+"LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    BackgroundImage: ='MicrosoftTeams-image (2)'
+    Height: =1050
+    ImagePosition: =ImagePosition.Stretch
+    OnVisible: =
+    Width: =794
+
+    "'Lateral Transfer Form_1' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="LATERAL TRANSFER FORM"
+        Width: =453
+        X: =42
+        Y: =40
+        ZIndex: =4
+
+    txtLTOmnia_1 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Text: ="OMNIA ID"
+        Width: =160
+        X: =51
+        Y: =122
+        ZIndex: =8
+
+    cbLTSearch_1 As combobox:
+        ChevronBackground: =RGBA(0, 18, 107, 1)
+        DisplayFields: =["USER"]
+        Items: =CurrentRoster
+        SearchFields: =["USER"]
+        SearchItems: =Search(CurrentRoster,cbLTSearch_1.SearchText,"USER")
+        SelectMultiple: =false
+        Width: =401.4
+        X: =321
+        Y: =122
+        ZIndex: =9
+
+    btnLTReview_1 As button:
+        Fill: =RGBA(0, 18, 107, 1)
+        OnSelect: |-
+            =If(    
+                IsBlank(cbLTBusinessUnit_1) ||
+                IsBlank(cbLTClient_1) ||
+                IsBlank(cbLTPosition_1) ||
+                IsBlank(cbLTLOB_1) ||
+                IsBlank(cbLTSubUnit_1) ||
+                IsBlank(cbLTBillability_1) ||
+                IsBlank(txtLTSchedule_1) ||
+                IsBlank(cbLTSupervisor_1),
+                Notify("Please complete all fields!",NotificationType.Error),
+                Navigate(LateralTransfer_Single_SecondPage,ScreenTransition.None)
+            )
+        Text: ="Review"
+        X: =562
+        Y: =935
+        ZIndex: =11
+
+    btnLTBack_1 As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+        Text: ="Back"
+        X: =373
+        Y: =935
+        ZIndex: =12
+

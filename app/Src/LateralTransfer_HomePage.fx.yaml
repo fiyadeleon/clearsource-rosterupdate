@@ -33,7 +33,7 @@
 
     btnLTHomePageNext As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =If(drpbtnHomePageSelection.Selected.Value="Select your answer",btnLTHomePageNext.AutoDisableOnSelect, If(drpbtnHomePageSelection.Selected.Value = "New Hire", Navigate(NewHire_FirstPage,ScreenTransition.Cover), drpbtnHomePageSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpbtnHomePageSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover), drpbtnHomePageSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.CoverRight), drpbtnHomePageSelection.Selected.Value = "Other User Status", Navigate(Other_FirstPage,ScreenTransition.Cover)))
+        OnSelect: =If(drpbtnHomePageSelection.Selected.Value="Select your answer",btnLTHomePageNext.AutoDisableOnSelect, If(drpbtnHomePageSelection.Selected.Value = "Single", Navigate(LateralTransfer_Single_FirstPage,ScreenTransition.Cover), drpbtnHomePageSelection.Selected.Value = "Multiple", Navigate(LateralTransfer_Multiple_FirstPage,ScreenTransition.Cover)))
         Text: ="Next"
         Width: =150
         X: =1048

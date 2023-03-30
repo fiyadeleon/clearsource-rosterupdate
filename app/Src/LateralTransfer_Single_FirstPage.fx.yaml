@@ -1,4 +1,4 @@
-"LateralTransfer_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"LateralTransfer_Single_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image (2)'
     Height: =1050
     ImagePosition: =ImagePosition.Stretch
@@ -217,7 +217,7 @@
                 IsBlank(txtLTSchedule) ||
                 IsBlank(cbLTSupervisor),
                 Notify("Please complete all fields!",NotificationType.Error),
-                Navigate(LateralTransfer_SecondPage,ScreenTransition.None)
+                Navigate(LateralTransfer_Single_SecondPage,ScreenTransition.None)
             )
         Text: ="Review"
         X: =562
@@ -227,7 +227,7 @@
     btnLTBack As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+        OnSelect: =Navigate(LateralTransfer_HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =373
         Y: =935
