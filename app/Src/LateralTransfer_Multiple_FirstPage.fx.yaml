@@ -16,27 +16,6 @@
         Y: =40
         ZIndex: =4
 
-    txtLTSearchMultipleLOB As label:
-        Color: =RGBA(0, 18, 107, 1)
-        FontWeight: =FontWeight.Bold
-        Text: ="LOB"
-        Width: =160
-        X: =51
-        Y: =122
-        ZIndex: =8
-
-    cbLTSearchMultipleLOB As combobox:
-        ChevronBackground: =RGBA(0, 18, 107, 1)
-        DisplayFields: =["USER"]
-        Items: =Headcount_table
-        SearchFields: =["USER"]
-        SearchItems: =Search(Headcount_table,cbLTSearchMultipleLOB.SearchText,"USER")
-        SelectMultiple: =false
-        Width: =401.4
-        X: =321
-        Y: =122
-        ZIndex: =9
-
     btnLTMultipleReview As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
@@ -65,4 +44,61 @@
         X: =373
         Y: =935
         ZIndex: =12
+
+    grpLTSearchMultipleLOB As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =13
+
+        txtLTSearchMultipleLOB As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="LOB"
+            Width: =160
+            X: =51
+            Y: =122
+            ZIndex: =8
+
+        cbLTSearchMultipleLOB As combobox:
+            ChevronBackground: =RGBA(0, 18, 107, 1)
+            DisplayFields: =["Value"]
+            Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+            SearchFields: =["Value"]
+            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
+            SelectMultiple: =false
+            Width: =401.4
+            X: =321
+            Y: =122
+            ZIndex: =9
+
+    grpLTSearchMultipleOmnia As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =15
+
+        txtLTSearchMultipleOmnia As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="OMNIA ID"
+            Width: =160
+            X: =51
+            Y: =182
+            ZIndex: =13
+
+        cbLTSearchMultipleOmnia As combobox:
+            ChevronBackground: =RGBA(0, 18, 107, 1)
+            DefaultSelectedItems: =
+            DisplayFields: =["Value"]
+            Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.LOB),USER)
+            SearchFields: =["Value"]
+            SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.LOB),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
+            SelectMultiple: =false
+            Width: =401.4
+            X: =321
+            Y: =182
+            ZIndex: =14
 
