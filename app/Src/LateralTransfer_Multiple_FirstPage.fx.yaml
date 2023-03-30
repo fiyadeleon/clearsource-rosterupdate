@@ -73,6 +73,17 @@
             Y: =122
             ZIndex: =9
 
+    DataTable1 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =500
+        Items: =Headcount_table
+        Width: =794
+        X: =0
+        Y: =234
+        ZIndex: =15
+
     grpLTSearchMultipleOmnia As group:
         Height: =5
         Width: =5
@@ -94,6 +105,7 @@
             DefaultSelectedItems: =
             DisplayFields: =["Value"]
             Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearch.Selected.LOB),USER)
+            OnChange: =ClearCollect(multifilter, Self.SelectedItems)
             SearchFields: =["Value"]
             SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearch.Selected.LOB),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
             SelectMultiple: =false
