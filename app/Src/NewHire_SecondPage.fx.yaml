@@ -177,9 +177,10 @@
             cbNHPosition As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, POSITION), !IsBlank(Value)),cbNHPosition.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -300,9 +301,10 @@
             cbNHStatus As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, STATUS), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, STATUS), !IsBlank(Value)),cbNHStatus.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -339,9 +341,10 @@
             cbNHEmpStatus As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, 'EMPLOYMENT STATUS'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'EMPLOYMENT STATUS'), !IsBlank(Value)),cbNHEmpStatus.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -378,9 +381,10 @@
             cbNHSupervisor As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, TEAM), !IsBlank(Value)),cbNHSupervisor.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -462,9 +466,10 @@
             cbNHRole As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, ROLE), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, ROLE), !IsBlank(Value)),cbNHRole.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297

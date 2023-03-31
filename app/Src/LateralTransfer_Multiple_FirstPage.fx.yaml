@@ -1,5 +1,5 @@
 "LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
-    BackgroundImage: ='MicrosoftTeams-image (2)'
+    BackgroundImage: ='MicrosoftTeams-image'
     Height: =1000
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
@@ -52,14 +52,27 @@
         cbLTSearchMultipleLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
+            IsSearchable: =false
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
             SearchFields: =["Value"]
-            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
+            SearchItems: =[]
             SelectMultiple: =false
             Width: =401.4
             X: =321
             Y: =122
             ZIndex: =9
+
+    Gallery1 As gallery.variableTemplateHeightGallery:
+        DelayItemLoading: =true
+        Height: =607
+        Items: =Headcount_table
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =280
+        Width: =1397
+        X: =51
+        Y: =243
+        ZIndex: =15
 
     grpLTSearchMultipleOmnia As group:
         Height: =5

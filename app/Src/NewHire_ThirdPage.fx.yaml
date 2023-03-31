@@ -80,9 +80,10 @@
             cbNHBusinessUnit As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'BUSINESS UNIT'), !IsBlank(Value)),cbNHBusinessUnit.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -119,9 +120,10 @@
             cbNHSubUnit As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, 'SUB-UNIT'), !IsBlank(Value)),cbNHSubUnit.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -158,9 +160,10 @@
             cbNHClient As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, CLIENT), !IsBlank(Value)),cbNHClient.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
@@ -197,9 +200,10 @@
             cbNHLOB As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(CurrentRoster, LOB), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(CurrentRoster, LOB), !IsBlank(Value)),cbNHLOB.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =401.4
                 X: =297
