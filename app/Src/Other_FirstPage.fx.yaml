@@ -367,7 +367,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),POSITION)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, 'POSITION')
+                Items: =Distinct(Headcount_table, POSITION)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -407,7 +407,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),CLIENT)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, 'CLIENT')
+                Items: =Distinct(Headcount_table, CLIENT)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -447,7 +447,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),LOB)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, 'CAMPAIGN')
+                Items: =Distinct(Headcount_table, CAMPAIGN)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -484,13 +484,13 @@
 
             cbLTSUBlob_1 As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DisplayFields: =["Value"]
-                Items: =Distinct(Headcount_table, 'SUB-LOB')
-                SearchFields: =["Value"]
+                DisplayFields: =["ADDRESS"]
+                Items: =Filter(Headcount_table, 'SUB-LOB')
+                SearchFields: =["ADDRESS"]
                 SearchItems: =Search(Distinct(Headcount_table, 'SUB-LOB'),cbLTSUBlob_1.SearchText,"Value")
                 Width: =401.4
                 X: =297
-                Y: =2
+                Y: =4
                 ZIndex: =2
 
         LOB_RUDataCard_1 As typedDataCard.textualEditCard:
@@ -565,7 +565,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, 'BILLABILITY')
+                Items: =Distinct(Headcount_table, BILLABILITY)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
