@@ -84,11 +84,11 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=txtLTMultipleUser.Text),'BUSINESS UNIT')
             DisplayFields: =["Value"]
-            IsSearchable: =false
             Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
             OnSelect: =Select(Parent)
             SearchFields: =["Value"]
-            SearchItems: =[]
+            SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTMultipleBusinessUnit.SearchText,"Value")
+            SelectMultiple: =false
             X: =207
             Y: =40
             ZIndex: =2
@@ -114,12 +114,8 @@
             DefaultSelectedItems: =
             DisplayFields: =["Value"]
             Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
-            OnChange: |-
-                =ClearCollect(multifilter, Self.SelectedItems);
-                If(
-                    CountRows(cbLTSearchMultipleOmnia.SelectedItems) > 10,
-                    Notify("Please choose no more than 10 items", NotificationType.Error)
-                )
+            OnChange: =ClearCollect(multifilter, Self.SelectedItems)
+            OnSelect: =ClearCollect(multifilter, Self.SelectedItems)
             SearchFields: =["Value"]
             SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
             Width: =401.4
