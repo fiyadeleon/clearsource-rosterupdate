@@ -261,7 +261,7 @@
             DataField: ="BUSINESS UNIT"
             Default: =ThisItem.'BUSINESS UNIT'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -461,7 +461,7 @@
             DataField: =50
             Default: =ThisItem.BILLABILITY
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BILLABILITY")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-LOB")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -483,6 +483,7 @@
                 ZIndex: =1
 
             ComboBox1 As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
                 Items: =Distinct(Headcount_table, 'SUB-LOB')
                 SearchFields: =["Value"]
