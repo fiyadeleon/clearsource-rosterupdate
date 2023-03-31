@@ -406,9 +406,10 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),CLIENT)
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, CLIENT)
+                IsSearchable: =false
+                Items: =Distinct(Headcount_table, CLIENT)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbLTClient_1.SearchText,"Value")
+                SearchItems: =[]
                 Width: =401.4
                 X: =297
                 Y: =5
