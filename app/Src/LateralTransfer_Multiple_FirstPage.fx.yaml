@@ -61,10 +61,10 @@
             Y: =122
             ZIndex: =9
 
-    Gallery1 As gallery.variableTemplateHeightGallery:
+    galleryLT As gallery.variableTemplateHeightGallery:
         DelayItemLoading: =true
         Height: =628
-        Items: =Headcount_table
+        Items: =Filter(AddColumns(Headcount_table,"USER2",USER),USER2 in multifilter)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =85
@@ -73,18 +73,22 @@
         Y: =253
         ZIndex: =15
 
-        Label5 As label:
+        txtLTMultipleUser As label:
             OnSelect: =Select(Parent)
             Text: =ThisItem.USER
             X: =40
             Y: =40
             ZIndex: =1
 
-        ComboBox9 As combobox:
+        cbLTMultipleBusinessUnit As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
-            Items: =ComboBoxSample
+            DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=txtLTMultipleUser.Text),'BUSINESS UNIT')
+            DisplayFields: =["Value"]
+            IsSearchable: =false
+            Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
             OnSelect: =Select(Parent)
-            SearchItems: =Search(ComboBoxSample,ComboBox9.SearchText,"Value1")
+            SearchFields: =["Value"]
+            SearchItems: =[]
             X: =207
             Y: =40
             ZIndex: =2
@@ -110,20 +114,16 @@
             DefaultSelectedItems: =
             DisplayFields: =["Value"]
             Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
-            OnChange: =ClearCollect(multifilter, Self.SelectedItems)
+            OnChange: |-
+                =ClearCollect(multifilter, Self.SelectedItems);
+                If(
+                    CountRows(cbLTSearchMultipleOmnia.SelectedItems) > 10,
+                    Notify("Please choose no more than 10 items", NotificationType.Error)
+                )
             SearchFields: =["Value"]
             SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
             Width: =401.4
             X: =321
             Y: =182
             ZIndex: =14
-
-    Button2 As button:
-        Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: |-
-            =Patch(Headcount_table, Defaults(Headcount_table),{USER:""})
-        Text: ="View"
-        X: =763
-        Y: =182
-        ZIndex: =16
 
