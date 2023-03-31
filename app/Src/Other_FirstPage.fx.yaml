@@ -485,7 +485,7 @@
             ComboBox1 As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
-                Items: =Distinct(Headcount_table, 'SUB-LOB')
+                Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), Value = cbLTSearch_1.Selected.USER)
                 SearchFields: =["Value"]
                 SearchItems: =Search(Distinct(Headcount_table, 'SUB-LOB'),ComboBox1.SearchText,"Value")
                 Width: =401.4
