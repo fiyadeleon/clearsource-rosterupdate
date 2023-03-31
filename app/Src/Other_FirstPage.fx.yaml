@@ -451,8 +451,8 @@
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
-                X: =297
-                Y: =5
+                X: =295
+                Y: =10
                 ZIndex: =2
 
         SUBLOB_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
@@ -482,12 +482,12 @@
                 Y: =8
                 ZIndex: =1
 
-            ComboBox1 As combobox:
+            cbLTSUBlob_1 As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), Value = cbLTSearch_1.Selected.USER)
+                Items: =Distinct(Headcount_table, 'SUB-LOB')
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(Headcount_table, 'SUB-LOB'),ComboBox1.SearchText,"Value")
+                SearchItems: =Search(Distinct(Headcount_table, 'SUB-LOB'),cbLTSUBlob_1.SearchText,"Value")
                 Width: =401.4
                 X: =297
                 Y: =2
