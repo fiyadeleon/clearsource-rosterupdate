@@ -447,7 +447,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),LOB)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, CAMPAIGN)
+                Items: =Distinct(Headcount_table, 'CAMPAIGN')
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
