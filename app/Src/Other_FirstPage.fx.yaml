@@ -367,7 +367,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),POSITION)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(CurrentRoster, POSITION)
+                Items: =Distinct(Headcount_table, POSITION)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
