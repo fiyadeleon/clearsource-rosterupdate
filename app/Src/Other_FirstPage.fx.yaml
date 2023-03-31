@@ -482,17 +482,12 @@
                 Y: =8
                 ZIndex: =1
 
-            cbLTSubLOB_1 As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
-                DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Distinct(Headcount_table, 'SUB-LOB')
-                SearchFields: =["Value"]
-                SearchItems: =[]
+            ComboBox1 As combobox:
+                Items: =Headcount_table
+                SearchItems: =Search(ComboBoxSample,ComboBox1.SearchText,"Value1")
                 Width: =401.4
                 X: =297
-                Y: =5
+                Y: =2
                 ZIndex: =2
 
         LOB_RUDataCard_1 As typedDataCard.textualEditCard:
