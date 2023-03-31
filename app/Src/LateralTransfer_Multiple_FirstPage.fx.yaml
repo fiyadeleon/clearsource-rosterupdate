@@ -115,7 +115,6 @@
             DisplayFields: =["Value"]
             Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
             OnChange: =ClearCollect(multifilter, Self.SelectedItems)
-            OnSelect: =ClearCollect(multifilter, Self.SelectedItems)
             SearchFields: =["Value"]
             SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
             Width: =401.4
