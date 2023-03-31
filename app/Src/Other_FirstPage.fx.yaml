@@ -484,10 +484,10 @@
 
             cbLTSUBlob_1 As combobox:
                 ChevronBackground: =RGBA(0, 18, 107, 1)
-                DisplayFields: =["ADDRESS"]
-                Items: =Filter(Headcount_table, 'SUB-LOB')
-                SearchFields: =["ADDRESS"]
-                SearchItems: =Search(Distinct(Headcount_table, 'SUB-LOB'),cbLTSUBlob_1.SearchText,"Value")
+                DisplayFields: =["Value"]
+                Items: =Distinct(Headcount_table, 'SUB-LOB')
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(Headcount_table,'SUB-LOB'),cbLTSUBlob_1.SearchText,"Value")
                 Width: =401.4
                 X: =297
                 Y: =4
