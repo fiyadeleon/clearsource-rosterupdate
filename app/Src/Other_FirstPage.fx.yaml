@@ -367,7 +367,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),POSITION)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, POSITION)
+                Items: =Distinct(Headcount_table, 'POSITION')
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -407,7 +407,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),CLIENT)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, CLIENT)
+                Items: =Distinct(Headcount_table, 'CLIENT')
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -487,7 +487,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), Value = cbLTSearch_1.Selected.USER)
+                Items: =Distinct(Headcount_table, 'SUB-LOB')
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
