@@ -446,7 +446,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),LOB)
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(CurrentRoster, LOB)
+                Items: =Distinct(Headcount_table, LOB)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -526,7 +526,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, 'LOB')
+                Items: =Distinct(Headcount_table, LOB)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -566,7 +566,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, 'BILLABILITY')
+                Items: =Distinct(Headcount_table, BILLABILITY)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
@@ -598,7 +598,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, 'TEAM')
+                Items: =Distinct(Headcount_table, TEAM)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
