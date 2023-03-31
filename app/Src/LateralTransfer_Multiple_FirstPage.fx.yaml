@@ -5,69 +5,6 @@
     OnVisible: =
     Width: =1500
 
-    "galleryLTMultiple1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
-        Height: =410
-        Items: =Filter(Headcount_table, USER=cbLTSearchMultipleOmnia1.Selected.Value)
-        Layout: =Layout.Vertical
-        ShowScrollbar: =false
-        TemplatePadding: =0
-        TemplateSize: =123
-        Width: =406
-        X: =54
-        Y: =239
-        ZIndex: =1
-
-        txtLTMultipleName1 As label:
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =Concatenate(ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME')
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 104
-            X: =32
-            Y: =16
-            ZIndex: =1
-
-        txtLTMultiplePosition1 As label:
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.POSITION
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 104
-            X: =32
-            Y: =txtLTMultipleName1.Y + txtLTMultipleName1.Height + 2
-            ZIndex: =2
-
-        txtLTMultipleEmpId1 As label:
-            Height: =29
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.'EMPLOYEE ID'
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 104
-            X: =32
-            Y: =txtLTMultiplePosition1.Y + txtLTMultiplePosition1.Height + 4
-            ZIndex: =3
-
-        cbLTSearchOmnia1 As combobox:
-            DisplayFields: =["Value"]
-            Items: =Distinct(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
-            OnChange: =ClearCollect(multifilter, Self.SelectedItems)
-            SearchFields: =["Value"]
-            SearchItems: =Search(Distinct(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER),cbLTSearchOmnia1.SearchText,"Value")
-            X: =32
-            ZIndex: =4
-
     "'Lateral Transfer Form_1' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
@@ -124,18 +61,91 @@
             Y: =155
             ZIndex: =9
 
-    cbLTSearchMultipleOmnia1_1 As combobox:
-        ChevronBackground: =RGBA(0, 18, 107, 1)
-        DefaultSelectedItems: =
-        DisplayFields: =["Value"]
-        Height: =75
-        IsSearchable: =false
-        Items: =Distinct(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
-        OnChange: =ClearCollect(multifilter, Self.SelectedItems)
-        SearchFields: =["Value"]
-        SearchItems: =[]
-        Width: =401
-        X: =834
-        Y: =282
-        ZIndex: =15
+    Gallery2 As gallery.galleryHorizontal:
+        DelayItemLoading: =true
+        Height: =670
+        Items: =Headcount_table
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateSize: =376
+        Width: =1109
+        X: =53
+        Y: =195
+        ZIndex: =16
+
+        Label2 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.ADDRESS
+            X: =40
+            Y: =40
+            ZIndex: =1
+
+        cbLTMultipleSearchOmnia1 As combobox:
+            BorderColor: =RGBA(56, 96, 178, 1)
+            ChevronBackground: =RGBA(0, 18, 107, 1)
+            DefaultSelectedItems: =
+            DisplayFields: =["Value"]
+            InputTextPlaceholder: ="Find Omnia ID"
+            Items: =Distinct(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
+            SearchFields: =["Value"]
+            SearchItems: =Search(Distinct(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER),cbLTMultipleSearchOmnia1.SearchText,"Value")
+            SelectMultiple: =false
+            Width: =320
+            Y: =60
+            ZIndex: =2
+
+        txtLTMultipleName1_1 As label:
+            Height: =33
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =LookUp(Headcount_table, USER = cbLTMultipleSearchOmnia1.Selected.Value, Concatenate('FIRST NAME', " ", 'LAST NAME'))
+            VerticalAlign: =VerticalAlign.Top
+            Width: =320
+            Y: =116
+            ZIndex: =3
+
+        txtLTMultiplePosition1_1 As label:
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =LookUp(Headcount_table, USER = cbLTMultipleSearchOmnia1.Selected.Value, POSITION)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =320
+            Y: =153
+            ZIndex: =4
+
+        txtLTMultipleEmpId1_1 As label:
+            Height: =27
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =LookUp(Headcount_table, USER = cbLTMultipleSearchOmnia1.Selected.Value, 'EMPLOYEE ID')
+            VerticalAlign: =VerticalAlign.Top
+            Width: =320
+            Y: =190
+            ZIndex: =5
+
+        ComboBox1 As combobox:
+            BorderColor: =RGBA(56, 96, 178, 1)
+            ChevronBackground: =RGBA(0, 18, 107, 1)
+            DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=cbLTMultipleSearchOmnia1.Selected.Value),POSITION)
+            DisplayFields: =["Value"]
+            InputTextPlaceholder: ="Find Business Unit"
+            IsSearchable: =false
+            Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
+            OnSelect: =Select(Parent)
+            SearchFields: =["Value"]
+            SearchItems: =[]
+            SelectionFill: =RGBA(209, 232, 178, 1)
+            SelectMultiple: =false
+            Y: =231
+            ZIndex: =6
 
