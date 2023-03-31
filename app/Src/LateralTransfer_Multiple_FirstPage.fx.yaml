@@ -52,10 +52,9 @@
         cbLTSearchMultipleLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
-            IsSearchable: =false
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
             SearchFields: =["Value"]
-            SearchItems: =[]
+            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
             X: =321
