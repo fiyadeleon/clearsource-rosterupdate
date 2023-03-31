@@ -457,7 +457,7 @@
         SUBLOB_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
             BorderStyle: =BorderStyle.Solid
-            DataField: ="BILLABILITY"
+            DataField: ="SUB-LOB"
             Default: =ThisItem.BILLABILITY
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BILLABILITY")
@@ -486,7 +486,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, 'SUB-LOB')
+                Items: =Distinct(Headcount_table, SUB-LOB)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4

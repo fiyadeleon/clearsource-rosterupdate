@@ -334,6 +334,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Other_FirstPage.formRUDynamic_1.SUBLOB_RUDataCard_1.cbLTSubLOB_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Other_FirstPage.formRUDynamic_1.SUBLOB_RUDataCard_1.cbLTSubLOB_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 3,
+                  "charOffset": 26,
+                  "snippet": {
+                    "text": "SUB"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Other_FirstPage",
+                "type": "Other_FirstPage.formRUDynamic_1.SUBLOB_RUDataCard_1.cbLTSubLOB_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "SUB"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Other_FirstPage.btnLTReview_1.OnSelect"
                 }
               ],
