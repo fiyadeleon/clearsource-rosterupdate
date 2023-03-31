@@ -327,7 +327,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                Items: =Distinct(Headcount_table, 'SUB-UNIT')
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
