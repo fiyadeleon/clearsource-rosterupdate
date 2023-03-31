@@ -85,8 +85,8 @@
             Items: =ComboBoxSample
             OnSelect: =Select(Parent)
             SearchItems: =Search(ComboBoxSample,ComboBox9.SearchText,"Value1")
-            X: =177
-            Y: =45
+            X: =207
+            Y: =40
             ZIndex: =2
 
     grpLTSearchMultipleOmnia As group:
@@ -112,7 +112,7 @@
             Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
             OnChange: =ClearCollect(multifilter, Self.SelectedItems)
             SearchFields: =["Value"]
-            SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
+            SearchItems: =[]
             Width: =401.4
             X: =321
             Y: =182
