@@ -4826,6 +4826,47 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 34,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "LateralTransfer_Multiple_FirstPage",
+                "type": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Record"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "NewHire_SecondPage.formNHSecond.DataSource"
                 }
               ],
@@ -10356,36 +10397,6 @@
               },
               "properties": {
                 "member": "SearchItems",
-                "module": "LateralTransfer_Multiple_FirstPage",
-                "type": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia.Items",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Items",
                 "module": "LateralTransfer_Multiple_FirstPage",
                 "type": "LateralTransfer_Multiple_FirstPage.cbLTSearchMultipleOmnia"
               }
