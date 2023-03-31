@@ -456,10 +456,10 @@
                 ZIndex: =2
 
         SUBLOB_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "SUB-LOB")
             BorderStyle: =BorderStyle.Solid
             DataField: =50
-            Default: =ThisItem.BILLABILITY
+            Default: =ThisItem.'SUB-LOB'
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-LOB")
             Fill: =RGBA(0, 0, 0, 0)
