@@ -567,7 +567,7 @@
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbLTSearch_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Distinct(Headcount_table, BILLABILITY)
+                Items: =Distinct(Headcount_table, 'BILLABILITY')
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
