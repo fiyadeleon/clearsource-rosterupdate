@@ -112,7 +112,7 @@
             Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
             OnChange: =ClearCollect(multifilter, Self.SelectedItems)
             SearchFields: =["Value"]
-            SearchItems: =[]
+            SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
             Width: =401.4
             X: =321
             Y: =182
@@ -120,6 +120,8 @@
 
     Button2 As button:
         Fill: =RGBA(0, 18, 107, 1)
+        OnSelect: |-
+            =Patch(Headcount_table, Defaults(Headcount_table),{USER:""})
         Text: ="View"
         X: =763
         Y: =182
