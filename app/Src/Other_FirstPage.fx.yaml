@@ -483,8 +483,10 @@
                 ZIndex: =1
 
             ComboBox1 As combobox:
-                Items: =Headcount_table
-                SearchItems: =Search(ComboBoxSample,ComboBox1.SearchText,"Value1")
+                DisplayFields: =["Value"]
+                Items: =Distinct(Headcount_table, 'SUB-LOB')
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(Headcount_table, 'SUB-LOB'),ComboBox1.SearchText,"Value")
                 Width: =401.4
                 X: =297
                 Y: =2
