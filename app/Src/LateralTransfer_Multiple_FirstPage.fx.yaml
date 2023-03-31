@@ -1,5 +1,5 @@
 "LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
-    BackgroundImage: ='MicrosoftTeams-image'
+    BackgroundImage: =
     Height: =1000
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
@@ -63,15 +63,31 @@
 
     Gallery1 As gallery.variableTemplateHeightGallery:
         DelayItemLoading: =true
-        Height: =607
+        Height: =628
         Items: =Headcount_table
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =280
+        TemplateSize: =85
         Width: =1397
         X: =51
-        Y: =243
+        Y: =253
         ZIndex: =15
+
+        Label5 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.USER
+            X: =40
+            Y: =40
+            ZIndex: =1
+
+        ComboBox9 As combobox:
+            ChevronBackground: =RGBA(0, 18, 107, 1)
+            Items: =ComboBoxSample
+            OnSelect: =Select(Parent)
+            SearchItems: =Search(ComboBoxSample,ComboBox9.SearchText,"Value1")
+            X: =177
+            Y: =45
+            ZIndex: =2
 
     grpLTSearchMultipleOmnia As group:
         Height: =5
@@ -101,4 +117,11 @@
             X: =321
             Y: =182
             ZIndex: =14
+
+    Button2 As button:
+        Fill: =RGBA(0, 18, 107, 1)
+        Text: ="View"
+        X: =763
+        Y: =182
+        ZIndex: =16
 
