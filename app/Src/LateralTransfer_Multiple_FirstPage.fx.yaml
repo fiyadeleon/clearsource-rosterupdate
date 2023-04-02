@@ -35,29 +35,23 @@
 
     Gallery4 As gallery.variableTemplateHeightGallery:
         DelayItemLoading: =true
-        Height: =432
+        Height: =412
+        Items: =Filter(AddColumns(Headcount_table,"USER2",USER),USER2 in filterLTMultipleOmnia)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =88
+        TemplateSize: =92
         Width: =1362
         X: =72
-        Y: =361
+        Y: =381
         ZIndex: =13
 
         Label2 As label:
-            OnSelect: =Select(Parent)
+            OnSelect: =Filter(AddColumns(Headcount_table,"USER2",USER),USER2 in filterLTMultipleOmnia)Select
             Text: =ThisItem.USER
-            X: =56
-            Y: =40
+            Width: =300
+            X: =45
+            Y: =52
             ZIndex: =1
-
-        ComboBox1 As combobox:
-            Items: =ComboBoxSample
-            OnSelect: =Select(Parent)
-            SearchItems: =Search(ComboBoxSample,ComboBox1.SearchText,"Value1")
-            X: =240
-            Y: =40
-            ZIndex: =2
 
     grpLTSearchMultipleLOB As group:
         Height: =5
@@ -108,7 +102,7 @@
             DisplayFields: =["Value"]
             IsSearchable: =false
             Items: =If(!IsEmpty(cbLTSearchMultipleLOB.Selected.Value),ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER))
-            OnChange: =ClearCollect(filterLTMultipleOmnia, Self.SelectedItems)
+            OnChange: =Set(txtLTMultipleOmnia, Concat(cbLTSearchMultipleOmnia.SelectedItems, Value & ", ")); Collect(filterLTMultipleOmnia, Self.SelectedItems)
             SearchFields: =["Value"]
             SearchItems: =[]
             Width: =401.4
