@@ -84,7 +84,7 @@
             DisplayFields: =["Value"]
             IsSearchable: =false
             Items: =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-            OnChange: =Set(txtLTMultipleOmnia, Concat(cbLTSearchMultipleOmnia.SelectedItems, Value & ", ")); Collect(filterLTMultipleOmnia, Self.SelectedItems)
+            OnChange: =
             SearchFields: =["Value"]
             SearchItems: =[]
             SelectMultiple: =false
