@@ -33,26 +33,6 @@
         Y: =908
         ZIndex: =12
 
-    Gallery4 As gallery.variableTemplateHeightGallery:
-        DelayItemLoading: =true
-        Height: =412
-        Items: =Filter(AddColumns(Headcount_table,"USER2",USER),USER2 in filterLTMultipleOmnia)
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =92
-        Width: =1362
-        X: =72
-        Y: =381
-        ZIndex: =13
-
-        Label2 As label:
-            OnSelect: =Filter(AddColumns(Headcount_table,"USER2",USER),USER2 in filterLTMultipleOmnia)Select
-            Text: =ThisItem.USER
-            Width: =300
-            X: =45
-            Y: =52
-            ZIndex: =1
-
     grpLTSearchMultipleLOB As group:
         Height: =5
         Width: =5
@@ -80,6 +60,17 @@
             X: =214
             Y: =123
             ZIndex: =9
+
+    Gallery2 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Items: =CustomGallerySample
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
+        Width: =1240
+        X: =130
+        Y: =278
+        ZIndex: =16
 
     grpLTSearchMultipleOmnia As group:
         Height: =5
@@ -109,4 +100,12 @@
             X: =214
             Y: =183
             ZIndex: =15
+
+    Button1 As button:
+        OnSelect: |-
+            =Patch(tblLateralTransfer, Defaults(tblLateralTransfer),{USER:""})
+        Text: ="Button"
+        X: =658
+        Y: =183
+        ZIndex: =17
 
