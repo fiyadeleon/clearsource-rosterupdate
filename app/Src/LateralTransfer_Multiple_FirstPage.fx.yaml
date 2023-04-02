@@ -46,7 +46,7 @@
 
         Label2 As label:
             OnSelect: =Select(Parent)
-            Text: =Concat(ComboBox1.SelectedItems,TextName&",")
+            Text: =ThisItem.USER
             X: =56
             Y: =40
             ZIndex: =1
@@ -106,10 +106,11 @@
         cbLTSearchMultipleOmnia As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
+            IsSearchable: =false
             Items: =If(!IsEmpty(cbLTSearchMultipleLOB.Selected.Value),ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER))
             OnChange: =ClearCollect(filterLTMultipleOmnia, Self.SelectedItems)
             SearchFields: =["Value"]
-            SearchItems: =Search(If(!IsEmpty(cbLTSearchMultipleLOB.Selected.Value),ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)),cbLTSearchMultipleOmnia.SearchText,"Value")
+            SearchItems: =[]
             Width: =401.4
             X: =214
             Y: =183
