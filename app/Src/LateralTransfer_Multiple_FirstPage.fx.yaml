@@ -1,5 +1,6 @@
 "LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: =
+    Fill: =
     Height: =1200
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
@@ -61,35 +62,62 @@
             Y: =123
             ZIndex: =9
 
-    Group2 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =21
+    Gallery1 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =199
+        Items: =Filter(Headcount_tables, USER in filterLTMultipleOmnia)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =102
+        Width: =1240
+        X: =87
+        Y: =279
+        ZIndex: =23
 
-        ComboBox2_1 As combobox:
-            DefaultSelectedItems: =
-            DisplayFields: =["Value"]
-            Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
-            OnChange: =ClearCollect(filterLTMultipleOmnia, Self.Selected)
-            SearchFields: =["Value"]
-            SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER),ComboBox2_1.SearchText,"Value")
-            SelectMultiple: =false
-            Width: =180
-            X: =71
-            Y: =253
-            ZIndex: =19
+        Label3 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.USER
+            X: =40
+            Y: =40
+            ZIndex: =1
 
-        ComboBox3_1 As combobox:
-            DefaultSelectedItems: =
+        ComboBox3_3 As combobox:
+            DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=Label3.Text), POSITION)
             DisplayFields: =["Value"]
             Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
             SearchFields: =["Value"]
-            SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),ComboBox3_1.SearchText,"Value")
+            SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),ComboBox3_3.SearchText,"Value")
             SelectMultiple: =false
             Width: =350
-            X: =284
-            Y: =253
-            ZIndex: =20
+            X: =497
+            Y: =40
+            ZIndex: =3
+
+    grpLTSearchMultipleLOB_1 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =26
+
+        txtLTSearchMultipleLOB_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="OMNIA ID"
+            Width: =200
+            X: =42
+            Y: =183
+            ZIndex: =24
+
+        cbLTSearchMultipleLOB_1 As combobox:
+            ChevronBackground: =RGBA(0, 18, 107, 1)
+            DisplayFields: =["Value"]
+            Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value), USER)
+            OnChange: =ClearCollect(filterLTMultipleOmnia, Self.SelectedItems)
+            SearchFields: =["Value"]
+            SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value), USER),cbLTSearchMultipleLOB_1.SearchText,"Value")
+            Width: =401.4
+            X: =259
+            Y: =183
+            ZIndex: =25
 
