@@ -1,4 +1,6 @@
 "HomePage As screen.'tabletLayout_Tutorial_ver3.0'":
+    Fill: |-
+        =Patch(tblLateralTransfer, Defaults(tblLateralTransfer),{USER:""})
 
     RectTextBkg1 As rectangle:
         Height: =Parent.Height

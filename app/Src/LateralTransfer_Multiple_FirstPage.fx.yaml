@@ -1,5 +1,7 @@
 "LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: =
+    Fill: |-
+        =Patch(tblLateralTransfer, Defaults(tblLateralTransfer),{USER:""})
     Height: =1000
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
@@ -57,20 +59,9 @@
             SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
-            X: =214
+            X: =259
             Y: =123
             ZIndex: =9
-
-    Gallery2 As gallery.galleryVertical:
-        DelayItemLoading: =true
-        Items: =CustomGallerySample
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
-        Width: =1240
-        X: =130
-        Y: =278
-        ZIndex: =16
 
     grpLTSearchMultipleOmnia As group:
         Height: =5
@@ -82,7 +73,7 @@
         txtLTSearchMultipleOmnia As label:
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="NO. OF ROWS"
             Width: =200
             X: =42
             Y: =183
@@ -92,20 +83,13 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
             IsSearchable: =false
-            Items: =If(!IsEmpty(cbLTSearchMultipleLOB.Selected.Value),ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER))
+            Items: =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
             OnChange: =Set(txtLTMultipleOmnia, Concat(cbLTSearchMultipleOmnia.SelectedItems, Value & ", ")); Collect(filterLTMultipleOmnia, Self.SelectedItems)
             SearchFields: =["Value"]
             SearchItems: =[]
+            SelectMultiple: =false
             Width: =401.4
-            X: =214
+            X: =259
             Y: =183
             ZIndex: =15
-
-    Button1 As button:
-        OnSelect: |-
-            =Patch(tblLateralTransfer, Defaults(tblLateralTransfer),{USER:""})
-        Text: ="Button"
-        X: =658
-        Y: =183
-        ZIndex: =17
 

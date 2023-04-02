@@ -1,0 +1,97 @@
+[
+  {
+    "DisplayName": "tblLateralTransfers (Views)",
+    "Name": "_cr1c1_tbllateraltransfer_views",
+    "RelatedEntityName": "tblLateralTransfers",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "3e65644e-f0c0-4871-ac3f-033e73831ad6": "Inactive tblLateralTransfers",
+      "5edb3d62-5da2-4558-828e-730f41dd9d71": "tblLateralTransfer Lookup View",
+      "881e61f2-89ba-49d4-8baa-530f58a62171": "tblLateralTransfer Associated View",
+      "d1b6563c-cf00-4c5e-b043-7750eeeaa25e": "tblLateralTransfer Advanced Find View",
+      "f9a2ae8a-e695-44f9-bd33-222fc1f8329d": "Active tblLateralTransfers"
+    }
+  },
+  {
+    "DisplayName": "Status (tblLateralTransfers)",
+    "Name": "cr1c1_tbllateraltransfer_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "tblLateralTransfers"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "tblLateralTransfers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (tblLateralTransfers)",
+    "Name": "cr1c1_tbllateraltransfer_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "tblLateralTransfers"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "tblLateralTransfers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr1c1_tbllateraltransfers",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr1c1_tbllateraltransfer",
+    "Name": "tblLateralTransfers",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr1c1_name": "USER",
+      "cr1c1_position": "POSITION",
+      "cr1c1_tbllateraltransfer_AsyncOperations": "System Jobs",
+      "cr1c1_tbllateraltransfer_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr1c1_tbllateraltransfer_DuplicateBaseRecord": "Duplicate Records (cr1c1_tbllateraltransfer_DuplicateBaseRecord)",
+      "cr1c1_tbllateraltransfer_DuplicateMatchingRecord": "Duplicate Records (cr1c1_tbllateraltransfer_DuplicateMatchingRecord)",
+      "cr1c1_tbllateraltransfer_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr1c1_tbllateraltransfer_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr1c1_tbllateraltransfer_ProcessSession": "Process Sessions",
+      "cr1c1_tbllateraltransfer_SyncErrors": "Sync Errors",
+      "cr1c1_tbllateraltransferid": "tblLateralTransfer",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "tblLateralTransfers",
+    "Type": "NativeCDSDataSourceInfo"
+  }
+]
