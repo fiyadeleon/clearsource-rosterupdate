@@ -65,7 +65,7 @@
     Gallery1 As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =199
-        Items: =Filter(Headcount_tables, USER in filterLTMultipleOmnia)
+        Items: =Filter(Headcount_table_1, USER in filterLTMultipleOmnia)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =102
@@ -112,10 +112,11 @@
         cbLTSearchMultipleLOB_1 As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
+            IsSearchable: =false
             Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value), USER)
             OnChange: =ClearCollect(filterLTMultipleOmnia, Self.SelectedItems)
             SearchFields: =["Value"]
-            SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value), USER),cbLTSearchMultipleLOB_1.SearchText,"Value")
+            SearchItems: =[]
             Width: =401.4
             X: =259
             Y: =183
