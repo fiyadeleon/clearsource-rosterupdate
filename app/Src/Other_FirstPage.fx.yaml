@@ -27,10 +27,9 @@
     cbLTSearch_1 As combobox:
         ChevronBackground: =RGBA(0, 18, 107, 1)
         DisplayFields: =["USER"]
-        IsSearchable: =false
         Items: =Headcount_table
         SearchFields: =["USER"]
-        SearchItems: =[]
+        SearchItems: =Search(Headcount_table,cbLTSearch_1.SearchText,"USER")
         SelectMultiple: =false
         Width: =401.4
         X: =330
@@ -618,7 +617,7 @@
         ChevronBackground: =RGBA(0, 18, 107, 1)
         DisplayFields: =["USER"]
         IsSearchable: =false
-        Items: =Headcount_table
+        Items: =Filter(Headcount_table, ADDRESS = cbLTSearch_1.Selected.USER)
         SearchFields: =["USER"]
         SearchItems: =[]
         SelectMultiple: =false
