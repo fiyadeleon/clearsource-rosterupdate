@@ -28,7 +28,7 @@
         ChevronBackground: =RGBA(0, 18, 107, 1)
         DisplayFields: =["USER"]
         IsSearchable: =false
-        Items: =Headcount_table
+        Items: =Filter(Headcount_table, USER = cbLTSearch_2.Selected.USER)
         SearchFields: =["USER"]
         SearchItems: =[]
         SelectMultiple: =false
