@@ -39,7 +39,7 @@
 
     formLTStatic_1 As form:
         BorderColor: =RGBA(0, 0, 0, 1)
-        DataSource: =Sort(Headcount_table_1, USER, SortOrder.Ascending)
+        DataSource: =Sort(Headcount_table, USER, SortOrder.Ascending)
         Height: =229
         Item: =cbLTSearch_1.Selected
         NumberOfColumns: =1
@@ -617,9 +617,10 @@
     cbLTSearch_2 As combobox:
         ChevronBackground: =RGBA(0, 18, 107, 1)
         DisplayFields: =["USER"]
-        Items: =CurrentRoster
+        IsSearchable: =false
+        Items: =Headcount_table
         SearchFields: =["USER"]
-        SearchItems: =Search(CurrentRoster,cbLTSearch_2.SearchText,"USER")
+        SearchItems: =[]
         SelectMultiple: =false
         Width: =401.4
         X: =330
