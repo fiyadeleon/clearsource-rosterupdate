@@ -28,7 +28,7 @@
         ChevronBackground: =RGBA(0, 18, 107, 1)
         DisplayFields: =["USER"]
         IsSearchable: =false
-        Items: =Headcount_table
+        Items: =Filter(Headcount_table_1, USER = cbLTSearch_2.Selected.USER)
         SearchFields: =["USER"]
         SearchItems: =[]
         SelectMultiple: =false
@@ -39,7 +39,7 @@
 
     formLTStatic_1 As form:
         BorderColor: =RGBA(0, 0, 0, 1)
-        DataSource: =Sort(Headcount_table, USER, SortOrder.Ascending)
+        DataSource: =Sort(Headcount_table_1, USER, SortOrder.Ascending)
         Height: =229
         Item: =cbLTSearch_1.Selected
         NumberOfColumns: =1
@@ -451,8 +451,8 @@
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 Width: =401.4
-                X: =295
-                Y: =10
+                X: =297
+                Y: =5
                 ZIndex: =2
 
         SUBLOB_RUDataCard_1 As typedDataCard.allowedValuesStringEditCard:
@@ -487,7 +487,7 @@
                 DisplayFields: =["Value"]
                 Items: =Distinct(Headcount_table, 'SUB-LOB')
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(Headcount_table,'SUB-LOB'),cbLTSUBlob_1.SearchText,"Value")
+                SearchItems: =Search(Distinct(Headcount_table, 'SUB-LOB'),cbLTSUBlob_1.SearchText,"Value")
                 Width: =401.4
                 X: =297
                 Y: =4
