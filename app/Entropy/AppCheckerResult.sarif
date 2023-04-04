@@ -8156,6 +8156,168 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.Item"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.Item",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 28,
+                  "snippet": {
+                    "text": "SelectedItemID"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Item",
+                "module": "LateralTransfer_Multiple_FirstPage",
+                "type": "LateralTransfer_Multiple_FirstPage.formLTM"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "SelectedItemID"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.Item"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.Item",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 27,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Item",
+                "module": "LateralTransfer_Multiple_FirstPage",
+                "type": "LateralTransfer_Multiple_FirstPage.formLTM"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.POSITION_LTMDataCard.cbLTMultiplePosition.DefaultSelectedItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.POSITION_LTMDataCard.cbLTMultiplePosition.DefaultSelectedItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 36,
+                  "snippet": {
+                    "text": "SelectedItemID"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DefaultSelectedItems",
+                "module": "LateralTransfer_Multiple_FirstPage",
+                "type": "LateralTransfer_Multiple_FirstPage.formLTM.POSITION_LTMDataCard.cbLTMultiplePosition"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "SelectedItemID"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.POSITION_LTMDataCard.cbLTMultiplePosition.DefaultSelectedItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.POSITION_LTMDataCard.cbLTMultiplePosition.DefaultSelectedItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 35,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "DefaultSelectedItems",
+                "module": "LateralTransfer_Multiple_FirstPage",
+                "type": "LateralTransfer_Multiple_FirstPage.formLTM.POSITION_LTMDataCard.cbLTMultiplePosition"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "LateralTransfer_Single_FirstPage.cbLTSearch.AccessibleLabel"
                 }
               ],
@@ -9356,19 +9518,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Gallery1.AccessibleLabel"
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Gallery2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Gallery1.AccessibleLabel",
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Gallery2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "LateralTransfer_Multiple_FirstPage",
-                "type": "LateralTransfer_Multiple_FirstPage.Gallery1"
+                "type": "LateralTransfer_Multiple_FirstPage.Gallery2"
               }
             }
           ],
@@ -9386,19 +9548,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Gallery1.TabIndex"
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Gallery2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Gallery1.TabIndex",
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Gallery2.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "LateralTransfer_Multiple_FirstPage",
-                "type": "LateralTransfer_Multiple_FirstPage.Gallery1"
+                "type": "LateralTransfer_Multiple_FirstPage.Gallery2"
               }
             }
           ],
@@ -9416,49 +9578,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Form2.POSITION_DataCard7.ComboBox3.AccessibleLabel"
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.POSITION_LTMDataCard.cbLTMultiplePosition.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.Form2.POSITION_DataCard7.ComboBox3.AccessibleLabel",
+                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.formLTM.POSITION_LTMDataCard.cbLTMultiplePosition.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "LateralTransfer_Multiple_FirstPage",
-                "type": "LateralTransfer_Multiple_FirstPage.Form2.POSITION_DataCard7.ComboBox3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.ComboBox2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_Multiple_FirstPage.ComboBox2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "LateralTransfer_Multiple_FirstPage",
-                "type": "LateralTransfer_Multiple_FirstPage.ComboBox2"
+                "type": "LateralTransfer_Multiple_FirstPage.formLTM.POSITION_LTMDataCard.cbLTMultiplePosition"
               }
             }
           ],
