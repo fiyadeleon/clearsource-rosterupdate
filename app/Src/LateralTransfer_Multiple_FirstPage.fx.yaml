@@ -266,7 +266,7 @@
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 OnChange: |-
-                    =Collect(colLateralTransfer, {'USER':SelectedItemID,'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 'SUB- UNIT':cbLTMultipleSubUnit.Selected.Value})
+                    =Collect(colLateralTransfer, {USER:SelectedItemID,'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 'SUB- UNIT':cbLTMultipleSubUnit.Selected.Value})
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTMultipleBusUnit.SearchText,"Value")
                 SelectMultiple: =false
@@ -307,7 +307,7 @@
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 OnChange: |-
-                    =Collect(colLateralTransfer, {'USER':SelectedItemID,'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 'SUB- UNIT':cbLTMultipleSubUnit.Selected.Value})
+                    =Collect(colLateralTransfer, {USER:SelectedItemID,'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 'SUB- UNIT':cbLTMultipleSubUnit.Selected.Value})
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTMultipleSubUnit.SearchText,"Value")
                 SelectMultiple: =false
