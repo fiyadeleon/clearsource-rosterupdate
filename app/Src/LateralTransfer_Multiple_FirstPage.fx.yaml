@@ -1,15 +1,16 @@
 "LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: =
     Fill: =
-    Height: =1180
+    Height: =1110
     ImagePosition: =ImagePosition.Stretch
-    OnVisible: =
+    OnVisible: |-
+        =ClearCollect(colLateralTransfer, {USER: ""})
     Width: =1500
 
     "galleryLTM As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =700
+        Height: =642
         Items: =cbLTSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
@@ -73,7 +74,7 @@
         OnSelect: =Navigate(LateralTransfer_Multiple_FirstPage_1,ScreenTransition.Cover)
         Text: ="Review"
         X: =1269
-        Y: =1076
+        Y: =1008
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -82,7 +83,7 @@
         OnSelect: =Navigate(LateralTransfer_HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1076
+        Y: =1008
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
@@ -149,7 +150,7 @@
     formLTM As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =700
+        Height: =642
         Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
         NumberOfColumns: =1
         OnReset: =true
@@ -169,7 +170,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =0
+            Y: =30
             ZIndex: =1
 
             DataCardKey46 As label:
@@ -207,7 +208,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =1
+            Y: =90
             ZIndex: =1
 
             DataCardKey47 As label:
@@ -247,7 +248,7 @@
             Update: =cbLTMultipleBusUnit.Selected.Value
             Width: =742
             X: =0
-            Y: =2
+            Y: =150
             ZIndex: =1
 
             DataCardKey37 As label:
@@ -265,8 +266,6 @@
                 DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT')
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
-                OnChange: |-
-                    =Collect(colLateralTransfer, {USER:SelectedItemID,'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 'SUB- UNIT':cbLTMultipleSubUnit.Selected.Value})
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTMultipleBusUnit.SearchText,"Value")
                 SelectMultiple: =false
@@ -288,7 +287,7 @@
             Update: =cbLTMultipleSubUnit.Selected.Value
             Width: =742
             X: =0
-            Y: =3
+            Y: =210
             ZIndex: =1
 
             DataCardKey38 As label:
@@ -306,8 +305,6 @@
                 DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
-                OnChange: |-
-                    =Collect(colLateralTransfer, {USER:SelectedItemID,'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 'SUB- UNIT':cbLTMultipleSubUnit.Selected.Value})
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTMultipleSubUnit.SearchText,"Value")
                 SelectMultiple: =false
@@ -329,7 +326,7 @@
             Update: =
             Width: =741
             X: =0
-            Y: =4
+            Y: =270
             ZIndex: =1
 
             DataCardKey41 As label:
@@ -368,7 +365,7 @@
             Update: =cbLTMultipleClient.Selected.Value
             Width: =742
             X: =0
-            Y: =5
+            Y: =330
             ZIndex: =1
 
             DataCardKey39 As label:
@@ -407,7 +404,7 @@
             Update: =cbLTMultipleBillability.Selected.Value
             Width: =742
             X: =0
-            Y: =6
+            Y: =390
             ZIndex: =1
 
             DataCardKey40 As label:
@@ -446,7 +443,7 @@
             Update: =txtLTMultipleSchedule.Text
             Width: =742
             X: =0
-            Y: =7
+            Y: =450
             ZIndex: =1
 
             DataCardKey43 As label:
@@ -491,7 +488,7 @@
             Update: =cbLTMultipleClient.Selected.Value
             Width: =742
             X: =0
-            Y: =8
+            Y: =510
             ZIndex: =1
 
             DataCardKey42 As label:
@@ -538,4 +535,25 @@
         X: =952
         Y: =255
         ZIndex: =20
+
+    Button1 As button:
+        OnSelect: |-
+            =If(
+                CountRows(
+                    Filter(colLateralTransfer,USER=SelectedItemID)
+                ) > 0, 
+                Remove(colLateralTransfer, LookUp(colLateralTransfer, USER=SelectedItemID)
+            ));
+            Collect(colLateralTransfer, {
+                USER:SelectedItemID,
+                NAME:txtLTMultipleEmpName.Text,
+                SITE:txtLTMultipleSite.Text,
+                'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
+                'SUB UNIT':cbLTMultipleSubUnit.Selected.Value
+                }
+            )
+        Text: ="Save"
+        X: =1269
+        Y: =894
+        ZIndex: =21
 

@@ -100,7 +100,7 @@
         "'EMPLOYEE NAME_LTMDataCard_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
-            Default: =ThisItem.'FIRST NAME'
+            Default: =
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
             Fill: =RGBA(0, 0, 0, 0)
@@ -129,7 +129,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =Concatenate(ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME')
+                Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =301
                 Y: =18
