@@ -1,7 +1,7 @@
 "LateralTransfer_Multiple_FirstPage_1 As screen.'printableLayout_A4Portrait_ver1.0'":
-    BackgroundImage: =
+    BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1180
+    Height: =1000
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -16,7 +16,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
-        Y: =322
+        Y: =200
         ZIndex: =1
 
         txtLTMultipleOmnia_1 As label:
@@ -94,7 +94,7 @@
         OnReset: =true
         Width: =742
         X: =713
-        Y: =322
+        Y: =200
         ZIndex: =18
 
         "'EMPLOYEE NAME_LTMDataCard_1' As typedDataCard.textualViewCard":
@@ -221,7 +221,7 @@
         Text: ="SELECTED EMPLOYEE(S)"
         Width: =316
         X: =204
-        Y: =255
+        Y: =145
         ZIndex: =19
 
     "'Lateral Transfer Form_6' As label":
@@ -232,6 +232,6 @@
         Text: ="EMPLOYEE DETAILS"
         Width: =264
         X: =952
-        Y: =255
+        Y: =145
         ZIndex: =20
 
