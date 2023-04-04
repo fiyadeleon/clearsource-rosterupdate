@@ -1,7 +1,7 @@
 "LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: =
     Fill: =
-    Height: =1200
+    Height: =1180
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -16,7 +16,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
-        Y: =338
+        Y: =322
         ZIndex: =1
 
         txtLTMultipleOmnia As label:
@@ -61,11 +61,11 @@
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
-        Size: =20
+        Size: =22
         Text: ="LATERAL TRANSFER FORM"
-        Width: =453
-        X: =42
-        Y: =40
+        Width: =390
+        X: =540
+        Y: =46
         ZIndex: =4
 
     btnLTMultipleReview As button:
@@ -73,7 +73,7 @@
         OnSelect: =
         Text: ="Review"
         X: =1269
-        Y: =1092
+        Y: =1076
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -82,7 +82,7 @@
         OnSelect: =Navigate(LateralTransfer_HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1092
+        Y: =1076
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
@@ -93,12 +93,13 @@
         ZIndex: =13
 
         txtLTSearchMultipleLOB As label:
+            Align: =Align.Right
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
             Text: ="LINE OF BUSINESS"
-            Width: =200
-            X: =42
-            Y: =123
+            Width: =165
+            X: =443
+            Y: =122
             ZIndex: =8
 
         cbLTSearchMultipleLOB As combobox:
@@ -106,14 +107,14 @@
             DisplayFields: =["Value"]
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
             OnChange: |-
-                =Reset(galleryLTM) &&
-                Reset(cbLTSearchMultipleOmnia) 
+                =Set(SelectedItemID, "") &&
+                Reset(cbLTSearchMultipleOmnia)
             SearchFields: =["Value"]
             SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
-            X: =259
-            Y: =123
+            X: =625
+            Y: =122
             ZIndex: =9
 
     grpLTSearchMultipleOmnia As group:
@@ -127,20 +128,21 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["Value"]
-            Items: =ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)
+            Items: =If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER))
             SearchFields: =["Value"]
-            SearchItems: =Search(ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER),cbLTSearchMultipleOmnia.SearchText,"Value")
+            SearchItems: =Search(If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)),cbLTSearchMultipleOmnia.SearchText,"Value")
             Width: =401.4
-            X: =259
-            Y: =188
+            X: =625
+            Y: =187
             ZIndex: =13
 
         txtLTSearchMultipleOmnia As label:
+            Align: =Align.Right
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
             Text: ="OMNIA ID"
-            Width: =200
-            X: =42
+            Width: =165
+            X: =443
             Y: =188
             ZIndex: =15
 
@@ -148,12 +150,14 @@
         BorderThickness: =1
         DataSource: =Headcount_table
         Height: =700
-        Item: =LookUp(Headcount_table,USER=SelectedItemID)
+        Item: =LookUp(Headcount_table, USER=SelectedItemID)
         NumberOfColumns: =1
+        OnFailure: =Notify("Error", NotificationType.Error)
         OnReset: =true
+        OnSuccess: =Notify("Success", NotificationType.Success)
         Width: =742
         X: =713
-        Y: =338
+        Y: =322
         ZIndex: =18
 
         "'EMPLOYEE NAME_LTMDataCard' As typedDataCard.textualViewCard":
@@ -263,8 +267,17 @@
                 DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT')
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
+                OnChange: |-
+                    =Collect(
+                        colLateralTransfer,
+                        {
+                            'BUSINESS UNIT': cbLTMultipleBusUnit.Selected.Value,
+                            POSITION: cbLTMultiplePosition
+                        }
+                    )
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTMultipleBusUnit.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -303,6 +316,7 @@
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTMultipleSubUnit.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -341,6 +355,7 @@
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbLTMultiplePosition.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -379,6 +394,7 @@
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbLTMultipleClient.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -417,6 +433,7 @@
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbLTMultipleBillability.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -500,8 +517,31 @@
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTMultipleSupervisor.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
                 ZIndex: =2
+
+    "'Lateral Transfer Form_2' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="SELECTED EMPLOYEE(S)"
+        Width: =316
+        X: =204
+        Y: =255
+        ZIndex: =19
+
+    "'Lateral Transfer Form_3' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="EMPLOYEE DETAILS"
+        Width: =264
+        X: =952
+        Y: =255
+        ZIndex: =20
 
