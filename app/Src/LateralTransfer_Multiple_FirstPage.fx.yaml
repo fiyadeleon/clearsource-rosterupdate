@@ -70,7 +70,7 @@
 
     btnLTMultipleReview As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =
+        OnSelect: =Navigate(LateralTransfer_Multiple_FirstPage_1,ScreenTransition.Cover)
         Text: ="Review"
         X: =1269
         Y: =1076
@@ -150,11 +150,9 @@
         BorderThickness: =1
         DataSource: =Headcount_table
         Height: =700
-        Item: =LookUp(Headcount_table, USER=SelectedItemID)
+        Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
         NumberOfColumns: =1
-        OnFailure: =Notify("Error", NotificationType.Error)
         OnReset: =true
-        OnSuccess: =Notify("Success", NotificationType.Success)
         Width: =742
         X: =713
         Y: =322
@@ -268,13 +266,7 @@
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 OnChange: |-
-                    =Collect(
-                        colLateralTransfer,
-                        {
-                            'BUSINESS UNIT': cbLTMultipleBusUnit.Selected.Value,
-                            POSITION: cbLTMultiplePosition
-                        }
-                    )
+                    =Collect(colLateralTransfer, {'USER':SelectedItemID,'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 'SUB- UNIT':cbLTMultipleSubUnit.Selected.Value})
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTMultipleBusUnit.SearchText,"Value")
                 SelectMultiple: =false
@@ -314,6 +306,8 @@
                 DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT')
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
+                OnChange: |-
+                    =Collect(colLateralTransfer, {'USER':SelectedItemID,'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 'SUB- UNIT':cbLTMultipleSubUnit.Selected.Value})
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTMultipleSubUnit.SearchText,"Value")
                 SelectMultiple: =false
