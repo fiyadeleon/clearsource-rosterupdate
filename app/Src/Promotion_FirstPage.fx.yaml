@@ -168,9 +168,10 @@
     cbPROmniaID_1 As combobox:
         ChevronBackground: =RGBA(0, 18, 107, 1)
         DisplayFields: =["USER"]
+        IsSearchable: =false
         Items: =CurrentRoster
         SearchFields: =["USER"]
-        SearchItems: =Search(CurrentRoster,cbPROmniaID_1.SearchText,"USER")
+        SearchItems: =[]
         SelectMultiple: =false
         Width: =310
         X: =346
@@ -246,9 +247,10 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, 'BUSINESS UNIT'),cbPRBusiness.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 X: =237
                 Y: =10
@@ -285,9 +287,10 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),CLIENT)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Distinct(CurrentRoster, CLIENT)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbPRClient.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 X: =237
                 Y: =10
@@ -324,9 +327,10 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Distinct(CurrentRoster, POSITION)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, POSITION),cbPRPosition.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 X: =237
                 Y: =10
@@ -363,9 +367,10 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),LOB)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Distinct(CurrentRoster, LOB)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, LOB),cbPRLOB.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 X: =237
                 Y: =10
@@ -402,9 +407,10 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'SUB-UNIT')
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Distinct(CurrentRoster, 'SUB-UNIT')
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, 'SUB-UNIT'),cbPRSubUnit.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 X: =237
                 Y: =10
@@ -441,9 +447,10 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),BILLABILITY)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Distinct(CurrentRoster, BILLABILITY)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, BILLABILITY),cbPRBillability.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 X: =237
                 Y: =10
@@ -515,9 +522,10 @@
                 ChevronBackground: =RGBA(0, 18, 107, 1)
                 DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),TEAM)
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Distinct(CurrentRoster, TEAM)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, TEAM),cbPRTeam.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 X: =237
                 Y: =10

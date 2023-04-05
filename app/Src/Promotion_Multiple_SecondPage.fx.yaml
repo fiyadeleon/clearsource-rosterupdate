@@ -1,4 +1,4 @@
-"LateralTransfer_Multiple_FirstPage_1 As screen.'printableLayout_A4Portrait_ver1.0'":
+"Promotion_Multiple_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
     Height: =1110
@@ -6,20 +6,20 @@
     OnVisible: =
     Width: =1500
 
-    "galleryLTM_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+    "galleryLTM_3 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
         Height: =700
         Items: =colLateralTransfer
         Layout: =Layout.Vertical
-        OnSelect: =Set(SelectedItemID_1, txtLTMultipleOmnia_1.Text)
+        OnSelect: =Set(SelectedItemID_1, txtLTMultipleOmnia_3.Text)
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
         Y: =200
         ZIndex: =1
 
-        txtLTMultipleOmnia_1 As label:
+        txtLTMultipleOmnia_3 As label:
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -34,7 +34,7 @@
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =1
 
-        NextArrow4_1 As icon.ChevronRight:
+        NextArrow4_2 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Height: =60
             Icon: =Icon.ChevronRight
@@ -50,14 +50,14 @@
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =2
 
-        Separator4_1 As rectangle:
+        Separator4_2 As rectangle:
             Height: =1
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - 1
             ZIndex: =3
 
-    "'Lateral Transfer Form_4' As label":
+    "'Lateral Transfer Form_10' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
@@ -68,7 +68,7 @@
         Y: =46
         ZIndex: =4
 
-    btnLTMultipleReview_1 As button:
+    btnLTMultipleReview_3 As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: =
         Text: ="Review"
@@ -76,7 +76,7 @@
         Y: =1008
         ZIndex: =11
 
-    btnLTMultipleBack_1 As button:
+    btnLTMultipleBack_3 As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: =Navigate(LateralTransfer_Multiple_FirstPage,ScreenTransition.Cover)
@@ -85,7 +85,7 @@
         Y: =1008
         ZIndex: =12
 
-    formLTM_1 As form:
+    formLTM_3 As form:
         BorderThickness: =1
         DataSource: =colLateralTransfer
         Height: =700
@@ -97,7 +97,7 @@
         Y: =200
         ZIndex: =18
 
-        "'EMPLOYEE NAME_LTMDataCard_1' As typedDataCard.textualViewCard":
+        "'EMPLOYEE NAME_LTMDataCard_2' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =
@@ -111,7 +111,7 @@
             Y: =0
             ZIndex: =1
 
-            DataCardKey46_1 As label:
+            DataCardKey46_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -122,7 +122,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleEmpName_1 As label:
+            txtLTMultipleEmpName_3 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -135,7 +135,7 @@
                 Y: =18
                 ZIndex: =2
 
-        SITE_LTMDataCard_1 As typedDataCard.textualViewCard:
+        SITE_LTMDataCard_3 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SITE"
             Default: =ThisItem.SITE
@@ -149,7 +149,7 @@
             Y: =1
             ZIndex: =1
 
-            DataCardKey47_1 As label:
+            DataCardKey47_3 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -160,7 +160,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleSite_1 As label:
+            txtLTMultipleSite_4 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -173,7 +173,7 @@
                 Y: =20
                 ZIndex: =2
 
-        "'BUSINESS UNIT_LTMDataCard_1' As typedDataCard.allowedValuesStringEditCard":
+        "'BUSINESS UNIT_LTMDataCard_3' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
@@ -189,7 +189,7 @@
             Y: =2
             ZIndex: =1
 
-            DataCardKey37_1 As label:
+            DataCardKey37_3 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -200,7 +200,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleSite_2 As label:
+            txtLTMultipleSite_5 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -213,7 +213,7 @@
                 Y: =20
                 ZIndex: =3
 
-        "'SUB-UNIT_DataCard2' As typedDataCard.textualViewCard":
+        "'SUB-UNIT_DataCard2_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB UNIT'
@@ -227,7 +227,7 @@
             Y: =3
             ZIndex: =1
 
-            DataCardKey36 As label:
+            DataCardKey36_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -238,7 +238,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue4 As label:
+            DataCardValue4_1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -247,11 +247,11 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey36.X + DataCardKey36.Width
+                X: =DataCardKey36_1.X + DataCardKey36_1.Width
                 Y: =10
                 ZIndex: =2
 
-        POSITION_DataCard2 As typedDataCard.textualViewCard:
+        POSITION_DataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
@@ -265,7 +265,7 @@
             Y: =4
             ZIndex: =1
 
-            DataCardKey44 As label:
+            DataCardKey44_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -276,7 +276,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue5 As label:
+            DataCardValue5_1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -285,11 +285,11 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey44.X + DataCardKey44.Width
+                X: =DataCardKey44_1.X + DataCardKey44_1.Width
                 Y: =10
                 ZIndex: =2
 
-        CLIENT_DataCard2 As typedDataCard.textualViewCard:
+        CLIENT_DataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
             Default: =ThisItem.CLIENT
@@ -303,7 +303,7 @@
             Y: =5
             ZIndex: =1
 
-            DataCardKey45 As label:
+            DataCardKey45_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -314,7 +314,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue6 As label:
+            DataCardValue6_1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -323,11 +323,11 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey45.X + DataCardKey45.Width
+                X: =DataCardKey45_1.X + DataCardKey45_1.Width
                 Y: =10
                 ZIndex: =2
 
-        BILLABILITY_DataCard2 As typedDataCard.textualViewCard:
+        BILLABILITY_DataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
             Default: =ThisItem.BILLABILITY
@@ -341,7 +341,7 @@
             Y: =6
             ZIndex: =1
 
-            DataCardKey50 As label:
+            DataCardKey50_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -352,7 +352,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue10 As label:
+            DataCardValue10_1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -361,11 +361,11 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey50.X + DataCardKey50.Width
+                X: =DataCardKey50_1.X + DataCardKey50_1.Width
                 Y: =10
                 ZIndex: =2
 
-        MONDAY_DataCard2 As typedDataCard.textualViewCard:
+        MONDAY_DataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
             Default: =ThisItem.SCHEDULE
@@ -379,7 +379,7 @@
             Y: =7
             ZIndex: =1
 
-            DataCardKey51 As label:
+            DataCardKey51_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -390,7 +390,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue11 As label:
+            DataCardValue11_1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -399,11 +399,11 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey51.X + DataCardKey51.Width
+                X: =DataCardKey51_1.X + DataCardKey51_1.Width
                 Y: =10
                 ZIndex: =2
 
-        TEAM_DataCard2 As typedDataCard.textualViewCard:
+        TEAM_DataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
             Default: =ThisItem.SUPERVISOR
@@ -417,7 +417,7 @@
             Y: =8
             ZIndex: =1
 
-            DataCardKey52 As label:
+            DataCardKey52_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -428,7 +428,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue12 As label:
+            DataCardValue12_1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -437,11 +437,11 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey52.X + DataCardKey52.Width
+                X: =DataCardKey52_1.X + DataCardKey52_1.Width
                 Y: =10
                 ZIndex: =2
 
-    "'Lateral Transfer Form_5' As label":
+    "'Lateral Transfer Form_11' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
@@ -452,7 +452,7 @@
         Y: =145
         ZIndex: =19
 
-    "'Lateral Transfer Form_6' As label":
+    "'Lateral Transfer Form_12' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
