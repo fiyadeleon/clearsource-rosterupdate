@@ -583,11 +583,13 @@
             Collect(colLateralTransfer, {
                     USER:SelectedItemID,
                     NAME:txtLTMultipleEmpName.Text,
+                    ID:txtLTMultipleId.Text,
                     SITE:txtLTMultipleSite.Text,
                     'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
                     'SUB UNIT':cbLTMultipleSubUnit.Selected.Value,
                     POSITION:cbLTMultiplePosition.Selected.Value, 
                     CLIENT:cbLTMultipleClient.Selected.Value, 
+                    LOB:cbLTSearchMultipleLOB.Selected.Value,
                     BILLABILITY:cbLTMultipleBillability.Selected.Value, 
                     SCHEDULE:txtLTMultipleSchedule.Text, 
                     SUPERVISOR:cbLTMultipleSupervisor.Selected.Value
