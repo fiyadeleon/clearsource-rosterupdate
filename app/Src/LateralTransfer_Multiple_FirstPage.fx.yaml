@@ -139,6 +139,7 @@
                 =Set(SelectedItemID, "") &&
                 Reset(cbLTSearchMultipleOmnia);
                 Clear(colLateralTransfer)
+            OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
             SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
@@ -566,6 +567,7 @@
         ZIndex: =20
 
     btnLTMultipleSave As button:
+        Fill: =RGBA(39, 113, 194, 1)
         OnSelect: |-
             =If(
                 CountRows(
