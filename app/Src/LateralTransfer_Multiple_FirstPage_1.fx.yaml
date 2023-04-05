@@ -247,11 +247,11 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey36.X + DataCardKey36.Width
-                Y: =10
+                X: =302
+                Y: =16
                 ZIndex: =2
 
-        POSITION_DataCard2 As typedDataCard.textualViewCard:
+        POSITION_LTMDataCard2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
@@ -286,7 +286,7 @@
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey44.X + DataCardKey44.Width
-                Y: =10
+                Y: =16
                 ZIndex: =2
 
         CLIENT_DataCard2 As typedDataCard.textualViewCard:
