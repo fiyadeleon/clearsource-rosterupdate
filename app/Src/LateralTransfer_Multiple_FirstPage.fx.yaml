@@ -291,7 +291,7 @@
                 ZIndex: =1
 
             cbLTMultipleBusUnit As combobox:
-                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT')
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -330,7 +330,7 @@
                 ZIndex: =1
 
             cbLTMultipleSubUnit As combobox:
-                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT')
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -369,7 +369,7 @@
                 ZIndex: =1
 
             cbLTMultiplePosition As combobox:
-                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),POSITION)
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),POSITION))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -408,7 +408,7 @@
                 ZIndex: =1
 
             cbLTMultipleClient As combobox:
-                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),CLIENT)
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),CLIENT))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -447,7 +447,7 @@
                 ZIndex: =1
 
             cbLTMultipleBillability As combobox:
-                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),BILLABILITY)
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BILLABILITY))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -531,7 +531,7 @@
                 ZIndex: =1
 
             cbLTMultipleSupervisor As combobox:
-                DefaultSelectedItems: =ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM)
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -578,11 +578,11 @@
                     SITE:txtLTMultipleSite.Text,
                     'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
                     'SUB UNIT':cbLTMultipleSubUnit.Selected.Value,
-                    'POSITION':cbLTMultiplePosition.Selected.Value, 
-                    'CLIENT':cbLTMultipleClient.Selected.Value, 
-                    'BILLABILITY':cbLTMultipleBillability.Selected.Value, 
-                    'SCEHEDULE':txtLTMultipleSchedule.Text, 
-                    'SUPERVISOR':cbLTMultipleSupervisor.Selected.Value
+                    POSITION:cbLTMultiplePosition.Selected.Value, 
+                    CLIENT:cbLTMultipleClient.Selected.Value, 
+                    BILLABILITY:cbLTMultipleBillability.Selected.Value, 
+                    SCEHEDULE:txtLTMultipleSchedule.Text, 
+                    SUPERVISOR:cbLTMultipleSupervisor.Selected.Value
                 }
             )
         Text: ="Save"
