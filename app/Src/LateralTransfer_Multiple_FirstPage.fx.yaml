@@ -108,7 +108,7 @@
     btnLTMultipleBack As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(LateralTransfer_HomePage,ScreenTransition.Cover)
+        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
         Y: =1008
@@ -581,7 +581,7 @@
                     POSITION:cbLTMultiplePosition.Selected.Value, 
                     CLIENT:cbLTMultipleClient.Selected.Value, 
                     BILLABILITY:cbLTMultipleBillability.Selected.Value, 
-                    SCEHEDULE:txtLTMultipleSchedule.Text, 
+                    SCHEDULE:txtLTMultipleSchedule.Text, 
                     SUPERVISOR:cbLTMultipleSupervisor.Selected.Value
                 }
             )
