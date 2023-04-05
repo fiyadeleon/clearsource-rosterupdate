@@ -1,0 +1,555 @@
+"Promotion_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    BackgroundImage: ='MicrosoftTeams-image (2)'
+    Height: =1123
+    Width: =794
+
+    frPRStatic_1 As form:
+        DataSource: =CurrentRoster
+        Height: =178
+        Item: =cbPROmniaID_1.Selected
+        NumberOfColumns: =1
+        Width: =578
+        X: =108
+        Y: =210
+        ZIndex: =1
+
+        frPREmployeeID_1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="EMPLOYEE ID"
+            Default: =ThisItem.'EMPLOYEE ID'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"EMPLOYEE ID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =578
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey15_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (txtPREmployeeID_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            txtPREmployeeID_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey15_1.X + DataCardKey15_1.Width
+                Y: =10
+                ZIndex: =2
+
+        frPRFirstName_1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FIRST NAME"
+            Default: =ThisItem.'FIRST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"FIRST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =578
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey16_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (txtPRFirstName_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            txtPRFirstName_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey16_1.X + DataCardKey16_1.Width
+                Y: =10
+                ZIndex: =2
+
+        frPRLastName_1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LAST NAME"
+            Default: =ThisItem.'LAST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LAST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =578
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey9_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (txtPRLastName_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            txtPRLastName_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey9_1.X + DataCardKey9_1.Width
+                Y: =10
+                ZIndex: =2
+
+        frPRSite_1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SITE"
+            Default: =ThisItem.SITE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =578
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey13_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (txtPRSite_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            txtPRSite_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey13_1.X + DataCardKey13_1.Width
+                Y: =10
+                ZIndex: =2
+
+    cbPROmniaID_1 As combobox:
+        ChevronBackground: =RGBA(0, 18, 107, 1)
+        DisplayFields: =["USER"]
+        Items: =CurrentRoster
+        SearchFields: =["USER"]
+        SearchItems: =Search(CurrentRoster,cbPROmniaID_1.SearchText,"USER")
+        SelectMultiple: =false
+        Width: =310
+        X: =346
+        Y: =160
+        ZIndex: =2
+
+    txtPROmniaID_1 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Text: ="OMNIA ID"
+        X: =135
+        Y: =160
+        ZIndex: =3
+
+    btnPRReview As button:
+        Fill: =RGBA(0, 18, 107, 1)
+        OnSelect: |-
+            =If(
+                IsBlank(cbPRBusiness) ||
+                IsBlank(cbPRClient) ||
+                IsBlank(cbPRPosition) ||
+                IsBlank(cbPRLOB) ||
+                IsBlank(cbPRSubUnit) ||
+                IsBlank(cbPRBillability) ||
+                IsBlank(txtPRSchedule) ||
+                IsBlank(cbPRTeam),
+                Notify("Please complete all fields!",NotificationType.Error),
+                Navigate(Promotion_SecondPage,ScreenTransition.None)
+                )
+        Text: ="Review"
+        X: =526
+        Y: =931
+        ZIndex: =4
+
+    frPRDynamic_1 As form:
+        DataSource: =CurrentRoster
+        Height: =417
+        Item: =cbPROmniaID_1.Selected
+        NumberOfColumns: =1
+        Width: =578
+        X: =108
+        Y: =468
+        ZIndex: =5
+
+        "'BUSINESS UNIT_PRDataCard4_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="BUSINESS UNIT"
+            Default: =ThisItem.'BUSINESS UNIT'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =578
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey23_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            cbPRBusiness As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, 'BUSINESS UNIT'),cbPRBusiness.SearchText,"Value")
+                SelectMultiple: =false
+                X: =237
+                Y: =10
+                ZIndex: =5
+
+        CLIENT_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "CLIENT")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CLIENT"
+            Default: =ThisItem.CLIENT
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"CLIENT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =578
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey11_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            cbPRClient As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),CLIENT)
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, CLIENT)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbPRClient.SearchText,"Value")
+                SelectMultiple: =false
+                X: =237
+                Y: =10
+                ZIndex: =5
+
+        POSITION_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "POSITION")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="POSITION"
+            Default: =ThisItem.POSITION
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"POSITION")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =578
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey12_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            cbPRPosition As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, POSITION)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, POSITION),cbPRPosition.SearchText,"Value")
+                SelectMultiple: =false
+                X: =237
+                Y: =10
+                ZIndex: =5
+
+        LOB_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =578
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey14_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            cbPRLOB As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),LOB)
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, LOB)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, LOB),cbPRLOB.SearchText,"Value")
+                SelectMultiple: =false
+                X: =237
+                Y: =10
+                ZIndex: =5
+
+        "'SUB-UNIT_PRDataCard2_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "SUB-UNIT")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SUB-UNIT"
+            Default: =ThisItem.'SUB-UNIT'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SUB-UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =578
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey17_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            cbPRSubUnit As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'SUB-UNIT')
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, 'SUB-UNIT'),cbPRSubUnit.SearchText,"Value")
+                SelectMultiple: =false
+                X: =237
+                Y: =10
+                ZIndex: =5
+
+        BILLABILITY_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="BILLABILITY"
+            Default: =ThisItem.BILLABILITY
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BILLABILITY")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =578
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey19_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            cbPRBillability As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),BILLABILITY)
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, BILLABILITY)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, BILLABILITY),cbPRBillability.SearchText,"Value")
+                SelectMultiple: =false
+                X: =237
+                Y: =10
+                ZIndex: =5
+
+        SCHEDULE_PRDataCard3_1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SCHEDULE"
+            Default: =ThisItem.SCHEDULE
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SCHEDULE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "SCHEDULE")
+            Required: =false
+            Update: =
+            Width: =578
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey21_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            txtPRSchedule As text:
+                Default: =""
+                HintText: ="e.g., 10PM - 7AM PHT"
+                Width: =330
+                X: =237
+                Y: =10
+                ZIndex: =5
+
+        TEAM_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "TEAM")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAM"
+            Default: =ThisItem.TEAM
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"TEAM")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =
+            Width: =578
+            X: =0
+            Y: =7
+            ZIndex: =1
+
+            DataCardKey20_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            cbPRTeam As combobox:
+                ChevronBackground: =RGBA(0, 18, 107, 1)
+                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),TEAM)
+                DisplayFields: =["Value"]
+                Items: =Distinct(CurrentRoster, TEAM)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Distinct(CurrentRoster, TEAM),cbPRTeam.SearchText,"Value")
+                SelectMultiple: =false
+                X: =237
+                Y: =10
+                ZIndex: =5
+
+    btnPRBackMP As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Navigate(HomePage,ScreenTransition.None)
+        Text: ="Back"
+        X: =336
+        Y: =931
+        ZIndex: =6
+
+    Label2 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =17
+        Text: ="NEW EMPLOYEE DETAILS"
+        Width: =286
+        X: =250
+        Y: =403
+        ZIndex: =7
+
+    "'PROMOTION FORM_2' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="PROMOTION FORM"
+        Width: =485
+        X: =62
+        Y: =58
+        ZIndex: =8
+
