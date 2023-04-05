@@ -1,7 +1,7 @@
-"LateralTransfer_Multiple_FirstPage_1 As screen.'printableLayout_A4Portrait_ver1.0'":
+"LateralTransfer_Multiple_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1110
+    Height: =1050
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -16,7 +16,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
-        Y: =200
+        Y: =210
         ZIndex: =1
 
         txtLTMultipleOmnia_1 As label:
@@ -62,10 +62,10 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="LATERAL TRANSFER FORM"
-        Width: =390
-        X: =540
-        Y: =46
+        Text: ="REVIEW LATERAL TRANSFER FORM"
+        Width: =510
+        X: =479
+        Y: =55
         ZIndex: =4
 
     btnLTMultipleReview_1 As button:
@@ -73,7 +73,7 @@
         OnSelect: =
         Text: ="Review"
         X: =1269
-        Y: =1008
+        Y: =952
         ZIndex: =11
 
     btnLTMultipleBack_1 As button:
@@ -82,10 +82,10 @@
         OnSelect: =Navigate(LateralTransfer_Multiple_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1008
+        Y: =952
         ZIndex: =12
 
-    formLTM_1 As form:
+    formLTM2 As form:
         BorderThickness: =1
         DataSource: =colLateralTransfer
         Height: =700
@@ -94,10 +94,10 @@
         OnReset: =true
         Width: =742
         X: =713
-        Y: =200
+        Y: =210
         ZIndex: =18
 
-        "'EMPLOYEE NAME_LTMDataCard_1' As typedDataCard.textualViewCard":
+        "'EMPLOYEE NAME_LTMDataCard2' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =
@@ -122,7 +122,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleEmpName_1 As label:
+            txtLTMultipleEmpName2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -135,7 +135,7 @@
                 Y: =18
                 ZIndex: =2
 
-        SITE_LTMDataCard_1 As typedDataCard.textualViewCard:
+        SITE_LTMDataCard2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SITE"
             Default: =ThisItem.SITE
@@ -160,7 +160,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleSite_1 As label:
+            txtLTMultipleSite2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -173,7 +173,7 @@
                 Y: =20
                 ZIndex: =2
 
-        "'BUSINESS UNIT_LTMDataCard_1' As typedDataCard.allowedValuesStringEditCard":
+        "'BUSINESS UNIT_LTMDataCard2' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
@@ -184,7 +184,7 @@
             Height: =60
             Required: =false
             Update: =
-            Width: =742
+            Width: =741
             X: =0
             Y: =2
             ZIndex: =1
@@ -200,7 +200,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleSite_2 As label:
+            txtLTMultipleBusUnit2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -213,7 +213,7 @@
                 Y: =20
                 ZIndex: =3
 
-        "'SUB-UNIT_DataCard2' As typedDataCard.textualViewCard":
+        "'SUB-UNIT_LTMDataCard2' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB UNIT'
@@ -222,7 +222,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =3
             ZIndex: =1
@@ -238,7 +238,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue4 As label:
+            txtLTMultipleSubUnit2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -260,7 +260,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =4
             ZIndex: =1
@@ -276,7 +276,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue5 As label:
+            txtLTMultiplePosition2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -289,7 +289,7 @@
                 Y: =16
                 ZIndex: =2
 
-        CLIENT_DataCard2 As typedDataCard.textualViewCard:
+        CLIENT_LTMDataCard2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
             Default: =ThisItem.CLIENT
@@ -298,7 +298,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =5
             ZIndex: =1
@@ -314,7 +314,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue6 As label:
+            txtLTMutipleClient2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -327,7 +327,7 @@
                 Y: =10
                 ZIndex: =2
 
-        BILLABILITY_DataCard2 As typedDataCard.textualViewCard:
+        BILLABILITY_LTMDataCard2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
             Default: =ThisItem.BILLABILITY
@@ -336,7 +336,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =6
             ZIndex: =1
@@ -352,7 +352,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue10 As label:
+            txtLTMultipleBillability2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -365,7 +365,7 @@
                 Y: =10
                 ZIndex: =2
 
-        MONDAY_DataCard2 As typedDataCard.textualViewCard:
+        SCHEDULE_LTMDataCard2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
             Default: =ThisItem.SCHEDULE
@@ -374,7 +374,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =7
             ZIndex: =1
@@ -390,7 +390,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue11 As label:
+            txtLTMultipleSchedule2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -403,7 +403,7 @@
                 Y: =10
                 ZIndex: =2
 
-        TEAM_DataCard2 As typedDataCard.textualViewCard:
+        SUPERVISOR_LTMDataCard2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
             Default: =ThisItem.SUPERVISOR
@@ -412,7 +412,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =8
             ZIndex: =1
@@ -428,7 +428,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue12 As label:
+            txtLTMultipleSupervisor2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -442,14 +442,15 @@
                 ZIndex: =2
 
     "'Lateral Transfer Form_5' As label":
+        Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
-        Text: ="UPDATED EMPLOYEE(S)"
-        Width: =316
-        X: =204
-        Y: =145
+        Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10), cbLTSearchMultipleLOB.Selected.Value)
+        Width: =640
+        X: =42
+        Y: =143
         ZIndex: =19
 
     "'Lateral Transfer Form_6' As label":
@@ -460,6 +461,6 @@
         Text: ="EMPLOYEE DETAILS"
         Width: =264
         X: =952
-        Y: =145
+        Y: =143
         ZIndex: =20
 

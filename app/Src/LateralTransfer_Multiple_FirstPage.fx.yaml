@@ -99,7 +99,7 @@
 
     btnLTMultipleReview As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =Navigate(LateralTransfer_Multiple_FirstPage_1,ScreenTransition.Cover)
+        OnSelect: =Navigate(LateralTransfer_Multiple_SecondPage,ScreenTransition.Cover)
         Text: ="Review"
         X: =1269
         Y: =1008
@@ -137,7 +137,8 @@
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
             OnChange: |-
                 =Set(SelectedItemID, "") &&
-                Reset(cbLTSearchMultipleOmnia)
+                Reset(cbLTSearchMultipleOmnia);
+                Clear(colLateralTransfer)
             SearchFields: =["Value"]
             SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
@@ -187,7 +188,7 @@
         Y: =322
         ZIndex: =18
 
-        "'FIRST NAME_DataCard2' As typedDataCard.textualViewCard":
+        "'EMPLOYEE NAME_LTMDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
@@ -564,7 +565,7 @@
         Y: =255
         ZIndex: =20
 
-    Button1 As button:
+    btnLTMultipleSave As button:
         OnSelect: |-
             =If(
                 CountRows(
@@ -584,7 +585,8 @@
                     SCHEDULE:txtLTMultipleSchedule.Text, 
                     SUPERVISOR:cbLTMultipleSupervisor.Selected.Value
                 }
-            )
+            );
+            Notify("Successfully saved your changes locally.", NotificationType.Success)
         Text: ="Save"
         X: =1004
         Y: =889
