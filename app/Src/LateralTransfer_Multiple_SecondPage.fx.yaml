@@ -323,8 +323,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey45.X + DataCardKey45.Width
-                Y: =10
+                X: =302
+                Y: =16
                 ZIndex: =2
 
         BILLABILITY_LTMDataCard2 As typedDataCard.textualViewCard:
@@ -361,8 +361,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey50.X + DataCardKey50.Width
-                Y: =10
+                X: =302
+                Y: =16
                 ZIndex: =2
 
         SCHEDULE_LTMDataCard2 As typedDataCard.textualViewCard:
@@ -399,8 +399,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey51.X + DataCardKey51.Width
-                Y: =10
+                X: =302
+                Y: =25
                 ZIndex: =2
 
         SUPERVISOR_LTMDataCard2 As typedDataCard.textualViewCard:
@@ -437,8 +437,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey52.X + DataCardKey52.Width
-                Y: =10
+                X: =302
+                Y: =16
                 ZIndex: =2
 
     "'Lateral Transfer Form_5' As label":
@@ -450,7 +450,7 @@
         Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10), cbLTSearchMultipleLOB.Selected.Value)
         Width: =640
         X: =42
-        Y: =143
+        Y: =132
         ZIndex: =19
 
     "'Lateral Transfer Form_6' As label":

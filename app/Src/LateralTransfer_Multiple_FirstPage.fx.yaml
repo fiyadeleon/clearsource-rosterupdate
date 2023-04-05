@@ -99,7 +99,12 @@
 
     btnLTMultipleReview As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =Navigate(LateralTransfer_Multiple_SecondPage,ScreenTransition.Cover)
+        OnSelect: |-
+            =If(
+                IsEmpty(colLateralTransfer),
+                Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
+                Navigate(LateralTransfer_Multiple_SecondPage,ScreenTransition.Cover)
+            )
         Text: ="Review"
         X: =1269
         Y: =1008
