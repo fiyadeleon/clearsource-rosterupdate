@@ -6,35 +6,64 @@
     OnVisible: =
     Width: =1500
 
-    "galleryLTM As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+    "galleryLTM As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
         Height: =642
         Items: =cbLTSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
+        TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
-        TemplateSize: =Min(96, Self.Height - 60)
+        TemplateSize: =126
         X: =42
         Y: =322
         ZIndex: =1
 
-        txtLTMultipleOmnia As label:
+        txtLTMultipleName As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Set(SelectedItemID, txtLTMultipleId.Text)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =16
+            Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        txtLTMultipleId As label:
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =16
-            Text: =ThisItem.Value
+            Text: =ThisItem.'EMPLOYEE ID'
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =1
+            Y: =txtLTMultipleName.Y + txtLTMultipleName.Height + 2
+            ZIndex: =2
 
-        NextArrow4 As icon.ChevronRight:
+        txtLTMultipleOmnia As label:
+            Height: =Self.Size * 4
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.USER
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =txtLTMultipleId.Y + txtLTMultipleId.Height + 4
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Height: =60
             Icon: =Icon.ChevronRight
@@ -48,14 +77,14 @@
             Width: =60
             X: =Parent.TemplateWidth - Self.Width - 5
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =2
+            ZIndex: =4
 
-        Separator4 As rectangle:
+        Separator2 As rectangle:
             Height: =1
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - 1
-            ZIndex: =3
+            ZIndex: =5
 
     "'Lateral Transfer Form_1' As label":
         Color: =RGBA(0, 18, 107, 1)
@@ -127,10 +156,10 @@
         cbLTSearchMultipleOmnia As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
-            DisplayFields: =["Value"]
-            Items: =If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER))
-            SearchFields: =["Value"]
-            SearchItems: =Search(If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), ForAll(Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value),USER)),cbLTSearchMultipleOmnia.SearchText,"Value")
+            DisplayFields: =["USER"]
+            Items: =If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value))
+            SearchFields: =["USER"]
+            SearchItems: =Search(If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value)),cbLTSearchMultipleOmnia.SearchText,"USER")
             Width: =401.4
             X: =625
             Y: =187
@@ -158,7 +187,7 @@
         Y: =322
         ZIndex: =18
 
-        "'EMPLOYEE NAME_LTMDataCard' As typedDataCard.textualViewCard":
+        "'FIRST NAME_DataCard2' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
@@ -167,12 +196,12 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =741
+            Width: =742
             X: =0
-            Y: =30
+            Y: =0
             ZIndex: =1
 
-            DataCardKey46 As label:
+            DataCardKey24 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -190,10 +219,10 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =Concatenate(ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME') 
+                Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
                 Width: =(Parent.Width - 60) * 0.6
-                X: =301
-                Y: =18
+                X: =DataCardKey24.X + DataCardKey24.Width
+                Y: =20
                 ZIndex: =2
 
         SITE_LTMDataCard As typedDataCard.textualViewCard:
@@ -207,7 +236,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =90
+            Y: =1
             ZIndex: =1
 
             DataCardKey47 As label:
@@ -247,7 +276,7 @@
             Update: =cbLTMultipleBusUnit.Selected.Value
             Width: =742
             X: =0
-            Y: =150
+            Y: =2
             ZIndex: =1
 
             DataCardKey37 As label:
@@ -286,7 +315,7 @@
             Update: =cbLTMultipleSubUnit.Selected.Value
             Width: =742
             X: =0
-            Y: =210
+            Y: =3
             ZIndex: =1
 
             DataCardKey38 As label:
@@ -325,7 +354,7 @@
             Update: =
             Width: =741
             X: =0
-            Y: =270
+            Y: =4
             ZIndex: =1
 
             DataCardKey41 As label:
@@ -364,7 +393,7 @@
             Update: =cbLTMultipleClient.Selected.Value
             Width: =742
             X: =0
-            Y: =330
+            Y: =5
             ZIndex: =1
 
             DataCardKey39 As label:
@@ -403,7 +432,7 @@
             Update: =cbLTMultipleBillability.Selected.Value
             Width: =742
             X: =0
-            Y: =390
+            Y: =6
             ZIndex: =1
 
             DataCardKey40 As label:
@@ -442,7 +471,7 @@
             Update: =txtLTMultipleSchedule.Text
             Width: =742
             X: =0
-            Y: =450
+            Y: =7
             ZIndex: =1
 
             DataCardKey43 As label:
@@ -487,7 +516,7 @@
             Update: =cbLTMultipleClient.Selected.Value
             Width: =742
             X: =0
-            Y: =510
+            Y: =8
             ZIndex: =1
 
             DataCardKey42 As label:
@@ -544,15 +573,20 @@
                 Remove(colLateralTransfer, LookUp(colLateralTransfer, USER=SelectedItemID)
             ));
             Collect(colLateralTransfer, {
-                USER:SelectedItemID,
-                NAME:txtLTMultipleEmpName.Text,
-                SITE:txtLTMultipleSite.Text,
-                'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
-                'SUB UNIT':cbLTMultipleSubUnit.Selected.Value
+                    USER:SelectedItemID,
+                    NAME:txtLTMultipleEmpName.Text,
+                    SITE:txtLTMultipleSite.Text,
+                    'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
+                    'SUB UNIT':cbLTMultipleSubUnit.Selected.Value,
+                    'POSITION':cbLTMultiplePosition.Selected.Value, 
+                    'CLIENT':cbLTMultipleClient.Selected.Value, 
+                    'BILLABILITY':cbLTMultipleBillability.Selected.Value, 
+                    'SCEHEDULE':txtLTMultipleSchedule.Text, 
+                    'SUPERVISOR':cbLTMultipleSupervisor.Selected.Value
                 }
             )
         Text: ="Save"
         X: =1004
-        Y: =888
+        Y: =889
         ZIndex: =21
 

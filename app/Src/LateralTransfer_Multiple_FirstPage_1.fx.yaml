@@ -10,7 +10,7 @@
         BorderThickness: =1
         Default: ={}
         Height: =700
-        Items: =cbLTSearchMultipleOmnia.SelectedItems
+        Items: =colLateralTransfer
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID_1, txtLTMultipleOmnia_1.Text)
         TemplatePadding: =0
@@ -27,7 +27,7 @@
             PaddingRight: =0
             PaddingTop: =0
             Size: =16
-            Text: =ThisItem.Value
+            Text: =ThisItem.USER
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -129,7 +129,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =Parent.Default
+                Text: =ThisItem.NAME 
                 Width: =(Parent.Width - 60) * 0.6
                 X: =301
                 Y: =18
@@ -218,7 +218,7 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
-        Text: ="SELECTED EMPLOYEE(S)"
+        Text: ="UPDATED EMPLOYEE(S)"
         Width: =316
         X: =204
         Y: =145
