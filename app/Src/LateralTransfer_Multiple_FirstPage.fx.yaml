@@ -3,8 +3,7 @@
     Fill: =
     Height: =1110
     ImagePosition: =ImagePosition.Stretch
-    OnVisible: |-
-        =ClearCollect(colLateralTransfer, {USER: ""})
+    OnVisible: =
     Width: =1500
 
     "galleryLTM As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
@@ -191,7 +190,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =Concatenate(ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME')
+                Text: =Concatenate(ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME') 
                 Width: =(Parent.Width - 60) * 0.6
                 X: =301
                 Y: =18
@@ -553,7 +552,7 @@
                 }
             )
         Text: ="Save"
-        X: =1269
-        Y: =894
+        X: =1004
+        Y: =888
         ZIndex: =21
 
