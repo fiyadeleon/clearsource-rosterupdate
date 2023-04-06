@@ -1,33 +1,34 @@
 "Others_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1110
+    Height: |
+        =1250
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
 
-    "galleryOT As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+    "galleryOT As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =642
+        Height: =766
         Items: =cbOTOmnia.SelectedItems
         Layout: =Layout.Vertical
-        OnSelect: =Set(SelectedItemID, txtOTMultipleOmnia.Text)
+        OnSelect: =Set(SelectedItemID, txtOTMOmnia.Text)
         TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
-        TemplateSize: =126
+        TemplateSize: =Min(104, Self.Height - 60)
         X: =42
         Y: =322
         ZIndex: =1
 
-        txtOTMultipleName As label:
+        txtOTMName As label:
             Height: =Self.Size * 1.8
-            OnSelect: =Set(SelectedItemID, txtOTMultipleId.Text)
+            OnSelect: =Set(SelectedItemID, txtOTMOmnia.Text)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =16
+            Size: =18
             Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
@@ -35,33 +36,20 @@
             Y: =16
             ZIndex: =1
 
-        txtOTMultipleId As label:
+        txtOTMOmnia As label:
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.'EMPLOYEE ID'
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 104
-            X: =32
-            Y: =txtOTMultipleName.Y + txtOTMultipleName.Height + 2
-            ZIndex: =2
-
-        txtOTMultipleOmnia As label:
-            Height: =Self.Size * 4
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
+            Size: =16
             Text: =ThisItem.USER
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
-            Y: =62
-            ZIndex: =3
+            Y: =txtOTMName.Y + txtOTMName.Height + 4
+            ZIndex: =2
 
         NextArrow2_1 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
@@ -77,14 +65,14 @@
             Width: =60
             X: =Parent.TemplateWidth - Self.Width - 5
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =4
+            ZIndex: =3
 
         Separator2_1 As rectangle:
             Height: =1
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - 1
-            ZIndex: =5
+            ZIndex: =4
 
     OT1 As label:
         Color: =RGBA(0, 18, 107, 1)
@@ -107,7 +95,7 @@
             )
         Text: ="Review"
         X: =1269
-        Y: =1008
+        Y: =1144
         ZIndex: =11
 
     btnOTBack As button:
@@ -116,7 +104,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1008
+        Y: =1144
         ZIndex: =12
 
     grpOTLOB As group:
@@ -185,7 +173,7 @@
     formOT As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =642
+        Height: =766
         Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
         NumberOfColumns: =1
         OnReset: =true
@@ -194,7 +182,7 @@
         Y: =322
         ZIndex: =18
 
-        "'EMPLOYEE NAME_OTDataCard' As typedDataCard.textualViewCard":
+        "'EMPLOYEE ID_OTDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
@@ -212,21 +200,21 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="EMPLOYEE NAME"
+                Text: ="EMPLOYEE ID"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =13
                 ZIndex: =1
 
-            txtOTEmpName As label:
+            txtOTEmpId As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
+                Text: =ThisItem.'EMPLOYEE ID'
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey24_1.X + DataCardKey24_1.Width
                 Y: =20
@@ -270,6 +258,43 @@
                 Y: =20
                 ZIndex: =2
 
+        STATUS_OTDataCard As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="STATUS"
+            Default: =ThisItem.STATUS
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"STATUS")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =742
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            cbOTStatus As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbOTStatus.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302
+                Y: =13
+                ZIndex: =2
+
         "'BUSINESS UNIT_OTDataCard' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
@@ -283,7 +308,7 @@
             Update: =cbOTBusUnit.Selected.Value
             Width: =741
             X: =0
-            Y: =2
+            Y: =3
             ZIndex: =1
 
             DataCardKey37_2 As label:
@@ -322,7 +347,7 @@
             Update: =cbOTSubUnit.Selected.Value
             Width: =741
             X: =0
-            Y: =3
+            Y: =4
             ZIndex: =1
 
             DataCardKey38_1 As label:
@@ -361,7 +386,7 @@
             Update: =
             Width: =741
             X: =0
-            Y: =4
+            Y: =5
             ZIndex: =1
 
             DataCardKey41_1 As label:
@@ -400,7 +425,7 @@
             Update: =cbOTClient.Selected.Value
             Width: =741
             X: =0
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             DataCardKey39_1 As label:
@@ -439,7 +464,7 @@
             Update: =cbOTBillability.Selected.Value
             Width: =741
             X: =0
-            Y: =6
+            Y: =7
             ZIndex: =1
 
             DataCardKey40_1 As label:
@@ -478,7 +503,7 @@
             Update: =txtOTSchedule.Text
             Width: =741
             X: =0
-            Y: =7
+            Y: =8
             ZIndex: =1
 
             DataCardKey43_1 As label:
@@ -523,7 +548,7 @@
             Update: =cbOTClient.Selected.Value
             Width: =741
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKey42_1 As label:
@@ -576,14 +601,14 @@
         OnSelect: |-
             =If(
                 CountRows(
-                    Filter(colLateralTransfer,USER=SelectedItemID)
+                    Filter(colOthers,USER=SelectedItemID)
                 ) > 0, 
-                Remove(colLateralTransfer, LookUp(colLateralTransfer, USER=SelectedItemID)
+                Remove(colOthers, LookUp(colOthers, USER=SelectedItemID)
             ));
-            Collect(colLateralTransfer, {
+            Collect(colOthers, {
                     USER:SelectedItemID,
-                    NAME:txtOTEmpName.Text,
-                    ID:txtOTMultipleId.Text,
+                    NAME:txtOTMName.Text,
+                    ID:txtOTEmpId.Text,
                     SITE:txtOTSite.Text,
                     'BUSINESS UNIT':cbOTBusUnit.Selected.Value, 
                     'SUB UNIT':cbOTSubUnit.Selected.Value,
@@ -598,6 +623,6 @@
             Notify("Successfully saved your changes locally.", NotificationType.Success)
         Text: ="Save"
         X: =1004
-        Y: =889
+        Y: =1009
         ZIndex: =21
 
