@@ -27,14 +27,14 @@
         DisabledBorderColor: =RGBA(0, 18, 107, 1)
         DisabledColor: =RGBA(0, 18, 107, 1)
         DisabledFill: =RGBA(0, 18, 107, 1)
-        Items: =["Select your answer", "New Hire", "Termination", "Promotion", "Lateral Transfer", "Other User Status"]
+        Items: =["Select your answer", "New Hire", "Termination", "Promotion", "Lateral Transfer", "Other Roster Update"]
         X: =187
         Y: =390
         ZIndex: =3
 
     btnFirstPageNext As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "New Hire", Navigate(NewHire_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_Multiple_FirstPage,ScreenTransition.Cover)))
+        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_Multiple_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Other Roster Update", Navigate(Others_FirstPage,ScreenTransition.Cover)))
         Text: ="Next"
         X: =355
         Y: =455
