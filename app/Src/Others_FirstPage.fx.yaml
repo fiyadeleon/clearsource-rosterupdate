@@ -89,9 +89,9 @@
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
-                IsEmpty(colLateralTransfer),
+                IsEmpty(colOthers),
                 Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
-                Navigate(LateralTransfer_Multiple_SecondPage,ScreenTransition.Cover)
+                Navigate(Others_SecondPage,ScreenTransition.Cover)
             )
         Text: ="Review"
         X: =1269
@@ -129,9 +129,9 @@
             DisplayFields: =["Value"]
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
             OnChange: |-
-                =Set(SelectedItemID, "") &&
+                =Set(SelectedItemIDinOT, "") &&
                 Reset(cbOTOmnia);
-                Clear(colLateralTransfer)
+                Clear(colOthers)
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
             SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOTLOB.SearchText,"Value")
@@ -287,7 +287,7 @@
                 Y: =10
                 ZIndex: =2
 
-        DataCard3 As typedDataCard.blankCard:
+        "'START DATE_OTDataCard' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
@@ -305,13 +305,13 @@
                 Y: =13
                 ZIndex: =1
 
-            DatePicker1 As datepicker:
+            dateStart As datepicker:
                 Width: =408.6
                 X: =302.8
                 Y: =10
                 ZIndex: =2
 
-        DataCard4 As typedDataCard.blankCard:
+        "'END DATE_OTDataCard' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
@@ -329,7 +329,7 @@
                 Y: =13
                 ZIndex: =2
 
-            DatePicker1_1 As datepicker:
+            dateEnd As datepicker:
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -650,6 +650,9 @@
                     NAME:txtOTMName.Text,
                     ID:txtOTEmpId.Text,
                     SITE:txtOTSite.Text,
+                    STATUS:cbOTStatus.Selected.Value,
+                    'START DATE':dateStart.SelectedDate,
+                    'END DATE':dateEnd.SelectedDate,
                     'BUSINESS UNIT':cbOTBusUnit.Selected.Value, 
                     'SUB UNIT':cbOTSubUnit.Selected.Value,
                     POSITION:cbOTPosition.Selected.Value, 
