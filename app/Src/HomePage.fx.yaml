@@ -39,7 +39,7 @@
             Notify("Successfully submitted the information.", NotificationType.Success) &&
             Navigate(HomePage, ScreenTransition.None) &&
             Office365Outlook.SendEmailV2(
-            "ronel.llamera@clearsourcebpo.com",
+            "helpdesk@clearsourcebpo.com",
             Concatenate("[PROMOTION] Sample "),
             Concatenate(
             "Hi Team,", "<br>", "<br>",
