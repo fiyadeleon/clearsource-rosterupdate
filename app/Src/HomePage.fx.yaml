@@ -42,6 +42,8 @@
             "helpdesk@clearsourcebpo.com",
             Concatenate("[PROMOTION] Sample "),
             Concatenate(
+            "<html>",
+            "<body>",   
             "Hi Team,", "<br>", "<br>",
             "Please see details for promotion of, Juan Week <br><br>",
             "Employee ID: 9999 <br>",
@@ -63,7 +65,9 @@
             "<tr><td>Billability</td><td>aaaaaa</td></tr>",
             "<tr><td>New Schedule</td><td>aaaaaaa</td></tr>",
             "<tr><td>New Supervisor</td><td>aaaaa</td></tr>",
-            "</table>"
+            "</table>",
+            "</body>",
+            "</html>"
             )
             ) 
         Text: ="Next"
