@@ -27,7 +27,7 @@
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =16
+            Size: =18
             Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
@@ -42,6 +42,7 @@
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
+            Size: =16
             Text: =ThisItem.USER
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
