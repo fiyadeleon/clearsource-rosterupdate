@@ -1,4 +1,4 @@
-"LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"Others_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
     Height: =1110
@@ -6,23 +6,23 @@
     OnVisible: =
     Width: =1500
 
-    "galleryLTM As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+    "galleryOT As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
         Height: =642
-        Items: =cbLTSearchMultipleOmnia.SelectedItems
+        Items: =cbOTOmnia.SelectedItems
         Layout: =Layout.Vertical
-        OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
+        OnSelect: =Set(SelectedItemID, txtOTMultipleOmnia.Text)
         TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
-        TemplateSize: =Min(104, Self.Height - 60)
+        TemplateSize: =126
         X: =42
         Y: =322
         ZIndex: =1
 
-        txtLTMultipleName As label:
+        txtOTMultipleName As label:
             Height: =Self.Size * 1.8
-            OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
+            OnSelect: =Set(SelectedItemID, txtOTMultipleId.Text)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -35,8 +35,22 @@
             Y: =16
             ZIndex: =1
 
-        txtLTMultipleOmnia As label:
+        txtOTMultipleId As label:
             Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'EMPLOYEE ID'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =txtOTMultipleName.Y + txtOTMultipleName.Height + 2
+            ZIndex: =2
+
+        txtOTMultipleOmnia As label:
+            Height: =Self.Size * 4
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -46,10 +60,10 @@
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
-            Y: =txtLTMultipleName.Y + txtLTMultipleName.Height + 4
-            ZIndex: =2
+            Y: =62
+            ZIndex: =3
 
-        NextArrow2 As icon.ChevronRight:
+        NextArrow2_1 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Height: =60
             Icon: =Icon.ChevronRight
@@ -63,27 +77,27 @@
             Width: =60
             X: =Parent.TemplateWidth - Self.Width - 5
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =3
+            ZIndex: =4
 
-        Separator2 As rectangle:
+        Separator2_1 As rectangle:
             Height: =1
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - 1
-            ZIndex: =4
+            ZIndex: =5
 
-    "'Lateral Transfer Form_1' As label":
+    OT1 As label:
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="LATERAL TRANSFER FORM"
-        Width: =390
-        X: =540
+        Text: ="OTHER ROSTER UPDATE FORM"
+        Width: =448
+        X: =510
         Y: =46
         ZIndex: =4
 
-    btnLTMultipleReview As button:
+    btnOTReview As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
@@ -96,7 +110,7 @@
         Y: =1008
         ZIndex: =11
 
-    btnLTMultipleBack As button:
+    btnOTBack As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
@@ -105,14 +119,14 @@
         Y: =1008
         ZIndex: =12
 
-    grpLTSearchMultipleLOB As group:
+    grpOTLOB As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
         ZIndex: =13
 
-        txtLTSearchMultipleLOB As label:
+        txtOTLOB As label:
             Align: =Align.Right
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
@@ -122,43 +136,43 @@
             Y: =122
             ZIndex: =8
 
-        cbLTSearchMultipleLOB As combobox:
+        cbOTLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
             OnChange: |-
                 =Set(SelectedItemID, "") &&
-                Reset(cbLTSearchMultipleOmnia);
+                Reset(cbOTOmnia);
                 Clear(colLateralTransfer)
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
-            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
+            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOTLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
             X: =625
             Y: =122
             ZIndex: =9
 
-    grpLTSearchMultipleOmnia As group:
+    grpOTOmnia As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
         ZIndex: =16
 
-        cbLTSearchMultipleOmnia As combobox:
+        cbOTOmnia As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["USER"]
-            Items: =If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value))
+            Items: =If(!IsBlank(cbOTLOB.Selected.Value), Filter(Headcount_table, LOB=cbOTLOB.Selected.Value))
             SearchFields: =["USER"]
-            SearchItems: =Search(If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value)),cbLTSearchMultipleOmnia.SearchText,"USER")
+            SearchItems: =Search(If(!IsBlank(cbOTLOB.Selected.Value), Filter(Headcount_table, LOB=cbOTLOB.Selected.Value)),cbOTOmnia.SearchText,"USER")
             Width: =401.4
             X: =625
             Y: =187
             ZIndex: =13
 
-        txtLTSearchMultipleOmnia As label:
+        txtOTOmnia As label:
             Align: =Align.Right
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
@@ -168,7 +182,7 @@
             Y: =188
             ZIndex: =15
 
-    formLTM As form:
+    formOT As form:
         BorderThickness: =1
         DataSource: =Headcount_table
         Height: =642
@@ -180,7 +194,7 @@
         Y: =322
         ZIndex: =18
 
-        "'EMPLOYEE ID_LTMDataCard' As typedDataCard.textualViewCard":
+        "'EMPLOYEE NAME_OTDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
@@ -189,36 +203,36 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =0
             ZIndex: =1
 
-            DataCardKey24 As label:
+            DataCardKey24_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="EMPLOYEE ID"
+                Text: ="EMPLOYEE NAME"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleEmpId As label:
+            txtOTEmpName As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.'EMPLOYEE ID'
+                Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey24.X + DataCardKey24.Width
+                X: =DataCardKey24_1.X + DataCardKey24_1.Width
                 Y: =20
                 ZIndex: =2
 
-        SITE_LTMDataCard As typedDataCard.textualViewCard:
+        SITE_OTDataCard As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SITE"
             Default: =ThisItem.SITE
@@ -232,7 +246,7 @@
             Y: =1
             ZIndex: =1
 
-            DataCardKey47 As label:
+            DataCardKey47_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -243,7 +257,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleSite As label:
+            txtOTSite As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -256,7 +270,7 @@
                 Y: =20
                 ZIndex: =2
 
-        "'BUSINESS UNIT_LTMDataCard' As typedDataCard.allowedValuesStringEditCard":
+        "'BUSINESS UNIT_OTDataCard' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
@@ -266,13 +280,13 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Update: =cbLTMultipleBusUnit.Selected.Value
-            Width: =742
+            Update: =cbOTBusUnit.Selected.Value
+            Width: =741
             X: =0
             Y: =2
             ZIndex: =1
 
-            DataCardKey37 As label:
+            DataCardKey37_2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -283,19 +297,19 @@
                 Y: =13
                 ZIndex: =1
 
-            cbLTMultipleBusUnit As combobox:
+            cbOTBusUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTMultipleBusUnit.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbOTBusUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
                 ZIndex: =2
 
-        "'SUB-UNIT_LTMDataCard' As typedDataCard.allowedValuesStringEditCard":
+        "'SUB-UNIT_OTDataCard' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "SUB-UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
@@ -305,13 +319,13 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Update: =cbLTMultipleSubUnit.Selected.Value
-            Width: =742
+            Update: =cbOTSubUnit.Selected.Value
+            Width: =741
             X: =0
             Y: =3
             ZIndex: =1
 
-            DataCardKey38 As label:
+            DataCardKey38_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -319,22 +333,22 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (cbLTMultipleSubUnit.Height / 2) - (Self.Height / 2)
+                Y: =10 + (cbOTSubUnit.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            cbLTMultipleSubUnit As combobox:
+            cbOTSubUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTMultipleSubUnit.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbOTSubUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
                 ZIndex: =2
 
-        POSITION_LTMDataCard As typedDataCard.allowedValuesStringEditCard:
+        POSITION_OTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "POSITION")
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
@@ -350,7 +364,7 @@
             Y: =4
             ZIndex: =1
 
-            DataCardKey41 As label:
+            DataCardKey41_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -361,19 +375,19 @@
                 Y: =13
                 ZIndex: =1
 
-            cbLTMultiplePosition As combobox:
+            cbOTPosition As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),POSITION))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbLTMultiplePosition.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbOTPosition.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
                 ZIndex: =2
 
-        CLIENT_LTMDataCard As typedDataCard.allowedValuesStringEditCard:
+        CLIENT_OTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "CLIENT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
@@ -383,13 +397,13 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Update: =cbLTMultipleClient.Selected.Value
-            Width: =742
+            Update: =cbOTClient.Selected.Value
+            Width: =741
             X: =0
             Y: =5
             ZIndex: =1
 
-            DataCardKey39 As label:
+            DataCardKey39_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -397,22 +411,22 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (cbLTMultipleClient.Height / 2) - (Self.Height / 2)
+                Y: =10 + (cbOTClient.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            cbLTMultipleClient As combobox:
+            cbOTClient As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),CLIENT))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbLTMultipleClient.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbOTClient.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
                 ZIndex: =2
 
-        BILLABILITY_LTMDataCard As typedDataCard.allowedValuesStringEditCard:
+        BILLABILITY_OTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BILLABILITY")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
@@ -422,13 +436,13 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Update: =cbLTMultipleBillability.Selected.Value
-            Width: =742
+            Update: =cbOTBillability.Selected.Value
+            Width: =741
             X: =0
             Y: =6
             ZIndex: =1
 
-            DataCardKey40 As label:
+            DataCardKey40_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -436,22 +450,22 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (cbLTMultipleBillability.Height / 2) - (Self.Height / 2)
+                Y: =10 + (cbOTBillability.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            cbLTMultipleBillability As combobox:
+            cbOTBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BILLABILITY))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbLTMultipleBillability.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbOTBillability.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
                 ZIndex: =2
 
-        SCHEDULE_LTMDataCard As typedDataCard.textualEditCard:
+        SCHEDULE_OTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
             Default: =ThisItem.MONDAY
@@ -461,13 +475,13 @@
             Height: =60
             MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MONDAY")
             Required: =false
-            Update: =txtLTMultipleSchedule.Text
-            Width: =742
+            Update: =txtOTSchedule.Text
+            Width: =741
             X: =0
             Y: =7
             ZIndex: =1
 
-            DataCardKey43 As label:
+            DataCardKey43_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -475,10 +489,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTMultipleSchedule.Height / 2) - (Self.Height / 2)
+                Y: =10 + (txtOTSchedule.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTMultipleSchedule As text:
+            txtOTSchedule As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =
                 DelayOutput: =true
@@ -492,11 +506,11 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey43.X + DataCardKey43.Width
+                X: =DataCardKey43_1.X + DataCardKey43_1.Width
                 Y: =10
                 ZIndex: =2
 
-        SUPERVISOR_LTMDataCard As typedDataCard.allowedValuesStringEditCard:
+        SUPERVISOR_OTDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "TEAM")
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
@@ -506,13 +520,13 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Update: =cbLTMultipleClient.Selected.Value
-            Width: =742
+            Update: =cbOTClient.Selected.Value
+            Width: =741
             X: =0
             Y: =8
             ZIndex: =1
 
-            DataCardKey42 As label:
+            DataCardKey42_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -520,22 +534,22 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (cbLTMultipleClient.Height / 2) - (Self.Height / 2)
+                Y: =10 + (cbOTClient.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            cbLTMultipleSupervisor As combobox:
+            cbOTSupervisor As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTMultipleSupervisor.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbOTSupervisor.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
                 ZIndex: =2
 
-    "'Lateral Transfer Form_2' As label":
+    OT2 As label:
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
@@ -546,7 +560,7 @@
         Y: =255
         ZIndex: =19
 
-    "'Lateral Transfer Form_3' As label":
+    OT3 As label:
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
@@ -557,7 +571,7 @@
         Y: =255
         ZIndex: =20
 
-    btnLTMultipleSave As button:
+    btnOTSave As button:
         Fill: =RGBA(39, 113, 194, 1)
         OnSelect: |-
             =If(
@@ -568,17 +582,17 @@
             ));
             Collect(colLateralTransfer, {
                     USER:SelectedItemID,
-                    NAME:txtLTMultipleName.Text,
-                    ID:txtLTMultipleEmpId.Text,
-                    SITE:txtLTMultipleSite.Text,
-                    'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
-                    'SUB UNIT':cbLTMultipleSubUnit.Selected.Value,
-                    POSITION:cbLTMultiplePosition.Selected.Value, 
-                    CLIENT:cbLTMultipleClient.Selected.Value, 
-                    LOB:cbLTSearchMultipleLOB.Selected.Value,
-                    BILLABILITY:cbLTMultipleBillability.Selected.Value, 
-                    SCHEDULE:txtLTMultipleSchedule.Text, 
-                    SUPERVISOR:cbLTMultipleSupervisor.Selected.Value
+                    NAME:txtOTEmpName.Text,
+                    ID:txtOTMultipleId.Text,
+                    SITE:txtOTSite.Text,
+                    'BUSINESS UNIT':cbOTBusUnit.Selected.Value, 
+                    'SUB UNIT':cbOTSubUnit.Selected.Value,
+                    POSITION:cbOTPosition.Selected.Value, 
+                    CLIENT:cbOTClient.Selected.Value, 
+                    LOB:cbOTLOB.Selected.Value,
+                    BILLABILITY:cbOTBillability.Selected.Value, 
+                    SCHEDULE:txtOTSchedule.Text, 
+                    SUPERVISOR:cbOTSupervisor.Selected.Value
                 }
             );
             Notify("Successfully saved your changes locally.", NotificationType.Success)
