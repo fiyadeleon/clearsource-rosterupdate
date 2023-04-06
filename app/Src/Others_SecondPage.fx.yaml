@@ -88,7 +88,7 @@
 
     btnLTMultipleReview_2 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =SendEmailforLateralTransferTicketCreation.Run(JSON(colLateralTransfer))
+        OnSelect: =SendEmailforOtherRosterUpdateTicketCreation.Run(JSON(colOthers))
         Text: ="Submit"
         X: =1269
         Y: =985
@@ -141,9 +141,12 @@
                 ZIndex: =1
 
             txtLTMultipleEmpId2_1 As label:
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
                 Text: =Parent.Default
                 X: =302
-                Y: =10
+                Y: =13
                 ZIndex: =2
 
         SITE_LTMDataCard2_1 As typedDataCard.textualViewCard:
