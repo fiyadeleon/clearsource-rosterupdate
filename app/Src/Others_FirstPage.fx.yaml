@@ -153,6 +153,7 @@
             DefaultSelectedItems: =
             DisplayFields: =["USER"]
             Items: =If(!IsBlank(cbOTLOB.Selected.Value), Filter(Headcount_table, LOB=cbOTLOB.Selected.Value))
+            OnChange: =Set(SelectedItemIDinOT, "")
             SearchFields: =["USER"]
             SearchItems: =Search(If(!IsBlank(cbOTLOB.Selected.Value), Filter(Headcount_table, LOB=cbOTLOB.Selected.Value)),cbOTOmnia.SearchText,"USER")
             Width: =401.4
