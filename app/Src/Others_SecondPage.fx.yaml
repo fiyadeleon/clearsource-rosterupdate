@@ -1,7 +1,7 @@
 "Others_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1090
+    Height: =1180
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -9,13 +9,14 @@
     "galleryLTM_2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =725
+        Height: =803
         Items: =colOthers
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT1, txtLTMultipleOmnia_2.Text)
+        TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
-        X: =42
+        X: =62
         Y: =210
         ZIndex: =1
 
@@ -90,35 +91,41 @@
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
-                SendEmailforOtherRosterUpdateTicketCreation.Run(JSON(colOthers)),
-                (
-                    Notify("Your request has been submitted successfully!", NotificationType.Success) &&
-                    Reset(cbOTLOB) &&
-                    Set(SelectedItemIDinOT, "") &&
-                    Set(SelectedItemIDinOT1, "") &&
-                    Reset(drpRosterSelection) &&
-                    Navigate(HomePage,ScreenTransition.Cover)
+                !IsEmpty(colOthers),
+                If(
+                    SendEmailforOtherRosterUpdateTicketCreation.Run(JSON(colOthers)),
+                    (
+                        Notify("Your request has been submitted successfully!", NotificationType.Success) &&
+                        Reset(cbOTLOB) &&
+                        Set(SelectedItemIDinOT, "") &&
+                        Set(SelectedItemIDinOT1, "") &&
+                        Reset(drpRosterSelection) &&
+                        Navigate(HomePage,ScreenTransition.Cover)
+                    ),
+                    Notify("There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
                 ),
-                Notify("There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
+                Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error)
             )
         Text: ="Submit"
         X: =1269
-        Y: =985
+        Y: =1067
         ZIndex: =11
 
     btnLTMultipleBack_2 As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(Others_FirstPage,ScreenTransition.Cover)
+        OnSelect: |-
+            =Set(SelectedItemIDinOT1, "") &&
+            Navigate(Others_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =985
+        Y: =1067
         ZIndex: =12
 
     formLTM2_1 As form:
         BorderThickness: =1
         DataSource: =colOthers
-        Height: =725
+        Height: =803
         Item: =If(!IsBlank(SelectedItemIDinOT1), LookUp(colOthers, USER=SelectedItemIDinOT1))
         NumberOfColumns: =1
         OnReset: =true
@@ -580,6 +587,25 @@
                 X: =302
                 Y: =20
                 ZIndex: =2
+
+        DataCard2 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            btnOTRemove As button:
+                Fill: =RGBA(255, 0, 0, 1)
+                HoverFill: =ColorFade(RGBA(254, 127, 124, 0.8), -20%)
+                OnSelect: =Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT1))
+                Text: ="Remove"
+                X: =302
+                Y: =12
+                ZIndex: =1
 
     "'Lateral Transfer Form_8' As label":
         Align: =Align.Center

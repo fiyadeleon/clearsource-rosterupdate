@@ -655,6 +655,10 @@
                             ) > 0, 
                             Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT)
                         ));
+                        If(cbOTStatus.Selected.Value = "ACTIVE",
+                            Set(endDateVal, "N/A"),
+                            dateEnd.SelectedDate
+                        );
                         Collect(colOthers, {
                                 USER:SelectedItemIDinOT,
                                 NAME:txtOTMName.Text,
@@ -662,7 +666,7 @@
                                 SITE:txtOTSite.Text,
                                 STATUS:cbOTStatus.Selected.Value,
                                 'START DATE':dateStart.SelectedDate,
-                                'END DATE':dateEnd.SelectedDate,
+                                'END DATE':endDateVal,
                                 'BUSINESS UNIT':cbOTBusUnit.Selected.Value, 
                                 'SUB UNIT':cbOTSubUnit.Selected.Value,
                                 POSITION:cbOTPosition.Selected.Value, 
