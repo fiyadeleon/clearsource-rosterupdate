@@ -586,10 +586,10 @@
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
+            Height: =164
             Required: =false
             Update: =cbOTClient.Selected.Value
-            Width: =741
+            Width: =742
             X: =0
             Y: =11
             ZIndex: =1
@@ -617,6 +617,69 @@
                 Y: =10
                 ZIndex: =2
 
+            btnOTSave As button:
+                OnSelect: |-
+                    =If(
+                        //check if status is equivalent to !ACTIVE to require start and end date
+                        //if status is equivalent to ACTIVE require start date
+                        (
+                            (
+                                cbOTStatus.Selected.Value = "INACTIVE" ||
+                                cbOTStatus.Selected.Value = "FLOATING" ||
+                                cbOTStatus.Selected.Value = "LOA" ||
+                                cbOTStatus.Selected.Value = "LOAM" ||
+                                cbOTStatus.Selected.Value = "RTWO" ||
+                                cbOTStatus.Selected.Value = "SUSPENDED" ||
+                                cbOTStatus.Selected.Value = "MATERNITY LEAVE" || 
+                                cbOTStatus.Selected.Value = "PATERNITY LEAVE"
+                            ) 
+                            && (IsBlank(dateStart.SelectedDate) || IsBlank(dateEnd.SelectedDate)) ||
+                            (
+                                cbOTStatus.Selected.Value = "ACTIVE"
+                            ) 
+                            && IsBlank(dateStart.SelectedDate)
+                        ),
+                    
+                        //true
+                        (
+                            If(cbOTStatus.Selected.Value = "ACTIVE",
+                                Notify("Please fill out Start Date for this type of Status.", NotificationType.Error),
+                                Notify("Please fill out Start and End Date for this type of Status.", NotificationType.Error)
+                            )
+                        ),
+                    
+                        //false
+                        If(
+                            CountRows(
+                                Filter(colOthers,USER=SelectedItemIDinOT)
+                            ) > 0, 
+                            Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT)
+                        ));
+                        Collect(colOthers, {
+                                USER:SelectedItemIDinOT,
+                                NAME:txtOTMName.Text,
+                                ID:txtOTEmpId.Text,
+                                SITE:txtOTSite.Text,
+                                STATUS:cbOTStatus.Selected.Value,
+                                'START DATE':dateStart.SelectedDate,
+                                'END DATE':dateEnd.SelectedDate,
+                                'BUSINESS UNIT':cbOTBusUnit.Selected.Value, 
+                                'SUB UNIT':cbOTSubUnit.Selected.Value,
+                                POSITION:cbOTPosition.Selected.Value, 
+                                CLIENT:cbOTClient.Selected.Value, 
+                                LOB:cbOTLOB.Selected.Value,
+                                BILLABILITY:cbOTBillability.Selected.Value, 
+                                SCHEDULE:txtOTSchedule.Text, 
+                                SUPERVISOR:cbOTSupervisor.Selected.Value
+                            }
+                        );
+                        Notify("Successfully saved your changes locally.", NotificationType.Success)
+                    )
+                Text: ="Save"
+                X: =302
+                Y: =91
+                ZIndex: =3
+
     OT2 As label:
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
@@ -638,68 +701,4 @@
         X: =952
         Y: =255
         ZIndex: =20
-
-    btnOTSave As button:
-        Fill: =RGBA(39, 113, 194, 1)
-        OnSelect: |-
-            =If(
-                //check if status is equivalent to !ACTIVE to require start and end date
-                //if status is equivalent to ACTIVE require start date
-                (
-                    (
-                        cbOTStatus.Selected.Value = "INACTIVE" ||
-                        cbOTStatus.Selected.Value = "FLOATING" ||
-                        cbOTStatus.Selected.Value = "LOA" ||
-                        cbOTStatus.Selected.Value = "LOAM" ||
-                        cbOTStatus.Selected.Value = "RTWO" ||
-                        cbOTStatus.Selected.Value = "SUSPENDED" ||
-                        cbOTStatus.Selected.Value = "MATERNITY LEAVE" || 
-                        cbOTStatus.Selected.Value = "PATERNITY LEAVE"
-                    ) 
-                    && (IsBlank(dateStart.SelectedDate) || IsBlank(dateEnd.SelectedDate)) ||
-                    (
-                        cbOTStatus.Selected.Value = "ACTIVE"
-                    ) 
-                    && IsBlank(dateStart.SelectedDate)
-                ),
-            
-                //true
-                (
-                    If(cbOTStatus.Selected.Value = "ACTIVE",
-                        Notify("Please fill out Start Date for this type of Status.", NotificationType.Error),
-                        Notify("Please fill out Start and End Date for this type of Status.", NotificationType.Error)
-                    )
-                ),
-            
-                //false
-                If(
-                    CountRows(
-                        Filter(colOthers,USER=SelectedItemIDinOT)
-                    ) > 0, 
-                    Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT)
-                ));
-                Collect(colOthers, {
-                        USER:SelectedItemIDinOT,
-                        NAME:txtOTMName.Text,
-                        ID:txtOTEmpId.Text,
-                        SITE:txtOTSite.Text,
-                        STATUS:cbOTStatus.Selected.Value,
-                        'START DATE':dateStart.SelectedDate,
-                        'END DATE':dateEnd.SelectedDate,
-                        'BUSINESS UNIT':cbOTBusUnit.Selected.Value, 
-                        'SUB UNIT':cbOTSubUnit.Selected.Value,
-                        POSITION:cbOTPosition.Selected.Value, 
-                        CLIENT:cbOTClient.Selected.Value, 
-                        LOB:cbOTLOB.Selected.Value,
-                        BILLABILITY:cbOTBillability.Selected.Value, 
-                        SCHEDULE:txtOTSchedule.Text, 
-                        SUPERVISOR:cbOTSupervisor.Selected.Value
-                    }
-                );
-                Notify("Successfully saved your changes locally.", NotificationType.Success)
-            )
-        Text: ="Save"
-        X: =1004
-        Y: =1081
-        ZIndex: =21
 
