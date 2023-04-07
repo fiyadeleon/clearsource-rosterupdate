@@ -278,9 +278,9 @@
             cbOTStatus As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),STATUS))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value))
+                Items: =["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"]
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),cbOTStatus.SearchText,"Value")
+                SearchItems: =Search(["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"],cbOTStatus.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -306,6 +306,7 @@
                 ZIndex: =1
 
             dateStart As datepicker:
+                DefaultDate: =
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -330,6 +331,7 @@
                 ZIndex: =2
 
             dateEnd As datepicker:
+                DefaultDate: =
                 Width: =408.6
                 X: =302.8
                 Y: =10
