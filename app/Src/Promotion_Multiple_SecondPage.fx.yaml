@@ -10,7 +10,7 @@
         BorderThickness: =1
         Default: ={}
         Height: =700
-        Items: =colLateralTransfer
+        Items: =colPromotion
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID_1, txtPRMultipleOmniapm2.Text)
         TemplatePadding: =0
@@ -70,8 +70,9 @@
 
     btnPRMultipleSubmitp2 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =
-        Text: ="Review"
+        OnSelect: |
+            =Clear(colPromotion)
+        Text: ="Submit"
         X: =1269
         Y: =1008
         ZIndex: =11
@@ -79,7 +80,7 @@
     btnPRMultipleBackp2 As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(LateralTransfer_Multiple_FirstPage,ScreenTransition.Cover)
+        OnSelect: =Navigate(Promotion_Multiple_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
         Y: =1008
@@ -87,9 +88,9 @@
 
     formPREDsp2 As form:
         BorderThickness: =1
-        DataSource: =colLateralTransfer
+        DataSource: =colPromotion
         Height: =700
-        Item: =If(!IsBlank(SelectedItemID_1), LookUp(colLateralTransfer, USER=SelectedItemID_1))
+        Item: =If(!IsBlank(SelectedItemID_1), LookUp(colPromotion, USER=SelectedItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
@@ -111,7 +112,7 @@
             Y: =0
             ZIndex: =1
 
-            DataCardKey46_2 As label:
+            DataCardKeyENPRpm2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -122,7 +123,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleEmpName_3 As label:
+            txtPRMultipleEmpNamepm2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -149,7 +150,7 @@
             Y: =1
             ZIndex: =1
 
-            DataCardKey47_3 As label:
+            DataCardKeySITEPRpm2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -160,7 +161,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleSite_4 As label:
+            txtPRMultipleSitepm2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -189,7 +190,7 @@
             Y: =2
             ZIndex: =1
 
-            DataCardKey37_3 As label:
+            DataCardKeyBUPRpm2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -200,7 +201,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleSite_5 As label:
+            txtPRMultipleBUpm2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -227,7 +228,7 @@
             Y: =3
             ZIndex: =1
 
-            DataCardKey36_1 As label:
+            DataCardKeySUPRpm2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -238,7 +239,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue4_1 As label:
+            txtPRMultipleSUpm2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -247,7 +248,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey36_1.X + DataCardKey36_1.Width
+                X: =DataCardKeySUPRpm2.X + DataCardKeySUPRpm2.Width
                 Y: =10
                 ZIndex: =2
 
@@ -265,7 +266,7 @@
             Y: =4
             ZIndex: =1
 
-            DataCardKey44_1 As label:
+            DataCardKeyPOSPRpm2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -276,7 +277,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue5_1 As label:
+            txtPRMultiplePOSpm2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -285,7 +286,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey44_1.X + DataCardKey44_1.Width
+                X: =DataCardKeyPOSPRpm2.X + DataCardKeyPOSPRpm2.Width
                 Y: =10
                 ZIndex: =2
 
@@ -303,7 +304,7 @@
             Y: =5
             ZIndex: =1
 
-            DataCardKey45_1 As label:
+            DataCardKeyCLPRpm2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -314,7 +315,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue6_1 As label:
+            txtPRMultipleCLpm2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -323,7 +324,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey45_1.X + DataCardKey45_1.Width
+                X: =DataCardKeyCLPRpm2.X + DataCardKeyCLPRpm2.Width
                 Y: =10
                 ZIndex: =2
 
@@ -341,7 +342,7 @@
             Y: =6
             ZIndex: =1
 
-            DataCardKey50_1 As label:
+            DataCardKeyBILLPRpm2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -352,7 +353,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue10_1 As label:
+            txtPRMultipleBILLpm2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -361,7 +362,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey50_1.X + DataCardKey50_1.Width
+                X: =DataCardKeyBILLPRpm2.X + DataCardKeyBILLPRpm2.Width
                 Y: =10
                 ZIndex: =2
 
@@ -379,7 +380,7 @@
             Y: =7
             ZIndex: =1
 
-            DataCardKey51_1 As label:
+            DataCardKeySCHEDPRpm2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -390,7 +391,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue11_1 As label:
+            txtPRMultipleSCHEDpm2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -399,7 +400,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey51_1.X + DataCardKey51_1.Width
+                X: =DataCardKeySCHEDPRpm2.X + DataCardKeySCHEDPRpm2.Width
                 Y: =10
                 ZIndex: =2
 
@@ -417,7 +418,7 @@
             Y: =8
             ZIndex: =1
 
-            DataCardKey52_1 As label:
+            DataCardKeySUPPRpm2 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -428,7 +429,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DataCardValue12_1 As label:
+            txtPRMultipleSUPpm2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -437,7 +438,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey52_1.X + DataCardKey52_1.Width
+                X: =DataCardKeySUPPRpm2.X + DataCardKeySUPPRpm2.Width
                 Y: =10
                 ZIndex: =2
 
