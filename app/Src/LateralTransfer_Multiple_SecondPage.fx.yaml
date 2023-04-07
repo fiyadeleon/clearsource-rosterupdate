@@ -90,8 +90,8 @@
                 SendEmailforLateralTransferTicketCreation.Run(JSON(colLateralTransfer)),
                 (
                     Notify("Your request has been submitted successfully!", NotificationType.Success) &&
-                    Set(SelectedItemIDinOT, "") &&
-                    Set(SelectedItemIDinOT1, "") &&
+                    Set(SelectedItemID, "") &&
+                    Set(SelectedItemID_1, "") &&
                     Navigate(HomePage,ScreenTransition.Cover)
                 ),
                 Notify("There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
