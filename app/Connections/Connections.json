@@ -24,27 +24,7 @@
     "dependents": [],
     "id": "173af3bd-047c-480d-9f7d-e9ccd4c391ab"
   },
-  "a98f1ce0-65af-4442-ad24-7697c24f3724": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
-    "connectionRef": {
-      "displayName": "Office 365 Outlook",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1618/1.0.1618.3179/office365/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_office365"
-    },
-    "datasets": {},
-    "dataSources": [
-      "Office365Outlook"
-    ],
-    "dependencies": {},
-    "dependents": [
-      "fe073ef8-7a89-4dd0-9cba-e055a2481c7e",
-      "e739b051-a30d-40aa-9853-9f31483ff11a"
-    ],
-    "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
-  },
-  "e739b051-a30d-40aa-9853-9f31483ff11a": {
+  "8f89e0ba-00c2-4e34-ab26-6264d1817fa4": {
     "connectionParameters": {
       "logicAppHostType": "ARM",
       "workFlowCallbackUri": "https://prod-23.westus.logic.azure.com:443/workflows/8421250b2ad24c49a82466f040e7f056/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=bKrKX_ZVb2ap_ESEIo-gJP-Px0w4R8hs4by8EyBO26s",
@@ -83,7 +63,27 @@
       "shared_office365": "a98f1ce0-65af-4442-ad24-7697c24f3724"
     },
     "dependents": [],
-    "id": "e739b051-a30d-40aa-9853-9f31483ff11a"
+    "id": "8f89e0ba-00c2-4e34-ab26-6264d1817fa4"
+  },
+  "a98f1ce0-65af-4442-ad24-7697c24f3724": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1618/1.0.1618.3179/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "fe073ef8-7a89-4dd0-9cba-e055a2481c7e",
+      "8f89e0ba-00c2-4e34-ab26-6264d1817fa4"
+    ],
+    "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
   },
   "fe073ef8-7a89-4dd0-9cba-e055a2481c7e": {
     "connectionParameters": {
