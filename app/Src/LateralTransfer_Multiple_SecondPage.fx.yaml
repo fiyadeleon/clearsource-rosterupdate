@@ -85,7 +85,15 @@
 
     btnLTMultipleReview_1 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =SendEmailforLateralTransferTicketCreation.Run(JSON(colLateralTransfer))
+        OnSelect: |-
+            =If(
+                SendEmailforLateralTransferTicketCreation.Run(JSON(colLateralTransfer)),
+                (
+                    Notify("Your request has been submitted successfully!", NotificationType.Success) &&
+                    Navigate(HomePage,ScreenTransition.Cover)
+                ),
+                Notify("There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
+            )
         Text: ="Submit"
         X: =1269
         Y: =809
