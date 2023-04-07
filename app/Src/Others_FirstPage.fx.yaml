@@ -673,12 +673,12 @@
                 //false
                 If(
                     CountRows(
-                        Filter(colOthers,USER=SelectedItemID)
+                        Filter(colOthers,USER=SelectedItemIDinOT)
                     ) > 0, 
-                    Remove(colOthers, LookUp(colOthers, USER=SelectedItemID)
+                    Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT)
                 ));
                 Collect(colOthers, {
-                        USER:SelectedItemID,
+                        USER:SelectedItemIDinOT,
                         NAME:txtOTMName.Text,
                         ID:txtOTEmpId.Text,
                         SITE:txtOTSite.Text,
