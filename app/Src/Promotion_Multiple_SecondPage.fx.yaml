@@ -6,20 +6,20 @@
     OnVisible: =
     Width: =1500
 
-    "galleryLTM_3 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+    "galleryPRMp2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
         Height: =700
         Items: =colLateralTransfer
         Layout: =Layout.Vertical
-        OnSelect: =Set(SelectedItemID_1, txtLTMultipleOmnia_3.Text)
+        OnSelect: =Set(SelectedItemID_1, txtPRMultipleOmniapm2.Text)
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
         Y: =200
         ZIndex: =1
 
-        txtLTMultipleOmnia_3 As label:
+        txtPRMultipleOmniapm2 As label:
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -57,7 +57,7 @@
             Y: =Parent.TemplateHeight - 1
             ZIndex: =3
 
-    "'Lateral Transfer Form_10' As label":
+    "'Promotion Form p2' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
@@ -68,7 +68,7 @@
         Y: =46
         ZIndex: =4
 
-    btnLTMultipleReview_3 As button:
+    btnPRMultipleSubmitp2 As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: =
         Text: ="Review"
@@ -76,7 +76,7 @@
         Y: =1008
         ZIndex: =11
 
-    btnLTMultipleBack_3 As button:
+    btnPRMultipleBackp2 As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: =Navigate(LateralTransfer_Multiple_FirstPage,ScreenTransition.Cover)
@@ -85,7 +85,7 @@
         Y: =1008
         ZIndex: =12
 
-    formLTM_3 As form:
+    formPREDsp2 As form:
         BorderThickness: =1
         DataSource: =colLateralTransfer
         Height: =700
@@ -97,7 +97,7 @@
         Y: =200
         ZIndex: =18
 
-        "'EMPLOYEE NAME_LTMDataCard_2' As typedDataCard.textualViewCard":
+        "'EMPLOYEE NAME_PRMDataCard_2' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =
@@ -135,7 +135,7 @@
                 Y: =18
                 ZIndex: =2
 
-        SITE_LTMDataCard_3 As typedDataCard.textualViewCard:
+        SITE_PRMDataCard_3 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SITE"
             Default: =ThisItem.SITE
@@ -173,7 +173,7 @@
                 Y: =20
                 ZIndex: =2
 
-        "'BUSINESS UNIT_LTMDataCard_3' As typedDataCard.allowedValuesStringEditCard":
+        "'BUSINESS UNIT_PRMDataCard_3' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
@@ -184,7 +184,7 @@
             Height: =60
             Required: =false
             Update: =
-            Width: =742
+            Width: =741
             X: =0
             Y: =2
             ZIndex: =1
@@ -213,7 +213,7 @@
                 Y: =20
                 ZIndex: =3
 
-        "'SUB-UNIT_DataCard2_1' As typedDataCard.textualViewCard":
+        "'SUB-UNIT_PRMDataCard2_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB UNIT'
@@ -222,7 +222,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =3
             ZIndex: =1
@@ -251,7 +251,7 @@
                 Y: =10
                 ZIndex: =2
 
-        POSITION_DataCard2_1 As typedDataCard.textualViewCard:
+        POSITION_PRMDataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
@@ -260,7 +260,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =4
             ZIndex: =1
@@ -289,7 +289,7 @@
                 Y: =10
                 ZIndex: =2
 
-        CLIENT_DataCard2_1 As typedDataCard.textualViewCard:
+        CLIENT_PRMDataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
             Default: =ThisItem.CLIENT
@@ -298,7 +298,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =5
             ZIndex: =1
@@ -327,7 +327,7 @@
                 Y: =10
                 ZIndex: =2
 
-        BILLABILITY_DataCard2_1 As typedDataCard.textualViewCard:
+        BILLABILITY_PRMDataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
             Default: =ThisItem.BILLABILITY
@@ -336,7 +336,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =6
             ZIndex: =1
@@ -365,7 +365,7 @@
                 Y: =10
                 ZIndex: =2
 
-        MONDAY_DataCard2_1 As typedDataCard.textualViewCard:
+        MONDAY_PRMDataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
             Default: =ThisItem.SCHEDULE
@@ -374,7 +374,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =7
             ZIndex: =1
@@ -403,7 +403,7 @@
                 Y: =10
                 ZIndex: =2
 
-        TEAM_DataCard2_1 As typedDataCard.textualViewCard:
+        TEAM_PRMDataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
             Default: =ThisItem.SUPERVISOR
@@ -412,7 +412,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =742
+            Width: =741
             X: =0
             Y: =8
             ZIndex: =1
@@ -441,7 +441,7 @@
                 Y: =10
                 ZIndex: =2
 
-    "'Lateral Transfer Form_11' As label":
+    txtPRUEp2 As label:
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
@@ -452,7 +452,7 @@
         Y: =145
         ZIndex: =19
 
-    "'Lateral Transfer Form_12' As label":
+    txtPREDp2 As label:
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
