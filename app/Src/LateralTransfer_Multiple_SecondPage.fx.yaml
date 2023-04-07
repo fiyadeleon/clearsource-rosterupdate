@@ -90,6 +90,7 @@
                 SendEmailforLateralTransferTicketCreation.Run(JSON(colLateralTransfer)),
                 (
                     Notify("Your request has been submitted successfully!", NotificationType.Success) &&
+                    Reset(cbLTSearchMultipleLOB) &&
                     Set(SelectedItemID, "") &&
                     Set(SelectedItemID_1, "") &&
                     Reset(drpRosterSelection) &&

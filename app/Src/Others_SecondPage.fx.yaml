@@ -93,6 +93,7 @@
                 SendEmailforOtherRosterUpdateTicketCreation.Run(JSON(colOthers)),
                 (
                     Notify("Your request has been submitted successfully!", NotificationType.Success) &&
+                    Reset(cbOTLOB) &&
                     Set(SelectedItemIDinOT, "") &&
                     Set(SelectedItemIDinOT1, "") &&
                     Reset(drpRosterSelection) &&
