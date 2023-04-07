@@ -90,7 +90,7 @@
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
-                SendEmailforLateralTransferTicketCreation.Run(JSON(colOthers)),
+                SendEmailforOtherRosterUpdateTicketCreation.Run(JSON(colOthers)),
                 (
                     Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                     Navigate(HomePage,ScreenTransition.Cover)
