@@ -220,7 +220,7 @@
         "'SUB-UNIT_PRMDataCard2_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
-            Default: =ThisItem.'SUB UNIT'
+            Default: =ThisItem.SUBUNIT
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
             Fill: =RGBA(0, 0, 0, 0)
