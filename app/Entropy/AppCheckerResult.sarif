@@ -3338,6 +3338,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.formPREDsp2.'SUB-UNIT_PRMDataCard2_1'.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.formPREDsp2.'SUB-UNIT_PRMDataCard2_1'.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 11,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".'SUB UNIT'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Promotion_Multiple_SecondPage",
+                "type": "Promotion_Multiple_SecondPage.formPREDsp2.'SUB-UNIT_PRMDataCard2_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "SUB UNIT"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Promotion_FirstPage.cbPROmniaID_1.Items"
                 }
               ],
