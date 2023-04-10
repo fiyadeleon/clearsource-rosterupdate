@@ -134,12 +134,13 @@
         cbPRSearchMultipleLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
+            IsSearchable: =false
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
             OnChange: |-
                 =Set(SelectedItemID, "") &&
                 Reset(cbPRSearchMultipleOmnia)
             SearchFields: =["Value"]
-            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbPRSearchMultipleLOB.SearchText,"Value")
+            SearchItems: =[]
             SelectMultiple: =false
             Width: =401.4
             X: =625
@@ -293,9 +294,10 @@
             cbPRMultipleBusUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbPRMultipleBusUnit.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -332,9 +334,10 @@
             cbPRMultipleSubUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbPRMultipleSubUnit.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -371,9 +374,10 @@
             cbPRMultiplePosition As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),POSITION))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbPRMultiplePosition.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -410,9 +414,10 @@
             cbPRMultipleClient As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),CLIENT))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbPRMultipleClient.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -449,9 +454,10 @@
             cbPRMultipleBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BILLABILITY))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbPRMultipleBillability.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -533,9 +539,10 @@
             cbPRMultipleSupervisor As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbPRMultipleSupervisor.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8

@@ -24,7 +24,24 @@
     "dependents": [],
     "id": "173af3bd-047c-480d-9f7d-e9ccd4c391ab"
   },
-  "643ec5b5-cd79-48a1-b25d-0f806d5baf19": {
+  "a98f1ce0-65af-4442-ad24-7697c24f3724": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1618/1.0.1618.3179/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+  },
+  "e6942f6c-2f9b-4dc0-88d0-5c5b78874aa9": {
     "connectionParameters": {
       "logicAppHostType": "ARM",
       "workFlowCallbackUri": "https://prod-135.westus.logic.azure.com:443/workflows/f8b4590b05214d4486fdfc52f9bc0fc4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=jlpRYyj6oV47fyk12YaHWdm7kFnZYA2vNwkes0lp5Fk",
@@ -55,23 +72,6 @@
     ],
     "dependencies": {},
     "dependents": [],
-    "id": "643ec5b5-cd79-48a1-b25d-0f806d5baf19"
-  },
-  "a98f1ce0-65af-4442-ad24-7697c24f3724": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
-    "connectionRef": {
-      "displayName": "Office 365 Outlook",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1618/1.0.1618.3179/office365/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_office365"
-    },
-    "datasets": {},
-    "dataSources": [
-      "Office365Outlook"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+    "id": "e6942f6c-2f9b-4dc0-88d0-5c5b78874aa9"
   }
 }
