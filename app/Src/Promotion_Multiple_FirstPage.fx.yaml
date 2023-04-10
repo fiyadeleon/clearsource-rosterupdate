@@ -87,11 +87,12 @@
             ZIndex: =5
 
     "'Promotion Form' As label":
+        Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="LATERAL TRANSFER FORM"
+        Text: ="PROMOTION FORM"
         Width: =390
         X: =540
         Y: =46
@@ -589,7 +590,8 @@
                     CLIENT:cbPRMultipleClient.Selected.Value, 
                     BILLABILITY:cbPRMultipleBillability.Selected.Value, 
                     SCHEDULE:txtPRMultipleSchedule.Text, 
-                    SUPERVISOR:cbPRMultipleSupervisor.Selected.Value
+                    SUPERVISOR:cbPRMultipleSupervisor.Selected.Value,
+                    'EMPLOYEE ID':txtPRMultipleIdpm1.Text
                 }
             )
         Text: ="Save"

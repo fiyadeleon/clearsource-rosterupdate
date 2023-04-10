@@ -58,11 +58,12 @@
             ZIndex: =3
 
     "'Promotion Form p2' As label":
+        Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="LATERAL TRANSFER FORM"
+        Text: ="PROMOTION FORM"
         Width: =390
         X: =540
         Y: =46
@@ -70,8 +71,10 @@
 
     btnPRMultipleSubmitp2 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: |
-            =Clear(colPromotion)
+        OnSelect: |-
+            =ClearCollect(colPromotion,colPromotion);
+            emainotifpromotion.Run(JSON(colPromotion));
+            Notify("Flow has been triggered",NotificationType.Success)
         Text: ="Submit"
         X: =1269
         Y: =1008
