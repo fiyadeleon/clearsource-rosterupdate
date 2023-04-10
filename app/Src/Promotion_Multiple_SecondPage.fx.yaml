@@ -82,7 +82,9 @@
                 NotificationType.Success
             );
             Reset(cbPRSearchMultipleLOB);
-            Reset(cbPRSearchMultipleOmnia)
+            Reset(cbPRSearchMultipleOmnia);
+            Clear(colPromotion);
+            Clear(colPromotion1)
         Text: ="Submit"
         X: =1269
         Y: =1008
