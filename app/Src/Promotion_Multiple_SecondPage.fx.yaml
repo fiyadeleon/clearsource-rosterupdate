@@ -72,8 +72,8 @@
     btnPRMultipleSubmitp2 As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
-            =ClearCollect(colPromotion,colPromotion);
-            emainotifpromotion.Run(JSON(colPromotion));
+            =ClearCollect(colPromotion1,colPromotion);
+            emainotifpromotion.Run(JSON(colPromotion1));
             Notify("Flow has been triggered",NotificationType.Success)
         Text: ="Submit"
         X: =1269
