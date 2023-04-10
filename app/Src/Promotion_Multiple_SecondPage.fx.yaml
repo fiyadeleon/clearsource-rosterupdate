@@ -80,7 +80,9 @@
             Notify(
                 "Flow has been triggered",
                 NotificationType.Success
-            )
+            );
+            Reset(cbPRSearchMultipleLOB);
+            Reset(cbPRSearchMultipleOmnia)
         Text: ="Submit"
         X: =1269
         Y: =1008
