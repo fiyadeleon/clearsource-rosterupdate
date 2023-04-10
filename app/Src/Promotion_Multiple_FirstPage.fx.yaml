@@ -573,26 +573,28 @@
         ZIndex: =20
 
     btnPRMulSave As button:
-        OnSelect: |-
+        OnSelect: |
             =If(
-                CountRows(
-                    Filter(colPromotion,USER=SelectedItemID)
-                ) > 0, 
-                Remove(colPromotion, LookUp(colPromotion, USER=SelectedItemID)
-            ));
-            Collect(colPromotion, {
-                    USER:SelectedItemID,
-                    NAME:txtPRMultipleEmpName.Text,
-                    SITE:txtPRMultipleSite.Text,
-                    'BUSINESS UNIT':cbPRMultipleBusUnit.Selected.Value, 
-                    'SUB UNIT':cbPRMultipleSubUnit.Selected.Value,
-                    POSITION:cbPRMultiplePosition.Selected.Value, 
-                    CLIENT:cbPRMultipleClient.Selected.Value, 
-                    BILLABILITY:cbPRMultipleBillability.Selected.Value, 
-                    SCHEDULE:txtPRMultipleSchedule.Text, 
-                    SUPERVISOR:cbPRMultipleSupervisor.Selected.Value,
-                    'EMPLOYEE ID':txtPRMultipleIdpm1.Text
-                }
+                IsBlank(cbPRMultipleBusUnit) || IsBlank(cbPRMultipleSubUnit) || IsBlank(cbPRMultiplePosition) || IsBlank(cbPRMultipleClient) || IsBlank(cbPRMultipleBillability) || IsBlank(txtPRMultipleSchedule) || IsBlank(cbPRMultipleSupervisor),
+                Notify("Please complete all fields!", NotificationType.Error),
+                If(
+                    CountRows(Filter(colPromotion, USER = SelectedItemID)) > 0,
+                    Remove(colPromotion, LookUp(colPromotion, USER = SelectedItemID));
+                );
+                Collect(colPromotion, {
+                    USER: SelectedItemID,
+                    NAME: txtPRMultipleEmpName.Text,
+                    SITE: txtPRMultipleSite.Text,
+                    'BUSINESS UNIT': cbPRMultipleBusUnit.Selected.Value,
+                    'SUB UNIT': cbPRMultipleSubUnit.Selected.Value,
+                    POSITION: cbPRMultiplePosition.Selected.Value,
+                    CLIENT: cbPRMultipleClient.Selected.Value,
+                    BILLABILITY: cbPRMultipleBillability.Selected.Value,
+                    SCHEDULE: txtPRMultipleSchedule.Text,
+                    SUPERVISOR: cbPRMultipleSupervisor.Selected.Value,
+                    'EMPLOYEE ID': txtPRMultipleIdpm1.Text
+                });
+                Notify("Successfully submitted the information.", NotificationType.Success)
             )
         Text: ="Save"
         X: =1004
