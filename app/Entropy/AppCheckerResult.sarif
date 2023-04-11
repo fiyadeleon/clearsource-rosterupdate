@@ -8829,6 +8829,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.galleryPRMp2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.galleryPRMp2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_Multiple_SecondPage",
+                "type": "Promotion_Multiple_SecondPage.galleryPRMp2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.galleryPRMp2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.galleryPRMp2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Promotion_Multiple_SecondPage",
+                "type": "Promotion_Multiple_SecondPage.galleryPRMp2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Promotion_FirstPage.cbPROmniaID_1.AccessibleLabel"
                 }
               ],
@@ -9483,66 +9543,6 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.galleryPRMp2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.galleryPRMp2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_Multiple_SecondPage",
-                "type": "Promotion_Multiple_SecondPage.galleryPRMp2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.galleryPRMp2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_Multiple_SecondPage.galleryPRMp2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Promotion_Multiple_SecondPage",
-                "type": "Promotion_Multiple_SecondPage.galleryPRMp2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 5
         },
         {
           "locations": [

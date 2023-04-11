@@ -93,9 +93,9 @@
         Height: =67
         Size: =22
         Text: ="PROMOTION FORM"
-        Width: =390
-        X: =540
-        Y: =46
+        Width: =412
+        X: =556
+        Y: =55
         ZIndex: =4
 
     btnPRMultipleReviewp1 As button:
@@ -135,13 +135,12 @@
         cbPRSearchMultipleLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
-            IsSearchable: =false
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
             OnChange: |-
                 =Set(SelectedItemID, "") &&
                 Reset(cbPRSearchMultipleOmnia)
             SearchFields: =["Value"]
-            SearchItems: =[]
+            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbPRSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
             X: =625
