@@ -1,23 +1,22 @@
 {
   "03948e50-654b-4ace-a49b-3ca4c46fdc94": {
-    "connectionParameters": {
-      "logicAppHostType": "ARM",
-      "workFlowCallbackUri": "https://prod-58.westus.logic.azure.com:443/workflows/50bb26c5882e4fe48034cb20c45eaf2e/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=te_BgXPf3QcqM3TgZhe509iSwMPUDAo26PaagNcCVV0",
-      "workflowEndpoint": "/subscriptions/3a3c8f3a-b051-4389-add3-35f0cadf681c/resourceGroups/4b8c43182f7946998bfec5af939d13bf-471ff2d1650941f39408df73c951e95e/providers/Microsoft.Logic/workflows/4da85c42-a494-46e1-bbd4-ad13263d86bb",
-      "workflowName": "4da85c42-a494-46e1-bbd4-ad13263d86bb",
-      "workflowPath": "/subscriptions/3a3c8f3a-b051-4389-add3-35f0cadf681c/resourceGroups/4b8c43182f7946998bfec5af939d13bf-471ff2d1650941f39408df73c951e95e/providers/Microsoft.Logic/workflows/4da85c42-a494-46e1-bbd4-ad13263d86bb"
-    },
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
+          "value": "shared_office365"
+        },
         "workflowEntityId": {},
         "workflowName": {
           "value": "4da85c42-a494-46e1-bbd4-ad13263d86bb"
         }
       },
       "parameterHintsV2": {
+        "shared_office365": {
+          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+        },
         "workflowEntityId": {},
         "workflowName": {
           "value": "4da85c42-a494-46e1-bbd4-ad13263d86bb"
@@ -35,9 +34,6 @@
     "id": "03948e50-654b-4ace-a49b-3ca4c46fdc94"
   },
   "179795e4-7d41-43f2-a0e5-f5776e42355b": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
     "connectionRef": {
       "displayName": "Excel Online (Business)",
       "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3202/excelonlinebusiness/icon.png",
@@ -60,9 +56,6 @@
     "id": "179795e4-7d41-43f2-a0e5-f5776e42355b"
   },
   "a98f1ce0-65af-4442-ad24-7697c24f3724": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
     "connectionRef": {
       "displayName": "Office 365 Outlook",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1618/1.0.1618.3179/office365/icon.png",

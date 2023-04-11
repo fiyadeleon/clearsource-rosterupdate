@@ -12,7 +12,7 @@
         Height: =700
         Items: =colPromotion
         Layout: =Layout.Vertical
-        OnSelect: =Set(SelectedItemID_1, txtPRMultipleOmniapm2.Text)
+        OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2.Text)
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
@@ -78,13 +78,14 @@
             );
             emainotifpromotion.Run(JSON(colPromotion1));
             Notify(
-                "Flow has been triggered",
+                "Request has been Send",
                 NotificationType.Success
             );
             Reset(cbPRSearchMultipleLOB);
             Reset(cbPRSearchMultipleOmnia);
             Clear(colPromotion);
-            Clear(colPromotion1)
+            Clear(colPromotion1);
+            Navigate(Promotion_Multiple_FirstPage,ScreenTransition.None)
         Text: ="Submit"
         X: =1269
         Y: =1008
@@ -103,7 +104,7 @@
         BorderThickness: =1
         DataSource: =colPromotion
         Height: =700
-        Item: =If(!IsBlank(SelectedItemID_1), LookUp(colPromotion, USER=SelectedItemID_1))
+        Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
@@ -476,4 +477,12 @@
         X: =952
         Y: =145
         ZIndex: =20
+
+    btnPRRemovep2 As button:
+        Fill: =RGBA(255, 0, 0, 1)
+        OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
+        Text: ="Remove"
+        X: =1004
+        Y: =845
+        ZIndex: =21
 
