@@ -159,6 +159,7 @@
             DefaultSelectedItems: =
             DisplayFields: =["USER"]
             Items: =If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB.Selected.Value))
+            OnChange: =Set(SelectedItemID, "")
             SearchFields: =["USER"]
             SearchItems: =Search(If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB.Selected.Value)),cbPRSearchMultipleOmnia.SearchText,"USER")
             Width: =401.4
@@ -593,7 +594,7 @@
                     SUPERVISOR: cbPRMultipleSupervisor.Selected.Value,
                     'EMPLOYEE ID': txtPRMultipleIdpm1.Text
                 });
-                Notify("Successfully submitted the information.", NotificationType.Success)
+                Notify("Changes has been saved and is now available for review.", NotificationType.Success)
             )
         Text: ="Save"
         X: =1004

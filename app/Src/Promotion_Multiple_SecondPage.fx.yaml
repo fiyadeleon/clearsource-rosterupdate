@@ -72,20 +72,19 @@
     btnPRMultipleSubmitp2 As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
-            =ClearCollect(
-                colPromotion1,
-                colPromotion
-            );
-            emainotifpromotion.Run(JSON(colPromotion1));
-            Notify(
-                "Request has been Send",
-                NotificationType.Success
-            );
-            Reset(cbPRSearchMultipleLOB);
-            Reset(cbPRSearchMultipleOmnia);
-            Clear(colPromotion);
-            Clear(colPromotion1);
-            Navigate(Promotion_Multiple_FirstPage,ScreenTransition.None)
+            =If(
+                CountRows(galleryPRMp2.AllItems)=0,
+                Notify("There are no records to be processed", NotificationType.Error),
+                ClearCollect(colPromotion1,colPromotion);
+                emainotifpromotion.Run(JSON(colPromotion1));
+                Notify("Multiple Promotion Request has been submitted. Thank you.", NotificationType.Success);
+                Set(SelectedPRItemID_1,"");
+                Set(SelectedItemID, "");
+                Reset(cbPRSearchMultipleLOB);
+                Reset(cbPRSearchMultipleOmnia);
+                Clear(colPromotion);
+                Navigate(HomePage,ScreenTransition.None);
+            )
         Text: ="Submit"
         X: =1269
         Y: =1008
