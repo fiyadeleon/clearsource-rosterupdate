@@ -67,7 +67,7 @@ Termination_VerificationPage As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =8
-            Text: =ThisItem.'OMNIA ID'
+            Text: =ThisItem.'EMPLOYEE ID'
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -563,15 +563,17 @@ Termination_VerificationPage As screen:
             Y: =6
             ZIndex: =1
 
-            "'Remove Button' As button":
-                Fill: =RGBA(203, 102, 102, 1)
+            btnLTRemove_1 As button:
+                Fill: =RGBA(255, 0, 0, 1)
+                HoverFill: =ColorFade(RGBA(254, 127, 124, 0.8), -20%)
                 OnSelect: =Remove(userVerify,ThisItem)
-                Text: ="Remove "
-                X: =356
+                Text: ="Remove"
+                X: =348
                 Y: =10
                 ZIndex: =1
 
     proceed_btn_1 As button:
+        Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
                 CountRows(EmployeeGallery_1.AllItems)=0,
@@ -590,14 +592,12 @@ Termination_VerificationPage As screen:
         Y: =678
         ZIndex: =25
 
-    previous_btn_1 As button:
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(102, 182, 227, 1)
-        OnSelect: |-
-            =Set(SelectedItemIDinTermi_1, "") &&
-            Navigate(Termination_FirstPage,ScreenTransition.None)
+    btnLTMultipleBack_4 As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Set(SelectedItemIDinTermi_1, "") && Navigate(Termination_FirstPage,ScreenTransition.None)
         Text: ="Back"
-        X: =939
+        X: =968
         Y: =678
-        ZIndex: =26
+        ZIndex: =27
 

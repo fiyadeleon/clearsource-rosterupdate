@@ -641,6 +641,7 @@ Termination_FirstPage As screen:
                             'FIRST NAME': ThisItem.'FIRST NAME',
                             'LAST NAME': ThisItem.'LAST NAME',
                             'OMNIA ID': ThisItem.USER,
+                            'EMPLOYEE ID': ThisItem.'EMPLOYEE ID',
                             POSITION: ThisItem.POSITION,
                             CAMPAIGN: campaign_value.HtmlText,
                             LOB: ThisItem.LOB, 
@@ -662,6 +663,7 @@ Termination_FirstPage As screen:
                 ZIndex: =1
 
     proceed_btn As button:
+        Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
                 IsEmpty(userVerify),
@@ -673,12 +675,12 @@ Termination_FirstPage As screen:
         Y: =690
         ZIndex: =25
 
-    previous_btn As button:
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(102, 182, 227, 1)
-        OnSelect: =Navigate(HomePage,ScreenTransition.None)
+    btnLTMultipleBack_3 As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
-        X: =939
+        X: =969
         Y: =690
         ZIndex: =26
 
