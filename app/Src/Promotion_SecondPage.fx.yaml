@@ -74,10 +74,10 @@
         OnSelect: |-
             =If(
                 CountRows(galleryPRMp2nd_1.AllItems)=0,
-                Notify("There are no records to be processed", NotificationType.Error),
+                Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error),
                 ClearCollect(colPromotion1,colPromotion);
                 emailnotifpromotion.Run(JSON(colPromotion1));
-                Notify("Multiple Promotion Request has been submitted. Thank you.", NotificationType.Success);
+                Notify("Your request has been submitted successfully!", NotificationType.Success);
                 Set(SelectedPRItemID_1,"");
                 Set(SelectedPRItemID, "");
                 Reset(cbPRSearchMultipleLOB);

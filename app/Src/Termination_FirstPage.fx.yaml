@@ -653,7 +653,7 @@ Termination_FirstPage As screen:
                             'CURRENT ADDRESS': address_input.Text,
                             COMMENT: comment_input.Text
                         });
-                        Notify("Changes has been saved and is now available for review.", NotificationType.Success),
+                        Notify("Successfully saved your changes locally.", NotificationType.Success),
                         Set(ttype, 0),
                         Set(tstatus, 0)
                     )

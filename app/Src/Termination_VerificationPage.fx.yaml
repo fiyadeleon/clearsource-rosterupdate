@@ -579,10 +579,10 @@ Termination_VerificationPage As screen:
         OnSelect: |-
             =If(
                 CountRows(EmployeeGallery_1.AllItems)=0,
-                Notify("There are no records to be processed", NotificationType.Error),
+                Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error),
                 ClearCollect(coldata,userVerify);
                 MTerminationFlow.Run(JSON(coldata));
-                Notify("Multiple Termination Request has been submitted. Thank you.",NotificationType.Success);
+                Notify("Your request has been submitted successfully!",NotificationType.Success);
                 Set(SelectedItemIDinTermi,"");
                 Reset(lob_input);
                 Reset(omnia_input);
