@@ -1,5 +1,5 @@
-MTermination_FirstPage As screen:
-    BackgroundImage: ='Untitled design (1)'
+Termination_FirstPage As screen:
+    BackgroundImage: ='Untitled design 29'
     ContentLanguage: =" "
     ImagePosition: =ImagePosition.Stretch
 
@@ -666,7 +666,7 @@ MTermination_FirstPage As screen:
             =If(
                 IsEmpty(userVerify),
                 Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
-                Navigate(MTermination_VerificationPage)
+                Navigate(Termination_VerificationPage)
             )
         Text: ="Review"
         X: =1158
