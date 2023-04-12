@@ -421,7 +421,7 @@ MTermination_VerificationPage As screen:
                 Y: =6
                 ZIndex: =2
 
-            Label2 As label:
+            "'Termination Status Verify' As label":
                 Size: =10
                 Text: =ThisItem.'TERMINATION STATUS'
                 Width: =408
@@ -553,7 +553,7 @@ MTermination_VerificationPage As screen:
                 Y: =35
                 ZIndex: =2
 
-        DataCard2 As typedDataCard.blankCard:
+        "'Remove Button Container' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
@@ -563,7 +563,7 @@ MTermination_VerificationPage As screen:
             Y: =6
             ZIndex: =1
 
-            Button3 As button:
+            "'Remove Button' As button":
                 Fill: =RGBA(203, 102, 102, 1)
                 OnSelect: =Remove(userVerify,ThisItem)
                 Text: ="Remove "
