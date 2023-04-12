@@ -1,8 +1,7 @@
 "Others_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: |
-        =1320
+    Height: =1370
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -10,7 +9,7 @@
     "galleryOT As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =832
+        Height: =892
         Items: =cbOTOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT, txtOTMOmnia.Text)
@@ -95,7 +94,7 @@
             )
         Text: ="Review"
         X: =1269
-        Y: =1207
+        Y: =1267
         ZIndex: =11
 
     btnOTBack As button:
@@ -104,7 +103,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1207
+        Y: =1267
         ZIndex: =12
 
     grpOTLOB As group:
@@ -124,7 +123,7 @@
             Y: =122
             ZIndex: =8
 
-        cbOTLOB As combobox:
+        cbOTSearchLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
@@ -134,7 +133,7 @@
                 Clear(colOthers)
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
-            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOTLOB.SearchText,"Value")
+            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOTSearchLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
             X: =625
@@ -152,10 +151,10 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["USER"]
-            Items: =If(!IsBlank(cbOTLOB.Selected.Value), Filter(Headcount_table, LOB=cbOTLOB.Selected.Value))
+            Items: =If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOB=cbOTSearchLOB.Selected.Value))
             OnChange: =Set(SelectedItemIDinOT, "")
             SearchFields: =["USER"]
-            SearchItems: =Search(If(!IsBlank(cbOTLOB.Selected.Value), Filter(Headcount_table, LOB=cbOTLOB.Selected.Value)),cbOTOmnia.SearchText,"USER")
+            SearchItems: =Search(If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOB=cbOTSearchLOB.Selected.Value)),cbOTOmnia.SearchText,"USER")
             Width: =401.4
             X: =625
             Y: =187
@@ -174,7 +173,7 @@
     formOT As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =832
+        Height: =892
         Item: =If(!IsBlank(SelectedItemIDinOT), LookUp(Headcount_table, USER=SelectedItemIDinOT))
         NumberOfColumns: =1
         OnReset: =true
@@ -368,10 +367,9 @@
             cbOTBusUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbOTBusUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -408,10 +406,9 @@
             cbOTSubUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),'SUB-UNIT'))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbOTSubUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -448,10 +445,9 @@
             cbOTPosition As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),POSITION))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbOTPosition.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -488,10 +484,48 @@
             cbOTClient As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),CLIENT))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbOTClient.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
+        LOB_DataCard4 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
+            Required: =false
+            Update: =cbOTLOB.Selected.Value
+            Width: =742
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            cbOTLOB As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TEAM))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbOTLOB.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -511,7 +545,7 @@
             Update: =cbOTBillability.Selected.Value
             Width: =741
             X: =0
-            Y: =9
+            Y: =10
             ZIndex: =1
 
             DataCardKey40_1 As label:
@@ -528,10 +562,9 @@
             cbOTBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),BILLABILITY))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbOTBillability.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -551,7 +584,7 @@
             Update: =txtOTSchedule.Text
             Width: =741
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             DataCardKey43_1 As label:
@@ -596,7 +629,7 @@
             Update: =cbOTClient.Selected.Value
             Width: =742
             X: =0
-            Y: =11
+            Y: =12
             ZIndex: =1
 
             DataCardKey42_1 As label:
@@ -613,10 +646,9 @@
             cbOTSupervisor As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TEAM))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbOTSupervisor.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -677,7 +709,7 @@
                                 'SUB UNIT':cbOTSubUnit.Selected.Value,
                                 POSITION:cbOTPosition.Selected.Value, 
                                 CLIENT:cbOTClient.Selected.Value, 
-                                LOB:cbOTLOB.Selected.Value,
+                                LOB:cbOTSearchLOB.Selected.Value,
                                 BILLABILITY:cbOTBillability.Selected.Value, 
                                 SCHEDULE:txtOTSchedule.Text, 
                                 SUPERVISOR:cbOTSupervisor.Selected.Value

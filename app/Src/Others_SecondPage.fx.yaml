@@ -96,7 +96,7 @@
                     SendEmailforOtherRosterUpdateTicketCreation.Run(JSON(colOthers)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
-                        Reset(cbOTLOB) &&
+                        Reset(cbOTSearchLOB) &&
                         Set(SelectedItemIDinOT, "") &&
                         Set(SelectedItemIDinOT1, "") &&
                         Reset(drpRosterSelection) &&
@@ -613,7 +613,7 @@
         FontWeight: =FontWeight.Bold
         Height: =78
         Size: =20
-        Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10),cbOTLOB.Selected.Value)
+        Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10),cbOTSearchLOB.Selected.Value)
         Width: =640
         X: =42
         Y: =132

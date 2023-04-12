@@ -434,19 +434,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Others_FirstPage.cbOTLOB.AccessibleLabel"
+                  "fullyQualifiedName": "Others_FirstPage.cbOTSearchLOB.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Others_FirstPage.cbOTLOB.AccessibleLabel",
+                  "fullyQualifiedName": "Others_FirstPage.cbOTSearchLOB.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Others_FirstPage",
-                "type": "Others_FirstPage.cbOTLOB"
+                "type": "Others_FirstPage.cbOTSearchLOB"
               }
             }
           ],
@@ -1058,6 +1058,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Others_FirstPage.formOT.LOB_DataCard4.cbOTLOB.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Others_FirstPage.formOT.LOB_DataCard4.cbOTLOB.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Others_FirstPage",
+                "type": "Others_FirstPage.formOT.LOB_DataCard4.cbOTLOB"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
         },
         {
           "locations": [
