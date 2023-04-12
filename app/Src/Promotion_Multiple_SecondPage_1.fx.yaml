@@ -1,0 +1,487 @@
+"Promotion_Multiple_SecondPage_1 As screen.'printableLayout_A4Portrait_ver1.0'":
+    BackgroundImage: ='MicrosoftTeams-image'
+    Fill: =
+    Height: =1110
+    ImagePosition: =ImagePosition.Stretch
+    OnVisible: =
+    Width: =1500
+
+    "galleryPRMp2nd_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        BorderThickness: =1
+        Default: ={}
+        Height: =700
+        Items: =colPromotion
+        Layout: =Layout.Vertical
+        OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2_1.Text)
+        TemplatePadding: =0
+        TemplateSize: =Min(96, Self.Height - 60)
+        X: =42
+        Y: =200
+        ZIndex: =1
+
+        txtPRMultipleOmniapm2_1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =16
+            Text: =ThisItem.USER
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        NextArrow4_2_Verify_1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =2
+
+        Separator4_2_Verify_1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =3
+
+    "'Promotion Form p2_1' As label":
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =22
+        Text: ="PROMOTION FORM"
+        Width: =390
+        X: =540
+        Y: =46
+        ZIndex: =4
+
+    btnPRMultipleSubmitp2_1 As button:
+        Fill: =RGBA(0, 18, 107, 1)
+        OnSelect: |-
+            =If(
+                CountRows(galleryPRMp2nd_1.AllItems)=0,
+                Notify("There are no records to be processed", NotificationType.Error),
+                ClearCollect(colPromotion1,colPromotion);
+                emainotifpromotion.Run(JSON(colPromotion1));
+                Notify("Multiple Promotion Request has been submitted. Thank you.", NotificationType.Success);
+                Set(SelectedPRItemID_1,"");
+                Set(SelectedItemID, "");
+                Reset(cbPRSearchMultipleLOB);
+                Reset(cbPRSearchMultipleOmnia);
+                Clear(colPromotion);
+                Navigate(HomePage,ScreenTransition.None);
+            )
+        Text: ="Submit"
+        X: =1269
+        Y: =1008
+        ZIndex: =11
+
+    btnPRMultipleBackp2_1 As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Navigate(Promotion_Multiple_FirstPage,ScreenTransition.Cover)
+        Text: ="Back"
+        X: =1076
+        Y: =1008
+        ZIndex: =12
+
+    formPREDsp2_1 As form:
+        BorderThickness: =1
+        DataSource: =colPromotion
+        Height: =700
+        Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
+        NumberOfColumns: =1
+        OnReset: =true
+        Width: =742
+        X: =713
+        Y: =200
+        ZIndex: =18
+
+        "'EMPLOYEE NAME_PRMDataCard_3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FIRST NAME"
+            Default: =
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =741
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKeyENPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EMPLOYEE NAME"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultipleEmpNamepm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.NAME 
+                Width: =(Parent.Width - 60) * 0.6
+                X: =301
+                Y: =18
+                ZIndex: =2
+
+        SITE_PRMDataCard_4 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SITE"
+            Default: =ThisItem.SITE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SITE")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =741
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKeySITEPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultipleSitepm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =302
+                Y: =20
+                ZIndex: =2
+
+        "'BUSINESS UNIT_PRMDataCard_4' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="BUSINESS UNIT"
+            Default: =ThisItem.'BUSINESS UNIT'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Update: =
+            Width: =741
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKeyBUPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultipleBUpm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =302
+                Y: =20
+                ZIndex: =3
+
+        "'SUB-UNIT_PRMDataCard2_2' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SUB-UNIT"
+            Default: =ThisItem.'SUB UNIT'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =741
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKeySUPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultipleSUpm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKeySUPRpm2_1.X + DataCardKeySUPRpm2_1.Width
+                Y: =10
+                ZIndex: =2
+
+        POSITION_PRMDataCard2_2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="POSITION"
+            Default: =ThisItem.POSITION
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =741
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKeyPOSPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultiplePOSpm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKeyPOSPRpm2_1.X + DataCardKeyPOSPRpm2_1.Width
+                Y: =10
+                ZIndex: =2
+
+        CLIENT_PRMDataCard2_2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CLIENT"
+            Default: =ThisItem.CLIENT
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CLIENT")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =741
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKeyCLPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultipleCLpm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKeyCLPRpm2_1.X + DataCardKeyCLPRpm2_1.Width
+                Y: =10
+                ZIndex: =2
+
+        BILLABILITY_PRMDataCard2_2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="BILLABILITY"
+            Default: =ThisItem.BILLABILITY
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =741
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKeyBILLPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultipleBILLpm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKeyBILLPRpm2_1.X + DataCardKeyBILLPRpm2_1.Width
+                Y: =10
+                ZIndex: =2
+
+        MONDAY_PRMDataCard2_2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="MONDAY"
+            Default: =ThisItem.SCHEDULE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =741
+            X: =0
+            Y: =7
+            ZIndex: =1
+
+            DataCardKeySCHEDPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SCHEDULE"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultipleSCHEDpm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKeySCHEDPRpm2_1.X + DataCardKeySCHEDPRpm2_1.Width
+                Y: =10
+                ZIndex: =2
+
+        TEAM_PRMDataCard2_2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAM"
+            Default: =ThisItem.SUPERVISOR
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =741
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            DataCardKeySUPPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultipleSUPpm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKeySUPPRpm2_1.X + DataCardKeySUPPRpm2_1.Width
+                Y: =10
+                ZIndex: =2
+
+    txtPRUEp2_1 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="UPDATED EMPLOYEE(S)"
+        Width: =316
+        X: =204
+        Y: =145
+        ZIndex: =19
+
+    txtPREDp2_1 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="EMPLOYEE DETAILS"
+        Width: =264
+        X: =952
+        Y: =145
+        ZIndex: =20
+
+    btnPRRemovep2_1 As button:
+        Fill: =RGBA(255, 0, 0, 1)
+        OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
+        Text: ="Remove"
+        X: =1004
+        Y: =845
+        ZIndex: =21
+
