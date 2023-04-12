@@ -10,9 +10,9 @@
         BorderThickness: =1
         Default: ={}
         Height: =642
-        Items: =cbPRSearchMultipleOmnia_1.SelectedItems
+        Items: =cbPRSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
-        OnSelect: =Set(SelectedItemID, txtPRMultipleOmniapm1_1.Text)
+        OnSelect: =Set(SelectedPRItemID, txtPRMultipleOmniapm1_1.Text)
         TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
         TemplateSize: =126
@@ -132,15 +132,15 @@
             Y: =122
             ZIndex: =8
 
-        cbPRSearchMultipleLOB_1 As combobox:
+        cbPRSearchMultipleLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
             Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
             OnChange: |-
                 =Set(SelectedItemID, "") &&
-                Reset(cbPRSearchMultipleOmnia_1)
+                Reset(cbPRSearchMultipleOmnia)
             SearchFields: =["Value"]
-            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbPRSearchMultipleLOB_1.SearchText,"Value")
+            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbPRSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
             X: =625
@@ -154,14 +154,14 @@
         Y: =60
         ZIndex: =16
 
-        cbPRSearchMultipleOmnia_1 As combobox:
+        cbPRSearchMultipleOmnia As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["USER"]
-            Items: =If(!IsBlank(cbPRSearchMultipleLOB_1.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB_1.Selected.Value))
-            OnChange: =Set(SelectedItemIDinProm, "")
+            Items: =If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB.Selected.Value))
+            OnChange: =Set(SelectedPRItemID, "")
             SearchFields: =["USER"]
-            SearchItems: =Search(If(!IsBlank(cbPRSearchMultipleLOB_1.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB_1.Selected.Value)),cbPRSearchMultipleOmnia_1.SearchText,"USER")
+            SearchItems: =Search(If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB.Selected.Value)),cbPRSearchMultipleOmnia.SearchText,"USER")
             Width: =401.4
             X: =625
             Y: =187
@@ -181,7 +181,7 @@
         BorderThickness: =1
         DataSource: =Headcount_table
         Height: =642
-        Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
+        Item: =If(!IsBlank(SelectedPRItemID), LookUp(Headcount_table, USER=SelectedPRItemID))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
@@ -582,7 +582,7 @@
                     Remove(colPromotion, LookUp(colPromotion, USER = SelectedItemID));
                 );
                 Collect(colPromotion, {
-                    USER: SelectedItemID,
+                    USER: SelectedPRItemID,
                     NAME: txtPRMultipleEmpName_1.Text,
                     SITE: txtPRMultipleSite_1.Text,
                     'BUSINESS UNIT': cbPRMultipleBusUnit_1.Selected.Value,

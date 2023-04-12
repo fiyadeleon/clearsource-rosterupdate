@@ -63,10 +63,10 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="PROMOTION FORM"
-        Width: =390
-        X: =540
-        Y: =46
+        Text: ="REVIEW PROMOTION FORM"
+        Width: =412
+        X: =530
+        Y: =49
         ZIndex: =4
 
     btnPRMultipleSubmitp2_1 As button:
@@ -76,7 +76,7 @@
                 CountRows(galleryPRMp2nd_1.AllItems)=0,
                 Notify("There are no records to be processed", NotificationType.Error),
                 ClearCollect(colPromotion1,colPromotion);
-                emainotifpromotion.Run(JSON(colPromotion1));
+                emailnotifpromotion.Run(JSON(colPromotion1));
                 Notify("Multiple Promotion Request has been submitted. Thank you.", NotificationType.Success);
                 Set(SelectedPRItemID_1,"");
                 Set(SelectedPRItemID, "");
@@ -482,6 +482,6 @@
         OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
         Text: ="Remove"
         X: =1004
-        Y: =845
+        Y: =816
         ZIndex: =21
 
