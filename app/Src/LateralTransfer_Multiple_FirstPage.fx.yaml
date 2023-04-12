@@ -1,7 +1,7 @@
 "LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1110
+    Height: =1200
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -9,7 +9,7 @@
     "galleryLTM As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =642
+        Height: =710
         Items: =cbLTSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
@@ -94,7 +94,7 @@
             )
         Text: ="Review"
         X: =1269
-        Y: =1008
+        Y: =1089
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -103,7 +103,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1008
+        Y: =1089
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
@@ -173,7 +173,7 @@
     formLTM As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =642
+        Height: =710
         Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
         NumberOfColumns: =1
         OnReset: =true
@@ -288,10 +288,9 @@
             cbLTMultipleBusUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTMultipleBusUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -328,10 +327,9 @@
             cbLTMultipleSubUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTMultipleSubUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -368,10 +366,9 @@
             cbLTMultiplePosition As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),POSITION))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbLTMultiplePosition.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -408,14 +405,52 @@
             cbLTMultipleClient As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),CLIENT))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbLTMultipleClient.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
+                ZIndex: =2
+
+        LOB_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
+            Required: =false
+            Update: =cbLTMultipleLOB.Selected.Value
+            Width: =742
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =14
+                ZIndex: =1
+
+            cbLTMultipleLOB As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTMultipleLOB.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302
+                Y: =11
                 ZIndex: =2
 
         BILLABILITY_LTMDataCard As typedDataCard.allowedValuesStringEditCard:
@@ -431,7 +466,7 @@
             Update: =cbLTMultipleBillability.Selected.Value
             Width: =742
             X: =0
-            Y: =6
+            Y: =7
             ZIndex: =1
 
             DataCardKey40 As label:
@@ -448,10 +483,9 @@
             cbLTMultipleBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BILLABILITY))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbLTMultipleBillability.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -471,7 +505,7 @@
             Update: =txtLTMultipleSchedule.Text
             Width: =742
             X: =0
-            Y: =7
+            Y: =8
             ZIndex: =1
 
             DataCardKey43 As label:
@@ -516,7 +550,7 @@
             Update: =cbLTMultipleClient.Selected.Value
             Width: =742
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKey42 As label:
@@ -533,10 +567,9 @@
             cbLTMultipleSupervisor As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTMultipleSupervisor.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
