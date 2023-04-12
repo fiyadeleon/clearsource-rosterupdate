@@ -20,7 +20,7 @@ Termination_FirstPage As screen:
         Height: =447
         Items: =omnia_input.SelectedItems
         Layout: =Layout.Vertical
-        OnSelect: =Set(SelectedItemID, omniaID.Text)
+        OnSelect: =Set(SelectedItemIDinTermi, omniaID.Text)
         ShowNavigation: =true
         TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(102,182,227,1),-2%), RGBA(0,0,0,0))
         TemplatePadding: =0
@@ -175,8 +175,8 @@ Termination_FirstPage As screen:
         DataSource: =Headcount_table
         Height: =447
         Item: |
-            =If(!IsBlank(SelectedItemID), 
-                LookUp(Headcount_table, USER=SelectedItemID)
+            =If(!IsBlank(SelectedItemIDinTermi), 
+                LookUp(Headcount_table, USER=SelectedItemIDinTermi)
             )
         NumberOfColumns: =2
         OnReset: =true
@@ -631,12 +631,12 @@ Termination_FirstPage As screen:
                         Notify("Please complete all fields!", NotificationType.Error),
                         If(
                             CountRows(
-                                Filter(userVerify,USER=SelectedItemID)
+                                Filter(userVerify,USER=SelectedItemIDinTermi)
                             ) > 0, 
-                            Remove(userVerify, LookUp(userVerify, USER=SelectedItemID))
+                            Remove(userVerify, LookUp(userVerify, USER=SelectedItemIDinTermi))
                         );
                         Collect(userVerify, {
-                            USER:SelectedItemID,
+                            USER:SelectedItemIDinTermi,
                             'FULL NAME': Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME'),
                             'FIRST NAME': ThisItem.'FIRST NAME',
                             'LAST NAME': ThisItem.'LAST NAME',

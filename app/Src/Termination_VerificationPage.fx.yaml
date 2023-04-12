@@ -19,7 +19,7 @@ Termination_VerificationPage As screen:
         Height: =464
         Items: =userVerify
         Layout: =Layout.Vertical
-        OnSelect: =Set(SelectedItemID, omniaID_1.Text)
+        OnSelect: =Set(SelectedItemIDinTermi_1, omniaID_1.Text)
         ShowNavigation: =true
         TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(102,182,227,1),-2%), RGBA(0,0,0,0))
         TemplatePadding: =0
@@ -119,7 +119,7 @@ Termination_VerificationPage As screen:
         BorderThickness: =4
         DataSource: =userVerify
         Height: =464
-        Item: =If(!IsBlank(SelectedItemID), LookUp(userVerify, USER=SelectedItemID))
+        Item: =If(!IsBlank(SelectedItemIDinTermi_1), LookUp(userVerify, USER=SelectedItemIDinTermi_1))
         NumberOfColumns: =2
         Width: =880
         X: =438
@@ -579,7 +579,7 @@ Termination_VerificationPage As screen:
                 ClearCollect(coldata,userVerify);
                 MTerminationFlow.Run(JSON(coldata));
                 Notify("Multiple Termination Request has been submitted. Thank you.",NotificationType.Success);
-                Set(SelectedItemID,"");
+                Set(SelectedItemIDinTermi,"");
                 Reset(lob_input);
                 Reset(omnia_input);
                 Clear(userVerify);
@@ -593,7 +593,9 @@ Termination_VerificationPage As screen:
     previous_btn_1 As button:
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(102, 182, 227, 1)
-        OnSelect: =Navigate(Termination_FirstPage,ScreenTransition.None)
+        OnSelect: |-
+            =Set(SelectedItemIDinTermi, "") &&
+            Navigate(Termination_FirstPage,ScreenTransition.None)
         Text: ="Back"
         X: =939
         Y: =678
