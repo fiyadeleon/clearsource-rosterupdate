@@ -102,7 +102,7 @@
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
-                IsEmpty(colOthers),
+                IsEmpty(colPromotion),
                 Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
                 Navigate(Promotion_SecondPage,ScreenTransition.Cover)
             )
