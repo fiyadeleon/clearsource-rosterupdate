@@ -1,4 +1,4 @@
-"LateralTransfer_Multiple_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"LateralTransfer_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
     Height: =1075
@@ -113,7 +113,7 @@
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: |-
             =Set(SelectedItemID_1, "") &&
-            Navigate(LateralTransfer_Multiple_FirstPage,ScreenTransition.Cover)
+            Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
         Y: =959

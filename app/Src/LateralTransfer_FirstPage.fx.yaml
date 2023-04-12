@@ -1,4 +1,4 @@
-"LateralTransfer_Multiple_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"LateralTransfer_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
     Height: =1200
@@ -90,7 +90,7 @@
             =If(
                 IsEmpty(colLateralTransfer),
                 Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
-                Navigate(LateralTransfer_Multiple_SecondPage,ScreenTransition.Cover)
+                Navigate(LateralTransfer_SecondPage,ScreenTransition.Cover)
             )
         Text: ="Review"
         X: =1269
