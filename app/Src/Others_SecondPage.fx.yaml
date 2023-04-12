@@ -1,7 +1,7 @@
 "Others_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1180
+    Height: =1230
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -9,7 +9,7 @@
     "galleryLTM_2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =803
+        Height: =873
         Items: =colOthers
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT1, txtLTMultipleOmnia_2.Text)
@@ -108,7 +108,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =1067
+        Y: =1119
         ZIndex: =11
 
     btnLTMultipleBack_2 As button:
@@ -119,13 +119,13 @@
             Navigate(Others_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1067
+        Y: =1119
         ZIndex: =12
 
     formLTM2_1 As form:
         BorderThickness: =1
         DataSource: =colOthers
-        Height: =803
+        Height: =873
         Item: =If(!IsBlank(SelectedItemIDinOT1), LookUp(colOthers, USER=SelectedItemIDinOT1))
         NumberOfColumns: =1
         OnReset: =true
@@ -474,6 +474,44 @@
                 Y: =16
                 ZIndex: =2
 
+        LOB_DataCard6 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =742
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKey7 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtLTMultipleLOB2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey7.X + DataCardKey7.Width
+                Y: =10
+                ZIndex: =2
+
         BILLABILITY_LTMDataCard2_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
@@ -485,7 +523,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =9
+            Y: =10
             ZIndex: =1
 
             DataCardKey50_1 As label:
@@ -523,7 +561,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             DataCardKey51_1 As label:
@@ -561,7 +599,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =11
+            Y: =12
             ZIndex: =1
 
             DataCardKey52_1 As label:
@@ -595,7 +633,7 @@
             Height: =60
             Width: =742
             X: =0
-            Y: =12
+            Y: =13
             ZIndex: =1
 
             btnOTRemove As button:
