@@ -132,7 +132,7 @@ Termination_FirstPage As screen:
         Color: =RGBA(0, 18, 107, 1)
         DisplayFields: =["USER"]
         Items: =If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOB=lob_input.Selected.Value))
-        OnChange: =Set(SelectedItemID, "")
+        OnChange: =Set(SelectedItemIDinTermi, "")
         SearchFields: =["USER"]
         SearchItems: =Search(If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOB=lob_input.Selected.Value)),omnia_input.SearchText,"USER")
         SelectionColor: =RGBA(0, 18, 107, 1)
