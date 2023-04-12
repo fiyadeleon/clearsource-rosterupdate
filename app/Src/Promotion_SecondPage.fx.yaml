@@ -456,24 +456,26 @@
                 ZIndex: =2
 
     txtPRUEp2_1 As label:
+        Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
-        Height: =67
+        Height: =108
         Size: =20
-        Text: ="UPDATED EMPLOYEE(S)"
-        Width: =316
-        X: =204
-        Y: =145
+        Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10),cbPRSearchMultipleLOB.Selected.Value)
+        Width: =640
+        X: =42
+        Y: =103
         ZIndex: =19
 
     txtPREDp2_1 As label:
+        Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
-        Text: ="EMPLOYEE DETAILS"
-        Width: =264
-        X: =952
+        Text: ="UPDATED EMPLOYEE DETAILS"
+        Width: =742
+        X: =713
         Y: =145
         ZIndex: =20
 

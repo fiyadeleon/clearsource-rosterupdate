@@ -100,8 +100,9 @@ Termination_VerificationPage As screen:
     employeeList_label_1 As label:
         Color: =RGBA(39, 67, 125, 1)
         FontWeight: =FontWeight.Bold
-        Text: ="List of Updated Employee(s)"
-        Width: =264
+        Height: =60
+        Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10),lob_input.Selected.Value)
+        Width: =323
         X: =60
         Y: =124
         ZIndex: =22
@@ -109,8 +110,9 @@ Termination_VerificationPage As screen:
     employeeInfo_label_1 As label:
         Color: =RGBA(39, 67, 125, 1)
         FontWeight: =FontWeight.Bold
-        Text: ="Employee Information"
-        Width: =244
+        Height: =60
+        Text: ="UPDATED EMPLOYEE DETAILS"
+        Width: =384
         X: =438
         Y: =124
         ZIndex: =23
