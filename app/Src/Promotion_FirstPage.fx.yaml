@@ -293,7 +293,7 @@
                 ZIndex: =1
 
             cbPRMultipleBusUnit_1 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT'))
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -332,7 +332,7 @@
                 ZIndex: =1
 
             cbPRMultipleSubUnit_1 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT'))
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -371,7 +371,7 @@
                 ZIndex: =1
 
             cbPRMultiplePosition_1 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),POSITION))
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),POSITION))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -410,7 +410,7 @@
                 ZIndex: =1
 
             cbPRMultipleClient_1 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),CLIENT))
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),CLIENT))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -449,11 +449,12 @@
                 ZIndex: =1
 
             cbPRMultipleLOB_2 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),LOB))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                IsSearchable: =false
+                Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbPRMultipleLOB_2.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -488,7 +489,7 @@
                 ZIndex: =1
 
             cbPRMultipleBillability_1 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BILLABILITY))
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),BILLABILITY))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -572,7 +573,7 @@
                 ZIndex: =1
 
             cbPRMultipleSupervisor_1 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),TEAM))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
@@ -600,6 +601,7 @@
                             'SUB UNIT': cbPRMultipleSubUnit_1.Selected.Value,
                             POSITION: cbPRMultiplePosition_1.Selected.Value,
                             CLIENT: cbPRMultipleClient_1.Selected.Value,
+                            LOB: cbPRMultipleLOB_2.Selected.Value,
                             BILLABILITY: cbPRMultipleBillability_1.Selected.Value,
                             SCHEDULE: txtPRMultipleSchedule_1.Text,
                             SUPERVISOR: cbPRMultipleSupervisor_1.Selected.Value,

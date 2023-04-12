@@ -9,7 +9,7 @@
     "galleryPRMp2nd_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =700
+        Height: =726
         Items: =colPromotion
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2_1.Text)
@@ -87,22 +87,24 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =1008
+        Y: =990
         ZIndex: =11
 
     btnPRMultipleBackp2_1 As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(Promotion_FirstPage,ScreenTransition.Cover)
+        OnSelect: |-
+            =Set(SelectedPRItemID_1, "") &&
+            Navigate(Promotion_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1008
+        Y: =990
         ZIndex: =12
 
     formPREDsp2_1 As form:
         BorderThickness: =1
         DataSource: =colPromotion
-        Height: =700
+        Height: =726
         Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
@@ -341,6 +343,44 @@
                 Y: =10
                 ZIndex: =2
 
+        LOB_DataCard7 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =742
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey8 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            DataCardValue4 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey8.X + DataCardKey8.Width
+                Y: =20
+                ZIndex: =2
+
         BILLABILITY_PRMDataCard2_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
@@ -352,7 +392,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =6
+            Y: =7
             ZIndex: =1
 
             DataCardKeyBILLPRpm2_1 As label:
@@ -390,7 +430,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =7
+            Y: =8
             ZIndex: =1
 
             DataCardKeySCHEDPRpm2_1 As label:
@@ -426,9 +466,9 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =741
+            Width: =742
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKeySUPPRpm2_1 As label:
@@ -451,9 +491,27 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKeySUPPRpm2_1.X + DataCardKeySUPPRpm2_1.Width
-                Y: =10
+                X: =302
+                Y: =20
                 ZIndex: =2
+
+        DataCard3 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            btnPRRemovep2_3 As button:
+                Fill: =RGBA(255, 0, 0, 1)
+                OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
+                Text: ="Remove"
+                X: =300
+                Y: =30
+                ZIndex: =1
 
     txtPRUEp2_1 As label:
         Align: =Align.Center
@@ -478,12 +536,4 @@
         X: =713
         Y: =145
         ZIndex: =20
-
-    btnPRRemovep2_1 As button:
-        Fill: =RGBA(255, 0, 0, 1)
-        OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
-        Text: ="Remove"
-        X: =1004
-        Y: =816
-        ZIndex: =21
 
