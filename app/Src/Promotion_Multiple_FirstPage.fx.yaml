@@ -63,7 +63,7 @@
             Y: =79
             ZIndex: =3
 
-        NextArrow2_1 As icon.ChevronRight:
+        NextArrow2_1_Verify As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Height: =60
             Icon: =Icon.ChevronRight
@@ -79,7 +79,7 @@
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =4
 
-        Separator2_1 As rectangle:
+        Separator2_1_Verify As rectangle:
             Height: =1
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
