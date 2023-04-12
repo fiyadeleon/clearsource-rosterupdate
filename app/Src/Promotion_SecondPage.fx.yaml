@@ -1,4 +1,4 @@
-"Promotion_Multiple_SecondPage_1 As screen.'printableLayout_A4Portrait_ver1.0'":
+"Promotion_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
     Height: =1110
@@ -79,7 +79,7 @@
                 emainotifpromotion.Run(JSON(colPromotion1));
                 Notify("Multiple Promotion Request has been submitted. Thank you.", NotificationType.Success);
                 Set(SelectedPRItemID_1,"");
-                Set(SelectedItemID, "");
+                Set(SelectedPRItemID, "");
                 Reset(cbPRSearchMultipleLOB);
                 Reset(cbPRSearchMultipleOmnia);
                 Clear(colPromotion);
@@ -93,7 +93,7 @@
     btnPRMultipleBackp2_1 As button:
         Color: =RGBA(0, 18, 107, 1)
         Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(Promotion_Multiple_FirstPage,ScreenTransition.Cover)
+        OnSelect: =Navigate(Promotion_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
         Y: =1008

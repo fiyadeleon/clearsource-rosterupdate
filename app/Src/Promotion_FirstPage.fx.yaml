@@ -1,4 +1,4 @@
-"Promotion_Multiple_FirstPage_1 As screen.'printableLayout_A4Portrait_ver1.0'":
+"Promotion_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
     Height: =1110
@@ -100,7 +100,7 @@
 
     btnPRMultipleReviewp1_1 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =Navigate(Promotion_Multiple_SecondPage,ScreenTransition.Cover)
+        OnSelect: =Navigate(Promotion_SecondPage,ScreenTransition.Cover)
         Text: ="Review"
         X: =1269
         Y: =1008
@@ -159,7 +159,7 @@
             DefaultSelectedItems: =
             DisplayFields: =["USER"]
             Items: =If(!IsBlank(cbPRSearchMultipleLOB_1.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB_1.Selected.Value))
-            OnChange: =Set(SelectedItemID, "")
+            OnChange: =Set(SelectedItemIDinProm, "")
             SearchFields: =["USER"]
             SearchItems: =Search(If(!IsBlank(cbPRSearchMultipleLOB_1.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB_1.Selected.Value)),cbPRSearchMultipleOmnia_1.SearchText,"USER")
             Width: =401.4
