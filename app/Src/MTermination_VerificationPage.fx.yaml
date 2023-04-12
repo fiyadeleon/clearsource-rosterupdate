@@ -1,0 +1,601 @@
+MTermination_VerificationPage As screen:
+    BackgroundImage: ='Untitled design (1)'
+    ContentLanguage: =" "
+    ImagePosition: =ImagePosition.Stretch
+
+    MultipleTerminationForm_Label_1 As label:
+        Color: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        Size: =20
+        Text: ="REVIEW TERMINATION FORM"
+        Width: =592
+        X: =60
+        Y: =30
+        ZIndex: =1
+
+    "EmployeeGallery_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        BorderThickness: =3
+        Height: =464
+        Items: =userVerify
+        Layout: =Layout.Vertical
+        OnSelect: =Set(SelectedItemID, omniaID_1.Text)
+        ShowNavigation: =true
+        TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(102,182,227,1),-2%), RGBA(0,0,0,0))
+        TemplatePadding: =0
+        TemplateSize: =75
+        Width: =323
+        X: =60
+        Y: =184
+        ZIndex: =1
+
+        employeeName_1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =Concatenate(ThisItem.'LAST NAME'& ", " &ThisItem.'FIRST NAME')
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =14
+            ZIndex: =1
+
+        omniaID_1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: =ThisItem.USER
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =employeeName_1.Y + employeeName_1.Height + 2
+            ZIndex: =2
+
+        employeeID_1 As label:
+            Height: =10
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: =ThisItem.'OMNIA ID'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =omniaID_1.Y + omniaID_1.Height + 4
+            ZIndex: =3
+
+        NextArrow4_2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =50
+            Icon: =Icon.View
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =40
+            X: =269
+            Y: =14
+            ZIndex: =4
+
+        Separator4_2 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    employeeList_label_1 As label:
+        Color: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Text: ="List of Updated Employee(s)"
+        Width: =264
+        X: =60
+        Y: =124
+        ZIndex: =22
+
+    employeeInfo_label_1 As label:
+        Color: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Text: ="Employee Information"
+        Width: =244
+        X: =438
+        Y: =124
+        ZIndex: =23
+
+    EmployeeInfo_form_1 As form:
+        BorderThickness: =4
+        DataSource: =userVerify
+        Height: =464
+        Item: =If(!IsBlank(SelectedItemID), LookUp(userVerify, USER=SelectedItemID))
+        NumberOfColumns: =2
+        Width: =880
+        X: =438
+        Y: =184
+        ZIndex: =24
+
+        fname_card_1 As typedDataCard.richTextEditorViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FIRST NAME"
+            Default: =ThisItem.'FIRST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =438
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            fname_label_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =10
+                Text: =Parent.DisplayName
+                Width: =154
+                Wrap: =false
+                X: =15
+                Y: =11
+                ZIndex: =1
+
+            fname_value_1 As htmlViewer:
+                AutoHeight: =true
+                Color: =RGBA(39, 67, 125, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                HtmlText: =Parent.Default
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10
+                Width: =254
+                X: =180
+                Y: =12
+                ZIndex: =2
+
+        lname_card_1 As typedDataCard.richTextEditorViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LAST NAME"
+            Default: =ThisItem.'LAST NAME'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LAST NAME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =438
+            X: =1
+            Y: =0
+            ZIndex: =1
+
+            lname_label_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =10
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =12
+                ZIndex: =1
+
+            lname_value_1 As htmlViewer:
+                AutoHeight: =true
+                Color: =RGBA(39, 67, 125, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                HtmlText: =Parent.Default
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10
+                Width: =(Parent.Width - 60) * 0.6
+                X: =lname_label_1.X + lname_label_1.Width
+                Y: =10
+                ZIndex: =2
+
+        position_card_1 As typedDataCard.richTextEditorViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="POSITION"
+            Default: =ThisItem.POSITION
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =438
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            position_label_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =10
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =15
+                Y: =11
+                ZIndex: =1
+
+            position_value_1 As htmlViewer:
+                AutoHeight: =true
+                Color: =RGBA(39, 67, 125, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                HtmlText: =Parent.Default
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10
+                Width: =246
+                X: =180
+                Y: =11
+                ZIndex: =2
+
+        lob_card_1 As typedDataCard.richTextEditorViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =438
+            X: =1
+            Y: =1
+            ZIndex: =1
+
+            lob_label_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =10
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =12
+                ZIndex: =1
+
+            lob_value_1 As htmlViewer:
+                AutoHeight: =true
+                Color: =RGBA(39, 67, 125, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                HtmlText: =Parent.Default
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10
+                Width: =(Parent.Width - 60) * 0.6
+                X: =lob_label_1.X + lob_label_1.Width
+                Y: =10
+                ZIndex: =2
+
+        email_card_1 As typedDataCard.richTextEditorViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="INTERNAL EMAIL"
+            Default: =ThisItem.'INTERNAL EMAIL'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"INTERNAL EMAIL")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =438
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            email_label_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =10
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =14
+                Y: =12
+                ZIndex: =1
+
+            email_value_1 As htmlViewer:
+                AutoHeight: =true
+                Color: =RGBA(39, 67, 125, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                HtmlText: =Parent.Default
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10
+                Width: =256
+                X: =179
+                Y: =10
+                ZIndex: =2
+
+        campaign_card_1 As typedDataCard.richTextEditorViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CAMPAIGN"
+            Default: =ThisItem.CAMPAIGN
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CAMPAIGN")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =438
+            X: =1
+            Y: =2
+            ZIndex: =1
+
+            campaign_label_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =10
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =12
+                ZIndex: =1
+
+            campaign_value_1 As htmlViewer:
+                AutoHeight: =true
+                Color: =RGBA(39, 67, 125, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                HtmlText: =Parent.Default
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10
+                Width: =(Parent.Width - 60) * 0.6
+                X: =campaign_label_1.X + campaign_label_1.Width
+                Y: =6
+                ZIndex: =2
+
+        terminationType_card_1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: =
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Width: =438
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            terminationType_label_1 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Semibold
+                Size: =10
+                Text: ="TERMINATION TYPE"
+                Width: =179
+                X: =15
+                Y: =12
+                ZIndex: =2
+
+            Label1 As label:
+                Size: =10
+                Text: =ThisItem.'TERMINATION TYPE'
+                Width: =423
+                X: =15
+                Y: =50
+                ZIndex: =3
+
+        terminationStatus_card_1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =90
+            Width: =438
+            X: =1
+            Y: =3
+            ZIndex: =1
+
+            terminationStatus_label_1 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Semibold
+                Size: =10
+                Text: ="TERMINATION STATUS"
+                Width: =170
+                X: =30
+                Y: =6
+                ZIndex: =2
+
+            Label2 As label:
+                Size: =10
+                Text: =ThisItem.'TERMINATION STATUS'
+                Width: =408
+                X: =30
+                Y: =50
+                ZIndex: =3
+
+        effectivityDate_card_1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =90
+            Width: =438
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            effectivityDate_label_1 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Semibold
+                Size: =10
+                Text: ="EFFECTIVITY DATE"
+                Width: =180
+                X: =15
+                Y: =6
+                ZIndex: =1
+
+            effectivityDate_input_1 As datepicker:
+                DefaultDate: =ThisItem.'EFFECTIVITY DATE'
+                DisplayMode: =DisplayMode.View
+                Height: =30
+                Size: =10
+                Width: =300
+                X: =19
+                Y: =46
+                ZIndex: =2
+
+        lastDate_card_1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =90
+            Width: =438
+            X: =1
+            Y: =4
+            ZIndex: =1
+
+            lastDate_label_1 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Semibold
+                Size: =10
+                Text: ="LAST WORKING DATE"
+                Width: =202
+                X: =30
+                Y: =6
+                ZIndex: =1
+
+            lastDate_input_1 As datepicker:
+                DefaultDate: =ThisItem.'LAST WORKING DATE'
+                DisplayMode: =DisplayMode.View
+                Height: =30
+                Size: =10
+                Width: =300
+                X: =38
+                Y: =46
+                ZIndex: =2
+
+        address_card_1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =90
+            Width: =438
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            address_label_1 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =25
+                Size: =10
+                Text: ="CURRENT ADDRESS"
+                X: =15
+                Y: =6
+                ZIndex: =1
+
+            address_input_1 As text:
+                Default: =ThisItem.'CURRENT ADDRESS'
+                DisplayMode: =DisplayMode.View
+                Height: =50
+                HintText: ="Current Address of the Employee"
+                Mode: =TextMode.MultiLine
+                Size: =10
+                Width: =364
+                X: =19
+                Y: =35
+                ZIndex: =2
+
+        comment_card_1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =90
+            Width: =438
+            X: =1
+            Y: =5
+            ZIndex: =1
+
+            comment_label_1 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =25
+                Size: =10
+                Text: ="COMMENT"
+                X: =30
+                Y: =6
+                ZIndex: =1
+
+            comment_input_1 As text:
+                Default: =ThisItem.COMMENT
+                DisplayMode: =DisplayMode.View
+                Height: =50
+                HintText: ="Comment regarding Termination Request"
+                Mode: =TextMode.MultiLine
+                Size: =10
+                Width: =364
+                X: =36
+                Y: =35
+                ZIndex: =2
+
+        DataCard2 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Width: =876
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            Button3 As button:
+                Fill: =RGBA(203, 102, 102, 1)
+                OnSelect: =Remove(userVerify,ThisItem)
+                Text: ="Remove "
+                X: =356
+                Y: =10
+                ZIndex: =1
+
+    proceed_btn_1 As button:
+        OnSelect: |-
+            =If(
+                CountRows(EmployeeGallery_1.AllItems)=0,
+                Notify("There are no records to be processed", NotificationType.Error),
+                ClearCollect(coldata,userVerify);
+                MTerminationFlow.Run(JSON(coldata));
+                Notify("Multiple Termination Request has been submitted. Thank you.",NotificationType.Success);
+                Set(SelectedItemID,"");
+                Reset(lob_input);
+                Reset(omnia_input);
+                Clear(userVerify);
+                Navigate(HomePage,ScreenTransition.None);
+            )
+        Text: ="Submit"
+        X: =1158
+        Y: =678
+        ZIndex: =25
+
+    previous_btn_1 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(102, 182, 227, 1)
+        OnSelect: =Navigate(MTermination_FirstPage,ScreenTransition.None)
+        Text: ="Back"
+        X: =939
+        Y: =678
+        ZIndex: =26
+
