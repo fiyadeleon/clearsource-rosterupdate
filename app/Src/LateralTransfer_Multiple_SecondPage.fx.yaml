@@ -1,7 +1,7 @@
 "LateralTransfer_Multiple_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1100
+    Height: =1075
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -9,7 +9,7 @@
     "galleryLTM_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =745
+        Height: =696
         Items: =colLateralTransfer
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID_1, txtLTMultipleOmnia_1.Text)
@@ -105,7 +105,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =995
+        Y: =959
         ZIndex: =11
 
     btnLTMultipleBack_1 As button:
@@ -116,13 +116,13 @@
             Navigate(LateralTransfer_Multiple_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =995
+        Y: =959
         ZIndex: =12
 
     formLTM2 As form:
         BorderThickness: =1
         DataSource: =colLateralTransfer
-        Height: =745
+        Height: =696
         Item: =If(!IsBlank(SelectedItemID_1), LookUp(colLateralTransfer, USER=SelectedItemID_1))
         NumberOfColumns: =1
         OnReset: =true
@@ -356,28 +356,32 @@
                 Y: =16
                 ZIndex: =2
 
-        DataCard3 As typedDataCard.blankCard:
+        LOB_DataCard3 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
+            Required: =false
             Width: =742
             X: =0
             Y: =6
             ZIndex: =1
 
-            DataCardKey52_2 As label:
+            DataCardKey4 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="LOB"
+                Text: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =13
                 ZIndex: =1
 
-            txtLTMultipleLOB2 As label:
+            DataCardValue2 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -520,7 +524,7 @@
                 OnSelect: =Remove(colLateralTransfer, LookUp(colLateralTransfer, USER=SelectedItemID_1))
                 Text: ="Remove"
                 X: =300
-                Y: =11
+                Y: =20
                 ZIndex: =1
 
     "'Lateral Transfer Form_5' As label":
