@@ -100,7 +100,12 @@
 
     btnPRMultipleReviewp1_1 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =Navigate(Promotion_SecondPage,ScreenTransition.Cover)
+        OnSelect: |-
+            =If(
+                IsEmpty(colOthers),
+                Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
+                Navigate(Promotion_SecondPage,ScreenTransition.Cover)
+            )
         Text: ="Review"
         X: =1260
         Y: =1089
