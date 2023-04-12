@@ -442,11 +442,11 @@
                 ZIndex: =1
 
             cbLTMultipleLOB As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),LOB))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTMultipleLOB.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTMultipleLOB.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302
