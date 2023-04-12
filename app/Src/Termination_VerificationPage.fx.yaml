@@ -594,7 +594,7 @@ Termination_VerificationPage As screen:
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(102, 182, 227, 1)
         OnSelect: |-
-            =Set(SelectedItemIDinTermi, "") &&
+            =Set(SelectedItemIDinTermi_1, "") &&
             Navigate(Termination_FirstPage,ScreenTransition.None)
         Text: ="Back"
         X: =939
