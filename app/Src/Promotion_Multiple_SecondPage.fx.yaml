@@ -6,7 +6,7 @@
     OnVisible: =
     Width: =1500
 
-    "galleryPRMp2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+    "galleryPRMp2nd As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
         Height: =700
@@ -73,7 +73,7 @@
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
             =If(
-                CountRows(galleryPRMp2.AllItems)=0,
+                CountRows(galleryPRMp2nd.AllItems)=0,
                 Notify("There are no records to be processed", NotificationType.Error),
                 ClearCollect(colPromotion1,colPromotion);
                 emainotifpromotion.Run(JSON(colPromotion1));

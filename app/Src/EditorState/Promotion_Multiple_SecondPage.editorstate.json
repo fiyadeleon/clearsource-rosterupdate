@@ -4203,7 +4203,7 @@
       "StyleName": "defaultFormStyle",
       "Type": "ControlInfo"
     },
-    "galleryPRMp2": {
+    "galleryPRMp2nd": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -4271,13 +4271,13 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "galleryPRMp2",
+      "Name": "galleryPRMp2nd",
       "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
           "Category": "Data",
-          "PropertyName": "Default",
+          "PropertyName": "WrapCount",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4287,27 +4287,7 @@
         },
         {
           "Category": "Data",
-          "PropertyName": "WrapCount",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "Layout",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "Transition",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "BorderColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "LoadingSpinner",
+          "PropertyName": "Default",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4317,12 +4297,22 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "TemplateSize",
+          "PropertyName": "LoadingSpinner",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "HoverFill",
+          "PropertyName": "BorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Transition",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Layout",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4332,47 +4322,17 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "PressedFill",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "DisabledFill",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "FocusedBorderColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
           "PropertyName": "BorderThickness",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "HoverBorderColor",
+          "PropertyName": "TemplateSize",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
           "PropertyName": "ZIndex",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "PressedBorderColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "DisabledBorderColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "LoadingSpinnerColor",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4387,7 +4347,17 @@
         },
         {
           "Category": "Design",
+          "PropertyName": "HoverFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
           "PropertyName": "Y",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PressedFill",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4403,6 +4373,36 @@
         {
           "Category": "Design",
           "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DisabledFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "FocusedBorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "HoverBorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PressedBorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DisabledBorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "LoadingSpinnerColor",
           "RuleProviderType": "Unknown"
         }
       ],
@@ -4640,12 +4640,12 @@
       "Properties": [
         {
           "Category": "Data",
-          "PropertyName": "Tooltip",
+          "PropertyName": "AccessibleLabel",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
-          "PropertyName": "AccessibleLabel",
+          "PropertyName": "Tooltip",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4720,12 +4720,12 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "FocusedBorderColor",
+          "PropertyName": "PressedColor",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "HoverBorderColor",
+          "PropertyName": "HoverColor",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4745,27 +4745,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "PressedBorderColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "Y",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "X",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "PaddingBottom",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "HoverFill",
+          "PropertyName": "DisabledFill",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4775,17 +4755,37 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "DisabledFill",
+          "PropertyName": "HoverFill",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "HoverColor",
+          "PropertyName": "PaddingBottom",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "PressedColor",
+          "PropertyName": "X",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Y",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PressedBorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "HoverBorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "FocusedBorderColor",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5420,7 +5420,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Width",
+          "PropertyName": "HoverFill",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5430,7 +5430,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Y",
+          "PropertyName": "PressedFill",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5445,12 +5445,12 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "HoverFill",
+          "PropertyName": "Width",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "PressedFill",
+          "PropertyName": "Y",
           "RuleProviderType": "Unknown"
         },
         {
@@ -7447,27 +7447,17 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Y",
+          "PropertyName": "PressedBorderColor",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "Height",
+          "PropertyName": "PressedColor",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "HoverFill",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "PressedFill",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "PaddingTop",
+          "PropertyName": "HoverBorderColor",
           "RuleProviderType": "Unknown"
         },
         {
@@ -7477,12 +7467,22 @@
         },
         {
           "Category": "Design",
+          "PropertyName": "PaddingTop",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PressedFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
           "PropertyName": "BorderColor",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "HoverBorderColor",
+          "PropertyName": "HoverFill",
           "RuleProviderType": "Unknown"
         },
         {
@@ -7497,7 +7497,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "PressedBorderColor",
+          "PropertyName": "Y",
           "RuleProviderType": "Unknown"
         },
         {
@@ -7512,12 +7512,12 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Width",
+          "PropertyName": "HoverColor",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "HoverColor",
+          "PropertyName": "Width",
           "RuleProviderType": "Unknown"
         },
         {
@@ -7527,7 +7527,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "PressedColor",
+          "PropertyName": "Height",
           "RuleProviderType": "Unknown"
         },
         {
