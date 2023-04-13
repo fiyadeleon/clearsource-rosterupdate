@@ -1,5 +1,5 @@
 "Others_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
-    BackgroundImage: ='MicrosoftTeams-image'
+    BackgroundImage: ='Untitled design 29'
     Fill: =
     Height: =1050
     ImagePosition: =ImagePosition.Stretch
@@ -773,7 +773,7 @@
                         ));
                         If((cbOTStatus.Selected.Value = "ACTIVE") && (IsBlank(dateEnd.SelectedDate)),
                             Set(endDateVal, "N/A"),
-                            Set(endDateVal, Text(dateEnd.SelectedDate))
+                            Set(endDateVal, Text(dateEnd.SelectedDate, "yyyy-mm-dd"))
                         );
                         Collect(colOthers, {
                                 USER:SelectedItemIDinOT,
@@ -781,18 +781,18 @@
                                 ID:txtOTEmpId.Text,
                                 SITE:txtOTSite.Text,
                                 STATUS:cbOTStatus.Selected.Value,
-                                'START DATE':dateStart.SelectedDate,
+                                'START DATE':Text(dateStart.SelectedDate, "yyyy-mm-dd"),
                                 'END DATE':endDateVal,
-                                'NESTING START DATE':dateNesting.SelectedDate,
-                                'PRODUCTION DATE':dateProduction.SelectedDate,
-                                'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
-                                'SUB UNIT':cbLTMultipleSubUnit.Selected.Value,
-                                POSITION:cbLTMultiplePosition.Selected.Value, 
-                                CLIENT:cbLTMultipleClient.Selected.Value, 
-                                LOB:cbLTMultipleLOB.Selected.Value,
-                                BILLABILITY:cbLTMultipleBillability.Selected.Value, 
-                                SCHEDULE:txtLTMultipleSchedule.Text, 
-                                SUPERVISOR:cbLTMultipleSupervisor.Selected.Value
+                                'NESTING START DATE':Text(dateNesting.SelectedDate, "yyyy-mm-dd"),
+                                'PRODUCTION DATE':Text(dateProduction.SelectedDate, "yyyy-mm-dd"),
+                                'BUSINESS UNIT':cbOTBusUnit.Selected.Value, 
+                                'SUB UNIT':cbOTSubUnit.Selected.Value,
+                                POSITION:cbOTPosition.Selected.Value, 
+                                CLIENT:cbOTClient.Selected.Value, 
+                                LOB:cbOTSearchLOB.Selected.Value,
+                                BILLABILITY:cbOTBillability.Selected.Value, 
+                                SCHEDULE:txtOTSchedule.Text, 
+                                SUPERVISOR:cbOTSupervisor.Selected.Value
                             }
                         );
                         Notify("Successfully saved your changes locally.", NotificationType.Success)

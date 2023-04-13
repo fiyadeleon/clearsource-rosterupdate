@@ -15,14 +15,14 @@ Termination_FirstPage As screen:
         ZIndex: =1
 
     "EmployeeGallery As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
-        BorderThickness: =3
+        BorderThickness: =1
         Default: ={}
         Height: =447
         Items: =omnia_input.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinTermi, omniaID.Text)
         ShowNavigation: =true
-        TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(102,182,227,1),-2%), RGBA(0,0,0,0))
+        TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
         TemplateSize: =79
         Width: =323
@@ -38,7 +38,7 @@ Termination_FirstPage As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =Concatenate(ThisItem.'LAST NAME', ", ", ThisItem.'FIRST NAME')
+            Text: =Concatenate(ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME')
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -78,7 +78,7 @@ Termination_FirstPage As screen:
         NextArrow4 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Height: =50
-            Icon: =Icon.View
+            Icon: =Icon.ChevronRight
             OnSelect: =Select(Parent)
             PaddingBottom: =10
             PaddingLeft: =10
@@ -153,25 +153,27 @@ Termination_FirstPage As screen:
         ZIndex: =21
 
     employeeList_label As label:
+        Align: =Align.Center
         Color: =RGBA(39, 67, 125, 1)
         FontWeight: =FontWeight.Bold
         Text: ="SELECTED EMPLOYEE(S)"
-        Width: =244
+        Width: =323
         X: =60
         Y: =174
         ZIndex: =22
 
     employeeInfo_label As label:
+        Align: =Align.Center
         Color: =RGBA(39, 67, 125, 1)
         FontWeight: =FontWeight.Bold
         Text: ="EMPLOYEE DETAILS"
-        Width: =244
+        Width: =880
         X: =438
         Y: =174
         ZIndex: =23
 
     EmployeeInfo_form As form:
-        BorderThickness: =4
+        BorderThickness: =1
         DataSource: =Headcount_table
         Height: =447
         Item: |
@@ -194,7 +196,7 @@ Termination_FirstPage As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =438
+            Width: =439
             X: =0
             Y: =0
             ZIndex: =1
@@ -235,7 +237,7 @@ Termination_FirstPage As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =438
+            Width: =439
             X: =1
             Y: =0
             ZIndex: =1
@@ -276,7 +278,7 @@ Termination_FirstPage As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =438
+            Width: =439
             X: =0
             Y: =1
             ZIndex: =1
@@ -317,7 +319,7 @@ Termination_FirstPage As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =438
+            Width: =439
             X: =1
             Y: =1
             ZIndex: =1
@@ -358,7 +360,7 @@ Termination_FirstPage As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =438
+            Width: =439
             X: =0
             Y: =2
             ZIndex: =1
@@ -399,7 +401,7 @@ Termination_FirstPage As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =438
+            Width: =439
             X: =1
             Y: =2
             ZIndex: =1
@@ -436,7 +438,7 @@ Termination_FirstPage As screen:
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =80
-            Width: =438
+            Width: =439
             X: =0
             Y: =3
             ZIndex: =1
@@ -468,7 +470,7 @@ Termination_FirstPage As screen:
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =90
-            Width: =438
+            Width: =439
             X: =1
             Y: =3
             ZIndex: =1
@@ -499,7 +501,7 @@ Termination_FirstPage As screen:
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =90
-            Width: =438
+            Width: =439
             X: =0
             Y: =4
             ZIndex: =1
@@ -527,7 +529,7 @@ Termination_FirstPage As screen:
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =90
-            Width: =438
+            Width: =439
             X: =1
             Y: =4
             ZIndex: =1
@@ -555,7 +557,7 @@ Termination_FirstPage As screen:
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =90
-            Width: =438
+            Width: =439
             X: =0
             Y: =5
             ZIndex: =1
@@ -586,7 +588,7 @@ Termination_FirstPage As screen:
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =90
-            Width: =438
+            Width: =439
             X: =1
             Y: =5
             ZIndex: =1
@@ -617,7 +619,7 @@ Termination_FirstPage As screen:
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =49
-            Width: =878
+            Width: =880
             X: =0
             Y: =6
             ZIndex: =1
