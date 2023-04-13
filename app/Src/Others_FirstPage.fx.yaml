@@ -487,7 +487,7 @@
                 ZIndex: =2
 
             dateEnd As datepicker:
-                DefaultDate: =
+                DefaultDate: =""
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -736,35 +736,70 @@
             btnOTSave As button:
                 OnSelect: |-
                     =If(
-                        CountRows(
-                            Filter(colOthers,USER=SelectedItemIDinOT)
-                        ) > 0, 
-                        Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT)
-                    ));
-                    Collect(colOthers, {
-                            USER:SelectedItemIDinOT,
-                            NAME:txtOTMName.Text,
-                            ID:txtOTEmpId.Text,
-                            SITE:txtOTSite.Text,
-                            STATUS:cbOTStatus.Selected.Value,
-                            'START DATE':dateStart.SelectedDate,
-                            'END DATE':dateEnd.SelectedDate,
-                            'NESTING START DATE':dateNesting.SelectedDate,
-                            'PRODUCTION DATE':dateProduction.SelectedDate,
-                            'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
-                            'SUB UNIT':cbLTMultipleSubUnit.Selected.Value,
-                            POSITION:cbLTMultiplePosition.Selected.Value, 
-                            CLIENT:cbLTMultipleClient.Selected.Value, 
-                            LOB:cbLTMultipleLOB.Selected.Value,
-                            BILLABILITY:cbLTMultipleBillability.Selected.Value, 
-                            SCHEDULE:txtLTMultipleSchedule.Text, 
-                            SUPERVISOR:cbLTMultipleSupervisor.Selected.Value
-                        }
-                    );
-                    Notify("Successfully saved your changes locally.", NotificationType.Success)
+                        //check if status is equivalent to !ACTIVE to require start and end date
+                        //if status is equivalent to ACTIVE require start date
+                        (
+                            (
+                                cbOTStatus.Selected.Value = "INACTIVE" ||
+                                cbOTStatus.Selected.Value = "FLOATING" ||
+                                cbOTStatus.Selected.Value = "LOA" ||
+                                cbOTStatus.Selected.Value = "LOAM" ||
+                                cbOTStatus.Selected.Value = "RTWO" ||
+                                cbOTStatus.Selected.Value = "SUSPENDED" ||
+                                cbOTStatus.Selected.Value = "MATERNITY LEAVE" || 
+                                cbOTStatus.Selected.Value = "PATERNITY LEAVE"
+                            ) 
+                            && (IsBlank(dateStart.SelectedDate) || IsBlank(dateEnd.SelectedDate)) ||
+                            (
+                                cbOTStatus.Selected.Value = "ACTIVE"
+                            ) 
+                            && IsBlank(dateStart.SelectedDate)
+                        ),
+                    
+                        //true
+                        (
+                            If(cbOTStatus.Selected.Value = "ACTIVE",
+                                Notify("Please fill out Start Date for this type of Status.", NotificationType.Error),
+                                Notify("Please fill out Start and End Date for this type of Status.", NotificationType.Error)
+                            )
+                        ),
+                    
+                        //false
+                        If(
+                            CountRows(
+                                Filter(colOthers,USER=SelectedItemIDinOT)
+                            ) > 0, 
+                            Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT)
+                        ));
+                        If((cbOTStatus.Selected.Value = "ACTIVE") && (IsBlank(dateEnd.SelectedDate)),
+                            Set(endDateVal, "N/A"),
+                            Set(endDateVal, Text(dateEnd.SelectedDate))
+                        );
+                        Collect(colOthers, {
+                                USER:SelectedItemIDinOT,
+                                NAME:txtOTMName.Text,
+                                ID:txtOTEmpId.Text,
+                                SITE:txtOTSite.Text,
+                                STATUS:cbOTStatus.Selected.Value,
+                                'START DATE':dateStart.SelectedDate,
+                                'END DATE':endDateVal,
+                                'NESTING START DATE':dateNesting.SelectedDate,
+                                'PRODUCTION DATE':dateProduction.SelectedDate,
+                                'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
+                                'SUB UNIT':cbLTMultipleSubUnit.Selected.Value,
+                                POSITION:cbLTMultiplePosition.Selected.Value, 
+                                CLIENT:cbLTMultipleClient.Selected.Value, 
+                                LOB:cbLTMultipleLOB.Selected.Value,
+                                BILLABILITY:cbLTMultipleBillability.Selected.Value, 
+                                SCHEDULE:txtLTMultipleSchedule.Text, 
+                                SUPERVISOR:cbLTMultipleSupervisor.Selected.Value
+                            }
+                        );
+                        Notify("Successfully saved your changes locally.", NotificationType.Success)
+                    )
                 Text: ="Save"
                 X: =657
-                Y: =48
+                Y: =33
                 ZIndex: =1
 
     OT2 As label:
