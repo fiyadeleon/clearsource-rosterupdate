@@ -34,7 +34,7 @@
             Height: =Parent.Height
             IsHyperlink: =true
             LayoutHeight: =Parent.Height
-            OnSelect: =Navigate(OmniaCreation_ReviewPage)
+            OnSelect: =Navigate(OmniaCreation_EditPage)
             Order: =1
             Text: =ThisItem.'EMPLOYEE ID'
             Width: =100
@@ -308,7 +308,9 @@
         btnOCSPEdit As button:
             Fill: =RGBA(255, 191, 0, 1)
             HoverFill: =ColorFade(Self.Fill, -15%)
-            OnSelect: =Set(Label5.Text, 'EMPLOYEE ID_Column1_1'.Text)
+            OnSelect: |-
+                =Set(tblSelectedID, tblOCSP.Selected.'EMPLOYEE ID') &&
+                Navigate(OmniaCreation_EditPage)
             Text: ="Edit"
             X: =536
             Y: =98

@@ -1,106 +1,55 @@
-"OmniaCreation_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"OmniaCreation_EditPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='Untitled design 29'
     ImagePosition: =ImagePosition.Stretch
     Width: =1425
 
-    oc1 As label:
+    oc3 As label:
         Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="OMNIA CREATION FORM"
-        Width: =445
+        Text: ="EDIT OMNIA CREATION FORM"
+        Width: =515
         Y: =31
-        ZIndex: =2
-
-    btnOCFPSave As button:
-        FontWeight: =FontWeight.Bold
-        OnSelect: |-
-            =If(
-                (!IsBlank(txtOCFPEmpId.Text) &&
-                    !IsBlank(txtOCFPFName.Text) &&
-                    !IsBlank(txtOCFPMName.Text) &&
-                    !IsBlank(txtOCFPLName.Text) &&
-                    !IsBlank(dateOCFPHireDate.SelectedDate) &&
-                    (!IsBlank(cbOCFPBusUnit.Selected.Value) || !IsBlank(cbOCFPBusUnit.SearchText)) &&
-                    (!IsBlank(cbOCFPSubUnit.Selected.Value) || !IsBlank(cbOCFPSubUnit.SearchText)) &&
-                    (!IsBlank(cbOCFPPosition.Selected.Value) || !IsBlank(cbOCFPPosition.SearchText)) &&
-                    (!IsBlank(cbOCFPClient.Selected.Value) || !IsBlank(cbOCFPClient.SearchText)) &&
-                    (!IsBlank(cbOCFPCampaign.Selected.Value) || !IsBlank(cbOCFPCampaign.SearchText)) &&
-                    (!IsBlank(cbOCFPSubLOB.Selected.Value) || !IsBlank(cbOCFPSubLOB.SearchText)) &&
-                    (!IsBlank(cbOCFPLOB.Selected.Value) || !IsBlank(cbOCFPLOB.SearchText)) &&
-                    (!IsBlank(cbOCFPBillability.Selected.Value) || !IsBlank(cbOCFPBillability.SearchText)) &&
-                    (!IsBlank(cbOCFPSupervisor.Selected.Value) || !IsBlank(cbOCFPSupervisor.SearchText)) &&
-                    (!IsBlank(cbOCFPCountry.Selected.Value) || !IsBlank(cbOCFPCountry.SearchText)) &&
-                    (!IsBlank(cbOCFPSite.Selected.Value) || !IsBlank(cbOCFPSite.SearchText)) &&
-                    (!IsBlank(cbOCFPRole.Selected.Value) || !IsBlank(cbOCFPRole.SearchText)) 
-                ),
-                If(
-                    CountRows(
-                        Filter(colOmniaCreation,'EMPLOYEE ID'=txtOCFPEmpId.Text)
-                    ) > 0, 
-                    Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCFPEmpId.Text)
-                ));
-                Collect(colOmniaCreation, {
-                        'EMPLOYEE ID':txtOCFPEmpId.Text,
-                        'FIRST NAME':txtOCFPFName.Text,
-                        'MIDDLE NAME':txtOCFPMName.Text,
-                        'LAST NAME':txtOCFPLName.Text,
-                        'HIRE DATE':dateOCFPHireDate.SelectedDate,
-                        STATUS:"ACTIVE",
-                        'REGULARIZATION DATE':Text(DateAdd(dateOCFPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
-                        'BUSINESS UNIT':If(IsBlank(cbOCFPBusUnit.Selected.Value), cbOCFPBusUnit.SearchText, cbOCFPBusUnit.Selected.Value), 
-                        'SUB UNIT':If(IsBlank(cbOCFPSubUnit.Selected.Value), cbOCFPSubUnit.SearchText, cbOCFPSubUnit.Selected.Value),
-                        POSITION:If(IsBlank(cbOCFPPosition.Selected.Value), cbOCFPPosition.SearchText, cbOCFPPosition.Selected.Value), 
-                        'EMPLOYMENT STATUS':"Probationary",
-                        'CLIENT':If(IsBlank(cbOCFPClient.Selected.Value), cbOCFPClient.SearchText, cbOCFPClient.Selected.Value),
-                        'CAMPAIGN':If(IsBlank(cbOCFPCampaign.Selected.Value), cbOCFPCampaign.SearchText, cbOCFPCampaign.Selected.Value),
-                        'SUB-LOB':If(IsBlank(cbOCFPSubLOB.Selected.Value), cbOCFPSubLOB.SearchText, cbOCFPSubLOB.Selected.Value),
-                        'LOB':If(IsBlank(cbOCFPLOB.Selected.Value), cbOCFPLOB.SearchText, cbOCFPLOB.Selected.Value),
-                        BILLABILITY:If(IsBlank(cbOCFPBillability.Selected.Value), cbOCFPBillability.SearchText, cbOCFPBillability.Selected.Value),
-                        SUPERVISOR:If(IsBlank(cbOCFPSupervisor.Selected.Value), cbOCFPSupervisor.SearchText, cbOCFPSupervisor.Selected.Value),
-                        COUNTRY:If(IsBlank(cbOCFPCountry.Selected.Value), cbOCFPCountry.SearchText, cbOCFPCountry.Selected.Value),
-                        SITE:If(IsBlank(cbOCFPSite.Selected.Value), cbOCFPSite.SearchText, cbOCFPSite.Selected.Value), 
-                        ROLE:If(IsBlank(cbOCFPRole.Selected.Value), cbOCFPRole.SearchText, cbOCFPRole.Selected.Value),
-                        'SUBMITTED BY':User().Email
-                    }
-                );
-                Notify("Successfully saved your changes locally.", NotificationType.Success),
-                Notify("Please fill out all fields!", NotificationType.Error)
-            )
-        Text: ="Save"
-        X: =609
-        Y: =571
         ZIndex: =5
 
-    grpNewOCForm As group:
+    btnOCEPBack As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+        Text: ="Back"
+        X: =1222
+        Y: =684
+        ZIndex: =6
+
+    grpEditOCForm As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =10
+        ZIndex: =12
 
-        Rectangle1 As rectangle:
+        Rectangle1_1 As rectangle:
             BorderThickness: =1
             Fill: =RGBA(0, 0, 0, 0)
             Height: =533
             Width: =1370
             X: =31
             Y: =98
-            ZIndex: =1
+            ZIndex: =7
 
-        formOCFirstPage1 As form:
-            DataSource: =Headcount_table
-            DefaultMode: =FormMode.New
+        formOCFirstPage1_1 As form:
+            DataSource: =colOmniaCreation
             Height: =495
+            Item: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
             NumberOfColumns: =1
             Width: =328
             X: =19
             Y: =98
-            ZIndex: =6
+            ZIndex: =8
 
-            "'EMPLOYEE ID_DataCardOCFP' As typedDataCard.textualEditCard":
+            "'EMPLOYEE ID_DataCardOCFP_1' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="EMPLOYEE ID"
                 Default: =ThisItem.'EMPLOYEE ID'
@@ -110,13 +59,13 @@
                 Height: =50
                 MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "EMPLOYEE ID")
                 Required: =false
-                Update: =txtOCFPEmpId.Text
+                Update: =txtOCFPEmpId_1.Text
                 Width: =328
                 X: =0
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey56 As label:
+                DataCardKey56_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -127,9 +76,9 @@
                     Y: =10
                     ZIndex: =1
 
-                txtOCFPEmpId As text:
+                txtOCFPEmpId_1 As text:
                     BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    Default: =Parent.Default
+                    Default: =tblSelectedID
                     DelayOutput: =true
                     DisplayMode: =Parent.DisplayMode
                     HintText: ="e.g. CSPH12345"
@@ -142,10 +91,10 @@
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey56.Y + DataCardKey56.Height + 5
+                    Y: =DataCardKey56_1.Y + DataCardKey56_1.Height + 5
                     ZIndex: =2
 
-            "'FIRST NAME_DataCardOCFP' As typedDataCard.textualEditCard":
+            "'FIRST NAME_DataCardOCFP_1' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="FIRST NAME"
                 Default: =ThisItem.'FIRST NAME'
@@ -155,13 +104,13 @@
                 Height: =89
                 MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "FIRST NAME")
                 Required: =false
-                Update: =txtOCFPFName.Text
+                Update: =txtOCFPFName_1.Text
                 Width: =328
                 X: =0
                 Y: =1
                 ZIndex: =1
 
-                DataCardKey6 As label:
+                DataCardKey6_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -172,9 +121,9 @@
                     Y: =10
                     ZIndex: =1
 
-                txtOCFPFName As text:
+                txtOCFPFName_1 As text:
                     BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    Default: =Parent.Default
+                    Default: =ThisItem.'FIRST NAME'
                     DelayOutput: =true
                     DisplayMode: =Parent.DisplayMode
                     HintText: ="Input First Name"
@@ -187,10 +136,10 @@
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                    Y: =DataCardKey6_1.Y + DataCardKey6_1.Height + 5
                     ZIndex: =2
 
-            "'MIDDLE NAME_DataCardOCFP' As typedDataCard.textualEditCard":
+            "'MIDDLE NAME_DataCardOCFP_1' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="MIDDLE NAME"
                 Default: =ThisItem.'MIDDLE NAME'
@@ -200,13 +149,13 @@
                 Height: =50
                 MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MIDDLE NAME")
                 Required: =false
-                Update: =txtOCFPMName.Text
+                Update: =txtOCFPMName_1.Text
                 Width: =328
                 X: =0
                 Y: =2
                 ZIndex: =1
 
-                DataCardKey9 As label:
+                DataCardKey9_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -217,7 +166,7 @@
                     Y: =10
                     ZIndex: =1
 
-                txtOCFPMName As text:
+                txtOCFPMName_1 As text:
                     BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     Default: =Parent.Default
                     DelayOutput: =true
@@ -232,10 +181,10 @@
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey9.Y + DataCardKey9.Height + 5
+                    Y: =DataCardKey9_1.Y + DataCardKey9_1.Height + 5
                     ZIndex: =2
 
-            "'LAST NAME_DataCardOCFP' As typedDataCard.textualEditCard":
+            "'LAST NAME_DataCardOCFP_1' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="LAST NAME"
                 Default: =ThisItem.'LAST NAME'
@@ -245,13 +194,13 @@
                 Height: =50
                 MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LAST NAME")
                 Required: =false
-                Update: =txtOCFPLName.Text
+                Update: =txtOCFPLName_1.Text
                 Width: =328
                 X: =0
                 Y: =3
                 ZIndex: =1
 
-                DataCardKey10 As label:
+                DataCardKey10_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -262,7 +211,7 @@
                     Y: =10
                     ZIndex: =1
 
-                txtOCFPLName As text:
+                txtOCFPLName_1 As text:
                     BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     Default: =Parent.Default
                     DelayOutput: =true
@@ -277,10 +226,10 @@
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey10.Y + DataCardKey10.Height + 5
+                    Y: =DataCardKey10_1.Y + DataCardKey10_1.Height + 5
                     ZIndex: =2
 
-            "'HIRE DATE_DataCardOCFP' As typedDataCard.dateTimeEditCard":
+            "'HIRE DATE_DataCardOCFP_1' As typedDataCard.dateTimeEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="HIRE DATE"
                 Default: =ThisItem.'HIRE DATE'
@@ -289,13 +238,13 @@
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =dateOCFPHireDate.SelectedDate
+                Update: =dateOCFPHireDate_1.SelectedDate
                 Width: =328
                 X: =0
                 Y: =4
                 ZIndex: =1
 
-                DataCardKey11 As label:
+                DataCardKey11_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -306,7 +255,7 @@
                     Y: =10
                     ZIndex: =1
 
-                dateOCFPHireDate As datepicker:
+                dateOCFPHireDate_1 As datepicker:
                     BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     DisplayMode: =Parent.DisplayMode
                     EndYear: =Year(Today())+100
@@ -317,20 +266,20 @@
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey11.Y + DataCardKey11.Height + 5
+                    Y: =DataCardKey11_1.Y + DataCardKey11_1.Height + 5
                     ZIndex: =2
 
-        formOCFirstPage2 As form:
+        formOCFirstPage2_1 As form:
             DataSource: =Headcount_table
-            DefaultMode: =FormMode.New
             Height: =430
+            Item: =If(!IsBlank(tblSelectedID), LookUp(Headcount_table, 'EMPLOYEE ID'=tblSelectedID))
             NumberOfColumns: =1
             Width: =383
             X: =317
             Y: =108
-            ZIndex: =7
+            ZIndex: =9
 
-            "'BUSINESS UNIT_DataCardOCFP' As typedDataCard.textualEditCard":
+            "'BUSINESS UNIT_DataCardOCFP_1' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="BUSINESS UNIT"
                 Default: =ThisItem.'BUSINESS UNIT'
@@ -346,7 +295,7 @@
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey12_1 As label:
+                DataCardKey12_2 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -357,18 +306,18 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPBusUnit As combobox:
+                cbOCFPBusUnit_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbOCFPBusUnit.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbOCFPBusUnit_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-            "'SUB-UNIT_DataCardOCFP' As typedDataCard.textualEditCard":
+            "'SUB-UNIT_DataCardOCFP_1' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="SUB-UNIT"
                 Default: =ThisItem.'SUB-UNIT'
@@ -384,7 +333,7 @@
                 Y: =1
                 ZIndex: =1
 
-                DataCardKey15_1 As label:
+                DataCardKey15_2 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -395,18 +344,18 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPSubUnit As combobox:
+                cbOCFPSubUnit_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbOCFPSubUnit.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbOCFPSubUnit_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-            POSITION_DataCardOCFP As typedDataCard.textualEditCard:
+            POSITION_DataCardOCFP_1 As typedDataCard.textualEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="POSITION"
                 Default: =ThisItem.POSITION
@@ -422,7 +371,7 @@
                 Y: =2
                 ZIndex: =1
 
-                DataCardKey16_1 As label:
+                DataCardKey16_2 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -433,28 +382,28 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPPosition As combobox:
+                cbOCFPPosition_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, 'POSITION'), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbOCFPPosition.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbOCFPPosition_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-        formOCFirstPage3 As form:
+        formOCFirstPage3_1 As form:
             DataSource: =Headcount_table
-            DefaultMode: =FormMode.New
             Height: =430
+            Item: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
             NumberOfColumns: =1
             Width: =383
             X: =670
             Y: =106
-            ZIndex: =8
+            ZIndex: =10
 
-            CLIENT_DataCardOCFP As typedDataCard.textualEditCard:
+            CLIENT_DataCardOCFP_1 As typedDataCard.textualEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="CLIENT"
                 Default: =ThisItem.CLIENT
@@ -470,7 +419,7 @@
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey33 As label:
+                DataCardKey33_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -481,18 +430,18 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPClient As combobox:
+                cbOCFPClient_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, 'CLIENT'), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbOCFPClient.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbOCFPClient_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-            CAMPAIGN_DataCardOCFP As typedDataCard.textualEditCard:
+            CAMPAIGN_DataCardOCFP_1 As typedDataCard.textualEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="CAMPAIGN"
                 Default: =ThisItem.CAMPAIGN
@@ -508,7 +457,7 @@
                 Y: =1
                 ZIndex: =1
 
-                DataCardKey34 As label:
+                DataCardKey34_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -519,56 +468,18 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPCampaign As combobox:
+                cbOCFPCampaign_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, 'CAMPAIGN'), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value)),cbOCFPCampaign.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value)),cbOCFPCampaign_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-            BILLABILITY_DataCardOCFP As typedDataCard.textualEditCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="BILLABILITY"
-                Default: =ThisItem.BILLABILITY
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "BILLABILITY")
-                Required: =false
-                Update: =
-                Width: =379
-                X: =0
-                Y: =4
-                ZIndex: =1
-
-                DataCardKey48 As label:
-                    AutoHeight: =true
-                    FontWeight: =FontWeight.Bold
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                cbOCFPBillability As combobox:
-                    DisplayFields: =["Value"]
-                    Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
-                    SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbOCFPBillability.SearchText,"Value")
-                    SelectMultiple: =false
-                    Width: =Parent.Width - 60
-                    X: =40
-                    Y: =40
-                    ZIndex: =2
-
-            LOB_DataCardOCFP As typedDataCard.textualEditCard:
+            LOB_DataCardOCFP_1 As typedDataCard.textualEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="LOB"
                 Default: =ThisItem.LOB
@@ -584,7 +495,7 @@
                 Y: =2
                 ZIndex: =1
 
-                DataCardKey46 As label:
+                DataCardKey46_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -595,18 +506,18 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPLOB As combobox:
+                cbOCFPLOB_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, 'LOB'), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOCFPLOB.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOCFPLOB_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-            "'SUB-LOB_DataCardOCFP' As typedDataCard.textualEditCard":
+            "'SUB-LOB_DataCardOCFP_1' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="SUB-LOB"
                 Default: =ThisItem.'SUB-LOB'
@@ -622,7 +533,7 @@
                 Y: =3
                 ZIndex: =1
 
-                DataCardKey35 As label:
+                DataCardKey35_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -633,28 +544,66 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPSubLOB As combobox:
+                cbOCFPSubLOB_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),cbOCFPSubLOB.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),cbOCFPSubLOB_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-        formOCFirstPage4 As form:
+            BILLABILITY_DataCardOCFP_1 As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="BILLABILITY"
+                Default: =ThisItem.BILLABILITY
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "BILLABILITY")
+                Required: =false
+                Update: =
+                Width: =379
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey48_1 As label:
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                cbOCFPBillability_1 As combobox:
+                    DisplayFields: =["Value"]
+                    Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbOCFPBillability_1.SearchText,"Value")
+                    SelectMultiple: =false
+                    Width: =Parent.Width - 60
+                    X: =40
+                    Y: =40
+                    ZIndex: =2
+
+        formOCFirstPage4_1 As form:
             DataSource: =Headcount_table
-            DefaultMode: =FormMode.New
             Height: =430
+            Item: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
             NumberOfColumns: =1
             Width: =383
             X: =1029
             Y: =108
-            ZIndex: =9
+            ZIndex: =11
 
-            TEAM_DataCardOCFP As typedDataCard.textualEditCard:
+            TEAM_DataCardOCFP_1 As typedDataCard.textualEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="TEAM"
                 Default: =ThisItem.TEAM
@@ -670,7 +619,7 @@
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey49 As label:
+                DataCardKey49_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -681,18 +630,18 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPSupervisor As combobox:
+                cbOCFPSupervisor_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbOCFPSupervisor.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbOCFPSupervisor_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-            COUNTRY_DataCardOCFP As typedDataCard.textualEditCard:
+            COUNTRY_DataCardOCFP_1 As typedDataCard.textualEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="COUNTRY"
                 Default: =ThisItem.COUNTRY
@@ -708,7 +657,7 @@
                 Y: =1
                 ZIndex: =1
 
-                DataCardKey53 As label:
+                DataCardKey53_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -719,18 +668,18 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPCountry As combobox:
+                cbOCFPCountry_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),cbOCFPCountry.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),cbOCFPCountry_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-            SITE_DataCardOCFP As typedDataCard.textualEditCard:
+            SITE_DataCardOCFP_1 As typedDataCard.textualEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="SITE"
                 Default: =ThisItem.SITE
@@ -746,7 +695,7 @@
                 Y: =2
                 ZIndex: =1
 
-                DataCardKey54 As label:
+                DataCardKey54_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -757,18 +706,18 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPSite As combobox:
+                cbOCFPSite_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, SITE), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, SITE), !IsBlank(Value)),cbOCFPSite.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, SITE), !IsBlank(Value)),cbOCFPSite_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
 
-            ROLE_DataCardOCFP As typedDataCard.textualEditCard:
+            ROLE_DataCardOCFP_1 As typedDataCard.textualEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="ROLE"
                 Default: =ThisItem.ROLE
@@ -784,7 +733,7 @@
                 Y: =3
                 ZIndex: =1
 
-                DataCardKey55 As label:
+                DataCardKey55_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
@@ -795,43 +744,14 @@
                     Y: =10
                     ZIndex: =1
 
-                cbOCFPRole As combobox:
+                cbOCFPRole_1 As combobox:
                     DisplayFields: =["Value"]
                     Items: =Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value)),cbOCFPRole.SearchText,"Value")
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value)),cbOCFPRole_1.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
-
-    grpOCFPButtons As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =16
-
-        btnOCFPBack As button:
-            Color: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(186, 202, 226, 1)
-            OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
-            Text: ="Back"
-            X: =1030
-            Y: =684
-            ZIndex: =3
-
-        btnOCFPReview As button:
-            Fill: =RGBA(0, 18, 107, 1)
-            OnSelect: |-
-                =If(
-                    IsEmpty(colOmniaCreation),
-                    Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
-                    Navigate(OmniaCreation_SecondPage,ScreenTransition.Cover)
-                )
-            Text: ="Review"
-            X: =1222
-            Y: =684
-            ZIndex: =4
 
