@@ -34,48 +34,6 @@
         Y: =126
         ZIndex: =7
 
-        "'FIRST NAME_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="FIRST NAME"
-            FieldName: ="FIRST NAME"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =2
-            Text: =ThisItem.'FIRST NAME'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =0
-
-        "'MIDDLE NAME_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="MIDDLE NAME"
-            FieldName: ="MIDDLE NAME"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =3
-            Text: =ThisItem.'MIDDLE NAME'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =0
-
-        "'LAST NAME_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="LAST NAME"
-            FieldName: ="LAST NAME"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =4
-            Text: =ThisItem.'LAST NAME'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =0
-
         "'HIRE DATE_Column1' As dataTableColumn.textualColumn":
             DisplayMode: =DisplayMode.Edit
             FieldDisplayName: ="HIRE DATE"
@@ -103,4 +61,46 @@
             X: =0
             Y: =0
             ZIndex: =1
+
+        "'FIRST NAME_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="FIRST NAME"
+            FieldName: ="FIRST NAME"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.'FIRST NAME'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        "'MIDDLE NAME_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="MIDDLE NAME"
+            FieldName: ="MIDDLE NAME"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.'MIDDLE NAME'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        "'LAST NAME_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="LAST NAME"
+            FieldName: ="LAST NAME"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.'LAST NAME'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
 
