@@ -591,7 +591,7 @@
                             SITE:txtLTMultipleSite.Text,
                             'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
                             'SUB UNIT':cbLTMultipleSubUnit.Selected.Value,
-                            POSITION:cbLTMultiplePosition.Selected.Value, 
+                            POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value), 
                             CLIENT:cbLTMultipleClient.Selected.Value, 
                             LOB:cbLTMultipleLOB.Selected.Value,
                             BILLABILITY:cbLTMultipleBillability.Selected.Value, 
