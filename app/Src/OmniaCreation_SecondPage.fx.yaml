@@ -1,0 +1,39 @@
+"OmniaCreation_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    BackgroundImage: ='Untitled design 29'
+    ImagePosition: =ImagePosition.Stretch
+    Width: =1425
+
+    oc2 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =22
+        Text: ="REVIEW OMNIA CREATION FORM"
+        Width: =562
+        Y: =31
+        ZIndex: =5
+
+    grpOCSPButtons As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        btnOCSPBack As button:
+            Color: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(186, 202, 226, 1)
+            OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+            Text: ="Back"
+            X: =1030
+            Y: =684
+            ZIndex: =6
+
+        btnOCSPSubmit As button:
+            Fill: =RGBA(0, 18, 107, 1)
+            Text: ="Submit"
+            X: =1222
+            Y: =684
+            ZIndex: =7
+

@@ -27,23 +27,23 @@
         FontWeight: =FontWeight.Bold
         OnSelect: |-
             =If(
-                (!IsBlank(txtOCFPEmpId.Text) ||
-                    //!IsBlank(txtOCFPFName.Text) ||
-                    //!IsBlank(txtOCFPMName.Text) ||
-                    //!IsBlank(txtOCFPLName.Text) ||
-                    //!IsBlank(dateOCFPHireDate.SelectedDate) ||
-                    //!IsBlank(cbOCFPBusUnit.Selected.Value) ||
-                    ///!IsBlank(cbOCFPSubUnit.Selected.Value) ||
-                    !IsBlank(cbOCFPPosition.Selected.Value) || !IsBlank(cbOCFPPosition.SearchText) ||
-                    //!IsBlank(cbOCFPClient.Selected.Value) ||
-                    //!IsBlank(cbOCFPCampaign.Selected.Value) ||
-                    //!IsBlank(cbOCFPSubLOB.Selected.Value) ||
-                    ///!IsBlank(cbOCFPLOB.Selected.Value) ||
-                    //!IsBlank(cbOCFPBillability.Selected.Value) ||
-                    //!IsBlank(cbOCFPSupervisor.Selected.Value) ||
-                    //!IsBlank(cbOCFPCountry.Selected.Value) ||
-                    //!IsBlank(cbOCFPSite.Selected.Value) ||
-                    //!IsBlank(cbOCFPRole.Selected.Value)
+                (!IsBlank(txtOCFPEmpId.Text) &&
+                    !IsBlank(txtOCFPFName.Text) &&
+                    !IsBlank(txtOCFPMName.Text) &&
+                    !IsBlank(txtOCFPLName.Text) &&
+                    !IsBlank(dateOCFPHireDate.SelectedDate) &&
+                    (!IsBlank(cbOCFPBusUnit.Selected.Value) || !IsBlank(cbOCFPBusUnit.SearchText)) &&
+                    (!IsBlank(cbOCFPSubUnit.Selected.Value) || !IsBlank(cbOCFPSubUnit.SearchText)) &&
+                    (!IsBlank(cbOCFPPosition.Selected.Value) || !IsBlank(cbOCFPPosition.SearchText)) &&
+                    (!IsBlank(cbOCFPClient.Selected.Value) || !IsBlank(cbOCFPClient.SearchText)) &&
+                    (!IsBlank(cbOCFPCampaign.Selected.Value) || !IsBlank(cbOCFPCampaign.SearchText)) &&
+                    (!IsBlank(cbOCFPSubLOB.Selected.Value) || !IsBlank(cbOCFPSubLOB.SearchText)) &&
+                    (!IsBlank(cbOCFPLOB.Selected.Value) || !IsBlank(cbOCFPLOB.SearchText)) &&
+                    (!IsBlank(cbOCFPBillability.Selected.Value) || !IsBlank(cbOCFPBillability.SearchText)) &&
+                    (!IsBlank(cbOCFPSupervisor.Selected.Value) || !IsBlank(cbOCFPSupervisor.SearchText)) &&
+                    (!IsBlank(cbOCFPCountry.Selected.Value) || !IsBlank(cbOCFPCountry.SearchText)) &&
+                    (!IsBlank(cbOCFPSite.Selected.Value) || !IsBlank(cbOCFPSite.SearchText)) &&
+                    (!IsBlank(cbOCFPRole.Selected.Value) || !IsBlank(cbOCFPRole.SearchText)) 
                 ),
                 If(
                     CountRows(
@@ -815,9 +815,9 @@
             Y: =684
             ZIndex: =3
 
-        btnProceed As button:
+        btnOCFPReview As button:
             Fill: =RGBA(0, 18, 107, 1)
-            Text: ="Review"
+            Text: ="Submit"
             X: =1222
             Y: =684
             ZIndex: =4
