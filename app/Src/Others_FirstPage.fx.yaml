@@ -216,8 +216,8 @@
                 PaddingTop: =0
                 Text: =ThisItem.'EMPLOYEE ID'
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey24_1.X + DataCardKey24_1.Width
-                Y: =10
+                X: =302.8
+                Y: =20
                 ZIndex: =2
 
         "'BUSINESS UNIT_OTDataCard' As typedDataCard.allowedValuesStringEditCard":
@@ -281,7 +281,7 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10
+                Y: =13
                 ZIndex: =1
 
             txtOTSite As label:
@@ -293,8 +293,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey47_2.X + DataCardKey47_2.Width
-                Y: =10
+                X: =302.8
+                Y: =20
                 ZIndex: =2
 
         "'SUB-UNIT_OTDataCard' As typedDataCard.allowedValuesStringEditCard":

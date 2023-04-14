@@ -92,7 +92,7 @@
             =If(
                 !IsEmpty(colOthers),
                 If(
-                    SendEmailforOtherRosterUpdateTicketCreation.Run(JSON(colOthers)),
+                    SubmitOtherRosterUpdate.Run(JSON(colOthers)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(cbOTSearchLOB) &&
