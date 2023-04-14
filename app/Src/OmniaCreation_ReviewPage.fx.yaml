@@ -23,84 +23,9 @@
         Y: =684
         ZIndex: =6
 
-    DataTable1 As dataTable.datatable:
-        BorderStyle: =BorderStyle.Solid
-        DisplayMode: =DisplayMode.Edit
-        Fill: =RGBA(0, 0, 0, 0)
-        Height: =500
-        Items: =colOmniaCreation
-        Width: =1340
-        X: =42
-        Y: =126
+    Label5 As label:
+        Text: =""
+        X: =84
+        Y: =150
         ZIndex: =7
-
-        "'HIRE DATE_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="HIRE DATE"
-            FieldName: ="HIRE DATE"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =5
-            Text: =ThisItem.'HIRE DATE'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =0
-
-        "'EMPLOYEE ID_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="EMPLOYEE ID"
-            FieldName: ="EMPLOYEE ID"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =1
-            Text: =ThisItem.'EMPLOYEE ID'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =1
-
-        "'FIRST NAME_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="FIRST NAME"
-            FieldName: ="FIRST NAME"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =2
-            Text: =ThisItem.'FIRST NAME'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =2
-
-        "'MIDDLE NAME_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="MIDDLE NAME"
-            FieldName: ="MIDDLE NAME"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =3
-            Text: =ThisItem.'MIDDLE NAME'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =3
-
-        "'LAST NAME_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="LAST NAME"
-            FieldName: ="LAST NAME"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =4
-            Text: =ThisItem.'LAST NAME'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =4
 

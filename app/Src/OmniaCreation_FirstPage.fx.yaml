@@ -523,82 +523,6 @@
                 Y: =40
                 ZIndex: =2
 
-        "'SUB-LOB_DataCardOCFP' As typedDataCard.textualEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="SUB-LOB"
-            Default: =ThisItem.'SUB-LOB'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-LOB")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "SUB-LOB")
-            Required: =false
-            Update: =
-            Width: =379
-            X: =0
-            Y: =2
-            ZIndex: =1
-
-            DataCardKey35 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            cbOCFPSubLOB As combobox:
-                DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value))
-                SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),cbOCFPSubLOB.SearchText,"Value")
-                SelectMultiple: =false
-                Width: =Parent.Width - 60
-                X: =40
-                Y: =40
-                ZIndex: =2
-
-        LOB_DataCardOCFP As typedDataCard.textualEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="LOB"
-            Default: =ThisItem.LOB
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
-            Required: =false
-            Update: =
-            Width: =379
-            X: =0
-            Y: =3
-            ZIndex: =1
-
-            DataCardKey46 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            cbOCFPLOB As combobox:
-                DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, 'LOB'), !IsBlank(Value))
-                SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOCFPLOB.SearchText,"Value")
-                SelectMultiple: =false
-                Width: =Parent.Width - 60
-                X: =40
-                Y: =40
-                ZIndex: =2
-
         BILLABILITY_DataCardOCFP As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
@@ -631,6 +555,82 @@
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbOCFPBillability.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =Parent.Width - 60
+                X: =40
+                Y: =40
+                ZIndex: =2
+
+        LOB_DataCardOCFP As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
+            Required: =false
+            Update: =
+            Width: =379
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey46 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            cbOCFPLOB As combobox:
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, 'LOB'), !IsBlank(Value))
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOCFPLOB.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =Parent.Width - 60
+                X: =40
+                Y: =40
+                ZIndex: =2
+
+        "'SUB-LOB_DataCardOCFP' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SUB-LOB"
+            Default: =ThisItem.'SUB-LOB'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "SUB-LOB")
+            Required: =false
+            Update: =
+            Width: =379
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey35 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            cbOCFPSubLOB As combobox:
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value))
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),cbOCFPSubLOB.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =Parent.Width - 60
                 X: =40
@@ -817,7 +817,13 @@
 
         btnOCFPReview As button:
             Fill: =RGBA(0, 18, 107, 1)
-            Text: ="Submit"
+            OnSelect: |-
+                =If(
+                    IsEmpty(colOmniaCreation),
+                    Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
+                    Navigate(OmniaCreation_SecondPage,ScreenTransition.Cover)
+                )
+            Text: ="Review"
             X: =1222
             Y: =684
             ZIndex: =4
