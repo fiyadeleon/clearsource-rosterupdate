@@ -270,9 +270,9 @@
                     ZIndex: =2
 
         formOCFirstPage2_1 As form:
-            DataSource: =Headcount_table
+            DataSource: =colOmniaCreation
             Height: =430
-            Item: =If(!IsBlank(tblSelectedID), LookUp(Headcount_table, 'EMPLOYEE ID'=tblSelectedID))
+            Item: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, empVar=tblSelectedID))
             NumberOfColumns: =1
             Width: =383
             X: =317
@@ -307,10 +307,12 @@
                     ZIndex: =1
 
                 cbOCFPBusUnit_1 As combobox:
+                    DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, empVar=tblSelectedID),'BUSINESS UNIT'))
                     DisplayFields: =["Value"]
+                    IsSearchable: =false
                     Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbOCFPBusUnit_1.SearchText,"Value")
+                    SearchItems: =[]
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
@@ -320,7 +322,7 @@
             "'SUB-UNIT_DataCardOCFP_1' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="SUB-UNIT"
-                Default: =ThisItem.'SUB-UNIT'
+                Default: =
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
                 Fill: =RGBA(0, 0, 0, 0)

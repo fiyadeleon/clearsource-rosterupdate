@@ -310,6 +310,7 @@
             HoverFill: =ColorFade(Self.Fill, -15%)
             OnSelect: |-
                 =Set(tblSelectedID, tblOCSP.Selected.'EMPLOYEE ID') &&
+                Set(empVar, "EMPLOYEE ID") &&
                 Navigate(OmniaCreation_EditPage)
             Text: ="Edit"
             X: =536
