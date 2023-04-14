@@ -1,0 +1,138 @@
+"OmniaCreation_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    BackgroundImage: ='Untitled design 29'
+    ImagePosition: =ImagePosition.Stretch
+
+    oc1 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =22
+        Text: ="OMNIA CREATION FORM"
+        Width: =445
+        Y: =39
+        ZIndex: =1
+
+    grpOCSearchLOB As group:
+        Height: =5
+        Width: =5
+        X: =-232
+        Y: =60
+        ZIndex: =4
+
+        txtOCSearchLOB As label:
+            Align: =Align.Right
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="LINE OF BUSINESS"
+            Width: =165
+            X: =46
+            Y: =136
+            ZIndex: =2
+
+        cbOCSearchLOB As combobox:
+            ChevronBackground: =RGBA(0, 18, 107, 1)
+            DisplayFields: =["Value"]
+            Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+            OnChange: |-
+                =Set(SelectedItemID, "") &&
+                Reset(cbLTSearchMultipleOmnia);
+                Clear(colLateralTransfer)
+            OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
+            SearchFields: =["Value"]
+            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOCSearchLOB.SearchText,"Value")
+            SelectMultiple: =false
+            Width: =300
+            X: =227
+            Y: =136
+            ZIndex: =3
+
+    grpOCInputFName As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+        OCInputFName As label:
+            Align: =Align.Right
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="FIRST NAME"
+            Width: =165
+            X: =46
+            Y: =196
+            ZIndex: =4
+
+        txtOCInputFName As text:
+            Default: ="Text input"
+            Width: =300
+            X: =227
+            Y: =196
+            ZIndex: =5
+
+    grpOCInputMName As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =8
+
+        OCInputMName As label:
+            Align: =Align.Right
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="MIDDLE NAME"
+            Width: =165
+            X: =46
+            Y: =256
+            ZIndex: =6
+
+        txtOCInputMName As text:
+            Default: ="Text input"
+            Width: =300
+            X: =227
+            Y: =256
+            ZIndex: =7
+
+    OCInputLName_1 As label:
+        Align: =Align.Right
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Text: ="HIRE DATE"
+        Width: =165
+        X: =46
+        Y: =376
+        ZIndex: =10
+
+    grpOCInputLName As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =10
+
+        OCInputLName As label:
+            Align: =Align.Right
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="LAST NAME"
+            Width: =165
+            X: =46
+            Y: =316
+            ZIndex: =8
+
+        txtOCInputLName As text:
+            Default: ="Text input"
+            Width: =300
+            X: =227
+            Y: =316
+            ZIndex: =9
+
+    DatePicker2 As datepicker:
+        Color: =RGBA(0, 18, 107, 1)
+        Width: =300
+        X: =227
+        Y: =376
+        ZIndex: =11
+
