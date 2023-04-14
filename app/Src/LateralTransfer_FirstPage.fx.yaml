@@ -596,7 +596,8 @@
                             LOB:cbLTMultipleLOB.Selected.Value,
                             BILLABILITY:cbLTMultipleBillability.Selected.Value, 
                             SCHEDULE:txtLTMultipleSchedule.Text, 
-                            SUPERVISOR:cbLTMultipleSupervisor.Selected.Value
+                            SUPERVISOR:cbLTMultipleSupervisor.Selected.Value,
+                            'SUBMITTED BY':User().Email
                         }
                     );
                     Notify("Successfully saved your changes locally.", NotificationType.Success)

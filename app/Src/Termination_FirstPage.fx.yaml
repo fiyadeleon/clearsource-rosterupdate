@@ -653,7 +653,8 @@ Termination_FirstPage As screen:
                             'EFFECTIVITY DATE': effectivityDate_input.SelectedDate, 
                             'LAST WORKING DATE': lastDate_input.SelectedDate,
                             'CURRENT ADDRESS': address_input.Text,
-                            COMMENT: comment_input.Text
+                            COMMENT: comment_input.Text,
+                            'SUBMITTED BY':User().Email
                         });
                         Notify("Successfully saved your changes locally.", NotificationType.Success),
                         Set(ttype, 0),

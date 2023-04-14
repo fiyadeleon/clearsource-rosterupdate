@@ -792,7 +792,8 @@
                                 LOB:cbOTSearchLOB.Selected.Value,
                                 BILLABILITY:cbOTBillability.Selected.Value, 
                                 SCHEDULE:txtOTSchedule.Text, 
-                                SUPERVISOR:cbOTSupervisor.Selected.Value
+                                SUPERVISOR:cbOTSupervisor.Selected.Value,
+                                'SUBMITTED BY':User().Email
                             }
                         );
                         Notify("Successfully saved your changes locally.", NotificationType.Success)

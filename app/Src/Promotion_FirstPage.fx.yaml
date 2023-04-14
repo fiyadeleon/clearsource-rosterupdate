@@ -609,7 +609,8 @@
                             BILLABILITY: cbPRMultipleBillability_1.Selected.Value,
                             SCHEDULE: txtPRMultipleSchedule_1.Text,
                             SUPERVISOR: cbPRMultipleSupervisor_1.Selected.Value,
-                            'EMPLOYEE ID': txtPRMultipleIdpm1_1.Text
+                            'EMPLOYEE ID': txtPRMultipleIdpm1_1.Text,
+                            'SUBMITTED BY':User().Email
                         });
                         Notify("Successfully saved your changes locally.", NotificationType.Success)
                     )
