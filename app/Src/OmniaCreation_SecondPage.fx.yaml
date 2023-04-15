@@ -21,6 +21,7 @@
         Fill: =RGBA(0, 0, 0, 0)
         Height: =497
         Items: =colOmniaCreation
+        SelectedFill: =RGBA(172, 223, 135, 1)
         Width: =1340
         X: =42
         Y: =159
@@ -32,7 +33,7 @@
             FieldName: ="EMPLOYEE ID"
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
-            IsHyperlink: =true
+            IsHyperlink: =false
             LayoutHeight: =Parent.Height
             OnSelect: =Navigate(OmniaCreation_EditPage)
             Order: =1
@@ -120,7 +121,7 @@
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =7
-            Text: =ThisItem.'SUB-UNIT'
+            Text: =ThisItem.'SUB UNIT'
             Width: =100
             X: =0
             Y: =0
@@ -277,7 +278,7 @@
         btnOCSPBack As button:
             Color: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(186, 202, 226, 1)
-            OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+            OnSelect: =Navigate(OmniaCreation_FirstPage,ScreenTransition.Cover)
             Text: ="Back"
             X: =1030
             Y: =684
