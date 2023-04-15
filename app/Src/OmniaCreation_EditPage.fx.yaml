@@ -571,7 +571,7 @@
                 ZIndex: =7
 
             txtOCEPEmpId As text:
-                Default: ="Text input"
+                Default: =ThisItem.ID
                 HintText: ="e.g., CSPH12345"
                 OnSelect: =Select(Parent)
                 Width: =268
@@ -579,14 +579,14 @@
                 Y: =48
                 ZIndex: =41
 
-        grpOCEPHireDate_1 As group:
+        grpOCEPRegDate As group:
             Height: =5
             Width: =5
             X: =23
             Y: =-338
             ZIndex: =44
 
-            dateOCEPHireDate_1 As datepicker:
+            dateOCEPRegDate As datepicker:
                 DefaultDate: =ThisItem.'REGULARIZATION DATE'
                 OnSelect: =Select(Parent)
                 Width: =268
@@ -617,69 +617,68 @@
             OnSelect: =Navigate(OmniaCreation_SecondPage,ScreenTransition.Cover)
             Text: ="Back"
             X: =1030
-            Y: =684
+            Y: =698
             ZIndex: =8
 
         btnOCEPUpdate As button:
             Fill: =RGBA(0, 18, 107, 1)
             OnSelect: |-
                 =If(
-                    (!IsBlank(txtOCFPEmpId.Text) &&
-                        !IsBlank(txtOCFPFName.Text) &&
-                        !IsBlank(txtOCFPMName.Text) &&
-                        !IsBlank(txtOCFPLName.Text) &&
-                        !IsBlank(dateOCFPHireDate.SelectedDate) &&
-                        (!IsBlank(cbOCFPBusUnit.Selected.Value) || !IsBlank(cbOCFPBusUnit.SearchText)) &&
-                        (!IsBlank(cbOCFPSubUnit.Selected.Value) || !IsBlank(cbOCFPSubUnit.SearchText)) &&
-                        (!IsBlank(cbOCFPPosition.Selected.Value) || !IsBlank(cbOCFPPosition.SearchText)) &&
-                        (!IsBlank(cbOCFPClient.Selected.Value) || !IsBlank(cbOCFPClient.SearchText)) &&
-                        (!IsBlank(cbOCFPCampaign.Selected.Value) || !IsBlank(cbOCFPCampaign.SearchText)) &&
-                        (!IsBlank(cbOCFPSubLOB.Selected.Value) || !IsBlank(cbOCFPSubLOB.SearchText)) &&
-                        (!IsBlank(cbOCFPLOB.Selected.Value) || !IsBlank(cbOCFPLOB.SearchText)) &&
-                        (!IsBlank(cbOCFPBillability.Selected.Value) || !IsBlank(cbOCFPBillability.SearchText)) &&
-                        (!IsBlank(cbOCFPSupervisor.Selected.Value) || !IsBlank(cbOCFPSupervisor.SearchText)) &&
-                        (!IsBlank(cbOCFPCountry.Selected.Value) || !IsBlank(cbOCFPCountry.SearchText)) &&
-                        (!IsBlank(cbOCFPSite.Selected.Value) || !IsBlank(cbOCFPSite.SearchText)) &&
-                        (!IsBlank(cbOCFPRole.Selected.Value) || !IsBlank(cbOCFPRole.SearchText)) 
+                    (!IsBlank(txtOCEPEmpId.Text) &&
+                        !IsBlank(txtOCEPFName.Text) &&
+                        !IsBlank(txtOCEPLName.Text) &&
+                        !IsBlank(dateOCEPHireDate.SelectedDate) &&
+                        (!IsBlank(cbOCEPBusUnit.Selected.Value) || !IsBlank(cbOCEPBusUnit.SearchText)) &&
+                        (!IsBlank(cbOCEPSubUnit.Selected.Value) || !IsBlank(cbOCEPSubUnit.SearchText)) &&
+                        (!IsBlank(cbOCEPPosition.Selected.Value) || !IsBlank(cbOCEPPosition.SearchText)) &&
+                        (!IsBlank(cbOCEPClient.Selected.Value) || !IsBlank(cbOCEPClient.SearchText)) &&
+                        (!IsBlank(cbOCEPCampaign.Selected.Value) || !IsBlank(cbOCEPCampaign.SearchText)) &&
+                        (!IsBlank(cbOCEPSubLOB.Selected.Value) || !IsBlank(cbOCEPSubLOB.SearchText)) &&
+                        (!IsBlank(cbOCEPLOB.Selected.Value) || !IsBlank(cbOCEPLOB.SearchText)) &&
+                        (!IsBlank(cbOCEPBillability.Selected.Value) || !IsBlank(cbOCEPBillability.SearchText)) &&
+                        (!IsBlank(cbOCEPSupervisor.Selected.Value) || !IsBlank(cbOCEPSupervisor.SearchText)) &&
+                        (!IsBlank(cbOCEPCountry.Selected.Value) || !IsBlank(cbOCEPCountry.SearchText)) &&
+                        (!IsBlank(cbOCEPSite.Selected.Value) || !IsBlank(cbOCEPSite.SearchText)) &&
+                        (!IsBlank(cbOCEPRole.Selected.Value) || !IsBlank(cbOCEPRole.SearchText)) 
                     ),
                     If(
                         CountRows(
-                            Filter(colOmniaCreation,'EMPLOYEE ID'=txtOCFPEmpId.Text)
+                            Filter(colOmniaCreation,'EMPLOYEE ID'=txtOCEPEmpId.Text)
                         ) > 0, 
-                        Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCFPEmpId.Text)
+                        Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)
                     ));
                     Collect(colOmniaCreation, {
-                            'EMPLOYEE ID':txtOCFPEmpId.Text,
-                            ID:txtOCFPEmpId.Text,
-                            'FIRST NAME':txtOCFPFName.Text,
-                            'MIDDLE NAME':txtOCFPMName.Text,
-                            'LAST NAME':txtOCFPLName.Text,
-                            'HIRE DATE':dateOCFPHireDate.SelectedDate,
+                            'EMPLOYEE ID':txtOCEPEmpId.Text,
+                            ID:txtOCEPEmpId.Text,
+                            'FIRST NAME':txtOCEPFName.Text,
+                            'MIDDLE NAME':If(IsBlank(txtOCEPMName.Text), "N/A", txtOCEPMName.Text),
+                            'LAST NAME':txtOCEPLName.Text,
+                            'HIRE DATE':dateOCEPHireDate.SelectedDate,
                             STATUS:"ACTIVE",
-                            'REGULARIZATION DATE':Text(DateAdd(dateOCFPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
-                            'BUSINESS UNIT':If(IsBlank(cbOCFPBusUnit.Selected.Value), cbOCFPBusUnit.SearchText, cbOCFPBusUnit.Selected.Value), 
-                            'SUB-UNIT':If(IsBlank(cbOCFPSubUnit.Selected.Value), cbOCFPSubUnit.SearchText, cbOCFPSubUnit.Selected.Value),
-                            'SUB UNIT':If(IsBlank(cbOCFPSubUnit.Selected.Value), cbOCFPSubUnit.SearchText, cbOCFPSubUnit.Selected.Value),
-                            POSITION:If(IsBlank(cbOCFPPosition.Selected.Value), cbOCFPPosition.SearchText, cbOCFPPosition.Selected.Value), 
+                            'REGULARIZATION DATE':Text(DateAdd(dateOCEPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
+                            'BUSINESS UNIT':If(IsBlank(cbOCEPBusUnit.Selected.Value), cbOCEPBusUnit.SearchText, cbOCEPBusUnit.Selected.Value), 
+                            'SUB-UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
+                            'SUB UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
+                            POSITION:If(IsBlank(cbOCEPPosition.Selected.Value), cbOCEPPosition.SearchText, cbOCEPPosition.Selected.Value), 
                             'EMPLOYMENT STATUS':"Probationary",
-                            CLIENT:If(IsBlank(cbOCFPClient.Selected.Value), cbOCFPClient.SearchText, cbOCFPClient.Selected.Value),
-                            CAMPAIGN:If(IsBlank(cbOCFPCampaign.Selected.Value), cbOCFPCampaign.SearchText, cbOCFPCampaign.Selected.Value),
-                            'SUB-LOB':If(IsBlank(cbOCFPSubLOB.Selected.Value), cbOCFPSubLOB.SearchText, cbOCFPSubLOB.Selected.Value),
-                            LOB:If(IsBlank(cbOCFPLOB.Selected.Value), cbOCFPLOB.SearchText, cbOCFPLOB.Selected.Value),
-                            BILLABILITY:If(IsBlank(cbOCFPBillability.Selected.Value), cbOCFPBillability.SearchText, cbOCFPBillability.Selected.Value),
-                            SUPERVISOR:If(IsBlank(cbOCFPSupervisor.Selected.Value), cbOCFPSupervisor.SearchText, cbOCFPSupervisor.Selected.Value),
-                            COUNTRY:If(IsBlank(cbOCFPCountry.Selected.Value), cbOCFPCountry.SearchText, cbOCFPCountry.Selected.Value),
-                            SITE:If(IsBlank(cbOCFPSite.Selected.Value), cbOCFPSite.SearchText, cbOCFPSite.Selected.Value), 
-                            ROLE:If(IsBlank(cbOCFPRole.Selected.Value), cbOCFPRole.SearchText, cbOCFPRole.Selected.Value),
+                            CLIENT:If(IsBlank(cbOCEPClient.Selected.Value), cbOCEPClient.SearchText, cbOCEPClient.Selected.Value),
+                            CAMPAIGN:If(IsBlank(cbOCEPCampaign.Selected.Value), cbOCEPCampaign.SearchText, cbOCEPCampaign.Selected.Value),
+                            'SUB-LOB':If(IsBlank(cbOCEPSubLOB.Selected.Value), cbOCEPSubLOB.SearchText, cbOCEPSubLOB.Selected.Value),
+                            LOB:If(IsBlank(cbOCEPLOB.Selected.Value), cbOCEPLOB.SearchText, cbOCEPLOB.Selected.Value),
+                            BILLABILITY:If(IsBlank(cbOCEPBillability.Selected.Value), cbOCEPBillability.SearchText, cbOCEPBillability.Selected.Value),
+                            SUPERVISOR:If(IsBlank(cbOCEPSupervisor.Selected.Value), cbOCEPSupervisor.SearchText, cbOCEPSupervisor.Selected.Value),
+                            COUNTRY:If(IsBlank(cbOCEPCountry.Selected.Value), cbOCEPCountry.SearchText, cbOCEPCountry.Selected.Value),
+                            SITE:If(IsBlank(cbOCEPSite.Selected.Value), cbOCEPSite.SearchText, cbOCEPSite.Selected.Value), 
+                            ROLE:If(IsBlank(cbOCEPRole.Selected.Value), cbOCEPRole.SearchText, cbOCEPRole.Selected.Value),
                             'SUBMITTED BY':User().Email
                         }
                     );
-                    Notify("Successfully saved your changes locally.", NotificationType.Success) &&
+                    Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success) &&
                     Navigate(OmniaCreation_SecondPage),
                     Notify("Please fill out all fields!", NotificationType.Error)
                 )
             Text: ="Update"
             X: =1222
-            Y: =684
+            Y: =698
             ZIndex: =9
 

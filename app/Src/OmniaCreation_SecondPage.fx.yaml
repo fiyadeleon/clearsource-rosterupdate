@@ -301,6 +301,7 @@
         btnOCSPRemove As button:
             Fill: =RGBA(255, 0, 0, 1)
             HoverFill: =ColorFade(RGBA(254, 127, 124, 0.8), -20%)
+            OnSelect: =Remove(colOmniaCreation, LookUp(colOmniaCreation, ID=tblSelectedID))
             Text: ="Remove"
             X: =727
             Y: =98

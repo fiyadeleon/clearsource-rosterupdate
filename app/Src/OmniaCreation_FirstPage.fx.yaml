@@ -20,7 +20,6 @@
             =If(
                 (!IsBlank(txtOCFPEmpId.Text) &&
                     !IsBlank(txtOCFPFName.Text) &&
-                    !IsBlank(txtOCFPMName.Text) &&
                     !IsBlank(txtOCFPLName.Text) &&
                     !IsBlank(dateOCFPHireDate.SelectedDate) &&
                     (!IsBlank(cbOCFPBusUnit.Selected.Value) || !IsBlank(cbOCFPBusUnit.SearchText)) &&
@@ -46,7 +45,7 @@
                         'EMPLOYEE ID':txtOCFPEmpId.Text,
                         ID:txtOCFPEmpId.Text,
                         'FIRST NAME':txtOCFPFName.Text,
-                        'MIDDLE NAME':txtOCFPMName.Text,
+                        'MIDDLE NAME':If(IsBlank(txtOCFPMName.Text), "N/A", txtOCFPMName.Text),
                         'LAST NAME':txtOCFPLName.Text,
                         'HIRE DATE':dateOCFPHireDate.SelectedDate,
                         STATUS:"ACTIVE",
