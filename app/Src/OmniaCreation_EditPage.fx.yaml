@@ -553,7 +553,7 @@
                 Y: =284
                 ZIndex: =37
 
-        grpOCEPEmpI As group:
+        grpOCEPEmpId As group:
             Height: =5
             Width: =5
             X: =60
@@ -578,31 +578,6 @@
                 X: =17
                 Y: =48
                 ZIndex: =41
-
-        grpOCEPRegDate As group:
-            Height: =5
-            Width: =5
-            X: =23
-            Y: =-338
-            ZIndex: =44
-
-            dateOCEPRegDate As datepicker:
-                DefaultDate: =ThisItem.'REGULARIZATION DATE'
-                OnSelect: =Select(Parent)
-                Width: =268
-                X: =17
-                Y: =510
-                ZIndex: =42
-
-            Label5_19 As label:
-                Color: =RGBA(0, 18, 107, 1)
-                FontWeight: =FontWeight.Bold
-                OnSelect: =Select(Parent)
-                Text: ="REGULARIZATION DATE"
-                Width: =320
-                X: =17
-                Y: =470
-                ZIndex: =43
 
     grpOCEPButtons As group:
         Height: =5
@@ -654,13 +629,13 @@
                             'MIDDLE NAME':If(IsBlank(txtOCEPMName.Text), "N/A", txtOCEPMName.Text),
                             'LAST NAME':txtOCEPLName.Text,
                             'HIRE DATE':dateOCEPHireDate.SelectedDate,
-                            STATUS:"ACTIVE",
+                            STATUS:If(IsBlank(cbOCEPStatus.Selected.Value), cbOCEPStatus.SearchText, cbOCEPStatus.Selected.Value), 
                             'REGULARIZATION DATE':Text(DateAdd(dateOCEPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
                             'BUSINESS UNIT':If(IsBlank(cbOCEPBusUnit.Selected.Value), cbOCEPBusUnit.SearchText, cbOCEPBusUnit.Selected.Value), 
                             'SUB-UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
                             'SUB UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
                             POSITION:If(IsBlank(cbOCEPPosition.Selected.Value), cbOCEPPosition.SearchText, cbOCEPPosition.Selected.Value), 
-                            'EMPLOYMENT STATUS':"Probationary",
+                            'EMPLOYMENT STATUS':If(IsBlank(cbOCEPEmpStatus.Selected.Value), cbOCEPEmpStatus.SearchText, cbOCEPEmpStatus.Selected.Value),
                             CLIENT:If(IsBlank(cbOCEPClient.Selected.Value), cbOCEPClient.SearchText, cbOCEPClient.Selected.Value),
                             CAMPAIGN:If(IsBlank(cbOCEPCampaign.Selected.Value), cbOCEPCampaign.SearchText, cbOCEPCampaign.Selected.Value),
                             'SUB-LOB':If(IsBlank(cbOCEPSubLOB.Selected.Value), cbOCEPSubLOB.SearchText, cbOCEPSubLOB.Selected.Value),
