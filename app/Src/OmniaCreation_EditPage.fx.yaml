@@ -17,14 +17,15 @@
     galOCEP As gallery.galleryHorizontal:
         BorderThickness: =1
         DelayItemLoading: =true
+        Height: =497
         Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, ID=tblSelectedID))
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
         TemplatePadding: =3
         TemplateSize: =1383
         Width: =1390
-        X: =19
-        Y: =103
+        X: =17
+        Y: =143
         ZIndex: =7
 
         grpOCEPFName As group:
@@ -592,7 +593,7 @@
             OnSelect: =Navigate(OmniaCreation_SecondPage,ScreenTransition.Cover)
             Text: ="Back"
             X: =1030
-            Y: =698
+            Y: =685
             ZIndex: =8
 
         btnOCEPUpdate As button:
@@ -654,6 +655,6 @@
                 )
             Text: ="Update"
             X: =1222
-            Y: =698
+            Y: =685
             ZIndex: =9
 
