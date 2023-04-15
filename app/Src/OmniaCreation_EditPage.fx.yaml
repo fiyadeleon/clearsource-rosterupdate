@@ -18,7 +18,7 @@
         BorderThickness: =1
         DelayItemLoading: =true
         Height: =497
-        Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, ID=tblSelectedID))
+        Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
         TemplatePadding: =3
@@ -152,7 +152,7 @@
                 ZIndex: =20
 
             cbOCEPStatus As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),STATUS))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),STATUS))
                 DisplayFields: =["Value"]
                 Items: =["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"]
                 OnSelect: =Select(Parent)
@@ -172,7 +172,7 @@
             ZIndex: =22
 
             cbOCEPBusUnit As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'BUSINESS UNIT'))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -202,7 +202,7 @@
             ZIndex: =22
 
             cbOCEPSubUnit As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'SUB-UNIT'))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -232,7 +232,7 @@
             ZIndex: =22
 
             cbOCEPPosition As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),POSITION))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),POSITION))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -262,7 +262,7 @@
             ZIndex: =22
 
             cbOCEPEmpStatus As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'EMPLOYMENT STATUS'))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'EMPLOYMENT STATUS'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'EMPLOYMENT STATUS'), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -292,7 +292,7 @@
             ZIndex: =30
 
             cbOCEPClient As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),CLIENT))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),CLIENT))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -322,7 +322,7 @@
             ZIndex: =31
 
             cbOCEPCampaign As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),CAMPAIGN))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),CAMPAIGN))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -352,7 +352,7 @@
             ZIndex: =32
 
             cbOCEPLOB As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),LOB))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),LOB))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -382,7 +382,7 @@
             ZIndex: =33
 
             cbOCEPSubLOB As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'SUB-LOB'))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'SUB-LOB'))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -412,7 +412,7 @@
             ZIndex: =38
 
             cbOCEPSupervisor As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),SUPERVISOR))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SUPERVISOR))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -442,7 +442,7 @@
             ZIndex: =39
 
             cbOCEPCountry As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),COUNTRY))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),COUNTRY))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -472,7 +472,7 @@
             ZIndex: =40
 
             cbOCEPSite As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),SITE))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SITE))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, SITE), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -502,7 +502,7 @@
             ZIndex: =40
 
             cbOCEPBillability As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),BILLABILITY))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),BILLABILITY))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -532,7 +532,7 @@
             ZIndex: =41
 
             cbOCEPRole As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),ROLE))
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),ROLE))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value))
                 OnSelect: =Select(Parent)
@@ -572,7 +572,7 @@
                 ZIndex: =7
 
             txtOCEPEmpId As text:
-                Default: =ThisItem.ID
+                Default: =ThisItem.'EMPLOYEE ID'
                 HintText: ="e.g., CSPH12345"
                 OnSelect: =Select(Parent)
                 Width: =268
@@ -623,37 +623,33 @@
                         CountRows(
                             Filter(colOmniaCreation,'EMPLOYEE ID'=txtOCEPEmpId.Text)
                         ) > 0, 
-                        Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)
-                    ));
-                    Collect(colOmniaCreation, {
-                            'EMPLOYEE ID':txtOCEPEmpId.Text,
-                            ID:txtOCEPEmpId.Text,
-                            'FIRST NAME':txtOCEPFName.Text,
-                            'MIDDLE NAME':If(IsBlank(txtOCEPMName.Text), "N/A", txtOCEPMName.Text),
-                            'LAST NAME':txtOCEPLName.Text,
-                            'HIRE DATE':dateOCEPHireDate.SelectedDate,
-                            STATUS:If(IsBlank(cbOCEPStatus.Selected.Value), cbOCEPStatus.SearchText, cbOCEPStatus.Selected.Value), 
-                            'REGULARIZATION DATE':Text(DateAdd(dateOCEPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
-                            'BUSINESS UNIT':If(IsBlank(cbOCEPBusUnit.Selected.Value), cbOCEPBusUnit.SearchText, cbOCEPBusUnit.Selected.Value), 
-                            'SUB-UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
-                            'SUB UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
-                            POSITION:If(IsBlank(cbOCEPPosition.Selected.Value), cbOCEPPosition.SearchText, cbOCEPPosition.Selected.Value), 
-                            'EMPLOYMENT STATUS':If(IsBlank(cbOCEPEmpStatus.Selected.Value), cbOCEPEmpStatus.SearchText, cbOCEPEmpStatus.Selected.Value),
-                            CLIENT:If(IsBlank(cbOCEPClient.Selected.Value), cbOCEPClient.SearchText, cbOCEPClient.Selected.Value),
-                            CAMPAIGN:If(IsBlank(cbOCEPCampaign.Selected.Value), cbOCEPCampaign.SearchText, cbOCEPCampaign.Selected.Value),
-                            'SUB-LOB':If(IsBlank(cbOCEPSubLOB.Selected.Value), cbOCEPSubLOB.SearchText, cbOCEPSubLOB.Selected.Value),
-                            LOB:If(IsBlank(cbOCEPLOB.Selected.Value), cbOCEPLOB.SearchText, cbOCEPLOB.Selected.Value),
-                            BILLABILITY:If(IsBlank(cbOCEPBillability.Selected.Value), cbOCEPBillability.SearchText, cbOCEPBillability.Selected.Value),
-                            SUPERVISOR:If(IsBlank(cbOCEPSupervisor.Selected.Value), cbOCEPSupervisor.SearchText, cbOCEPSupervisor.Selected.Value),
-                            COUNTRY:If(IsBlank(cbOCEPCountry.Selected.Value), cbOCEPCountry.SearchText, cbOCEPCountry.Selected.Value),
-                            SITE:If(IsBlank(cbOCEPSite.Selected.Value), cbOCEPSite.SearchText, cbOCEPSite.Selected.Value), 
-                            ROLE:If(IsBlank(cbOCEPRole.Selected.Value), cbOCEPRole.SearchText, cbOCEPRole.Selected.Value),
-                            'SUBMITTED BY':User().Email
-                        }
+                        Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)),
+                        Collect(colOmniaCreation, {
+                                    'EMPLOYEE ID':txtOCEPEmpId.Text,
+                                    'FIRST NAME':txtOCEPFName.Text,
+                                    'MIDDLE NAME':If(IsBlank(txtOCEPMName.Text), "N/A", txtOCEPMName.Text),
+                                    'LAST NAME':txtOCEPLName.Text,
+                                    'HIRE DATE':dateOCEPHireDate.SelectedDate,
+                                    STATUS:If(IsBlank(cbOCEPStatus.Selected.Value), cbOCEPStatus.SearchText, cbOCEPStatus.Selected.Value), 
+                                    'REGULARIZATION DATE':Text(DateAdd(dateOCEPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
+                                    'BUSINESS UNIT':If(IsBlank(cbOCEPBusUnit.Selected.Value), cbOCEPBusUnit.SearchText, cbOCEPBusUnit.Selected.Value), 
+                                    'SUB-UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
+                                    'SUB UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
+                                    POSITION:If(IsBlank(cbOCEPPosition.Selected.Value), cbOCEPPosition.SearchText, cbOCEPPosition.Selected.Value), 
+                                    'EMPLOYMENT STATUS':If(IsBlank(cbOCEPEmpStatus.Selected.Value), cbOCEPEmpStatus.SearchText, cbOCEPEmpStatus.Selected.Value),
+                                    CLIENT:If(IsBlank(cbOCEPClient.Selected.Value), cbOCEPClient.SearchText, cbOCEPClient.Selected.Value),
+                                    CAMPAIGN:If(IsBlank(cbOCEPCampaign.Selected.Value), cbOCEPCampaign.SearchText, cbOCEPCampaign.Selected.Value),
+                                    'SUB-LOB':If(IsBlank(cbOCEPSubLOB.Selected.Value), cbOCEPSubLOB.SearchText, cbOCEPSubLOB.Selected.Value),
+                                    LOB:If(IsBlank(cbOCEPLOB.Selected.Value), cbOCEPLOB.SearchText, cbOCEPLOB.Selected.Value),
+                                    BILLABILITY:If(IsBlank(cbOCEPBillability.Selected.Value), cbOCEPBillability.SearchText, cbOCEPBillability.Selected.Value),
+                                    SUPERVISOR:If(IsBlank(cbOCEPSupervisor.Selected.Value), cbOCEPSupervisor.SearchText, cbOCEPSupervisor.Selected.Value),
+                                    COUNTRY:If(IsBlank(cbOCEPCountry.Selected.Value), cbOCEPCountry.SearchText, cbOCEPCountry.Selected.Value),
+                                    SITE:If(IsBlank(cbOCEPSite.Selected.Value), cbOCEPSite.SearchText, cbOCEPSite.Selected.Value), 
+                                    ROLE:If(IsBlank(cbOCEPRole.Selected.Value), cbOCEPRole.SearchText, cbOCEPRole.Selected.Value),
+                                    'SUBMITTED BY':User().Email
+                                }
+                            ); Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success),
                     );
-                    Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success) &&
-                    Navigate(OmniaCreation_SecondPage),
-                    Notify("Please fill out all fields!", NotificationType.Error)
                 )
             Text: ="Update"
             X: =1222

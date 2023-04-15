@@ -43,7 +43,6 @@
                 ));
                 Collect(colOmniaCreation, {
                         'EMPLOYEE ID':txtOCFPEmpId.Text,
-                        ID:txtOCFPEmpId.Text,
                         'FIRST NAME':txtOCFPFName.Text,
                         'MIDDLE NAME':If(IsBlank(txtOCFPMName.Text), "N/A", txtOCFPMName.Text),
                         'LAST NAME':txtOCFPLName.Text,
@@ -121,7 +120,7 @@
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
-                    Text: ="ID"
+                    Text: ="EMPLOYEE ID"
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30

@@ -29,15 +29,15 @@
 
         "'EMPLOYEE ID_Column1_1' As dataTableColumn.textualColumn":
             DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="ID"
+            FieldDisplayName: ="EMPLOYEE ID"
             FieldName: ="EMPLOYEE ID"
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             IsHyperlink: =false
             LayoutHeight: =Parent.Height
-            OnSelect: =Navigate(OmniaCreation_EditPage)
+            OnSelect: =false
             Order: =1
-            Text: =ThisItem.ID
+            Text: =ThisItem.'EMPLOYEE ID'
             Width: =100
             X: =0
             Y: =0
@@ -301,7 +301,7 @@
         btnOCSPRemove As button:
             Fill: =RGBA(255, 0, 0, 1)
             HoverFill: =ColorFade(RGBA(254, 127, 124, 0.8), -20%)
-            OnSelect: =Remove(colOmniaCreation, LookUp(colOmniaCreation, ID=tblSelectedID))
+            OnSelect: =Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
             Text: ="Remove"
             X: =727
             Y: =98
@@ -311,7 +311,7 @@
             Fill: =RGBA(255, 191, 0, 1)
             HoverFill: =ColorFade(Self.Fill, -15%)
             OnSelect: |-
-                =Set(tblSelectedID, tblOCSP.Selected.ID) &&
+                =Set(tblSelectedID, tblOCSP.Selected.'EMPLOYEE ID') &&
                 Navigate(OmniaCreation_EditPage)
             Text: ="Edit"
             X: =536
