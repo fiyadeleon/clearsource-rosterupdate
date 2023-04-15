@@ -623,33 +623,36 @@
                         CountRows(
                             Filter(colOmniaCreation,'EMPLOYEE ID'=txtOCEPEmpId.Text)
                         ) > 0, 
-                        Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)),
                         Collect(colOmniaCreation, {
-                                    'EMPLOYEE ID':txtOCEPEmpId.Text,
-                                    'FIRST NAME':txtOCEPFName.Text,
-                                    'MIDDLE NAME':If(IsBlank(txtOCEPMName.Text), "N/A", txtOCEPMName.Text),
-                                    'LAST NAME':txtOCEPLName.Text,
-                                    'HIRE DATE':dateOCEPHireDate.SelectedDate,
-                                    STATUS:If(IsBlank(cbOCEPStatus.Selected.Value), cbOCEPStatus.SearchText, cbOCEPStatus.Selected.Value), 
-                                    'REGULARIZATION DATE':Text(DateAdd(dateOCEPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
-                                    'BUSINESS UNIT':If(IsBlank(cbOCEPBusUnit.Selected.Value), cbOCEPBusUnit.SearchText, cbOCEPBusUnit.Selected.Value), 
-                                    'SUB-UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
-                                    'SUB UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
-                                    POSITION:If(IsBlank(cbOCEPPosition.Selected.Value), cbOCEPPosition.SearchText, cbOCEPPosition.Selected.Value), 
-                                    'EMPLOYMENT STATUS':If(IsBlank(cbOCEPEmpStatus.Selected.Value), cbOCEPEmpStatus.SearchText, cbOCEPEmpStatus.Selected.Value),
-                                    CLIENT:If(IsBlank(cbOCEPClient.Selected.Value), cbOCEPClient.SearchText, cbOCEPClient.Selected.Value),
-                                    CAMPAIGN:If(IsBlank(cbOCEPCampaign.Selected.Value), cbOCEPCampaign.SearchText, cbOCEPCampaign.Selected.Value),
-                                    'SUB-LOB':If(IsBlank(cbOCEPSubLOB.Selected.Value), cbOCEPSubLOB.SearchText, cbOCEPSubLOB.Selected.Value),
-                                    LOB:If(IsBlank(cbOCEPLOB.Selected.Value), cbOCEPLOB.SearchText, cbOCEPLOB.Selected.Value),
-                                    BILLABILITY:If(IsBlank(cbOCEPBillability.Selected.Value), cbOCEPBillability.SearchText, cbOCEPBillability.Selected.Value),
-                                    SUPERVISOR:If(IsBlank(cbOCEPSupervisor.Selected.Value), cbOCEPSupervisor.SearchText, cbOCEPSupervisor.Selected.Value),
-                                    COUNTRY:If(IsBlank(cbOCEPCountry.Selected.Value), cbOCEPCountry.SearchText, cbOCEPCountry.Selected.Value),
-                                    SITE:If(IsBlank(cbOCEPSite.Selected.Value), cbOCEPSite.SearchText, cbOCEPSite.Selected.Value), 
-                                    ROLE:If(IsBlank(cbOCEPRole.Selected.Value), cbOCEPRole.SearchText, cbOCEPRole.Selected.Value),
-                                    'SUBMITTED BY':User().Email
-                                }
-                            ); Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success),
-                    );
+                                'EMPLOYEE ID':txtOCEPEmpId.Text,
+                                'FIRST NAME':txtOCEPFName.Text,
+                                'MIDDLE NAME':If(IsBlank(txtOCEPMName.Text), "N/A", txtOCEPMName.Text),
+                                'LAST NAME':txtOCEPLName.Text,
+                                'HIRE DATE':dateOCEPHireDate.SelectedDate,
+                                STATUS:If(IsBlank(cbOCEPStatus.Selected.Value), cbOCEPStatus.SearchText, cbOCEPStatus.Selected.Value), 
+                                'REGULARIZATION DATE':Text(DateAdd(dateOCEPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
+                                'BUSINESS UNIT':If(IsBlank(cbOCEPBusUnit.Selected.Value), cbOCEPBusUnit.SearchText, cbOCEPBusUnit.Selected.Value), 
+                                'SUB-UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
+                                'SUB UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
+                                POSITION:If(IsBlank(cbOCEPPosition.Selected.Value), cbOCEPPosition.SearchText, cbOCEPPosition.Selected.Value), 
+                                'EMPLOYMENT STATUS':If(IsBlank(cbOCEPEmpStatus.Selected.Value), cbOCEPEmpStatus.SearchText, cbOCEPEmpStatus.Selected.Value),
+                                CLIENT:If(IsBlank(cbOCEPClient.Selected.Value), cbOCEPClient.SearchText, cbOCEPClient.Selected.Value),
+                                CAMPAIGN:If(IsBlank(cbOCEPCampaign.Selected.Value), cbOCEPCampaign.SearchText, cbOCEPCampaign.Selected.Value),
+                                'SUB-LOB':If(IsBlank(cbOCEPSubLOB.Selected.Value), cbOCEPSubLOB.SearchText, cbOCEPSubLOB.Selected.Value),
+                                LOB:If(IsBlank(cbOCEPLOB.Selected.Value), cbOCEPLOB.SearchText, cbOCEPLOB.Selected.Value),
+                                BILLABILITY:If(IsBlank(cbOCEPBillability.Selected.Value), cbOCEPBillability.SearchText, cbOCEPBillability.Selected.Value),
+                                SUPERVISOR:If(IsBlank(cbOCEPSupervisor.Selected.Value), cbOCEPSupervisor.SearchText, cbOCEPSupervisor.Selected.Value),
+                                COUNTRY:If(IsBlank(cbOCEPCountry.Selected.Value), cbOCEPCountry.SearchText, cbOCEPCountry.Selected.Value),
+                                SITE:If(IsBlank(cbOCEPSite.Selected.Value), cbOCEPSite.SearchText, cbOCEPSite.Selected.Value), 
+                                ROLE:If(IsBlank(cbOCEPRole.Selected.Value), cbOCEPRole.SearchText, cbOCEPRole.Selected.Value),
+                                'SUBMITTED BY':User().Email
+                            }
+                        );
+                        Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)); 
+                        Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success) &&
+                        Navigate(OmniaCreation_SecondPage),
+                        Notify("Please fill out all fields!", NotificationType.Error)
+                    )
                 )
             Text: ="Update"
             X: =1222
