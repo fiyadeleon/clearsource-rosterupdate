@@ -28,7 +28,7 @@
 
         "'EMPLOYEE ID_Column1_1' As dataTableColumn.textualColumn":
             DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="EMPLOYEE ID"
+            FieldDisplayName: ="ID"
             FieldName: ="EMPLOYEE ID"
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
@@ -36,7 +36,7 @@
             LayoutHeight: =Parent.Height
             OnSelect: =Navigate(OmniaCreation_EditPage)
             Order: =1
-            Text: =ThisItem.'EMPLOYEE ID'
+            Text: =ThisItem.ID
             Width: =100
             X: =0
             Y: =0
@@ -114,13 +114,13 @@
 
         "'SUB UNIT_Column1_1' As dataTableColumn.textualColumn":
             DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="SUB UNIT"
+            FieldDisplayName: ="SUB-UNIT"
             FieldName: ="SUB UNIT"
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =7
-            Text: =ThisItem.'SUB UNIT'
+            Text: =ThisItem.'SUB-UNIT'
             Width: =100
             X: =0
             Y: =0
@@ -249,7 +249,7 @@
             Order: =16
             Text: =ThisItem.SITE
             Width: =100
-            X: =0
+            X: =1180
             Y: =0
             ZIndex: =16
 
@@ -309,8 +309,7 @@
             Fill: =RGBA(255, 191, 0, 1)
             HoverFill: =ColorFade(Self.Fill, -15%)
             OnSelect: |-
-                =Set(tblSelectedID, tblOCSP.Selected.'EMPLOYEE ID') &&
-                Set(empVar, "EMPLOYEE ID") &&
+                =Set(tblSelectedID, tblOCSP.Selected.ID) &&
                 Navigate(OmniaCreation_EditPage)
             Text: ="Edit"
             X: =536

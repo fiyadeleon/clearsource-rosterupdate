@@ -23,48 +23,529 @@
         Y: =684
         ZIndex: =6
 
-    Form5 As form:
-        DataSource: =Headcount_table
-        Item: =If(!IsBlank(tblSelectedID), LookUp(Headcount_table, empVar=tblSelectedID))
-        X: =484
-        Y: =108
+    Gallery4 As gallery.galleryHorizontal:
+        DelayItemLoading: =true
+        Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, ID=tblSelectedID))
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateSize: =1363
+        Width: =1368
+        X: =19
+        Y: =110
         ZIndex: =7
 
-        "'BUSINESS UNIT_DataCard5' As typedDataCard.textualEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="BUSINESS UNIT"
-            Default: =ThisItem.'BUSINESS UNIT'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "BUSINESS UNIT")
-            Required: =false
-            Update: =
-            Width: =266
-            X: =0
-            Y: =0
-            ZIndex: =1
+        Group1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
 
-            DataCardKey60 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
+            TextInput12 As text:
+                Color: =RGBA(0, 18, 107, 1)
+                Default: ="Text input"
+                OnSelect: =Select(Parent)
+                Width: =268
+                X: =17
+                Y: =55
+                ZIndex: =6
+
+            Label5 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="EMPLOYEE ID"
+                Width: =320
+                X: =17
+                Y: =15
+                ZIndex: =7
+
+        Group2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            TextInput11 As text:
+                Color: =RGBA(0, 18, 107, 1)
+                Default: ="Text input"
+                OnSelect: =Select(Parent)
+                Width: =268
+                X: =17
+                Y: =145
+                ZIndex: =5
+
+            Label5_1 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="FIRST NAME"
+                Width: =320
+                X: =17
+                Y: =105
+                ZIndex: =8
+
+        Group3 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            TextInput9 As text:
+                Color: =RGBA(0, 18, 107, 1)
+                Default: =ThisItem.'FIRST NAME'
+                OnSelect: =Select(Parent)
+                Width: =268
+                X: =17
+                Y: =238
                 ZIndex: =1
 
-            ComboBox15 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(Headcount_table, empVar=tblSelectedID),'BUSINESS UNIT'))
+            Label5_2 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="MIDDLE NAME"
+                Width: =320
+                X: =17
+                Y: =198
+                ZIndex: =9
+
+        Group4 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            TextInput10 As text:
+                Color: =RGBA(0, 18, 107, 1)
+                Default: =ThisItem.'LAST NAME'
+                OnSelect: =Select(Parent)
+                Width: =268
+                X: =17
+                Y: =331
+                ZIndex: =2
+
+            Label5_3 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="LAST NAME"
+                Width: =320
+                X: =17
+                Y: =291
+                ZIndex: =10
+
+        Group5 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            DatePicker1 As datepicker:
+                DefaultDate: =ThisItem.'HIRE DATE'
+                OnSelect: =Select(Parent)
+                Width: =268
+                X: =17
+                Y: =518
+                ZIndex: =3
+
+            Label5_4 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="HIRE DATE"
+                Width: =320
+                X: =17
+                Y: =479
+                ZIndex: =11
+
+        Group6 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            Label5_9 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="STATUS"
+                Width: =320
+                X: =17
+                Y: =385
+                ZIndex: =20
+
+            ComboBox3 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),STATUS))
+                DisplayFields: =["Value"]
+                Items: =["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"]
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"],ComboBox3.SearchText,"Value")
+                Width: =268
+                X: =17
+                Y: =425
+                ZIndex: =21
+
+        Group7 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            ComboBox2 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
+                OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
                 SearchItems: =[]
-                Width: =Parent.Width - 60
-                X: =40
-                Y: =40
-                ZIndex: =2
+                Width: =323
+                X: =323
+                Y: =55
+                ZIndex: =4
+
+            Label5_5 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="BUSINESS UNIT"
+                Width: =323
+                X: =323
+                Y: =15
+                ZIndex: =15
+
+        Group8 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            ComboBox2_1 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'SUB-UNIT'))
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =323
+                X: =323
+                Y: =146
+                ZIndex: =12
+
+            Label5_6 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="SUB-UNIT"
+                Width: =323
+                X: =323
+                Y: =106
+                ZIndex: =16
+
+        Group9 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            ComboBox2_2 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),POSITION))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),ComboBox2_2.SearchText,"Value")
+                Width: =323
+                X: =323
+                Y: =238
+                ZIndex: =13
+
+            Label5_7 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="POSITION"
+                Width: =323
+                X: =323
+                Y: =200
+                ZIndex: =17
+
+        Group10 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            ComboBox2_3 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'EMPLOYMENT STATUS'))
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Filter(Distinct(Headcount_table, 'EMPLOYMENT STATUS'), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =323
+                X: =323
+                Y: =331
+                ZIndex: =14
+
+            Label5_8 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="EMPLOYMENT STATUS"
+                Width: =323
+                X: =323
+                Y: =291
+                ZIndex: =18
+
+        Group7_1 As group:
+            Height: =5
+            Width: =5
+            X: =-297
+            Y: =25
+            ZIndex: =30
+
+            ComboBox2_4 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'BUSINESS UNIT'))
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =323
+                X: =681
+                Y: =55
+                ZIndex: =22
+
+            Label5_10 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="CLIENT"
+                Width: =323
+                X: =681
+                Y: =15
+                ZIndex: =26
+
+        Group8_1 As group:
+            Height: =5
+            Width: =5
+            X: =-297
+            Y: =25
+            ZIndex: =31
+
+            ComboBox2_5 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'SUB-UNIT'))
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =323
+                X: =681
+                Y: =146
+                ZIndex: =23
+
+            Label5_11 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="CAMPAIGN"
+                Width: =323
+                X: =681
+                Y: =106
+                ZIndex: =27
+
+        Group9_1 As group:
+            Height: =5
+            Width: =5
+            X: =-297
+            Y: =25
+            ZIndex: =32
+
+            ComboBox2_6 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),POSITION))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),ComboBox2_6.SearchText,"Value")
+                Width: =323
+                X: =681
+                Y: =238
+                ZIndex: =24
+
+            Label5_12 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="POSITION"
+                Width: =323
+                X: =681
+                Y: =200
+                ZIndex: =28
+
+        Group10_1 As group:
+            Height: =5
+            Width: =5
+            X: =-297
+            Y: =25
+            ZIndex: =33
+
+            ComboBox2_7 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'EMPLOYMENT STATUS'))
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Filter(Distinct(Headcount_table, 'EMPLOYMENT STATUS'), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =323
+                X: =681
+                Y: =331
+                ZIndex: =25
+
+            Label5_13 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="EMPLOYMENT STATUS"
+                Width: =323
+                X: =681
+                Y: =291
+                ZIndex: =29
+
+        Group7_2 As group:
+            Height: =5
+            Width: =5
+            X: =-636
+            Y: =25
+            ZIndex: =38
+
+            ComboBox2_8 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'BUSINESS UNIT'))
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =323
+                X: =1040
+                Y: =55
+                ZIndex: =30
+
+            Label5_14 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="BUSINESS UNIT"
+                Width: =323
+                X: =1040
+                Y: =15
+                ZIndex: =34
+
+        Group8_2 As group:
+            Height: =5
+            Width: =5
+            X: =-636
+            Y: =25
+            ZIndex: =39
+
+            ComboBox2_9 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'SUB-UNIT'))
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =323
+                X: =1040
+                Y: =146
+                ZIndex: =31
+
+            Label5_15 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="SUB-UNIT"
+                Width: =323
+                X: =1040
+                Y: =106
+                ZIndex: =35
+
+        Group9_2 As group:
+            Height: =5
+            Width: =5
+            X: =-636
+            Y: =25
+            ZIndex: =40
+
+            ComboBox2_10 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),POSITION))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),ComboBox2_10.SearchText,"Value")
+                Width: =323
+                X: =1040
+                Y: =238
+                ZIndex: =32
+
+            Label5_16 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="POSITION"
+                Width: =323
+                X: =1040
+                Y: =200
+                ZIndex: =36
+
+        Group10_2 As group:
+            Height: =5
+            Width: =5
+            X: =-636
+            Y: =25
+            ZIndex: =41
+
+            ComboBox2_11 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'EMPLOYMENT STATUS'))
+                DisplayFields: =["Value"]
+                IsSearchable: =false
+                Items: =Filter(Distinct(Headcount_table, 'EMPLOYMENT STATUS'), !IsBlank(Value))
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =323
+                X: =1040
+                Y: =331
+                ZIndex: =33
+
+            Label5_17 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="EMPLOYMENT STATUS"
+                Width: =323
+                X: =1040
+                Y: =291
+                ZIndex: =37
 
