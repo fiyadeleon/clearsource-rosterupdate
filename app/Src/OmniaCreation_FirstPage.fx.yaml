@@ -54,10 +54,10 @@
                         'SUB UNIT':If(IsBlank(cbOCFPSubUnit.Selected.Value), cbOCFPSubUnit.SearchText, cbOCFPSubUnit.Selected.Value),
                         POSITION:If(IsBlank(cbOCFPPosition.Selected.Value), cbOCFPPosition.SearchText, cbOCFPPosition.Selected.Value), 
                         'EMPLOYMENT STATUS':"Probationary",
-                        'CLIENT':If(IsBlank(cbOCFPClient.Selected.Value), cbOCFPClient.SearchText, cbOCFPClient.Selected.Value),
-                        'CAMPAIGN':If(IsBlank(cbOCFPCampaign.Selected.Value), cbOCFPCampaign.SearchText, cbOCFPCampaign.Selected.Value),
+                        CLIENT:If(IsBlank(cbOCFPClient.Selected.Value), cbOCFPClient.SearchText, cbOCFPClient.Selected.Value),
+                        CAMPAIGN:If(IsBlank(cbOCFPCampaign.Selected.Value), cbOCFPCampaign.SearchText, cbOCFPCampaign.Selected.Value),
                         'SUB-LOB':If(IsBlank(cbOCFPSubLOB.Selected.Value), cbOCFPSubLOB.SearchText, cbOCFPSubLOB.Selected.Value),
-                        'LOB':If(IsBlank(cbOCFPLOB.Selected.Value), cbOCFPLOB.SearchText, cbOCFPLOB.Selected.Value),
+                        LOB:If(IsBlank(cbOCFPLOB.Selected.Value), cbOCFPLOB.SearchText, cbOCFPLOB.Selected.Value),
                         BILLABILITY:If(IsBlank(cbOCFPBillability.Selected.Value), cbOCFPBillability.SearchText, cbOCFPBillability.Selected.Value),
                         SUPERVISOR:If(IsBlank(cbOCFPSupervisor.Selected.Value), cbOCFPSupervisor.SearchText, cbOCFPSupervisor.Selected.Value),
                         COUNTRY:If(IsBlank(cbOCFPCountry.Selected.Value), cbOCFPCountry.SearchText, cbOCFPCountry.Selected.Value),
@@ -435,7 +435,7 @@
 
                 cbOCFPPosition As combobox:
                     DisplayFields: =["Value"]
-                    Items: =Filter(Distinct(Headcount_table, 'POSITION'), !IsBlank(Value))
+                    Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                     SearchFields: =["Value"]
                     SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbOCFPPosition.SearchText,"Value")
                     SelectMultiple: =false
@@ -483,7 +483,7 @@
 
                 cbOCFPClient As combobox:
                     DisplayFields: =["Value"]
-                    Items: =Filter(Distinct(Headcount_table, 'CLIENT'), !IsBlank(Value))
+                    Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                     SearchFields: =["Value"]
                     SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbOCFPClient.SearchText,"Value")
                     SelectMultiple: =false
@@ -521,47 +521,9 @@
 
                 cbOCFPCampaign As combobox:
                     DisplayFields: =["Value"]
-                    Items: =Filter(Distinct(Headcount_table, 'CAMPAIGN'), !IsBlank(Value))
+                    Items: =Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value))
                     SearchFields: =["Value"]
                     SearchItems: =Search(Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value)),cbOCFPCampaign.SearchText,"Value")
-                    SelectMultiple: =false
-                    Width: =Parent.Width - 60
-                    X: =40
-                    Y: =40
-                    ZIndex: =2
-
-            BILLABILITY_DataCardOCFP As typedDataCard.textualEditCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="BILLABILITY"
-                Default: =ThisItem.BILLABILITY
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "BILLABILITY")
-                Required: =false
-                Update: =
-                Width: =379
-                X: =0
-                Y: =4
-                ZIndex: =1
-
-                DataCardKey48 As label:
-                    AutoHeight: =true
-                    FontWeight: =FontWeight.Bold
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                cbOCFPBillability As combobox:
-                    DisplayFields: =["Value"]
-                    Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
-                    SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbOCFPBillability.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
@@ -597,7 +559,7 @@
 
                 cbOCFPLOB As combobox:
                     DisplayFields: =["Value"]
-                    Items: =Filter(Distinct(Headcount_table, 'LOB'), !IsBlank(Value))
+                    Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
                     SearchFields: =["Value"]
                     SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOCFPLOB.SearchText,"Value")
                     SelectMultiple: =false
@@ -638,6 +600,44 @@
                     Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value))
                     SearchFields: =["Value"]
                     SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),cbOCFPSubLOB.SearchText,"Value")
+                    SelectMultiple: =false
+                    Width: =Parent.Width - 60
+                    X: =40
+                    Y: =40
+                    ZIndex: =2
+
+            BILLABILITY_DataCardOCFP As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="BILLABILITY"
+                Default: =ThisItem.BILLABILITY
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "BILLABILITY")
+                Required: =false
+                Update: =
+                Width: =379
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey48 As label:
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                cbOCFPBillability As combobox:
+                    DisplayFields: =["Value"]
+                    Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbOCFPBillability.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
