@@ -604,20 +604,20 @@
                         !IsBlank(txtOCEPFName.Text) &&
                         !IsBlank(txtOCEPLName.Text) &&
                         !IsBlank(dateOCEPHireDate.SelectedDate) &&
-                        (!IsBlank(cbOCEPBusUnit.Selected.Value) && !IsBlank(cbOCEPBusUnit.SearchText)) &&
-                        (!IsBlank(cbOCEPSubUnit.Selected.Value) && !IsBlank(cbOCEPSubUnit.SearchText)) &&
-                        (!IsBlank(cbOCEPPosition.Selected.Value) && !IsBlank(cbOCEPPosition.SearchText)) &&
-                        (!IsBlank(cbOCEPStatus.Selected.Value) && !IsBlank(cbOCEPStatus.SearchText)) &&
-                        (!IsBlank(cbOCEPEmpStatus.Selected.Value) && !IsBlank(cbOCEPEmpStatus.SearchText)) &&
-                        (!IsBlank(cbOCEPClient.Selected.Value) && !IsBlank(cbOCEPClient.SearchText)) &&
-                        (!IsBlank(cbOCEPCampaign.Selected.Value) && !IsBlank(cbOCEPCampaign.SearchText)) &&
-                        (!IsBlank(cbOCEPSubLOB.Selected.Value) && !IsBlank(cbOCEPSubLOB.SearchText)) &&
-                        (!IsBlank(cbOCEPLOB.Selected.Value) && !IsBlank(cbOCEPLOB.SearchText)) &&
-                        (!IsBlank(cbOCEPBillability.Selected.Value) && !IsBlank(cbOCEPBillability.SearchText)) &&
-                        (!IsBlank(cbOCEPSupervisor.Selected.Value) && !IsBlank(cbOCEPSupervisor.SearchText)) &&
-                        (!IsBlank(cbOCEPCountry.Selected.Value) && !IsBlank(cbOCEPCountry.SearchText)) &&
-                        (!IsBlank(cbOCEPSite.Selected.Value) && !IsBlank(cbOCEPSite.SearchText)) &&
-                        (!IsBlank(cbOCEPRole.Selected.Value) && !IsBlank(cbOCEPRole.SearchText)) 
+                        (!IsBlank(cbOCEPBusUnit.Selected.Value) || !IsBlank(cbOCEPBusUnit.SearchText)) &&
+                        (!IsBlank(cbOCEPSubUnit.Selected.Value) || !IsBlank(cbOCEPSubUnit.SearchText)) &&
+                        (!IsBlank(cbOCEPPosition.Selected.Value) || !IsBlank(cbOCEPPosition.SearchText)) &&
+                        (!IsBlank(cbOCEPStatus.Selected.Value) || !IsBlank(cbOCEPStatus.SearchText)) &&
+                        (!IsBlank(cbOCEPEmpStatus.Selected.Value) || !IsBlank(cbOCEPEmpStatus.SearchText)) &&
+                        (!IsBlank(cbOCEPClient.Selected.Value) || !IsBlank(cbOCEPClient.SearchText)) &&
+                        (!IsBlank(cbOCEPCampaign.Selected.Value) || !IsBlank(cbOCEPCampaign.SearchText)) &&
+                        (!IsBlank(cbOCEPSubLOB.Selected.Value) || !IsBlank(cbOCEPSubLOB.SearchText)) &&
+                        (!IsBlank(cbOCEPLOB.Selected.Value) || !IsBlank(cbOCEPLOB.SearchText)) &&
+                        (!IsBlank(cbOCEPBillability.Selected.Value) || !IsBlank(cbOCEPBillability.SearchText)) &&
+                        (!IsBlank(cbOCEPSupervisor.Selected.Value) || !IsBlank(cbOCEPSupervisor.SearchText)) &&
+                        (!IsBlank(cbOCEPCountry.Selected.Value) || !IsBlank(cbOCEPCountry.SearchText)) &&
+                        (!IsBlank(cbOCEPSite.Selected.Value) || !IsBlank(cbOCEPSite.SearchText)) &&
+                        (!IsBlank(cbOCEPRole.Selected.Value) || !IsBlank(cbOCEPRole.SearchText)) 
                     ),
                     If(
                         CountRows(
@@ -648,11 +648,12 @@
                                 'SUBMITTED BY':User().Email
                             }
                         );
-                        Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)); 
                         Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success) &&
-                        Navigate(OmniaCreation_SecondPage),
-                        Notify("Please fill out all fields!", NotificationType.Error)
-                    )
+                        Navigate(OmniaCreation_SecondPage);
+                        Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)),
+                        Notify(Concatenate(txtOCEPEmpId.Text, " does not exist, please go back to the review page or input an existing Employee ID."), NotificationType.Error)
+                    ),
+                    Notify("Please fill out all fields!", NotificationType.Error)
                 )
             Text: ="Update"
             X: =1222
