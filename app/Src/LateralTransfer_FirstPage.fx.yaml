@@ -589,14 +589,14 @@
                             NAME:txtLTMultipleName.Text,
                             ID:txtLTMultipleEmpId.Text,
                             SITE:txtLTMultipleSite.Text,
-                            'BUSINESS UNIT':cbLTMultipleBusUnit.Selected.Value, 
-                            'SUB UNIT':cbLTMultipleSubUnit.Selected.Value,
+                            'BUSINESS UNIT':If(IsBlank(cbLTMultipleBusUnit.Selected.Value), cbLTMultipleBusUnit.SearchText, cbLTMultipleBusUnit.Selected.Value),
+                            'SUB UNIT':If(IsBlank(cbLTMultipleSubUnit.Selected.Value), cbLTMultipleSubUnit.SearchText, cbLTMultipleSubUnit.Selected.Value),
                             POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value), 
-                            CLIENT:cbLTMultipleClient.Selected.Value, 
-                            LOB:cbLTMultipleLOB.Selected.Value,
-                            BILLABILITY:cbLTMultipleBillability.Selected.Value, 
-                            SCHEDULE:txtLTMultipleSchedule.Text, 
-                            SUPERVISOR:cbLTMultipleSupervisor.Selected.Value,
+                            CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
+                            LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
+                            BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
+                            SCHEDULE:If(IsBlank(txtLTMultipleSchedule.Text), "N/A", txtLTMultipleSchedule.Text),
+                            SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
                             'SUBMITTED BY':User().Email
                         }
                     );
