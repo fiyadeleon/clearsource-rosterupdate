@@ -9,8 +9,8 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="EDIT OMNIA CREATION FORM"
-        Width: =515
+        Text: ="UPDATE OMNIA CREATION FORM"
+        Width: =545
         Y: =31
         ZIndex: =5
 
@@ -37,6 +37,7 @@
             txtOCEPFName As text:
                 Color: =RGBA(0, 18, 107, 1)
                 Default: =ThisItem.'FIRST NAME'
+                HintText: ="Input First Name"
                 OnSelect: =Select(Parent)
                 Width: =268
                 X: =17
@@ -63,6 +64,7 @@
             txtOCEPMName As text:
                 Color: =RGBA(0, 18, 107, 1)
                 Default: =ThisItem.'MIDDLE NAME'
+                HintText: ="(optional)"
                 OnSelect: =Select(Parent)
                 Width: =268
                 X: =17
@@ -89,6 +91,7 @@
             txtOCEPLName As text:
                 Color: =RGBA(0, 18, 107, 1)
                 Default: =ThisItem.'LAST NAME'
+                HintText: ="Input Last Name"
                 OnSelect: =Select(Parent)
                 Width: =268
                 X: =17
@@ -112,7 +115,7 @@
             Y: =40
             ZIndex: =15
 
-            DatePicker1 As datepicker:
+            dateOCEPHireDate As datepicker:
                 DefaultDate: =ThisItem.'HIRE DATE'
                 OnSelect: =Select(Parent)
                 Width: =268
@@ -167,14 +170,14 @@
             Y: =40
             ZIndex: =22
 
-            ComboBox2 As combobox:
+            cbOCEPBusUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbOCEPBusUnit.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =323
                 X: =323
                 Y: =48
@@ -520,31 +523,6 @@
                 Y: =378
                 ZIndex: =39
 
-        grpOCEPEmpId As group:
-            Height: =5
-            Width: =5
-            X: =60
-            Y: =60
-            ZIndex: =41
-
-            Label5 As label:
-                Color: =RGBA(0, 18, 107, 1)
-                FontWeight: =FontWeight.Bold
-                OnSelect: =Select(Parent)
-                Text: ="EMPLOYEE ID"
-                Width: =320
-                X: =17
-                Y: =8
-                ZIndex: =7
-
-            txtOCEPEmpId As label:
-                OnSelect: =Select(Parent)
-                Text: =ThisItem.ID
-                Width: =268
-                X: =17
-                Y: =48
-                ZIndex: =40
-
         grpOCEPRole As group:
             Height: =5
             Width: =5
@@ -574,6 +552,32 @@
                 X: =1040
                 Y: =284
                 ZIndex: =37
+
+        grpOCEPEmpI As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =42
+
+            Label5 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="EMPLOYEE ID"
+                Width: =320
+                X: =17
+                Y: =8
+                ZIndex: =7
+
+            txtOCEPEmpId As text:
+                Default: ="Text input"
+                HintText: ="e.g., CSPH12345"
+                OnSelect: =Select(Parent)
+                Width: =268
+                X: =17
+                Y: =48
+                ZIndex: =41
 
     grpOCEPButtons As group:
         Height: =5
