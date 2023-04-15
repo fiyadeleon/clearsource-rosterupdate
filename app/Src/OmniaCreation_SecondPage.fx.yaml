@@ -93,7 +93,7 @@
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =5
-            Text: =ThisItem.'HIRE DATE'
+            Text: =Text(ThisItem.'HIRE DATE', "yyyy-mm-dd")
             Width: =100
             X: =0
             Y: =0
@@ -276,7 +276,7 @@
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =6
-            Text: =ThisItem.'REGULARIZATION DATE'
+            Text: =Text(ThisItem.'REGULARIZATION DATE', "m/dd/yyyy")
             Width: =100
             X: =0
             Y: =0
