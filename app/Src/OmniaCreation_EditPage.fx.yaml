@@ -604,20 +604,20 @@
                         !IsBlank(txtOCEPFName.Text) &&
                         !IsBlank(txtOCEPLName.Text) &&
                         !IsBlank(dateOCEPHireDate.SelectedDate) &&
-                        (!IsBlank(cbOCEPBusUnit.Selected.Value) || !IsBlank(cbOCEPBusUnit.SearchText)) &&
-                        (!IsBlank(cbOCEPSubUnit.Selected.Value) || !IsBlank(cbOCEPSubUnit.SearchText)) &&
-                        (!IsBlank(cbOCEPPosition.Selected.Value) || !IsBlank(cbOCEPPosition.SearchText)) &&
-                        (!IsBlank(cbOCEPStatus.Selected.Value) || !IsBlank(cbOCEPStatus.SearchText)) &&
-                        (!IsBlank(cbOCEPEmpStatus.Selected.Value) || !IsBlank(cbOCEPEmpStatus.SearchText)) &&
-                        (!IsBlank(cbOCEPClient.Selected.Value) || !IsBlank(cbOCEPClient.SearchText)) &&
-                        (!IsBlank(cbOCEPCampaign.Selected.Value) || !IsBlank(cbOCEPCampaign.SearchText)) &&
-                        (!IsBlank(cbOCEPSubLOB.Selected.Value) || !IsBlank(cbOCEPSubLOB.SearchText)) &&
-                        (!IsBlank(cbOCEPLOB.Selected.Value) || !IsBlank(cbOCEPLOB.SearchText)) &&
-                        (!IsBlank(cbOCEPBillability.Selected.Value) || !IsBlank(cbOCEPBillability.SearchText)) &&
-                        (!IsBlank(cbOCEPSupervisor.Selected.Value) || !IsBlank(cbOCEPSupervisor.SearchText)) &&
-                        (!IsBlank(cbOCEPCountry.Selected.Value) || !IsBlank(cbOCEPCountry.SearchText)) &&
-                        (!IsBlank(cbOCEPSite.Selected.Value) || !IsBlank(cbOCEPSite.SearchText)) &&
-                        (!IsBlank(cbOCEPRole.Selected.Value) || !IsBlank(cbOCEPRole.SearchText)) 
+                        (!IsBlank(cbOCEPBusUnit.Selected.Value) && !IsBlank(cbOCEPBusUnit.SearchText)) &&
+                        (!IsBlank(cbOCEPSubUnit.Selected.Value) && !IsBlank(cbOCEPSubUnit.SearchText)) &&
+                        (!IsBlank(cbOCEPPosition.Selected.Value) && !IsBlank(cbOCEPPosition.SearchText)) &&
+                        (!IsBlank(cbOCEPStatus.Selected.Value) && !IsBlank(cbOCEPStatus.SearchText)) &&
+                        (!IsBlank(cbOCEPEmpStatus.Selected.Value) && !IsBlank(cbOCEPEmpStatus.SearchText)) &&
+                        (!IsBlank(cbOCEPClient.Selected.Value) && !IsBlank(cbOCEPClient.SearchText)) &&
+                        (!IsBlank(cbOCEPCampaign.Selected.Value) && !IsBlank(cbOCEPCampaign.SearchText)) &&
+                        (!IsBlank(cbOCEPSubLOB.Selected.Value) && !IsBlank(cbOCEPSubLOB.SearchText)) &&
+                        (!IsBlank(cbOCEPLOB.Selected.Value) && !IsBlank(cbOCEPLOB.SearchText)) &&
+                        (!IsBlank(cbOCEPBillability.Selected.Value) && !IsBlank(cbOCEPBillability.SearchText)) &&
+                        (!IsBlank(cbOCEPSupervisor.Selected.Value) && !IsBlank(cbOCEPSupervisor.SearchText)) &&
+                        (!IsBlank(cbOCEPCountry.Selected.Value) && !IsBlank(cbOCEPCountry.SearchText)) &&
+                        (!IsBlank(cbOCEPSite.Selected.Value) && !IsBlank(cbOCEPSite.SearchText)) &&
+                        (!IsBlank(cbOCEPRole.Selected.Value) && !IsBlank(cbOCEPRole.SearchText)) 
                     ),
                     If(
                         CountRows(
