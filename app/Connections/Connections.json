@@ -67,28 +67,6 @@
     "dependents": [],
     "id": "2638c843-0dda-43f6-b052-8111f6949320"
   },
-  "5ce5a104-b369-4d70-9eea-f2f740243cef": {
-    "connectionRef": {
-      "displayName": "Excel Online (Business)",
-      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3202/excelonlinebusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
-    },
-    "datasets": {
-      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJXWLVHVQ2O26BGJER2KJSWAGHVK": {
-        "dataSources": {
-          "Headcount_table": {
-            "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "Headcount_table"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "5ce5a104-b369-4d70-9eea-f2f740243cef"
-  },
   "8a8a3e27-6d10-4dc0-8074-db9344b70de1": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -141,6 +119,28 @@
       "d0a8a34c-8a12-43d0-b714-66f18bbc83e0"
     ],
     "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+  },
+  "b8b0c787-49a6-4d42-99a2-2e7452bae10b": {
+    "connectionRef": {
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3202/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
+    },
+    "datasets": {
+      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJXWLVHVQ2O26BGJER2KJSWAGHVK": {
+        "dataSources": {
+          "Headcount_table": {
+            "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Headcount_table"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "b8b0c787-49a6-4d42-99a2-2e7452bae10b"
   },
   "d0a8a34c-8a12-43d0-b714-66f18bbc83e0": {
     "connectionRef": {
