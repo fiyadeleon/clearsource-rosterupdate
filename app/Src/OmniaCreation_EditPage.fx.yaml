@@ -14,7 +14,7 @@
         Y: =31
         ZIndex: =5
 
-    Gallery4 As gallery.galleryHorizontal:
+    galOCEP As gallery.galleryHorizontal:
         BorderThickness: =1
         DelayItemLoading: =true
         Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, ID=tblSelectedID))
@@ -27,14 +27,14 @@
         Y: =103
         ZIndex: =7
 
-        Group2 As group:
+        grpOCEPFName As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
             ZIndex: =15
 
-            TextInput11 As text:
+            txtOCEPFName As text:
                 Color: =RGBA(0, 18, 107, 1)
                 Default: =ThisItem.'FIRST NAME'
                 OnSelect: =Select(Parent)
@@ -53,14 +53,14 @@
                 Y: =98
                 ZIndex: =8
 
-        Group3 As group:
+        grpOCEPMName As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
             ZIndex: =15
 
-            TextInput9 As text:
+            txtOCEPMName As text:
                 Color: =RGBA(0, 18, 107, 1)
                 Default: =ThisItem.'MIDDLE NAME'
                 OnSelect: =Select(Parent)
@@ -79,14 +79,14 @@
                 Y: =191
                 ZIndex: =9
 
-        Group4 As group:
+        grpOCEPLName As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
             ZIndex: =15
 
-            TextInput10 As text:
+            txtOCEPLName As text:
                 Color: =RGBA(0, 18, 107, 1)
                 Default: =ThisItem.'LAST NAME'
                 OnSelect: =Select(Parent)
@@ -105,7 +105,7 @@
                 Y: =284
                 ZIndex: =10
 
-        Group5 As group:
+        grpOCEPHireDate As group:
             Height: =5
             Width: =5
             X: =40
@@ -130,7 +130,7 @@
                 Y: =472
                 ZIndex: =11
 
-        Group6 As group:
+        grpOCEPStatus As group:
             Height: =5
             Width: =5
             X: =40
@@ -159,7 +159,7 @@
                 Y: =418
                 ZIndex: =21
 
-        Group7 As group:
+        grpOCEPBusUnit As group:
             Height: =5
             Width: =5
             X: =40
@@ -189,7 +189,7 @@
                 Y: =8
                 ZIndex: =15
 
-        Group8 As group:
+        grpOCEPSubUnit As group:
             Height: =5
             Width: =5
             X: =40
@@ -219,7 +219,7 @@
                 Y: =99
                 ZIndex: =16
 
-        Group9 As group:
+        grpOCEPPosition As group:
             Height: =5
             Width: =5
             X: =40
@@ -248,7 +248,7 @@
                 Y: =193
                 ZIndex: =17
 
-        Group10 As group:
+        grpOCEPEmpStatus As group:
             Height: =5
             Width: =5
             X: =40
@@ -278,7 +278,7 @@
                 Y: =284
                 ZIndex: =18
 
-        Group7_1 As group:
+        grpOCEPClient As group:
             Height: =5
             Width: =5
             X: =-297
@@ -308,7 +308,7 @@
                 Y: =8
                 ZIndex: =26
 
-        Group8_1 As group:
+        grpOCEPCampaign As group:
             Height: =5
             Width: =5
             X: =-297
@@ -338,7 +338,7 @@
                 Y: =99
                 ZIndex: =27
 
-        Group9_1 As group:
+        grpOCEPLOB As group:
             Height: =5
             Width: =5
             X: =-297
@@ -367,7 +367,7 @@
                 Y: =193
                 ZIndex: =28
 
-        Group10_1 As group:
+        grpOCEPSubLOB As group:
             Height: =5
             Width: =5
             X: =-297
@@ -397,7 +397,7 @@
                 Y: =284
                 ZIndex: =29
 
-        Group7_2 As group:
+        grpOCEPSupervisor As group:
             Height: =5
             Width: =5
             X: =-636
@@ -427,7 +427,7 @@
                 Y: =8
                 ZIndex: =34
 
-        Group8_2 As group:
+        grpOCECountry As group:
             Height: =5
             Width: =5
             X: =-636
@@ -457,20 +457,20 @@
                 Y: =99
                 ZIndex: =35
 
-        Group9_2 As group:
+        grpOCEPSite As group:
             Height: =5
             Width: =5
             X: =-636
             Y: =25
             ZIndex: =40
 
-            ComboBox2_10 As combobox:
+            cbOCEPSite As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),SITE))
                 DisplayFields: =["Value"]
                 Items: =Filter(Distinct(Headcount_table, SITE), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, SITE), !IsBlank(Value)),ComboBox2_10.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, SITE), !IsBlank(Value)),cbOCEPSite.SearchText,"Value")
                 Width: =323
                 X: =1040
                 Y: =231
@@ -486,14 +486,14 @@
                 Y: =193
                 ZIndex: =36
 
-        Group10_3 As group:
+        grpOCEPBillability As group:
             Height: =5
             Width: =5
             X: =-641
             Y: =-251
             ZIndex: =40
 
-            ComboBox2_12 As combobox:
+            cbOCEPBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),BILLABILITY))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
@@ -516,7 +516,7 @@
                 Y: =378
                 ZIndex: =39
 
-        Group11 As group:
+        grpOCEPEmpId As group:
             Height: =5
             Width: =5
             X: =60
@@ -533,7 +533,7 @@
                 Y: =8
                 ZIndex: =7
 
-            Label7 As label:
+            txtOCEPEmpId As label:
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.ID
                 Width: =268
@@ -541,14 +541,14 @@
                 Y: =48
                 ZIndex: =40
 
-        Group10_2 As group:
+        grpOCEPRole As group:
             Height: =5
             Width: =5
             X: =-636
             Y: =25
             ZIndex: =41
 
-            ComboBox2_11 As combobox:
+            cbOCEPRole As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, ID=tblSelectedID),ROLE))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
