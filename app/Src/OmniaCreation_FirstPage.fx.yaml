@@ -797,9 +797,9 @@
 
                 cbOCFPRole As combobox:
                     DisplayFields: =["Value"]
-                    Items: =["Select your answer", "Support", "Agent"]
+                    Items: =["Support", "Agent"]
                     SearchFields: =["Value"]
-                    SearchItems: =Search(["Select your answer", "Support", "Agent"],cbOCFPRole.SearchText,"Value")
+                    SearchItems: =Search(["Support", "Agent"],cbOCFPRole.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
