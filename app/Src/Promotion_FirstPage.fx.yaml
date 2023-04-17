@@ -144,6 +144,7 @@
             OnChange: |-
                 =Set(SelectedItemID, "") &&
                 Reset(cbPRSearchMultipleOmnia)
+            OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
             SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbPRSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
@@ -591,7 +592,7 @@
             btnPRMulSave_2 As button:
                 OnSelect: |-
                     =If(
-                        IsBlank(cbPRMultipleBusUnit_1) || IsBlank(cbPRMultipleSubUnit_1) || IsBlank(cbPRMultiplePosition_1) || IsBlank(cbPRMultipleClient_1) || IsBlank(cbPRMultipleBillability_1) || IsBlank(txtPRMultipleSchedule_1) || IsBlank(cbPRMultipleSupervisor_1),
+                        IsBlank(cbPRMultipleBusUnit_1) || IsBlank(cbPRMultipleSubUnit_1) || IsBlank(cbPRMultiplePosition_1) || IsBlank(cbPRMultipleClient_1) || IsBlank(cbPRMultipleBillability_1) || IsBlank(cbPRMultipleSupervisor_1),
                         Notify("Please complete all fields!", NotificationType.Error),
                         If(
                             CountRows(Filter(colPromotion, USER = SelectedItemID)) > 0,

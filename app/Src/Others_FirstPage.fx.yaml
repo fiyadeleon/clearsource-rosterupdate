@@ -736,67 +736,80 @@
             btnOTSave As button:
                 OnSelect: |-
                     =If(
-                        //check if status is equivalent to !ACTIVE to require start and end date
-                        //if status is equivalent to ACTIVE require start date
                         (
-                            (
-                                cbOTStatus.Selected.Value = "INACTIVE" ||
-                                cbOTStatus.Selected.Value = "FLOATING" ||
-                                cbOTStatus.Selected.Value = "LOA" ||
-                                cbOTStatus.Selected.Value = "LOAM" ||
-                                cbOTStatus.Selected.Value = "RTWO" ||
-                                cbOTStatus.Selected.Value = "SUSPENDED" ||
-                                cbOTStatus.Selected.Value = "MATERNITY LEAVE" || 
-                                cbOTStatus.Selected.Value = "PATERNITY LEAVE"
-                            ) 
-                            && (IsBlank(dateStart.SelectedDate) || IsBlank(dateEnd.SelectedDate)) ||
-                            (
-                                cbOTStatus.Selected.Value = "ACTIVE"
-                            ) 
-                            && IsBlank(dateStart.SelectedDate)
+                            (!IsBlank(cbOTStatus.Selected.Value) || !IsBlank(cbOTStatus.SearchText)) &&
+                            (!IsBlank(cbOTSupervisor.Selected.Value) || !IsBlank(cbOTSupervisor.SearchText)) &&
+                            (!IsBlank(cbOTBusUnit.Selected.Value) || !IsBlank(cbOTBusUnit.SearchText)) &&
+                            (!IsBlank(cbOTSubUnit.Selected.Value) || !IsBlank(cbOTSubUnit.SearchText)) &&
+                            (!IsBlank(cbOTPosition.Selected.Value) || !IsBlank(cbOTPosition.SearchText)) &&
+                            (!IsBlank(cbOTClient.Selected.Value) || !IsBlank(cbOTClient.SearchText)) &&
+                            (!IsBlank(cbOTLOB.Selected.Value) || !IsBlank(cbOTLOB.SearchText)) &&
+                            (!IsBlank(cbOTBillability.Selected.Value) || !IsBlank(cbOTBillability.SearchText))
                         ),
-                    
-                        //true
-                        (
-                            If(cbOTStatus.Selected.Value = "ACTIVE",
-                                Notify("Please fill out Start Date for this type of Status.", NotificationType.Error),
-                                Notify("Please fill out Start and End Date for this type of Status.", NotificationType.Error)
-                            )
-                        ),
-                    
-                        //false
                         If(
-                            CountRows(
-                                Filter(colOthers,USER=SelectedItemIDinOT)
-                            ) > 0, 
-                            Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT)
-                        ));
-                        If((cbOTStatus.Selected.Value = "ACTIVE") && (IsBlank(dateEnd.SelectedDate)),
-                            Set(endDateVal, "N/A"),
-                            Set(endDateVal, Text(dateEnd.SelectedDate, "yyyy-mm-dd"))
-                        );
-                        Collect(colOthers, {
-                                USER:SelectedItemIDinOT,
-                                NAME:txtOTMName.Text,
-                                ID:txtOTEmpId.Text,
-                                SITE:txtOTSite.Text,
-                                STATUS:cbOTStatus.Selected.Value,
-                                'START DATE':Text(dateStart.SelectedDate, "yyyy-mm-dd"),
-                                'END DATE':endDateVal,
-                                'NESTING START DATE':Text(dateNesting.SelectedDate, "yyyy-mm-dd"),
-                                'PRODUCTION DATE':Text(dateProduction.SelectedDate, "yyyy-mm-dd"),
-                                'BUSINESS UNIT':If(IsBlank(cbOTBusUnit.Selected.Value), cbOTBusUnit.SearchText, cbOTBusUnit.Selected.Value),
-                                'SUB UNIT':If(IsBlank(cbOTSubUnit.Selected.Value), cbOTSubUnit.SearchText, cbOTSubUnit.Selected.Value),
-                                POSITION:If(IsBlank(cbOTPosition.Selected.Value), cbOTPosition.SearchText, cbOTPosition.Selected.Value),
-                                CLIENT:If(IsBlank(cbOTClient.Selected.Value), cbOTClient.SearchText, cbOTClient.Selected.Value),
-                                LOB:If(IsBlank(cbOTSearchLOB.Selected.Value), cbOTSearchLOB.SearchText, cbOTSearchLOB.Selected.Value),
-                                BILLABILITY:If(IsBlank(cbOTBillability.Selected.Value), cbOTBillability.SearchText, cbOTBillability.Selected.Value),
-                                SCHEDULE:If(IsBlank(txtOTSchedule.Text), "N/A", txtOTSchedule.Text),
-                                SUPERVISOR:If(IsBlank(cbOTSupervisor.Selected.Value), cbOTSupervisor.SearchText, cbOTSupervisor.Selected.Value),
-                                'SUBMITTED BY':User().Email
-                            }
-                        );
-                        Notify("Successfully saved your changes locally.", NotificationType.Success)
+                            //check if status is equivalent to !ACTIVE to require start and end date
+                            //if status is equivalent to ACTIVE require start date
+                            (
+                                (
+                                    cbOTStatus.Selected.Value = "INACTIVE" ||
+                                    cbOTStatus.Selected.Value = "FLOATING" ||
+                                    cbOTStatus.Selected.Value = "LOA" ||
+                                    cbOTStatus.Selected.Value = "LOAM" ||
+                                    cbOTStatus.Selected.Value = "RTWO" ||
+                                    cbOTStatus.Selected.Value = "SUSPENDED" ||
+                                    cbOTStatus.Selected.Value = "MATERNITY LEAVE" || 
+                                    cbOTStatus.Selected.Value = "PATERNITY LEAVE"
+                                ) 
+                                && (IsBlank(dateStart.SelectedDate) || IsBlank(dateEnd.SelectedDate)) ||
+                                (
+                                    cbOTStatus.Selected.Value = "ACTIVE"
+                                ) 
+                                && IsBlank(dateStart.SelectedDate)
+                            ),
+                    
+                            //true
+                            (
+                                If(cbOTStatus.Selected.Value = "ACTIVE",
+                                    Notify("Please fill out Start Date for this type of Status.", NotificationType.Error),
+                                    Notify("Please fill out Start and End Date for this type of Status.", NotificationType.Error)
+                                )
+                            ),
+                    
+                            //false
+                            If(
+                                CountRows(
+                                    Filter(colOthers,USER=SelectedItemIDinOT)
+                                ) > 0, 
+                                Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT)
+                            ));
+                            If((cbOTStatus.Selected.Value = "ACTIVE") && (IsBlank(dateEnd.SelectedDate)),
+                                Set(endDateVal, "N/A"),
+                                Set(endDateVal, Text(dateEnd.SelectedDate, "yyyy-mm-dd"))
+                            );
+                            Collect(colOthers, {
+                                    USER:SelectedItemIDinOT,
+                                    NAME:txtOTMName.Text,
+                                    ID:txtOTEmpId.Text,
+                                    SITE:txtOTSite.Text,
+                                    STATUS:cbOTStatus.Selected.Value,
+                                    'START DATE':Text(dateStart.SelectedDate, "yyyy-mm-dd"),
+                                    'END DATE':endDateVal,
+                                    'NESTING START DATE':Text(dateNesting.SelectedDate, "yyyy-mm-dd"),
+                                    'PRODUCTION DATE':Text(dateProduction.SelectedDate, "yyyy-mm-dd"),
+                                    'BUSINESS UNIT':If(IsBlank(cbOTBusUnit.Selected.Value), cbOTBusUnit.SearchText, cbOTBusUnit.Selected.Value),
+                                    'SUB UNIT':If(IsBlank(cbOTSubUnit.Selected.Value), cbOTSubUnit.SearchText, cbOTSubUnit.Selected.Value),
+                                    POSITION:If(IsBlank(cbOTPosition.Selected.Value), cbOTPosition.SearchText, cbOTPosition.Selected.Value),
+                                    CLIENT:If(IsBlank(cbOTClient.Selected.Value), cbOTClient.SearchText, cbOTClient.Selected.Value),
+                                    LOB:If(IsBlank(cbOTSearchLOB.Selected.Value), cbOTSearchLOB.SearchText, cbOTSearchLOB.Selected.Value),
+                                    BILLABILITY:If(IsBlank(cbOTBillability.Selected.Value), cbOTBillability.SearchText, cbOTBillability.Selected.Value),
+                                    SCHEDULE:If(IsBlank(txtOTSchedule.Text), "N/A", txtOTSchedule.Text),
+                                    SUPERVISOR:If(IsBlank(cbOTSupervisor.Selected.Value), cbOTSupervisor.SearchText, cbOTSupervisor.Selected.Value),
+                                    'SUBMITTED BY':User().Email
+                                }
+                            );
+                            Notify("Successfully saved your changes locally.", NotificationType.Success)
+                        ),
+                        Notify("Please fill out all fields!", NotificationType.Error)
                     )
                 Text: ="Save"
                 X: =657
