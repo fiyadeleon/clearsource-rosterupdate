@@ -222,7 +222,7 @@
                     Default: =Parent.Default
                     DelayOutput: =true
                     DisplayMode: =Parent.DisplayMode
-                    HintText: ="(optional)"
+                    HintText: ="(Optional)"
                     MaxLength: =Parent.MaxLength
                     PaddingLeft: =5
                     RadiusBottomLeft: =0
@@ -797,9 +797,9 @@
 
                 cbOCFPRole As combobox:
                     DisplayFields: =["Value"]
-                    Items: =Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value))
+                    Items: =["Select your answer", "Support", "Agent"]
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value)),cbOCFPRole.SearchText,"Value")
+                    SearchItems: =Search(["Select your answer", "Support", "Agent"],cbOCFPRole.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40

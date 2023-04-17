@@ -592,8 +592,15 @@
             btnPRMulSave_2 As button:
                 OnSelect: |-
                     =If(
-                        IsBlank(cbPRMultipleBusUnit_1) || IsBlank(cbPRMultipleSubUnit_1) || IsBlank(cbPRMultiplePosition_1) || IsBlank(cbPRMultipleClient_1) || IsBlank(cbPRMultipleBillability_1) || IsBlank(cbPRMultipleSupervisor_1),
-                        Notify("Please complete all fields!", NotificationType.Error),
+                        (
+                            (!IsBlank(cbPRMultipleBusUnit_1.Selected.Value) || !IsBlank(cbPRMultipleBusUnit_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleSubUnit_1.Selected.Value) || !IsBlank(cbPRMultipleSubUnit_1.SearchText)) &&
+                            (!IsBlank(cbPRMultiplePosition_1.Selected.Value) || !IsBlank(cbPRMultiplePosition_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleClient_1.Selected.Value) || !IsBlank(cbPRMultipleClient_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleLOB_2.Selected.Value) || !IsBlank(cbPRMultipleLOB_2.SearchText)) &&
+                            (!IsBlank(cbPRMultipleBillability_1.Selected.Value) || !IsBlank(cbPRMultipleBillability_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))
+                        ),
                         If(
                             CountRows(Filter(colPromotion, USER = SelectedItemID)) > 0,
                             Remove(colPromotion, LookUp(colPromotion, USER = SelectedItemID));
@@ -613,7 +620,8 @@
                             'EMPLOYEE ID': txtPRMultipleIdpm1_1.Text,
                             'SUBMITTED BY':User().Email
                         });
-                        Notify("Successfully saved your changes locally.", NotificationType.Success)
+                        Notify("Successfully saved your changes locally.", NotificationType.Success),
+                        Notify("Please complete all fields!", NotificationType.Error)
                     )
                 Text: ="Save"
                 X: =302
