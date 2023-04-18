@@ -1,276 +1,253 @@
 "Promotion_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
-    BackgroundImage: ='MicrosoftTeams-image (2)'
-    Height: =1123
-    Width: =794
+    BackgroundImage: ='MicrosoftTeams-image'
+    Fill: =
+    Height: =1200
+    ImagePosition: =ImagePosition.Stretch
+    OnVisible: =
+    Width: =1500
 
-    frPRStatic_1 As form:
-        DataSource: =CurrentRoster
-        Height: =178
-        Item: =cbPROmniaID_1.Selected
-        NumberOfColumns: =1
-        Width: =578
-        X: =108
-        Y: =210
+    "galleryPRMp1st_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        BorderThickness: =1
+        Default: ={}
+        Height: =708
+        Items: =cbPRSearchMultipleOmnia.SelectedItems
+        Layout: =Layout.Vertical
+        OnSelect: =Set(SelectedPRItemID, txtPRMultipleOmniapm1_1.Text)
+        TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
+        TemplatePadding: =0
+        TemplateSize: =126
+        X: =42
+        Y: =322
         ZIndex: =1
 
-        frPREmployeeID_1 As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="EMPLOYEE ID"
-            Default: =ThisItem.'EMPLOYEE ID'
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"EMPLOYEE ID")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
-            Required: =false
-            Width: =578
-            X: =0
-            Y: =0
+        txtPRMultipleNamepm1_1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Set(SelectedItemID, txtPRMultipleIdpm1_1.Text)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =16
+            Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =16
             ZIndex: =1
 
-            DataCardKey15_1 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10 + (txtPREmployeeID_1.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
+        txtPRMultipleIdpm1_1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'EMPLOYEE ID'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =txtPRMultipleNamepm1_1.Y + txtPRMultipleNamepm1_1.Height + 2
+            ZIndex: =2
 
-            txtPREmployeeID_1 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey15_1.X + DataCardKey15_1.Width
-                Y: =10
-                ZIndex: =2
+        txtPRMultipleOmniapm1_1 As label:
+            Height: =29
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.USER
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =79
+            ZIndex: =3
 
-        frPRFirstName_1 As typedDataCard.textualViewCard:
+        NextArrow2_1_Verify_1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2_1_Verify_1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    "'Promotion Form_1' As label":
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =22
+        Text: ="PROMOTION FORM"
+        Width: =412
+        X: =556
+        Y: =55
+        ZIndex: =4
+
+    btnPRMultipleReviewp1_1 As button:
+        Fill: =RGBA(0, 18, 107, 1)
+        OnSelect: |-
+            =If(
+                IsEmpty(colPromotion),
+                Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
+                Navigate(Promotion_SecondPage,ScreenTransition.Cover)
+            )
+        Text: ="Review"
+        X: =1260
+        Y: =1089
+        ZIndex: =11
+
+    btnPRMultipleBackp1_1 As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(186, 202, 226, 1)
+        OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
+        Text: ="Back"
+        X: =1067
+        Y: =1089
+        ZIndex: =12
+
+    grpPRSearchMultipleLOB_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =13
+
+        txtPRSearchMultipleLOB_1 As label:
+            Align: =Align.Right
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="LINE OF BUSINESS"
+            Width: =165
+            X: =443
+            Y: =122
+            ZIndex: =8
+
+        cbPRSearchMultipleLOB As combobox:
+            ChevronBackground: =RGBA(0, 18, 107, 1)
+            DisplayFields: =["Value"]
+            Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+            OnChange: |-
+                =Set(SelectedItemID, "") &&
+                Reset(cbPRSearchMultipleOmnia)
+            OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
+            SearchFields: =["Value"]
+            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbPRSearchMultipleLOB.SearchText,"Value")
+            SelectMultiple: =false
+            Width: =401.4
+            X: =625
+            Y: =122
+            ZIndex: =9
+
+    grpPRSearchMultipleOmnia_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =16
+
+        cbPRSearchMultipleOmnia As combobox:
+            ChevronBackground: =RGBA(0, 18, 107, 1)
+            DefaultSelectedItems: =
+            DisplayFields: =["USER"]
+            Items: =If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB.Selected.Value))
+            OnChange: =Set(SelectedPRItemID, "")
+            SearchFields: =["USER"]
+            SearchItems: =Search(If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbPRSearchMultipleLOB.Selected.Value)),cbPRSearchMultipleOmnia.SearchText,"USER")
+            Width: =401.4
+            X: =625
+            Y: =187
+            ZIndex: =13
+
+        txtPRSearchMultipleOmnia_1 As label:
+            Align: =Align.Right
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="OMNIA ID"
+            Width: =165
+            X: =443
+            Y: =188
+            ZIndex: =15
+
+    formPREDsp1_1 As form:
+        BorderThickness: =1
+        DataSource: =Headcount_table
+        Height: =708
+        Item: =If(!IsBlank(SelectedPRItemID), LookUp(Headcount_table, USER=SelectedPRItemID))
+        NumberOfColumns: =1
+        OnReset: =true
+        Width: =742
+        X: =713
+        Y: =322
+        ZIndex: =18
+
+        "'FULL NAME_DataCard PRMp1_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"FIRST NAME")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =60
             Required: =false
-            Width: =578
-            X: =0
-            Y: =1
-            ZIndex: =1
-
-            DataCardKey16_1 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10 + (txtPRFirstName_1.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            txtPRFirstName_1 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey16_1.X + DataCardKey16_1.Width
-                Y: =10
-                ZIndex: =2
-
-        frPRLastName_1 As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="LAST NAME"
-            Default: =ThisItem.'LAST NAME'
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LAST NAME")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
-            Required: =false
-            Width: =578
-            X: =0
-            Y: =2
-            ZIndex: =1
-
-            DataCardKey9_1 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10 + (txtPRLastName_1.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            txtPRLastName_1 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey9_1.X + DataCardKey9_1.Width
-                Y: =10
-                ZIndex: =2
-
-        frPRSite_1 As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="SITE"
-            Default: =ThisItem.SITE
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SITE")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
-            Required: =false
-            Width: =578
-            X: =0
-            Y: =3
-            ZIndex: =1
-
-            DataCardKey13_1 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10 + (txtPRSite_1.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            txtPRSite_1 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey13_1.X + DataCardKey13_1.Width
-                Y: =10
-                ZIndex: =2
-
-    cbPROmniaID_1 As combobox:
-        ChevronBackground: =RGBA(0, 18, 107, 1)
-        DisplayFields: =["USER"]
-        Items: =CurrentRoster
-        SearchFields: =["USER"]
-        SearchItems: =Search(CurrentRoster,cbPROmniaID_1.SearchText,"USER")
-        SelectMultiple: =false
-        Width: =310
-        X: =346
-        Y: =160
-        ZIndex: =2
-
-    txtPROmniaID_1 As label:
-        Color: =RGBA(0, 18, 107, 1)
-        FontWeight: =FontWeight.Bold
-        Text: ="OMNIA ID"
-        X: =135
-        Y: =160
-        ZIndex: =3
-
-    btnPRReview As button:
-        Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: |-
-            =If(
-                IsBlank(cbPRBusiness) ||
-                IsBlank(cbPRClient) ||
-                IsBlank(cbPRPosition) ||
-                IsBlank(cbPRLOB) ||
-                IsBlank(cbPRSubUnit) ||
-                IsBlank(cbPRBillability) ||
-                IsBlank(txtPRSchedule) ||
-                IsBlank(cbPRTeam),
-                Notify("Please complete all fields!",NotificationType.Error),
-                Navigate(Promotion_SecondPage,ScreenTransition.None)
-                )
-        Text: ="Review"
-        X: =526
-        Y: =931
-        ZIndex: =4
-
-    frPRDynamic_1 As form:
-        DataSource: =CurrentRoster
-        Height: =417
-        Item: =cbPROmniaID_1.Selected
-        NumberOfColumns: =1
-        Width: =578
-        X: =108
-        Y: =468
-        ZIndex: =5
-
-        "'BUSINESS UNIT_PRDataCard4_1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="BUSINESS UNIT"
-            Default: =ThisItem.'BUSINESS UNIT'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BUSINESS UNIT")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =
-            Width: =578
+            Width: =741
             X: =0
             Y: =0
             ZIndex: =1
 
-            DataCardKey23_1 As label:
+            DataCardKeyENpm1_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="EMPLOYEE NAME"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10
+                Y: =13
                 ZIndex: =1
 
-            cbPRBusiness As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, 'BUSINESS UNIT')
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, 'BUSINESS UNIT'),cbPRBusiness.SearchText,"Value")
-                SelectMultiple: =false
-                X: =237
-                Y: =10
-                ZIndex: =5
+            txtPRMultipleEmpName_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKeyENpm1_1.X + DataCardKeyENpm1_1.Width
+                Y: =20
+                ZIndex: =2
 
-        CLIENT_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "CLIENT")
+        "'SITE DataCard PRMp1_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="CLIENT"
-            Default: =ThisItem.CLIENT
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"CLIENT")
+            DataField: ="SITE"
+            Default: =ThisItem.SITE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SITE")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =60
             Required: =false
-            Update: =
-            Width: =578
+            Width: =741
             X: =0
             Y: =1
             ZIndex: =1
 
-            DataCardKey11_1 As label:
+            DataCardKeySITEpm1_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -278,38 +255,39 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10
+                Y: =13
                 ZIndex: =1
 
-            cbPRClient As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),CLIENT)
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, CLIENT)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, CLIENT),cbPRClient.SearchText,"Value")
-                SelectMultiple: =false
-                X: =237
-                Y: =10
-                ZIndex: =5
+            txtPRMultipleSite_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =302
+                Y: =20
+                ZIndex: =2
 
-        POSITION_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "POSITION")
+        "'BUSINESS UNIT_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
             BorderStyle: =BorderStyle.Solid
-            DataField: ="POSITION"
-            Default: =ThisItem.POSITION
+            DataField: ="BUSINESS UNIT"
+            Default: =ThisItem.'BUSINESS UNIT'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"POSITION")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =60
             Required: =false
-            Update: =
-            Width: =578
+            Update: =cbPRMultipleBusUnit_1.Selected.Value
+            Width: =741
             X: =0
             Y: =2
             ZIndex: =1
 
-            DataCardKey12_1 As label:
+            DataCardKeyBUpm1_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -317,116 +295,116 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10
+                Y: =13
                 ZIndex: =1
 
-            cbPRPosition As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'BUSINESS UNIT')
+            cbPRMultipleBusUnit_1 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, POSITION)
+                Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, POSITION),cbPRPosition.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbPRMultipleBusUnit_1.SearchText,"Value")
                 SelectMultiple: =false
-                X: =237
+                Width: =408.6
+                X: =302.8
                 Y: =10
-                ZIndex: =5
+                ZIndex: =2
 
-        LOB_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "LOB")
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="LOB"
-            Default: =ThisItem.LOB
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"LOB")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =
-            Width: =578
-            X: =0
-            Y: =3
-            ZIndex: =1
-
-            DataCardKey14_1 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            cbPRLOB As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),LOB)
-                DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, LOB)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, LOB),cbPRLOB.SearchText,"Value")
-                SelectMultiple: =false
-                X: =237
-                Y: =10
-                ZIndex: =5
-
-        "'SUB-UNIT_PRDataCard2_1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "SUB-UNIT")
+        "'SUB-UNIT_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "SUB-UNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB-UNIT'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SUB-UNIT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =60
+            Required: =false
+            Update: =cbPRMultipleSubUnit_1.Selected.Value
+            Width: =741
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKeySUpm1_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (cbPRMultipleSubUnit_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            cbPRMultipleSubUnit_1 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),'SUB-UNIT'))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbPRMultipleSubUnit_1.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
+        "'POSITION_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "POSITION")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="POSITION"
+            Default: =ThisItem.POSITION
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
             Required: =false
             Update: =
-            Width: =578
+            Width: =741
             X: =0
             Y: =4
             ZIndex: =1
 
-            DataCardKey17_1 As label:
+            DataCardKeyPOSpm1_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
-                X: =30
-                Y: =10
+                X: =28
+                Y: =13
                 ZIndex: =1
 
-            cbPRSubUnit As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),'SUB-UNIT')
+            cbPRMultiplePosition_1 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),POSITION))
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, 'SUB-UNIT')
+                Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, 'SUB-UNIT'),cbPRSubUnit.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbPRMultiplePosition_1.SearchText,"Value")
                 SelectMultiple: =false
-                X: =237
+                Width: =408.6
+                X: =302.8
                 Y: =10
-                ZIndex: =5
+                ZIndex: =2
 
-        BILLABILITY_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "BILLABILITY")
+        "'CLIENT_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "CLIENT")
             BorderStyle: =BorderStyle.Solid
-            DataField: ="BILLABILITY"
-            Default: =ThisItem.BILLABILITY
+            DataField: ="CLIENT"
+            Default: =ThisItem.CLIENT
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"BILLABILITY")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CLIENT")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =60
             Required: =false
-            Update: =
-            Width: =578
+            Update: =cbPRMultipleClient_1.Selected.Value
+            Width: =741
             X: =0
             Y: =5
             ZIndex: =1
 
-            DataCardKey19_1 As label:
+            DataCardKeyCLpm1_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -434,38 +412,38 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10
+                Y: =10 + (cbPRMultipleClient_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            cbPRBillability As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),BILLABILITY)
+            cbPRMultipleClient_1 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),CLIENT))
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, BILLABILITY)
+                Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, BILLABILITY),cbPRBillability.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbPRMultipleClient_1.SearchText,"Value")
                 SelectMultiple: =false
-                X: =237
+                Width: =408.6
+                X: =302.8
                 Y: =10
-                ZIndex: =5
+                ZIndex: =2
 
-        SCHEDULE_PRDataCard3_1 As typedDataCard.textualEditCard:
+        LOB_DataCard2 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="SCHEDULE"
-            Default: =ThisItem.SCHEDULE
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"SCHEDULE")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =DataSourceInfo([@CurrentRoster], DataSourceInfo.MaxLength, "SCHEDULE")
+            Height: =60
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
             Required: =false
-            Update: =
-            Width: =578
+            Update: =cbPRMultipleLOB_2.Selected.Value
+            Width: =742
             X: =0
             Y: =6
             ZIndex: =1
 
-            DataCardKey21_1 As label:
+            DataCardKey3 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -473,34 +451,38 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10
+                Y: =13
                 ZIndex: =1
 
-            txtPRSchedule As text:
-                Default: =""
-                HintText: ="e.g., 10PM - 7AM PHT"
-                Width: =330
-                X: =237
+            cbPRMultipleLOB_2 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),LOB))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbPRMultipleLOB_2.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302.8
                 Y: =10
                 ZIndex: =5
 
-        TEAM_PRDataCard2_1 As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@CurrentRoster], DataSourceInfo.AllowedValues, "TEAM")
+        "'BILLABILITY_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BILLABILITY")
             BorderStyle: =BorderStyle.Solid
-            DataField: ="TEAM"
-            Default: =ThisItem.TEAM
+            DataField: ="BILLABILITY"
+            Default: =ThisItem.BILLABILITY
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CurrentRoster],DataSourceInfo.DisplayName,"TEAM")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =60
             Required: =false
-            Update: =
-            Width: =578
+            Update: =cbPRMultipleBillability_1.Selected.Value
+            Width: =741
             X: =0
             Y: =7
             ZIndex: =1
 
-            DataCardKey20_1 As label:
+            DataCardKeyBILLpm1_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -508,48 +490,163 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10
+                Y: =10 + (cbPRMultipleBillability_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            cbPRTeam As combobox:
-                ChevronBackground: =RGBA(0, 18, 107, 1)
-                DefaultSelectedItems: =ForAll(Filter(CurrentRoster, USER=cbPROmniaID_1.Selected.USER),TEAM)
+            cbPRMultipleBillability_1 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),BILLABILITY))
                 DisplayFields: =["Value"]
-                Items: =Distinct(CurrentRoster, TEAM)
+                Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Distinct(CurrentRoster, TEAM),cbPRTeam.SearchText,"Value")
+                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbPRMultipleBillability_1.SearchText,"Value")
                 SelectMultiple: =false
-                X: =237
+                Width: =408.6
+                X: =302.8
                 Y: =10
-                ZIndex: =5
+                ZIndex: =2
 
-    btnPRBackMP As button:
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(186, 202, 226, 1)
-        OnSelect: =Navigate(HomePage,ScreenTransition.None)
-        Text: ="Back"
-        X: =336
-        Y: =931
-        ZIndex: =6
+        "'SCHEDULE_DataCard PRMp1_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="MONDAY"
+            Default: =ThisItem.MONDAY
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MONDAY")
+            Required: =false
+            Update: =txtPRMultipleSchedule_1.Text
+            Width: =741
+            X: =0
+            Y: =8
+            ZIndex: =1
 
-    Label2 As label:
-        Color: =RGBA(0, 18, 107, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =17
-        Text: ="NEW EMPLOYEE DETAILS"
-        Width: =286
-        X: =250
-        Y: =403
-        ZIndex: =7
+            DataCardKeySCHEDpm1_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SCHEDULE"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (txtPRMultipleSchedule_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
 
-    "'PROMOTION FORM_2' As label":
+            txtPRMultipleSchedule_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                HintText: ="e.g., 10PM - 7AM PHT"
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKeySCHEDpm1_1.X + DataCardKeySCHEDpm1_1.Width
+                Y: =10
+                ZIndex: =2
+
+        "'SUPERVISOR_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "TEAM")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAM"
+            Default: =ThisItem.TEAM
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =137
+            Required: =false
+            Update: =cbPRMultipleClient_1.Selected.Value
+            Width: =742
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKeySUPpm1_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (cbPRMultipleClient_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            cbPRMultipleSupervisor_1 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),TEAM))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbPRMultipleSupervisor_1.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
+            btnPRMulSave_2 As button:
+                OnSelect: |-
+                    =If(
+                        (
+                            (!IsBlank(cbPRMultipleBusUnit_1.Selected.Value) || !IsBlank(cbPRMultipleBusUnit_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleSubUnit_1.Selected.Value) || !IsBlank(cbPRMultipleSubUnit_1.SearchText)) &&
+                            (!IsBlank(cbPRMultiplePosition_1.Selected.Value) || !IsBlank(cbPRMultiplePosition_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleClient_1.Selected.Value) || !IsBlank(cbPRMultipleClient_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleLOB_2.Selected.Value) || !IsBlank(cbPRMultipleLOB_2.SearchText)) &&
+                            (!IsBlank(cbPRMultipleBillability_1.Selected.Value) || !IsBlank(cbPRMultipleBillability_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))
+                        ),
+                        If(
+                            CountRows(Filter(colPromotion, USER = SelectedItemID)) > 0,
+                            Remove(colPromotion, LookUp(colPromotion, USER = SelectedItemID));
+                        );
+                        Collect(colPromotion, {
+                            USER: SelectedPRItemID,
+                            NAME: txtPRMultipleEmpName_1.Text,
+                            SITE: txtPRMultipleSite_1.Text,
+                            'BUSINESS UNIT': If(IsBlank(cbPRMultipleBusUnit_1.Selected.Value), cbPRMultipleBusUnit_1.SearchText, cbPRMultipleBusUnit_1.Selected.Value),
+                            'SUB UNIT': If(IsBlank(cbPRMultipleSubUnit_1.Selected.Value), cbPRMultipleSubUnit_1.SearchText, cbPRMultipleSubUnit_1.Selected.Value),
+                            POSITION: If(IsBlank(cbPRMultiplePosition_1.Selected.Value), cbPRMultiplePosition_1.SearchText, cbPRMultiplePosition_1.Selected.Value),
+                            CLIENT: If(IsBlank(cbPRMultipleClient_1.Selected.Value), cbPRMultipleClient_1.SearchText, cbPRMultipleClient_1.Selected.Value),
+                            LOB: If(IsBlank(cbPRMultipleLOB_2.Selected.Value), cbPRMultipleLOB_2.SearchText, cbPRMultipleLOB_2.Selected.Value),
+                            BILLABILITY: If(IsBlank(cbPRMultipleBillability_1.Selected.Value), cbPRMultipleBillability_1.SearchText, cbPRMultipleBillability_1.Selected.Value),
+                            SCHEDULE: If(IsBlank(txtPRMultipleSchedule_1.Text), "N/A", txtPRMultipleSchedule_1.Text),
+                            SUPERVISOR: If(IsBlank(cbPRMultipleSupervisor_1.Selected.Value), cbPRMultipleSupervisor_1.SearchText, cbPRMultipleSupervisor_1.Selected.Value),
+                            'EMPLOYEE ID': txtPRMultipleIdpm1_1.Text,
+                            'SUBMITTED BY':User().Email
+                        });
+                        Notify("Successfully saved your changes locally.", NotificationType.Success),
+                        Notify("Please complete all fields!", NotificationType.Error)
+                    )
+                Text: ="Save"
+                X: =302
+                Y: =80
+                ZIndex: =3
+
+    txtPRSEp1_1 As label:
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
-        Text: ="PROMOTION FORM"
-        Width: =485
-        X: =62
-        Y: =58
-        ZIndex: =8
+        Text: ="SELECTED EMPLOYEE(S)"
+        Width: =316
+        X: =204
+        Y: =255
+        ZIndex: =19
+
+    txtPREDp1_1 As label:
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =20
+        Text: ="EMPLOYEE DETAILS"
+        Width: =264
+        X: =952
+        Y: =255
+        ZIndex: =20
 

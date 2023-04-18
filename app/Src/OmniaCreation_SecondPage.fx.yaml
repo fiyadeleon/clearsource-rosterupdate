@@ -1,0 +1,381 @@
+"OmniaCreation_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    BackgroundImage: ='Untitled design 29'
+    ImagePosition: =ImagePosition.Stretch
+    Width: =1425
+
+    oc2 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =22
+        Text: ="REVIEW OMNIA CREATION FORM"
+        Width: =562
+        Y: =31
+        ZIndex: =5
+
+    tblOCSP As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =497
+        Items: =colOmniaCreation
+        SelectedFill: =RGBA(172, 223, 135, 1)
+        Width: =1340
+        X: =42
+        Y: =159
+        ZIndex: =8
+
+        "'EMPLOYEE ID_Column1_1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="EMPLOYEE ID"
+            FieldName: ="EMPLOYEE ID"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            IsHyperlink: =false
+            LayoutHeight: =Parent.Height
+            OnSelect: =false
+            Order: =1
+            Text: =ThisItem.'EMPLOYEE ID'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        "'FIRST NAME_Column1_1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="FIRST NAME"
+            FieldName: ="FIRST NAME"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.'FIRST NAME'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        "'MIDDLE NAME_Column1_1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="MIDDLE NAME"
+            FieldName: ="MIDDLE NAME"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.'MIDDLE NAME'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        "'LAST NAME_Column1_1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="LAST NAME"
+            FieldName: ="LAST NAME"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.'LAST NAME'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        "'HIRE DATE_Column1_1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="HIRE DATE"
+            FieldName: ="HIRE DATE"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =Text(ThisItem.'HIRE DATE', "yyyy-mm-dd")
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        "'BUSINESS UNIT_Column1_1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="BUSINESS UNIT"
+            FieldName: ="BUSINESS UNIT"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =9
+            Text: =ThisItem.'BUSINESS UNIT'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        "'SUB UNIT_Column1_1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="SUB-UNIT"
+            FieldName: ="SUB UNIT"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =10
+            Text: =ThisItem.'SUB UNIT'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        POSITION_Column1_1 As dataTableColumn.textualColumn:
+            AutoWidth: =true
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="POSITION"
+            FieldName: ="POSITION"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =11
+            Text: =ThisItem.POSITION
+            Width: =220
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+        CLIENT_Column1_1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="CLIENT"
+            FieldName: ="CLIENT"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =12
+            Text: =ThisItem.CLIENT
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+        CAMPAIGN_Column1_1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="CAMPAIGN"
+            FieldName: ="CAMPAIGN"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =13
+            Text: =ThisItem.CAMPAIGN
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =10
+
+        LOB_Column1_1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="LOB"
+            FieldName: ="LOB"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =14
+            Text: =ThisItem.LOB
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =11
+
+        "'SUB-LOB_Column1_1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="SUB-LOB"
+            FieldName: ="SUB-LOB"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =15
+            Text: =ThisItem.'SUB-LOB'
+            Width: =100
+            X: =1180
+            Y: =0
+            ZIndex: =12
+
+        BILLABILITY_Column1_1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="BILLABILITY"
+            FieldName: ="BILLABILITY"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =16
+            Text: =ThisItem.BILLABILITY
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =13
+
+        SUPERVISOR_Column1_1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="SUPERVISOR"
+            FieldName: ="SUPERVISOR"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =17
+            Text: =ThisItem.SUPERVISOR
+            Width: =100
+            X: =1180
+            Y: =0
+            ZIndex: =14
+
+        COUNTRY_Column1_1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="COUNTRY"
+            FieldName: ="COUNTRY"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =18
+            Text: =ThisItem.COUNTRY
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =15
+
+        SITE_Column1_1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="SITE"
+            FieldName: ="SITE"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =19
+            Text: =ThisItem.SITE
+            Width: =100
+            X: =1180
+            Y: =0
+            ZIndex: =16
+
+        ROLE_Column1_1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="ROLE"
+            FieldName: ="ROLE"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =20
+            Text: =ThisItem.ROLE
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =17
+
+        "'REGULARIZATION DATE_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="REGULARIZATION DATE"
+            FieldName: ="REGULARIZATION DATE"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =6
+            Text: =Text(ThisItem.'REGULARIZATION DATE', "m/dd/yyyy")
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =18
+
+        STATUS_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="STATUS"
+            FieldName: ="STATUS"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =7
+            Text: =ThisItem.STATUS
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =19
+
+        "'EMPLOYMENT STATUS_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="EMPLOYMENT STATUS"
+            FieldName: ="EMPLOYMENT STATUS"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =ThisItem.'EMPLOYMENT STATUS'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =20
+
+    grpOCSPButtons As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        btnOCSPBack As button:
+            Color: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(186, 202, 226, 1)
+            OnSelect: =Navigate(OmniaCreation_FirstPage,ScreenTransition.Cover)
+            Text: ="Back"
+            X: =1030
+            Y: =684
+            ZIndex: =6
+
+        btnOCSPSubmit As button:
+            Fill: =RGBA(0, 18, 107, 1)
+            OnSelect: |-
+                =If(
+                    !IsEmpty(colOmniaCreation),
+                    If(
+                        SubmitOmniaCreation.Run(JSON(colOmniaCreation)),
+                        (
+                            Notify("Your request has been submitted successfully!", NotificationType.Success) &&
+                            ResetForm(formOCFirstPage1) &&
+                            ResetForm(formOCFirstPage2) &&
+                            ResetForm(formOCFirstPage3) &&
+                            ResetForm(formOCFirstPage4) &&
+                            Set(tblSelectedID, "") &&
+                            Reset(drpRosterSelection) &&
+                            Navigate(HomePage,ScreenTransition.Cover)
+                        ); Clear(colOmniaCreation),
+                        Notify("There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
+                    ),
+                    Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error)
+                )
+            Text: ="Submit"
+            X: =1222
+            Y: =684
+            ZIndex: =7
+
+    grpOCSPActions As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =13
+
+        btnOCSPRemove As button:
+            Fill: =RGBA(255, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(254, 127, 124, 0.8), -20%)
+            OnSelect: =Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblOCSP.Selected.'EMPLOYEE ID'))
+            Text: ="Remove"
+            X: =727
+            Y: =98
+            ZIndex: =11
+
+        btnOCSPEdit As button:
+            Fill: =RGBA(255, 191, 0, 1)
+            HoverFill: =ColorFade(Self.Fill, -15%)
+            OnSelect: |-
+                =Set(tblSelectedID, tblOCSP.Selected.'EMPLOYEE ID') &&
+                Navigate(OmniaCreation_EditPage)
+            Text: ="Edit"
+            X: =536
+            Y: =98
+            ZIndex: =12
+

@@ -27,14 +27,22 @@
         DisabledBorderColor: =RGBA(0, 18, 107, 1)
         DisabledColor: =RGBA(0, 18, 107, 1)
         DisabledFill: =RGBA(0, 18, 107, 1)
-        Items: =["Select your answer", "New Hire", "Termination", "Promotion", "Lateral Transfer", "Other User Status"]
+        Items: =["Select your answer", "OMNIA Creation", "Termination", "Promotion", "Lateral Transfer", "Other Roster Update"]
         X: =187
         Y: =390
         ZIndex: =3
 
     btnFirstPageNext As button:
-        Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "New Hire", Navigate(NewHire_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.CoverRight), drpRosterSelection.Selected.Value = "Other User Status", Navigate(Other_FirstPage,ScreenTransition.Cover)))
+        BorderColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), ColorFade(Self.Fill, -15%))
+        Color: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(211, 211, 211, 1), RGBA(255, 255, 255, 1))
+        Fill: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), RGBA(0, 18, 107, 1))
+        HoverBorderColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), ColorFade(Self.BorderColor, 20%))
+        HoverColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(211, 211, 211, 1), RGBA(255, 255, 255, 1))
+        HoverFill: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), RGBA(0, 18, 107, 1))
+        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "OMNIA Creation", Navigate(OmniaCreation_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover),drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Other Roster Update", Navigate(Others_FirstPage,ScreenTransition.Cover)))
+        PressedBorderColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), Self.Fill)
+        PressedColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(211, 211, 211, 1), Self.Fill)
+        PressedFill: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), Self.Color)
         Text: ="Next"
         X: =355
         Y: =455
