@@ -682,8 +682,10 @@
                     (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))
                 ),
                 If(
-                    CountRows(Filter(colPromotion, USER = SelectedItemID)) > 0,
-                    Remove(colPromotion, LookUp(colPromotion, USER = SelectedItemID));
+                    CountRows(
+                        Filter(colPromotion, USER = SelectedPRItemID)
+                    ) > 0,
+                    Remove(colPromotion, LookUp(colPromotion, USER = SelectedPRItemID));
                 );
                 Collect(colPromotion, {
                     USER: SelectedPRItemID,
