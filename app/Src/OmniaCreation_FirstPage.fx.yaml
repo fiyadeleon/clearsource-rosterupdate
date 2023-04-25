@@ -64,15 +64,29 @@
                         SITE:If(IsBlank(cbOCFPSite.Selected.Value), cbOCFPSite.SearchText, cbOCFPSite.Selected.Value), 
                         ROLE:If(IsBlank(cbOCFPRole.Selected.Value), cbOCFPRole.SearchText, cbOCFPRole.Selected.Value),
                         'SUBMITTED BY':User().Email
-                    }
+                }
+                    //ResetForm(formOCFirstPage1);
                 );
-                Notify("Successfully saved your changes locally.", NotificationType.Success),
+                Notify("Successfully saved your changes locally.", NotificationType.Success);
+                ResetForm(formOCFirstPage1),
                 Notify("Please fill out all fields!", NotificationType.Error)
             )
         Text: ="Save"
-        X: =609
-        Y: =571
+        X: =734
+        Y: =574
         ZIndex: =5
+
+    Button1 As button:
+        Fill: =RGBA(255, 0, 0, 1)
+        OnSelect: |
+            =ResetForm(formOCFirstPage1);
+            ResetForm(formOCFirstPage2);
+            ResetForm(formOCFirstPage3);
+            ResetForm(formOCFirstPage4);
+        Text: ="Clear"
+        X: =537
+        Y: =574
+        ZIndex: =10
 
     grpNewOCForm As group:
         Height: =5
