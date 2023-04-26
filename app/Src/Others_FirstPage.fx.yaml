@@ -593,6 +593,7 @@
 
             dateNesting As datepicker:
                 DefaultDate: =
+                DisplayMode: =If(ThisItem.ROLE = "Agent", DisplayMode.Edit,DisplayMode.View)
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -667,6 +668,7 @@
 
             dateProduction As datepicker:
                 DefaultDate: =
+                DisplayMode: =If(ThisItem.ROLE = "Agent", DisplayMode.Edit,DisplayMode.View)
                 Width: =408.6
                 X: =302.8
                 Y: =10

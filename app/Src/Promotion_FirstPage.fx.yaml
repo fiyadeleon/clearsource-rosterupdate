@@ -438,9 +438,10 @@
             cbPRMultiplePosition_1 As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),POSITION))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbPRMultiplePosition_1.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
