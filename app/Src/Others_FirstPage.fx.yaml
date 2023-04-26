@@ -568,7 +568,7 @@
             BorderStyle: =BorderStyle.Solid
             DataField: ="NESTING START DATE"
             Default: =ThisItem.'NESTING START DATE'
-            DisplayMode: =If(ThisItem.ROLE = "Agent", DisplayMode.Edit,DisplayMode.View)
+            DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"NESTING START DATE")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60

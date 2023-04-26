@@ -101,6 +101,28 @@
     "dependents": [],
     "id": "2638c843-0dda-43f6-b052-8111f6949320"
   },
+  "7912b7ae-1da4-4d6c-8726-f0b21a0552e7": {
+    "connectionRef": {
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3202/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
+    },
+    "datasets": {
+      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJXCT7XVGSUHN5FY32SZYDNFMPXF": {
+        "dataSources": {
+          "Headcount_table": {
+            "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Headcount_table"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7912b7ae-1da4-4d6c-8726-f0b21a0552e7"
+  },
   "8a8a3e27-6d10-4dc0-8074-db9344b70de1": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -188,27 +210,5 @@
     },
     "dependents": [],
     "id": "d0a8a34c-8a12-43d0-b714-66f18bbc83e0"
-  },
-  "f1b8f03b-e965-476c-841e-7291f7f22ecb": {
-    "connectionRef": {
-      "displayName": "Excel Online (Business)",
-      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3202/excelonlinebusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
-    },
-    "datasets": {
-      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJXCT7XVGSUHN5FY32SZYDNFMPXF": {
-        "dataSources": {
-          "Headcount_table": {
-            "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "Headcount_table"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "f1b8f03b-e965-476c-841e-7291f7f22ecb"
   }
 }
