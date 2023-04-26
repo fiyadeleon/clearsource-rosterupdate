@@ -174,10 +174,11 @@
             cbOCEPBusUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbOCEPBusUnit.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -204,10 +205,11 @@
             cbOCEPSubUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbOCEPSubUnit.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -234,10 +236,11 @@
             cbOCEPPosition As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),POSITION))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbOCEPPosition.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -264,10 +267,11 @@
             cbOCEPEmpStatus As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'EMPLOYMENT STATUS'))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'EMPLOYMENT STATUS'), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'EMPLOYMENT STATUS'), !IsBlank(Value)),cbOCEPEmpStatus.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -294,10 +298,11 @@
             cbOCEPClient As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),CLIENT))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbOCEPClient.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -324,10 +329,11 @@
             cbOCEPCampaign As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),CAMPAIGN))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value)),cbOCEPCampaign.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -354,10 +360,11 @@
             cbOCEPLOB As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),LOB))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbOCEPLOB.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -384,10 +391,11 @@
             cbOCEPSubLOB As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'SUB-LOB'))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),cbOCEPSubLOB.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -414,10 +422,11 @@
             cbOCEPSupervisor As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SUPERVISOR))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbOCEPSupervisor.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =1040
@@ -444,10 +453,11 @@
             cbOCEPCountry As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),COUNTRY))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),cbOCEPCountry.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =1040
@@ -474,10 +484,11 @@
             cbOCEPSite As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SITE))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, SITE), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, SITE), !IsBlank(Value)),cbOCEPSite.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =1040
@@ -504,10 +515,11 @@
             cbOCEPBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),BILLABILITY))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbOCEPBillability.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -534,10 +546,11 @@
             cbOCEPRole As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),ROLE))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value)),cbOCEPRole.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =323
                 X: =1040

@@ -151,6 +151,13 @@
                 Y: =13
                 ZIndex: =1
 
+            Label17 As label:
+                DisplayMode: =DisplayMode.View
+                Text: =ThisItem.'NEW SALARY EFFECTIVITY'
+                X: =302
+                Y: =13
+                ZIndex: =2
+
         DataCard7 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
@@ -173,7 +180,7 @@
 
             Label16 As label:
                 DisplayMode: =DisplayMode.View
-                Text: =""
+                Text: =ThisItem.'FOR INTERNSHIP'
                 X: =302
                 Y: =10
                 ZIndex: =2
@@ -482,7 +489,7 @@
         SCHEDULE_LTMDataCard2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
-            Default: =ThisItem.SCHEDULE
+            Default: =ThisItem.'NEW SALARY PACKAGE'
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
             Fill: =RGBA(0, 0, 0, 0)
@@ -511,7 +518,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =Parent.Default
+                Text: =ThisItem.'NEW SALARY PACKAGE'
                 Width: =(Parent.Width - 60) * 0.6
                 X: =302
                 Y: =16

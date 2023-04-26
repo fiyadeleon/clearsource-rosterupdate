@@ -201,7 +201,7 @@
                 Y: =13
                 ZIndex: =1
 
-            DatePicker1 As datepicker:
+            NewSalaryDate_LTM As datepicker:
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -226,7 +226,7 @@
                 Y: =13
                 ZIndex: =1
 
-            Radio1 As radio:
+            rdLTMInternship As radio:
                 Height: =35
                 Items: =["Yes", "No"]
                 Layout: =Layout.Horizontal
@@ -344,9 +344,10 @@
             cbLTMultipleBusUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTMultipleBusUnit.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -383,9 +384,10 @@
             cbLTMultipleSubUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTMultipleSubUnit.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -422,9 +424,10 @@
             cbLTMultiplePosition As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),POSITION))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbLTMultiplePosition.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -461,9 +464,10 @@
             cbLTMultipleClient As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),CLIENT))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbLTMultipleClient.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -500,9 +504,10 @@
             cbLTMultipleLOB As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),LOB))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTMultipleLOB.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302
@@ -539,9 +544,10 @@
             cbLTMultipleBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BILLABILITY))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbLTMultipleBillability.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -623,9 +629,10 @@
             cbLTMultipleSupervisor As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
                 DisplayFields: =["Value"]
+                IsSearchable: =false
                 Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTMultipleSupervisor.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -679,11 +686,13 @@
                         SITE:txtLTMultipleSite.Text,
                         'BUSINESS UNIT':If(IsBlank(cbLTMultipleBusUnit.Selected.Value), cbLTMultipleBusUnit.SearchText, cbLTMultipleBusUnit.Selected.Value),
                         'SUB UNIT':If(IsBlank(cbLTMultipleSubUnit.Selected.Value), cbLTMultipleSubUnit.SearchText, cbLTMultipleSubUnit.Selected.Value),
-                        POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value), 
+                        POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value),
+                        'FOR INTERNSHIP': rdLTMInternship.Selected.Value,
                         CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
                         LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
                         BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
-                        SCHEDULE:If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text),
+                        'NEW SALARY PACKAGE':If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text),
+                        'NEW SALARY EFFECTIVITY': NewSalaryDate_LTM.SelectedDate,
                         SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
                         'SUBMITTED BY':User().Email
                     }
