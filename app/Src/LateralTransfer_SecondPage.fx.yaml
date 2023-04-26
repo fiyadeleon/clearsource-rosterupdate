@@ -9,7 +9,7 @@
     "galleryLTM_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =696
+        Height: =795
         Items: =colLateralTransfer
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID_1, txtLTMultipleOmnia_1.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
         X: =42
-        Y: =210
+        Y: =174
         ZIndex: =1
 
         txtLTMultipleName_1 As label:
@@ -105,7 +105,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =959
+        Y: =995
         ZIndex: =11
 
     btnLTMultipleBack_1 As button:
@@ -116,20 +116,67 @@
             Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =959
+        Y: =995
         ZIndex: =12
 
     formLTM2 As form:
         BorderThickness: =1
         DataSource: =colLateralTransfer
-        Height: =696
+        Height: =794
         Item: =If(!IsBlank(SelectedItemID_1), LookUp(colLateralTransfer, USER=SelectedItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =713
-        Y: =210
+        Y: =174
         ZIndex: =18
+
+        DataCard6 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label14 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW SALARY EFFECTIVITY"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+        DataCard7 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            Label15 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="FOR INTERNSHIP"
+                Width: =272.4
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label16 As label:
+                DisplayMode: =DisplayMode.View
+                Text: =""
+                X: =302
+                Y: =10
+                ZIndex: =2
 
         "'EMPLOYEE ID_DataCard1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
@@ -329,7 +376,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             DataCardKey45 As label:
@@ -367,7 +414,7 @@
             Required: =false
             Width: =742
             X: =0
-            Y: =6
+            Y: =7
             ZIndex: =1
 
             DataCardKey4 As label:
@@ -405,7 +452,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =7
+            Y: =8
             ZIndex: =1
 
             DataCardKey50 As label:
@@ -443,14 +490,14 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKey51 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="SCHEDULE"
+                Text: ="NEW SALARY PACKAGE"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -481,7 +528,7 @@
             Required: =false
             Width: =742
             X: =0
-            Y: =9
+            Y: =11
             ZIndex: =1
 
             DataCardKey52 As label:
@@ -515,7 +562,7 @@
             Height: =60
             Width: =742
             X: =0
-            Y: =10
+            Y: =12
             ZIndex: =1
 
             btnLTRemove As button:
@@ -536,7 +583,7 @@
         Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10), cbLTSearchMultipleLOB.Selected.Value)
         Width: =640
         X: =42
-        Y: =132
+        Y: =108
         ZIndex: =19
 
     "'Lateral Transfer Form_6' As label":
@@ -548,6 +595,6 @@
         Text: ="UPDATED EMPLOYEE DETAILS"
         Width: =742
         X: =713
-        Y: =143
+        Y: =119
         ZIndex: =20
 
