@@ -694,7 +694,7 @@
                     'BUSINESS UNIT': If(IsBlank(cbPRMultipleBusUnit_1.Selected.Value), cbPRMultipleBusUnit_1.SearchText, cbPRMultipleBusUnit_1.Selected.Value),
                     'SUB UNIT': If(IsBlank(cbPRMultipleSubUnit_1.Selected.Value), cbPRMultipleSubUnit_1.SearchText, cbPRMultipleSubUnit_1.Selected.Value),
                     POSITION: If(IsBlank(cbPRMultiplePosition_1.Selected.Value), cbPRMultiplePosition_1.SearchText, cbPRMultiplePosition_1.Selected.Value),
-                    'UNDER INTERNSHIP': rdPRInternship.Selected.Value,
+                    'FOR INTERNSHIP': rdPRInternship.Selected.Value,
                     CLIENT: If(IsBlank(cbPRMultipleClient_1.Selected.Value), cbPRMultipleClient_1.SearchText, cbPRMultipleClient_1.Selected.Value),
                     LOB: If(IsBlank(cbPRMultipleLOB_2.Selected.Value), cbPRMultipleLOB_2.SearchText, cbPRMultipleLOB_2.Selected.Value),
                     BILLABILITY: If(IsBlank(cbPRMultipleBillability_1.Selected.Value), cbPRMultipleBillability_1.SearchText, cbPRMultipleBillability_1.Selected.Value),

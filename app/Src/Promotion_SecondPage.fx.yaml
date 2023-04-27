@@ -99,7 +99,6 @@
                 Set(SelectedPRItemID, "");
                 Reset(cbPRSearchMultipleLOB);
                 Reset(cbPRSearchMultipleOmnia);
-                Reset(rdPRInternship);
                 Clear(colPromotion);
                 Navigate(HomePage,ScreenTransition.None);
                 Reset(drpRosterSelection)
@@ -182,7 +181,7 @@
                 ZIndex: =1
 
             Label12 As label:
-                Text: =ThisItem.'UNDER INTERNSHIP'
+                Text: =ThisItem.'FOR INTERNSHIP'
                 X: =302.4
                 Y: =10
                 ZIndex: =2
