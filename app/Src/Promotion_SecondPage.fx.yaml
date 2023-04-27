@@ -156,7 +156,7 @@
 
             Label10 As label:
                 DisplayMode: =DisplayMode.View
-                Text: =ThisItem.'SALARY PACKAGE START DATE'
+                Text: =ThisItem.'NEW SALARY PACKAGE START DATE'
                 X: =297
                 Y: =13
                 ZIndex: =2
@@ -496,7 +496,7 @@
         MONDAY_PRMDataCard2_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
-            Default: =ThisItem.'SALARY PACKAGE'
+            Default: =ThisItem.'NEW SALARY PACKAGE'
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
             Fill: =RGBA(0, 0, 0, 0)

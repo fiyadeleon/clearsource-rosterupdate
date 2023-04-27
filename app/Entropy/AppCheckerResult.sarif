@@ -14,79 +14,40 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'SALARY-DATE_DataCard_2'.Label10.Text"
+                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'SALARY-DATE_DataCard_2'.Label10.Text",
+                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 28,
-                  "charOffset": 8,
+                  "charLength": 40,
+                  "charOffset": 220,
                   "snippet": {
-                    "text": ".'SALARY PACKAGE START DATE'"
+                    "text": "SubmitPromotion.Run(JSON(colPromotion1))"
                   }
                 }
               },
               "properties": {
-                "member": "Text",
+                "member": "OnSelect",
                 "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.formPREDsp2_1.'SALARY-DATE_DataCard_2'.Label10"
+                "type": "Promotion_SecondPage.btnPRMultipleSubmitp2_1"
               }
             }
           ],
           "message": {
             "arguments": [
-              "SALARY PACKAGE START DATE"
+              "Run",
+              "SubmitPromotion"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.MONDAY_PRMDataCard2_2.Default"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.MONDAY_PRMDataCard2_2.Default",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".'SALARY PACKAGE'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Default",
-                "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.formPREDsp2_1.MONDAY_PRMDataCard2_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "SALARY PACKAGE"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
+          "ruleId": "app-ErrUnknownNamespaceFunction",
           "ruleIndex": 0
         },
         {
@@ -3726,17 +3687,14 @@
           "name": "PowerApps app checker",
           "rules": [
             {
-              "id": "app-ErrInvalidName",
+              "id": "app-ErrUnknownNamespaceFunction",
               "messageStrings": {
                 "issue": {
-                  "text": "Name isn't valid. '{0}' isn't recognized."
+                  "text": "'{0}' is an unknown or unsupported function in namespace '{1}'."
                 }
               },
               "properties": {
                 "componentType": "app",
-                "howToFix": [
-                  "Remove or correct the reference to the name that isn't valid."
-                ],
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""
