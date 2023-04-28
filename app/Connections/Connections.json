@@ -133,7 +133,8 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "890ae1c7-8f7f-4ce5-a50f-70671aee2cad"
+      "890ae1c7-8f7f-4ce5-a50f-70671aee2cad",
+      "bb0b0534-d177-48b2-866b-8b1282e8a6e8"
     ],
     "id": "212372fc-8952-4b65-95ff-55205519558b"
   },
@@ -177,12 +178,18 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "212372fc-8952-4b65-95ff-55205519558b": {
+          "value": "shared_office365_2"
+        },
         "workflowEntityId": {},
         "workflowName": {
           "value": "be732a28-3927-4a2e-85c5-723dabcff42b"
         }
       },
       "parameterHintsV2": {
+        "shared_office365_2": {
+          "value": "212372fc-8952-4b65-95ff-55205519558b"
+        },
         "workflowEntityId": {},
         "workflowName": {
           "value": "be732a28-3927-4a2e-85c5-723dabcff42b"
@@ -217,5 +224,33 @@
       "04f515c4-9cfe-4292-8b56-cd6ebbe06266"
     ],
     "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+  },
+  "bb0b0534-d177-48b2-866b-8b1282e8a6e8": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "b922a241-3511-4bda-93da-2636223705df"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "b922a241-3511-4bda-93da-2636223705df"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SubmitLateralTransfer"
+    ],
+    "dependencies": {
+      "shared_office365_1": "212372fc-8952-4b65-95ff-55205519558b"
+    },
+    "dependents": [],
+    "id": "bb0b0534-d177-48b2-866b-8b1282e8a6e8"
   }
 }
