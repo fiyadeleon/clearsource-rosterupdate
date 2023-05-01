@@ -182,33 +182,6 @@
         Y: =322
         ZIndex: =18
 
-        DataCard3 As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =714
-            X: =1
-            Y: =7
-            ZIndex: =1
-
-            Label18 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="TIME ZONE"
-                Width: =216.6
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            drpOTtimezone As dropdown:
-                Items: =["Philippine Standard Time", "Mountain Standard Time", "Central Standard Time", "India Standard Time"]
-                Width: =408.6
-                X: =302
-                Y: =10
-                ZIndex: =2
-
         "'EMPLOYEE ID_OTDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
@@ -756,6 +729,33 @@
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
+                Y: =10
+                ZIndex: =2
+
+        DataCard3 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =714
+            X: =1
+            Y: =7
+            ZIndex: =1
+
+            Label18 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="TIME ZONE"
+                Width: =216.6
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            drpOTtimezone As dropdown:
+                Items: =["Philippine Standard Time", "Mountain Standard Time", "Central Standard Time", "India Standard Time"]
+                Width: =408.6
+                X: =302
                 Y: =10
                 ZIndex: =2
 

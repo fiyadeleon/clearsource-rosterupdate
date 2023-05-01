@@ -131,61 +131,6 @@
         Y: =200
         ZIndex: =18
 
-        "'SALARY-DATE_DataCard_2' As typedDataCard.blankCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="MONDAY"
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =10
-            ZIndex: =1
-
-            Label8 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =41
-                Text: ="NEW SALARY EFFECTIVITY"
-                Width: =243
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label10 As label:
-                DisplayMode: =DisplayMode.View
-                Text: =ThisItem.'NEW SALARY PACKAGE START DATE'
-                X: =297
-                Y: =13
-                ZIndex: =2
-
-        INTERNSHIP_DataCard_2 As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =5
-            ZIndex: =1
-
-            Label11 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="FOR INTERNSHIP"
-                Width: =272.8
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label12 As label:
-                Text: =ThisItem.'FOR INTERNSHIP'
-                X: =302.4
-                Y: =10
-                ZIndex: =2
-
         "'EMPLOYEE NAME_PRMDataCard_3' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
@@ -378,6 +323,32 @@
                 Y: =10
                 ZIndex: =2
 
+        INTERNSHIP_DataCard_2 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            Label11 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="FOR INTERNSHIP"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label12 As label:
+                Text: =ThisItem.'FOR INTERNSHIP'
+                X: =302.4
+                Y: =10
+                ZIndex: =2
+
         CLIENT_PRMDataCard2_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
@@ -528,6 +499,35 @@
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKeySCHEDPRpm2_1.X + DataCardKeySCHEDPRpm2_1.Width
                 Y: =10
+                ZIndex: =2
+
+        "'SALARY-DATE_DataCard_2' As typedDataCard.blankCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="MONDAY"
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label8 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =41
+                Text: ="NEW SALARY EFFECTIVITY"
+                Width: =243
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label10 As label:
+                DisplayMode: =DisplayMode.View
+                Text: =ThisItem.'NEW SALARY PACKAGE START DATE'
+                X: =297
+                Y: =13
                 ZIndex: =2
 
         TEAM_PRMDataCard2_2 As typedDataCard.textualViewCard:

@@ -131,61 +131,6 @@
         Y: =174
         ZIndex: =18
 
-        DataCard6 As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =10
-            ZIndex: =1
-
-            Label14 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="NEW SALARY EFFECTIVITY"
-                Width: =272.8
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label17 As label:
-                DisplayMode: =DisplayMode.View
-                Text: =ThisItem.'NEW SALARY EFFECTIVITY'
-                X: =302
-                Y: =13
-                ZIndex: =2
-
-        DataCard7 As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Visible: =false
-            Width: =742
-            X: =0
-            Y: =5
-            ZIndex: =1
-
-            Label15 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="FOR INTERNSHIP"
-                Width: =272.4
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label16 As label:
-                DisplayMode: =DisplayMode.View
-                Text: =ThisItem.'FOR INTERNSHIP'
-                X: =302
-                Y: =10
-                ZIndex: =2
-
         "'EMPLOYEE ID_DataCard1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="EMPLOYEE ID"
@@ -373,6 +318,34 @@
                 Y: =16
                 ZIndex: =2
 
+        DataCard7 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Visible: =false
+            Width: =742
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            Label15 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="FOR INTERNSHIP"
+                Width: =272.4
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label16 As label:
+                DisplayMode: =DisplayMode.View
+                Text: =ThisItem.'FOR INTERNSHIP'
+                X: =302
+                Y: =10
+                ZIndex: =2
+
         CLIENT_LTMDataCard2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
@@ -523,6 +496,33 @@
                 Width: =(Parent.Width - 60) * 0.6
                 X: =302
                 Y: =16
+                ZIndex: =2
+
+        DataCard6 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label14 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="NEW SALARY EFFECTIVITY"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label17 As label:
+                DisplayMode: =DisplayMode.View
+                Text: =ThisItem.'NEW SALARY EFFECTIVITY'
+                X: =302
+                Y: =13
                 ZIndex: =2
 
         SUPERVISOR_LTMDataCard2 As typedDataCard.textualViewCard:
