@@ -562,7 +562,7 @@
                 Default: =
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                HintText: ="e.g., 25,000 PHP"
+                HintText: ="e.g., 25,000 "
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -570,10 +570,17 @@
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
+                Width: =217
                 X: =DataCardKey43.X + DataCardKey43.Width
                 Y: =10
                 ZIndex: =2
+
+            LTMultiple_CurrencyDrpDwn As dropdown:
+                Items: =["PHP", "USD", "INR", "CRC"]
+                Width: =177
+                X: =534
+                Y: =10
+                ZIndex: =3
 
         "'NEW-SALARY-DATE_LTMDataCard' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
@@ -692,7 +699,7 @@
                         CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
                         LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
                         BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
-                        'NEW SALARY PACKAGE':If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text),
+                        'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
                         'NEW SALARY EFFECTIVITY': NewSalaryDate_LTM.SelectedDate,
                         SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
                         'SUBMITTED BY':User().Email

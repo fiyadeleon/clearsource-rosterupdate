@@ -555,6 +555,8 @@
 
             DataCardKey13 As label:
                 AutoHeight: =true
+                Color: |-
+                    =If(ThisItem.ROLE = "Agent", ColorValue("#00126b"), ColorValue("#9E9E9E"))
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
@@ -630,6 +632,8 @@
 
             DataCardKey14 As label:
                 AutoHeight: =true
+                Color: |-
+                    =If(ThisItem.ROLE = "Agent", ColorValue("#00126b"), ColorValue("#9E9E9E"))
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="PRODUCTION DATE "
