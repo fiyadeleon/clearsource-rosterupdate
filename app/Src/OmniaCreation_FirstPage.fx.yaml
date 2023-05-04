@@ -78,11 +78,12 @@
 
     Button1 As button:
         Fill: =RGBA(255, 0, 0, 1)
-        OnSelect: |
+        OnSelect: |-
             =ResetForm(formOCFirstPage1);
             ResetForm(formOCFirstPage2);
             ResetForm(formOCFirstPage3);
             ResetForm(formOCFirstPage4);
+            Notify("Input fields has been sucessfully reset.", NotificationType.Information)
         Text: ="Clear"
         X: =537
         Y: =574
