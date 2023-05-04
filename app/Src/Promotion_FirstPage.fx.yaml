@@ -547,7 +547,7 @@
             MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MONDAY")
             Required: =false
             Update: =txtPRMultipleSalary_1.Text
-            Width: =741
+            Width: =742
             X: =0
             Y: =9
             ZIndex: =1
@@ -568,7 +568,7 @@
                 Default: =
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                HintText: ="e.g., 25,000 PHP"
+                HintText: ="e.g., 25,000"
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -576,10 +576,17 @@
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
+                Width: =217
                 X: =DataCardKeySCHEDpm1_1.X + DataCardKeySCHEDpm1_1.Width
                 Y: =10
                 ZIndex: =2
+
+            PRMultiple_CurrencyDrpDwn As dropdown:
+                Items: =["PHP", "USD", "INR", "CRC"]
+                Width: =177
+                X: =534
+                Y: =10
+                ZIndex: =3
 
         "'SALARY-DATE_DataCard' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
@@ -698,7 +705,7 @@
                     CLIENT: If(IsBlank(cbPRMultipleClient_1.Selected.Value), cbPRMultipleClient_1.SearchText, cbPRMultipleClient_1.Selected.Value),
                     LOB: If(IsBlank(cbPRMultipleLOB_2.Selected.Value), cbPRMultipleLOB_2.SearchText, cbPRMultipleLOB_2.Selected.Value),
                     BILLABILITY: If(IsBlank(cbPRMultipleBillability_1.Selected.Value), cbPRMultipleBillability_1.SearchText, cbPRMultipleBillability_1.Selected.Value),
-                    'NEW SALARY PACKAGE': If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text),
+                    'NEW SALARY PACKAGE': Concatenate(If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text)," ",PRMultiple_CurrencyDrpDwn.Selected.Value),
                     'NEW SALARY PACKAGE START DATE': If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", datePRMultipleSalaryEffectivity.SelectedDate),
                     SUPERVISOR: If(IsBlank(cbPRMultipleSupervisor_1.Selected.Value), cbPRMultipleSupervisor_1.SearchText, cbPRMultipleSupervisor_1.Selected.Value),
                     'EMPLOYEE ID': txtPRMultipleIdpm1_1.Text,
