@@ -135,28 +135,6 @@
     "dependents": [],
     "id": "1aefb0c8-84f1-4134-b0fb-bfd3a82dfd67"
   },
-  "1f03def9-d62a-4f75-a373-1223fe9da08a": {
-    "connectionRef": {
-      "displayName": "Excel Online (Business)",
-      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3202/excelonlinebusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
-    },
-    "datasets": {
-      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJT4XK7BYV72BVAYLSY6A4A3V44M": {
-        "dataSources": {
-          "Headcount_table": {
-            "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "Headcount_table"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "1f03def9-d62a-4f75-a373-1223fe9da08a"
-  },
   "212372fc-8952-4b65-95ff-55205519558b": {
     "connectionRef": {
       "displayName": "Office 365 Outlook",
@@ -205,6 +183,28 @@
     },
     "dependents": [],
     "id": "2638c843-0dda-43f6-b052-8111f6949320"
+  },
+  "8f74ea32-ac4a-41bb-8e0f-085e87030a5d": {
+    "connectionRef": {
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3202/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
+    },
+    "datasets": {
+      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJT4XK7BYV72BVAYLSY6A4A3V44M": {
+        "dataSources": {
+          "Headcount_table": {
+            "tableName": "{CF6C0ED2-630B-4602-BE76-7929C83CD806}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Headcount_table"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "8f74ea32-ac4a-41bb-8e0f-085e87030a5d"
   },
   "a98f1ce0-65af-4442-ad24-7697c24f3724": {
     "connectionRef": {
