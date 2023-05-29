@@ -9,7 +9,7 @@
     "galleryLTM As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =710
+        Height: =792
         Items: =cbLTSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
         X: =42
-        Y: =322
+        Y: =286
         ZIndex: =1
 
         txtLTMultipleName As label:
@@ -94,7 +94,7 @@
             )
         Text: ="Review"
         X: =1269
-        Y: =1089
+        Y: =1134
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -103,7 +103,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1089
+        Y: =1134
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
@@ -173,13 +173,13 @@
     formLTM As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =710
+        Height: =792
         Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =713
-        Y: =322
+        Y: =285
         ZIndex: =18
 
         "'EMPLOYEE ID_LTMDataCard' As typedDataCard.textualViewCard":
@@ -375,6 +375,38 @@
                 Y: =10
                 ZIndex: =2
 
+        INTERNSHIP_LTMDataCard As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Visible: =false
+            Width: =742
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            Label13 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="FOR INTERNSHIP"
+                Width: =199
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            rdLTMInternship As radio:
+                Height: =35
+                Items: =["Yes", "No"]
+                Layout: =Layout.Horizontal
+                PaddingBottom: =0
+                PaddingTop: =0
+                RadioSize: =30
+                Width: =317
+                X: =295
+                Y: =15
+                ZIndex: =2
+
         CLIENT_LTMDataCard As typedDataCard.allowedValuesStringEditCard:
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "CLIENT")
             BorderStyle: =BorderStyle.Solid
@@ -388,7 +420,7 @@
             Update: =cbLTMultipleClient.Selected.Value
             Width: =742
             X: =0
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             DataCardKey39 As label:
@@ -427,7 +459,7 @@
             Update: =cbLTMultipleLOB.Selected.Value
             Width: =742
             X: =0
-            Y: =6
+            Y: =7
             ZIndex: =1
 
             DataCardKey2 As label:
@@ -466,7 +498,7 @@
             Update: =cbLTMultipleBillability.Selected.Value
             Width: =742
             X: =0
-            Y: =7
+            Y: =8
             ZIndex: =1
 
             DataCardKey40 As label:
@@ -492,7 +524,7 @@
                 Y: =10
                 ZIndex: =2
 
-        SCHEDULE_LTMDataCard As typedDataCard.textualEditCard:
+        "'NEW-SALARY_LTMDataCard' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
             Default: =ThisItem.MONDAY
@@ -502,29 +534,29 @@
             Height: =60
             MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MONDAY")
             Required: =false
-            Update: =txtLTMultipleSchedule.Text
+            Update: =txtLTMultipleNewSalary.Text
             Width: =742
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKey43 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="SCHEDULE"
+                Text: ="NEW SALARY PACKAGE"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (txtLTMultipleSchedule.Height / 2) - (Self.Height / 2)
+                Y: =10 + (txtLTMultipleNewSalary.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            txtLTMultipleSchedule As text:
+            txtLTMultipleNewSalary As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                HintText: ="e.g., 10PM - 7AM PHT"
+                HintText: ="e.g., 25,000 "
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -532,8 +564,40 @@
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
+                Width: =217
                 X: =DataCardKey43.X + DataCardKey43.Width
+                Y: =10
+                ZIndex: =2
+
+            LTMultiple_CurrencyDrpDwn As dropdown:
+                Items: =["PHP", "USD", "INR", "CRC"]
+                Width: =177
+                X: =534
+                Y: =10
+                ZIndex: =3
+
+        "'NEW-SALARY-DATE_LTMDataCard' As typedDataCard.blankCard":
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label9 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="NEW SALARY EFFECTIVITY"
+                Width: =264
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            NewSalaryDate_LTM As datepicker:
+                Width: =408.6
+                X: =302.8
                 Y: =10
                 ZIndex: =2
 
@@ -545,12 +609,12 @@
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =161
+            Height: =60
             Required: =false
             Update: =cbLTMultipleClient.Selected.Value
             Width: =742
             X: =0
-            Y: =9
+            Y: =11
             ZIndex: =1
 
             DataCardKey42 As label:
@@ -576,48 +640,6 @@
                 Y: =10
                 ZIndex: =2
 
-            Button3 As button:
-                OnSelect: |-
-                    =If(
-                        (
-                            (!IsBlank(cbLTMultipleBusUnit.Selected.Value) || !IsBlank(cbLTMultipleBusUnit.SearchText)) &&
-                            (!IsBlank(cbLTMultipleSubUnit.Selected.Value) || !IsBlank(cbLTMultipleSubUnit.SearchText)) &&
-                            (!IsBlank(cbLTMultiplePosition.Selected.Value) || !IsBlank(cbLTMultiplePosition.SearchText)) &&
-                            (!IsBlank(cbLTMultipleClient.Selected.Value) || !IsBlank(cbLTMultipleClient.SearchText)) &&
-                            (!IsBlank(cbLTMultipleLOB.Selected.Value) || !IsBlank(cbLTMultipleLOB.SearchText)) &&
-                            (!IsBlank(cbLTMultipleBillability.Selected.Value) || !IsBlank(cbLTMultipleBillability.SearchText)) &&
-                            (!IsBlank(cbLTMultipleSupervisor.Selected.Value) || !IsBlank(cbLTMultipleSupervisor.SearchText))
-                        ),
-                        If(
-                            CountRows(
-                                Filter(colLateralTransfer,USER=SelectedItemID)
-                            ) > 0, 
-                            Remove(colLateralTransfer, LookUp(colLateralTransfer, USER=SelectedItemID)
-                        ));
-                        Collect(colLateralTransfer, {
-                                USER:SelectedItemID,
-                                NAME:txtLTMultipleName.Text,
-                                ID:txtLTMultipleEmpId.Text,
-                                SITE:txtLTMultipleSite.Text,
-                                'BUSINESS UNIT':If(IsBlank(cbLTMultipleBusUnit.Selected.Value), cbLTMultipleBusUnit.SearchText, cbLTMultipleBusUnit.Selected.Value),
-                                'SUB UNIT':If(IsBlank(cbLTMultipleSubUnit.Selected.Value), cbLTMultipleSubUnit.SearchText, cbLTMultipleSubUnit.Selected.Value),
-                                POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value), 
-                                CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
-                                LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
-                                BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
-                                SCHEDULE:If(IsBlank(txtLTMultipleSchedule.Text), "N/A", txtLTMultipleSchedule.Text),
-                                SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
-                                'SUBMITTED BY':User().Email
-                            }
-                        );
-                        Notify("Successfully saved your changes locally.", NotificationType.Success),
-                        Notify("Please complete all fields!", NotificationType.Error)
-                    )
-                Text: ="Save"
-                X: =302
-                Y: =88
-                ZIndex: =3
-
     "'Lateral Transfer Form_2' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
@@ -626,7 +648,7 @@
         Text: ="SELECTED EMPLOYEE(S)"
         Width: =316
         X: =204
-        Y: =255
+        Y: =228
         ZIndex: =19
 
     "'Lateral Transfer Form_3' As label":
@@ -637,6 +659,50 @@
         Text: ="EMPLOYEE DETAILS"
         Width: =264
         X: =952
-        Y: =255
+        Y: =228
         ZIndex: =20
+
+    Button3 As button:
+        OnSelect: |-
+            =If(
+                (
+                    (!IsBlank(cbLTMultipleBusUnit.Selected.Value) || !IsBlank(cbLTMultipleBusUnit.SearchText)) &&
+                    (!IsBlank(cbLTMultipleSubUnit.Selected.Value) || !IsBlank(cbLTMultipleSubUnit.SearchText)) &&
+                    (!IsBlank(cbLTMultiplePosition.Selected.Value) || !IsBlank(cbLTMultiplePosition.SearchText)) &&
+                    (!IsBlank(cbLTMultipleClient.Selected.Value) || !IsBlank(cbLTMultipleClient.SearchText)) &&
+                    (!IsBlank(cbLTMultipleLOB.Selected.Value) || !IsBlank(cbLTMultipleLOB.SearchText)) &&
+                    (!IsBlank(cbLTMultipleBillability.Selected.Value) || !IsBlank(cbLTMultipleBillability.SearchText)) &&
+                    (!IsBlank(cbLTMultipleSupervisor.Selected.Value) || !IsBlank(cbLTMultipleSupervisor.SearchText))
+                ),
+                If(
+                    CountRows(
+                        Filter(colLateralTransfer,USER=SelectedItemID)
+                    ) > 0, 
+                    Remove(colLateralTransfer, LookUp(colLateralTransfer, USER=SelectedItemID)
+                ));
+                Collect(colLateralTransfer, {
+                        USER:SelectedItemID,
+                        NAME:txtLTMultipleName.Text,
+                        ID:txtLTMultipleEmpId.Text,
+                        SITE:txtLTMultipleSite.Text,
+                        'BUSINESS UNIT':If(IsBlank(cbLTMultipleBusUnit.Selected.Value), cbLTMultipleBusUnit.SearchText, cbLTMultipleBusUnit.Selected.Value),
+                        'SUB UNIT':If(IsBlank(cbLTMultipleSubUnit.Selected.Value), cbLTMultipleSubUnit.SearchText, cbLTMultipleSubUnit.Selected.Value),
+                        POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value),
+                        'FOR INTERNSHIP': rdLTMInternship.Selected.Value,
+                        CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
+                        LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
+                        BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
+                        'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
+                        'NEW SALARY EFFECTIVITY': NewSalaryDate_LTM.SelectedDate,
+                        SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
+                        'SUBMITTED BY':User().Email
+                    }
+                );
+                Notify("Successfully saved your changes locally.", NotificationType.Success),
+                Notify("Please complete all fields!", NotificationType.Error)
+            )
+        Text: ="Save"
+        X: =1004
+        Y: =1027
+        ZIndex: =21
 

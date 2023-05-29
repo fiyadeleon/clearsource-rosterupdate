@@ -9,10 +9,11 @@
     "galleryPRMp2nd_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =726
+        Height: =782
         Items: =colPromotion
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2_1.Text)
+        TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
@@ -104,7 +105,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =990
+        Y: =1008
         ZIndex: =11
 
     btnPRMultipleBackp2_1 As button:
@@ -115,13 +116,13 @@
             Navigate(Promotion_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =990
+        Y: =1008
         ZIndex: =12
 
     formPREDsp2_1 As form:
         BorderThickness: =1
         DataSource: =colPromotion
-        Height: =726
+        Height: =782
         Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
@@ -322,6 +323,32 @@
                 Y: =10
                 ZIndex: =2
 
+        INTERNSHIP_DataCard_2 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            Label11 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="FOR INTERNSHIP"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label12 As label:
+                Text: =ThisItem.'FOR INTERNSHIP'
+                X: =302.4
+                Y: =10
+                ZIndex: =2
+
         CLIENT_PRMDataCard2_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
@@ -333,7 +360,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             DataCardKeyCLPRpm2_1 As label:
@@ -357,7 +384,7 @@
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKeyCLPRpm2_1.X + DataCardKeyCLPRpm2_1.Width
-                Y: =10
+                Y: =16
                 ZIndex: =2
 
         LOB_DataCard7 As typedDataCard.textualViewCard:
@@ -371,7 +398,7 @@
             Required: =false
             Width: =742
             X: =0
-            Y: =6
+            Y: =7
             ZIndex: =1
 
             DataCardKey8 As label:
@@ -409,7 +436,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =7
+            Y: =8
             ZIndex: =1
 
             DataCardKeyBILLPRpm2_1 As label:
@@ -439,7 +466,7 @@
         MONDAY_PRMDataCard2_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
-            Default: =ThisItem.SCHEDULE
+            Default: =ThisItem.'NEW SALARY PACKAGE'
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
             Fill: =RGBA(0, 0, 0, 0)
@@ -447,14 +474,14 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKeySCHEDPRpm2_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="SCHEDULE"
+                Text: ="NEW SALARY PACKAGE"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -474,6 +501,35 @@
                 Y: =10
                 ZIndex: =2
 
+        "'SALARY-DATE_DataCard_2' As typedDataCard.blankCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="MONDAY"
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label8 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =41
+                Text: ="NEW SALARY EFFECTIVITY"
+                Width: =243
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label10 As label:
+                DisplayMode: =DisplayMode.View
+                Text: =ThisItem.'NEW SALARY PACKAGE START DATE'
+                X: =297
+                Y: =13
+                ZIndex: =2
+
         TEAM_PRMDataCard2_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
@@ -485,7 +541,7 @@
             Required: =false
             Width: =742
             X: =0
-            Y: =9
+            Y: =11
             ZIndex: =1
 
             DataCardKeySUPPRpm2_1 As label:
@@ -512,14 +568,14 @@
                 Y: =20
                 ZIndex: =2
 
-        DataCard3 As typedDataCard.blankCard:
+        Remove_Button As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =100
+            Height: =50
             Width: =742
             X: =0
-            Y: =10
+            Y: =12
             ZIndex: =1
 
             btnPRRemovep2_3 As button:
@@ -527,7 +583,7 @@
                 OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
                 Text: ="Remove"
                 X: =300
-                Y: =30
+                Y: =4
                 ZIndex: =1
 
     txtPRUEp2_1 As label:

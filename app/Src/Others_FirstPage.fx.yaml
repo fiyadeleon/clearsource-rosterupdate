@@ -550,6 +550,8 @@
 
             DataCardKey13 As label:
                 AutoHeight: =true
+                Color: |-
+                    =If(ThisItem.ROLE = "Agent", ColorValue("#00126b"), ColorValue("#9E9E9E"))
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
@@ -561,6 +563,7 @@
 
             dateNesting As datepicker:
                 DefaultDate: =
+                DisplayMode: =If(ThisItem.ROLE = "Agent", DisplayMode.Edit,DisplayMode.View)
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -623,9 +626,11 @@
 
             DataCardKey14 As label:
                 AutoHeight: =true
+                Color: |-
+                    =If(ThisItem.ROLE = "Agent", ColorValue("#00126b"), ColorValue("#9E9E9E"))
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="PRODUCTION DATE "
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -634,6 +639,7 @@
 
             dateProduction As datepicker:
                 DefaultDate: =
+                DisplayMode: =If(ThisItem.ROLE = "Agent", DisplayMode.Edit,DisplayMode.View)
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -671,7 +677,7 @@
                 Default: =
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                HintText: ="e.g., 10PM - 7AM PHT"
+                HintText: ="e.g., 10PM - 7AM"
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
@@ -723,11 +729,38 @@
                 Y: =10
                 ZIndex: =2
 
+        DataCard3 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =714
+            X: =1
+            Y: =7
+            ZIndex: =1
+
+            Label18 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="TIME ZONE"
+                Width: =216.6
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            drpOTtimezone As dropdown:
+                Items: =["Philippine Standard Time", "Mountain Standard Time", "Central Standard Time", "India Standard Time"]
+                Width: =408.6
+                X: =302
+                Y: =10
+                ZIndex: =2
+
         DataCard4 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =101
+            Height: =92
             Width: =1470
             X: =0
             Y: =8
@@ -794,8 +827,8 @@
                                     STATUS:cbOTStatus.Selected.Value,
                                     'START DATE':Text(dateStart.SelectedDate, "yyyy-mm-dd"),
                                     'END DATE':endDateVal,
-                                    'NESTING START DATE':Text(dateNesting.SelectedDate, "yyyy-mm-dd"),
-                                    'PRODUCTION DATE':Text(dateProduction.SelectedDate, "yyyy-mm-dd"),
+                                    'NESTING START DATE':If(IsBlank(dateNesting), "N/A",Text(dateNesting.SelectedDate, "yyyy-mm-dd")),
+                                    'PRODUCTION DATE':If(IsBlank(dateProduction), "N/A", Text(dateProduction.SelectedDate, "yyyy-mm-dd")),
                                     'BUSINESS UNIT':If(IsBlank(cbOTBusUnit.Selected.Value), cbOTBusUnit.SearchText, cbOTBusUnit.Selected.Value),
                                     'SUB UNIT':If(IsBlank(cbOTSubUnit.Selected.Value), cbOTSubUnit.SearchText, cbOTSubUnit.Selected.Value),
                                     POSITION:If(IsBlank(cbOTPosition.Selected.Value), cbOTPosition.SearchText, cbOTPosition.Selected.Value),
@@ -803,6 +836,7 @@
                                     LOB:If(IsBlank(cbOTSearchLOB.Selected.Value), cbOTSearchLOB.SearchText, cbOTSearchLOB.Selected.Value),
                                     BILLABILITY:If(IsBlank(cbOTBillability.Selected.Value), cbOTBillability.SearchText, cbOTBillability.Selected.Value),
                                     SCHEDULE:If(IsBlank(txtOTSchedule.Text), "N/A", txtOTSchedule.Text),
+                                    'TIME ZONE': drpOTtimezone.Selected.Value,
                                     SUPERVISOR:If(IsBlank(cbOTSupervisor.Selected.Value), cbOTSupervisor.SearchText, cbOTSupervisor.Selected.Value),
                                     'SUBMITTED BY':User().Email
                                 }

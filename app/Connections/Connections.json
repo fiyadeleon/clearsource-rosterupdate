@@ -1,4 +1,38 @@
 {
+  "04f515c4-9cfe-4292-8b56-cd6ebbe06266": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
+          "value": "shared_office365"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "b3d9d3ad-b8cb-4bd5-8af0-15cae19094bb"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "b3d9d3ad-b8cb-4bd5-8af0-15cae19094bb"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SendEmailforMTermination"
+    ],
+    "dependencies": {
+      "shared_office365": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+    },
+    "dependents": [],
+    "id": "04f515c4-9cfe-4292-8b56-cd6ebbe06266"
+  },
   "082b4e67-82c3-4ced-85c4-99298028b189": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -67,6 +101,55 @@
     "dependents": [],
     "id": "11aac326-437f-4fb4-8f68-d5b18ddb610b"
   },
+  "1aefb0c8-84f1-4134-b0fb-bfd3a82dfd67": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "212372fc-8952-4b65-95ff-55205519558b": {
+          "value": "shared_office365_2"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "be732a28-3927-4a2e-85c5-723dabcff42b"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365_2": {
+          "value": "212372fc-8952-4b65-95ff-55205519558b"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "be732a28-3927-4a2e-85c5-723dabcff42b"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SubmitPromotion"
+    ],
+    "dependencies": {
+      "shared_office365_2": "212372fc-8952-4b65-95ff-55205519558b"
+    },
+    "dependents": [],
+    "id": "1aefb0c8-84f1-4134-b0fb-bfd3a82dfd67"
+  },
+  "212372fc-8952-4b65-95ff-55205519558b": {
+    "connectionRef": {
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1626/1.0.1626.3238/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "bb0b0534-d177-48b2-866b-8b1282e8a6e8",
+      "1aefb0c8-84f1-4134-b0fb-bfd3a82dfd67"
+    ],
+    "id": "212372fc-8952-4b65-95ff-55205519558b"
+  },
   "2638c843-0dda-43f6-b052-8111f6949320": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -101,69 +184,35 @@
     "dependents": [],
     "id": "2638c843-0dda-43f6-b052-8111f6949320"
   },
-  "6e4af7d6-1112-4870-afca-16b6d80bc4ba": {
+  "8fff3ba7-0eb4-4aab-8dbc-aedac420798d": {
     "connectionRef": {
       "displayName": "Excel Online (Business)",
       "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3202/excelonlinebusiness/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
     },
     "datasets": {
-      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJUAHJJUIXDH3JEYA5HBXYIQL3NG": {
-        "dataSources": {
-          "Headcount_table": {
-            "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
-          }
-        }
-      },
-      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJXWLVHVQ2O26BGJER2KJSWAGHVK": {
+      "groups%252F88eb9805-f1e1-43e7-9656-f9ac0ca45536,b%2521PIK6dPx2pUSXnuv1-sPH2boBaFBpk8pCqMyRPdl1uP1u9szUzjsCTZZ6k0LEUzbP,01JBAIPN7OMCH2XBRPZJC37V7NDEFHVLZM": {
         "dataSources": {
           "Headcount_table_1": {
             "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
           }
         }
+      },
+      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJT4XK7BYV72BVAYLSY6A4A3V44M": {
+        "dataSources": {
+          "Headcount_table": {
+            "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
+          }
+        }
       }
     },
     "dataSources": [
-      "Headcount_table_1",
-      "Headcount_table"
+      "Headcount_table",
+      "Headcount_table_1"
     ],
     "dependencies": {},
     "dependents": [],
-    "id": "6e4af7d6-1112-4870-afca-16b6d80bc4ba"
-  },
-  "8a8a3e27-6d10-4dc0-8074-db9344b70de1": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
-          "value": "shared_office365"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "b922a241-3511-4bda-93da-2636223705df"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_office365": {
-          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "b922a241-3511-4bda-93da-2636223705df"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "SubmitLateralTransfer"
-    ],
-    "dependencies": {
-      "shared_office365": "a98f1ce0-65af-4442-ad24-7697c24f3724"
-    },
-    "dependents": [],
-    "id": "8a8a3e27-6d10-4dc0-8074-db9344b70de1"
+    "id": "8fff3ba7-0eb4-4aab-8dbc-aedac420798d"
   },
   "a98f1ce0-65af-4442-ad24-7697c24f3724": {
     "connectionRef": {
@@ -179,44 +228,43 @@
     "dependents": [
       "2638c843-0dda-43f6-b052-8111f6949320",
       "11aac326-437f-4fb4-8f68-d5b18ddb610b",
-      "8a8a3e27-6d10-4dc0-8074-db9344b70de1",
-      "d0a8a34c-8a12-43d0-b714-66f18bbc83e0",
-      "082b4e67-82c3-4ced-85c4-99298028b189"
+      "082b4e67-82c3-4ced-85c4-99298028b189",
+      "04f515c4-9cfe-4292-8b56-cd6ebbe06266"
     ],
     "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
   },
-  "d0a8a34c-8a12-43d0-b714-66f18bbc83e0": {
+  "bb0b0534-d177-48b2-866b-8b1282e8a6e8": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
-          "value": "shared_office365"
+        "212372fc-8952-4b65-95ff-55205519558b": {
+          "value": "shared_office365_1"
         },
         "workflowEntityId": {},
         "workflowName": {
-          "value": "be732a28-3927-4a2e-85c5-723dabcff42b"
+          "value": "b922a241-3511-4bda-93da-2636223705df"
         }
       },
       "parameterHintsV2": {
-        "shared_office365": {
-          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+        "shared_office365_1": {
+          "value": "212372fc-8952-4b65-95ff-55205519558b"
         },
         "workflowEntityId": {},
         "workflowName": {
-          "value": "be732a28-3927-4a2e-85c5-723dabcff42b"
+          "value": "b922a241-3511-4bda-93da-2636223705df"
         }
       }
     },
     "datasets": {},
     "dataSources": [
-      "SubmitPromotion"
+      "SubmitLateralTransfer"
     ],
     "dependencies": {
-      "shared_office365": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+      "shared_office365_1": "212372fc-8952-4b65-95ff-55205519558b"
     },
     "dependents": [],
-    "id": "d0a8a34c-8a12-43d0-b714-66f18bbc83e0"
+    "id": "bb0b0534-d177-48b2-866b-8b1282e8a6e8"
   }
 }

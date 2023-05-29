@@ -701,6 +701,31 @@
                 Y: =20
                 ZIndex: =2
 
+        DataCard5 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =735
+            X: =1
+            Y: =7
+            ZIndex: =1
+
+            Label20 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="TIME ZONE"
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label21 As label:
+                Text: =ThisItem.'TIME ZONE'
+                Width: =377
+                X: =297
+                Y: =13
+                ZIndex: =2
+
         DataCard2 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
