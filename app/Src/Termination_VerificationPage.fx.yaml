@@ -590,6 +590,7 @@ Termination_VerificationPage As screen:
                 Reset(omnia_input);
                 Clear(userVerify);
                 Navigate(HomePage,ScreenTransition.None);
+                Reset(drpRosterSelection)
             )
         Text: ="Submit"
         X: =1158
