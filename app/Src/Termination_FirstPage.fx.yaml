@@ -647,6 +647,7 @@ Termination_FirstPage As screen:
                             POSITION: ThisItem.POSITION,
                             CAMPAIGN: campaign_value.HtmlText,
                             LOB: ThisItem.LOB, 
+                            CLIENT: ThisItem.CLIENT,
                             'INTERNAL EMAIL': ThisItem.'INTERNAL EMAIL',
                             'TERMINATION TYPE': terminationType_cb.Selected.Value, 
                             'TERMINATION STATUS': terminationStatus_cb.Selected.Value, 

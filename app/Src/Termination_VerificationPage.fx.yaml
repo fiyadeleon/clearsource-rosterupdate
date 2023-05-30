@@ -583,7 +583,7 @@ Termination_VerificationPage As screen:
                 CountRows(EmployeeGallery_1.AllItems)=0,
                 Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error),
                 ClearCollect(coldata,userVerify);
-                SubmitTermination.Run(JSON(coldata));
+                TestSubmitTermination.Run(JSON(coldata));
                 Notify("Your request has been submitted successfully!",NotificationType.Success);
                 Set(SelectedItemIDinTermi,"");
                 Reset(lob_input);
