@@ -33,63 +33,47 @@
     "dependents": [],
     "id": "04f515c4-9cfe-4292-8b56-cd6ebbe06266"
   },
-  "094fb55e-a07a-450c-9db6-9e030c662094": {
+  "113d9849-abff-454b-ab61-41993c5f335f": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "0afe637c-4b48-4db8-ac04-c2482a808ffb": {
+        "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c": {
           "value": "shared_office365_1"
         },
         "workflowEntityId": {},
         "workflowName": {
-          "value": "a18c19a5-5014-4f6a-a8fb-834c3cb0b104"
+          "value": "9e4fe233-8209-49cc-816e-4394bf7c6250"
         }
       },
       "parameterHintsV2": {
         "shared_office365_1": {
-          "value": "0afe637c-4b48-4db8-ac04-c2482a808ffb"
+          "value": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
         },
         "workflowEntityId": {},
         "workflowName": {
-          "value": "a18c19a5-5014-4f6a-a8fb-834c3cb0b104"
+          "value": "9e4fe233-8209-49cc-816e-4394bf7c6250"
         }
       }
     },
     "datasets": {},
     "dataSources": [
-      "SubmitOmniaCreation"
+      "SubmitOtherRosterUpdate"
     ],
     "dependencies": {
-      "shared_office365_1": "0afe637c-4b48-4db8-ac04-c2482a808ffb"
+      "shared_office365_1": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
     },
     "dependents": [],
-    "id": "094fb55e-a07a-450c-9db6-9e030c662094"
+    "id": "113d9849-abff-454b-ab61-41993c5f335f"
   },
-  "0afe637c-4b48-4db8-ac04-c2482a808ffb": {
-    "connectionRef": {
-      "displayName": "Office 365 Outlook",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1626/1.0.1626.3238/office365/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_office365"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "094fb55e-a07a-450c-9db6-9e030c662094",
-      "9c2856b1-8085-4f82-97ae-d2702d7027f5",
-      "99b47b8b-0f76-4a67-9790-a89d9b5f9d1c"
-    ],
-    "id": "0afe637c-4b48-4db8-ac04-c2482a808ffb"
-  },
-  "7b7d1db0-9692-4fbc-9ec9-e55af63b2438": {
+  "312f96f2-6e4d-44d7-a0b7-90616f7f164f": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "f289112b-6171-457e-b554-bf9b95475e26": {
+        "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c": {
           "value": "shared_office365_1"
         },
         "workflowEntityId": {},
@@ -99,7 +83,7 @@
       },
       "parameterHintsV2": {
         "shared_office365_1": {
-          "value": "f289112b-6171-457e-b554-bf9b95475e26"
+          "value": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
         },
         "workflowEntityId": {},
         "workflowName": {
@@ -112,10 +96,44 @@
       "SubmitPromotion"
     ],
     "dependencies": {
-      "shared_office365_1": "f289112b-6171-457e-b554-bf9b95475e26"
+      "shared_office365_1": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
     },
     "dependents": [],
-    "id": "7b7d1db0-9692-4fbc-9ec9-e55af63b2438"
+    "id": "312f96f2-6e4d-44d7-a0b7-90616f7f164f"
+  },
+  "3cb65984-5f0a-4c38-82cd-9c4944cd6e67": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c": {
+          "value": "shared_office365_1"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "b922a241-3511-4bda-93da-2636223705df"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365_1": {
+          "value": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "b922a241-3511-4bda-93da-2636223705df"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SubmitLateralTransfer"
+    ],
+    "dependencies": {
+      "shared_office365_1": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
+    },
+    "dependents": [],
+    "id": "3cb65984-5f0a-4c38-82cd-9c4944cd6e67"
   },
   "8fff3ba7-0eb4-4aab-8dbc-aedac420798d": {
     "connectionRef": {
@@ -147,73 +165,73 @@
     "dependents": [],
     "id": "8fff3ba7-0eb4-4aab-8dbc-aedac420798d"
   },
-  "99b47b8b-0f76-4a67-9790-a89d9b5f9d1c": {
+  "97edfbc9-ecc1-44d0-a3d3-9e5af91d9b52": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "0afe637c-4b48-4db8-ac04-c2482a808ffb": {
+        "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c": {
           "value": "shared_office365_1"
         },
         "workflowEntityId": {},
         "workflowName": {
-          "value": "b922a241-3511-4bda-93da-2636223705df"
+          "value": "46ddec93-817d-4eef-bd60-2d2a6c960d36"
         }
       },
       "parameterHintsV2": {
         "shared_office365_1": {
-          "value": "0afe637c-4b48-4db8-ac04-c2482a808ffb"
+          "value": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
         },
         "workflowEntityId": {},
         "workflowName": {
-          "value": "b922a241-3511-4bda-93da-2636223705df"
+          "value": "46ddec93-817d-4eef-bd60-2d2a6c960d36"
         }
       }
     },
     "datasets": {},
     "dataSources": [
-      "SubmitLateralTransfer"
+      "SubmitTermination"
     ],
     "dependencies": {
-      "shared_office365_1": "0afe637c-4b48-4db8-ac04-c2482a808ffb"
+      "shared_office365_1": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
     },
     "dependents": [],
-    "id": "99b47b8b-0f76-4a67-9790-a89d9b5f9d1c"
+    "id": "97edfbc9-ecc1-44d0-a3d3-9e5af91d9b52"
   },
-  "9c2856b1-8085-4f82-97ae-d2702d7027f5": {
+  "a37b32ab-86a1-48c2-aad4-05830bcf6fb8": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "0afe637c-4b48-4db8-ac04-c2482a808ffb": {
+        "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c": {
           "value": "shared_office365_1"
         },
         "workflowEntityId": {},
         "workflowName": {
-          "value": "9e4fe233-8209-49cc-816e-4394bf7c6250"
+          "value": "a18c19a5-5014-4f6a-a8fb-834c3cb0b104"
         }
       },
       "parameterHintsV2": {
         "shared_office365_1": {
-          "value": "0afe637c-4b48-4db8-ac04-c2482a808ffb"
+          "value": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
         },
         "workflowEntityId": {},
         "workflowName": {
-          "value": "9e4fe233-8209-49cc-816e-4394bf7c6250"
+          "value": "a18c19a5-5014-4f6a-a8fb-834c3cb0b104"
         }
       }
     },
     "datasets": {},
     "dataSources": [
-      "SubmitOtherRosterUpdate"
+      "SubmitOmniaCreation"
     ],
     "dependencies": {
-      "shared_office365_1": "0afe637c-4b48-4db8-ac04-c2482a808ffb"
+      "shared_office365_1": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
     },
     "dependents": [],
-    "id": "9c2856b1-8085-4f82-97ae-d2702d7027f5"
+    "id": "a37b32ab-86a1-48c2-aad4-05830bcf6fb8"
   },
   "a98f1ce0-65af-4442-ad24-7697c24f3724": {
     "connectionRef": {
@@ -227,8 +245,7 @@
     ],
     "dependencies": {},
     "dependents": [
-      "04f515c4-9cfe-4292-8b56-cd6ebbe06266",
-      "d59258ca-7590-4695-8268-2e933a465740"
+      "04f515c4-9cfe-4292-8b56-cd6ebbe06266"
     ],
     "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
   },
@@ -242,43 +259,14 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "db0139ba-0e04-406c-9575-fc570ff1f5a7"
+      "db0139ba-0e04-406c-9575-fc570ff1f5a7",
+      "113d9849-abff-454b-ab61-41993c5f335f",
+      "a37b32ab-86a1-48c2-aad4-05830bcf6fb8",
+      "312f96f2-6e4d-44d7-a0b7-90616f7f164f",
+      "3cb65984-5f0a-4c38-82cd-9c4944cd6e67",
+      "97edfbc9-ecc1-44d0-a3d3-9e5af91d9b52"
     ],
     "id": "bc5a7c8b-3b68-4abd-b0aa-771a79eeae2c"
-  },
-  "d59258ca-7590-4695-8268-2e933a465740": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
-          "value": "shared_office365"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "46ddec93-817d-4eef-bd60-2d2a6c960d36"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_office365": {
-          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "46ddec93-817d-4eef-bd60-2d2a6c960d36"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "SubmitTermination"
-    ],
-    "dependencies": {
-      "shared_office365": "a98f1ce0-65af-4442-ad24-7697c24f3724"
-    },
-    "dependents": [],
-    "id": "d59258ca-7590-4695-8268-2e933a465740"
   },
   "db0139ba-0e04-406c-9575-fc570ff1f5a7": {
     "connectionRef": {
@@ -313,19 +301,5 @@
     },
     "dependents": [],
     "id": "db0139ba-0e04-406c-9575-fc570ff1f5a7"
-  },
-  "f289112b-6171-457e-b554-bf9b95475e26": {
-    "connectionRef": {
-      "displayName": "Office 365 Outlook",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1626/1.0.1626.3238/office365/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_office365"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "7b7d1db0-9692-4fbc-9ec9-e55af63b2438"
-    ],
-    "id": "f289112b-6171-457e-b554-bf9b95475e26"
   }
 }
