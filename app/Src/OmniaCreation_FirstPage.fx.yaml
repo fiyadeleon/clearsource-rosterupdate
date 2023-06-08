@@ -536,9 +536,10 @@
 
                 cbOCFPCampaign As combobox:
                     DisplayFields: =["Value"]
+                    IsSearchable: =false
                     Items: =Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value)),cbOCFPCampaign.SearchText,"Value")
+                    SearchItems: =[]
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
@@ -774,9 +775,10 @@
 
                 cbOCFPSite As combobox:
                     DisplayFields: =["Value"]
+                    IsSearchable: =false
                     Items: =Filter(Distinct(Headcount_table, SITE), !IsBlank(Value))
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Filter(Distinct(Headcount_table, SITE), !IsBlank(Value)),cbOCFPSite.SearchText,"Value")
+                    SearchItems: =[]
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
