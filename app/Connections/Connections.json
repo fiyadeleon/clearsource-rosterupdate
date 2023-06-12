@@ -50,28 +50,6 @@
     "dependents": [],
     "id": "4293964a-6ec3-4dec-b522-fcb35d1e0b8a"
   },
-  "945c03c2-58f9-4f1c-a39a-938df1e3e8b8": {
-    "connectionRef": {
-      "displayName": "Excel Online (Business)",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1639/1.0.1639.3319/excelonlinebusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
-    },
-    "datasets": {
-      "groups%252Fbf299b3f-954c-4623-a3cc-6aa8bd0d0331,b%252125bdTu8OvEqqV2cB5gNVjNpwxB0PvOlKjq_s5Zv4ltjmfPURY5pCSLqULXij7J7Y,01WHTBGJQ5TATBCKBE25C2VMFFVSMAPL6G": {
-        "dataSources": {
-          "Headcount_table": {
-            "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "Headcount_table"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "945c03c2-58f9-4f1c-a39a-938df1e3e8b8"
-  },
   "a8ff1f53-2e6a-448c-88b7-103db6e1cb29": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -249,6 +227,28 @@
     },
     "dependents": [],
     "id": "db0139ba-0e04-406c-9575-fc570ff1f5a7"
+  },
+  "e1669629-a39f-4498-a9fb-d79bc741ade0": {
+    "connectionRef": {
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1639/1.0.1639.3319/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
+    },
+    "datasets": {
+      "groups%252F88eb9805-f1e1-43e7-9656-f9ac0ca45536,b%2521PIK6dPx2pUSXnuv1-sPH2boBaFBpk8pCqMyRPdl1uP1u9szUzjsCTZZ6k0LEUzbP,01JBAIPN3Y2ZJKF232AVH3VZOC5XNOZ5WR": {
+        "dataSources": {
+          "Headcount_table": {
+            "tableName": "{00000000-000C-0000-FFFF-FFFF00000000}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Headcount_table"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "e1669629-a39f-4498-a9fb-d79bc741ade0"
   },
   "f00e1a4e-2ece-4706-beb7-90db3d2e817d": {
     "connectionRef": {
