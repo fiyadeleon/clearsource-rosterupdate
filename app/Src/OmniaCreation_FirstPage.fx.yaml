@@ -536,6 +536,7 @@
 
                 cbOCFPCampaign As combobox:
                     DisplayFields: =["Value"]
+                    InputTextPlaceholder: ="Find items"
                     IsSearchable: =false
                     Items: =Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value))
                     SearchFields: =["Value"]
