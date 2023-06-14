@@ -112,7 +112,7 @@ Termination_FirstPage As screen:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(39, 67, 125, 1)
         DisplayFields: =
-        Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+        Items: =Sort(Distinct(Headcount_table, 'LOB NAME IT'),Value)
         OnChange: |-
             =Set(SelectedItemID,"") && 
             Reset(omnia_input);
@@ -121,7 +121,7 @@ Termination_FirstPage As screen:
             Set(tstatus, 0);
         OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
         SearchFields: =["Value"]
-        SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),lob_input.SearchText,"Value")
+        SearchItems: =Search(Sort(Distinct(Headcount_table, 'LOB NAME IT'),Value),lob_input.SearchText,"Value")
         SelectMultiple: =false
         X: =281
         Y: =113
@@ -130,11 +130,12 @@ Termination_FirstPage As screen:
     omnia_input As combobox:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(0, 18, 107, 1)
-        DisplayFields: =["USER"]
-        Items: =If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOB=lob_input.Selected.Value))
+        DisplayFields: =
+        IsSearchable: =false
+        Items: =Filter(Headcount_table, 'EMPLOYEE ID' = lob_input.Selected.Value)
         OnChange: =Set(SelectedItemIDinTermi, "")
-        SearchFields: =["USER"]
-        SearchItems: =Search(If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOB=lob_input.Selected.Value)),omnia_input.SearchText,"USER")
+        SearchFields: =["EMPLOYEE ID"]
+        SearchItems: =[]
         SelectionColor: =RGBA(0, 18, 107, 1)
         Size: |
             =13
@@ -315,7 +316,7 @@ Termination_FirstPage As screen:
             DataField: ="LOB"
             Default: =ThisItem.LOB
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB NAME IT")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -329,7 +330,7 @@ Termination_FirstPage As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =34
                 Size: =10
-                Text: =Parent.DisplayName
+                Text: ="LOB NAME "
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -394,10 +395,10 @@ Termination_FirstPage As screen:
 
         campaign_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="CAMPAIGN"
-            Default: =ThisItem.CAMPAIGN
+            DataField: ="DIVISION"
+            Default: =ThisItem.DIVISION
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CAMPAIGN")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"DIVISION")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -414,8 +415,8 @@ Termination_FirstPage As screen:
                 Text: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
-                X: =30
-                Y: =12
+                X: =27
+                Y: =15
                 ZIndex: =1
 
             campaign_value As htmlViewer:

@@ -1238,16 +1238,16 @@
       "ControlPropertyState": [
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"CAMPAIGN\"",
           "InvariantPropertyName": "DataField",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
         },
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,\"CAMPAIGN\")",
           "InvariantPropertyName": "DisplayName",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
@@ -1270,8 +1270,8 @@
         },
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "ThisItem.CAMPAIGN",
           "InvariantPropertyName": "Default",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
@@ -1291,7 +1291,7 @@
       "IsDataControl": false,
       "IsFromScreenLayout": false,
       "IsGroupControl": false,
-      "IsLocked": true,
+      "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "campaign_card",
@@ -1439,7 +1439,7 @@
       "IsDataControl": false,
       "IsFromScreenLayout": false,
       "IsGroupControl": false,
-      "IsLocked": true,
+      "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "%FieldName.ID%",
       "Name": "campaign_label",
@@ -1715,7 +1715,7 @@
       "IsDataControl": false,
       "IsFromScreenLayout": false,
       "IsGroupControl": false,
-      "IsLocked": true,
+      "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "campaign_value",
@@ -7392,8 +7392,8 @@
         },
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,\"LOB\")",
           "InvariantPropertyName": "DisplayName",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
@@ -7444,7 +7444,7 @@
       "IsDataControl": false,
       "IsFromScreenLayout": false,
       "IsGroupControl": false,
-      "IsLocked": true,
+      "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lob_card",
@@ -7885,8 +7885,8 @@
       "ControlPropertyState": [
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Parent.DisplayName",
           "InvariantPropertyName": "Text",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
@@ -7952,7 +7952,7 @@
       "IsDataControl": false,
       "IsFromScreenLayout": false,
       "IsGroupControl": false,
-      "IsLocked": true,
+      "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "%FieldName.ID%",
       "Name": "lob_label",
@@ -8504,7 +8504,7 @@
       "IsDataControl": false,
       "IsFromScreenLayout": false,
       "IsGroupControl": false,
-      "IsLocked": true,
+      "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "lob_value",
@@ -9115,8 +9115,22 @@
           "NameMapSourceSchema": "?"
         },
         "MoreItemsButtonColor",
-        "DisplayFields",
-        "SearchFields",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "[\"USER\"]",
+          "InvariantPropertyName": "DisplayFields",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "[\"USER\"]",
+          "InvariantPropertyName": "SearchFields",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -9217,6 +9231,14 @@
           "InvariantPropertyName": "OnChange",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "SelectMultiple",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -9260,6 +9282,11 @@
         {
           "Category": "Data",
           "PropertyName": "SearchItems",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "SelectMultiple",
           "RuleProviderType": "Unknown"
         },
         {
