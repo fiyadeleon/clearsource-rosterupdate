@@ -163,12 +163,12 @@
             "'FIRST NAME_DataCardOCFP' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="FIRST NAME"
-                Default: =ThisItem.'FIRST NAME'
+                Default: =ThisItem.FIRSTNAME
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+                DisplayName: ="FIRST NAME *"
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =89
-                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "FIRST NAME")
+                MaxLength: =
                 Required: =false
                 Update: =txtOCFPFName.Text
                 Width: =328
@@ -193,7 +193,6 @@
                     DelayOutput: =true
                     DisplayMode: =Parent.DisplayMode
                     HintText: ="Input First Name"
-                    MaxLength: =Parent.MaxLength
                     PaddingLeft: =5
                     RadiusBottomLeft: =0
                     RadiusBottomRight: =0
@@ -208,12 +207,12 @@
             "'MIDDLE NAME_DataCardOCFP' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="MIDDLE NAME"
-                Default: =ThisItem.'MIDDLE NAME'
+                Default: =ThisItem.MIDDLENAME
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MIDDLE NAME")
+                DisplayName: ="MIDDLE NAME *"
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
-                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MIDDLE NAME")
+                MaxLength: =
                 Required: =false
                 Update: =txtOCFPMName.Text
                 Width: =328
@@ -253,12 +252,12 @@
             "'LAST NAME_DataCardOCFP' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="LAST NAME"
-                Default: =ThisItem.'LAST NAME'
+                Default: =ThisItem.LASTNAME
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LAST NAME")
+                DisplayName: ="LAST NAME *"
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
-                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LAST NAME")
+                MaxLength: =
                 Required: =false
                 Update: =txtOCFPLName.Text
                 Width: =328
@@ -298,9 +297,9 @@
             "'HIRE DATE_DataCardOCFP' As typedDataCard.dateTimeEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="HIRE DATE"
-                Default: =ThisItem.'HIRE DATE'
+                Default: =ThisItem.HIREDATE
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"HIRE DATE")
+                DisplayName: ="HIRE DATE *"
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
