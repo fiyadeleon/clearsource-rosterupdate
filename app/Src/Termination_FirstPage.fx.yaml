@@ -132,7 +132,7 @@ Termination_FirstPage As screen:
         Color: =RGBA(0, 18, 107, 1)
         DisplayFields: =
         IsSearchable: =false
-        Items: =Filter(Headcount_table, 'EMPLOYEE ID' = lob_input.Selected.Value)
+        Items: =Filter(Headcount_table, USER = lob_input.Selected.Value)
         OnChange: =Set(SelectedItemIDinTermi, "")
         SearchFields: =["EMPLOYEE ID"]
         SearchItems: =[]
@@ -460,7 +460,7 @@ Termination_FirstPage As screen:
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Semibold
                 Size: =10
-                Text: ="TERMINATION TYPE"
+                Text: ="TERMINATION TYPE *"
                 Width: =179
                 X: =15
                 Y: =12
@@ -491,7 +491,7 @@ Termination_FirstPage As screen:
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Semibold
                 Size: =10
-                Text: ="TERMINATION STATUS"
+                Text: ="TERMINATION STATUS *"
                 Width: =170
                 X: =30
                 Y: =6
@@ -511,13 +511,14 @@ Termination_FirstPage As screen:
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Semibold
                 Size: =10
-                Text: ="EFFECTIVITY DATE"
+                Text: ="EFFECTIVITY DATE *"
                 Width: =180
                 X: =15
                 Y: =6
                 ZIndex: =1
 
             effectivityDate_input As datepicker:
+                DefaultDate: =
                 Height: =30
                 Size: =10
                 Width: =300
@@ -539,13 +540,14 @@ Termination_FirstPage As screen:
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Semibold
                 Size: =10
-                Text: ="LAST WORKING DATE"
+                Text: ="LAST WORKING DATE *"
                 Width: =202
                 X: =30
                 Y: =6
                 ZIndex: =1
 
             lastDate_input As datepicker:
+                DefaultDate: =
                 Height: =30
                 Size: =10
                 Width: =300
@@ -568,7 +570,8 @@ Termination_FirstPage As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =25
                 Size: =10
-                Text: ="CURRENT ADDRESS"
+                Text: ="CURRENT ADDRESS (Optional)"
+                Width: =227
                 X: =15
                 Y: =6
                 ZIndex: =1
@@ -599,7 +602,8 @@ Termination_FirstPage As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =25
                 Size: =10
-                Text: ="COMMENT"
+                Text: ="COMMENT (Optional)"
+                Width: =161
                 X: =30
                 Y: =6
                 ZIndex: =1

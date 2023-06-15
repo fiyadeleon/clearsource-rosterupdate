@@ -375,10 +375,9 @@
 
                 cbOCFPBusUnit As combobox:
                     DisplayFields: =["Value"]
-                    IsSearchable: =false
                     Items: =Sort(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)), Value)
                     SearchFields: =["Value"]
-                    SearchItems: =[]
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)), Value),cbOCFPBusUnit.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
@@ -414,10 +413,9 @@
 
                 cbOCFPSubUnit As combobox:
                     DisplayFields: =["Value"]
-                    IsSearchable: =false
                     Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value)
                     SearchFields: =["Value"]
-                    SearchItems: =[]
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbOCFPSubUnit.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
@@ -453,10 +451,9 @@
 
                 cbOCFPPosition As combobox:
                     DisplayFields: =["Value"]
-                    IsSearchable: =false
                     Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
                     SearchFields: =["Value"]
-                    SearchItems: =[]
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbOCFPPosition.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
@@ -540,10 +537,9 @@
 
                 cbOCFPSubLOB As combobox:
                     DisplayFields: =["Value"]
-                    IsSearchable: =false
                     Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
                     SearchFields: =["Value"]
-                    SearchItems: =[]
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),cbOCFPSubLOB.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
@@ -579,10 +575,9 @@
 
                 cbOCFPBillability As combobox:
                     DisplayFields: =["Value"]
-                    IsSearchable: =false
                     Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
                     SearchFields: =["Value"]
-                    SearchItems: =[]
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOCFPBillability.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
@@ -697,10 +692,9 @@
 
                 cbOCFPSupervisor As combobox:
                     DisplayFields: =["Value"]
-                    IsSearchable: =false
                     Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value)
                     SearchFields: =["Value"]
-                    SearchItems: =[]
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbOCFPSupervisor.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
