@@ -131,12 +131,11 @@ Termination_FirstPage As screen:
     omnia_input As combobox:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(0, 18, 107, 1)
-        DisplayFields: =["ADDRESS"]
-        IsSearchable: =false
-        Items: =If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOB =lob_input.Selected.Value))
+        DisplayFields: =["EMPLOYEEID"]
+        Items: =If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOBNAMEIT =lob_input.Selected.Value))
         OnChange: =Set(SelectedItemIDinTermi, "")
-        SearchFields: =["ADDRESS"]
-        SearchItems: =[]
+        SearchFields: =["EMPLOYEEID"]
+        SearchItems: =Search(If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOBNAMEIT =lob_input.Selected.Value)),omnia_input.SearchText,"EMPLOYEEID")
         SelectionColor: =RGBA(0, 18, 107, 1)
         Size: |
             =13
@@ -148,7 +147,7 @@ Termination_FirstPage As screen:
         Color: =RGBA(39, 67, 125, 1)
         FontWeight: =FontWeight.Bold
         Text: |-
-            ="OMNIA ID:"
+            ="EMPLOYEE ID:"
         Width: =151
         X: =685
         Y: =113
@@ -233,9 +232,9 @@ Termination_FirstPage As screen:
         lname_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="LAST NAME"
-            Default: =ThisItem.'LAST NAME'
+            Default: =ThisItem.LASTNAME
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LAST NAME")
+            DisplayName: ="LAST NAME"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -317,7 +316,7 @@ Termination_FirstPage As screen:
             DataField: ="LOB"
             Default: =ThisItem.LOB
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB NAME IT")
+            DisplayName: ="LOB"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -331,7 +330,7 @@ Termination_FirstPage As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =34
                 Size: =10
-                Text: ="LOB NAME "
+                Text: ="LOB"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -356,9 +355,9 @@ Termination_FirstPage As screen:
         email_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERNAL EMAIL"
-            Default: =ThisItem.'INTERNAL EMAIL'
+            Default: =ThisItem.INTERNALEMAIL
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"INTERNAL EMAIL")
+            DisplayName: ="INTERNAL EMAIL"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -635,7 +634,9 @@ Termination_FirstPage As screen:
                 OnSelect: |-
                     =If(
                         terminationType_cb.Selected.Value = "Select your answer" ||
-                        terminationStatus_cb.Selected.Value = "Select your answer",
+                        terminationStatus_cb.Selected.Value = "Select your answer" ||
+                        IsBlank(effectivityDate_input.SelectedDate) ||
+                        IsBlank(lastDate_input.SelectedDate),
                         Notify("Please complete all fields!", NotificationType.Error),
                         If(
                             CountRows(
@@ -645,16 +646,16 @@ Termination_FirstPage As screen:
                         );
                         Collect(userVerify, {
                             USER:SelectedItemIDinTermi,
-                            'FULL NAME': Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME'),
-                            'FIRST NAME': ThisItem.'FIRST NAME',
-                            'LAST NAME': ThisItem.'LAST NAME',
+                            'FULL NAME': Concatenate(ThisItem.FIRSTNAME, " ",ThisItem.LASTNAME),
+                            'FIRST NAME': ThisItem.FIRSTNAME,
+                            'LAST NAME': ThisItem.LASTNAME,
                             'OMNIA ID': ThisItem.USER,
-                            'EMPLOYEE ID': ThisItem.'EMPLOYEE ID',
+                            'EMPLOYEE ID': ThisItem.EMPLOYEEID,
                             POSITION: ThisItem.POSITION,
                             CAMPAIGN: campaign_value.HtmlText,
                             LOB: ThisItem.LOB, 
                             CLIENT: ThisItem.CLIENT,
-                            'INTERNAL EMAIL': ThisItem.'INTERNAL EMAIL',
+                            'INTERNAL EMAIL': ThisItem.INTERNALEMAIL,
                             'TERMINATION TYPE': terminationType_cb.Selected.Value, 
                             'TERMINATION STATUS': terminationStatus_cb.Selected.Value, 
                             'EFFECTIVITY DATE': effectivityDate_input.SelectedDate, 

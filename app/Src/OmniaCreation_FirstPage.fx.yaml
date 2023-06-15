@@ -118,12 +118,12 @@
             "'EMPLOYEE ID_DataCardOCFP' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="EMPLOYEE ID"
-                Default: =ThisItem.'EMPLOYEE ID'
+                Default: =ThisItem.EMPLOYEEID
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"EMPLOYEE ID")
+                DisplayName: ="EMPLOYEE ID *"
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
-                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "EMPLOYEE ID")
+                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "EMPLOYEEID")
                 Required: =false
                 Update: =txtOCFPEmpId.Text
                 Width: =328
