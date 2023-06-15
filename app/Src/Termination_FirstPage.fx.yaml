@@ -38,7 +38,7 @@ Termination_FirstPage As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =Concatenate(ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME')
+            Text: =Concatenate(ThisItem.FIRSTNAME, " ", ThisItem.LASTNAME)
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -68,7 +68,7 @@ Termination_FirstPage As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =8
-            Text: =ThisItem.'EMPLOYEE ID'
+            Text: =ThisItem.EMPLOYEEID
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -111,8 +111,9 @@ Termination_FirstPage As screen:
     lob_input As combobox:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(39, 67, 125, 1)
-        DisplayFields: =
-        Items: =Sort(Distinct(Headcount_table, 'LOB NAME IT'),Value)
+        DisplayFields: =["Value"]
+        IsSearchable: =false
+        Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT),!IsBlank(Value)), Value)
         OnChange: |-
             =Set(SelectedItemID,"") && 
             Reset(omnia_input);
@@ -121,7 +122,7 @@ Termination_FirstPage As screen:
             Set(tstatus, 0);
         OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
         SearchFields: =["Value"]
-        SearchItems: =Search(Sort(Distinct(Headcount_table, 'LOB NAME IT'),Value),lob_input.SearchText,"Value")
+        SearchItems: =[]
         SelectMultiple: =false
         X: =281
         Y: =113
@@ -130,11 +131,11 @@ Termination_FirstPage As screen:
     omnia_input As combobox:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(0, 18, 107, 1)
-        DisplayFields: =
+        DisplayFields: =["ADDRESS"]
         IsSearchable: =false
-        Items: =Filter(Headcount_table, USER = lob_input.Selected.Value)
+        Items: =If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOB =lob_input.Selected.Value))
         OnChange: =Set(SelectedItemIDinTermi, "")
-        SearchFields: =["EMPLOYEE ID"]
+        SearchFields: =["ADDRESS"]
         SearchItems: =[]
         SelectionColor: =RGBA(0, 18, 107, 1)
         Size: |
@@ -191,9 +192,9 @@ Termination_FirstPage As screen:
         fname_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
-            Default: =ThisItem.'FIRST NAME'
+            Default: =ThisItem.FIRSTNAME
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+            DisplayName: ="FIRST NAME"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false

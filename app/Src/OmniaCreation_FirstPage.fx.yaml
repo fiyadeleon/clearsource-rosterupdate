@@ -180,7 +180,7 @@
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
-                    Text: =Parent.DisplayName & " *"
+                    Text: ="FIRST NAME *"
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
@@ -225,7 +225,7 @@
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
-                    Text: =Parent.DisplayName & " (Optional)"
+                    Text: ="MIDDLE NAME (Optional)"
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
@@ -270,7 +270,7 @@
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
-                    Text: =Parent.DisplayName & " *"
+                    Text: ="LAST NAME *"
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
@@ -314,7 +314,7 @@
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =34
-                    Text: =Parent.DisplayName & " *"
+                    Text: ="HIRE DATE *"
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
@@ -349,12 +349,12 @@
             "'BUSINESS UNIT_DataCardOCFP' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="BUSINESS UNIT"
-                Default: =ThisItem.'BUSINESS UNIT'
+                Default: =ThisItem.BUSINESSUNIT
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+                DisplayName: ="BUSINESS UNIT *"
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
-                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "BUSINESS UNIT")
+                MaxLength: =
                 Required: =false
                 Update: =
                 Width: =372
@@ -362,27 +362,26 @@
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey12_1 As label:
-                    AutoHeight: =true
-                    FontWeight: =FontWeight.Bold
-                    Height: =34
-                    Text: =Parent.DisplayName & " *"
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
                 cbOCFPBusUnit As combobox:
                     DisplayFields: =["Value"]
-                    Items: =Sort(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)), Value)
+                    Items: =Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)), Value)
                     SearchFields: =["Value"]
-                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)), Value),cbOCFPBusUnit.SearchText,"Value")
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)), Value),cbOCFPBusUnit.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
                     Y: =40
                     ZIndex: =2
+
+                Label25 As label:
+                    Color: =RGBA(0, 18, 107, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: ="BUSINESS UNIT *"
+                    Width: =319
+                    X: =30
+                    Y: =10
+                    ZIndex: =3
 
             "'SUB-UNIT_DataCardOCFP' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
@@ -508,6 +507,75 @@
                     Y: =40
                     ZIndex: =2
 
+            DataCard8 As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =80
+                Width: =379
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                Label22 As label:
+                    Color: =RGBA(0, 18, 107, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: ="DIVISION *"
+                    Width: =319
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                cbOCFPDivision As combobox:
+                    DisplayFields: =["Value"]
+                    Items: =Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value)
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value),cbOCFPDivision.SearchText,"Value")
+                    SelectMultiple: =false
+                    Width: =319
+                    X: =40
+                    Y: =40
+                    ZIndex: =2
+
+            LOB_DataCardOCFP As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="LOB"
+                Default: =ThisItem.LOB
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
+                Required: =false
+                Update: =
+                Width: =379
+                X: =0
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey46 As label:
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: =Parent.DisplayName & " *"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                cbOCFPLOB As combobox:
+                    DisplayFields: =["Value"]
+                    Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOCFPLOB.SearchText,"Value")
+                    SelectMultiple: =false
+                    Width: =Parent.Width - 60
+                    X: =40
+                    Y: =40
+                    ZIndex: =2
+
             "'SUB-LOB_DataCardOCFP' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="SUB-LOB"
@@ -578,75 +646,6 @@
                     Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
                     SearchFields: =["Value"]
                     SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOCFPBillability.SearchText,"Value")
-                    SelectMultiple: =false
-                    Width: =Parent.Width - 60
-                    X: =40
-                    Y: =40
-                    ZIndex: =2
-
-            DataCard8 As typedDataCard.blankCard:
-                BorderStyle: =BorderStyle.Solid
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =80
-                Width: =379
-                X: =0
-                Y: =1
-                ZIndex: =1
-
-                Label22 As label:
-                    Color: =RGBA(0, 18, 107, 1)
-                    FontWeight: =FontWeight.Bold
-                    Height: =34
-                    Text: ="DIVISION *"
-                    Width: =319
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                cbOCFPDivision As combobox:
-                    DisplayFields: =["Value"]
-                    Items: =Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value)
-                    SearchFields: =["Value"]
-                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value),cbOCFPDivision.SearchText,"Value")
-                    SelectMultiple: =false
-                    Width: =319
-                    X: =40
-                    Y: =40
-                    ZIndex: =2
-
-            LOB_DataCardOCFP As typedDataCard.textualEditCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="LOB"
-                Default: =ThisItem.LOB
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
-                Required: =false
-                Update: =
-                Width: =379
-                X: =0
-                Y: =2
-                ZIndex: =1
-
-                DataCardKey46 As label:
-                    AutoHeight: =true
-                    FontWeight: =FontWeight.Bold
-                    Height: =34
-                    Text: =Parent.DisplayName & " *"
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                cbOCFPLOB As combobox:
-                    DisplayFields: =["Value"]
-                    Items: =Sort(Filter(Distinct(Headcount_table, 'LOB NAME IT'), !IsBlank(Value)),Value)
-                    SearchFields: =["Value"]
-                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'LOB NAME IT'), !IsBlank(Value)),Value),cbOCFPLOB.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =Parent.Width - 60
                     X: =40
