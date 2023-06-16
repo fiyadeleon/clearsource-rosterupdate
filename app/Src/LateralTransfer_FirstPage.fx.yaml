@@ -28,7 +28,7 @@
             PaddingRight: =0
             PaddingTop: =0
             Size: =18
-            Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
+            Text: =Concatenate(ThisItem.FIRSTNAME, " ",ThisItem.LASTNAME)
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -126,14 +126,15 @@
         cbLTSearchMultipleLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
-            Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+            IsSearchable: =false
+            Items: =Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value))
             OnChange: |-
                 =Set(SelectedItemID, "") &&
                 Reset(cbLTSearchMultipleOmnia);
                 Clear(colLateralTransfer)
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
-            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
+            SearchItems: =[]
             SelectMultiple: =false
             Width: =401.4
             X: =625
@@ -150,11 +151,11 @@
         cbLTSearchMultipleOmnia As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
-            DisplayFields: =["USER"]
+            DisplayFields: =["EMPLOYEEID"]
             Items: =If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value))
             OnChange: =Set(SelectedItemID, "")
-            SearchFields: =["USER"]
-            SearchItems: =Search(If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value)),cbLTSearchMultipleOmnia.SearchText,"USER")
+            SearchFields: =["EMPLOYEEID"]
+            SearchItems: =Search(If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value)),cbLTSearchMultipleOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
             X: =625
             Y: =187
@@ -185,9 +186,9 @@
         "'EMPLOYEE ID_LTMDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
-            Default: =ThisItem.'FIRST NAME'
+            Default: =ThisItem.FIRSTNAME
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+            DisplayName: ="EMPLOYEE ID"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -214,7 +215,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.'EMPLOYEE ID'
+                Text: =ThisItem.EMPLOYEEID
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey24.X + DataCardKey24.Width
                 Y: =20
@@ -223,9 +224,9 @@
         SITE_LTMDataCard As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SITE"
-            Default: =ThisItem.SITE
+            Default: =ThisItem.COUNTRY
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SITE")
+            DisplayName: ="SITE"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -259,12 +260,12 @@
                 ZIndex: =2
 
         "'BUSINESS UNIT_LTMDataCard' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESSUNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
-            Default: =ThisItem.'BUSINESS UNIT'
+            Default: =ThisItem.BUSINESSUNIT
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            DisplayName: ="BUSINESS UNIT"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -278,7 +279,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -286,10 +287,10 @@
                 ZIndex: =1
 
             cbLTMultipleBusUnit As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT'))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BUSINESSUNIT))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 SelectMultiple: =false
@@ -318,7 +319,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -358,7 +359,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =28
@@ -430,7 +431,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -470,7 +471,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -481,7 +482,7 @@
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),LOB))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value))
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 SelectMultiple: =false
@@ -510,7 +511,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -550,7 +551,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="NEW SALARY PACKAGE"
+                Text: ="NEW SALARY PACKAGE *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -595,7 +596,7 @@
             Label9 As label:
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Bold
-                Text: ="NEW SALARY EFFECTIVITY"
+                Text: ="NEW SALARY EFFECTIVITY *"
                 Width: =264
                 X: =30
                 Y: =13
@@ -627,7 +628,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="SUPERVISOR"
+                Text: ="SUPERVISOR *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30

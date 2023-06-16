@@ -102,7 +102,7 @@ Termination_FirstPage As screen:
         Color: =RGBA(39, 67, 125, 1)
         FontWeight: =FontWeight.Bold
         Text: |-
-            ="LINE OF BUSINESS:"
+            ="LINE OF BUSINESS: "
         Width: =221
         X: =60
         Y: =113
@@ -112,7 +112,6 @@ Termination_FirstPage As screen:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(39, 67, 125, 1)
         DisplayFields: =["Value"]
-        IsSearchable: =false
         Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT),!IsBlank(Value)), Value)
         OnChange: |-
             =Set(SelectedItemID,"") && 
@@ -122,7 +121,7 @@ Termination_FirstPage As screen:
             Set(tstatus, 0);
         OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
         SearchFields: =["Value"]
-        SearchItems: =[]
+        SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT),!IsBlank(Value)), Value),lob_input.SearchText,"Value")
         SelectMultiple: =false
         X: =281
         Y: =113

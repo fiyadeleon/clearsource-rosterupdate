@@ -175,7 +175,7 @@
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
                 SearchItems: =[]
@@ -268,7 +268,7 @@
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'EMPLOYMENT STATUS'))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, 'EMPLOYMENT STATUS'), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, EMPLOYMENTSTATUS), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
                 SearchItems: =[]
@@ -330,7 +330,7 @@
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),CAMPAIGN))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, CAMPAIGN), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
                 SearchItems: =[]
@@ -485,7 +485,7 @@
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SITE))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, SITE), !IsBlank(Value))
+                Items: =Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value))
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
                 SearchItems: =[]
