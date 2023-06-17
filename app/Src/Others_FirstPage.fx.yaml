@@ -529,7 +529,7 @@
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),LOB))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
-                Items: =Sort(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),Value)
+                Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
                 SearchItems: =[]
                 SelectMultiple: =false
@@ -758,6 +758,7 @@
                 ZIndex: =1
 
             drpOTtimezone As dropdown:
+                Default: =
                 Items: =Sort(["Philippine Standard Time", "Mountain Standard Time", "Central Standard Time", "India Standard Time"],Value)
                 Width: =408.6
                 X: =302
