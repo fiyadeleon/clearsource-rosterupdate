@@ -652,7 +652,7 @@ Termination_FirstPage As screen:
                             'EMPLOYEE ID': ThisItem.EMPLOYEEID,
                             POSITION: ThisItem.POSITION,
                             CAMPAIGN: campaign_value.HtmlText,
-                            LOB: ThisItem.LOB, 
+                            LOB: ThisItem.LOBNAMEIT, 
                             CLIENT: ThisItem.CLIENT,
                             'INTERNAL EMAIL': ThisItem.INTERNALEMAIL,
                             'TERMINATION TYPE': terminationType_cb.Selected.Value, 
