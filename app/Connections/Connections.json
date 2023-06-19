@@ -1,4 +1,18 @@
 {
+  "0188c7fb-0dfc-46b4-94f3-537b9eaf9c0e": {
+    "connectionRef": {
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/390724148/1.0.1641.3327/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "9410e7b3-a9e6-42a5-9e9a-0d485e38c076"
+    ],
+    "id": "0188c7fb-0dfc-46b4-94f3-537b9eaf9c0e"
+  },
   "01a792da-1a3b-4dc2-9c42-77a7abb5272e": {
     "connectionRef": {
       "displayName": "Office 365 Outlook",
@@ -71,6 +85,61 @@
     "dependencies": {},
     "dependents": [],
     "id": "445c2806-6ace-410f-adcf-5edfa6f6c6cb"
+  },
+  "9410e7b3-a9e6-42a5-9e9a-0d485e38c076": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "0188c7fb-0dfc-46b4-94f3-537b9eaf9c0e": {
+          "value": "shared_office365"
+        },
+        "a34133d1-360e-4462-aecb-fa644e532215": {
+          "value": "shared_office365_1"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "50ca7daa-a99c-4962-97ce-7fed056cf0e5"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "0188c7fb-0dfc-46b4-94f3-537b9eaf9c0e"
+        },
+        "shared_office365_1": {
+          "value": "a34133d1-360e-4462-aecb-fa644e532215"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "50ca7daa-a99c-4962-97ce-7fed056cf0e5"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "TestSubmitPromotion"
+    ],
+    "dependencies": {
+      "shared_office365": "0188c7fb-0dfc-46b4-94f3-537b9eaf9c0e",
+      "shared_office365_1": "a34133d1-360e-4462-aecb-fa644e532215"
+    },
+    "dependents": [],
+    "id": "9410e7b3-a9e6-42a5-9e9a-0d485e38c076"
+  },
+  "a34133d1-360e-4462-aecb-fa644e532215": {
+    "connectionRef": {
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/390724148/1.0.1641.3327/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "9410e7b3-a9e6-42a5-9e9a-0d485e38c076"
+    ],
+    "id": "a34133d1-360e-4462-aecb-fa644e532215"
   },
   "a8ff1f53-2e6a-448c-88b7-103db6e1cb29": {
     "connectionRef": {
