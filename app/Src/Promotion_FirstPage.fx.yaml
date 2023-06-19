@@ -195,26 +195,6 @@
         Y: =249
         ZIndex: =18
 
-        DataCard10 As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =55
-            Width: =741
-            X: =0
-            Y: =12
-            ZIndex: =1
-
-            Label26 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="BASIC SALARY *"
-                Width: =272.4
-                X: =30
-                Y: =13
-                ZIndex: =1
-
         "'FULL NAME_DataCard PRMp1_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
@@ -562,6 +542,46 @@
                 Y: =10
                 ZIndex: =2
 
+        "'SUPERVISOR_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "TEAM")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAM"
+            Default: =ThisItem.TEAM
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =55
+            Required: =false
+            Update: =cbPRMultipleClient_1.Selected.Value
+            Width: =741
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKeySUPpm1_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR *"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (cbPRMultipleClient_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            cbPRMultipleSupervisor_1 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),TEAM))
+                DisplayFields: =["Value"]
+                Height: =35
+                Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbPRMultipleSupervisor_1.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
         "'SALARY_DataCard PRMp1_1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
@@ -655,45 +675,25 @@
                 Y: =10
                 ZIndex: =2
 
-        "'SUPERVISOR_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "TEAM")
+        DataCard10 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="TEAM"
-            Default: =ThisItem.TEAM
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
+            DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =55
-            Required: =false
-            Update: =cbPRMultipleClient_1.Selected.Value
             Width: =741
             X: =0
-            Y: =9
+            Y: =12
             ZIndex: =1
 
-            DataCardKeySUPpm1_1 As label:
-                AutoHeight: =true
+            Label26 As label:
+                Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="SUPERVISOR *"
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
+                Text: ="BASIC SALARY *"
+                Width: =272.4
                 X: =30
-                Y: =10 + (cbPRMultipleClient_1.Height / 2) - (Self.Height / 2)
+                Y: =13
                 ZIndex: =1
-
-            cbPRMultipleSupervisor_1 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, USER=SelectedPRItemID),TEAM))
-                DisplayFields: =["Value"]
-                Height: =35
-                Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbPRMultipleSupervisor_1.SearchText,"Value")
-                SelectMultiple: =false
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
 
     txtPRSEp1_1 As label:
         Color: =RGBA(0, 18, 107, 1)
