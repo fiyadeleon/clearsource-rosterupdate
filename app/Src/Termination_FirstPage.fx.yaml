@@ -312,8 +312,8 @@ Termination_FirstPage As screen:
 
         lob_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="LOB"
-            Default: =ThisItem.LOB
+            DataField: ="LOBNAMEIT"
+            Default: =ThisItem.LOBNAMEIT
             DisplayMode: =DisplayMode.View
             DisplayName: ="LOB"
             Fill: =RGBA(0, 0, 0, 0)
