@@ -133,10 +133,10 @@
 
         "'EMPLOYEE NAME_PRMDataCard_3' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="FIRST NAME"
+            DataField: =FIRSTNAME
             Default: =
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,FIRSTNAME)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -172,9 +172,9 @@
         SITE_PRMDataCard_4 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SITE"
-            Default: =ThisItem.SITE
+            Default: =ThisItem.COUNTRY
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SITE")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"COUNTRY")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -208,12 +208,12 @@
                 ZIndex: =2
 
         "'BUSINESS UNIT_PRMDataCard_4' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues,BUSINESSUNIT)
             BorderStyle: =BorderStyle.Solid
-            DataField: ="BUSINESS UNIT"
-            Default: =ThisItem.'BUSINESS UNIT'
+            DataField: =BUSINESSUNIT
+            Default: =ThisItem.BUSINESSUNIT
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,BUSINESSUNIT)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false

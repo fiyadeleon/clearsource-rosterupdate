@@ -8176,32 +8176,31 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.fname_card_1.DisplayName"
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'EMPLOYEE NAME_PRMDataCard_3'.DataField"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.fname_card_1.DisplayName",
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'EMPLOYEE NAME_PRMDataCard_3'.DataField",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 12,
-                  "charOffset": 61,
+                  "charLength": 9,
+                  "charOffset": 0,
                   "snippet": {
-                    "text": "\"FIRST NAME\""
+                    "text": "FIRSTNAME"
                   }
                 }
               },
               "properties": {
-                "member": "DisplayName",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.fname_card_1"
+                "member": "DataField",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.formPREDsp2_1.'EMPLOYEE NAME_PRMDataCard_3'"
               }
             }
           ],
           "message": {
             "arguments": [
-              "FIRST NAME",
               "FIRSTNAME"
             ],
             "id": "issue"
@@ -8209,249 +8208,7 @@
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.fname_card_1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.fname_card_1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 74,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,\"FIRST NAME\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.fname_card_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.lname_card_1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.lname_card_1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 11,
-                  "charOffset": 61,
-                  "snippet": {
-                    "text": "\"LAST NAME\""
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.lname_card_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LAST NAME",
-              "LASTNAME"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.lname_card_1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.lname_card_1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 73,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,\"LAST NAME\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.lname_card_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.email_card_1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.email_card_1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 16,
-                  "charOffset": 61,
-                  "snippet": {
-                    "text": "\"INTERNAL EMAIL\""
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.email_card_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "INTERNAL EMAIL",
-              "INTERNALEMAIL"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.email_card_1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.email_card_1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 78,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,\"INTERNAL EMAIL\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.email_card_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.campaign_card_1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.campaign_card_1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 61,
-                  "snippet": {
-                    "text": "\"CAMPAIGN\""
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.campaign_card_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "CAMPAIGN"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColDNE-Name",
+          "ruleId": "app-ErrInvalidName",
           "ruleIndex": 2
         },
         {
@@ -8459,46 +8216,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.campaign_card_1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.campaign_card_1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 72,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,\"CAMPAIGN\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.campaign_card_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'EMPLOYEE NAME_PRMDataCard_3'.DisplayName"
                 }
               ],
@@ -8508,10 +8225,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 12,
+                  "charLength": 9,
                   "charOffset": 61,
                   "snippet": {
-                    "text": "\"FIRST NAME\""
+                    "text": "FIRSTNAME"
                   }
                 }
               },
@@ -8524,7 +8241,6 @@
           ],
           "message": {
             "arguments": [
-              "FIRST NAME",
               "FIRSTNAME"
             ],
             "id": "issue"
@@ -8532,8 +8248,8 @@
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
-          "ruleIndex": 0
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -8549,10 +8265,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 74,
+                  "charLength": 71,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,\"FIRST NAME\")"
+                    "text": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,FIRSTNAME)"
                   }
                 }
               },
@@ -8580,24 +8296,24 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.SITE_PRMDataCard_4.DisplayName"
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.SITE_PRMDataCard_4.Default"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.SITE_PRMDataCard_4.DisplayName",
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.SITE_PRMDataCard_4.Default",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 6,
-                  "charOffset": 61,
+                  "charLength": 8,
+                  "charOffset": 8,
                   "snippet": {
-                    "text": "\"SITE\""
+                    "text": ".COUNTRY"
                   }
                 }
               },
               "properties": {
-                "member": "DisplayName",
+                "member": "Default",
                 "module": "Promotion_SecondPage",
                 "type": "Promotion_SecondPage.formPREDsp2_1.SITE_PRMDataCard_4"
               }
@@ -8605,56 +8321,95 @@
           ],
           "message": {
             "arguments": [
-              "SITE",
-              "Id"
+              "COUNTRY"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
-          "ruleIndex": 0
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.SITE_PRMDataCard_4.DisplayName"
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.Default"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.SITE_PRMDataCard_4.DisplayName",
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.Default",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 68,
-                  "charOffset": 0,
+                  "charLength": 13,
+                  "charOffset": 8,
                   "snippet": {
-                    "text": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,\"SITE\")"
+                    "text": ".BUSINESSUNIT"
                   }
                 }
               },
               "properties": {
-                "member": "DisplayName",
+                "member": "Default",
                 "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.formPREDsp2_1.SITE_PRMDataCard_4"
+                "type": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'"
               }
             }
           ],
           "message": {
             "arguments": [
-              "DataSourceInfo"
+              "BUSINESSUNIT"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DataField"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DataField",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "BUSINESSUNIT"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DataField",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "BUSINESSUNIT"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -8670,10 +8425,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 15,
-                  "charOffset": 65,
+                  "charLength": 12,
+                  "charOffset": 64,
                   "snippet": {
-                    "text": "\"BUSINESS UNIT\""
+                    "text": "BUSINESSUNIT"
                   }
                 }
               },
@@ -8686,7 +8441,6 @@
           ],
           "message": {
             "arguments": [
-              "BUSINESS UNIT",
               "BUSINESSUNIT"
             ],
             "id": "issue"
@@ -8694,8 +8448,8 @@
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
-          "ruleIndex": 0
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -8708,94 +8462,93 @@
               "physicalLocation": {
                 "address": {
                   "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.AllowedValues",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 81,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, \"BUSINESS UNIT\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "AllowedValues",
-                "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 15,
-                  "charOffset": 61,
-                  "snippet": {
-                    "text": "\"BUSINESS UNIT\""
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "BUSINESS UNIT",
-              "BUSINESSUNIT"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DisplayName",
                   "relativeAddress": 0
                 },
                 "region": {
                   "charLength": 77,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,\"BUSINESS UNIT\")"
+                    "text": "DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues,BUSINESSUNIT)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "AllowedValues",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 61,
+                  "snippet": {
+                    "text": "BUSINESSUNIT"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "BUSINESSUNIT"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_SecondPage.formPREDsp2_1.'BUSINESS UNIT_PRMDataCard_4'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 74,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,BUSINESSUNIT)"
                   }
                 }
               },
@@ -12986,14 +12739,17 @@
               }
             },
             {
-              "id": "app-ErrColDNE-Name",
+              "id": "app-ErrInvalidName",
               "messageStrings": {
                 "issue": {
-                  "text": "The specified column '{0}' does not exist."
+                  "text": "Name isn't valid. '{0}' isn't recognized."
                 }
               },
               "properties": {
                 "componentType": "app",
+                "howToFix": [
+                  "Remove or correct the reference to the name that isn't valid."
+                ],
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""

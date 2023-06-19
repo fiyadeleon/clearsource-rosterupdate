@@ -262,8 +262,8 @@
 
         SITE_OTDataCard As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="SITE"
-            Default: =ThisItem.DIVISION
+            DataField: ="COUNTRY"
+            Default: =ThisItem.COUNTRY
             DisplayMode: =DisplayMode.View
             DisplayName: ="SITE"
             Fill: =RGBA(0, 0, 0, 0)
@@ -349,6 +349,7 @@
             ZIndex: =1
 
             Label2 As label:
+                Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Text: ="STATUS *"
                 X: =30
