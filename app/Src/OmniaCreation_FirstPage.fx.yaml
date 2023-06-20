@@ -458,6 +458,35 @@
                     Y: =40
                     ZIndex: =2
 
+            DataCard11 As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =80
+                Width: =372
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                Label27 As label:
+                    Color: =RGBA(0, 18, 107, 1)
+                    FontWeight: =FontWeight.Bold
+                    Text: ="STATUS *"
+                    X: =40
+                    Y: =10
+                    ZIndex: =1
+
+                ComboBox1 As combobox:
+                    DisplayFields: =["Value"]
+                    Items: =Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value)
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value),ComboBox1.SearchText,"Value")
+                    SelectMultiple: =false
+                    Width: =312
+                    X: =40
+                    Y: =40
+                    ZIndex: =2
+
         formOCFirstPage3 As form:
             DataSource: =Headcount_table
             DefaultMode: =FormMode.New
