@@ -139,7 +139,7 @@
             DataField: ="EMPLOYEE ID"
             Default: =ThisItem.ID
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"EMPLOYEE ID")
+            DisplayName: ="EMPLOYEE ID"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -169,12 +169,12 @@
                 ZIndex: =2
 
         "'BUSINESS UNIT_OTDataCard1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            AllowedValues: =
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
             Default: =ThisItem.'BUSINESS UNIT'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            DisplayName: ="BUSINESS UNIT"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -210,7 +210,7 @@
             DataField: ="SITE"
             Default: =ThisItem.SITE
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SITE")
+            DisplayName: ="SITE"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -362,7 +362,7 @@
             DataField: ="PST START DATE"
             Default: =ThisItem.'START DATE'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"PST START DATE")
+            DisplayName: ="START DATE"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -438,7 +438,7 @@
             DataField: ="LEAVE DATE"
             Default: =ThisItem.'END DATE'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LEAVE DATE")
+            DisplayName: ="LEAVE DATE"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -514,7 +514,7 @@
             DataField: ="NESTING START DATE"
             Default: =ThisItem.'NESTING START DATE'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"NESTING START DATE")
+            DisplayName: ="NESTING START DATE"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -589,7 +589,7 @@
             DataField: ="PRODUCTION DATE"
             Default: =ThisItem.'PRODUCTION DATE'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"PRODUCTION DATE")
+            DisplayName: ="PRODUCTION DATE"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false

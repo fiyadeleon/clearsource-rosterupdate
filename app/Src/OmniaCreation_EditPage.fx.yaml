@@ -49,7 +49,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="FIRST NAME"
+                Text: ="FIRST NAME*"
                 Width: =320
                 X: =17
                 Y: =98
@@ -76,7 +76,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="MIDDLE NAME"
+                Text: ="MIDDLE NAME (OPTIONAL)"
                 Width: =320
                 X: =17
                 Y: =191
@@ -103,7 +103,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="LAST NAME"
+                Text: ="LAST NAME *"
                 Width: =320
                 X: =17
                 Y: =284
@@ -128,7 +128,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="HIRE DATE"
+                Text: ="HIRE DATE *"
                 Width: =320
                 X: =17
                 Y: =378
@@ -145,7 +145,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="STATUS"
+                Text: ="STATUS *"
                 Width: =320
                 X: =323
                 Y: =285
@@ -154,10 +154,10 @@
             cbOCEPStatus As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),STATUS))
                 DisplayFields: =["Value"]
-                Items: =["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"]
+                Items: =Sort(["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"],Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"],cbOCEPStatus.SearchText,"Value")
+                SearchItems: =Search(Sort(["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"],Value),cbOCEPStatus.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -174,11 +174,10 @@
             cbOCEPBusUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'BUSINESS UNIT'))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbOCEPBusUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -189,7 +188,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="BUSINESS UNIT"
+                Text: ="BUSINESS UNIT *"
                 Width: =323
                 X: =323
                 Y: =8
@@ -205,11 +204,10 @@
             cbOCEPSubUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbOCEPSubUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -220,7 +218,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="SUB-UNIT"
+                Text: ="SUB-UNIT *"
                 Width: =323
                 X: =323
                 Y: =99
@@ -236,11 +234,10 @@
             cbOCEPPosition As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),POSITION))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbOCEPPosition.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -251,7 +248,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="POSITION"
+                Text: ="POSITION *"
                 Width: =323
                 X: =323
                 Y: =193
@@ -267,11 +264,10 @@
             cbOCEPEmpStatus As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'EMPLOYMENT STATUS'))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, EMPLOYMENTSTATUS), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, EMPLOYMENTSTATUS), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, EMPLOYMENTSTATUS), !IsBlank(Value)),Value),cbOCEPEmpStatus.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -282,7 +278,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="EMPLOYMENT STATUS"
+                Text: ="EMPLOYMENT STATUS *"
                 Width: =323
                 X: =323
                 Y: =378
@@ -298,11 +294,10 @@
             cbOCEPClient As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),CLIENT))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbOCEPClient.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -313,7 +308,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="CLIENT"
+                Text: ="CLIENT *"
                 Width: =323
                 X: =681
                 Y: =8
@@ -329,11 +324,10 @@
             cbOCEPCampaign As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),CAMPAIGN))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value),cbOCEPCampaign.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -344,7 +338,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="CAMPAIGN"
+                Text: ="CAMPAIGN *"
                 Width: =323
                 X: =681
                 Y: =99
@@ -360,11 +354,10 @@
             cbOCEPLOB As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),LOB))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOCEPLOB.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -375,7 +368,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="LOB"
+                Text: ="LOB *"
                 Width: =323
                 X: =681
                 Y: =193
@@ -391,11 +384,10 @@
             cbOCEPSubLOB As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'SUB-LOB'))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),cbOCEPSubLOB.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -406,7 +398,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="SUB-LOB"
+                Text: ="SUB-LOB *"
                 Width: =323
                 X: =681
                 Y: =284
@@ -422,11 +414,10 @@
             cbOCEPSupervisor As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SUPERVISOR))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbOCEPSupervisor.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =1040
@@ -437,7 +428,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="SUPERVISOR"
+                Text: ="SUPERVISOR *"
                 Width: =323
                 X: =1040
                 Y: =8
@@ -453,11 +444,10 @@
             cbOCEPCountry As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),COUNTRY))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPCountry.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =1040
@@ -468,7 +458,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="COUNTRY"
+                Text: ="COUNTRY *"
                 Width: =323
                 X: =1040
                 Y: =99
@@ -484,11 +474,10 @@
             cbOCEPSite As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SITE))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPSite.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =1040
@@ -499,7 +488,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="SITE"
+                Text: ="SITE *"
                 Width: =323
                 X: =1040
                 Y: =193
@@ -515,11 +504,10 @@
             cbOCEPBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),BILLABILITY))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOCEPBillability.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -530,7 +518,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="BILLABILITY"
+                Text: ="BILLABILITY *"
                 Width: =323
                 X: =681
                 Y: =378
@@ -546,11 +534,10 @@
             cbOCEPRole As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),ROLE))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, ROLE), !IsBlank(Value)),Value),cbOCEPRole.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =1040
@@ -561,7 +548,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="ROLE"
+                Text: ="ROLE *"
                 Width: =323
                 X: =1040
                 Y: =284
@@ -578,7 +565,7 @@
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
                 OnSelect: =Select(Parent)
-                Text: ="EMPLOYEE ID"
+                Text: ="OMNIA ID *"
                 Width: =320
                 X: =17
                 Y: =8

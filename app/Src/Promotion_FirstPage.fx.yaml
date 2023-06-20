@@ -724,9 +724,8 @@
                 (
                     (!IsBlank(cbPRMultipleBusUnit_1.Selected.Value) || !IsBlank(cbPRMultipleBusUnit_1.SearchText)) &&
                     (!IsBlank(cbPRMultipleSubUnit_1.Selected.Value) || !IsBlank(cbPRMultipleSubUnit_1.SearchText)) &&
-                    (IsBlank(cbPRMultiplePosition_1.Selected.Value) || !IsBlank(cbPRMultiplePosition_1.SearchText)) &&
+                    (!IsBlank(cbPRMultiplePosition_1.Selected.Value) || !IsBlank(cbPRMultiplePosition_1.SearchText)) &&
                     (!IsBlank(cbPRMultipleClient_1.Selected.Value) || !IsBlank(cbPRMultipleClient_1.SearchText)) &&
-                    (!IsBlank(rdPRInternship.Selected.Value))&&
                     (!IsBlank(cbPRMultipleLOB_2.Selected.Value) || !IsBlank(cbPRMultipleLOB_2.SearchText)) &&
                     (!IsBlank(cbPRMultipleBillability_1.Selected.Value) || !IsBlank(cbPRMultipleBillability_1.SearchText)) &&
                     (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))
