@@ -527,7 +527,7 @@
                 ZIndex: =1
 
             cbOTLOB As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),LOB))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),LOBNAMEIT))
                 DisplayFields: =["Value"]
                 IsSearchable: =false
                 Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
@@ -759,7 +759,13 @@
                 ZIndex: =1
 
             drpOTtimezone As dropdown:
-                Default: =
+                Default: |-
+                    =Switch(ThisItem.COUNTRY, 
+                        "PH", "Philippine Standard Time", 
+                        "CR", "Central Standard Time", 
+                        "US", "Mountain Standard Time",
+                        "IN", "India Standard Time"
+                    )
                 Items: =Sort(["Philippine Standard Time", "Mountain Standard Time", "Central Standard Time", "India Standard Time"],Value)
                 Width: =408.6
                 X: =302

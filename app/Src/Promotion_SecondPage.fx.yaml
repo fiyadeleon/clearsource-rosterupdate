@@ -1,7 +1,7 @@
 "Promotion_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1110
+    Height: =1200
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -9,7 +9,7 @@
     "galleryPRMp2nd_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =782
+        Height: =880
         Items: =colPromotion
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2_1.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
-        Y: =200
+        Y: =212
         ZIndex: =1
 
         txtPRMultipleOmniapm2_1 As label:
@@ -105,7 +105,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =1008
+        Y: =1118
         ZIndex: =11
 
     btnPRMultipleBackp2_1 As button:
@@ -116,19 +116,19 @@
             Navigate(Promotion_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1008
+        Y: =1118
         ZIndex: =12
 
     formPREDsp2_1 As form:
         BorderThickness: =1
         DataSource: =colPromotion
-        Height: =782
+        Height: =879
         Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =713
-        Y: =200
+        Y: =212
         ZIndex: =18
 
         "'EMPLOYEE NAME_PRMDataCard_3' As typedDataCard.textualViewCard":
@@ -460,6 +460,62 @@
                 Y: =10
                 ZIndex: =2
 
+        Remove_Button As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Width: =742
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            btnPRRemovep2_3 As button:
+                Fill: =RGBA(255, 0, 0, 1)
+                OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
+                Text: ="Remove"
+                X: =300
+                Y: =4
+                ZIndex: =1
+
+        TEAM_PRMDataCard2_2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAM"
+            Default: =ThisItem.SUPERVISOR
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =742
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKeySUPPRpm2_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtPRMultipleSUPpm2_1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =302
+                Y: =20
+                ZIndex: =2
+
         MONDAY_PRMDataCard2_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
@@ -471,7 +527,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =9
+            Y: =10
             ZIndex: =1
 
             DataCardKeySCHEDPRpm2_1 As label:
@@ -507,7 +563,7 @@
             Height: =60
             Width: =742
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             Label8 As label:
@@ -526,62 +582,6 @@
                 X: =297
                 Y: =13
                 ZIndex: =2
-
-        TEAM_PRMDataCard2_2 As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="TEAM"
-            Default: =ThisItem.SUPERVISOR
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Required: =false
-            Width: =742
-            X: =0
-            Y: =11
-            ZIndex: =1
-
-            DataCardKeySUPPRpm2_1 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="SUPERVISOR"
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            txtPRMultipleSUPpm2_1 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
-                X: =302
-                Y: =20
-                ZIndex: =2
-
-        Remove_Button As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Width: =742
-            X: =0
-            Y: =12
-            ZIndex: =1
-
-            btnPRRemovep2_3 As button:
-                Fill: =RGBA(255, 0, 0, 1)
-                OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
-                Text: ="Remove"
-                X: =300
-                Y: =4
-                ZIndex: =1
 
     txtPRUEp2_1 As label:
         Align: =Align.Center

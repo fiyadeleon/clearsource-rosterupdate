@@ -474,7 +474,7 @@
                 ZIndex: =1
 
             cbLTMultipleLOB As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),LOB))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
@@ -524,6 +524,72 @@
                 Y: =10
                 ZIndex: =2
 
+        SUPERVISOR_LTMDataCard As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "TEAM")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAM"
+            Default: =ThisItem.TEAM
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Update: =cbLTMultipleClient.Selected.Value
+            Width: =742
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKey42 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR *"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (cbLTMultipleClient.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            cbLTMultipleSupervisor As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
+                DisplayFields: =["Value"]
+                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                SearchFields: =["Value"]
+                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTMultipleSupervisor.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
+        "'NEW-SALARY-DATE_LTMDataCard' As typedDataCard.blankCard":
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Visible: =true
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label9 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="NEW SALARY EFFECTIVITY *"
+                Width: =264
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            NewSalaryDate_LTM As datepicker:
+                DefaultDate: =
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
         "'NEW-SALARY_LTMDataCard' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="MONDAY"
@@ -537,7 +603,7 @@
             Update: =txtLTMultipleNewSalary.Text
             Width: =742
             X: =0
-            Y: =9
+            Y: =11
             ZIndex: =1
 
             DataCardKey43 As label:
@@ -556,6 +622,7 @@
                 Default: =
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Format: =TextFormat.Number
                 HintText: ="e.g., 25,000 "
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
@@ -575,71 +642,6 @@
                 X: =534
                 Y: =10
                 ZIndex: =3
-
-        "'NEW-SALARY-DATE_LTMDataCard' As typedDataCard.blankCard":
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =10
-            ZIndex: =1
-
-            Label9 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Text: ="NEW SALARY EFFECTIVITY *"
-                Width: =264
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            NewSalaryDate_LTM As datepicker:
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
-
-        SUPERVISOR_LTMDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "TEAM")
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="TEAM"
-            Default: =ThisItem.TEAM
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Required: =false
-            Update: =cbLTMultipleClient.Selected.Value
-            Width: =742
-            X: =0
-            Y: =11
-            ZIndex: =1
-
-            DataCardKey42 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="SUPERVISOR *"
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10 + (cbLTMultipleClient.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            cbLTMultipleSupervisor As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
-                DisplayFields: =["Value"]
-                IsSearchable: =false
-                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
-                SearchFields: =["Value"]
-                SearchItems: =[]
-                SelectMultiple: =false
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
 
     "'Lateral Transfer Form_2' As label":
         Color: =RGBA(0, 18, 107, 1)
