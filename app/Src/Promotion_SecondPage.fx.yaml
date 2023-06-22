@@ -460,24 +460,6 @@
                 Y: =10
                 ZIndex: =2
 
-        Remove_Button As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Width: =742
-            X: =0
-            Y: =12
-            ZIndex: =1
-
-            btnPRRemovep2_3 As button:
-                Fill: =RGBA(255, 0, 0, 1)
-                OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
-                Text: ="Remove"
-                X: =300
-                Y: =4
-                ZIndex: =1
-
         TEAM_PRMDataCard2_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
@@ -582,6 +564,24 @@
                 X: =297
                 Y: =13
                 ZIndex: =2
+
+        Remove_Button As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Width: =742
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            btnPRRemovep2_3 As button:
+                Fill: =RGBA(255, 0, 0, 1)
+                OnSelect: =Remove(colPromotion, LookUp(colPromotion, USER=SelectedPRItemID_1))
+                Text: ="Remove"
+                X: =300
+                Y: =4
+                ZIndex: =1
 
     txtPRUEp2_1 As label:
         Align: =Align.Center
