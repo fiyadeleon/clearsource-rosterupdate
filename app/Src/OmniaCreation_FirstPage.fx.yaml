@@ -46,7 +46,7 @@
                 Collect(colOmniaCreation, {
                         'EMPLOYEE ID':txtOCFPEmpId.Text,
                         'FIRST NAME':txtOCFPFName.Text,
-                        'MIDDLE NAME':If(IsBlank(txtOCFPMName.Text), "N/A", txtOCFPMName.Text),
+                        'MIDDLE NAME':If(IsBlank(txtOCFPMName.Text), " ", txtOCFPMName.Text),
                         'LAST NAME':txtOCFPLName.Text,
                         'HIRE DATE':dateOCFPHireDate.SelectedDate,
                         'REGULARIZATION DATE':Text(DateAdd(dateOCFPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
