@@ -288,9 +288,9 @@
             cbLTMultipleBusUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BUSINESSUNIT))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),cbLTMultipleBusUnit.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbLTMultipleBusUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -327,9 +327,9 @@
             cbLTMultipleSubUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTMultipleSubUnit.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbLTMultipleSubUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -366,9 +366,9 @@
             cbLTMultiplePosition As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),POSITION))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbLTMultiplePosition.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbLTMultiplePosition.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -437,9 +437,9 @@
             cbLTMultipleClient As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),CLIENT))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbLTMultipleClient.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbLTMultipleClient.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -515,9 +515,9 @@
             cbLTMultipleBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BILLABILITY))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbLTMultipleBillability.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbLTMultipleBillability.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -554,9 +554,9 @@
             cbLTMultipleSupervisor As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTMultipleSupervisor.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbLTMultipleSupervisor.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
