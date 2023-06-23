@@ -357,9 +357,9 @@
             cbOTStatus As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),STATUS))
                 DisplayFields: =["Value"]
-                Items: =Sort(["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"],Value)
+                Items: =Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(["ACTIVE", "INACTIVE", "LOA", "LOAM", "MATERNITY LEAVE", "PATERNITY LEAVE", "RTWO", "SUSPENDED"],Value),cbOTStatus.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value),cbOTStatus.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
