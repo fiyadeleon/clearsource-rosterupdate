@@ -81,7 +81,7 @@
         Text: ="REVIEW LATERAL TRANSFER FORM"
         Width: =510
         X: =479
-        Y: =55
+        Y: =73
         ZIndex: =4
 
     btnLTMultipleReview_1 As button:
@@ -122,13 +122,13 @@
     formLTM2 As form:
         BorderThickness: =1
         DataSource: =colLateralTransfer
-        Height: =647
+        Height: =645
         Item: =If(!IsBlank(SelectedItemID_1), LookUp(colLateralTransfer, USER=SelectedItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =711
-        Y: =249
+        Y: =250
         ZIndex: =18
 
         "'EMPLOYEE ID_DataCard1' As typedDataCard.textualViewCard":
@@ -485,7 +485,7 @@
         Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10), cbLTSearchMultipleLOB.Selected.Value)
         Width: =640
         X: =42
-        Y: =108
+        Y: =126
         ZIndex: =19
 
     "'Lateral Transfer Form_6' As label":
@@ -497,6 +497,6 @@
         Text: ="UPDATED EMPLOYEE DETAILS"
         Width: =742
         X: =713
-        Y: =119
+        Y: =128
         ZIndex: =20
 
