@@ -9,7 +9,7 @@
     "galleryLTM As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =792
+        Height: =646
         Items: =cbLTSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
         X: =42
-        Y: =286
+        Y: =341
         ZIndex: =1
 
         txtLTMultipleName As label:
@@ -94,7 +94,7 @@
             )
         Text: ="Review"
         X: =1269
-        Y: =1134
+        Y: =1044
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -103,7 +103,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1134
+        Y: =1044
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
@@ -173,13 +173,13 @@
     formLTM As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =792
+        Height: =647
         Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
-        X: =713
-        Y: =285
+        X: =716
+        Y: =341
         ZIndex: =18
 
         "'EMPLOYEE ID_LTMDataCard' As typedDataCard.textualViewCard":
@@ -571,7 +571,7 @@
         Text: ="SELECTED EMPLOYEE(S)"
         Width: =316
         X: =204
-        Y: =228
+        Y: =255
         ZIndex: =19
 
     "'Lateral Transfer Form_3' As label":
@@ -582,7 +582,7 @@
         Text: ="EMPLOYEE DETAILS"
         Width: =264
         X: =952
-        Y: =228
+        Y: =255
         ZIndex: =20
 
     Button3 As button:
@@ -625,7 +625,7 @@
                 Notify("Please complete all fields!", NotificationType.Error)
             )
         Text: ="Save"
-        X: =1004
-        Y: =1027
+        X: =1007
+        Y: =917
         ZIndex: =21
 
