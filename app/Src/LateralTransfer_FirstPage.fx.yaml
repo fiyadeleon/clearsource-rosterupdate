@@ -563,86 +563,6 @@
                 Y: =10
                 ZIndex: =2
 
-        "'NEW-SALARY-DATE_LTMDataCard' As typedDataCard.blankCard":
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Visible: =true
-            Width: =742
-            X: =0
-            Y: =10
-            ZIndex: =1
-
-            Label9 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Text: ="NEW SALARY EFFECTIVITY *"
-                Width: =264
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            NewSalaryDate_LTM As datepicker:
-                DefaultDate: =
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
-
-        "'NEW-SALARY_LTMDataCard' As typedDataCard.textualEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="MONDAY"
-            Default: =ThisItem.MONDAY
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MONDAY")
-            Required: =false
-            Update: =txtLTMultipleNewSalary.Text
-            Width: =742
-            X: =0
-            Y: =11
-            ZIndex: =1
-
-            DataCardKey43 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="NEW SALARY PACKAGE *"
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10 + (txtLTMultipleNewSalary.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            txtLTMultipleNewSalary As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =
-                DelayOutput: =true
-                DisplayMode: =Parent.DisplayMode
-                Format: =TextFormat.Number
-                HintText: ="e.g., 25,000 "
-                MaxLength: =Parent.MaxLength
-                PaddingLeft: =5
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Tooltip: =Parent.DisplayName
-                Width: =217
-                X: =DataCardKey43.X + DataCardKey43.Width
-                Y: =10
-                ZIndex: =2
-
-            LTMultiple_CurrencyDrpDwn As dropdown:
-                Items: =["PHP", "USD", "INR", "CRC"]
-                Width: =177
-                X: =534
-                Y: =10
-                ZIndex: =3
-
     "'Lateral Transfer Form_2' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
@@ -695,8 +615,8 @@
                         CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
                         LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
                         BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
-                        'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
-                        'NEW SALARY EFFECTIVITY': NewSalaryDate_LTM.SelectedDate,
+                        //'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
+                        //'NEW SALARY EFFECTIVITY': NewSalaryDate_LTM.SelectedDate,
                         SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
                         'SUBMITTED BY':User().Email
                     }
