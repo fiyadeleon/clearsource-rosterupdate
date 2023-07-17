@@ -478,7 +478,7 @@ Termination_FirstPage As screen:
             terminationStatus_cb As dropdown:
                 Default: ="Select Termination Status"
                 Height: =30
-                Items: =["Select your answer","Rehirable", "Non-Rehirable"]
+                Items: =["Select your answer","Non-Rehirable", "Rehirable"]
                 OnChange: =Set(tstatus, 1)
                 Size: =10
                 Width: =300
