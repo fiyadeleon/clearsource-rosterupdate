@@ -636,7 +636,7 @@ Termination_FirstPage As screen:
                         terminationStatus_cb.Selected.Value = "Select your answer" ||
                         IsBlank(effectivityDate_input.SelectedDate) ||
                         IsBlank(lastDate_input.SelectedDate),
-                        Notify("Please complete all fields!", NotificationType.Error),
+                        Notify("Please fill out all fields!", NotificationType.Error),
                         If(
                             CountRows(
                                 Filter(userVerify,USER=SelectedItemIDinTermi)
