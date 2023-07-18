@@ -11,7 +11,6 @@
     "dependents": [
       "f00e1a4e-2ece-4706-beb7-90db3d2e817d",
       "bee54667-b05b-4480-8b3d-13c7dc92079e",
-      "a8ff1f53-2e6a-448c-88b7-103db6e1cb29",
       "26f45b36-056a-43d8-a482-a6d810c2a116"
     ],
     "id": "01a792da-1a3b-4dc2-9c42-77a7abb5272e"
@@ -72,14 +71,14 @@
     "dependents": [],
     "id": "445c2806-6ace-410f-adcf-5edfa6f6c6cb"
   },
-  "a8ff1f53-2e6a-448c-88b7-103db6e1cb29": {
+  "9ff01be1-b3e1-455f-a660-7b5ae6d360db": {
     "connectionRef": {
       "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1645/1.0.1645.3345/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "01a792da-1a3b-4dc2-9c42-77a7abb5272e": {
-          "value": "shared_office365_1"
+        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
+          "value": "shared_office365"
         },
         "workflowEntityId": {},
         "workflowName": {
@@ -87,8 +86,8 @@
         }
       },
       "parameterHintsV2": {
-        "shared_office365_1": {
-          "value": "01a792da-1a3b-4dc2-9c42-77a7abb5272e"
+        "shared_office365": {
+          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
         },
         "workflowEntityId": {},
         "workflowName": {
@@ -101,10 +100,10 @@
       "SubmitOmniaCreation"
     ],
     "dependencies": {
-      "shared_office365_1": "01a792da-1a3b-4dc2-9c42-77a7abb5272e"
+      "shared_office365": "a98f1ce0-65af-4442-ad24-7697c24f3724"
     },
     "dependents": [],
-    "id": "a8ff1f53-2e6a-448c-88b7-103db6e1cb29"
+    "id": "9ff01be1-b3e1-455f-a660-7b5ae6d360db"
   },
   "a98f1ce0-65af-4442-ad24-7697c24f3724": {
     "connectionRef": {
@@ -117,7 +116,9 @@
       "Office365Outlook"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "9ff01be1-b3e1-455f-a660-7b5ae6d360db"
+    ],
     "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
   },
   "a9df5a6a-fe3a-440c-9604-a8f6047a3bad": {
