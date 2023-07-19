@@ -9,11 +9,38 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "f00e1a4e-2ece-4706-beb7-90db3d2e817d",
       "bee54667-b05b-4480-8b3d-13c7dc92079e",
       "26f45b36-056a-43d8-a482-a6d810c2a116"
     ],
     "id": "01a792da-1a3b-4dc2-9c42-77a7abb5272e"
+  },
+  "09c7e83f-c277-4a47-9c32-0abf82fd71e0": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1645/1.0.1645.3345/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "46ddec93-817d-4eef-bd60-2d2a6c960d36"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "46ddec93-817d-4eef-bd60-2d2a6c960d36"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SubmitTermination"
+    ],
+    "dependencies": {
+      "shared_office365": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+    },
+    "dependents": [],
+    "id": "09c7e83f-c277-4a47-9c32-0abf82fd71e0"
   },
   "26f45b36-056a-43d8-a482-a6d810c2a116": {
     "connectionRef": {
@@ -117,7 +144,8 @@
     ],
     "dependencies": {},
     "dependents": [
-      "9ff01be1-b3e1-455f-a660-7b5ae6d360db"
+      "9ff01be1-b3e1-455f-a660-7b5ae6d360db",
+      "09c7e83f-c277-4a47-9c32-0abf82fd71e0"
     ],
     "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
   },
@@ -250,39 +278,5 @@
     },
     "dependents": [],
     "id": "db0139ba-0e04-406c-9575-fc570ff1f5a7"
-  },
-  "f00e1a4e-2ece-4706-beb7-90db3d2e817d": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "01a792da-1a3b-4dc2-9c42-77a7abb5272e": {
-          "value": "shared_office365_1"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "46ddec93-817d-4eef-bd60-2d2a6c960d36"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_office365_1": {
-          "value": "01a792da-1a3b-4dc2-9c42-77a7abb5272e"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "46ddec93-817d-4eef-bd60-2d2a6c960d36"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "SubmitTermination"
-    ],
-    "dependencies": {
-      "shared_office365_1": "01a792da-1a3b-4dc2-9c42-77a7abb5272e"
-    },
-    "dependents": [],
-    "id": "f00e1a4e-2ece-4706-beb7-90db3d2e817d"
   }
 }
