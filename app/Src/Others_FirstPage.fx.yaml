@@ -482,7 +482,7 @@
             Label4 As label:
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
-                Text: ="END DATE *"
+                Text: =If (cbOTStatus.Selected.Value = "ACTIVE", "END DATE *", "END DATE")
                 X: =30
                 Y: =13
                 ZIndex: =2
@@ -794,13 +794,13 @@
                             (
                                 (
                                     cbOTStatus.Selected.Value = "INACTIVE" ||
-                                    cbOTStatus.Selected.Value = "FLOATING" ||
-                                    cbOTStatus.Selected.Value = "LOA" ||
-                                    cbOTStatus.Selected.Value = "LOAM" ||
-                                    cbOTStatus.Selected.Value = "RTWO" ||
+                                    cbOTStatus.Selected.Value = "FLOATING STATUS" ||
+                                    //cbOTStatus.Selected.Value = "LOA" ||
+                                    cbOTStatus.Selected.Value = "LOAM (MEDICAL LEAVE OF ABSENCE)" ||
+                                    cbOTStatus.Selected.Value = "RETURN-TO-WORK-ORDER" ||
                                     cbOTStatus.Selected.Value = "SUSPENDED" ||
-                                    cbOTStatus.Selected.Value = "MATERNITY LEAVE" || 
-                                    cbOTStatus.Selected.Value = "PATERNITY LEAVE"
+                                    cbOTStatus.Selected.Value = "PHL-MATERNITY LEAVE" || 
+                                    cbOTStatus.Selected.Value = "PHL-PERSONAL LEAVE OF ABSENCE"
                                 ) 
                                 && (IsBlank(dateStart.SelectedDate) || IsBlank(dateEnd.SelectedDate)) ||
                                 (
