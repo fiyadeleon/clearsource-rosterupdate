@@ -482,7 +482,7 @@
             Label4 As label:
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
-                Text: =If (cbOTStatus.Selected.Value = "ACTIVE", "END DATE *", "END DATE")
+                Text: =If (cbOTStatus.Selected.Value = "ACTIVE", "END DATE", "END DATE *")
                 X: =30
                 Y: =13
                 ZIndex: =2
