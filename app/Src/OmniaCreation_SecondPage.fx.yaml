@@ -332,7 +332,7 @@
                 =If(
                     !IsEmpty(colOmniaCreation),
                     If(
-                        SubmitOmniaCreation.Run(JSON(colOmniaCreation)),
+                        TestSubmitOmniaCreation.Run(JSON(colOmniaCreation)),
                         (
                             Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                             ResetForm(formOCFirstPage1) &&
