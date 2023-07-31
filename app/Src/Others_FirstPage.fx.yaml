@@ -9,7 +9,7 @@
     "galleryOT As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =589
+        Height: =699
         Items: =cbOTOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT, txtOTMOmnia.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
         X: =42
-        Y: =322
+        Y: =272
         ZIndex: =1
 
         txtOTMName As label:
@@ -81,7 +81,7 @@
         Text: ="OTHER ROSTER UPDATE FORM"
         Width: =448
         X: =938
-        Y: =73
+        Y: =19
         ZIndex: =4
 
     btnOTReview As button:
@@ -94,7 +94,7 @@
             )
         Text: ="Review"
         X: =1999
-        Y: =956
+        Y: =986
         ZIndex: =11
 
     btnOTBack As button:
@@ -103,7 +103,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1806
-        Y: =956
+        Y: =986
         ZIndex: =12
 
     grpOTLOB As group:
@@ -120,7 +120,7 @@
             Text: ="LINE OF BUSINESS"
             Width: =165
             X: =871
-            Y: =149
+            Y: =95
             ZIndex: =8
 
         cbOTSearchLOB As combobox:
@@ -137,7 +137,7 @@
             SelectMultiple: =false
             Width: =401.4
             X: =1053
-            Y: =149
+            Y: =95
             ZIndex: =9
 
     grpOTOmnia As group:
@@ -157,7 +157,7 @@
             SearchItems: =Search(If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value)),cbOTOmnia.SearchText,"ADDRESS")
             Width: =401.4
             X: =1053
-            Y: =214
+            Y: =160
             ZIndex: =13
 
         txtOTOmnia As label:
@@ -167,19 +167,19 @@
             Text: ="EMPLOYEE ID"
             Width: =165
             X: =871
-            Y: =215
+            Y: =161
             ZIndex: =15
 
     formOT As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =589
+        Height: =699
         Item: =If(!IsBlank(SelectedItemIDinOT), LookUp(Headcount_table, USER=SelectedItemIDinOT))
         NumberOfColumns: =2
         OnReset: =true
         Width: =1470
         X: =713
-        Y: =322
+        Y: =272
         ZIndex: =18
 
         "'EMPLOYEE ID_OTDataCard' As typedDataCard.textualViewCard":
@@ -731,7 +731,7 @@
                 Y: =10
                 ZIndex: =2
 
-        DataCard3 As typedDataCard.blankCard:
+        Time_Zone As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
@@ -765,14 +765,126 @@
                 Y: =10
                 ZIndex: =2
 
-        DataCard4 As typedDataCard.blankCard:
+        ClassName As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =92
-            Width: =1470
+            Height: =90
+            Width: =714
             X: =0
             Y: =8
+            ZIndex: =1
+
+            CLASS_NAME As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =33
+                Text: ="CLASS NAME"
+                Width: =261.6
+                X: =30
+                Y: =40
+                ZIndex: =1
+
+            TextInput1 As text:
+                Default: =""
+                HintText: ="Class Name"
+                Width: =408.6
+                X: =302.8
+                Y: =40
+                ZIndex: =2
+
+        TRAINER1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =90
+            Width: =714
+            X: =1
+            Y: =8
+            ZIndex: =1
+
+            Label8 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: |-
+                    ="TRAINER #1"
+                X: =30
+                Y: =40
+                ZIndex: =1
+
+            ComboBox1 As combobox:
+                Items: =ComboBoxSample
+                SearchItems: =Search(ComboBoxSample,ComboBox1.SearchText,"Value1")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302
+                Y: =40
+                ZIndex: =2
+
+        TRAINER2 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =714
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            Label9 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: |-
+                    ="TRAINER #2"
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            ComboBox2 As combobox:
+                Items: =ComboBoxSample
+                SearchItems: =Search(ComboBoxSample,ComboBox2.SearchText,"Value1")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
+        TRAINER3 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =714
+            X: =1
+            Y: =9
+            ZIndex: =1
+
+            Label10 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: |-
+                    ="TRAINER #3"
+                X: =30
+                Y: =13.5
+                ZIndex: =1
+
+            ComboBox3 As combobox:
+                Items: =ComboBoxSample
+                SearchItems: =Search(ComboBoxSample,ComboBox3.SearchText,"Value1")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =302
+                Y: =10
+                ZIndex: =2
+
+        Save_Button As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =1470
+            X: =0
+            Y: =10
             ZIndex: =1
 
             btnOTSave As button:
@@ -856,7 +968,7 @@
                     )
                 Text: ="Save"
                 X: =657
-                Y: =33
+                Y: =15
                 ZIndex: =1
 
     OT2 As label:
@@ -867,7 +979,7 @@
         Text: ="SELECTED EMPLOYEE(S)"
         Width: =316
         X: =204
-        Y: =255
+        Y: =205
         ZIndex: =19
 
     OT3 As label:
@@ -878,6 +990,6 @@
         Text: ="EMPLOYEE DETAILS"
         Width: =264
         X: =1316
-        Y: =255
+        Y: =205
         ZIndex: =20
 
