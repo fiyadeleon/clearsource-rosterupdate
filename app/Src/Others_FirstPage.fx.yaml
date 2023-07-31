@@ -964,6 +964,11 @@
                                     SCHEDULE:If(IsBlank(txtOTSchedule.Text), "N/A", txtOTSchedule.Text),
                                     'TIME ZONE': drpOTtimezone.Selected.Value,
                                     SUPERVISOR:If(IsBlank(cbOTSupervisor.Selected.Value), cbOTSupervisor.SearchText, cbOTSupervisor.Selected.Value),
+                    
+                                    'CLASS NAME':If(IsBlank(class_name), "N/A",Text(class_name.Text)),
+                                    'TRAINER #1':If(IsBlank(trainer1), "N/A",Text(trainer.Text)),
+                                    'CLASS NAME':If(IsBlank(class_name), "N/A",Text(class_name.Text)),
+                                    'CLASS NAME':If(IsBlank(class_name), "N/A",Text(class_name.Text)),
                                     'SUBMITTED BY':User().Email
                                 }
                             );
