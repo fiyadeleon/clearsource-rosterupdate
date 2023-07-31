@@ -814,10 +814,9 @@
             trainer1 As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TRAINER1))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Sort(Filter(Distinct(Headcount_table, TRAINER1), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER1), !IsBlank(Value)), Value),trainer1.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302
@@ -877,10 +876,9 @@
             trainer3 As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TRAINER3))
                 DisplayFields: =["Value"]
-                IsSearchable: =false
                 Items: =Sort(Filter(Distinct(Headcount_table, TRAINER3), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER3), !IsBlank(Value)), Value),trainer3.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302
