@@ -812,10 +812,12 @@
                 ZIndex: =1
 
             trainer1 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TRAINER1))
                 DisplayFields: =["Value"]
-                Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value)
+                IsSearchable: =false
+                Items: =Sort(Filter(Distinct(Headcount_table, TRAINER1), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),trainer1.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302
@@ -842,10 +844,11 @@
                 ZIndex: =1
 
             trainer2 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TRAINER2))
                 DisplayFields: =["Value"]
-                Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value)
+                Items: =Sort(Filter(Distinct(Headcount_table, TRAINER2), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),trainer2.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER2), !IsBlank(Value)), Value),trainer2.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -872,10 +875,12 @@
                 ZIndex: =1
 
             trainer3 As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TRAINER3))
                 DisplayFields: =["Value"]
-                Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value)
+                IsSearchable: =false
+                Items: =Sort(Filter(Distinct(Headcount_table, TRAINER3), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),trainer3.SearchText,"Value")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302
@@ -966,9 +971,9 @@
                                     SUPERVISOR:If(IsBlank(cbOTSupervisor.Selected.Value), cbOTSupervisor.SearchText, cbOTSupervisor.Selected.Value),
                     
                                     'CLASS NAME':If(IsBlank(class_name), "N/A",Text(class_name.Text)),
-                                    'TRAINER #1':If(IsBlank(trainer1), "N/A",Text(trainer.Text)),
-                                    'CLASS NAME':If(IsBlank(class_name), "N/A",Text(class_name.Text)),
-                                    'CLASS NAME':If(IsBlank(class_name), "N/A",Text(class_name.Text)),
+                                    'TRAINER #1':If(IsBlank(trainer1.Selected.Value), trainer1.SearchText, trainer1.Selected.Value),
+                                    'TRAINER #2':If(IsBlank(trainer2.Selected.Value), trainer2.SearchText, trainer2.Selected.Value),
+                                    'TRAINER #3':If(IsBlank(trainer3.Selected.Value), trainer3.SearchText, trainer3.Selected.Value),
                                     'SUBMITTED BY':User().Email
                                 }
                             );
