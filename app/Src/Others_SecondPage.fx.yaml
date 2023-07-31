@@ -10,7 +10,7 @@
     "galleryLTM_2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =571
+        Height: =660
         Items: =colOthers
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT1, txtLTMultipleOmnia_2.Text)
@@ -83,7 +83,7 @@
         Text: ="REVIEW OTHER ROSTER UPDATE FORM"
         Width: =2121
         X: =62
-        Y: =55
+        Y: =29
         ZIndex: =4
 
     btnLTMultipleReview_2 As button:
@@ -107,7 +107,7 @@
             )
         Text: ="Submit"
         X: =1999
-        Y: =848
+        Y: =887
         ZIndex: =11
 
     btnLTMultipleBack_2 As button:
@@ -118,13 +118,13 @@
             Navigate(Others_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1806
-        Y: =848
+        Y: =887
         ZIndex: =12
 
     formOT1 As form:
         BorderThickness: =1
         DataSource: =colOthers
-        Height: =571
+        Height: =660
         Item: =If(!IsBlank(SelectedItemIDinOT1), LookUp(colOthers, USER=SelectedItemIDinOT1))
         NumberOfColumns: =2
         OnReset: =true
@@ -698,7 +698,7 @@
                 Y: =20
                 ZIndex: =2
 
-        DataCard5 As typedDataCard.blankCard:
+        TIME_ZONE As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
@@ -723,14 +723,120 @@
                 Y: =13
                 ZIndex: =2
 
-        DataCard2 As typedDataCard.blankCard:
+        Class_Name As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =84
-            Width: =1470
+            Height: =60
+            Width: =734
             X: =0
             Y: =8
+            ZIndex: =1
+
+            Label14 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="CLASS NAME"
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label32 As label:
+                Text: =ThisItem.'CLASS NAME'
+                Width: =377
+                X: =302
+                Y: =20
+                ZIndex: =2
+
+        Trainer1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =734
+            X: =1
+            Y: =8
+            ZIndex: =1
+
+            Label17 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: |-
+                    ="TRAINER #1"
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label30 As label:
+                Text: |-
+                    =ThisItem.'TRAINER #1'
+                Width: =377
+                X: =297
+                Y: =13
+                ZIndex: =2
+
+        Trainer2 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =734
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            Label26 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: |-
+                    ="TRAINER #2"
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label33 As label:
+                Text: |-
+                    =ThisItem.'TRAINER #2'
+                Width: =377
+                X: =302
+                Y: =20
+                ZIndex: =2
+
+        Trainer3 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =734
+            X: =1
+            Y: =9
+            ZIndex: =1
+
+            Label28 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: |-
+                    ="TRAINER #3"
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label31 As label:
+                Text: |-
+                    =ThisItem.'TRAINER #3'
+                Width: =377
+                X: =297
+                Y: =13
+                ZIndex: =2
+
+        REMOVE_BUTTON As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Width: =1470
+            X: =0
+            Y: =10
             ZIndex: =1
 
             btnOTRemove As button:
@@ -739,7 +845,7 @@
                 OnSelect: =Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT1))
                 Text: ="Remove"
                 X: =657
-                Y: =18
+                Y: =5
                 ZIndex: =1
 
     OT5 As label:
@@ -751,7 +857,7 @@
         Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10),cbOTSearchLOB.Selected.Value)
         Width: =640
         X: =42
-        Y: =132
+        Y: =106
         ZIndex: =19
 
     OT4 As label:
@@ -763,6 +869,6 @@
         Text: ="UPDATED EMPLOYEE DETAILS"
         Width: =1470
         X: =713
-        Y: =143
+        Y: =117
         ZIndex: =20
 
