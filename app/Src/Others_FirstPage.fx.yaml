@@ -784,7 +784,7 @@
                 Y: =40
                 ZIndex: =1
 
-            TextInput1 As text:
+            class_name As text:
                 Default: =""
                 HintText: ="Class Name"
                 Width: =408.6
@@ -811,11 +811,11 @@
                 Y: =40
                 ZIndex: =1
 
-            ComboBox1 As combobox:
+            trainer1 As combobox:
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),ComboBox1.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),trainer1.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302
@@ -841,13 +841,12 @@
                 Y: =13
                 ZIndex: =1
 
-            ComboBox2 As combobox:
+            trainer2 As combobox:
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),ComboBox2.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),trainer2.SearchText,"Value")
                 SelectMultiple: =false
-                Template: =ListItemTemplate.Double
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -872,11 +871,11 @@
                 Y: =13.5
                 ZIndex: =1
 
-            ComboBox3 As combobox:
+            trainer3 As combobox:
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),ComboBox3.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),trainer3.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302
