@@ -93,7 +93,7 @@
                 CountRows(galleryPRMp2nd_1.AllItems)=0,
                 Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error),
                 ClearCollect(colPromotion1,colPromotion);
-                SubmitPromotion.Run(JSON(colPromotion1));
+                TestSubmitPromotion.Run(JSON(colPromotion1));
                 Notify("Your request has been submitted successfully!", NotificationType.Success);
                 Set(SelectedPRItemID_1,"");
                 Set(SelectedPRItemID, "");
