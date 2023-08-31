@@ -38,7 +38,7 @@ Termination_FirstPage As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =Concatenate(ThisItem.'FIRST NAME', " ", ThisItem.'LAST NAME')
+            Text: =Concatenate(ThisItem.FIRSTNAME, " ", ThisItem.LASTNAME)
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -68,7 +68,7 @@ Termination_FirstPage As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =8
-            Text: =ThisItem.'EMPLOYEE ID'
+            Text: =ThisItem.EMPLOYEEID
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -102,7 +102,7 @@ Termination_FirstPage As screen:
         Color: =RGBA(39, 67, 125, 1)
         FontWeight: =FontWeight.Bold
         Text: |-
-            ="LINE OF BUSINESS:"
+            ="LINE OF BUSINESS: "
         Width: =221
         X: =60
         Y: =113
@@ -111,8 +111,8 @@ Termination_FirstPage As screen:
     lob_input As combobox:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(39, 67, 125, 1)
-        DisplayFields: =
-        Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+        DisplayFields: =["Value"]
+        Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT),!IsBlank(Value)), Value)
         OnChange: |-
             =Set(SelectedItemID,"") && 
             Reset(omnia_input);
@@ -121,7 +121,7 @@ Termination_FirstPage As screen:
             Set(tstatus, 0);
         OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
         SearchFields: =["Value"]
-        SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),lob_input.SearchText,"Value")
+        SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT),!IsBlank(Value)), Value),lob_input.SearchText,"Value")
         SelectMultiple: =false
         X: =281
         Y: =113
@@ -130,11 +130,11 @@ Termination_FirstPage As screen:
     omnia_input As combobox:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(0, 18, 107, 1)
-        DisplayFields: =["USER"]
-        Items: =If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOB=lob_input.Selected.Value))
+        DisplayFields: =["EMPLOYEEID"]
+        Items: =If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOBNAMEIT =lob_input.Selected.Value))
         OnChange: =Set(SelectedItemIDinTermi, "")
-        SearchFields: =["USER"]
-        SearchItems: =Search(If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOB=lob_input.Selected.Value)),omnia_input.SearchText,"USER")
+        SearchFields: =["EMPLOYEEID"]
+        SearchItems: =Search(If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOBNAMEIT =lob_input.Selected.Value)),omnia_input.SearchText,"EMPLOYEEID")
         SelectionColor: =RGBA(0, 18, 107, 1)
         Size: |
             =13
@@ -146,7 +146,7 @@ Termination_FirstPage As screen:
         Color: =RGBA(39, 67, 125, 1)
         FontWeight: =FontWeight.Bold
         Text: |-
-            ="OMNIA ID:"
+            ="EMPLOYEE ID:"
         Width: =151
         X: =685
         Y: =113
@@ -190,9 +190,9 @@ Termination_FirstPage As screen:
         fname_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
-            Default: =ThisItem.'FIRST NAME'
+            Default: =ThisItem.FIRSTNAME
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+            DisplayName: ="FIRST NAME"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -231,9 +231,9 @@ Termination_FirstPage As screen:
         lname_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="LAST NAME"
-            Default: =ThisItem.'LAST NAME'
+            Default: =ThisItem.LASTNAME
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LAST NAME")
+            DisplayName: ="LAST NAME"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -312,10 +312,10 @@ Termination_FirstPage As screen:
 
         lob_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="LOB"
-            Default: =ThisItem.LOB
+            DataField: ="LOBNAMEIT"
+            Default: =ThisItem.LOBNAMEIT
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            DisplayName: ="LOB"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -329,7 +329,7 @@ Termination_FirstPage As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =34
                 Size: =10
-                Text: =Parent.DisplayName
+                Text: ="LOB"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -354,9 +354,9 @@ Termination_FirstPage As screen:
         email_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERNAL EMAIL"
-            Default: =ThisItem.'INTERNAL EMAIL'
+            Default: =ThisItem.INTERNALEMAIL
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"INTERNAL EMAIL")
+            DisplayName: ="INTERNAL EMAIL"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -394,10 +394,10 @@ Termination_FirstPage As screen:
 
         campaign_card As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="CAMPAIGN"
-            Default: =ThisItem.CAMPAIGN
+            DataField: ="DIVISION"
+            Default: =ThisItem.DIVISION
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CAMPAIGN")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"DIVISION")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -414,8 +414,8 @@ Termination_FirstPage As screen:
                 Text: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
-                X: =30
-                Y: =12
+                X: =27
+                Y: =15
                 ZIndex: =1
 
             campaign_value As htmlViewer:
@@ -447,7 +447,7 @@ Termination_FirstPage As screen:
                 AccessibleLabel: ="Select"
                 Default: ="Select Termination Type"
                 Height: =30
-                Items: =["Select your answer","Voluntary Termination", "Involuntary Termination"]
+                Items: =["Select your answer","Involuntary Termination", "Voluntary Termination"]
                 OnChange: =Set(ttype, 1)
                 Size: =10
                 Width: =300
@@ -459,7 +459,7 @@ Termination_FirstPage As screen:
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Semibold
                 Size: =10
-                Text: ="TERMINATION TYPE"
+                Text: ="TERMINATION TYPE *"
                 Width: =179
                 X: =15
                 Y: =12
@@ -478,7 +478,7 @@ Termination_FirstPage As screen:
             terminationStatus_cb As dropdown:
                 Default: ="Select Termination Status"
                 Height: =30
-                Items: =["Select your answer","Rehirable", "Non-Rehirable"]
+                Items: =["Select your answer","Non-Rehirable", "Rehirable"]
                 OnChange: =Set(tstatus, 1)
                 Size: =10
                 Width: =300
@@ -490,7 +490,7 @@ Termination_FirstPage As screen:
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Semibold
                 Size: =10
-                Text: ="TERMINATION STATUS"
+                Text: ="TERMINATION STATUS *"
                 Width: =170
                 X: =30
                 Y: =6
@@ -510,13 +510,14 @@ Termination_FirstPage As screen:
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Semibold
                 Size: =10
-                Text: ="EFFECTIVITY DATE"
+                Text: ="EFFECTIVITY DATE *"
                 Width: =180
                 X: =15
                 Y: =6
                 ZIndex: =1
 
             effectivityDate_input As datepicker:
+                DefaultDate: =
                 Height: =30
                 Size: =10
                 Width: =300
@@ -538,13 +539,14 @@ Termination_FirstPage As screen:
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Semibold
                 Size: =10
-                Text: ="LAST WORKING DATE"
+                Text: ="LAST WORKING DATE *"
                 Width: =202
                 X: =30
                 Y: =6
                 ZIndex: =1
 
             lastDate_input As datepicker:
+                DefaultDate: =
                 Height: =30
                 Size: =10
                 Width: =300
@@ -567,7 +569,8 @@ Termination_FirstPage As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =25
                 Size: =10
-                Text: ="CURRENT ADDRESS"
+                Text: ="CURRENT ADDRESS (Optional)"
+                Width: =227
                 X: =15
                 Y: =6
                 ZIndex: =1
@@ -598,7 +601,8 @@ Termination_FirstPage As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =25
                 Size: =10
-                Text: ="COMMENT"
+                Text: ="COMMENT (Optional)"
+                Width: =161
                 X: =30
                 Y: =6
                 ZIndex: =1
@@ -629,8 +633,10 @@ Termination_FirstPage As screen:
                 OnSelect: |-
                     =If(
                         terminationType_cb.Selected.Value = "Select your answer" ||
-                        terminationStatus_cb.Selected.Value = "Select your answer",
-                        Notify("Please complete all fields!", NotificationType.Error),
+                        terminationStatus_cb.Selected.Value = "Select your answer" ||
+                        IsBlank(effectivityDate_input.SelectedDate) ||
+                        IsBlank(lastDate_input.SelectedDate),
+                        Notify("Please fill out all fields!", NotificationType.Error),
                         If(
                             CountRows(
                                 Filter(userVerify,USER=SelectedItemIDinTermi)
@@ -639,15 +645,16 @@ Termination_FirstPage As screen:
                         );
                         Collect(userVerify, {
                             USER:SelectedItemIDinTermi,
-                            'FULL NAME': Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME'),
-                            'FIRST NAME': ThisItem.'FIRST NAME',
-                            'LAST NAME': ThisItem.'LAST NAME',
+                            'FULL NAME': Concatenate(ThisItem.FIRSTNAME, " ",ThisItem.LASTNAME),
+                            'FIRST NAME': ThisItem.FIRSTNAME,
+                            'LAST NAME': ThisItem.LASTNAME,
                             'OMNIA ID': ThisItem.USER,
-                            'EMPLOYEE ID': ThisItem.'EMPLOYEE ID',
+                            'EMPLOYEE ID': ThisItem.EMPLOYEEID,
                             POSITION: ThisItem.POSITION,
                             CAMPAIGN: campaign_value.HtmlText,
-                            LOB: ThisItem.LOB, 
-                            'INTERNAL EMAIL': ThisItem.'INTERNAL EMAIL',
+                            LOB: ThisItem.LOBNAMEIT, 
+                            CLIENT: ThisItem.CLIENT,
+                            'INTERNAL EMAIL': ThisItem.INTERNALEMAIL,
                             'TERMINATION TYPE': terminationType_cb.Selected.Value, 
                             'TERMINATION STATUS': terminationStatus_cb.Selected.Value, 
                             'EFFECTIVITY DATE': effectivityDate_input.SelectedDate, 

@@ -135,7 +135,7 @@ Termination_VerificationPage As screen:
             DataField: ="FIRST NAME"
             Default: =ThisItem.'FIRST NAME'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+            DisplayName: ="FIRST NAME"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -176,7 +176,7 @@ Termination_VerificationPage As screen:
             DataField: ="LAST NAME"
             Default: =ThisItem.'LAST NAME'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LAST NAME")
+            DisplayName: ="LAST NAME"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -255,10 +255,10 @@ Termination_VerificationPage As screen:
 
         lob_card_1 As typedDataCard.richTextEditorViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="LOB"
+            DataField: =
             Default: =ThisItem.LOB
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            DisplayName: ="LOB"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -299,7 +299,7 @@ Termination_VerificationPage As screen:
             DataField: ="INTERNAL EMAIL"
             Default: =ThisItem.'INTERNAL EMAIL'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"INTERNAL EMAIL")
+            DisplayName: ="INTERNAL EMAIL"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -340,7 +340,7 @@ Termination_VerificationPage As screen:
             DataField: ="CAMPAIGN"
             Default: =ThisItem.CAMPAIGN
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CAMPAIGN")
+            DisplayName: ="CAMPAIGN"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -354,7 +354,7 @@ Termination_VerificationPage As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =34
                 Size: =10
-                Text: =Parent.DisplayName
+                Text: ="DIVISION"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -373,7 +373,7 @@ Termination_VerificationPage As screen:
                 Size: =10
                 Width: =(Parent.Width - 60) * 0.6
                 X: =campaign_label_1.X + campaign_label_1.Width
-                Y: =6
+                Y: =13
                 ZIndex: =2
 
         terminationType_card_1 As typedDataCard.blankCard:
@@ -590,6 +590,7 @@ Termination_VerificationPage As screen:
                 Reset(omnia_input);
                 Clear(userVerify);
                 Navigate(HomePage,ScreenTransition.None);
+                Reset(drpRosterSelection)
             )
         Text: ="Submit"
         X: =1158

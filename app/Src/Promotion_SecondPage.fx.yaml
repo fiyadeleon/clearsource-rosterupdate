@@ -1,7 +1,7 @@
 "Promotion_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1110
+    Height: =1200
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -9,7 +9,7 @@
     "galleryPRMp2nd_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =782
+        Height: =674
         Items: =colPromotion
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2_1.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
-        Y: =200
+        Y: =320
         ZIndex: =1
 
         txtPRMultipleOmniapm2_1 As label:
@@ -83,7 +83,7 @@
         Text: ="REVIEW PROMOTION FORM"
         Width: =412
         X: =530
-        Y: =49
+        Y: =76
         ZIndex: =4
 
     btnPRMultipleSubmitp2_1 As button:
@@ -105,7 +105,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =1008
+        Y: =1118
         ZIndex: =11
 
     btnPRMultipleBackp2_1 As button:
@@ -116,27 +116,27 @@
             Navigate(Promotion_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1008
+        Y: =1118
         ZIndex: =12
 
     formPREDsp2_1 As form:
         BorderThickness: =1
         DataSource: =colPromotion
-        Height: =782
+        Height: =674
         Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =713
-        Y: =200
+        Y: =320
         ZIndex: =18
 
         "'EMPLOYEE NAME_PRMDataCard_3' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="FIRST NAME"
+            DataField: ="NAME"
             Default: =
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+            DisplayName: ="EMPLOYEE NAME"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -174,7 +174,7 @@
             DataField: ="SITE"
             Default: =ThisItem.SITE
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SITE")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"COUNTRY")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -187,7 +187,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="SITE"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -208,12 +208,12 @@
                 ZIndex: =2
 
         "'BUSINESS UNIT_PRMDataCard_4' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            AllowedValues: =
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
             Default: =ThisItem.'BUSINESS UNIT'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            DisplayName: ="BUSINESS UNIT"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -238,9 +238,6 @@
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =302
@@ -463,73 +460,6 @@
                 Y: =10
                 ZIndex: =2
 
-        MONDAY_PRMDataCard2_2 As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="MONDAY"
-            Default: =ThisItem.'NEW SALARY PACKAGE'
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Required: =false
-            Width: =741
-            X: =0
-            Y: =9
-            ZIndex: =1
-
-            DataCardKeySCHEDPRpm2_1 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="NEW SALARY PACKAGE"
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            txtPRMultipleSCHEDpm2_1 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKeySCHEDPRpm2_1.X + DataCardKeySCHEDPRpm2_1.Width
-                Y: =10
-                ZIndex: =2
-
-        "'SALARY-DATE_DataCard_2' As typedDataCard.blankCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="MONDAY"
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =10
-            ZIndex: =1
-
-            Label8 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =41
-                Text: ="NEW SALARY EFFECTIVITY"
-                Width: =243
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label10 As label:
-                DisplayMode: =DisplayMode.View
-                Text: =ThisItem.'NEW SALARY PACKAGE START DATE'
-                X: =297
-                Y: =13
-                ZIndex: =2
-
         TEAM_PRMDataCard2_2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
@@ -541,7 +471,7 @@
             Required: =false
             Width: =742
             X: =0
-            Y: =11
+            Y: =9
             ZIndex: =1
 
             DataCardKeySUPPRpm2_1 As label:
@@ -575,7 +505,7 @@
             Height: =50
             Width: =742
             X: =0
-            Y: =12
+            Y: =10
             ZIndex: =1
 
             btnPRRemovep2_3 As button:
@@ -595,7 +525,7 @@
         Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10),cbPRSearchMultipleLOB.Selected.Value)
         Width: =640
         X: =42
-        Y: =103
+        Y: =175
         ZIndex: =19
 
     txtPREDp2_1 As label:
@@ -607,6 +537,6 @@
         Text: ="UPDATED EMPLOYEE DETAILS"
         Width: =742
         X: =713
-        Y: =145
+        Y: =217
         ZIndex: =20
 

@@ -9,7 +9,7 @@
     "galleryLTM As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =792
+        Height: =646
         Items: =cbLTSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
         X: =42
-        Y: =286
+        Y: =341
         ZIndex: =1
 
         txtLTMultipleName As label:
@@ -28,7 +28,7 @@
             PaddingRight: =0
             PaddingTop: =0
             Size: =18
-            Text: =Concatenate(ThisItem.'FIRST NAME', " ",ThisItem.'LAST NAME')
+            Text: =Concatenate(ThisItem.FIRSTNAME, " ",ThisItem.LASTNAME)
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -94,7 +94,7 @@
             )
         Text: ="Review"
         X: =1269
-        Y: =1134
+        Y: =1044
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -103,7 +103,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1134
+        Y: =1044
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
@@ -126,14 +126,14 @@
         cbLTSearchMultipleLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
-            Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+            Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
             OnChange: |-
                 =Set(SelectedItemID, "") &&
                 Reset(cbLTSearchMultipleOmnia);
                 Clear(colLateralTransfer)
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
-            SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTSearchMultipleLOB.SearchText,"Value")
+            SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbLTSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
             X: =625
@@ -150,11 +150,11 @@
         cbLTSearchMultipleOmnia As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
-            DisplayFields: =["USER"]
-            Items: =If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value))
+            DisplayFields: =["EMPLOYEEID"]
+            Items: =If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value))
             OnChange: =Set(SelectedItemID, "")
-            SearchFields: =["USER"]
-            SearchItems: =Search(If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOB=cbLTSearchMultipleLOB.Selected.Value)),cbLTSearchMultipleOmnia.SearchText,"USER")
+            SearchFields: =["EMPLOYEEID"]
+            SearchItems: =Search(If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value)),cbLTSearchMultipleOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
             X: =625
             Y: =187
@@ -164,7 +164,7 @@
             Align: =Align.Right
             Color: =RGBA(0, 18, 107, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="OMNIA ID"
+            Text: ="EMPLOYEE ID"
             Width: =165
             X: =443
             Y: =188
@@ -173,21 +173,21 @@
     formLTM As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =792
+        Height: =647
         Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
-        X: =713
-        Y: =285
+        X: =716
+        Y: =341
         ZIndex: =18
 
         "'EMPLOYEE ID_LTMDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
-            Default: =ThisItem.'FIRST NAME'
+            Default: =ThisItem.FIRSTNAME
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRST NAME")
+            DisplayName: ="EMPLOYEE ID"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -214,7 +214,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.'EMPLOYEE ID'
+                Text: =ThisItem.EMPLOYEEID
                 Width: =(Parent.Width - 60) * 0.6
                 X: =DataCardKey24.X + DataCardKey24.Width
                 Y: =20
@@ -223,9 +223,9 @@
         SITE_LTMDataCard As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="SITE"
-            Default: =ThisItem.SITE
+            Default: =ThisItem.COUNTRY
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SITE")
+            DisplayName: ="SITE"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -259,12 +259,12 @@
                 ZIndex: =2
 
         "'BUSINESS UNIT_LTMDataCard' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESS UNIT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESSUNIT")
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
-            Default: =ThisItem.'BUSINESS UNIT'
+            Default: =ThisItem.BUSINESSUNIT
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESS UNIT")
+            DisplayName: ="BUSINESS UNIT"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -278,7 +278,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -286,11 +286,11 @@
                 ZIndex: =1
 
             cbLTMultipleBusUnit As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'BUSINESS UNIT'))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BUSINESSUNIT))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'BUSINESS UNIT'), !IsBlank(Value)),cbLTMultipleBusUnit.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbLTMultipleBusUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -317,7 +317,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -327,9 +327,9 @@
             cbLTMultipleSubUnit As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-UNIT'))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),cbLTMultipleSubUnit.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbLTMultipleSubUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -356,7 +356,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =28
@@ -366,9 +366,9 @@
             cbLTMultiplePosition As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),POSITION))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),cbLTMultiplePosition.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbLTMultiplePosition.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -427,7 +427,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -437,9 +437,9 @@
             cbLTMultipleClient As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),CLIENT))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),cbLTMultipleClient.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbLTMultipleClient.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -466,7 +466,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -474,11 +474,11 @@
                 ZIndex: =1
 
             cbLTMultipleLOB As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),LOB))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, LOB), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, LOB), !IsBlank(Value)),cbLTMultipleLOB.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)), Value),cbLTMultipleLOB.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302
@@ -505,7 +505,7 @@
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: =Parent.DisplayName & " *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -515,87 +515,10 @@
             cbLTMultipleBillability As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),BILLABILITY))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),cbLTMultipleBillability.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbLTMultipleBillability.SearchText,"Value")
                 SelectMultiple: =false
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
-
-        "'NEW-SALARY_LTMDataCard' As typedDataCard.textualEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="MONDAY"
-            Default: =ThisItem.MONDAY
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MONDAY")
-            Required: =false
-            Update: =txtLTMultipleNewSalary.Text
-            Width: =742
-            X: =0
-            Y: =9
-            ZIndex: =1
-
-            DataCardKey43 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="NEW SALARY PACKAGE"
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =10 + (txtLTMultipleNewSalary.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            txtLTMultipleNewSalary As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =
-                DelayOutput: =true
-                DisplayMode: =Parent.DisplayMode
-                HintText: ="e.g., 25,000 "
-                MaxLength: =Parent.MaxLength
-                PaddingLeft: =5
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Tooltip: =Parent.DisplayName
-                Width: =217
-                X: =DataCardKey43.X + DataCardKey43.Width
-                Y: =10
-                ZIndex: =2
-
-            LTMultiple_CurrencyDrpDwn As dropdown:
-                Items: =["PHP", "USD", "INR", "CRC"]
-                Width: =177
-                X: =534
-                Y: =10
-                ZIndex: =3
-
-        "'NEW-SALARY-DATE_LTMDataCard' As typedDataCard.blankCard":
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =10
-            ZIndex: =1
-
-            Label9 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Text: ="NEW SALARY EFFECTIVITY"
-                Width: =264
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            NewSalaryDate_LTM As datepicker:
                 Width: =408.6
                 X: =302.8
                 Y: =10
@@ -614,14 +537,14 @@
             Update: =cbLTMultipleClient.Selected.Value
             Width: =742
             X: =0
-            Y: =11
+            Y: =9
             ZIndex: =1
 
             DataCardKey42 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="SUPERVISOR"
+                Text: ="SUPERVISOR *"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
@@ -631,9 +554,9 @@
             cbLTMultipleSupervisor As combobox:
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),TEAM))
                 DisplayFields: =["Value"]
-                Items: =Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value))
+                Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),cbLTMultipleSupervisor.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbLTMultipleSupervisor.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -648,7 +571,7 @@
         Text: ="SELECTED EMPLOYEE(S)"
         Width: =316
         X: =204
-        Y: =228
+        Y: =255
         ZIndex: =19
 
     "'Lateral Transfer Form_3' As label":
@@ -659,7 +582,7 @@
         Text: ="EMPLOYEE DETAILS"
         Width: =264
         X: =952
-        Y: =228
+        Y: =255
         ZIndex: =20
 
     Button3 As button:
@@ -692,8 +615,8 @@
                         CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
                         LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
                         BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
-                        'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
-                        'NEW SALARY EFFECTIVITY': NewSalaryDate_LTM.SelectedDate,
+                        //'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
+                        //'NEW SALARY EFFECTIVITY': NewSalaryDate_LTM.SelectedDate,
                         SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
                         'SUBMITTED BY':User().Email
                     }
@@ -702,7 +625,7 @@
                 Notify("Please complete all fields!", NotificationType.Error)
             )
         Text: ="Save"
-        X: =1004
-        Y: =1027
+        X: =1007
+        Y: =917
         ZIndex: =21
 
