@@ -151,10 +151,10 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["EMPLOYEEID"]
-            Items: =If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value))
+            Items: =If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT =cbOTSearchLOB.Selected.Value))
             OnChange: =Set(SelectedItemIDinOT, "")
-            SearchFields: =["ADDRESS"]
-            SearchItems: =Search(If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value)),cbOTOmnia.SearchText,"ADDRESS")
+            SearchFields: =["EMPLOYEEID"]
+            SearchItems: =Search(If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT =cbOTSearchLOB.Selected.Value)),cbOTOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
             X: =1053
             Y: =160
