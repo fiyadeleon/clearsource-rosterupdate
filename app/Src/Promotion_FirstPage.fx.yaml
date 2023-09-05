@@ -143,7 +143,8 @@
             Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
             OnChange: |-
                 =Set(SelectedItemID, "") &&
-                Reset(cbPRSearchMultipleOmnia)
+                Reset(cbPRSearchMultipleOmnia);
+                Clear(colPromotion)
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
             SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbPRSearchMultipleLOB.SearchText,"Value")
