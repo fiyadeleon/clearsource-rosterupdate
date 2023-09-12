@@ -108,6 +108,68 @@
     "dependents": [],
     "id": "13dcac71-2ab7-453b-9716-c8e0ca02d7fd"
   },
+  "289879e3-07d6-4fd1-9930-da8bc0582571": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1653/1.0.1653.3403/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "4d5255a7-ad0e-49cb-a2b7-8210242f9577": {
+          "value": "shared_office365"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "1080521d-b001-4571-ad84-344fa9e9019a"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "4d5255a7-ad0e-49cb-a2b7-8210242f9577"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "1080521d-b001-4571-ad84-344fa9e9019a"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Request-LateralTransfer_1"
+    ],
+    "dependencies": {
+      "shared_office365": "4d5255a7-ad0e-49cb-a2b7-8210242f9577"
+    },
+    "dependents": [],
+    "id": "289879e3-07d6-4fd1-9930-da8bc0582571"
+  },
+  "38558032-7fd8-4634-9a2b-513f72a8e807": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1653/1.0.1653.3403/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "656f47b7-63aa-4718-adf4-0beffb206926"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "656f47b7-63aa-4718-adf4-0beffb206926"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Request-Promotion_1"
+    ],
+    "dependencies": {
+      "shared_office365": "4d5255a7-ad0e-49cb-a2b7-8210242f9577"
+    },
+    "dependents": [],
+    "id": "38558032-7fd8-4634-9a2b-513f72a8e807"
+  },
   "445c2806-6ace-410f-adcf-5edfa6f6c6cb": {
     "connectionRef": {
       "displayName": "Excel Online (Business)",
@@ -143,7 +205,9 @@
     "dependencies": {},
     "dependents": [
       "67bcd3c5-be60-4c7f-b0c8-7c3a20de6d4a",
-      "13dcac71-2ab7-453b-9716-c8e0ca02d7fd"
+      "13dcac71-2ab7-453b-9716-c8e0ca02d7fd",
+      "289879e3-07d6-4fd1-9930-da8bc0582571",
+      "38558032-7fd8-4634-9a2b-513f72a8e807"
     ],
     "id": "4d5255a7-ad0e-49cb-a2b7-8210242f9577"
   },
