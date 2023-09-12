@@ -9,7 +9,7 @@
     "galleryLTM_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =640
+        Height: =703
         Items: =colLateralTransfer
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID_1, txtLTMultipleOmnia_1.Text)
@@ -105,7 +105,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =995
+        Y: =979
         ZIndex: =11
 
     btnLTMultipleBack_1 As button:
@@ -116,13 +116,13 @@
             Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =995
+        Y: =979
         ZIndex: =12
 
     formLTM2 As form:
         BorderThickness: =1
         DataSource: =colLateralTransfer
-        Height: =645
+        Height: =704
         Item: =If(!IsBlank(SelectedItemID_1), LookUp(colLateralTransfer, USER=SelectedItemID_1))
         NumberOfColumns: =1
         OnReset: =true
@@ -130,6 +130,65 @@
         X: =711
         Y: =250
         ZIndex: =18
+
+        EFFECTIVITYDATE_LT As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =741
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label34 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EFFECTIVITY DATE"
+                Width: =272.4
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label35 As label:
+                Height: =20
+                Text: =ThisItem.'EFFECTIVITY DATE'
+                Width: =408.6
+                X: =302
+                Y: =20
+                ZIndex: =2
+
+        SUPERVISOR_LT As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: |
+                ="SUPERVISOR"
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: =
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =741
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            Label36 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR"
+                Width: =272.4
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label38 As label:
+                Height: =20
+                Text: =ThisItem.SUPERVISOR
+                Width: =408.6
+                X: =302
+                Y: =20
+                ZIndex: =2
 
         "'EMPLOYEE ID_DataCard1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
@@ -464,7 +523,7 @@
             Height: =60
             Width: =742
             X: =0
-            Y: =9
+            Y: =11
             ZIndex: =1
 
             btnLTRemove As button:

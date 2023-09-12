@@ -9,7 +9,7 @@
     "galleryLTM As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =646
+        Height: =715
         Items: =cbLTSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
@@ -94,7 +94,7 @@
             )
         Text: ="Review"
         X: =1269
-        Y: =1044
+        Y: =1116
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -103,7 +103,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1044
+        Y: =1116
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
@@ -173,7 +173,7 @@
     formLTM As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =647
+        Height: =708
         Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
         NumberOfColumns: =1
         OnReset: =true
@@ -181,6 +181,33 @@
         X: =716
         Y: =341
         ZIndex: =18
+
+        EFFECTIVITY_DATE_LT As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label6 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EFFECTIVITY DATE *"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            dpLTEffectivityDate As datepicker:
+                DefaultDate: =
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
 
         "'EMPLOYEE ID_LTMDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
@@ -595,7 +622,8 @@
                     (!IsBlank(cbLTMultipleClient.Selected.Value) || !IsBlank(cbLTMultipleClient.SearchText)) &&
                     (!IsBlank(cbLTMultipleLOB.Selected.Value) || !IsBlank(cbLTMultipleLOB.SearchText)) &&
                     (!IsBlank(cbLTMultipleBillability.Selected.Value) || !IsBlank(cbLTMultipleBillability.SearchText)) &&
-                    (!IsBlank(cbLTMultipleSupervisor.Selected.Value) || !IsBlank(cbLTMultipleSupervisor.SearchText))
+                    (!IsBlank(cbLTMultipleSupervisor.Selected.Value) || !IsBlank(cbLTMultipleSupervisor.SearchText)) &&
+                    !IsBlank(dpLTEffectivityDate.SelectedDate)
                 ),
                 If(
                     CountRows(
@@ -618,6 +646,7 @@
                         //'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
                         //'NEW SALARY EFFECTIVITY': NewSalaryDate_LTM.SelectedDate,
                         SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
+                        'EFFECTIVITY DATE':dpLTEffectivityDate.SelectedDate,
                         'SUBMITTED BY':User().Email
                     }
                 );
@@ -626,6 +655,6 @@
             )
         Text: ="Save"
         X: =1007
-        Y: =917
+        Y: =980
         ZIndex: =21
 
