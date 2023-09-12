@@ -9,7 +9,7 @@
     "galleryPRMp2nd_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =674
+        Height: =758
         Items: =colPromotion
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2_1.Text)
@@ -122,7 +122,7 @@
     formPREDsp2_1 As form:
         BorderThickness: =1
         DataSource: =colPromotion
-        Height: =674
+        Height: =758
         Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
@@ -130,6 +130,34 @@
         X: =713
         Y: =320
         ZIndex: =18
+
+        DataCard6 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label40 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EFFECTIVITY DATE"
+                Width: =272.4
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label41 As label:
+                Height: =20
+                Text: =ThisItem.'EFFECTIVITY DATE'
+                Width: =409.2
+                X: =302
+                Y: =20
+                ZIndex: =2
 
         "'EMPLOYEE NAME_PRMDataCard_3' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
@@ -495,7 +523,7 @@
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =302
-                Y: =20
+                Y: =25
                 ZIndex: =2
 
         Remove_Button As typedDataCard.blankCard:
@@ -505,7 +533,7 @@
             Height: =50
             Width: =742
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             btnPRRemovep2_3 As button:

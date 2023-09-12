@@ -9,7 +9,7 @@
     "galleryPRMp1st_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =652
+        Height: =717
         Items: =cbPRSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID, txtPRMultipleOmniapm1_1.Text)
@@ -108,7 +108,7 @@
             )
         Text: ="Review"
         X: =1287
-        Y: =1044
+        Y: =1092
         ZIndex: =11
 
     btnPRMultipleBackp1_1 As button:
@@ -117,7 +117,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1094
-        Y: =1044
+        Y: =1092
         ZIndex: =12
 
     grpPRSearchMultipleLOB_1 As group:
@@ -186,7 +186,7 @@
     formPREDsp2 As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =652
+        Height: =717
         Item: =If(!IsBlank(SelectedPRItemID), LookUp(Headcount_table, USER=SelectedPRItemID))
         NumberOfColumns: =1
         OnReset: =true
@@ -194,6 +194,34 @@
         X: =713
         Y: =348
         ZIndex: =18
+
+        EFFECTIVITY_DATE As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label39 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EFFECTIVITY DATE *"
+                Width: =272.4
+                X: =30
+                Y: =10.5
+                ZIndex: =1
+
+            dpPREffectivityDate As datepicker:
+                DefaultDate: =
+                Height: =35
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
 
         "'FULL NAME_DataCard PRMp1_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
@@ -616,7 +644,8 @@
                     (!IsBlank(cbPRMultipleLOB_2.Selected.Value) || !IsBlank(cbPRMultipleLOB_2.SearchText)) &&
                     (!IsBlank(rdPRInternship.Selected.Value))&&
                     (!IsBlank(cbPRMultipleBillability_1.Selected.Value) || !IsBlank(cbPRMultipleBillability_1.SearchText)) &&
-                    (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))
+                    (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))&&
+                    !IsBlank(dpPREffectivityDate.SelectedDate)
                 ),
                 If(
                     CountRows(
@@ -638,6 +667,7 @@
                     //'NEW SALARY PACKAGE': Concatenate(If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text)," ",PRMultiple_CurrencyDrpDwn.Selected.Value),
                     //'NEW SALARY PACKAGE START DATE': If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", datePRMultipleSalaryEffectivity.SelectedDate),
                     SUPERVISOR: If(IsBlank(cbPRMultipleSupervisor_1.Selected.Value), cbPRMultipleSupervisor_1.SearchText, cbPRMultipleSupervisor_1.Selected.Value),
+                    'EFFECTIVITY DATE':dpPREffectivityDate.SelectedDate,
                     'EMPLOYEE ID': txtPRMultipleIdpm1_1.Text,
                     'SUBMITTED BY':User().Email
                 });
@@ -647,6 +677,6 @@
         Text: ="Save"
         Width: =114
         X: =1027
-        Y: =931
+        Y: =995
         ZIndex: =21
 
