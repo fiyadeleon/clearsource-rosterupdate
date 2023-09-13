@@ -131,34 +131,6 @@
         Y: =320
         ZIndex: =18
 
-        DataCard6 As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =10
-            ZIndex: =1
-
-            Label40 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="EFFECTIVITY DATE"
-                Width: =272.4
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label41 As label:
-                Height: =20
-                Text: =ThisItem.'EFFECTIVITY DATE'
-                Width: =409.2
-                X: =302
-                Y: =20
-                ZIndex: =2
-
         "'EMPLOYEE NAME_PRMDataCard_3' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="NAME"
@@ -524,6 +496,34 @@
                 Width: =(Parent.Width - 60) * 0.6
                 X: =302
                 Y: =25
+                ZIndex: =2
+
+        DataCard6 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label40 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EFFECTIVITY DATE"
+                Width: =272.4
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label41 As label:
+                Height: =20
+                Text: =ThisItem.'EFFECTIVITY DATE'
+                Width: =409.2
+                X: =302
+                Y: =20
                 ZIndex: =2
 
         Remove_Button As typedDataCard.blankCard:

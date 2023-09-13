@@ -195,34 +195,6 @@
         Y: =348
         ZIndex: =18
 
-        EFFECTIVITY_DATE As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =10
-            ZIndex: =1
-
-            Label39 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="EFFECTIVITY DATE *"
-                Width: =272.4
-                X: =30
-                Y: =10.5
-                ZIndex: =1
-
-            dpPREffectivityDate As datepicker:
-                DefaultDate: =
-                Height: =35
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
-
         "'FULL NAME_DataCard PRMp1_1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
@@ -605,6 +577,34 @@
                 SearchFields: =["Value"]
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbPRMultipleSupervisor_1.SearchText,"Value")
                 SelectMultiple: =false
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
+        EFFECTIVITY_DATE As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label39 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EFFECTIVITY DATE *"
+                Width: =272.4
+                X: =30
+                Y: =10.5
+                ZIndex: =1
+
+            dpPREffectivityDate As datepicker:
+                DefaultDate: =
+                Height: =35
                 Width: =408.6
                 X: =302.8
                 Y: =10

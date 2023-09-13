@@ -182,33 +182,6 @@
         Y: =341
         ZIndex: =18
 
-        EFFECTIVITY_DATE_LT As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =10
-            ZIndex: =1
-
-            Label6 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="EFFECTIVITY DATE *"
-                Width: =272.8
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            dpLTEffectivityDate As datepicker:
-                DefaultDate: =
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
-
         "'EMPLOYEE ID_LTMDataCard' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="FIRST NAME"
@@ -585,6 +558,33 @@
                 SearchFields: =["Value"]
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbLTMultipleSupervisor.SearchText,"Value")
                 SelectMultiple: =false
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
+        EFFECTIVITY_DATE_LT As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label6 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EFFECTIVITY DATE *"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            dpLTEffectivityDate As datepicker:
+                DefaultDate: =
                 Width: =408.6
                 X: =302.8
                 Y: =10
