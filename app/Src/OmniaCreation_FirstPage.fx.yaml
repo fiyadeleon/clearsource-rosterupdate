@@ -22,6 +22,7 @@
                     !IsBlank(txtOCFPFName.Text) &&
                     !IsBlank(txtOCFPLName.Text) &&
                     !IsBlank(dateOCFPHireDate.SelectedDate) &&
+                    !IsBlank(txtOCInternalEmail.Text) &&
                     (!IsBlank(cbOCFPBusUnit.Selected.Value) || !IsBlank(cbOCFPBusUnit.SearchText)) &&
                     (!IsBlank(cbOCFPSubUnit.Selected.Value) || !IsBlank(cbOCFPSubUnit.SearchText)) &&
                     (!IsBlank(cbOCFPPosition.Selected.Value) || !IsBlank(cbOCFPPosition.SearchText)) &&
@@ -49,6 +50,7 @@
                         'MIDDLE NAME':If(IsBlank(txtOCFPMName.Text), " ", txtOCFPMName.Text),
                         'LAST NAME':txtOCFPLName.Text,
                         'HIRE DATE':dateOCFPHireDate.SelectedDate,
+                        'INTERNAL EMAIL':txtOCInternalEmail.Text,
                         'REGULARIZATION DATE':Text(DateAdd(dateOCFPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
                         'BUSINESS UNIT':If(IsBlank(cbOCFPBusUnit.Selected.Value), cbOCFPBusUnit.SearchText, cbOCFPBusUnit.Selected.Value), 
                         'SUB-UNIT':If(IsBlank(cbOCFPSubUnit.Selected.Value), cbOCFPSubUnit.SearchText, cbOCFPSubUnit.Selected.Value),
@@ -75,7 +77,7 @@
             )
         Text: ="Save"
         X: =735
-        Y: =627
+        Y: =619
         ZIndex: =5
 
     Button1 As button:
@@ -88,7 +90,7 @@
             Notify("Input fields has been sucessfully reset.", NotificationType.Information)
         Text: ="Clear"
         X: =538
-        Y: =627
+        Y: =619
         ZIndex: =10
 
     grpNewOCForm As group:
