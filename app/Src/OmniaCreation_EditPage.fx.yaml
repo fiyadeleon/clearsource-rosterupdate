@@ -17,7 +17,7 @@
     galOCEP As gallery.galleryHorizontal:
         BorderThickness: =1
         DelayItemLoading: =true
-        Height: =497
+        Height: =569
         Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
@@ -25,7 +25,7 @@
         TemplateSize: =1383
         Width: =1390
         X: =17
-        Y: =143
+        Y: =98
         ZIndex: =7
 
         grpOCEPFName As group:
@@ -53,7 +53,7 @@
                 Width: =320
                 X: =17
                 Y: =98
-                ZIndex: =8
+                ZIndex: =7
 
         grpOCEPMName As group:
             Height: =5
@@ -80,7 +80,7 @@
                 Width: =320
                 X: =17
                 Y: =191
-                ZIndex: =9
+                ZIndex: =8
 
         grpOCEPLName As group:
             Height: =5
@@ -107,7 +107,7 @@
                 Width: =320
                 X: =17
                 Y: =284
-                ZIndex: =10
+                ZIndex: =9
 
         grpOCEPHireDate As group:
             Height: =5
@@ -132,7 +132,7 @@
                 Width: =320
                 X: =17
                 Y: =378
-                ZIndex: =11
+                ZIndex: =10
 
         grpOCEPStatus As group:
             Height: =5
@@ -149,7 +149,7 @@
                 Width: =320
                 X: =323
                 Y: =285
-                ZIndex: =20
+                ZIndex: =18
 
             cbOCEPStatus As combobox:
                 DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),STATUS))
@@ -162,7 +162,7 @@
                 Width: =323
                 X: =323
                 Y: =325
-                ZIndex: =21
+                ZIndex: =19
 
         grpOCEPBusUnit As group:
             Height: =5
@@ -192,7 +192,7 @@
                 Width: =323
                 X: =323
                 Y: =8
-                ZIndex: =15
+                ZIndex: =14
 
         grpOCEPSubUnit As group:
             Height: =5
@@ -212,7 +212,7 @@
                 Width: =323
                 X: =323
                 Y: =139
-                ZIndex: =12
+                ZIndex: =11
 
             Label5_6 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -222,7 +222,7 @@
                 Width: =323
                 X: =323
                 Y: =99
-                ZIndex: =16
+                ZIndex: =15
 
         grpOCEPPosition As group:
             Height: =5
@@ -242,7 +242,7 @@
                 Width: =323
                 X: =323
                 Y: =231
-                ZIndex: =13
+                ZIndex: =12
 
             Label5_7 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -252,7 +252,7 @@
                 Width: =323
                 X: =323
                 Y: =193
-                ZIndex: =17
+                ZIndex: =16
 
         grpOCEPEmpStatus As group:
             Height: =5
@@ -272,7 +272,7 @@
                 Width: =323
                 X: =323
                 Y: =418
-                ZIndex: =14
+                ZIndex: =13
 
             Label5_8 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -282,7 +282,7 @@
                 Width: =323
                 X: =323
                 Y: =378
-                ZIndex: =18
+                ZIndex: =17
 
         grpOCEPClient As group:
             Height: =5
@@ -302,7 +302,7 @@
                 Width: =323
                 X: =681
                 Y: =48
-                ZIndex: =22
+                ZIndex: =20
 
             Label5_10 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -312,7 +312,7 @@
                 Width: =323
                 X: =681
                 Y: =8
-                ZIndex: =26
+                ZIndex: =24
 
         grpOCEPCampaign As group:
             Height: =5
@@ -332,7 +332,7 @@
                 Width: =323
                 X: =681
                 Y: =139
-                ZIndex: =23
+                ZIndex: =21
 
             Label5_11 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -342,7 +342,7 @@
                 Width: =323
                 X: =681
                 Y: =99
-                ZIndex: =27
+                ZIndex: =25
 
         grpOCEPLOB As group:
             Height: =5
@@ -362,7 +362,7 @@
                 Width: =323
                 X: =681
                 Y: =231
-                ZIndex: =24
+                ZIndex: =22
 
             Label5_12 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -372,7 +372,7 @@
                 Width: =323
                 X: =681
                 Y: =193
-                ZIndex: =28
+                ZIndex: =26
 
         grpOCEPSubLOB As group:
             Height: =5
@@ -392,7 +392,7 @@
                 Width: =323
                 X: =681
                 Y: =324
-                ZIndex: =25
+                ZIndex: =23
 
             Label5_13 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -402,7 +402,7 @@
                 Width: =323
                 X: =681
                 Y: =284
-                ZIndex: =29
+                ZIndex: =27
 
         grpOCEPSupervisor As group:
             Height: =5
@@ -422,7 +422,7 @@
                 Width: =323
                 X: =1040
                 Y: =48
-                ZIndex: =30
+                ZIndex: =28
 
             Label5_14 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -432,7 +432,7 @@
                 Width: =323
                 X: =1040
                 Y: =8
-                ZIndex: =34
+                ZIndex: =32
 
         grpOCECountry As group:
             Height: =5
@@ -452,7 +452,7 @@
                 Width: =323
                 X: =1040
                 Y: =139
-                ZIndex: =31
+                ZIndex: =29
 
             Label5_15 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -462,7 +462,7 @@
                 Width: =323
                 X: =1040
                 Y: =99
-                ZIndex: =35
+                ZIndex: =33
 
         grpOCEPSite As group:
             Height: =5
@@ -482,7 +482,7 @@
                 Width: =323
                 X: =1040
                 Y: =231
-                ZIndex: =32
+                ZIndex: =30
 
             Label5_16 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -492,7 +492,7 @@
                 Width: =323
                 X: =1040
                 Y: =193
-                ZIndex: =36
+                ZIndex: =34
 
         grpOCEPBillability As group:
             Height: =5
@@ -512,7 +512,7 @@
                 Width: =323
                 X: =681
                 Y: =418
-                ZIndex: =38
+                ZIndex: =36
 
             Label5_18 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -542,7 +542,7 @@
                 Width: =323
                 X: =1040
                 Y: =324
-                ZIndex: =33
+                ZIndex: =31
 
             Label5_17 As label:
                 Color: =RGBA(0, 18, 107, 1)
@@ -552,7 +552,7 @@
                 Width: =323
                 X: =1040
                 Y: =284
-                ZIndex: =37
+                ZIndex: =35
 
         grpOCEPEmpId As group:
             Height: =5
@@ -569,7 +569,7 @@
                 Width: =320
                 X: =17
                 Y: =8
-                ZIndex: =7
+                ZIndex: =6
 
             txtOCEPEmpId As text:
                 Default: =ThisItem.'EMPLOYEE ID'
@@ -578,7 +578,33 @@
                 Width: =268
                 X: =17
                 Y: =48
-                ZIndex: =41
+                ZIndex: =40
+
+        grpOCEPInternalEmail As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =44
+
+            Label43 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="INTERNAL EMAIL *"
+                Width: =320
+                X: =17
+                Y: =475
+                ZIndex: =37
+
+            txtOCEPInternalEmail As text:
+                Default: =ThisItem.'INTERNAL EMAIL'
+                HintText: ="firstName.lastName@clearsourcebpo.com"
+                OnSelect: =Select(Parent)
+                Width: =268
+                X: =17
+                Y: =515
+                ZIndex: =38
 
     grpOCEPButtons As group:
         Height: =5
@@ -604,6 +630,7 @@
                         !IsBlank(txtOCEPFName.Text) &&
                         !IsBlank(txtOCEPLName.Text) &&
                         !IsBlank(dateOCEPHireDate.SelectedDate) &&
+                        !IsBlank(txtOCEPInternalEmail.Text) &&
                         (!IsBlank(cbOCEPBusUnit.Selected.Value) || !IsBlank(cbOCEPBusUnit.SearchText)) &&
                         (!IsBlank(cbOCEPSubUnit.Selected.Value) || !IsBlank(cbOCEPSubUnit.SearchText)) &&
                         (!IsBlank(cbOCEPPosition.Selected.Value) || !IsBlank(cbOCEPPosition.SearchText)) &&
@@ -628,6 +655,7 @@
                                 'FIRST NAME':txtOCEPFName.Text,
                                 'MIDDLE NAME':If(IsBlank(txtOCEPMName.Text), "N/A", txtOCEPMName.Text),
                                 'LAST NAME':txtOCEPLName.Text,
+                                'INTERNAL EMAIL':txtOCEPInternalEmail.Text,
                                 'HIRE DATE':dateOCEPHireDate.SelectedDate,
                                 STATUS:If(IsBlank(cbOCEPStatus.Selected.Value), cbOCEPStatus.SearchText, cbOCEPStatus.Selected.Value), 
                                 'REGULARIZATION DATE':Text(DateAdd(dateOCEPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),

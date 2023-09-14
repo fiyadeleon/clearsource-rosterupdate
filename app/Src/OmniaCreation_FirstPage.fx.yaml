@@ -295,6 +295,37 @@
                     Y: =40
                     ZIndex: =2
 
+            "'INTERNAL EMAIL' As typedDataCard.blankCard":
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =89
+                Width: =342
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                Label37 As label:
+                    Color: =RGBA(39, 67, 125, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =30
+                    Text: ="INTERNAL EMAIL *"
+                    Width: =281
+                    X: =15
+                    Y: =5
+                    ZIndex: =1
+
+                txtOCInternalEmail As text:
+                    Default: =
+                    HintText: ="firstName.lastName@clearsourcebpo.com"
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    X: =15
+                    Y: =40
+                    ZIndex: =2
+
             "'HIRE DATE_DataCardOCFP' As typedDataCard.dateTimeEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="HIRE DATE"
@@ -332,37 +363,6 @@
                     StartYear: =1899
                     Tooltip: =Parent.DisplayName
                     Width: =320
-                    X: =15
-                    Y: =40
-                    ZIndex: =2
-
-            "'INTERNAL EMAIL' As typedDataCard.blankCard":
-                BorderStyle: =BorderStyle.Solid
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =89
-                Width: =342
-                X: =0
-                Y: =4
-                ZIndex: =1
-
-                Label37 As label:
-                    Color: =RGBA(39, 67, 125, 1)
-                    FontWeight: =FontWeight.Bold
-                    Height: =30
-                    Text: ="INTERNAL EMAIL *"
-                    Width: =281
-                    X: =15
-                    Y: =5
-                    ZIndex: =1
-
-                txtOCInternalEmail As text:
-                    Default: =
-                    HintText: ="firstName.lastName@clearsourcebpo.com"
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
                     X: =15
                     Y: =40
                     ZIndex: =2
