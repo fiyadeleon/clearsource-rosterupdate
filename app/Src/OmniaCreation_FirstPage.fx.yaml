@@ -3,6 +3,15 @@
     ImagePosition: =ImagePosition.Stretch
     Width: =1425
 
+    Rectangle1 As rectangle:
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =604
+        Width: =1370
+        X: =31
+        Y: =74
+        ZIndex: =1
+
     oc1 As label:
         Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
@@ -298,7 +307,7 @@
                 Update: =dateOCFPHireDate.SelectedDate
                 Width: =342
                 X: =0
-                Y: =4
+                Y: =5
                 ZIndex: =1
 
                 DataCardKey11 As label:
@@ -334,7 +343,7 @@
                 Height: =89
                 Width: =342
                 X: =0
-                Y: =5
+                Y: =4
                 ZIndex: =1
 
                 Label37 As label:
@@ -894,15 +903,6 @@
                     X: =15
                     Y: =40
                     ZIndex: =2
-
-    Rectangle1 As rectangle:
-        BorderThickness: =1
-        Fill: =RGBA(0, 0, 0, 0)
-        Height: =604
-        Width: =1370
-        X: =31
-        Y: =74
-        ZIndex: =11
 
     grpOCFPButtons As group:
         Height: =5
