@@ -641,6 +641,7 @@
                         POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value),
                         'FOR INTERNSHIP': rdLTMInternship.Selected.Value,
                         CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
+                        'OLD LOB': If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT)),
                         LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
                         BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
                         //'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
