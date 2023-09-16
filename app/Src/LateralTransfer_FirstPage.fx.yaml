@@ -129,9 +129,9 @@
             Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
             OnChange: |-
                 =Set(SelectedItemID, "") &&
-                Clear(colOldLOB) &&
                 Reset(cbLTSearchMultipleOmnia);
-                Clear(colLateralTransfer)
+                Clear(colLateralTransfer);
+                Clear(colOldLOB);
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
             SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbLTSearchMultipleLOB.SearchText,"Value")
@@ -616,45 +616,45 @@
     Button3 As button:
         OnSelect: |-
             =If(
-                (
-                    (!IsBlank(cbLTMultipleBusUnit.Selected.Value) || !IsBlank(cbLTMultipleBusUnit.SearchText)) &&
-                    (!IsBlank(cbLTMultipleSubUnit.Selected.Value) || !IsBlank(cbLTMultipleSubUnit.SearchText)) &&
-                    (!IsBlank(cbLTMultiplePosition.Selected.Value) || !IsBlank(cbLTMultiplePosition.SearchText)) &&
-                    (!IsBlank(cbLTMultipleClient.Selected.Value) || !IsBlank(cbLTMultipleClient.SearchText)) &&
-                    (!IsBlank(cbLTMultipleLOB.Selected.Value) || !IsBlank(cbLTMultipleLOB.SearchText)) &&
-                    (!IsBlank(cbLTMultipleBillability.Selected.Value) || !IsBlank(cbLTMultipleBillability.SearchText)) &&
-                    (!IsBlank(cbLTMultipleSupervisor.Selected.Value) || !IsBlank(cbLTMultipleSupervisor.SearchText)) &&
+                (
+                    (!IsBlank(cbLTMultipleBusUnit.Selected.Value) || !IsBlank(cbLTMultipleBusUnit.SearchText)) &&
+                    (!IsBlank(cbLTMultipleSubUnit.Selected.Value) || !IsBlank(cbLTMultipleSubUnit.SearchText)) &&
+                    (!IsBlank(cbLTMultiplePosition.Selected.Value) || !IsBlank(cbLTMultiplePosition.SearchText)) &&
+                    (!IsBlank(cbLTMultipleClient.Selected.Value) || !IsBlank(cbLTMultipleClient.SearchText)) &&
+                    (!IsBlank(cbLTMultipleLOB.Selected.Value) || !IsBlank(cbLTMultipleLOB.SearchText)) &&
+                    (!IsBlank(cbLTMultipleBillability.Selected.Value) || !IsBlank(cbLTMultipleBillability.SearchText)) &&
+                    (!IsBlank(cbLTMultipleSupervisor.Selected.Value) || !IsBlank(cbLTMultipleSupervisor.SearchText)) &&
                     !IsBlank(dpLTEffectivityDate.SelectedDate)
-                ),
-                Collect(colOldLOB, Table({ OLD_LOB: ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT).Value })),
-                If(
-                    CountRows(
-                        Filter(colLateralTransfer,USER=SelectedItemID)
-                    ) > 0, 
-                    Remove(colLateralTransfer, LookUp(colLateralTransfer, USER=SelectedItemID)
-                ));
-                Collect(colLateralTransfer, {
-                        USER:SelectedItemID,
-                        NAME:txtLTMultipleName.Text,
-                        ID:txtLTMultipleEmpId.Text,
-                        SITE:txtLTMultipleSite.Text,
-                        'BUSINESS UNIT':If(IsBlank(cbLTMultipleBusUnit.Selected.Value), cbLTMultipleBusUnit.SearchText, cbLTMultipleBusUnit.Selected.Value),
-                        'SUB UNIT':If(IsBlank(cbLTMultipleSubUnit.Selected.Value), cbLTMultipleSubUnit.SearchText, cbLTMultipleSubUnit.Selected.Value),
-                        POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value),
+                ),
+                Collect(colOldLOB, ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT));
+                If(
+                    CountRows(
+                        Filter(colLateralTransfer,USER=SelectedItemID)
+                    ) > 0, 
+                    Remove(colLateralTransfer, LookUp(colLateralTransfer, USER=SelectedItemID)
+                ));
+                Collect(colLateralTransfer, {
+                        USER:SelectedItemID,
+                        NAME:txtLTMultipleName.Text,
+                        ID:txtLTMultipleEmpId.Text,
+                        SITE:txtLTMultipleSite.Text,
+                        'BUSINESS UNIT':If(IsBlank(cbLTMultipleBusUnit.Selected.Value), cbLTMultipleBusUnit.SearchText, cbLTMultipleBusUnit.Selected.Value),
+                        'SUB UNIT':If(IsBlank(cbLTMultipleSubUnit.Selected.Value), cbLTMultipleSubUnit.SearchText, cbLTMultipleSubUnit.Selected.Value),
+                        POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value),
                         'FOR INTERNSHIP': rdLTMInternship.Selected.Value,
-                        CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
-                        'OLD LOB': Index( valOldLOB, 1 ).Value,
-                        LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
-                        BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
-                        //'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
+                        CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
+                        LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
+                        'OLD LOB': First(colOldLOB).Value,
+                        BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
+                        //'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
                         //'NEW SALARY EFFECTIVITY': NewSalaryDate_LTM.SelectedDate,
-                        SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
+                        SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
                         'EFFECTIVITY DATE':dpLTEffectivityDate.SelectedDate,
-                        'SUBMITTED BY':User().Email
-                    }
-                );
-                Notify("Successfully saved your changes locally.", NotificationType.Success),
-                Notify("Please complete all fields!", NotificationType.Error)
+                        'SUBMITTED BY':User().Email
+                    }
+                );
+                Notify("Successfully saved your changes locally.", NotificationType.Success),
+                Notify("Please complete all fields!", NotificationType.Error)
             )
         Text: ="Save"
         X: =998
