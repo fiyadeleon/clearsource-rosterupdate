@@ -129,6 +129,7 @@
             Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
             OnChange: |-
                 =Set(SelectedItemID, "") &&
+                Clear(colOldLOB) &&
                 Reset(cbLTSearchMultipleOmnia);
                 Clear(colLateralTransfer)
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
@@ -625,6 +626,7 @@
                     (!IsBlank(cbLTMultipleSupervisor.Selected.Value) || !IsBlank(cbLTMultipleSupervisor.SearchText)) &&
                     !IsBlank(dpLTEffectivityDate.SelectedDate)
                 ),
+                Collect(colOldLOB, Table({ OLD_LOB: ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT).Value })),
                 If(
                     CountRows(
                         Filter(colLateralTransfer,USER=SelectedItemID)
@@ -641,7 +643,7 @@
                         POSITION:If(IsBlank(cbLTMultiplePosition.Selected.Value), cbLTMultiplePosition.SearchText, cbLTMultiplePosition.Selected.Value),
                         'FOR INTERNSHIP': rdLTMInternship.Selected.Value,
                         CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
-                        'OLD LOB': If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT)),
+                        'OLD LOB': Index( valOldLOB, 1 ).Value,
                         LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
                         BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
                         //'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),
