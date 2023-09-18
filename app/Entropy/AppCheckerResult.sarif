@@ -7789,10 +7789,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 44,
-                  "charOffset": 45,
+                  "charLength": 45,
+                  "charOffset": 835,
                   "snippet": {
-                    "text": "SubmitOtherRosterUpdate.Run(JSON(colOthers))"
+                    "text": "'Request-Oth_1'.Run(JSON(colLateralTransfer))"
                   }
                 }
               },
@@ -7806,7 +7806,7 @@
           "message": {
             "arguments": [
               "Run",
-              "SubmitOtherRosterUpdate"
+              "'Request-Oth_1'"
             ],
             "id": "issue"
           },
@@ -7830,10 +7830,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 594,
-                  "charOffset": 33,
+                  "charLength": 599,
+                  "charOffset": 823,
                   "snippet": {
-                    "text": "If(\n        SubmitOtherRosterUpdate.Run(JSON(colOthers)),\n        (\n            Notify(\"Your request has been submitted successfully!\", NotificationType.Success) &&\n            Reset(cbOTSearchLOB) &&\n            Set(SelectedItemIDinOT, \"\") &&\n            Set(SelectedItemIDinOT1, \"\") &&\n            Reset(drpRosterSelection) &&\n            Navigate(HomePage,ScreenTransition.Cover)\n        ),\n        Notify(\"There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.\", NotificationType.Error)\n    )"
+                    "text": "If(\n        'Request-Oth_1'.Run(JSON(colLateralTransfer)),\n        (\n            Notify(\"Your request has been submitted successfully!\", NotificationType.Success) &&\n            Reset(cbLTSearchMultipleLOB) &&\n            Set(SelectedItemID, \"\") &&\n            Set(SelectedItemID_1, \"\") &&\n            Reset(drpRosterSelection) &&\n            Navigate(HomePage,ScreenTransition.Cover)\n        ),\n        Notify(\"There was an error with your submission, please contact IT through servicedesk@clearsourcebpo.com and attach an image of the error notification. Thank you.\", NotificationType.Error)\n    )"
                   }
                 }
               },

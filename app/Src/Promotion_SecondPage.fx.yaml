@@ -88,20 +88,38 @@
 
     btnPRMultipleSubmitp2_1 As button:
         Fill: =RGBA(0, 18, 107, 1)
-        OnSelect: |-
-            =If(
-                CountRows(galleryPRMp2nd_1.AllItems)=0,
-                Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error),
-                ClearCollect(colPromotion1,colPromotion);
-                'Request-Promotion_1'.Run(JSON(colPromotion1));
-                Notify("Your request has been submitted successfully!", NotificationType.Success);
-                Set(SelectedPRItemID_1,"");
-                Set(SelectedPRItemID, "");
-                Reset(cbPRSearchMultipleLOB);
-                Reset(cbPRSearchMultipleOmnia);
-                Clear(colPromotion);
-                Navigate(HomePage,ScreenTransition.None);
-                Reset(drpRosterSelection)
+        OnSelect: |
+            =//If(
+            //    CountRows(galleryPRMp2nd_1.AllItems)=0,
+            //    Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error),
+            //    ClearCollect(colPromotion1,colPromotion);
+            //    'Request-Promotion_1'.Run(JSON(colPromotion1));
+            //    Notify("Your request has been submitted successfully!", NotificationType.Success);
+            //    Set(SelectedPRItemID_1,"");
+            //    Set(SelectedPRItemID, "");
+            //    Reset(cbPRSearchMultipleLOB);
+            //    Reset(cbPRSearchMultipleOmnia);
+            //    Clear(colPromotion);
+            //    Navigate(HomePage,ScreenTransition.None);
+            //    Reset(drpRosterSelection)
+            //)
+            
+            
+            If(
+                !IsEmpty(colPromotion),
+                If(
+                    'Request-Promotion_1'.Run(JSON(colPromotion)),
+                    (
+                        Notify("Your request has been submitted successfully!", NotificationType.Success) &&
+                        Reset(cbPRSearchMultipleLOB) &&
+                        Set(SelectedPRItemID_1, "") &&
+                        Set(SelectedPRItemID, "") &&
+                        Reset(drpRosterSelection) &&
+                        Navigate(HomePage,ScreenTransition.Cover)
+                    ),
+                    Notify("There was an error with your submission, please contact IT through servicedesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
+                ),
+                Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error)
             )
         Text: ="Submit"
         X: =1269

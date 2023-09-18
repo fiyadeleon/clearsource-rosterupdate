@@ -142,8 +142,13 @@
             DisplayFields: =["Value"]
             Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
             OnChange: |-
-                =Set(SelectedItemID, "") &&
-                Reset(cbPRSearchMultipleOmnia)
+                =//Set(SelectedItemID, "") &&
+                //Reset(cbPRSearchMultipleOmnia)
+                
+                Set(SelectedItemID, "") &&
+                Reset(cbPRSearchMultipleOmnia);
+                Clear(colPromotion);
+                Clear(colPROldLOB);
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
             SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbPRSearchMultipleLOB.SearchText,"Value")
@@ -647,6 +652,7 @@
                     (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))&&
                     !IsBlank(dpPREffectivityDate.SelectedDate)
                 ),
+                Collect(colPROldLOB, ForAll(Filter(Headcount_table, USER=SelectedPRItemID),LOBNAMEIT));
                 If(
                     CountRows(
                         Filter(colPromotion, USER = SelectedPRItemID)
@@ -662,6 +668,7 @@
                     POSITION: If(IsBlank(cbPRMultiplePosition_1.Selected.Value), cbPRMultiplePosition_1.SearchText, cbPRMultiplePosition_1.Selected.Value),
                     'FOR INTERNSHIP': rdPRInternship.Selected.Value,
                     CLIENT: If(IsBlank(cbPRMultipleClient_1.Selected.Value), cbPRMultipleClient_1.SearchText, cbPRMultipleClient_1.Selected.Value),
+                    'OLD LOB': First(colPROldLOB).Value,
                     LOB: If(IsBlank(cbPRMultipleLOB_2.Selected.Value), cbPRMultipleLOB_2.SearchText, cbPRMultipleLOB_2.Selected.Value),
                     BILLABILITY: If(IsBlank(cbPRMultipleBillability_1.Selected.Value), cbPRMultipleBillability_1.SearchText, cbPRMultipleBillability_1.Selected.Value),
                     //'NEW SALARY PACKAGE': Concatenate(If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text)," ",PRMultiple_CurrencyDrpDwn.Selected.Value),

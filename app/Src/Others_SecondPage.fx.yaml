@@ -89,19 +89,36 @@
     btnLTMultipleReview_2 As button:
         Fill: =RGBA(0, 18, 107, 1)
         OnSelect: |-
-            =If(
-                !IsEmpty(colOthers),
+            =//If(
+            //    !IsEmpty(colOthers),
+            //    If(
+            //        SubmitOtherRosterUpdate.Run(JSON(colOthers)),
+            //        (
+            //            Notify("Your request has been submitted successfully!", NotificationType.Success) &&
+            //            Reset(cbOTSearchLOB) &&
+            //            Set(SelectedItemIDinOT, "") &&
+            //            Set(SelectedItemIDinOT1, "") &&
+            //            Reset(drpRosterSelection) &&
+            //            Navigate(HomePage,ScreenTransition.Cover)
+            //        ),
+            //        Notify("There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
+            //    ),
+            //    Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error)
+            //)
+            
+            If(
+                !IsEmpty(colLateralTransfer),
                 If(
-                    SubmitOtherRosterUpdate.Run(JSON(colOthers)),
+                    'Request-Oth_1'.Run(JSON(colLateralTransfer)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
-                        Reset(cbOTSearchLOB) &&
-                        Set(SelectedItemIDinOT, "") &&
-                        Set(SelectedItemIDinOT1, "") &&
+                        Reset(cbLTSearchMultipleLOB) &&
+                        Set(SelectedItemID, "") &&
+                        Set(SelectedItemID_1, "") &&
                         Reset(drpRosterSelection) &&
                         Navigate(HomePage,ScreenTransition.Cover)
                     ),
-                    Notify("There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
+                    Notify("There was an error with your submission, please contact IT through servicedesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
                 ),
                 Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error)
             )

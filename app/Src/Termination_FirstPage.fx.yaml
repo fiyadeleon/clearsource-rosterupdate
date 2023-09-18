@@ -642,7 +642,7 @@ Termination_FirstPage As screen:
                         IsBlank(effectivityDate_input.SelectedDate) ||
                         IsBlank(lastDate_input.SelectedDate),
                         Notify("Please fill out all fields!", NotificationType.Error),
-                        Collect(colTROldLOB, ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT));
+                        Collect(colTROldLOB, ForAll(Filter(Headcount_table, USER=SelectedItemIDinTermi),LOBNAMEIT));
                         If(
                             CountRows(
                                 Filter(userVerify,USER=SelectedItemIDinTermi)

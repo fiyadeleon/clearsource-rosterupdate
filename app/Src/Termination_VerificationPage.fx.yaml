@@ -600,7 +600,7 @@ Termination_VerificationPage As screen:
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(lob_input) &&
-                        Set(SelectedItemID, "") &&
+                        Set(SelectedItemIDinTermi, "") &&
                         Set(SelectedItemID_1, "") &&
                         Reset(drpRosterSelection) &&
                         Navigate(HomePage,ScreenTransition.Cover)
