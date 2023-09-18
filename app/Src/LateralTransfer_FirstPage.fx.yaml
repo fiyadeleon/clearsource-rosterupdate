@@ -636,7 +636,7 @@
                 Collect(colLateralTransfer, {
                         USER:SelectedItemID,
                         NAME:txtLTMultipleName.Text,
-                        ID:txtLTMultipleEmpId.Text,
+                        'EMPLOYEE ID':txtLTMultipleEmpId.Text,
                         SITE:txtLTMultipleSite.Text,
                         'BUSINESS UNIT':If(IsBlank(cbLTMultipleBusUnit.Selected.Value), cbLTMultipleBusUnit.SearchText, cbLTMultipleBusUnit.Selected.Value),
                         'SUB UNIT':If(IsBlank(cbLTMultipleSubUnit.Selected.Value), cbLTMultipleSubUnit.SearchText, cbLTMultipleSubUnit.Selected.Value),
