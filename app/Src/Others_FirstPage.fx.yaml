@@ -913,7 +913,6 @@
                             (!IsBlank(cbOTLOB.Selected.Value) || !IsBlank(cbOTLOB.SearchText)) &&
                             (!IsBlank(cbOTBillability.Selected.Value) || !IsBlank(cbOTBillability.SearchText))
                         ),
-                        Collect(colOROldLOB, ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT));
                         If(
                             //check if status is equivalent to !ACTIVE to require start and end date
                             //if status is equivalent to ACTIVE require start date
@@ -942,8 +941,7 @@
                                     Notify("Please fill out Start and End Date for this type of Status.", NotificationType.Error)
                                 )
                             ),
-                    
-                            //false
+                            Collect(colOROldLOB, ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),LOBNAMEIT));
                             If(
                                 CountRows(
                                     Filter(colOthers,USER=SelectedItemIDinOT)
