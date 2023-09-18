@@ -103,12 +103,12 @@
         Y: =381
         ZIndex: =11
 
-    "'Treehouse Guide - Group' As group":
+    "'Treehouse Guide Group' As group":
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =11
+        ZIndex: =14
 
         Rectangle3_1 As rectangle:
             Fill: =RGBA(145, 190, 212, 0.3)
@@ -126,12 +126,25 @@
             Y: =469
             ZIndex: =10
 
-    "'CS FreshService - Group' As group":
+        Label42_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(50, 86, 160, 1)
+            FontWeight: =FontWeight.Bold
+            OnSelect: |-
+                =Launch("https://bit.ly/DynamicRosterUpdateApplication-Treehouse");
+            Size: =16
+            Text: ="Treehouse Guide"
+            Width: =220
+            X: =1047
+            Y: =689
+            ZIndex: =13
+
+    "'CS FreshService Group' As group":
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =11
+        ZIndex: =14
 
         Rectangle3 As rectangle:
             Fill: =RGBA(145, 190, 212, 0.3)
@@ -149,29 +162,16 @@
             Y: =469
             ZIndex: =8
 
-    Label42 As label:
-        Align: =Align.Center
-        Color: =RGBA(50, 86, 160, 1)
-        FontWeight: =FontWeight.Bold
-        OnSelect: |-
-            =Launch("https://bit.ly/CSFreshService");
-        Size: =16
-        Text: ="CS FreshService"
-        Width: =220
-        X: =672
-        Y: =689
-        ZIndex: =12
-
-    Label42_1 As label:
-        Align: =Align.Center
-        Color: =RGBA(50, 86, 160, 1)
-        FontWeight: =FontWeight.Bold
-        OnSelect: |-
-            =Launch("https://bit.ly/DynamicRosterUpdateApplication-Treehouse");
-        Size: =16
-        Text: ="Treehouse Guide"
-        Width: =220
-        X: =1047
-        Y: =689
-        ZIndex: =13
+        Label42 As label:
+            Align: =Align.Center
+            Color: =RGBA(50, 86, 160, 1)
+            FontWeight: =FontWeight.Bold
+            OnSelect: |-
+                =Launch("https://bit.ly/CSFreshService");
+            Size: =16
+            Text: ="CS FreshService"
+            Width: =220
+            X: =672
+            Y: =689
+            ZIndex: =12
 
