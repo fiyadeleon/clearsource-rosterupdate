@@ -99,7 +99,7 @@
                         Reset(drpRosterSelection) &&
                         Navigate(HomePage,ScreenTransition.Cover)
                     ),
-                    Notify("There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
+                    Notify("There was an error with your submission, please contact IT through servicedesk@clearsourcebpo.com and attach an image of the error notification. Thank you.", NotificationType.Error)
                 ),
                 Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error)
             )

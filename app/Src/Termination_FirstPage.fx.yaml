@@ -114,11 +114,16 @@ Termination_FirstPage As screen:
         DisplayFields: =["Value"]
         Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT),!IsBlank(Value)), Value)
         OnChange: |-
-            =Set(SelectedItemID,"") && 
+            =//Set(SelectedItemID,"") && 
+            //Reset(omnia_input);
+            //Clear(userVerify);
+            //Set(ttype, 0);
+            //Set(tstatus, 0);
+            
+            Set(SelectedItemID, "") &&
             Reset(omnia_input);
             Clear(userVerify);
-            Set(ttype, 0);
-            Set(tstatus, 0);
+            Clear(colTROldLOB);
         OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
         SearchFields: =["Value"]
         SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT),!IsBlank(Value)), Value),lob_input.SearchText,"Value")
@@ -637,7 +642,8 @@ Termination_FirstPage As screen:
                         IsBlank(effectivityDate_input.SelectedDate) ||
                         IsBlank(lastDate_input.SelectedDate),
                         Notify("Please fill out all fields!", NotificationType.Error),
-                        If(
+                        Collect(colTROldLOB, ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT));
+                        If(
                             CountRows(
                                 Filter(userVerify,USER=SelectedItemIDinTermi)
                             ) > 0, 
@@ -652,6 +658,7 @@ Termination_FirstPage As screen:
                             'EMPLOYEE ID': ThisItem.EMPLOYEEID,
                             POSITION: ThisItem.POSITION,
                             CAMPAIGN: campaign_value.HtmlText,
+                            'OLD LOB': First(colTROldLOB).Value,
                             LOB: ThisItem.LOBNAMEIT, 
                             CLIENT: ThisItem.CLIENT,
                             'INTERNAL EMAIL': ThisItem.INTERNALEMAIL,
