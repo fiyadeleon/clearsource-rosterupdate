@@ -573,6 +573,7 @@
 
             txtOCEPEmpId As text:
                 Default: =ThisItem.'EMPLOYEE ID'
+                DisplayMode: =DisplayMode.View
                 HintText: ="e.g., CSPH12345"
                 OnSelect: =Select(Parent)
                 Width: =268
