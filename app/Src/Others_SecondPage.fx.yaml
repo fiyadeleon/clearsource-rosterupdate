@@ -109,12 +109,12 @@
             If(
                 !IsEmpty(colLateralTransfer),
                 If(
-                    'Request-Oth_1'.Run(JSON(colLateralTransfer)),
+                    'Request-OtherRosterUpdate_1'.Run(JSON(colLateralTransfer)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
-                        Reset(cbLTSearchMultipleLOB) &&
-                        Set(SelectedItemID, "") &&
-                        Set(SelectedItemID_1, "") &&
+                        Reset(cbOTSearchLOB) &&
+                        Set(SelectedItemIDinOT, "") &&
+                        Set(SelectedItemIDinOT1, "") &&
                         Reset(drpRosterSelection) &&
                         Navigate(HomePage,ScreenTransition.Cover)
                     ),
