@@ -14,7 +14,7 @@
         Width: =328
         X: =152
         Y: =299
-        ZIndex: =2
+        ZIndex: =1
 
     drpRosterSelection As dropdown:
         ChevronBackground: =RGBA(0, 18, 107, 1)
@@ -24,11 +24,11 @@
         DisabledColor: =RGBA(0, 18, 107, 1)
         DisabledFill: =RGBA(0, 18, 107, 1)
         Height: =52
-        Items: =["Select your answer", "OMNIA Creation", "Termination", "Promotion", "Lateral Transfer", "Other Roster Update"]
+        Items: =["Select your answer", "Alvaria ID Creation", "Termination", "Promotion", "Lateral Transfer", "Other Roster Update"]
         Width: =351
         X: =152
         Y: =349
-        ZIndex: =3
+        ZIndex: =2
 
     btnFirstPageNext As button:
         BorderColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), ColorFade(Self.Fill, -15%))
@@ -38,7 +38,7 @@
         HoverBorderColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), ColorFade(Self.BorderColor, 20%))
         HoverColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(211, 211, 211, 1), RGBA(255, 255, 255, 1))
         HoverFill: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), RGBA(0, 18, 107, 1))
-        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "OMNIA Creation", Navigate(OmniaCreation_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover),drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Other Roster Update", Navigate(Others_FirstPage,ScreenTransition.Cover)))
+        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "Alvaria ID Creation", Navigate(OmniaCreation_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover),drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Other Roster Update", Navigate(Others_FirstPage,ScreenTransition.Cover)))
         PressedBorderColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), Self.Fill)
         PressedColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(211, 211, 211, 1), Self.Fill)
         PressedFill: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), Self.Color)
@@ -46,7 +46,7 @@
         Width: =167
         X: =336
         Y: =423
-        ZIndex: =4
+        ZIndex: =3
 
     Reminder As group:
         Height: =5
@@ -59,35 +59,119 @@
             BorderColor: =RGBA(221, 79, 14, 1)
             BorderStyle: =BorderStyle.None
             Fill: =RGBA(145, 190, 212, 0.3)
-            Height: =281
+            Height: =226
             Width: =684
-            X: =624
-            Y: =234
-            ZIndex: =5
+            X: =628
+            Y: =142
+            ZIndex: =4
 
         Label19 As label:
             FontWeight: =FontWeight.Bold
-            Height: =55
+            Height: =53
             Size: =16
             Text: |-
                 ="Reminders:
                 "
             Width: =637
             X: =647
-            Y: =257
-            ZIndex: =6
+            Y: =155
+            ZIndex: =5
 
         Label23 As label:
-            Height: =177
+            Height: =169
             Size: =16
             Text: |-
                 ="• Always review the details of the employee on the review page to make sure that the request would be accurate.
                 
-                • If there are any issues encountered, you may raise a ticket at bit.ly/CSFreshdesk.
+                • Always double check your 'Sent Items' in Outlook if the request is added, this is another way to double check if the request is successfully sent.
                 
                 "
             Width: =637
-            X: =647
-            Y: =303
+            X: =652
+            Y: =199
+            ZIndex: =6
+
+    Label19_1 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =16
+        Text: |-
+            ="Need help? Click the link or scan the QR code below.
+            "
+        Width: =637
+        X: =647
+        Y: =381
+        ZIndex: =11
+
+    "'Treehouse Guide - Group' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        Rectangle3_1 As rectangle:
+            Fill: =RGBA(145, 190, 212, 0.3)
+            Height: =304
+            Width: =309
+            X: =1003
+            Y: =448
+            ZIndex: =9
+
+        Image2 As image:
+            Height: =220
+            Image: ='bit.ly_DynamicRosterUpdateApplication-Treehouse'
+            Width: =220
+            X: =1047
+            Y: =469
+            ZIndex: =10
+
+    "'CS FreshService - Group' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        Rectangle3 As rectangle:
+            Fill: =RGBA(145, 190, 212, 0.3)
+            Height: =304
+            Width: =309
+            X: =628
+            Y: =448
+            ZIndex: =7
+
+        "'CS FreshService' As image":
+            Height: =220
+            Image: ='bit.ly_CSFreshService'
+            Width: =220
+            X: =672
+            Y: =469
             ZIndex: =8
+
+    Label42 As label:
+        Align: =Align.Center
+        Color: =RGBA(50, 86, 160, 1)
+        FontWeight: =FontWeight.Bold
+        OnSelect: |-
+            =Launch("https://bit.ly/CSFreshService");
+        Size: =16
+        Text: ="CS FreshService"
+        Width: =220
+        X: =672
+        Y: =689
+        ZIndex: =12
+
+    Label42_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(50, 86, 160, 1)
+        FontWeight: =FontWeight.Bold
+        OnSelect: |-
+            =Launch("https://bit.ly/DynamicRosterUpdateApplication-Treehouse");
+        Size: =16
+        Text: ="Treehouse Guide"
+        Width: =220
+        X: =1047
+        Y: =689
+        ZIndex: =13
 
