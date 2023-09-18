@@ -1,4 +1,4 @@
-"OmniaCreation_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"AlvariaIDCreation_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='Untitled design 29'
     ImagePosition: =ImagePosition.Stretch
     Width: =1425
@@ -18,7 +18,7 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="OMNIA CREATION FORM"
+        Text: ="ALVARIA ID CREATION"
         Width: =445
         Y: =7
         ZIndex: =2
@@ -926,7 +926,7 @@
                 =If(
                     IsEmpty(colOmniaCreation),
                     Notify("No changes were made! Please make sure to save your updates first.", NotificationType.Error),
-                    Navigate(OmniaCreation_SecondPage,ScreenTransition.Cover)
+                    Navigate(AlvariaIDCreation_SecondPage,ScreenTransition.Cover)
                 )
             Text: ="Review"
             X: =1222

@@ -1,4 +1,4 @@
-"OmniaCreation_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"AlvariaIDCreation_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='Untitled design 29'
     ImagePosition: =ImagePosition.Stretch
     Width: =1425
@@ -9,7 +9,7 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="REVIEW OMNIA CREATION FORM"
+        Text: ="REVIEW ALVARIA ID CREATION FORM"
         Width: =562
         Y: =31
         ZIndex: =5
@@ -334,7 +334,7 @@
         btnOCSPBack As button:
             Color: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(186, 202, 226, 1)
-            OnSelect: =Navigate(OmniaCreation_FirstPage,ScreenTransition.Cover)
+            OnSelect: =Navigate(AlvariaIDCreation_FirstPage,ScreenTransition.Cover)
             Text: ="Back"
             X: =1030
             Y: =684
@@ -387,7 +387,7 @@
             HoverFill: =ColorFade(Self.Fill, -15%)
             OnSelect: |-
                 =Set(tblSelectedID, tblOCSP.Selected.'EMPLOYEE ID') &&
-                Navigate(OmniaCreation_EditPage)
+                Navigate(AlvariaIDCreation_EditPage)
             Text: ="Edit"
             X: =536
             Y: =98

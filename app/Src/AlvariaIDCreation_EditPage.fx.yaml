@@ -1,4 +1,4 @@
-"OmniaCreation_EditPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"AlvariaIDCreation_EditPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='Untitled design 29'
     ImagePosition: =ImagePosition.Stretch
     Width: =1425
@@ -9,8 +9,8 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="UPDATE OMNIA CREATION FORM"
-        Width: =545
+        Text: ="UPDATE ALVARIA ID CREATION FORM"
+        Width: =600
         Y: =31
         ZIndex: =5
 
@@ -616,7 +616,7 @@
         btnOCEPBack As button:
             Color: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(186, 202, 226, 1)
-            OnSelect: =Navigate(OmniaCreation_SecondPage,ScreenTransition.Cover)
+            OnSelect: =Navigate(AlvariaIDCreation_SecondPage,ScreenTransition.Cover)
             Text: ="Back"
             X: =1030
             Y: =685
@@ -677,7 +677,7 @@
                             }
                         );
                         Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success) &&
-                        Navigate(OmniaCreation_SecondPage);
+                        Navigate(AlvariaIDCreation_SecondPage);
                         Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)),
                         Notify(Concatenate(txtOCEPEmpId.Text, " does not exist, please go back to the review page or input an existing Employee ID."), NotificationType.Error)
                     ),
