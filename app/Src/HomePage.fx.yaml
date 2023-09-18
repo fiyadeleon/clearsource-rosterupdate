@@ -128,12 +128,14 @@
 
         Label42_1 As label:
             Align: =Align.Center
-            Color: =RGBA(50, 86, 160, 1)
+            Color: =RGBA(175, 191, 224, 1)
             FontWeight: =FontWeight.Bold
+            HoverColor: =RGBA(0,84,127,1)
             OnSelect: |-
                 =Launch("https://bit.ly/DynamicRosterUpdateApplication-Treehouse");
             Size: =16
             Text: ="Treehouse Guide"
+            Tooltip: ="Dynamic Roster Update Application Treehouse guide"
             Underline: =true
             Width: =220
             X: =1047
@@ -165,12 +167,14 @@
 
         Label42 As label:
             Align: =Align.Center
-            Color: =RGBA(50, 86, 160, 1)
+            Color: =RGBA(175, 191, 224, 1)
             FontWeight: =FontWeight.Bold
+            HoverColor: =RGBA(0,84,127,1)
             OnSelect: |-
                 =Launch("https://bit.ly/CSFreshService");
             Size: =16
             Text: ="CS FreshService"
+            Tooltip: ="ClearSource ticketing portal"
             Underline: =true
             Width: =220
             X: =672
