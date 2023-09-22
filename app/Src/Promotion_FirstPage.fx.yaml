@@ -9,7 +9,7 @@
     "galleryPRMp1st_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =652
+        Height: =717
         Items: =cbPRSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID, txtPRMultipleOmniapm1_1.Text)
@@ -108,7 +108,7 @@
             )
         Text: ="Review"
         X: =1287
-        Y: =1044
+        Y: =1092
         ZIndex: =11
 
     btnPRMultipleBackp1_1 As button:
@@ -117,7 +117,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1094
-        Y: =1044
+        Y: =1092
         ZIndex: =12
 
     grpPRSearchMultipleLOB_1 As group:
@@ -142,9 +142,13 @@
             DisplayFields: =["Value"]
             Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
             OnChange: |-
-                =Set(SelectedItemID, "") &&
+                =//Set(SelectedItemID, "") &&
+                //Reset(cbPRSearchMultipleOmnia)
+                
+                Set(SelectedItemID, "") &&
                 Reset(cbPRSearchMultipleOmnia);
-                Clear(colPromotion)
+                Clear(colPromotion);
+                Clear(colPROldLOB);
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
             SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbPRSearchMultipleLOB.SearchText,"Value")
@@ -187,7 +191,7 @@
     formPREDsp2 As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =652
+        Height: =717
         Item: =If(!IsBlank(SelectedPRItemID), LookUp(Headcount_table, USER=SelectedPRItemID))
         NumberOfColumns: =1
         OnReset: =true
@@ -583,6 +587,34 @@
                 Y: =10
                 ZIndex: =2
 
+        EFFECTIVITY_DATE As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label39 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EFFECTIVITY DATE *"
+                Width: =272.4
+                X: =30
+                Y: =10.5
+                ZIndex: =1
+
+            dpPREffectivityDate As datepicker:
+                DefaultDate: =
+                Height: =35
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
     txtPRSEp1_1 As label:
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
@@ -617,8 +649,10 @@
                     (!IsBlank(cbPRMultipleLOB_2.Selected.Value) || !IsBlank(cbPRMultipleLOB_2.SearchText)) &&
                     (!IsBlank(rdPRInternship.Selected.Value))&&
                     (!IsBlank(cbPRMultipleBillability_1.Selected.Value) || !IsBlank(cbPRMultipleBillability_1.SearchText)) &&
-                    (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))
+                    (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))&&
+                    !IsBlank(dpPREffectivityDate.SelectedDate)
                 ),
+                Collect(colPROldLOB, ForAll(Filter(Headcount_table, USER=SelectedPRItemID),LOBNAMEIT));
                 If(
                     CountRows(
                         Filter(colPromotion, USER = SelectedPRItemID)
@@ -634,11 +668,13 @@
                     POSITION: If(IsBlank(cbPRMultiplePosition_1.Selected.Value), cbPRMultiplePosition_1.SearchText, cbPRMultiplePosition_1.Selected.Value),
                     'FOR INTERNSHIP': rdPRInternship.Selected.Value,
                     CLIENT: If(IsBlank(cbPRMultipleClient_1.Selected.Value), cbPRMultipleClient_1.SearchText, cbPRMultipleClient_1.Selected.Value),
+                    'OLD LOB': First(colPROldLOB).Value,
                     LOB: If(IsBlank(cbPRMultipleLOB_2.Selected.Value), cbPRMultipleLOB_2.SearchText, cbPRMultipleLOB_2.Selected.Value),
                     BILLABILITY: If(IsBlank(cbPRMultipleBillability_1.Selected.Value), cbPRMultipleBillability_1.SearchText, cbPRMultipleBillability_1.Selected.Value),
                     //'NEW SALARY PACKAGE': Concatenate(If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text)," ",PRMultiple_CurrencyDrpDwn.Selected.Value),
                     //'NEW SALARY PACKAGE START DATE': If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", datePRMultipleSalaryEffectivity.SelectedDate),
                     SUPERVISOR: If(IsBlank(cbPRMultipleSupervisor_1.Selected.Value), cbPRMultipleSupervisor_1.SearchText, cbPRMultipleSupervisor_1.Selected.Value),
+                    'EFFECTIVITY DATE':dpPREffectivityDate.SelectedDate,
                     'EMPLOYEE ID': txtPRMultipleIdpm1_1.Text,
                     'SUBMITTED BY':User().Email
                 });
@@ -648,6 +684,5 @@
         Text: ="Save"
         Width: =114
         X: =1027
-        Y: =931
+        Y: =995
         ZIndex: =21
-
