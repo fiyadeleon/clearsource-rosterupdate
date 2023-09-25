@@ -547,7 +547,7 @@
             DisplayName: ="NESTING START DATE"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "NESTINGSTARTDATE")
+            MaxLength: =//DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "NESTINGSTARTDATE")
             Required: =false
             Update: =dateNesting.SelectedDate
             Width: =714
@@ -623,7 +623,7 @@
             DisplayName: ="PRODUCTION DATE *"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "PRODUCTIONDATE")
+            MaxLength: =//DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "PRODUCTIONDATE")
             Required: =false
             Update: =dateProduction.SelectedDate
             Width: =714
