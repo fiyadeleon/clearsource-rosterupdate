@@ -108,7 +108,7 @@
             )
         Text: ="Review"
         X: =1287
-        Y: =1092
+        Y: =1119
         ZIndex: =11
 
     btnPRMultipleBackp1_1 As button:
@@ -117,7 +117,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1094
-        Y: =1092
+        Y: =1119
         ZIndex: =12
 
     grpPRSearchMultipleLOB_1 As group:
@@ -191,13 +191,13 @@
     formPREDsp2 As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =717
+        Height: =718
         Item: =If(!IsBlank(SelectedPRItemID), LookUp(Headcount_table, USER=SelectedPRItemID))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =713
-        Y: =348
+        Y: =346
         ZIndex: =18
 
         "'FULL NAME_DataCard PRMp1_1' As typedDataCard.textualViewCard":
@@ -587,14 +587,47 @@
                 Y: =10
                 ZIndex: =2
 
+        SUPERVISOR_EMAIL As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =55
+            Width: =742
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label44 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR INTERNAL EMAIL"
+                Width: =272.4
+                X: =30
+                Y: =10.5
+                ZIndex: =1
+
+            cbPRMultipleSupervisorEmail_1 As text:
+                Default: =""
+                Height: =35
+                HintText: ="firstName.lastName@clearsourcebpo.com"
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
         EFFECTIVITY_DATE As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
+            Height: =55
             Width: =742
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             Label39 As label:
@@ -614,6 +647,67 @@
                 X: =302.8
                 Y: =10
                 ZIndex: =2
+
+        SAVE_BUTTON As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =55
+            Width: =742
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            Button5 As button:
+                Height: =36
+                OnSelect: |-
+                    =If(
+                        (
+                            (!IsBlank(cbPRMultipleBusUnit_1.Selected.Value) || !IsBlank(cbPRMultipleBusUnit_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleSubUnit_1.Selected.Value) || !IsBlank(cbPRMultipleSubUnit_1.SearchText)) &&
+                            (!IsBlank(cbPRMultiplePosition_1.Selected.Value) || !IsBlank(cbPRMultiplePosition_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleClient_1.Selected.Value) || !IsBlank(cbPRMultipleClient_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleLOB_2.Selected.Value) || !IsBlank(cbPRMultipleLOB_2.SearchText)) &&
+                            (!IsBlank(rdPRInternship.Selected.Value))&&
+                            (!IsBlank(cbPRMultipleBillability_1.Selected.Value) || !IsBlank(cbPRMultipleBillability_1.SearchText)) &&
+                            (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))&&
+                            !IsBlank(dpPREffectivityDate.SelectedDate)
+                        ),
+                        Collect(colPROldLOB, ForAll(Filter(Headcount_table, USER=SelectedPRItemID),LOBNAMEIT));
+                        If(
+                            CountRows(
+                                Filter(colPromotion, USER = SelectedPRItemID)
+                            ) > 0,
+                            Remove(colPromotion, LookUp(colPromotion, USER = SelectedPRItemID));
+                        );
+                        Collect(colPromotion, {
+                            USER: SelectedPRItemID,
+                            NAME: txtPRMultipleEmpName_1.Text,
+                            SITE: txtPRMultipleSite_1.Text,
+                            'BUSINESS UNIT': If(IsBlank(cbPRMultipleBusUnit_1.Selected.Value), cbPRMultipleBusUnit_1.SearchText, cbPRMultipleBusUnit_1.Selected.Value),
+                            'SUB UNIT': If(IsBlank(cbPRMultipleSubUnit_1.Selected.Value), cbPRMultipleSubUnit_1.SearchText, cbPRMultipleSubUnit_1.Selected.Value),
+                            POSITION: If(IsBlank(cbPRMultiplePosition_1.Selected.Value), cbPRMultiplePosition_1.SearchText, cbPRMultiplePosition_1.Selected.Value),
+                            'FOR INTERNSHIP': rdPRInternship.Selected.Value,
+                            CLIENT: If(IsBlank(cbPRMultipleClient_1.Selected.Value), cbPRMultipleClient_1.SearchText, cbPRMultipleClient_1.Selected.Value),
+                            'OLD LOB': First(colPROldLOB).Value,
+                            LOB: If(IsBlank(cbPRMultipleLOB_2.Selected.Value), cbPRMultipleLOB_2.SearchText, cbPRMultipleLOB_2.Selected.Value),
+                            BILLABILITY: If(IsBlank(cbPRMultipleBillability_1.Selected.Value), cbPRMultipleBillability_1.SearchText, cbPRMultipleBillability_1.Selected.Value),
+                            //'NEW SALARY PACKAGE': Concatenate(If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text)," ",PRMultiple_CurrencyDrpDwn.Selected.Value),
+                            //'NEW SALARY PACKAGE START DATE': If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", datePRMultipleSalaryEffectivity.SelectedDate),
+                            SUPERVISOR: If(IsBlank(cbPRMultipleSupervisor_1.Selected.Value), cbPRMultipleSupervisor_1.SearchText, cbPRMultipleSupervisor_1.Selected.Value),
+                            'EFFECTIVITY DATE':dpPREffectivityDate.SelectedDate,
+                            'EMPLOYEE ID': txtPRMultipleIdpm1_1.Text,
+                            'SUBMITTED BY':User().Email,
+                            'SUPERVISOR EMAIL': If(IsBlank(cbPRMultipleSupervisorEmail_1.Text), "N/A", cbPRMultipleSupervisorEmail_1.Text)
+                        });
+                        Notify("Successfully saved your changes locally.", NotificationType.Success),
+                        Notify("Please complete all fields!", NotificationType.Error)
+                    )
+                Text: ="Save"
+                Width: =140
+                X: =300
+                Y: =10
+                ZIndex: =1
 
     txtPRSEp1_1 As label:
         Color: =RGBA(0, 18, 107, 1)
@@ -636,54 +730,4 @@
         X: =952
         Y: =264
         ZIndex: =20
-
-    Button4 As button:
-        Height: =30
-        OnSelect: |-
-            =If(
-                (
-                    (!IsBlank(cbPRMultipleBusUnit_1.Selected.Value) || !IsBlank(cbPRMultipleBusUnit_1.SearchText)) &&
-                    (!IsBlank(cbPRMultipleSubUnit_1.Selected.Value) || !IsBlank(cbPRMultipleSubUnit_1.SearchText)) &&
-                    (!IsBlank(cbPRMultiplePosition_1.Selected.Value) || !IsBlank(cbPRMultiplePosition_1.SearchText)) &&
-                    (!IsBlank(cbPRMultipleClient_1.Selected.Value) || !IsBlank(cbPRMultipleClient_1.SearchText)) &&
-                    (!IsBlank(cbPRMultipleLOB_2.Selected.Value) || !IsBlank(cbPRMultipleLOB_2.SearchText)) &&
-                    (!IsBlank(rdPRInternship.Selected.Value))&&
-                    (!IsBlank(cbPRMultipleBillability_1.Selected.Value) || !IsBlank(cbPRMultipleBillability_1.SearchText)) &&
-                    (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))&&
-                    !IsBlank(dpPREffectivityDate.SelectedDate)
-                ),
-                Collect(colPROldLOB, ForAll(Filter(Headcount_table, USER=SelectedPRItemID),LOBNAMEIT));
-                If(
-                    CountRows(
-                        Filter(colPromotion, USER = SelectedPRItemID)
-                    ) > 0,
-                    Remove(colPromotion, LookUp(colPromotion, USER = SelectedPRItemID));
-                );
-                Collect(colPromotion, {
-                    USER: SelectedPRItemID,
-                    NAME: txtPRMultipleEmpName_1.Text,
-                    SITE: txtPRMultipleSite_1.Text,
-                    'BUSINESS UNIT': If(IsBlank(cbPRMultipleBusUnit_1.Selected.Value), cbPRMultipleBusUnit_1.SearchText, cbPRMultipleBusUnit_1.Selected.Value),
-                    'SUB UNIT': If(IsBlank(cbPRMultipleSubUnit_1.Selected.Value), cbPRMultipleSubUnit_1.SearchText, cbPRMultipleSubUnit_1.Selected.Value),
-                    POSITION: If(IsBlank(cbPRMultiplePosition_1.Selected.Value), cbPRMultiplePosition_1.SearchText, cbPRMultiplePosition_1.Selected.Value),
-                    'FOR INTERNSHIP': rdPRInternship.Selected.Value,
-                    CLIENT: If(IsBlank(cbPRMultipleClient_1.Selected.Value), cbPRMultipleClient_1.SearchText, cbPRMultipleClient_1.Selected.Value),
-                    'OLD LOB': First(colPROldLOB).Value,
-                    LOB: If(IsBlank(cbPRMultipleLOB_2.Selected.Value), cbPRMultipleLOB_2.SearchText, cbPRMultipleLOB_2.Selected.Value),
-                    BILLABILITY: If(IsBlank(cbPRMultipleBillability_1.Selected.Value), cbPRMultipleBillability_1.SearchText, cbPRMultipleBillability_1.Selected.Value),
-                    //'NEW SALARY PACKAGE': Concatenate(If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text)," ",PRMultiple_CurrencyDrpDwn.Selected.Value),
-                    //'NEW SALARY PACKAGE START DATE': If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", datePRMultipleSalaryEffectivity.SelectedDate),
-                    SUPERVISOR: If(IsBlank(cbPRMultipleSupervisor_1.Selected.Value), cbPRMultipleSupervisor_1.SearchText, cbPRMultipleSupervisor_1.Selected.Value),
-                    'EFFECTIVITY DATE':dpPREffectivityDate.SelectedDate,
-                    'EMPLOYEE ID': txtPRMultipleIdpm1_1.Text,
-                    'SUBMITTED BY':User().Email
-                });
-                Notify("Successfully saved your changes locally.", NotificationType.Success),
-                Notify("Please complete all fields!", NotificationType.Error)
-            )
-        Text: ="Save"
-        Width: =114
-        X: =1027
-        Y: =995
-        ZIndex: =21
 
