@@ -596,7 +596,7 @@ Termination_VerificationPage As screen:
             If(
                 !IsEmpty(userVerify),
                 If(
-                    //'Request-Termination_1'.Run(JSON(userVerify)),
+                    'Request-Termination_1.1'.Run(JSON(userVerify)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(lob_input) &&
