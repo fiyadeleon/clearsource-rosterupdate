@@ -219,9 +219,10 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="EMPLOYEE NAME"
-                Width: =(Parent.Width - 60) * 0.4
+                Width: |
+                    =280
                 Wrap: =false
-                X: =30
+                X: =20
                 Y: =13
                 ZIndex: =1
 
@@ -257,9 +258,9 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="SITE"
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =280
                 Wrap: =false
-                X: =30
+                X: =20
                 Y: =13
                 ZIndex: =1
 
@@ -297,9 +298,9 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =280
                 Wrap: =false
-                X: =30
+                X: =20
                 Y: =13
                 ZIndex: =1
 
@@ -337,9 +338,9 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="SUB UNIT"
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =280
                 Wrap: =false
-                X: =30
+                X: =20
                 Y: =10 + (cbPRMultipleSubUnit_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -377,9 +378,9 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="POSITION *"
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =280
                 Wrap: =false
-                X: =28
+                X: =20
                 Y: =13
                 ZIndex: =1
 
@@ -410,8 +411,8 @@
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Bold
                 Text: ="FOR INTERNSHIP *"
-                Width: =189
-                X: =25
+                Width: =280
+                X: =20
                 Y: =10
                 ZIndex: =1
 
@@ -448,9 +449,10 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="CLIENT"
-                Width: =(Parent.Width - 60) * 0.4
+                Width: |
+                    =280
                 Wrap: =false
-                X: =30
+                X: =20
                 Y: =10 + (cbPRMultipleClient_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -488,9 +490,10 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: |
+                    =280
                 Wrap: =false
-                X: =30
+                X: =20
                 Y: =13
                 ZIndex: =1
 
@@ -528,9 +531,9 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="BILLABILITY"
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =280
                 Wrap: =false
-                X: =30
+                X: =20
                 Y: =10 + (cbPRMultipleBillability_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -568,9 +571,10 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="SUPERVISOR"
-                Width: =(Parent.Width - 60) * 0.4
+                Width: |
+                    =280
                 Wrap: =false
-                X: =30
+                X: =20
                 Y: =10 + (cbPRMultipleClient_1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -601,9 +605,9 @@
                 Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: ="SUPERVISOR INTERNAL EMAIL"
-                Width: =272.4
-                X: =30
+                Text: ="SUPERVISOR INTERNAL EMAIL *"
+                Width: =280
+                X: =20
                 Y: =10.5
                 ZIndex: =1
 
@@ -635,8 +639,8 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="EFFECTIVITY DATE *"
-                Width: =272.4
-                X: =30
+                Width: =280
+                X: =20
                 Y: =10.5
                 ZIndex: =1
 
@@ -671,7 +675,8 @@
                             (!IsBlank(rdPRInternship.Selected.Value))&&
                             (!IsBlank(cbPRMultipleBillability_1.Selected.Value) || !IsBlank(cbPRMultipleBillability_1.SearchText)) &&
                             (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))&&
-                            !IsBlank(dpPREffectivityDate.SelectedDate)
+                            !IsBlank(dpPREffectivityDate.SelectedDate)&&
+                            (!IsBlank(cbPRMultipleSupervisorEmail_1.Text))
                         ),
                         Collect(colPROldLOB, ForAll(Filter(Headcount_table, USER=SelectedPRItemID),LOBNAMEIT));
                         If(
