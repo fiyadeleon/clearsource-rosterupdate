@@ -644,7 +644,8 @@
                             (!IsBlank(cbLTMultipleLOB.Selected.Value) || !IsBlank(cbLTMultipleLOB.SearchText)) &&
                             (!IsBlank(cbLTMultipleBillability.Selected.Value) || !IsBlank(cbLTMultipleBillability.SearchText)) &&
                             (!IsBlank(cbLTMultipleSupervisor.Selected.Value) || !IsBlank(cbLTMultipleSupervisor.SearchText)) &&
-                            !IsBlank(dpLTEffectivityDate.SelectedDate)
+                            !IsBlank(dpLTEffectivityDate.SelectedDate)&&
+                            (!IsBlank(cbLTMultipleSupervisorEmail_1.Text))
                         ),
                         Collect(colOldLOB, ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT));
                         If(
