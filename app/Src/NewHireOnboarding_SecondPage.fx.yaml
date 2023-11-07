@@ -1,4 +1,4 @@
-"AlvariaIDCreation_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"NewHireOnboarding_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='Untitled design 29'
     ImagePosition: =ImagePosition.Stretch
     Width: =1425
@@ -9,8 +9,9 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="REVIEW ALVARIA ID CREATION FORM"
-        Width: =562
+        Text: ="REVIEW NEW HIRE ONBOARDING FORM"
+        Width: =596
+        X: =42
         Y: =31
         ZIndex: =5
 
@@ -387,7 +388,7 @@
             HoverFill: =ColorFade(Self.Fill, -15%)
             OnSelect: |-
                 =Set(tblSelectedID, tblOCSP.Selected.'EMPLOYEE ID') &&
-                Navigate(AlvariaIDCreation_EditPage)
+                Navigate(NewHireOnboarding_EditPage)
             Text: ="Edit"
             X: =536
             Y: =98
