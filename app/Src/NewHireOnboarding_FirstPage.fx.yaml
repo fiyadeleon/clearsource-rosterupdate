@@ -907,9 +907,9 @@
 
                 cbOCFPAlvariaID As combobox:
                     DisplayFields: =["Value"]
-                    Items: =["Not Required", "Required", "Admin Access (WFM Role)", "Special Access(BI Role)"]
+                    Items: =["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"]
                     SearchFields: =["Value"]
-                    SearchItems: =Search(["Not Required", "Required", "Admin Access (WFM Role)", "Special Access(BI Role)"],cbOCFPAlvariaID.SearchText,"Value")
+                    SearchItems: =Search(["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"],cbOCFPAlvariaID.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =320
                     X: =15
