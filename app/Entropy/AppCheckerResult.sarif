@@ -257,6 +257,87 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "NewHireOnboarding_SecondPage.btnOCSPSubmit.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHireOnboarding_SecondPage.btnOCSPSubmit.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 54,
+                  "charOffset": 52,
+                  "snippet": {
+                    "text": "'PROD-New_Hire_Onboarding'.Run(JSON(colOmniaCreation))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "NewHireOnboarding_SecondPage",
+                "type": "NewHireOnboarding_SecondPage.btnOCSPSubmit"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Run",
+              "'PROD-New_Hire_Onboarding'"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrUnknownNamespaceFunction",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewHireOnboarding_SecondPage.btnOCSPSubmit.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHireOnboarding_SecondPage.btnOCSPSubmit.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 716,
+                  "charOffset": 40,
+                  "snippet": {
+                    "text": "If(\n        'PROD-New_Hire_Onboarding'.Run(JSON(colOmniaCreation)),\n        (\n            Notify(\"Your request has been submitted successfully!\", NotificationType.Success) &&\n            ResetForm(formOCFirstPage1) &&\n            ResetForm(formOCFirstPage2) &&\n            ResetForm(formOCFirstPage3) &&\n            ResetForm(formOCFirstPage4) &&\n            Set(tblSelectedID, \"\") &&\n            Reset(drpRosterSelection) &&\n            Navigate(HomePage,ScreenTransition.Cover)\n        ); Clear(colOmniaCreation),\n        Notify(\"There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.\", NotificationType.Error)\n    )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "NewHireOnboarding_SecondPage",
+                "type": "NewHireOnboarding_SecondPage.btnOCSPSubmit"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "If"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Promotion_FirstPage.cbPRSearchMultipleLOB.AccessibleLabel"
                 }
               ],
