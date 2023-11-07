@@ -257,897 +257,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_SecondPage.btnOCSPSubmit.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_SecondPage.btnOCSPSubmit.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 54,
-                  "charOffset": 52,
-                  "snippet": {
-                    "text": "'PROD-New_Hire_Onboarding'.Run(JSON(colOmniaCreation))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "NewHireOnboarding_SecondPage",
-                "type": "NewHireOnboarding_SecondPage.btnOCSPSubmit"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Run",
-              "'PROD-New_Hire_Onboarding'"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrUnknownNamespaceFunction",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewHireOnboarding_SecondPage.btnOCSPSubmit.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_SecondPage.btnOCSPSubmit.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 716,
-                  "charOffset": 40,
-                  "snippet": {
-                    "text": "If(\n        'PROD-New_Hire_Onboarding'.Run(JSON(colOmniaCreation)),\n        (\n            Notify(\"Your request has been submitted successfully!\", NotificationType.Success) &&\n            ResetForm(formOCFirstPage1) &&\n            ResetForm(formOCFirstPage2) &&\n            ResetForm(formOCFirstPage3) &&\n            ResetForm(formOCFirstPage4) &&\n            Set(tblSelectedID, \"\") &&\n            Reset(drpRosterSelection) &&\n            Navigate(HomePage,ScreenTransition.Cover)\n        ); Clear(colOmniaCreation),\n        Notify(\"There was an error with your submission, please contact IT through helpdesk@clearsourcebpo.com and attach an image of the error notification. Thank you.\", NotificationType.Error)\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "NewHireOnboarding_SecondPage",
-                "type": "NewHireOnboarding_SecondPage.btnOCSPSubmit"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.cbPRSearchMultipleLOB.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.cbPRSearchMultipleLOB.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.cbPRSearchMultipleLOB"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.cbPRSearchMultipleOmnia.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.cbPRSearchMultipleOmnia.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.cbPRSearchMultipleOmnia"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'BUSINESS UNIT_DataCard PRMp1_1'.cbPRMultipleBusUnit_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'BUSINESS UNIT_DataCard PRMp1_1'.cbPRMultipleBusUnit_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.'BUSINESS UNIT_DataCard PRMp1_1'.cbPRMultipleBusUnit_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'SUB-UNIT_DataCard PRMp1_1'.cbPRMultipleSubUnit_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'SUB-UNIT_DataCard PRMp1_1'.cbPRMultipleSubUnit_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.'SUB-UNIT_DataCard PRMp1_1'.cbPRMultipleSubUnit_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'POSITION_DataCard PRMp1_1'.cbPRMultiplePosition_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'POSITION_DataCard PRMp1_1'.cbPRMultiplePosition_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.'POSITION_DataCard PRMp1_1'.cbPRMultiplePosition_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.INTERNSHIP_DataCard.rdPRInternship.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.INTERNSHIP_DataCard.rdPRInternship.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.INTERNSHIP_DataCard.rdPRInternship"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'CLIENT_DataCard PRMp1_1'.cbPRMultipleClient_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'CLIENT_DataCard PRMp1_1'.cbPRMultipleClient_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.'CLIENT_DataCard PRMp1_1'.cbPRMultipleClient_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.LOB_DataCard2.cbPRMultipleLOB_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.LOB_DataCard2.cbPRMultipleLOB_2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.LOB_DataCard2.cbPRMultipleLOB_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'BILLABILITY_DataCard PRMp1_1'.cbPRMultipleBillability_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'BILLABILITY_DataCard PRMp1_1'.cbPRMultipleBillability_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.'BILLABILITY_DataCard PRMp1_1'.cbPRMultipleBillability_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'SUPERVISOR_DataCard PRMp1_1'.cbPRMultipleSupervisor_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'SUPERVISOR_DataCard PRMp1_1'.cbPRMultipleSupervisor_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.'SUPERVISOR_DataCard PRMp1_1'.cbPRMultipleSupervisor_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.SUPERVISOR_EMAIL.cbPRMultipleSupervisorEmail_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.SUPERVISOR_EMAIL.cbPRMultipleSupervisorEmail_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.SUPERVISOR_EMAIL.cbPRMultipleSupervisorEmail_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.EFFECTIVITY_DATE.dpPREffectivityDate.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.EFFECTIVITY_DATE.dpPREffectivityDate.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.formPREDsp2.EFFECTIVITY_DATE.dpPREffectivityDate"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.galleryPRMp1st_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.galleryPRMp1st_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Promotion_FirstPage",
-                "type": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.lob_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.lob_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.lob_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.omnia_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.omnia_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.omnia_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.EmployeeGallery"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.EmployeeGallery"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.employeeName.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.employeeName.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.EmployeeGallery.employeeName"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.employeeName.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.employeeName.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.EmployeeGallery.employeeName"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.terminationStatus_card.terminationStatus_cb.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.terminationStatus_card.terminationStatus_cb.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.EmployeeInfo_form.terminationStatus_card.terminationStatus_cb"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.effectivityDate_card.effectivityDate_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.effectivityDate_card.effectivityDate_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.EmployeeInfo_form.effectivityDate_card.effectivityDate_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.lastDate_card.lastDate_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.lastDate_card.lastDate_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.EmployeeInfo_form.lastDate_card.lastDate_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.address_card.address_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.address_card.address_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.EmployeeInfo_form.address_card.address_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.comment_card.comment_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.comment_card.comment_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_FirstPage",
-                "type": "Termination_FirstPage.EmployeeInfo_form.comment_card.comment_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage1.'EMPLOYEE ID_DataCardOCFP'.txtOCFPEmpId.AccessibleLabel"
                 }
               ],
@@ -1478,19 +587,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage3.DataCard3.cbOCFPSupervisor.AccessibleLabel"
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage2.DataCard2.cbOCFPClient.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage3.DataCard3.cbOCFPSupervisor.AccessibleLabel",
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage2.DataCard2.cbOCFPClient.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "NewHireOnboarding_FirstPage",
-                "type": "NewHireOnboarding_FirstPage.formOCFirstPage3.DataCard3.cbOCFPSupervisor"
+                "type": "NewHireOnboarding_FirstPage.formOCFirstPage2.DataCard2.cbOCFPClient"
               }
             }
           ],
@@ -1628,19 +737,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage3.Country_DataCard.cbOCFPCountry.AccessibleLabel"
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage3.DataCard3.cbOCFPSupervisor.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage3.Country_DataCard.cbOCFPCountry.AccessibleLabel",
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage3.DataCard3.cbOCFPSupervisor.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "NewHireOnboarding_FirstPage",
-                "type": "NewHireOnboarding_FirstPage.formOCFirstPage3.Country_DataCard.cbOCFPCountry"
+                "type": "NewHireOnboarding_FirstPage.formOCFirstPage3.DataCard3.cbOCFPSupervisor"
               }
             }
           ],
@@ -1658,19 +767,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.DataCard5.cbOCFPAlvariaID.AccessibleLabel"
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage3.Country_DataCard.cbOCFPCountry.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.DataCard5.cbOCFPAlvariaID.AccessibleLabel",
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage3.Country_DataCard.cbOCFPCountry.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "NewHireOnboarding_FirstPage",
-                "type": "NewHireOnboarding_FirstPage.formOCFirstPage4.DataCard5.cbOCFPAlvariaID"
+                "type": "NewHireOnboarding_FirstPage.formOCFirstPage3.Country_DataCard.cbOCFPCountry"
               }
             }
           ],
@@ -1731,6 +840,36 @@
                 "member": "AccessibleLabel",
                 "module": "NewHireOnboarding_FirstPage",
                 "type": "NewHireOnboarding_FirstPage.formOCFirstPage4.ROLE_DataCardOCFP.cbOCFPRole"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.DataCard5.cbOCFPAlvariaID.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.DataCard5.cbOCFPAlvariaID.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "NewHireOnboarding_FirstPage",
+                "type": "NewHireOnboarding_FirstPage.formOCFirstPage4.DataCard5.cbOCFPAlvariaID"
               }
             }
           ],
@@ -3008,6 +2147,486 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Promotion_FirstPage.cbPRSearchMultipleLOB.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.cbPRSearchMultipleLOB.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.cbPRSearchMultipleLOB"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.cbPRSearchMultipleOmnia.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.cbPRSearchMultipleOmnia.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.cbPRSearchMultipleOmnia"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'BUSINESS UNIT_DataCard PRMp1_1'.cbPRMultipleBusUnit_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'BUSINESS UNIT_DataCard PRMp1_1'.cbPRMultipleBusUnit_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.'BUSINESS UNIT_DataCard PRMp1_1'.cbPRMultipleBusUnit_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'SUB-UNIT_DataCard PRMp1_1'.cbPRMultipleSubUnit_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'SUB-UNIT_DataCard PRMp1_1'.cbPRMultipleSubUnit_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.'SUB-UNIT_DataCard PRMp1_1'.cbPRMultipleSubUnit_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'POSITION_DataCard PRMp1_1'.cbPRMultiplePosition_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'POSITION_DataCard PRMp1_1'.cbPRMultiplePosition_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.'POSITION_DataCard PRMp1_1'.cbPRMultiplePosition_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.INTERNSHIP_DataCard.rdPRInternship.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.INTERNSHIP_DataCard.rdPRInternship.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.INTERNSHIP_DataCard.rdPRInternship"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'CLIENT_DataCard PRMp1_1'.cbPRMultipleClient_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'CLIENT_DataCard PRMp1_1'.cbPRMultipleClient_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.'CLIENT_DataCard PRMp1_1'.cbPRMultipleClient_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.LOB_DataCard2.cbPRMultipleLOB_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.LOB_DataCard2.cbPRMultipleLOB_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.LOB_DataCard2.cbPRMultipleLOB_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'BILLABILITY_DataCard PRMp1_1'.cbPRMultipleBillability_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'BILLABILITY_DataCard PRMp1_1'.cbPRMultipleBillability_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.'BILLABILITY_DataCard PRMp1_1'.cbPRMultipleBillability_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'SUPERVISOR_DataCard PRMp1_1'.cbPRMultipleSupervisor_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.'SUPERVISOR_DataCard PRMp1_1'.cbPRMultipleSupervisor_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.'SUPERVISOR_DataCard PRMp1_1'.cbPRMultipleSupervisor_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.SUPERVISOR_EMAIL.cbPRMultipleSupervisorEmail_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.SUPERVISOR_EMAIL.cbPRMultipleSupervisorEmail_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.SUPERVISOR_EMAIL.cbPRMultipleSupervisorEmail_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.EFFECTIVITY_DATE.dpPREffectivityDate.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.formPREDsp2.EFFECTIVITY_DATE.dpPREffectivityDate.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.formPREDsp2.EFFECTIVITY_DATE.dpPREffectivityDate"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.galleryPRMp1st_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.galleryPRMp1st_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Promotion_FirstPage",
+                "type": "Promotion_FirstPage.galleryPRMp1st_1.txtPRMultipleNamepm1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Termination_VerificationPage.EmployeeGallery_1.AccessibleLabel"
                 }
               ],
@@ -3968,6 +3587,336 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Termination_FirstPage.lob_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.lob_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.lob_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.omnia_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.omnia_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.omnia_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.EmployeeGallery"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.EmployeeGallery"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.employeeName.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.employeeName.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.EmployeeGallery.employeeName"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.employeeName.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeGallery.employeeName.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.EmployeeGallery.employeeName"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.terminationStatus_card.terminationStatus_cb.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.terminationStatus_card.terminationStatus_cb.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.EmployeeInfo_form.terminationStatus_card.terminationStatus_cb"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.effectivityDate_card.effectivityDate_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.effectivityDate_card.effectivityDate_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.EmployeeInfo_form.effectivityDate_card.effectivityDate_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.lastDate_card.lastDate_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.lastDate_card.lastDate_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.EmployeeInfo_form.lastDate_card.lastDate_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.address_card.address_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.address_card.address_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.EmployeeInfo_form.address_card.address_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.comment_card.comment_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_FirstPage.EmployeeInfo_form.comment_card.comment_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_FirstPage",
+                "type": "Termination_FirstPage.EmployeeInfo_form.comment_card.comment_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "HomePage.drpRosterSelection.AccessibleLabel"
                 }
               ],
@@ -4118,19 +4067,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage2.DataCard2.cbOCFPClient.AccessibleLabel"
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPAlvariaID.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage2.DataCard2.cbOCFPClient.AccessibleLabel",
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPAlvariaID.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "NewHireOnboarding_FirstPage",
-                "type": "NewHireOnboarding_FirstPage.formOCFirstPage2.DataCard2.cbOCFPClient"
+                "module": "NewHireOnboarding_EditPage",
+                "type": "NewHireOnboarding_EditPage.galOCEP.cbOCEPAlvariaID"
               }
             }
           ],
@@ -4612,7 +4561,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"NewHireOnboarding_EditPage\" is 310, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"NewHireOnboarding_EditPage\" is 325, which exceeds the maximum threshold recommended (300)."
               }
             }
           ],
