@@ -217,7 +217,7 @@
                 PaddingTop: =0
                 Text: =ThisItem.EMPLOYEEID
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey24.X + DataCardKey24.Width
+                X: =302 
                 Y: =20
                 ZIndex: =2
 
@@ -507,6 +507,7 @@
                 ZIndex: =1
 
             cbLTMultipleSubLOB As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemID), ForAll(Filter(Headcount_table, USER=SelectedItemID),'SUB-LOB'))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
