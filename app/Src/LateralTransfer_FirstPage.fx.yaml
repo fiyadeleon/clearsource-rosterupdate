@@ -512,6 +512,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),cbLTMultipleSubLOB.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10

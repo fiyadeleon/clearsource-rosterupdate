@@ -14,33 +14,33 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.btnLTMultipleReview_1.OnSelect"
+                  "fullyQualifiedName": "Termination_VerificationPage.proceed_btn_1.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.btnLTMultipleReview_1.OnSelect",
+                  "fullyQualifiedName": "Termination_VerificationPage.proceed_btn_1.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 59,
-                  "charOffset": 54,
+                  "charLength": 47,
+                  "charOffset": 594,
                   "snippet": {
-                    "text": "'Request-LateralTransfer_1.1'.Run(JSON(colLateralTransfer))"
+                    "text": "'Request-Termination_1.1'.Run(JSON(userVerify))"
                   }
                 }
               },
               "properties": {
                 "member": "OnSelect",
-                "module": "LateralTransfer_SecondPage",
-                "type": "LateralTransfer_SecondPage.btnLTMultipleReview_1"
+                "module": "Termination_VerificationPage",
+                "type": "Termination_VerificationPage.proceed_btn_1"
               }
             }
           ],
           "message": {
             "arguments": [
               "Run",
-              "'Request-LateralTransfer_1.1'"
+              "'Request-Termination_1.1'"
             ],
             "id": "issue"
           },
@@ -55,26 +55,26 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.btnLTMultipleReview_1.OnSelect"
+                  "fullyQualifiedName": "Termination_VerificationPage.proceed_btn_1.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.btnLTMultipleReview_1.OnSelect",
+                  "fullyQualifiedName": "Termination_VerificationPage.proceed_btn_1.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 613,
-                  "charOffset": 42,
+                  "charLength": 596,
+                  "charOffset": 582,
                   "snippet": {
-                    "text": "If(\n        'Request-LateralTransfer_1.1'.Run(JSON(colLateralTransfer)),\n        (\n            Notify(\"Your request has been submitted successfully!\", NotificationType.Success) &&\n            Reset(cbLTSearchMultipleLOB) &&\n            Set(SelectedItemID, \"\") &&\n            Set(SelectedItemID_1, \"\") &&\n            Reset(drpRosterSelection) &&\n            Navigate(HomePage,ScreenTransition.Cover)\n        ),\n        Notify(\"There was an error with your submission, please contact IT through servicedesk@clearsourcebpo.com and attach an image of the error notification. Thank you.\", NotificationType.Error)\n    )"
+                    "text": "If(\n        'Request-Termination_1.1'.Run(JSON(userVerify)),\n        (\n            Notify(\"Your request has been submitted successfully!\", NotificationType.Success) &&\n            Reset(lob_input) &&\n            Set(SelectedItemIDinTermi, \"\") &&\n            Set(SelectedItemID_1, \"\") &&\n            Reset(drpRosterSelection) &&\n            Navigate(HomePage,ScreenTransition.Cover)\n        ),\n        Notify(\"There was an error with your submission, please contact IT through servicedesk@clearsourcebpo.com and attach an image of the error notification. Thank you.\", NotificationType.Error)\n    )"
                   }
                 }
               },
               "properties": {
                 "member": "OnSelect",
-                "module": "LateralTransfer_SecondPage",
-                "type": "LateralTransfer_SecondPage.btnLTMultipleReview_1"
+                "module": "Termination_VerificationPage",
+                "type": "Termination_VerificationPage.proceed_btn_1"
               }
             }
           ],
@@ -170,207 +170,6 @@
           },
           "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.proceed_btn_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.proceed_btn_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 47,
-                  "charOffset": 594,
-                  "snippet": {
-                    "text": "'Request-Termination_1.1'.Run(JSON(userVerify))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.proceed_btn_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Run",
-              "'Request-Termination_1.1'"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrUnknownNamespaceFunction",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.proceed_btn_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.proceed_btn_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 596,
-                  "charOffset": 582,
-                  "snippet": {
-                    "text": "If(\n        'Request-Termination_1.1'.Run(JSON(userVerify)),\n        (\n            Notify(\"Your request has been submitted successfully!\", NotificationType.Success) &&\n            Reset(lob_input) &&\n            Set(SelectedItemIDinTermi, \"\") &&\n            Set(SelectedItemID_1, \"\") &&\n            Reset(drpRosterSelection) &&\n            Navigate(HomePage,ScreenTransition.Cover)\n        ),\n        Notify(\"There was an error with your submission, please contact IT through servicedesk@clearsourcebpo.com and attach an image of the error notification. Thank you.\", NotificationType.Error)\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.proceed_btn_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.galleryLTM_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.galleryLTM_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "LateralTransfer_SecondPage",
-                "type": "LateralTransfer_SecondPage.galleryLTM_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.galleryLTM_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.galleryLTM_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "LateralTransfer_SecondPage",
-                "type": "LateralTransfer_SecondPage.galleryLTM_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_SecondPage.galleryPRMp2nd_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.galleryPRMp2nd_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.galleryPRMp2nd_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_SecondPage.galleryPRMp2nd_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.galleryPRMp2nd_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.galleryPRMp2nd_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -3077,6 +2876,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "LateralTransfer_SecondPage.galleryLTM_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_SecondPage.galleryLTM_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LateralTransfer_SecondPage",
+                "type": "LateralTransfer_SecondPage.galleryLTM_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_SecondPage.galleryLTM_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_SecondPage.galleryLTM_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "LateralTransfer_SecondPage",
+                "type": "LateralTransfer_SecondPage.galleryLTM_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Others_SecondPage.galleryLTM_2.AccessibleLabel"
                 }
               ],
@@ -3600,6 +3459,66 @@
                 "member": "TabIndex",
                 "module": "HomePage",
                 "type": "HomePage.Label42_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_SecondPage.galleryPRMp2nd_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_SecondPage.galleryPRMp2nd_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.galleryPRMp2nd_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_SecondPage.galleryPRMp2nd_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_SecondPage.galleryPRMp2nd_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.galleryPRMp2nd_1"
               }
             }
           ],
@@ -4276,66 +4195,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.'Lateral Transfer Form_5'.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_SecondPage.'Lateral Transfer Form_5'.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "LateralTransfer_SecondPage",
-                "type": "LateralTransfer_SecondPage.'Lateral Transfer Form_5'"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_SecondPage.txtPRUEp2_1.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.txtPRUEp2_1.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.txtPRUEp2_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "NewHireOnboarding_EditPage"
                 }
               ],
@@ -4358,7 +4217,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 9
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -4388,7 +4247,37 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 8
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LateralTransfer_SecondPage.'Lateral Transfer Form_5'.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_SecondPage.'Lateral Transfer Form_5'.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "LateralTransfer_SecondPage",
+                "type": "LateralTransfer_SecondPage.'Lateral Transfer Form_5'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -4418,7 +4307,37 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 8
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_SecondPage.txtPRUEp2_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_SecondPage.txtPRUEp2_1.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.txtPRUEp2_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
         }
       ],
       "tool": {
@@ -4557,23 +4476,6 @@
               }
             },
             {
-              "id": "app-InefficientDelayLoading",
-              "messageStrings": {
-                "issue": {
-                  "text": "Inefficient delay loading"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Use variables, collections, and navigation context to share state across screens instead."
-                ],
-                "level": "Medium",
-                "primaryCategory": "performance",
-                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
-              }
-            },
-            {
               "id": "app-ScreenHasManyControls",
               "messageStrings": {
                 "issue": {
@@ -4592,6 +4494,23 @@
                 "level": "Medium",
                 "primaryCategory": "performance",
                 "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"NewHireOnboarding_EditPage\" is 330, which exceeds the maximum threshold recommended (300)."
+              }
+            },
+            {
+              "id": "app-InefficientDelayLoading",
+              "messageStrings": {
+                "issue": {
+                  "text": "Inefficient delay loading"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Use variables, collections, and navigation context to share state across screens instead."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
               }
             }
           ],
