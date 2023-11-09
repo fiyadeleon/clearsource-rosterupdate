@@ -109,7 +109,7 @@
             If(
                 !IsEmpty(colOthers),
                 If(
-                    //'Request-OtherRosterUpdate_1'.Run(JSON(colOthers)),
+                    //'PROD-Lateral_Transfer'.Run(JSON(colOthers)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(cbOTSearchLOB) &&

@@ -108,7 +108,7 @@
             If(
                 !IsEmpty(colPromotion),
                 If(
-                    'Request-Promotion_1.1'.Run(JSON(colPromotion)),
+                    'PROD-Promotion'.Run(JSON(colPromotion)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(cbPRSearchMultipleLOB) &&
