@@ -1,7 +1,7 @@
 "LateralTransfer_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1200
+    Height: =1280
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -94,7 +94,7 @@
             )
         Text: ="Review"
         X: =1269
-        Y: =1134
+        Y: =1174
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -103,7 +103,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1134
+        Y: =1174
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
