@@ -9,7 +9,7 @@
     "galleryPRMp1st_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =717
+        Height: =727
         Items: =cbPRSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID, txtPRMultipleOmniapm1_1.Text)
@@ -108,7 +108,7 @@
             )
         Text: ="Review"
         X: =1287
-        Y: =1119
+        Y: =1110
         ZIndex: =11
 
     btnPRMultipleBackp1_1 As button:
@@ -117,7 +117,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1094
-        Y: =1119
+        Y: =1110
         ZIndex: =12
 
     grpPRSearchMultipleLOB_1 As group:
@@ -191,7 +191,7 @@
     formPREDsp2 As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =718
+        Height: =729
         Item: =If(!IsBlank(SelectedPRItemID), LookUp(Headcount_table, USER=SelectedPRItemID))
         NumberOfColumns: =1
         OnReset: =true

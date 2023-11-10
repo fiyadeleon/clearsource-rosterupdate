@@ -18,7 +18,7 @@
     galOCEP As gallery.galleryHorizontal:
         BorderThickness: =1
         DelayItemLoading: =true
-        Height: =569
+        Height: =580
         Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
@@ -687,7 +687,7 @@
             OnSelect: =Navigate(NewHireOnboarding_SecondPage,ScreenTransition.Cover)
             Text: ="Back"
             X: =1030
-            Y: =685
+            Y: =694
             ZIndex: =8
 
         btnOCEPUpdate As button:
@@ -755,6 +755,6 @@
                 )
             Text: ="Update"
             X: =1222
-            Y: =685
+            Y: =694
             ZIndex: =9
 
