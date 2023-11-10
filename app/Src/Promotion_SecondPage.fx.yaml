@@ -108,7 +108,7 @@
             If(
                 !IsEmpty(colPromotion),
                 If(
-                    'PROD-Promotion'.Run(JSON(colPromotion)),
+                    'DEV-Promotion'.Run(JSON(colPromotion)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(cbPRSearchMultipleLOB) &&
@@ -123,7 +123,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =1118
+        Y: =1125
         ZIndex: =11
 
     btnPRMultipleBackp2_1 As button:
@@ -134,7 +134,7 @@
             Navigate(Promotion_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1118
+        Y: =1125
         ZIndex: =12
 
     formPREDsp2_1 As form:
