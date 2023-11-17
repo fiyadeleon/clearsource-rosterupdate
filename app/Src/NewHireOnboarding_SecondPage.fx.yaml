@@ -1,4 +1,4 @@
-"AlvariaIDCreation_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"NewHireOnboarding_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='Untitled design 29'
     ImagePosition: =ImagePosition.Stretch
     Width: =1425
@@ -9,8 +9,9 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="REVIEW ALVARIA ID CREATION FORM"
-        Width: =562
+        Text: ="REVIEW NEW HIRE ONBOARDING FORM"
+        Width: =596
+        X: =42
         Y: =31
         ZIndex: =5
 
@@ -324,6 +325,21 @@
             Y: =0
             ZIndex: =21
 
+        "'ALVARIA ID_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="ALVARIA ID"
+            FieldName: ="SUBMITTED BY"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =22
+            Text: =ThisItem.'ALVARIA ID'
+            Visible: =true
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =22
+
     grpOCSPButtons As group:
         Height: =5
         Width: =5
@@ -334,7 +350,7 @@
         btnOCSPBack As button:
             Color: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(186, 202, 226, 1)
-            OnSelect: =Navigate(AlvariaIDCreation_FirstPage,ScreenTransition.Cover)
+            OnSelect: =Navigate(NewHireOnboarding_FirstPage,ScreenTransition.Cover)
             Text: ="Back"
             X: =1030
             Y: =684
@@ -346,7 +362,7 @@
                 =If(
                     !IsEmpty(colOmniaCreation),
                     If(
-                        'Request-AlvariaIDCreation_1'.Run(JSON(colOmniaCreation)),
+                        'DEV-New_Hire_Onboarding'.Run(JSON(colOmniaCreation)),
                         (
                             Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                             ResetForm(formOCFirstPage1) &&
@@ -387,7 +403,7 @@
             HoverFill: =ColorFade(Self.Fill, -15%)
             OnSelect: |-
                 =Set(tblSelectedID, tblOCSP.Selected.'EMPLOYEE ID') &&
-                Navigate(AlvariaIDCreation_EditPage)
+                Navigate(NewHireOnboarding_EditPage)
             Text: ="Edit"
             X: =536
             Y: =98

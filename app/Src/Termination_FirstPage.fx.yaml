@@ -668,7 +668,8 @@ Termination_FirstPage As screen:
                             'LAST WORKING DATE': lastDate_input.SelectedDate,
                             'CURRENT ADDRESS': address_input.Text,
                             COMMENT: comment_input.Text,
-                            'SUBMITTED BY':User().Email
+                            'SUBMITTED BY':User().Email,
+                            'SUPERVISOR EMAIL': LookUp(Headcount_table, EMPLOYEEID =ThisItem.'TEAMLEADEREMP.ID',INTERNALEMAIL)
                         });
                         Notify("Successfully saved your changes locally.", NotificationType.Success),
                         Set(ttype, 0),

@@ -1,22 +1,23 @@
 "Others_FirstPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='Untitled design 29'
     Fill: =
-    Height: =1050
+    Height: =1060
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
-    Width: =2230
+    Width: =2020
 
     "galleryOT As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =699
+        Height: =670
         Items: =cbOTOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT, txtOTMOmnia.Text)
         TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
-        X: =42
+        Width: =486
+        X: =67
         Y: =272
         ZIndex: =1
 
@@ -93,8 +94,8 @@
                 Navigate(Others_SecondPage,ScreenTransition.Cover)
             )
         Text: ="Review"
-        X: =1999
-        Y: =986
+        X: =1806
+        Y: =977
         ZIndex: =11
 
     btnOTBack As button:
@@ -102,8 +103,8 @@
         Fill: =RGBA(186, 202, 226, 1)
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
-        X: =1806
-        Y: =986
+        X: =1613
+        Y: =977
         ZIndex: =12
 
     grpOTLOB As group:
@@ -158,8 +159,8 @@
             DisplayFields: =["EMPLOYEEID"]
             Items: =If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value))
             OnChange: =Set(SelectedItemIDinOT, "")
-            SearchFields: =["ADDRESS"]
-            SearchItems: =Search(If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value)),cbOTOmnia.SearchText,"ADDRESS")
+            SearchFields: =["EMPLOYEEID"]
+            SearchItems: =Search(If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value)),cbOTOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
             X: =1053
             Y: =160
@@ -178,12 +179,12 @@
     formOT As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =699
+        Height: =670
         Item: =If(!IsBlank(SelectedItemIDinOT), LookUp(Headcount_table, USER=SelectedItemIDinOT))
         NumberOfColumns: =2
         OnReset: =true
-        Width: =1470
-        X: =713
+        Width: =1382
+        X: =584
         Y: =272
         ZIndex: =18
 
@@ -196,7 +197,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =714
+            Width: =690
             X: =0
             Y: =0
             ZIndex: =1
@@ -221,7 +222,7 @@
                 PaddingTop: =0
                 Text: =ThisItem.EMPLOYEEID
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302.8
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -236,7 +237,7 @@
             Height: =60
             Required: =false
             Update: =cbOTBusUnit.Selected.Value
-            Width: =714
+            Width: =690
             X: =1
             Y: =0
             ZIndex: =1
@@ -260,7 +261,7 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbOTBusUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
-                X: =302.8
+                X: =230
                 Y: =10
                 ZIndex: =2
 
@@ -273,7 +274,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =714
+            Width: =690
             X: =0
             Y: =1
             ZIndex: =1
@@ -298,7 +299,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302.8
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -313,7 +314,7 @@
             Height: =60
             Required: =false
             Update: =cbOTSubUnit.Selected.Value
-            Width: =714
+            Width: =690
             X: =1
             Y: =1
             ZIndex: =1
@@ -337,7 +338,7 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbOTSubUnit.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
-                X: =302.8
+                X: =230
                 Y: =10
                 ZIndex: =2
 
@@ -346,7 +347,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =714
+            Width: =690
             X: =0
             Y: =2
             ZIndex: =1
@@ -368,71 +369,7 @@
                 SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "PHL-MATERNITY LEAVE", "PHL-PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "PHL-SUSPENDED"],Value),cbOTStatus.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
-
-        POSITION_OTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "POSITION")
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="POSITION"
-            Default: =ThisItem.POSITION
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Required: =false
-            Update: =
-            Width: =714
-            X: =1
-            Y: =2
-            ZIndex: =1
-
-            DataCardKey41_1 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =28
-                Y: =13
-                ZIndex: =1
-
-            cbOTPosition As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),POSITION))
-                DisplayFields: =["Value"]
-                Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbOTPosition.SearchText,"Value")
-                SelectMultiple: =false
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
-
-        "'START DATE_OTDataCard' As typedDataCard.blankCard":
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =714
-            X: =0
-            Y: =3
-            ZIndex: =1
-
-            Label3 As label:
-                Color: =RGBA(0, 18, 107, 1)
-                FontWeight: =FontWeight.Bold
-                Text: ="START DATE *"
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            dateStart As datepicker:
-                DefaultDate: =
-                Width: =408.6
-                X: =302.8
+                X: =266
                 Y: =10
                 ZIndex: =2
 
@@ -447,9 +384,9 @@
             Height: =60
             Required: =false
             Update: =cbOTClient.Selected.Value
-            Width: =714
+            Width: =690
             X: =1
-            Y: =3
+            Y: =2
             ZIndex: =1
 
             DataCardKey39_1 As label:
@@ -471,108 +408,32 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbOTClient.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
-                X: =302.8
+                X: =230
                 Y: =10
                 ZIndex: =2
 
-        "'END DATE_OTDataCard' As typedDataCard.blankCard":
+        "'START DATE_OTDataCard' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =714
+            Width: =690
             X: =0
-            Y: =4
+            Y: =3
             ZIndex: =1
 
-            Label4 As label:
+            Label3 As label:
                 Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
-                Text: =If (cbOTStatus.Selected.Value = "ACTIVE", "END DATE", "END DATE *")
-                X: =30
-                Y: =13
-                ZIndex: =2
-
-            dateEnd As datepicker:
-                DefaultDate: =""
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =3
-
-        LOB_DataCard4 As typedDataCard.textualEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="LOB"
-            Default: =ThisItem.LOB
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
-            Required: =false
-            Update: =cbOTLOB.Selected.Value
-            Width: =714
-            X: =1
-            Y: =4
-            ZIndex: =1
-
-            DataCardKey5 As label:
-                AutoHeight: =true
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
+                Text: ="START DATE *"
                 X: =30
                 Y: =13
                 ZIndex: =1
 
-            cbOTLOB As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),LOBNAMEIT))
-                DisplayFields: =["Value"]
-                Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOTLOB.SearchText,"Value")
-                SelectMultiple: =false
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
-
-        "'NESTING START DATE_DataCard1' As typedDataCard.textualEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="NESTING START DATE"
-            Default: =ThisItem.NESTINGSTARTDATE
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: ="NESTING START DATE"
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "NESTINGSTARTDATE")
-            Required: =false
-            Update: =dateNesting.SelectedDate
-            Width: =714
-            X: =0
-            Y: =5
-            ZIndex: =1
-
-            DataCardKey13 As label:
-                AutoHeight: =true
-                Color: |-
-                    =If(ThisItem.ROLE = "Agent", ColorValue("#00126b"), ColorValue("#9E9E9E"))
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            dateNesting As datepicker:
+            dateStart As datepicker:
                 DefaultDate: =
-                DisplayMode: =If(ThisItem.ROLE = "Agent", DisplayMode.Edit,DisplayMode.View)
                 Width: =408.6
-                X: =302.8
+                X: =266
                 Y: =10
                 ZIndex: =2
 
@@ -587,9 +448,9 @@
             Height: =60
             Required: =false
             Update: =cbOTBillability.Selected.Value
-            Width: =714
+            Width: =690
             X: =1
-            Y: =5
+            Y: =3
             ZIndex: =1
 
             DataCardKey40_1 As label:
@@ -611,46 +472,34 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOTBillability.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
-                X: =302.8
+                X: =230
                 Y: =10
                 ZIndex: =2
 
-        "'PRODUCTION DATE_DataCard1' As typedDataCard.textualEditCard":
+        "'END DATE_OTDataCard' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="PRODUCTION DATE"
-            Default: =ThisItem.PRODUCTIONDATE
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: ="PRODUCTION DATE *"
+            DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "PRODUCTIONDATE")
-            Required: =false
-            Update: =dateProduction.SelectedDate
-            Width: =714
+            Width: =690
             X: =0
-            Y: =6
+            Y: =4
             ZIndex: =1
 
-            DataCardKey14 As label:
-                AutoHeight: =true
-                Color: |-
-                    =If(ThisItem.ROLE = "Agent", ColorValue("#00126b"), ColorValue("#9E9E9E"))
+            Label4 As label:
+                Color: =RGBA(0, 18, 107, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="PRODUCTION DATE "
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
+                Text: =If (cbOTStatus.Selected.Value = "ACTIVE", "END DATE", "END DATE *")
                 X: =30
                 Y: =13
-                ZIndex: =1
-
-            dateProduction As datepicker:
-                DefaultDate: =
-                DisplayMode: =If(ThisItem.ROLE = "Agent", DisplayMode.Edit,DisplayMode.View)
-                Width: =408.6
-                X: =302.8
-                Y: =10
                 ZIndex: =2
+
+            dateEnd As datepicker:
+                DefaultDate: =""
+                Width: =408.6
+                X: =266
+                Y: =10
+                ZIndex: =3
 
         SCHEDULE_OTDataCard As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
@@ -663,9 +512,9 @@
             MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MONDAY")
             Required: =false
             Update: =txtOTSchedule.Text
-            Width: =714
+            Width: =690
             X: =1
-            Y: =6
+            Y: =4
             ZIndex: =1
 
             DataCardKey43_1 As label:
@@ -693,7 +542,144 @@
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
                 Width: =408.6
-                X: =302
+                X: =230
+                Y: =10
+                ZIndex: =2
+
+        "'NESTING START DATE_DataCard1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="NESTING START DATE"
+            Default: =ThisItem.NESTINGSTARTDATE
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="NESTING START DATE"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            MaxLength: =//DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "NESTINGSTARTDATE")
+            Required: =false
+            Update: =dateNesting.SelectedDate
+            Width: =690
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey13 As label:
+                AutoHeight: =true
+                Color: |-
+                    =If(ThisItem.ROLE = "Agent", ColorValue("#00126b"), ColorValue("#9E9E9E"))
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            dateNesting As datepicker:
+                DefaultDate: =
+                DisplayMode: =If(ThisItem.ROLE = "Agent", DisplayMode.Edit,DisplayMode.View)
+                Width: =408.6
+                X: =266
+                Y: =10
+                ZIndex: =2
+
+        Time_Zone As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =690
+            X: =1
+            Y: =5
+            ZIndex: =1
+
+            Label18 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="TIME ZONE"
+                Width: =216.6
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            drpOTtimezone As dropdown:
+                Default: |-
+                    =Switch(ThisItem.COUNTRY, 
+                        "PH", "Philippine Standard Time", 
+                        "CR", "Central Standard Time", 
+                        "US", "Mountain Standard Time",
+                        "IN", "India Standard Time"
+                    )
+                Items: =Sort(["Philippine Standard Time", "Mountain Standard Time", "Central Standard Time", "India Standard Time"],Value)
+                Width: =408.6
+                X: =230
+                Y: =10
+                ZIndex: =2
+
+        "'PRODUCTION DATE_DataCard1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="PRODUCTION DATE"
+            Default: =ThisItem.PRODUCTIONDATE
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="PRODUCTION DATE *"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            MaxLength: =//DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "PRODUCTIONDATE")
+            Required: =false
+            Update: =dateProduction.SelectedDate
+            Width: =690
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey14 As label:
+                AutoHeight: =true
+                Color: |-
+                    =If(ThisItem.ROLE = "Agent", ColorValue("#00126b"), ColorValue("#9E9E9E"))
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="PRODUCTION DATE "
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            dateProduction As datepicker:
+                DefaultDate: =
+                DisplayMode: =If(ThisItem.ROLE = "Agent", DisplayMode.Edit,DisplayMode.View)
+                Width: =408.6
+                X: =266
+                Y: =10
+                ZIndex: =2
+
+        ClassName As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =690
+            X: =1
+            Y: =6
+            ZIndex: =1
+
+            CLASS_NAME As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =33
+                Text: ="CLASS NAME"
+                Width: =261.6
+                X: =30
+                Y: |
+                    =13
+                ZIndex: =1
+
+            class_name As text:
+                Default: =""
+                HintText: ="Class Name"
+                Width: =408.6
+                X: =230
                 Y: =10
                 ZIndex: =2
 
@@ -708,7 +694,7 @@
             Height: =60
             Required: =false
             Update: =cbOTClient.Selected.Value
-            Width: =714
+            Width: =690
             X: =0
             Y: =7
             ZIndex: =1
@@ -732,80 +718,18 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),cbOTSupervisor.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
-                X: =302.8
+                X: =266
                 Y: =10
-                ZIndex: =2
-
-        Time_Zone As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =714
-            X: =1
-            Y: =7
-            ZIndex: =1
-
-            Label18 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="TIME ZONE"
-                Width: =216.6
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            drpOTtimezone As dropdown:
-                Default: |-
-                    =Switch(ThisItem.COUNTRY, 
-                        "PH", "Philippine Standard Time", 
-                        "CR", "Central Standard Time", 
-                        "US", "Mountain Standard Time",
-                        "IN", "India Standard Time"
-                    )
-                Items: =Sort(["Philippine Standard Time", "Mountain Standard Time", "Central Standard Time", "India Standard Time"],Value)
-                Width: =408.6
-                X: =302
-                Y: =10
-                ZIndex: =2
-
-        ClassName As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =90
-            Width: =714
-            X: =0
-            Y: =8
-            ZIndex: =1
-
-            CLASS_NAME As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =33
-                Text: ="CLASS NAME"
-                Width: =261.6
-                X: =30
-                Y: =40
-                ZIndex: =1
-
-            class_name As text:
-                Default: =""
-                HintText: ="Class Name"
-                Width: =408.6
-                X: =302.8
-                Y: =40
                 ZIndex: =2
 
         TRAINER1 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =90
-            Width: =714
+            Height: =60
+            Width: =690
             X: =1
-            Y: =8
+            Y: =7
             ZIndex: =1
 
             Label8 As label:
@@ -814,7 +738,8 @@
                 Text: |-
                     ="TRAINER #1"
                 X: =30
-                Y: =40
+                Y: |
+                    =13
                 ZIndex: =1
 
             trainer1 As combobox:
@@ -825,8 +750,48 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER1), !IsBlank(Value)), Value),trainer1.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
-                X: =302
-                Y: =40
+                X: =230
+                Y: |
+                    =10
+                ZIndex: =2
+
+        POSITION_OTDataCard As typedDataCard.allowedValuesStringEditCard:
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "POSITION")
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="POSITION"
+            Default: =ThisItem.POSITION
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Update: =
+            Width: =690
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            DataCardKey41_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =28
+                Y: =13
+                ZIndex: =1
+
+            cbOTPosition As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),POSITION))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbOTPosition.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =266
+                Y: =10
                 ZIndex: =2
 
         TRAINER2 As typedDataCard.blankCard:
@@ -834,9 +799,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =714
-            X: =0
-            Y: =9
+            Width: =690
+            X: =1
+            Y: =8
             ZIndex: =1
 
             Label9 As label:
@@ -856,7 +821,46 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER2), !IsBlank(Value)), Value),trainer2.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
-                X: =302.8
+                X: =230
+                Y: =10
+                ZIndex: =2
+
+        LOB_DataCard4 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
+            Required: =false
+            Update: =cbOTLOB.Selected.Value
+            Width: =690
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            cbOTLOB As combobox:
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),LOBNAMEIT))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOTLOB.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =266
                 Y: =10
                 ZIndex: =2
 
@@ -865,7 +869,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =714
+            Width: =690
             X: =1
             Y: =9
             ZIndex: =1
@@ -887,7 +891,7 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER3), !IsBlank(Value)), Value),trainer3.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
-                X: =302
+                X: =230
                 Y: =10
                 ZIndex: =2
 
@@ -896,7 +900,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =1470
+            Width: =1380
             X: =0
             Y: =10
             ZIndex: =1
@@ -986,8 +990,8 @@
                         Notify("Please fill out all fields!", NotificationType.Error)
                     )
                 Text: ="Save"
-                X: =657
-                Y: =15
+                X: =624
+                Y: =12
                 ZIndex: =1
 
     OT2 As label:
@@ -997,7 +1001,7 @@
         Size: =20
         Text: ="SELECTED EMPLOYEE(S)"
         Width: =316
-        X: =204
+        X: =152
         Y: =205
         ZIndex: =19
 

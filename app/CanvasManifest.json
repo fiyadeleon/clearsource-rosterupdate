@@ -5,7 +5,7 @@
       "DataflowAnalysisEnabled": false,
       "DataflowAnalysisFlagStateToggledByUser": false
     },
-    "DocVersion": "1.334",
+    "DocVersion": "1.335",
     "MinVersionToLoad": "1.331",
     "MSAppStructureVersion": "2.0"
   },
@@ -51,7 +51,6 @@
       "enableruntimepolicies": false,
       "enablesaveloadcleardataonweb": false,
       "enableupdateifdelegation": false,
-      "enhancedgalleryinitialization": true,
       "errorhandling": true,
       "expandedsavedatasupport": true,
       "exportimportcomponents2": true,
@@ -87,7 +86,6 @@
       "smartemaildatacard": false,
       "supportcolumnnamesasidentifiers": false,
       "tabledoesntwraprecords": true,
-      "untypedobject": false,
       "usedisplaynamemetadata": true,
       "useenforcesavedatalimits": true,
       "useexperimentalcdsconnector": true,
@@ -115,13 +113,13 @@
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
     "ManualOfflineProfileId": "",
-    "Name": "Roster Update Forms [ralph]",
+    "Name": "Dynamic Roster Update Application [dev]",
     "OriginatingVersion": "1.330",
     "ParserErrorCount": 0,
     "ShowStatusBar": false
   },
   "PublishInfo": {
-    "AppName": "Roster Update Forms [ralph]",
+    "AppName": "Dynamic Roster Update Application [dev]",
     "BackgroundColor": "rgba(255, 255, 255, 1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "",
@@ -133,9 +131,9 @@
   },
   "ScreenOrder": [
     "HomePage",
-    "AlvariaIDCreation_FirstPage",
-    "AlvariaIDCreation_SecondPage",
-    "AlvariaIDCreation_EditPage",
+    "NewHireOnboarding_FirstPage",
+    "NewHireOnboarding_SecondPage",
+    "NewHireOnboarding_EditPage",
     "LateralTransfer_FirstPage",
     "LateralTransfer_SecondPage",
     "Others_FirstPage",

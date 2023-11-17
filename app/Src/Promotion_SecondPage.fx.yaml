@@ -9,7 +9,7 @@
     "galleryPRMp2nd_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =758
+        Height: =779
         Items: =colPromotion
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2_1.Text)
@@ -108,7 +108,7 @@
             If(
                 !IsEmpty(colPromotion),
                 If(
-                    'Request-Promotion_1'.Run(JSON(colPromotion)),
+                    'DEV-Promotion'.Run(JSON(colPromotion)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(cbPRSearchMultipleLOB) &&
@@ -123,7 +123,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =1118
+        Y: =1125
         ZIndex: =11
 
     btnPRMultipleBackp2_1 As button:
@@ -134,13 +134,13 @@
             Navigate(Promotion_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1118
+        Y: =1125
         ZIndex: =12
 
     formPREDsp2_1 As form:
         BorderThickness: =1
         DataSource: =colPromotion
-        Height: =758
+        Height: =779
         Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
@@ -516,7 +516,7 @@
                 Y: =25
                 ZIndex: =2
 
-        DataCard6 As typedDataCard.blankCard:
+        SupervisorEmail As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
@@ -524,6 +524,34 @@
             Width: =742
             X: =0
             Y: =10
+            ZIndex: =1
+
+            Label46 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR'S EMAIL"
+                Width: =272.4
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label47 As label:
+                Height: =34
+                Text: =ThisItem.'SUPERVISOR EMAIL'
+                Width: =408.6
+                X: =302.4
+                Y: =10
+                ZIndex: =2
+
+        DataCard6 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =11
             ZIndex: =1
 
             Label40 As label:
@@ -583,6 +611,6 @@
         Text: ="UPDATED EMPLOYEE DETAILS"
         Width: =742
         X: =713
-        Y: =217
+        Y: =198
         ZIndex: =20
 

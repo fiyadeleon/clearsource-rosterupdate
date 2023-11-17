@@ -1,22 +1,22 @@
 "Others_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='Untitled design 29'
     Fill: =
-    Height: =950
+    Height: =1025
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
-    Width: |
-        =2230
+    Width: =2020
 
     "galleryLTM_2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =660
+        Height: =670
         Items: =colOthers
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT1, txtLTMultipleOmnia_2.Text)
         TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
+        Width: =486
         X: =62
         Y: =210
         ZIndex: =1
@@ -109,7 +109,7 @@
             If(
                 !IsEmpty(colOthers),
                 If(
-                    'Request-OtherRosterUpdate_1'.Run(JSON(colOthers)),
+                    'DEV-Other_Roster_Update'.Run(JSON(colOthers)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(cbOTSearchLOB) &&
@@ -123,8 +123,8 @@
                 Notify("No changes were made! Please go back and make sure to save your updates first.", NotificationType.Error)
             )
         Text: ="Submit"
-        X: =1999
-        Y: =887
+        X: =1806
+        Y: =927
         ZIndex: =11
 
     btnLTMultipleBack_2 As button:
@@ -134,20 +134,19 @@
             =Set(SelectedItemIDinOT1, "") &&
             Navigate(Others_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
-        X: =1806
-        Y: =887
+        X: =1612
+        Y: =927
         ZIndex: =12
 
     formOT1 As form:
         BorderThickness: =1
         DataSource: =colOthers
-        Height: =660
+        Height: =670
         Item: =If(!IsBlank(SelectedItemIDinOT1), LookUp(colOthers, USER=SelectedItemIDinOT1))
         NumberOfColumns: =2
         OnReset: =true
-        Width: |
-            =1470
-        X: =713
+        Width: =1382
+        X: =584
         Y: =210
         ZIndex: =18
 
@@ -160,7 +159,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =0
             Y: =0
             ZIndex: =1
@@ -181,7 +180,7 @@
                 PaddingRight: =0
                 PaddingTop: =0
                 Text: =Parent.Default
-                X: =302
+                X: =266
                 Y: =13
                 ZIndex: =2
 
@@ -196,7 +195,7 @@
             Height: =60
             Required: =false
             Update: =
-            Width: =734
+            Width: =600
             X: =1
             Y: =0
             ZIndex: =1
@@ -231,7 +230,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =0
             Y: =1
             ZIndex: =1
@@ -256,7 +255,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -269,7 +268,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =1
             Y: =1
             ZIndex: =1
@@ -307,7 +306,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =0
             Y: =2
             ZIndex: =1
@@ -332,7 +331,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -345,7 +344,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =1
             Y: =2
             ZIndex: =1
@@ -383,7 +382,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =0
             Y: =3
             ZIndex: =1
@@ -408,7 +407,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -421,7 +420,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =1
             Y: =3
             ZIndex: =1
@@ -459,7 +458,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =0
             Y: =4
             ZIndex: =1
@@ -484,7 +483,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -497,7 +496,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =1
             Y: =4
             ZIndex: =1
@@ -535,7 +534,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =734
+            Width: =600
             X: =0
             Y: =5
             ZIndex: =1
@@ -559,7 +558,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -572,7 +571,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =1
             Y: =5
             ZIndex: =1
@@ -610,7 +609,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =734
+            Width: =600
             X: =0
             Y: =6
             ZIndex: =1
@@ -635,7 +634,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -648,7 +647,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =1
             Y: =6
             ZIndex: =1
@@ -686,7 +685,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
-            Width: =734
+            Width: =600
             X: =0
             Y: =7
             ZIndex: =1
@@ -711,7 +710,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -720,7 +719,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =735
+            Width: =600
             X: =1
             Y: =7
             ZIndex: =1
@@ -745,7 +744,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =734
+            Width: =600
             X: =0
             Y: =8
             ZIndex: =1
@@ -761,8 +760,8 @@
             Label32 As label:
                 Text: =ThisItem.'CLASS NAME'
                 Width: =377
-                X: =302
-                Y: =20
+                X: =266
+                Y: =10
                 ZIndex: =2
 
         Trainer1 As typedDataCard.blankCard:
@@ -770,7 +769,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =734
+            Width: =600
             X: =1
             Y: =8
             ZIndex: =1
@@ -797,7 +796,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =734
+            Width: =600
             X: =0
             Y: =9
             ZIndex: =1
@@ -815,7 +814,7 @@
                 Text: |-
                     =ThisItem.'TRAINER #2'
                 Width: =377
-                X: =302
+                X: =266
                 Y: =20
                 ZIndex: =2
 
@@ -824,7 +823,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Width: =734
+            Width: =600
             X: =1
             Y: =9
             ZIndex: =1
@@ -872,8 +871,8 @@
         Height: =78
         Size: =20
         Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10),cbOTSearchLOB.Selected.Value)
-        Width: =640
-        X: =42
+        Width: =465
+        X: =62
         Y: =106
         ZIndex: =19
 
@@ -884,7 +883,7 @@
         Height: =67
         Size: =20
         Text: ="UPDATED EMPLOYEE DETAILS"
-        Width: =1470
+        Width: =1382
         X: =713
         Y: =117
         ZIndex: =20

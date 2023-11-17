@@ -1,7 +1,7 @@
 "LateralTransfer_SecondPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='MicrosoftTeams-image'
     Fill: =
-    Height: =1075
+    Height: =1150
     ImagePosition: =ImagePosition.Stretch
     OnVisible: =
     Width: =1500
@@ -9,7 +9,7 @@
     "galleryLTM_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =703
+        Height: =820
         Items: =colLateralTransfer
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID_1, txtLTMultipleOmnia_1.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
         X: =42
-        Y: =251
+        Y: =214
         ZIndex: =1
 
         txtLTMultipleName_1 As label:
@@ -81,7 +81,7 @@
         Text: ="REVIEW LATERAL TRANSFER FORM"
         Width: =510
         X: =479
-        Y: =73
+        Y: =25
         ZIndex: =4
 
     btnLTMultipleReview_1 As button:
@@ -90,7 +90,7 @@
             =If(
                 !IsEmpty(colLateralTransfer),
                 If(
-                    'Request-LateralTransfer_1'.Run(JSON(colLateralTransfer)),
+                    'DEV-Lateral_Transfer'.Run(JSON(colLateralTransfer)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(cbLTSearchMultipleLOB) &&
@@ -105,7 +105,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =979
+        Y: =1071
         ZIndex: =11
 
     btnLTMultipleBack_1 As button:
@@ -116,19 +116,19 @@
             Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =979
+        Y: =1071
         ZIndex: =12
 
     formLTM2 As form:
         BorderThickness: =1
         DataSource: =colLateralTransfer
-        Height: =704
+        Height: =820
         Item: =If(!IsBlank(SelectedItemID_1), LookUp(colLateralTransfer, USER=SelectedItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =711
-        Y: =250
+        Y: =214
         ZIndex: =18
 
         "'EMPLOYEE ID_DataCard1' As typedDataCard.textualViewCard":
@@ -161,7 +161,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 X: =302
-                Y: =10
+                Y: =20
                 ZIndex: =2
 
         SITE_LTMDataCard2 As typedDataCard.textualViewCard:
@@ -183,7 +183,7 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =272.8   
                 Wrap: =false
                 X: =30
                 Y: =13
@@ -223,7 +223,7 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =272.8
                 Wrap: =false
                 X: =30
                 Y: =13
@@ -258,7 +258,7 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =272.8
                 Wrap: =false
                 X: =30
                 Y: =13
@@ -274,7 +274,7 @@
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =302
-                Y: =16
+                Y: =20
                 ZIndex: =2
 
         POSITION_LTMDataCard2 As typedDataCard.textualViewCard:
@@ -296,7 +296,7 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =272.8
                 Wrap: =false
                 X: =30
                 Y: =13
@@ -311,8 +311,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey44.X + DataCardKey44.Width
-                Y: =16
+                X: =302 
+                Y: =20
                 ZIndex: =2
 
         DataCard7 As typedDataCard.blankCard:
@@ -362,7 +362,7 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =272.8
                 Wrap: =false
                 X: =30
                 Y: =13
@@ -419,6 +419,34 @@
                 Y: =20
                 ZIndex: =2
 
+        "'SUB-LOB' As typedDataCard.blankCard":
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =741
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            Label56 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUB-LOB"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label57 As label:
+                Height: =20
+                Text: =ThisItem.'SUB-LOB'
+                Width: =408.6
+                X: =302
+                Y: =20
+                ZIndex: =2
+
         BILLABILITY_LTMDataCard2 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
@@ -430,7 +458,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKey50 As label:
@@ -438,7 +466,7 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =272.8
                 Wrap: =false
                 X: =30
                 Y: =13
@@ -467,7 +495,7 @@
             Height: =60
             Width: =741
             X: =0
-            Y: =9
+            Y: =10
             ZIndex: =1
 
             Label36 As label:
@@ -475,7 +503,7 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="SUPERVISOR"
-                Width: =272.4
+                Width: =272.8
                 X: =30
                 Y: =13
                 ZIndex: =1
@@ -488,6 +516,34 @@
                 Y: =20
                 ZIndex: =2
 
+        SUPERVISORS_EMAIL_LT As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =11
+            ZIndex: =1
+
+            Label48 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR'S EMAIL"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label49 As label:
+                Height: =20
+                Text: =ThisItem.'SUPERVISOR EMAIL'
+                Width: =408.6
+                X: =302
+                Y: =20
+                ZIndex: =2
+
         EFFECTIVITYDATE_LT As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
@@ -495,7 +551,7 @@
             Height: =60
             Width: =741
             X: =0
-            Y: =10
+            Y: =12
             ZIndex: =1
 
             Label34 As label:
@@ -503,7 +559,7 @@
                 FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: ="EFFECTIVITY DATE"
-                Width: =272.4
+                Width: =272.8
                 X: =30
                 Y: =13
                 ZIndex: =1
@@ -516,14 +572,14 @@
                 Y: =20
                 ZIndex: =2
 
-        DataCard1 As typedDataCard.blankCard:
+        Remove_BTN As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Width: =742
             X: =0
-            Y: =11
+            Y: =13
             ZIndex: =1
 
             btnLTRemove As button:
@@ -544,7 +600,7 @@
         Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10), cbLTSearchMultipleLOB.Selected.Value)
         Width: =640
         X: =42
-        Y: =153
+        Y: =113
         ZIndex: =19
 
     "'Lateral Transfer Form_6' As label":
@@ -555,7 +611,7 @@
         Size: =20
         Text: ="UPDATED EMPLOYEE DETAILS"
         Width: =742
-        X: =713
-        Y: =155
+        X: =711
+        Y: =145
         ZIndex: =20
 

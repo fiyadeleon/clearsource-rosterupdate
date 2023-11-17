@@ -1,4 +1,4 @@
-"AlvariaIDCreation_EditPage As screen.'printableLayout_A4Portrait_ver1.0'":
+"NewHireOnboarding_EditPage As screen.'printableLayout_A4Portrait_ver1.0'":
     BackgroundImage: ='Untitled design 29'
     ImagePosition: =ImagePosition.Stretch
     Width: =1425
@@ -9,20 +9,21 @@
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =22
-        Text: ="UPDATE ALVARIA ID CREATION FORM"
+        Text: ="UPDATE NEW HIRE ONBOARDING FORM"
         Width: =600
+        X: =17
         Y: =31
         ZIndex: =5
 
     galOCEP As gallery.galleryHorizontal:
         BorderThickness: =1
         DelayItemLoading: =true
-        Height: =569
+        Height: =580
         Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
         TemplatePadding: =3
-        TemplateSize: =1383
+        TemplateSize: =1377
         Width: =1390
         X: =17
         Y: =98
@@ -40,6 +41,10 @@
                 Default: =ThisItem.'FIRST NAME'
                 HintText: ="Input First Name"
                 OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Width: =268
                 X: =17
                 Y: =138
@@ -67,6 +72,10 @@
                 Default: =ThisItem.'MIDDLE NAME'
                 HintText: ="(optional)"
                 OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Width: =268
                 X: =17
                 Y: =231
@@ -94,6 +103,10 @@
                 Default: =ThisItem.'LAST NAME'
                 HintText: ="Input Last Name"
                 OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Width: =268
                 X: =17
                 Y: =324
@@ -300,8 +313,8 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbOCEPClient.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
-                X: =681
-                Y: =48
+                X: =323
+                Y: =515
                 ZIndex: =20
 
             Label5_10 As label:
@@ -310,8 +323,8 @@
                 OnSelect: =Select(Parent)
                 Text: ="CLIENT *"
                 Width: =323
-                X: =681
-                Y: =8
+                X: =323
+                Y: =475
                 ZIndex: =24
 
         grpOCEPCampaign As group:
@@ -331,7 +344,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =681
-                Y: =139
+                Y: =48
                 ZIndex: =21
 
             Label5_11 As label:
@@ -341,7 +354,7 @@
                 Text: ="DIVISION *"
                 Width: =323
                 X: =681
-                Y: =99
+                Y: =8
                 ZIndex: =25
 
         grpOCEPLOB As group:
@@ -361,7 +374,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =681
-                Y: =231
+                Y: =138
                 ZIndex: =22
 
             Label5_12 As label:
@@ -371,7 +384,7 @@
                 Text: ="LOB *"
                 Width: =323
                 X: =681
-                Y: =193
+                Y: =100
                 ZIndex: =26
 
         grpOCEPSubLOB As group:
@@ -391,7 +404,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =681
-                Y: =324
+                Y: =231
                 ZIndex: =23
 
             Label5_13 As label:
@@ -401,7 +414,7 @@
                 Text: ="SUB-LOB *"
                 Width: =323
                 X: =681
-                Y: =284
+                Y: =191
                 ZIndex: =27
 
         grpOCEPSupervisor As group:
@@ -420,8 +433,8 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbOCEPSupervisor.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
-                X: =1040
-                Y: =48
+                X: =681
+                Y: =420
                 ZIndex: =28
 
             Label5_14 As label:
@@ -430,8 +443,8 @@
                 OnSelect: =Select(Parent)
                 Text: ="SUPERVISOR *"
                 Width: =323
-                X: =1040
-                Y: =8
+                X: =681
+                Y: =380
                 ZIndex: =32
 
         grpOCECountry As group:
@@ -450,8 +463,8 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPCountry.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
-                X: =1040
-                Y: =139
+                X: =681
+                Y: =515
                 ZIndex: =29
 
             Label5_15 As label:
@@ -460,8 +473,8 @@
                 OnSelect: =Select(Parent)
                 Text: ="COUNTRY *"
                 Width: =323
-                X: =1040
-                Y: =99
+                X: =681
+                Y: =475
                 ZIndex: =33
 
         grpOCEPSite As group:
@@ -481,7 +494,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =1040
-                Y: =231
+                Y: =46
                 ZIndex: =30
 
             Label5_16 As label:
@@ -491,7 +504,7 @@
                 Text: ="SITE *"
                 Width: =323
                 X: =1040
-                Y: =193
+                Y: =8
                 ZIndex: =34
 
         grpOCEPBillability As group:
@@ -511,7 +524,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =681
-                Y: =418
+                Y: =325
                 ZIndex: =36
 
             Label5_18 As label:
@@ -521,7 +534,7 @@
                 Text: ="BILLABILITY *"
                 Width: =323
                 X: =681
-                Y: =378
+                Y: =285
                 ZIndex: =39
 
         grpOCEPRole As group:
@@ -541,7 +554,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =1040
-                Y: =324
+                Y: =139
                 ZIndex: =31
 
             Label5_17 As label:
@@ -551,7 +564,7 @@
                 Text: ="ROLE *"
                 Width: =323
                 X: =1040
-                Y: =284
+                Y: =99
                 ZIndex: =35
 
         grpOCEPEmpId As group:
@@ -581,6 +594,56 @@
                 Y: =48
                 ZIndex: =40
 
+        Label54_1 As label:
+            Color: =RGBA(39, 67, 125, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =247
+            Italic: =true
+            Text: |-
+                ="Note:
+                
+                The following roles from these Business Units requires Alvaria ID:
+                
+                - Operations
+                - Learning Development (Training)
+                - Quality Assurance
+                - WFM (Admin Access)
+                - BI (Special Access)"
+            Width: =329
+            X: =1037
+            Y: =294
+            ZIndex: =43
+
+        grpOCEPRole_1 As group:
+            Height: =5
+            Width: =5
+            X: =-1000
+            Y: =-59
+            ZIndex: =43
+
+            cbOCEPAlvariaID As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'ALVARIA ID'))
+                DisplayFields: =["Value"]
+                Items: =["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"]
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"],cbOCEPAlvariaID.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =1040
+                Y: =231
+                ZIndex: =41
+
+            Label5_19 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="ALVARIA ID *"
+                Width: =323
+                X: =1040
+                Y: =191
+                ZIndex: =42
+
         grpOCEPInternalEmail As group:
             Height: =5
             Width: =5
@@ -602,6 +665,10 @@
                 Default: =ThisItem.'INTERNAL EMAIL'
                 HintText: ="firstName.lastName@clearsourcebpo.com"
                 OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Width: =268
                 X: =17
                 Y: =515
@@ -617,10 +684,10 @@
         btnOCEPBack As button:
             Color: =RGBA(0, 18, 107, 1)
             Fill: =RGBA(186, 202, 226, 1)
-            OnSelect: =Navigate(AlvariaIDCreation_SecondPage,ScreenTransition.Cover)
+            OnSelect: =Navigate(NewHireOnboarding_SecondPage,ScreenTransition.Cover)
             Text: ="Back"
             X: =1030
-            Y: =685
+            Y: =694
             ZIndex: =8
 
         btnOCEPUpdate As button:
@@ -645,7 +712,8 @@
                         (!IsBlank(cbOCEPSupervisor.Selected.Value) || !IsBlank(cbOCEPSupervisor.SearchText)) &&
                         (!IsBlank(cbOCEPCountry.Selected.Value) || !IsBlank(cbOCEPCountry.SearchText)) &&
                         (!IsBlank(cbOCEPSite.Selected.Value) || !IsBlank(cbOCEPSite.SearchText)) &&
-                        (!IsBlank(cbOCEPRole.Selected.Value) || !IsBlank(cbOCEPRole.SearchText)) 
+                        (!IsBlank(cbOCEPRole.Selected.Value) || !IsBlank(cbOCEPRole.SearchText)) &&
+                        (!IsBlank(cbOCEPAlvariaID.Selected.Value) || !IsBlank(cbOCEPAlvariaID.SearchText))
                     ),
                     If(
                         CountRows(
@@ -674,11 +742,12 @@
                                 COUNTRY:If(IsBlank(cbOCEPCountry.Selected.Value), cbOCEPCountry.SearchText, cbOCEPCountry.Selected.Value),
                                 SITE:If(IsBlank(cbOCEPSite.Selected.Value), cbOCEPSite.SearchText, cbOCEPSite.Selected.Value), 
                                 ROLE:If(IsBlank(cbOCEPRole.Selected.Value), cbOCEPRole.SearchText, cbOCEPRole.Selected.Value),
+                                'ALVARIA ID':If(IsBlank(cbOCEPAlvariaID.Selected.Value), cbOCEPAlvariaID.SearchText, cbOCEPAlvariaID.Selected.Value),
                                 'SUBMITTED BY':User().Email
                             }
                         );
                         Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success) &&
-                        Navigate(AlvariaIDCreation_SecondPage);
+                        Navigate(NewHireOnboarding_SecondPage);
                         Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)),
                         Notify(Concatenate(txtOCEPEmpId.Text, " does not exist, please go back to the review page or input an existing Employee ID."), NotificationType.Error)
                     ),
@@ -686,6 +755,6 @@
                 )
             Text: ="Update"
             X: =1222
-            Y: =685
+            Y: =694
             ZIndex: =9
 
