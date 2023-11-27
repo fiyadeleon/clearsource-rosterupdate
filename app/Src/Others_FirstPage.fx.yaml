@@ -44,7 +44,7 @@
             PaddingRight: =0
             PaddingTop: =0
             Size: =16
-            Text: =ThisItem.USER
+            Text: =ThisItem.EMPLOYEEID
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -180,7 +180,7 @@
         BorderThickness: =1
         DataSource: =Headcount_table
         Height: =670
-        Item: =If(!IsBlank(SelectedItemIDinOT), LookUp(Headcount_table, USER=SelectedItemIDinOT))
+        Item: =If(!IsBlank(SelectedItemIDinOT), LookUp(Headcount_table, EMPLOYEEID=SelectedItemIDinOT))
         NumberOfColumns: =2
         OnReset: =true
         Width: =1382
