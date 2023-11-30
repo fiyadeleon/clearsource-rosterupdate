@@ -676,7 +676,7 @@
                 ZIndex: =1
 
             class_name As text:
-                Default: =""
+                Default: =LookUp(Headcount_table,EMPLOYEEID=SelectedItemIDinOT).CLASSNAME
                 HintText: ="Class Name"
                 Width: =408.6
                 X: =230
