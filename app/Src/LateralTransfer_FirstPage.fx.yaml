@@ -43,7 +43,7 @@
             PaddingRight: =0
             PaddingTop: =0
             Size: =16
-            Text: =ThisItem.USER
+            Text: =ThisItem.EMPLOYEEID
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -126,7 +126,7 @@
         cbLTSearchMultipleLOB As combobox:
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DisplayFields: =["Value"]
-            Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
+            Items: =Distinct(Headcount_table,LOBNAMEIT)
             OnChange: |-
                 =Set(SelectedItemID, "") &&
                 Reset(cbLTSearchMultipleOmnia);
@@ -134,7 +134,7 @@
                 Clear(colOldLOB);
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
-            SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbLTSearchMultipleLOB.SearchText,"Value")
+            SearchItems: =Search(Distinct(Headcount_table,LOBNAMEIT),cbLTSearchMultipleLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
             X: =625
@@ -152,10 +152,10 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["EMPLOYEEID"]
-            Items: =If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value))
+            Items: =Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value).EMPLOYEEID
             OnChange: =Set(SelectedItemID, "")
             SearchFields: =["EMPLOYEEID"]
-            SearchItems: =Search(If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value)),cbLTSearchMultipleOmnia.SearchText,"EMPLOYEEID")
+            SearchItems: =Search(Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value).EMPLOYEEID,cbLTSearchMultipleOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
             X: =625
             Y: =187
