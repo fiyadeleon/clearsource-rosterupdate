@@ -8,7 +8,7 @@
 
     "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
         DelayItemLoading: =true
-        Items: =Filter(Headcount_table,LOBNAMEIT=cbLTSearchMultipleOmnia.SelectedItems)
+        Items: =cbLTSearchMultipleOmnia.Selected
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
