@@ -10,7 +10,7 @@
         BorderThickness: =1
         Default: ={}
         Height: =788
-        Items: =Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value)
+        Items: =Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleOmnia.SelectedItems)
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
         TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
