@@ -10,7 +10,7 @@
         BorderThickness: =1
         Default: ={}
         Height: =788
-        Items: =cbLTSearchMultipleOmnia.SelectedItems
+        Items: =Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value)
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
         TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(186, 202, 226, 1), 0%), RGBA(0, 0, 0, 0))
@@ -152,10 +152,10 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["EMPLOYEEID"]
-            Items: =Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value).EMPLOYEEID
+            Items: =Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value && (FIRSTNAME="Existing Subcategory"))
             OnChange: =Set(SelectedItemID, "")
             SearchFields: =["EMPLOYEEID"]
-            SearchItems: =Search(Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value).EMPLOYEEID,cbLTSearchMultipleOmnia.SearchText,"EMPLOYEEID")
+            SearchItems: =Search(Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value),cbLTSearchMultipleOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
             X: =625
             Y: =187
@@ -175,7 +175,7 @@
         BorderThickness: =1
         DataSource: =Headcount_table
         Height: =788
-        Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, USER=SelectedItemID))
+        Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, EMPLOYEEID=SelectedItemID))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
