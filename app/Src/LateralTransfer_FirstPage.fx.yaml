@@ -158,7 +158,6 @@
             IsSearchable: =false
             Items: |-
                 =//If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value))
-                
                 //If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value).EMPLOYEEID)
                 
                 ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID")
