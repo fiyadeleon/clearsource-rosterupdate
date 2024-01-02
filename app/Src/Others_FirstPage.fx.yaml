@@ -188,7 +188,7 @@
         BorderThickness: =1
         DataSource: =Headcount_table
         Height: =670
-        Item: =If(!IsBlank(SelectedItemIDinOT), LookUp(Headcount_table, USER=SelectedItemIDinOT))
+        Item: =If(!IsBlank(SelectedItemIDinOT), LookUp(Headcount_table, EMPLOYEEID=SelectedItemIDinOT))
         NumberOfColumns: =2
         OnReset: =true
         Width: =1382
@@ -262,7 +262,7 @@
                 ZIndex: =1
 
             cbOTBusUnit As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),BUSINESSUNIT))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),BUSINESSUNIT))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
@@ -339,7 +339,7 @@
                 ZIndex: =1
 
             cbOTSubUnit As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),'SUB-UNIT'))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),'SUB-UNIT'))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
@@ -369,7 +369,7 @@
                 ZIndex: =1
 
             cbOTStatus As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),STATUS))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),STATUS))
                 DisplayFields: =["Value"]
                 InputTextPlaceholder: ="Choose an option"
                 Items: =Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "PHL-MATERNITY LEAVE", "PHL-PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "PHL-SUSPENDED"],Value)
@@ -409,7 +409,7 @@
                 ZIndex: =1
 
             cbOTClient As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),CLIENT))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),CLIENT))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
@@ -473,7 +473,7 @@
                 ZIndex: =1
 
             cbOTBillability As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),BILLABILITY))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),BILLABILITY))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
@@ -684,7 +684,7 @@
                 ZIndex: =1
 
             class_name As text:
-                Default: =""
+                Default: =ThisItem.CLASSNAME
                 HintText: ="Class Name"
                 Width: =408.6
                 X: =230
@@ -719,7 +719,7 @@
                 ZIndex: =1
 
             cbOTSupervisor As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TEAM))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),TEAM))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
@@ -751,7 +751,7 @@
                 ZIndex: =1
 
             trainer1 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TRAINER1))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),TRAINER1))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TRAINER1), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
@@ -791,7 +791,7 @@
                 ZIndex: =1
 
             cbOTPosition As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),POSITION))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),POSITION))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
@@ -822,7 +822,7 @@
                 ZIndex: =1
 
             trainer2 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TRAINER2))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),TRAINER2))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TRAINER2), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
@@ -861,7 +861,7 @@
                 ZIndex: =1
 
             cbOTLOB As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),LOBNAMEIT))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),LOBNAMEIT))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
@@ -892,7 +892,7 @@
                 ZIndex: =1
 
             trainer3 As combobox:
-                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, USER=SelectedItemIDinOT),TRAINER3))
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),TRAINER3))
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TRAINER3), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
