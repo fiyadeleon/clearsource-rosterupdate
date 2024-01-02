@@ -38,7 +38,9 @@ Termination_FirstPage As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =10
-            Text: =Concatenate(ThisItem.FIRSTNAME, " ", ThisItem.LASTNAME)
+            Text: |-
+                =//Concatenate(ThisItem.FIRSTNAME, " ", ThisItem.LASTNAME)
+                ThisItem.FIRSTNAME & " " & ThisItem.LASTNAME
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -53,27 +55,12 @@ Termination_FirstPage As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =8
-            Text: =ThisItem.USER
+            Text: =ThisItem.EMPLOYEEID
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
             Y: =employeeName.Y + employeeName.Height + 2
             ZIndex: =2
-
-        employeeID As label:
-            Height: =10
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =8
-            Text: =ThisItem.EMPLOYEEID
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 104
-            X: =32
-            Y: =omniaID.Y + omniaID.Height + 4
-            ZIndex: =3
 
         NextArrow4 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
@@ -136,10 +123,14 @@ Termination_FirstPage As screen:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(0, 18, 107, 1)
         DisplayFields: =["EMPLOYEEID"]
-        Items: =If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOBNAMEIT =lob_input.Selected.Value))
+        IsSearchable: =false
+        Items: |-
+            =//If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOBNAMEIT =lob_input.Selected.Value))
+            
+            ShowColumns(Filter(Headcount_table, LOBNAMEIT=lob_input.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID")
         OnChange: =Set(SelectedItemIDinTermi, "")
         SearchFields: =["EMPLOYEEID"]
-        SearchItems: =Search(If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOBNAMEIT =lob_input.Selected.Value)),omnia_input.SearchText,"EMPLOYEEID")
+        SearchItems: =[]
         SelectionColor: =RGBA(0, 18, 107, 1)
         Size: |
             =13
@@ -183,7 +174,7 @@ Termination_FirstPage As screen:
         Height: =447
         Item: |
             =If(!IsBlank(SelectedItemIDinTermi), 
-                LookUp(Headcount_table, USER=SelectedItemIDinTermi)
+                LookUp(Headcount_table, EMPLOYEEID=SelectedItemIDinTermi)
             )
         NumberOfColumns: =2
         OnReset: =true
