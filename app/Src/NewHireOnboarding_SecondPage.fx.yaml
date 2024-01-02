@@ -362,7 +362,7 @@
                 =If(
                     !IsEmpty(colOmniaCreation),
                     If(
-                        'PROD-New_Hire_Onboarding'.Run(JSON(colOmniaCreation)),
+                        //'PROD-New_Hire_Onboarding'.Run(JSON(colOmniaCreation)),
                         (
                             Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                             ResetForm(formOCFirstPage1) &&
