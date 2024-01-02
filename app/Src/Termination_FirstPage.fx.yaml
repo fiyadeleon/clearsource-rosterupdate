@@ -123,14 +123,16 @@ Termination_FirstPage As screen:
         ChevronBackground: =RGBA(39, 67, 125, 1)
         Color: =RGBA(0, 18, 107, 1)
         DisplayFields: =["EMPLOYEEID"]
-        IsSearchable: =false
         Items: |-
             =//If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOBNAMEIT =lob_input.Selected.Value))
             
             ShowColumns(Filter(Headcount_table, LOBNAMEIT=lob_input.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID")
         OnChange: =Set(SelectedItemIDinTermi, "")
         SearchFields: =["EMPLOYEEID"]
-        SearchItems: =[]
+        SearchItems: |-
+            =Search(//If(!IsBlank(lob_input.Selected.Value), Filter(Headcount_table, LOBNAMEIT =lob_input.Selected.Value))
+            
+            ShowColumns(Filter(Headcount_table, LOBNAMEIT=lob_input.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID"),omnia_input.SearchText,"EMPLOYEEID")
         SelectionColor: =RGBA(0, 18, 107, 1)
         Size: |
             =13

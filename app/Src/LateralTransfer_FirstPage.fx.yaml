@@ -155,7 +155,6 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["EMPLOYEEID"]
-            IsSearchable: =false
             Items: |-
                 =//If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value))
                 //If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value).EMPLOYEEID)
@@ -163,7 +162,11 @@
                 ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID")
             OnChange: =Set(SelectedItemID, "")
             SearchFields: =["EMPLOYEEID"]
-            SearchItems: =[]
+            SearchItems: |-
+                =Search(//If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value))
+                //If(!IsBlank(cbLTSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value).EMPLOYEEID)
+                
+                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbLTSearchMultipleLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID"),cbLTSearchMultipleOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
             X: =625
             Y: =187
