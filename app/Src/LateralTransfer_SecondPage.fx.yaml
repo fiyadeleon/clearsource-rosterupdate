@@ -90,7 +90,7 @@
             =If(
                 !IsEmpty(colLateralTransfer),
                 If(
-                    //'PROD-Lateral_Transfer'.Run(JSON(colLateralTransfer)),
+                    'DEV-Lateral_Transfer'.Run(JSON(colLateralTransfer)),
                     (
                         Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                         Reset(cbLTSearchMultipleLOB) &&
