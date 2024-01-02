@@ -28,7 +28,9 @@
             PaddingRight: =0
             PaddingTop: =0
             Size: =16
-            Text: =Concatenate(ThisItem.FIRSTNAME, " ",ThisItem.LASTNAME)
+            Text: |-
+                =//Concatenate(ThisItem.FIRSTNAME, " ",ThisItem.LASTNAME)
+                ThisItem.FIRSTNAME & " " & ThisItem.LASTNAME
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -56,7 +58,7 @@
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.USER
+            Text: =
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =32
@@ -169,10 +171,16 @@
             ChevronBackground: =RGBA(0, 18, 107, 1)
             DefaultSelectedItems: =
             DisplayFields: =["EMPLOYEEID"]
-            Items: =If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT =cbPRSearchMultipleLOB.Selected.Value))
+            Items: |-
+                =//If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT =cbPRSearchMultipleLOB.Selected.Value))
+                
+                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbPRSearchMultipleLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID")
             OnChange: =Set(SelectedPRItemID, "")
             SearchFields: =["EMPLOYEEID"]
-            SearchItems: =Search(If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT =cbPRSearchMultipleLOB.Selected.Value)),cbPRSearchMultipleOmnia.SearchText,"EMPLOYEEID")
+            SearchItems: |-
+                =Search(//If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT =cbPRSearchMultipleLOB.Selected.Value))
+                
+                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbPRSearchMultipleLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID"),cbPRSearchMultipleOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
             X: =625
             Y: =205
