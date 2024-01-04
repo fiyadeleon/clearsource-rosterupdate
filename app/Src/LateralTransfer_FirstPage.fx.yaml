@@ -709,7 +709,7 @@
                                 'FOR INTERNSHIP': rdLTMInternship.Selected.Value,
                                 CLIENT:If(IsBlank(cbLTMultipleClient.Selected.Value), cbLTMultipleClient.SearchText, cbLTMultipleClient.Selected.Value),
                                 LOB:If(IsBlank(cbLTMultipleLOB.Selected.Value), cbLTMultipleLOB.SearchText, cbLTMultipleLOB.Selected.Value),
-                                'OLD LOB': First(colOldLOB).Value,
+                                'OLD LOB': cbLTSearchMultipleLOB.Selected.Value,
                                 'SUB-LOB':If(IsBlank(cbLTMultipleSubLOB.Selected.Value), cbLTMultipleSubLOB.SearchText, cbLTMultipleSubLOB.Selected.Value),
                                 BILLABILITY:If(IsBlank(cbLTMultipleBillability.Selected.Value), cbLTMultipleBillability.SearchText, cbLTMultipleBillability.Selected.Value),
                                 //'NEW SALARY PACKAGE':Concatenate(If(IsBlank(txtLTMultipleNewSalary.Text), "N/A", txtLTMultipleNewSalary.Text)," ",LTMultiple_CurrencyDrpDwn.Selected.Value),

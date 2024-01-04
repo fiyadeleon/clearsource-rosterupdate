@@ -9,9 +9,9 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "e5ef92b6-bdc3-4ad2-ae6d-ca95ce089089",
       "2fa9d8b6-8e32-4bd7-880d-d5f86fb86a81",
-      "23a24c69-b622-4d10-900b-6dc56b77a27d"
+      "23a24c69-b622-4d10-900b-6dc56b77a27d",
+      "58f3b356-89ae-4e9d-ba4f-6ff156e53190"
     ],
     "id": "1bd77ab9-9d82-4b9e-8934-bbc24be86be6"
   },
@@ -119,25 +119,7 @@
     "dependents": [],
     "id": "445c2806-6ace-410f-adcf-5edfa6f6c6cb"
   },
-  "a98f1ce0-65af-4442-ad24-7697c24f3724": {
-    "connectionRef": {
-      "displayName": "Office 365 Outlook",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1618/1.0.1618.3179/office365/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_office365"
-    },
-    "datasets": {},
-    "dataSources": [
-      "Office365Outlook"
-    ],
-    "dependencies": {},
-    "dependents": [
-      "e5ef92b6-bdc3-4ad2-ae6d-ca95ce089089",
-      "2fa9d8b6-8e32-4bd7-880d-d5f86fb86a81",
-      "23a24c69-b622-4d10-900b-6dc56b77a27d"
-    ],
-    "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
-  },
-  "e5ef92b6-bdc3-4ad2-ae6d-ca95ce089089": {
+  "58f3b356-89ae-4e9d-ba4f-6ff156e53190": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
@@ -176,6 +158,24 @@
       "shared_sharepointonline_1": "1bd77ab9-9d82-4b9e-8934-bbc24be86be6"
     },
     "dependents": [],
-    "id": "e5ef92b6-bdc3-4ad2-ae6d-ca95ce089089"
+    "id": "58f3b356-89ae-4e9d-ba4f-6ff156e53190"
+  },
+  "a98f1ce0-65af-4442-ad24-7697c24f3724": {
+    "connectionRef": {
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1618/1.0.1618.3179/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "2fa9d8b6-8e32-4bd7-880d-d5f86fb86a81",
+      "23a24c69-b622-4d10-900b-6dc56b77a27d",
+      "58f3b356-89ae-4e9d-ba4f-6ff156e53190"
+    ],
+    "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
   }
 }
