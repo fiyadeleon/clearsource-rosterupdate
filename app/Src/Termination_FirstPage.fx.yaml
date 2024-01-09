@@ -651,7 +651,7 @@ Termination_FirstPage As screen:
                             'EMPLOYEE ID': ThisItem.EMPLOYEEID,
                             POSITION: ThisItem.POSITION,
                             CAMPAIGN: campaign_value.HtmlText,
-                            'OLD LOB': First(colTROldLOB).Value,
+                            'OLD LOB': lob_input.Selected.Value,
                             LOB: ThisItem.LOBNAMEIT, 
                             CLIENT: ThisItem.CLIENT,
                             'INTERNAL EMAIL': ThisItem.INTERNALEMAIL,
