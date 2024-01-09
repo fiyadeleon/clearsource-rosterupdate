@@ -688,7 +688,7 @@
                             POSITION: If(IsBlank(cbPRMultiplePosition_1.Selected.Value), cbPRMultiplePosition_1.SearchText, cbPRMultiplePosition_1.Selected.Value),
                             'FOR INTERNSHIP': rdPRInternship.Selected.Value,
                             CLIENT: If(IsBlank(cbPRMultipleClient_1.Selected.Value), cbPRMultipleClient_1.SearchText, cbPRMultipleClient_1.Selected.Value),
-                            'OLD LOB': First(colPROldLOB).Value,
+                            'OLD LOB': cbPRSearchMultipleLOB.Selected.Value,
                             LOB: If(IsBlank(cbPRMultipleLOB_2.Selected.Value), cbPRMultipleLOB_2.SearchText, cbPRMultipleLOB_2.Selected.Value),
                             BILLABILITY: If(IsBlank(cbPRMultipleBillability_1.Selected.Value), cbPRMultipleBillability_1.SearchText, cbPRMultipleBillability_1.Selected.Value),
                             //'NEW SALARY PACKAGE': Concatenate(If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text)," ",PRMultiple_CurrencyDrpDwn.Selected.Value),

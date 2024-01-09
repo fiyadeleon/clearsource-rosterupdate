@@ -979,7 +979,7 @@
                                     'SUB UNIT':If(IsBlank(cbOTSubUnit.Selected.Value), cbOTSubUnit.SearchText, cbOTSubUnit.Selected.Value),
                                     POSITION:If(IsBlank(cbOTPosition.Selected.Value), cbOTPosition.SearchText, cbOTPosition.Selected.Value),
                                     CLIENT:If(IsBlank(cbOTClient.Selected.Value), cbOTClient.SearchText, cbOTClient.Selected.Value),
-                                    'OLD LOB': First(colOROldLOB).Value,
+                                    'OLD LOB': cbOTSearchLOB.Selected.Value,
                                     LOB:If(IsBlank(cbOTLOB.Selected.Value), cbOTLOB.SearchText, cbOTLOB.Selected.Value),
                                     BILLABILITY:If(IsBlank(cbOTBillability.Selected.Value), cbOTBillability.SearchText, cbOTBillability.Selected.Value),
                                     SCHEDULE:If(IsBlank(txtOTSchedule.Text), "N/A", txtOTSchedule.Text),
