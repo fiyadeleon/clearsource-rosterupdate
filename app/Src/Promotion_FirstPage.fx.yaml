@@ -9,7 +9,7 @@
     "galleryPRMp1st_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =727
+        Height: =758
         Items: =cbPRSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID, txtPRMultipleOmniapm1.Text)
@@ -96,7 +96,7 @@
             )
         Text: ="Review"
         X: =1287
-        Y: =1110
+        Y: =1128
         ZIndex: =11
 
     btnPRMultipleBackp1_1 As button:
@@ -105,7 +105,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1094
-        Y: =1110
+        Y: =1128
         ZIndex: =12
 
     grpPRSearchMultipleLOB_1 As group:
@@ -185,7 +185,7 @@
     formPREDsp2 As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =729
+        Height: =760
         Item: =If(!IsBlank(SelectedPRItemID), LookUp(Headcount_table, EMPLOYEEID=SelectedPRItemID))
         NumberOfColumns: =1
         OnReset: =true
@@ -504,6 +504,39 @@
                 Y: =10
                 ZIndex: =5
 
+        "'Sub-LOB' As typedDataCard.blankCard":
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =55
+            Width: =742
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            Label58 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUB-LOB"
+                Width: =280
+                X: =20
+                Y: =10.5
+                ZIndex: =1
+
+            "'cbPRMultipleSub-LOB' As combobox":
+                DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedPRItemID),'SUB-LOB'))
+                DisplayFields: =["Value"]
+                Height: =35
+                IsSearchable: =false
+                Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
         "'BILLABILITY_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
             AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BILLABILITY")
             BorderStyle: =BorderStyle.Solid
@@ -517,7 +550,7 @@
             Update: =cbPRMultipleBillability_1.Selected.Value
             Width: =741
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKeyBILLpm1_1 As label:
@@ -557,7 +590,7 @@
             Update: =cbPRMultipleClient_1.Selected.Value
             Width: =741
             X: =0
-            Y: =9
+            Y: =10
             ZIndex: =1
 
             DataCardKeySUPpm1_1 As label:
@@ -592,7 +625,7 @@
             Height: =55
             Width: =742
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             Label44 As label:
@@ -625,7 +658,7 @@
             Height: =55
             Width: =742
             X: =0
-            Y: =11
+            Y: =12
             ZIndex: =1
 
             Label39 As label:
@@ -650,10 +683,10 @@
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =55
+            Height: =43
             Width: =742
             X: =0
-            Y: =12
+            Y: =13
             ZIndex: =1
 
             Button5 As button:
@@ -689,6 +722,7 @@
                             'FOR INTERNSHIP': rdPRInternship.Selected.Value,
                             CLIENT: If(IsBlank(cbPRMultipleClient_1.Selected.Value), cbPRMultipleClient_1.SearchText, cbPRMultipleClient_1.Selected.Value),
                             'OLD LOB': cbPRSearchMultipleLOB.Selected.Value,
+                            'SUB-LOB': 'cbPRMultipleSub-LOB'.Selected.Value,
                             LOB: If(IsBlank(cbPRMultipleLOB_2.Selected.Value), cbPRMultipleLOB_2.SearchText, cbPRMultipleLOB_2.Selected.Value),
                             BILLABILITY: If(IsBlank(cbPRMultipleBillability_1.Selected.Value), cbPRMultipleBillability_1.SearchText, cbPRMultipleBillability_1.Selected.Value),
                             //'NEW SALARY PACKAGE': Concatenate(If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text)," ",PRMultiple_CurrencyDrpDwn.Selected.Value),
@@ -705,7 +739,7 @@
                 Text: ="Save"
                 Width: =140
                 X: =300
-                Y: =10
+                Y: =1
                 ZIndex: =1
 
     txtPRSEp1_1 As label:

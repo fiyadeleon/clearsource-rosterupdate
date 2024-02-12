@@ -140,12 +140,12 @@
     formPREDsp2_1 As form:
         BorderThickness: =1
         DataSource: =colPromotion
-        Height: =779
+        Height: =785
         Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
-        X: =713
+        X: =720
         Y: =320
         ZIndex: =18
 
@@ -544,7 +544,7 @@
                 Y: =10
                 ZIndex: =2
 
-        DataCard6 As typedDataCard.blankCard:
+        EffectivityDate As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
