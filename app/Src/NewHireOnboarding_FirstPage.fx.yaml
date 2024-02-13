@@ -46,7 +46,8 @@
                     (!IsBlank(cbOCFPCountry.Selected.Value) || !IsBlank(cbOCFPCountry.SearchText)) &&
                     (!IsBlank(cbOCFPSite.Selected.Value) || !IsBlank(cbOCFPSite.SearchText)) &&
                     (!IsBlank(cbOCFPRole.Selected.Value) || !IsBlank(cbOCFPRole.SearchText)) &&
-                    (!IsBlank(cbOCFPAlvariaID.Selected.Value) || !IsBlank(cbOCFPAlvariaID.SearchText)) 
+                    (!IsBlank(cbOCFPAlvariaID.Selected.Value) || !IsBlank(cbOCFPAlvariaID.SearchText)) &&
+                    !IsBlank(txtOCFPClassName.Text)
                 ),
                 If(
                     CountRows(
