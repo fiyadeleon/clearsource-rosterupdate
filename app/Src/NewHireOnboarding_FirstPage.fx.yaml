@@ -8,7 +8,7 @@
         Fill: =RGBA(0, 0, 0, 0)
         Height: =616
         Width: =1370
-        X: =31
+        X: =33
         Y: =74
         ZIndex: =1
 
@@ -78,7 +78,8 @@
                         SITE:If(IsBlank(cbOCFPSite.Selected.Value), cbOCFPSite.SearchText, cbOCFPSite.Selected.Value), 
                         ROLE:If(IsBlank(cbOCFPRole.Selected.Value), cbOCFPRole.SearchText, cbOCFPRole.Selected.Value),
                         'ALVARIA ID': If(IsBlank(cbOCFPAlvariaID.Selected.Value), cbOCFPAlvariaID.SearchText, cbOCFPAlvariaID.Selected.Value),
-                        'SUBMITTED BY':User().Email
+                        'SUBMITTED BY': User().Email,
+                        'CLASS NAME': txtOCFPClassName.Text
                 }
                     //ResetForm(formOCFirstPage1);
                 );
@@ -809,7 +810,7 @@
             BorderColor: =RGBA(255, 0, 0, 1)
             DataSource: =Headcount_table
             DefaultMode: =FormMode.New
-            Height: =290
+            Height: =362
             NumberOfColumns: =1
             Width: =342
             X: =1059
@@ -885,7 +886,7 @@
                     Y: =40
                     ZIndex: =2
 
-            DataCard5 As typedDataCard.blankCard:
+            Alvaria_ID As typedDataCard.blankCard:
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
@@ -916,10 +917,39 @@
                     Y: =40
                     ZIndex: =2
 
+            DataCard10 As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =89
+                Width: =342
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                Label64 As label:
+                    Color: =RGBA(39, 67, 125, 1)
+                    FontWeight: =FontWeight.Bold
+                    Text: ="CLASS NAME *"
+                    X: =15
+                    Y: =5
+                    ZIndex: =1
+
+                txtOCFPClassName As text:
+                    Default: =""
+                    HintText: ="Class Name"
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    X: =15
+                    Y: =40
+                    ZIndex: =2
+
     Label54 As label:
         Color: =RGBA(39, 67, 125, 1)
         FontWeight: =FontWeight.Bold
-        Height: =247
+        Height: =228
         Italic: =true
         Text: |-
             ="Note:
@@ -931,9 +961,9 @@
             - Quality Assurance
             - WFM (Admin Access)
             - BI (Special Access)"
-        Width: =329
-        X: =1065
-        Y: =353
+        Width: =326
+        X: =1067
+        Y: =436
         ZIndex: =11
 
     grpOCFPButtons As group:
