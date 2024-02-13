@@ -9,7 +9,7 @@
     "galleryLTM_2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =670
+        Height: =722
         Items: =colOthers
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT1, txtLTMultipleOmnia_2.Text)
@@ -124,7 +124,7 @@
             )
         Text: ="Submit"
         X: =1806
-        Y: =927
+        Y: =947
         ZIndex: =11
 
     btnLTMultipleBack_2 As button:
@@ -135,13 +135,13 @@
             Navigate(Others_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1612
-        Y: =927
+        Y: =947
         ZIndex: =12
 
     formOT1 As form:
         BorderThickness: =1
         DataSource: =colOthers
-        Height: =670
+        Height: =722
         Item: =If(!IsBlank(SelectedItemIDinOT1), LookUp(colOthers, USER=SelectedItemIDinOT1))
         NumberOfColumns: =2
         OnReset: =true
@@ -180,8 +180,8 @@
                 PaddingRight: =0
                 PaddingTop: =0
                 Text: =Parent.Default
-                X: =266
-                Y: =13
+                X: =276
+                Y: =20
                 ZIndex: =2
 
         "'BUSINESS UNIT_OTDataCard1' As typedDataCard.allowedValuesStringEditCard":
@@ -217,7 +217,7 @@
                 Height: =27
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =276
                 Y: =20
                 ZIndex: =3
 
@@ -255,7 +255,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =266
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -293,8 +293,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
-                Y: =16
+                X: =276
+                Y: =20
                 ZIndex: =2
 
         STATUS_OTDataCard1 As typedDataCard.textualViewCard:
@@ -331,7 +331,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =266
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -369,7 +369,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -407,7 +407,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =266
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -445,7 +445,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -483,7 +483,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =266
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -521,8 +521,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
-                Y: =13
+                X: =276
+                Y: =20
                 ZIndex: =2
 
         "'NESTING START DATE_DataCard3' As typedDataCard.textualViewCard":
@@ -558,7 +558,36 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =266
+                X: =276
+                Y: =20
+                ZIndex: =2
+
+        "'SUB-LOB2_OTDataCard' As typedDataCard.blankCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="SUB-LOB"
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =600
+            X: =1
+            Y: =5
+            ZIndex: =1
+
+            Label62 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="SUB-LOB"
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label63 As label:
+                DisplayMode: =DisplayMode.View
+                Height: =20
+                Text: =ThisItem.'SUB-LOB'
+                Width: =324
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -572,8 +601,8 @@
             Height: =60
             Required: =false
             Width: =600
-            X: =1
-            Y: =5
+            X: =0
+            Y: =6
             ZIndex: =1
 
             DataCardKey50_1 As label:
@@ -596,7 +625,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -610,7 +639,7 @@
             Height: =40
             Required: =false
             Width: =600
-            X: =0
+            X: =1
             Y: =6
             ZIndex: =1
 
@@ -634,7 +663,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =266
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -648,8 +677,8 @@
             Height: =60
             Required: =false
             Width: =600
-            X: =1
-            Y: =6
+            X: =0
+            Y: =7
             ZIndex: =1
 
             DataCardKey51_1 As label:
@@ -672,7 +701,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -686,7 +715,7 @@
             Height: =60
             Required: =false
             Width: =600
-            X: =0
+            X: =1
             Y: =7
             ZIndex: =1
 
@@ -710,7 +739,7 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =266
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -720,8 +749,8 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Width: =600
-            X: =1
-            Y: =7
+            X: =0
+            Y: =8
             ZIndex: =1
 
             Label20 As label:
@@ -735,7 +764,7 @@
             Label21 As label:
                 Text: =ThisItem.'TIME ZONE'
                 Width: =377
-                X: =297
+                X: =276
                 Y: =13
                 ZIndex: =2
 
@@ -745,7 +774,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Width: =600
-            X: =0
+            X: =1
             Y: =8
             ZIndex: =1
 
@@ -760,7 +789,7 @@
             Label32 As label:
                 Text: =ThisItem.'CLASS NAME'
                 Width: =377
-                X: =266
+                X: =276
                 Y: =10
                 ZIndex: =2
 
@@ -770,8 +799,8 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Width: =600
-            X: =1
-            Y: =8
+            X: =0
+            Y: =9
             ZIndex: =1
 
             Label17 As label:
@@ -787,8 +816,8 @@
                 Text: |-
                     =ThisItem.'TRAINER #1'
                 Width: =377
-                X: =297
-                Y: =13
+                X: =276
+                Y: =20
                 ZIndex: =2
 
         Trainer2 As typedDataCard.blankCard:
@@ -797,7 +826,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Width: =600
-            X: =0
+            X: =1
             Y: =9
             ZIndex: =1
 
@@ -814,7 +843,7 @@
                 Text: |-
                     =ThisItem.'TRAINER #2'
                 Width: =377
-                X: =266
+                X: =276
                 Y: =20
                 ZIndex: =2
 
@@ -824,8 +853,8 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Width: =600
-            X: =1
-            Y: =9
+            X: =0
+            Y: =10
             ZIndex: =1
 
             Label28 As label:
@@ -841,8 +870,8 @@
                 Text: |-
                     =ThisItem.'TRAINER #3'
                 Width: =377
-                X: =297
-                Y: =13
+                X: =276
+                Y: =20
                 ZIndex: =2
 
         REMOVE_BUTTON As typedDataCard.blankCard:
@@ -850,9 +879,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
-            Width: =1470
+            Width: =1382
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             btnOTRemove As button:
@@ -860,8 +889,8 @@
                 HoverFill: =ColorFade(RGBA(254, 127, 124, 0.8), -20%)
                 OnSelect: =Remove(colOthers, LookUp(colOthers, USER=SelectedItemIDinOT1))
                 Text: ="Remove"
-                X: =657
-                Y: =5
+                X: =615
+                Y: =6
                 ZIndex: =1
 
     OT5 As label:

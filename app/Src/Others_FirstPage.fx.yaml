@@ -9,7 +9,7 @@
     "galleryOT As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =670
+        Height: =732
         Items: =cbOTOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT, txtOTMOmnia.Text)
@@ -18,7 +18,7 @@
         TemplateSize: =Min(104, Self.Height - 60)
         Width: =486
         X: =67
-        Y: =272
+        Y: =260
         ZIndex: =1
 
         txtOTMName As label:
@@ -83,8 +83,8 @@
         Size: =22
         Text: ="OTHER ROSTER UPDATE FORM"
         Width: =448
-        X: =938
-        Y: =19
+        X: =858
+        Y: =18
         ZIndex: =4
 
     btnOTReview As button:
@@ -97,7 +97,7 @@
             )
         Text: ="Review"
         X: =1806
-        Y: =977
+        Y: =999
         ZIndex: =11
 
     btnOTBack As button:
@@ -106,7 +106,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1613
-        Y: =977
+        Y: =999
         ZIndex: =12
 
     grpOTLOB As group:
@@ -122,8 +122,8 @@
             FontWeight: =FontWeight.Bold
             Text: ="LINE OF BUSINESS"
             Width: =165
-            X: =871
-            Y: =95
+            X: =791
+            Y: =94
             ZIndex: =8
 
         cbOTSearchLOB As combobox:
@@ -144,8 +144,8 @@
             SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOTSearchLOB.SearchText,"Value")
             SelectMultiple: =false
             Width: =401.4
-            X: =1053
-            Y: =95
+            X: =973
+            Y: =94
             ZIndex: =9
 
     grpOTOmnia As group:
@@ -170,8 +170,8 @@
                 
                 ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID"),cbOTOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
-            X: =1053
-            Y: =160
+            X: =973
+            Y: =159
             ZIndex: =13
 
         txtOTOmnia As label:
@@ -180,20 +180,20 @@
             FontWeight: =FontWeight.Bold
             Text: ="EMPLOYEE ID"
             Width: =165
-            X: =871
-            Y: =161
+            X: =791
+            Y: =160
             ZIndex: =15
 
     formOT As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =670
+        Height: =732
         Item: =If(!IsBlank(SelectedItemIDinOT), LookUp(Headcount_table, EMPLOYEEID=SelectedItemIDinOT))
         NumberOfColumns: =2
         OnReset: =true
         Width: =1382
         X: =584
-        Y: =272
+        Y: =260
         ZIndex: =18
 
         "'EMPLOYEE ID_OTDataCard' As typedDataCard.textualViewCard":
@@ -903,6 +903,40 @@
                 Y: =10
                 ZIndex: =2
 
+        "'SUB-LOB_OTDataCard' As typedDataCard.blankCard":
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =690
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            Label61 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUB-LOB"
+                Width: =252
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            "'cbOTSub-LOB' As combobox":
+                DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),'SUB-LOB'))
+                DisplayFields: =["Value"]
+                InputTextPlaceholder: |
+                    ="Find items"
+                Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),'cbOTSub-LOB'.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =408.6
+                X: =266
+                Y: =10
+                ZIndex: =2
+
         Save_Button As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
@@ -910,7 +944,7 @@
             Height: =60
             Width: =1380
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             btnOTSave As button:
@@ -981,6 +1015,7 @@
                                     CLIENT:If(IsBlank(cbOTClient.Selected.Value), cbOTClient.SearchText, cbOTClient.Selected.Value),
                                     'OLD LOB': cbOTSearchLOB.Selected.Value,
                                     LOB:If(IsBlank(cbOTLOB.Selected.Value), cbOTLOB.SearchText, cbOTLOB.Selected.Value),
+                                    'SUB-LOB': If(IsBlank('cbOTSub-LOB'.Selected.Value), 'cbOTSub-LOB'.SearchText, 'cbOTSub-LOB'.Selected.Value),
                                     BILLABILITY:If(IsBlank(cbOTBillability.Selected.Value), cbOTBillability.SearchText, cbOTBillability.Selected.Value),
                                     SCHEDULE:If(IsBlank(txtOTSchedule.Text), "N/A", txtOTSchedule.Text),
                                     'TIME ZONE': drpOTtimezone.Selected.Value,
@@ -998,8 +1033,8 @@
                         Notify("Please fill out all fields!", NotificationType.Error)
                     )
                 Text: ="Save"
-                X: =624
-                Y: =12
+                X: =609
+                Y: =5
                 ZIndex: =1
 
     OT2 As label:
@@ -1020,7 +1055,7 @@
         Size: =20
         Text: ="EMPLOYEE DETAILS"
         Width: =264
-        X: =1316
+        X: =1143
         Y: =205
         ZIndex: =20
 
