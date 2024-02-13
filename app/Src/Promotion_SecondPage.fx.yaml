@@ -9,7 +9,7 @@
     "galleryPRMp2nd_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =779
+        Height: =849
         Items: =colPromotion
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2_1.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
-        Y: =320
+        Y: =250
         ZIndex: =1
 
         txtPRMultipleOmniapm2_1 As label:
@@ -140,13 +140,13 @@
     formPREDsp2_1 As form:
         BorderThickness: =1
         DataSource: =colPromotion
-        Height: =785
+        Height: =854
         Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =720
-        Y: =320
+        Y: =250
         ZIndex: =18
 
         "'EMPLOYEE NAME_PRMDataCard_3' As typedDataCard.textualViewCard":
@@ -221,8 +221,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
-                Y: =20
+                X: =301
+                Y: =18
                 ZIndex: =2
 
         "'BUSINESS UNIT_PRMDataCard_4' As typedDataCard.allowedValuesStringEditCard":
@@ -258,8 +258,8 @@
                 Height: =27
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =302
-                Y: =20
+                X: =301
+                Y: =18
                 ZIndex: =3
 
         "'SUB-UNIT_PRMDataCard2_2' As typedDataCard.textualViewCard":
@@ -296,8 +296,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKeySUPRpm2_1.X + DataCardKeySUPRpm2_1.Width
-                Y: =10
+                X: =301
+                Y: =18
                 ZIndex: =2
 
         POSITION_PRMDataCard2_2 As typedDataCard.textualViewCard:
@@ -334,34 +334,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKeyPOSPRpm2_1.X + DataCardKeyPOSPRpm2_1.Width
-                Y: =10
-                ZIndex: =2
-
-        INTERNSHIP_DataCard_2 As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =5
-            ZIndex: =1
-
-            Label11 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="FOR INTERNSHIP"
-                Width: =272.8
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label12 As label:
-                Text: =ThisItem.'FOR INTERNSHIP'
-                X: =302.4
-                Y: =10
+                X: =301 
+                Y: =18
                 ZIndex: =2
 
         CLIENT_PRMDataCard2_2 As typedDataCard.textualViewCard:
@@ -398,8 +372,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKeyCLPRpm2_1.X + DataCardKeyCLPRpm2_1.Width
-                Y: =16
+                X: =301
+                Y: =18
                 ZIndex: =2
 
         LOB_DataCard7 As typedDataCard.textualViewCard:
@@ -435,8 +409,66 @@
                 PaddingRight: =0
                 PaddingTop: =0
                 Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey8.X + DataCardKey8.Width
+                Width: =408.6
+                X: |
+                    =301
+                Y: =18
+                ZIndex: =2
+
+        INTERNSHIP_PRMDataCard_2 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            Label11 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="FOR INTERNSHIP"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label12 As label:
+                Height: =10
+                Text: =ThisItem.'FOR INTERNSHIP'
+                Width: =408.6
+                X: =301
+                Y: =18
+                ZIndex: =2
+
+        "'Promotion-Sub_LOB2' As typedDataCard.blankCard":
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            "'Promotion-Sub_LOB2_Label' As label":
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUB-LOB"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label60 As label:
+                DisplayMode: =DisplayMode.View
+                Height: =20
+                Text: =ThisItem.'SUB-LOB'
+                Width: =408.6
+                X: =292
                 Y: =20
                 ZIndex: =2
 
@@ -451,7 +483,7 @@
             Required: =false
             Width: =741
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             DataCardKeyBILLPRpm2_1 As label:
@@ -474,8 +506,8 @@
                 PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKeyBILLPRpm2_1.X + DataCardKeyBILLPRpm2_1.Width
-                Y: =10
+                X: =301
+                Y: =18
                 ZIndex: =2
 
         TEAM_PRMDataCard2_2 As typedDataCard.textualViewCard:
@@ -489,7 +521,7 @@
             Required: =false
             Width: =742
             X: =0
-            Y: =9
+            Y: =10
             ZIndex: =1
 
             DataCardKeySUPPRpm2_1 As label:
@@ -511,9 +543,10 @@
                 PaddingRight: =0
                 PaddingTop: =0
                 Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
+                Width: |
+                    =408.6
                 X: =302
-                Y: =25
+                Y: =16
                 ZIndex: =2
 
         SupervisorEmail As typedDataCard.blankCard:
@@ -523,7 +556,7 @@
             Height: =60
             Width: =742
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             Label46 As label:
@@ -537,11 +570,12 @@
                 ZIndex: =1
 
             Label47 As label:
-                Height: =34
+                DisplayMode: =DisplayMode.View
+                Height: =20
                 Text: =ThisItem.'SUPERVISOR EMAIL'
                 Width: =408.6
-                X: =302.4
-                Y: =10
+                X: =302
+                Y: =20
                 ZIndex: =2
 
         EffectivityDate As typedDataCard.blankCard:
@@ -551,7 +585,7 @@
             Height: =60
             Width: =742
             X: =0
-            Y: =11
+            Y: =12
             ZIndex: =1
 
             Label40 As label:
@@ -567,9 +601,9 @@
             Label41 As label:
                 Height: =20
                 Text: =ThisItem.'EFFECTIVITY DATE'
-                Width: =409.2
-                X: =302
-                Y: =20
+                Width: =408.6
+                X: =301
+                Y: =19
                 ZIndex: =2
 
         Remove_Button As typedDataCard.blankCard:
@@ -579,7 +613,7 @@
             Height: =50
             Width: =742
             X: =0
-            Y: =11
+            Y: =13
             ZIndex: =1
 
             btnPRRemovep2_3 As button:
@@ -599,7 +633,7 @@
         Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10),cbPRSearchMultipleLOB.Selected.Value)
         Width: =640
         X: =42
-        Y: =175
+        Y: =110
         ZIndex: =19
 
     txtPREDp2_1 As label:
@@ -611,6 +645,6 @@
         Text: ="UPDATED EMPLOYEE DETAILS"
         Width: =742
         X: =713
-        Y: =198
+        Y: =133
         ZIndex: =20
 

@@ -3061,12 +3061,27 @@
         "BorderThickness",
         "FocusedBorderThickness",
         "Size",
-        "IsSearchable",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "IsSearchable",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
           "AutoRuleBindingString": "",
           "InvariantPropertyName": "DefaultSelectedItems",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "SelectMultiple",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         }
@@ -3118,6 +3133,11 @@
         {
           "Category": "Data",
           "PropertyName": "NavigateFields",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "SelectMultiple",
           "RuleProviderType": "Unknown"
         },
         {

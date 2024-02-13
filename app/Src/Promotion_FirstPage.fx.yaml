@@ -528,10 +528,10 @@
                 DefaultSelectedItems: =If(!IsBlank(SelectedPRItemID), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedPRItemID),'SUB-LOB'))
                 DisplayFields: =["Value"]
                 Height: =35
-                IsSearchable: =false
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =[]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),'cbPRMultipleSub-LOB'.SearchText,"Value")
+                SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
                 Y: =10
