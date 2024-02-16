@@ -340,6 +340,35 @@
             Y: =0
             ZIndex: =22
 
+        "'CLASS NAME_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="CLASS NAME"
+            FieldName: ="CLASS NAME"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =24
+            Text: =ThisItem.'CLASS NAME'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =24
+
+        SUPERVISOR_EMP_ID_Column As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="SUPERVISOR EMP. ID"
+            FieldName: ="ALVARIA ID"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =25
+            Text: |
+                =ThisItem.'SUPERVISOR EMP ID'
+            Width: =100
+            X: =1180
+            Y: =0
+            ZIndex: =25
+
     grpOCSPButtons As group:
         Height: =5
         Width: =5
@@ -362,7 +391,7 @@
                 =If(
                     !IsEmpty(colOmniaCreation),
                     If(
-                        'PROD-New_Hire_Onboarding'.Run(JSON(colOmniaCreation)),
+                        // 'PROD-New_Hire_Onboarding'.Run(JSON(colOmniaCreation)),
                         (
                             Notify("Your request has been submitted successfully!", NotificationType.Success) &&
                             ResetForm(formOCFirstPage1) &&
