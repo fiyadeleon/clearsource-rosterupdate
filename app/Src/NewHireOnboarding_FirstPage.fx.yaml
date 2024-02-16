@@ -63,7 +63,7 @@
                         'HIRE DATE':dateOCFPHireDate.SelectedDate,
                         'INTERNAL EMAIL':txtOCInternalEmail.Text,
                         'REGULARIZATION DATE':Text(DateAdd(dateOCFPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
-                        'BUSINESS UNIT':If(IsBlank(cbOCFPSubUnit.Selected.Value), cbOCFPSubUnit.SearchText, cbOCFPSubUnit.Selected.Value),
+                        'BUSINESS UNIT':If(IsBlank(cbOCFPBusUnit.Selected.Value), cbOCFPBusUnit.SearchText, cbOCFPBusUnit.Selected.Value),
                         'SUB-UNIT':If(IsBlank(cbOCFPSubUnit.Selected.Value), cbOCFPSubUnit.SearchText, cbOCFPSubUnit.Selected.Value),
                         POSITION:If(IsBlank(cbOCFPPosition.Selected.Value), cbOCFPPosition.SearchText, cbOCFPPosition.Selected.Value),
                         STATUS:If(IsBlank(cbOCFPStatus.Selected.Value), cbOCFPStatus.SearchText, cbOCFPStatus.Selected.Value),  
