@@ -699,6 +699,30 @@
             Y: =448
             ZIndex: =45
 
+        Label5_21 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: ="CLASS NAME *"
+            Width: =323
+            X: =1037
+            Y: =325
+            ZIndex: =46
+
+        txtOCEPClassName As text:
+            Color: =RGBA(0, 18, 107, 1)
+            Default: =ThisItem.'CLASS NAME'
+            HintText: ="e.g., CSPH12345"
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =323
+            X: =1037
+            Y: =370
+            ZIndex: =47
+
     grpOCEPButtons As group:
         Height: =5
         Width: =5
