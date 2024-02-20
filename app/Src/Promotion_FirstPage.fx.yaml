@@ -9,7 +9,7 @@
     "galleryPRMp1st_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =758
+        Height: =841
         Items: =cbPRSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID, txtPRMultipleOmniapm1.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =126
         X: =42
-        Y: =348
+        Y: =265
         ZIndex: =1
 
         txtPRMultipleNamepm1_1 As label:
@@ -83,7 +83,7 @@
         Text: ="PROMOTION FORM"
         Width: =412
         X: =556
-        Y: =82
+        Y: =42
         ZIndex: =4
 
     btnPRMultipleReviewp1_1 As button:
@@ -122,7 +122,7 @@
             Text: ="LINE OF BUSINESS"
             Width: =165
             X: =443
-            Y: =149
+            Y: =109
             ZIndex: =8
 
         cbPRSearchMultipleLOB As combobox:
@@ -143,7 +143,7 @@
             SelectMultiple: =false
             Width: =401.4
             X: =625
-            Y: =149
+            Y: =109
             ZIndex: =9
 
     grpPRSearchMultipleOmnia_1 As group:
@@ -169,7 +169,7 @@
                 ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbPRSearchMultipleLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID"),cbPRSearchMultipleOmnia.SearchText,"EMPLOYEEID")
             Width: =401.4
             X: =625
-            Y: =205
+            Y: =165
             ZIndex: =13
 
         txtPRSearchMultipleOmnia_1 As label:
@@ -179,19 +179,19 @@
             Text: ="EMPLOYEE ID"
             Width: =165
             X: =443
-            Y: =206
+            Y: =166
             ZIndex: =15
 
     formPREDsp2 As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =760
+        Height: =839
         Item: =If(!IsBlank(SelectedPRItemID), LookUp(Headcount_table, EMPLOYEEID=SelectedPRItemID))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =713
-        Y: =346
+        Y: =265
         ZIndex: =18
 
         "'FULL NAME_DataCard PRMp1_1' As typedDataCard.textualViewCard":
@@ -625,7 +625,7 @@
             Height: =55
             Width: =742
             X: =0
-            Y: =11
+            Y: =12
             ZIndex: =1
 
             Label44 As label:
@@ -658,7 +658,7 @@
             Height: =55
             Width: =742
             X: =0
-            Y: =12
+            Y: =13
             ZIndex: =1
 
             Label39 As label:
@@ -686,7 +686,7 @@
             Height: =43
             Width: =742
             X: =0
-            Y: =13
+            Y: =14
             ZIndex: =1
 
             Button5 As button:
@@ -742,15 +742,91 @@
                 Y: =1
                 ZIndex: =1
 
+        "'TEAMLEADEREMP.ID_DataCard3' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAMLEADEREMP_x002e_ID"
+            Default: =ThisItem.'TEAMLEADEREMP.ID'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAMLEADEREMP_x002e_ID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "TEAMLEADEREMP_x002e_ID")
+            Required: =false
+            Update: =DataCardValue3.Text
+            Width: =742
+            X: =0
+            Y: =11
+            ZIndex: =1
+
+            DataCardKey16 As label:
+                AutoHeight: =true
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: |
+                    ="SUPERVISOR EMP. ID *"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =20
+                Y: |
+                    =10.5
+                ZIndex: =1
+
+            DataCardValue3 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =35
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =408.6
+                X: |
+                    =302.8
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue3.Y + DataCardValue3.Height
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey16.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey16.Y
+                ZIndex: =4
+
     txtPRSEp1_1 As label:
+        Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
         Text: ="SELECTED EMPLOYEE(S)"
-        Width: =316
-        X: =204
-        Y: =264
+        Width: =401
+        X: =161
+        Y: =198
         ZIndex: =19
 
     txtPREDp1_1 As label:
@@ -761,6 +837,6 @@
         Text: ="EMPLOYEE DETAILS"
         Width: =264
         X: =952
-        Y: =264
+        Y: =198
         ZIndex: =20
 
