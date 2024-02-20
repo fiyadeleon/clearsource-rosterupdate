@@ -477,36 +477,6 @@
                 Y: =6
                 ZIndex: =33
 
-        grpOCEPSite As group:
-            Height: =5
-            Width: =5
-            X: =-636
-            Y: =25
-            ZIndex: =40
-
-            cbOCEPSite As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SITE))
-                DisplayFields: =["Value"]
-                Items: =Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value)
-                OnSelect: =Select(Parent)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPSite.SearchText,"Value")
-                SelectMultiple: =false
-                Width: =323
-                X: =1037
-                Y: =124
-                ZIndex: =30
-
-            Label5_16 As label:
-                Color: =RGBA(0, 18, 107, 1)
-                FontWeight: =FontWeight.Bold
-                OnSelect: =Select(Parent)
-                Text: ="SITE *"
-                Width: =323
-                X: =1037
-                Y: =86
-                ZIndex: =34
-
         grpOCEPBillability As group:
             Height: =5
             Width: =5
@@ -536,6 +506,36 @@
                 X: =681
                 Y: =248
                 ZIndex: =39
+
+        grpOCEPSite As group:
+            Height: =5
+            Width: =5
+            X: =-636
+            Y: =25
+            ZIndex: =40
+
+            cbOCEPSite As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SITE))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPSite.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =1037
+                Y: =124
+                ZIndex: =30
+
+            Label5_16 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="SITE *"
+                Width: =323
+                X: =1037
+                Y: =86
+                ZIndex: =34
 
         grpOCEPRole As group:
             Height: =5

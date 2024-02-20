@@ -14,6 +14,87 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 40,
+                  "charOffset": 665,
+                  "snippet": {
+                    "text": "'PROD-Promotion'.Run(JSON(colPromotion))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.btnPRMultipleSubmitp2_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Run",
+              "'PROD-Promotion'"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrUnknownNamespaceFunction",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 598,
+                  "charOffset": 653,
+                  "snippet": {
+                    "text": "If(\n        'PROD-Promotion'.Run(JSON(colPromotion)),\n        (\n            Notify(\"Your request has been submitted successfully!\", NotificationType.Success) &&\n            Reset(cbPRSearchMultipleLOB) &&\n            Set(SelectedPRItemID_1, \"\") &&\n            Set(SelectedPRItemID, \"\") &&\n            Reset(drpRosterSelection) &&\n            Navigate(HomePage,ScreenTransition.Cover)\n        ),\n        Notify(\"There was an error with your submission, please contact IT through servicedesk@clearsourcebpo.com and attach an image of the error notification. Thank you.\", NotificationType.Error)\n    )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.btnPRMultipleSubmitp2_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "If"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Termination_VerificationPage.proceed_btn_1.OnSelect"
                 }
               ],
@@ -156,87 +237,6 @@
                 "member": "OnSelect",
                 "module": "Others_SecondPage",
                 "type": "Others_SecondPage.btnLTMultipleReview_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 40,
-                  "charOffset": 665,
-                  "snippet": {
-                    "text": "'PROD-Promotion'.Run(JSON(colPromotion))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.btnPRMultipleSubmitp2_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Run",
-              "'PROD-Promotion'"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrUnknownNamespaceFunction",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.btnPRMultipleSubmitp2_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 598,
-                  "charOffset": 653,
-                  "snippet": {
-                    "text": "If(\n        'PROD-Promotion'.Run(JSON(colPromotion)),\n        (\n            Notify(\"Your request has been submitted successfully!\", NotificationType.Success) &&\n            Reset(cbPRSearchMultipleLOB) &&\n            Set(SelectedPRItemID_1, \"\") &&\n            Set(SelectedPRItemID, \"\") &&\n            Reset(drpRosterSelection) &&\n            Navigate(HomePage,ScreenTransition.Cover)\n        ),\n        Notify(\"There was an error with your submission, please contact IT through servicedesk@clearsourcebpo.com and attach an image of the error notification. Thank you.\", NotificationType.Error)\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.btnPRMultipleSubmitp2_1"
               }
             }
           ],
@@ -419,246 +419,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeGallery_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeGallery_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeGallery_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeGallery_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeGallery_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeGallery_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.effectivityDate_card_1.effectivityDate_input_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.effectivityDate_card_1.effectivityDate_input_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.effectivityDate_card_1.effectivityDate_input_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.lastDate_card_1.lastDate_input_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.lastDate_card_1.lastDate_input_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.lastDate_card_1.lastDate_input_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.address_card_1.address_input_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.address_card_1.address_input_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.address_card_1.address_input_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.comment_card_1.comment_input_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.comment_card_1.comment_input_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Termination_VerificationPage",
-                "type": "Termination_VerificationPage.EmployeeInfo_form_1.comment_card_1.comment_input_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Others_SecondPage.galleryLTM_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Others_SecondPage.galleryLTM_2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Others_SecondPage",
-                "type": "Others_SecondPage.galleryLTM_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Others_SecondPage.galleryLTM_2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Others_SecondPage.galleryLTM_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Others_SecondPage",
-                "type": "Others_SecondPage.galleryLTM_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Promotion_SecondPage.galleryPRMp2nd_1.AccessibleLabel"
                 }
               ],
@@ -779,19 +539,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPSite.AccessibleLabel"
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPCountry.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPSite.AccessibleLabel",
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPCountry.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "NewHireOnboarding_EditPage",
-                "type": "NewHireOnboarding_EditPage.galOCEP.cbOCEPSite"
+                "type": "NewHireOnboarding_EditPage.galOCEP.cbOCEPCountry"
               }
             }
           ],
@@ -882,6 +642,36 @@
                 "member": "AccessibleLabel",
                 "module": "NewHireOnboarding_EditPage",
                 "type": "NewHireOnboarding_EditPage.galOCEP.cbOCEPCampaign"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPSite.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPSite.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "NewHireOnboarding_EditPage",
+                "type": "NewHireOnboarding_EditPage.galOCEP.cbOCEPSite"
               }
             }
           ],
@@ -1319,6 +1109,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPClassName.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPClassName.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "NewHireOnboarding_EditPage",
+                "type": "NewHireOnboarding_EditPage.galOCEP.txtOCEPClassName"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPInternalEmail.AccessibleLabel"
                 }
               ],
@@ -1379,19 +1199,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPCountry.AccessibleLabel"
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPSupervisorEmpID.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.cbOCEPCountry.AccessibleLabel",
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPSupervisorEmpID.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "NewHireOnboarding_EditPage",
-                "type": "NewHireOnboarding_EditPage.galOCEP.cbOCEPCountry"
+                "type": "NewHireOnboarding_EditPage.galOCEP.txtOCEPSupervisorEmpID"
               }
             }
           ],
@@ -2489,6 +2309,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.Country_DataCard1.cbOCFPCountry.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.Country_DataCard1.cbOCFPCountry.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "NewHireOnboarding_FirstPage",
+                "type": "NewHireOnboarding_FirstPage.formOCFirstPage4.Country_DataCard1.cbOCFPCountry"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.ROLE_DataCardOCFP.cbOCFPRole.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.ROLE_DataCardOCFP.cbOCFPRole.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "NewHireOnboarding_FirstPage",
+                "type": "NewHireOnboarding_FirstPage.formOCFirstPage4.ROLE_DataCardOCFP.cbOCFPRole"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.Alvaria_ID.cbOCFPAlvariaID.AccessibleLabel"
                 }
               ],
@@ -2549,19 +2429,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.Country_DataCard1.cbOCFPCountry.AccessibleLabel"
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeGallery_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.Country_DataCard1.cbOCFPCountry.AccessibleLabel",
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeGallery_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "NewHireOnboarding_FirstPage",
-                "type": "NewHireOnboarding_FirstPage.formOCFirstPage4.Country_DataCard1.cbOCFPCountry"
+                "module": "Termination_VerificationPage",
+                "type": "Termination_VerificationPage.EmployeeGallery_1"
               }
             }
           ],
@@ -2579,19 +2459,139 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.ROLE_DataCardOCFP.cbOCFPRole.AccessibleLabel"
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeGallery_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_FirstPage.formOCFirstPage4.ROLE_DataCardOCFP.cbOCFPRole.AccessibleLabel",
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeGallery_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Termination_VerificationPage",
+                "type": "Termination_VerificationPage.EmployeeGallery_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.effectivityDate_card_1.effectivityDate_input_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.effectivityDate_card_1.effectivityDate_input_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "NewHireOnboarding_FirstPage",
-                "type": "NewHireOnboarding_FirstPage.formOCFirstPage4.ROLE_DataCardOCFP.cbOCFPRole"
+                "module": "Termination_VerificationPage",
+                "type": "Termination_VerificationPage.EmployeeInfo_form_1.effectivityDate_card_1.effectivityDate_input_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.lastDate_card_1.lastDate_input_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.lastDate_card_1.lastDate_input_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_VerificationPage",
+                "type": "Termination_VerificationPage.EmployeeInfo_form_1.lastDate_card_1.lastDate_input_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.address_card_1.address_input_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.address_card_1.address_input_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_VerificationPage",
+                "type": "Termination_VerificationPage.EmployeeInfo_form_1.address_card_1.address_input_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.comment_card_1.comment_input_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Termination_VerificationPage.EmployeeInfo_form_1.comment_card_1.comment_input_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Termination_VerificationPage",
+                "type": "Termination_VerificationPage.EmployeeInfo_form_1.comment_card_1.comment_input_1"
               }
             }
           ],
@@ -3839,6 +3839,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.formLTM.'TEAMLEADEREMP.ID_DataCard1'.cbLTMultipleSupervisorEmpID_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LateralTransfer_FirstPage.formLTM.'TEAMLEADEREMP.ID_DataCard1'.cbLTMultipleSupervisorEmpID_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LateralTransfer_FirstPage",
+                "type": "LateralTransfer_FirstPage.formLTM.'TEAMLEADEREMP.ID_DataCard1'.cbLTMultipleSupervisorEmpID_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "LateralTransfer_FirstPage.formLTM.EFFECTIVITY_DATE_LT.dpLTEffectivityDate.AccessibleLabel"
                 }
               ],
@@ -4002,6 +4032,66 @@
                 "member": "TabIndex",
                 "module": "HomePage",
                 "type": "HomePage.Label42_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Others_SecondPage.galleryLTM_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Others_SecondPage.galleryLTM_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Others_SecondPage",
+                "type": "Others_SecondPage.galleryLTM_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Others_SecondPage.galleryLTM_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Others_SecondPage.galleryLTM_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Others_SecondPage",
+                "type": "Others_SecondPage.galleryLTM_2"
               }
             }
           ],
@@ -4409,96 +4499,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPSupervisorEmpID.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPSupervisorEmpID.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "NewHireOnboarding_EditPage",
-                "type": "NewHireOnboarding_EditPage.galOCEP.txtOCEPSupervisorEmpID"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPClassName.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPClassName.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "NewHireOnboarding_EditPage",
-                "type": "NewHireOnboarding_EditPage.galOCEP.txtOCEPClassName"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.formLTM.'TEAMLEADEREMP.ID_DataCard1'.cbLTMultipleSupervisorEmpID_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LateralTransfer_FirstPage.formLTM.'TEAMLEADEREMP.ID_DataCard1'.cbLTMultipleSupervisorEmpID_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "LateralTransfer_FirstPage",
-                "type": "LateralTransfer_FirstPage.formLTM.'TEAMLEADEREMP.ID_DataCard1'.cbLTMultipleSupervisorEmpID_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.ttype"
                 }
               ],
@@ -4648,6 +4648,65 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Promotion_SecondPage.txtPRUEp2_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Promotion_SecondPage.txtPRUEp2_1.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Promotion_SecondPage",
+                "type": "Promotion_SecondPage.txtPRUEp2_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "NewHireOnboarding_EditPage",
+                "type": "NewHireOnboarding_EditPage"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-ScreenHasManyControls",
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Termination_VerificationPage.employeeList_label_1.Text"
                 }
               ],
@@ -4702,65 +4761,6 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Promotion_SecondPage.txtPRUEp2_1.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Promotion_SecondPage.txtPRUEp2_1.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "Promotion_SecondPage",
-                "type": "Promotion_SecondPage.txtPRUEp2_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewHireOnboarding_EditPage",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "module": "NewHireOnboarding_EditPage",
-                "type": "NewHireOnboarding_EditPage"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 10
         },
         {
           "locations": [

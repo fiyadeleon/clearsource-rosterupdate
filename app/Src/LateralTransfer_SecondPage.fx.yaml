@@ -9,7 +9,7 @@
     "galleryLTM_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =820
+        Height: =870
         Items: =colLateralTransfer
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID_1, txtLTMultipleOmnia_1.Text)
@@ -105,7 +105,7 @@
             )
         Text: ="Submit"
         X: =1269
-        Y: =1071
+        Y: =1097
         ZIndex: =11
 
     btnLTMultipleBack_1 As button:
@@ -116,13 +116,13 @@
             Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1071
+        Y: =1097
         ZIndex: =12
 
     formLTM2 As form:
         BorderThickness: =1
         DataSource: =colLateralTransfer
-        Height: =820
+        Height: =870
         Item: =If(!IsBlank(SelectedItemID_1), LookUp(colLateralTransfer, USER=SelectedItemID_1))
         NumberOfColumns: =1
         OnReset: =true
@@ -544,7 +544,7 @@
                 Y: =20
                 ZIndex: =2
 
-        EFFECTIVITYDATE_LT As typedDataCard.blankCard:
+        "'SUPERVISOR EMP ID' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
@@ -552,6 +552,34 @@
             Width: =741
             X: =0
             Y: =12
+            ZIndex: =1
+
+            Label65 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR EMP. ID"
+                Width: =272.8
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label66 As label:
+                Height: =20
+                Text: =ThisItem.'SUPERVISOR EMP. ID'
+                Width: =408.6
+                X: =302
+                Y: =20
+                ZIndex: =2
+
+        EFFECTIVITYDATE_LT As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =741
+            X: =0
+            Y: =13
             ZIndex: =1
 
             Label34 As label:
@@ -579,7 +607,7 @@
             Height: =60
             Width: =742
             X: =0
-            Y: =13
+            Y: =14
             ZIndex: =1
 
             btnLTRemove As button:
