@@ -618,6 +618,81 @@
                 Y: =10
                 ZIndex: =2
 
+        "'TEAMLEADEREMP.ID_DataCard3' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAMLEADEREMP_x002e_ID"
+            Default: =ThisItem.'TEAMLEADEREMP.ID'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAMLEADEREMP_x002e_ID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "TEAMLEADEREMP_x002e_ID")
+            Required: =false
+            Update: =cbPRMultipleSupervisorEmpID_1.Text
+            Width: =742
+            X: =0
+            Y: =11
+            ZIndex: =1
+
+            DataCardKey16 As label:
+                AutoHeight: =true
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: |
+                    ="SUPERVISOR EMP. ID *"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =20
+                Y: |
+                    =10.5
+                ZIndex: =1
+
+            cbPRMultipleSupervisorEmpID_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =35
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =408.6
+                X: |
+                    =302.8
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =cbPRMultipleSupervisorEmpID_1.Y + cbPRMultipleSupervisorEmpID_1.Height
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey16.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey16.Y
+                ZIndex: =4
+
         SUPERVISOR_EMAIL As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
@@ -703,7 +778,8 @@
                             (!IsBlank(cbPRMultipleBillability_1.Selected.Value) || !IsBlank(cbPRMultipleBillability_1.SearchText)) &&
                             (!IsBlank(cbPRMultipleSupervisor_1.Selected.Value) || !IsBlank(cbPRMultipleSupervisor_1.SearchText))&&
                             !IsBlank(dpPREffectivityDate.SelectedDate)&&
-                            (!IsBlank(cbPRMultipleSupervisorEmail_1.Text))
+                            (!IsBlank(cbPRMultipleSupervisorEmail_1.Text)) &&
+                            (!IsBlank(cbPRMultipleSupervisorEmpID_1.Text))
                         ),
                         Collect(colPROldLOB, ForAll(Filter(Headcount_table, USER=SelectedPRItemID),LOBNAMEIT));
                         If(
@@ -728,6 +804,7 @@
                             //'NEW SALARY PACKAGE': Concatenate(If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", txtPRMultipleSalary_1.Text)," ",PRMultiple_CurrencyDrpDwn.Selected.Value),
                             //'NEW SALARY PACKAGE START DATE': If(IsBlank(txtPRMultipleSalary_1.Text), "N/A", datePRMultipleSalaryEffectivity.SelectedDate),
                             SUPERVISOR: If(IsBlank(cbPRMultipleSupervisor_1.Selected.Value), cbPRMultipleSupervisor_1.SearchText, cbPRMultipleSupervisor_1.Selected.Value),
+                            'SUPERVISOR EMP. ID': cbPRMultipleSupervisorEmpID_1.Text,
                             'EFFECTIVITY DATE':dpPREffectivityDate.SelectedDate,
                             'EMPLOYEE ID': txtPRMultipleOmniapm1.Text,
                             'SUBMITTED BY':User().Email,
@@ -741,81 +818,6 @@
                 X: =300
                 Y: =1
                 ZIndex: =1
-
-        "'TEAMLEADEREMP.ID_DataCard3' As typedDataCard.textualEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="TEAMLEADEREMP_x002e_ID"
-            Default: =ThisItem.'TEAMLEADEREMP.ID'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAMLEADEREMP_x002e_ID")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "TEAMLEADEREMP_x002e_ID")
-            Required: =false
-            Update: =DataCardValue3.Text
-            Width: =742
-            X: =0
-            Y: =11
-            ZIndex: =1
-
-            DataCardKey16 As label:
-                AutoHeight: =true
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: |
-                    ="SUPERVISOR EMP. ID *"
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =20
-                Y: |
-                    =10.5
-                ZIndex: =1
-
-            DataCardValue3 As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
-                DelayOutput: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =35
-                MaxLength: =Parent.MaxLength
-                PaddingLeft: =5
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Tooltip: =Parent.DisplayName
-                Width: |
-                    =408.6
-                X: |
-                    =302.8
-                Y: =10
-                ZIndex: =2
-
-            ErrorMessage3 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue3.Y + DataCardValue3.Height
-                ZIndex: =3
-
-            StarVisible3 As label:
-                Align: =Align.Center
-                Height: =DataCardKey16.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey16.Y
-                ZIndex: =4
 
     txtPRSEp1_1 As label:
         Align: =Align.Center
