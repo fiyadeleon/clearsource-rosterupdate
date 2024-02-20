@@ -18,7 +18,7 @@
     galOCEP As gallery.galleryHorizontal:
         BorderThickness: =1
         DelayItemLoading: =true
-        Height: =580
+        Height: =608
         Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
@@ -47,7 +47,7 @@
                 RadiusTopRight: =0
                 Width: =268
                 X: =17
-                Y: =138
+                Y: =126
                 ZIndex: =5
 
             Label5_1 As label:
@@ -57,7 +57,7 @@
                 Text: ="FIRST NAME*"
                 Width: =320
                 X: =17
-                Y: =98
+                Y: =86
                 ZIndex: =7
 
         grpOCEPMName As group:
@@ -78,7 +78,7 @@
                 RadiusTopRight: =0
                 Width: =268
                 X: =17
-                Y: =231
+                Y: =207
                 ZIndex: =1
 
             Label5_2 As label:
@@ -88,7 +88,7 @@
                 Text: ="MIDDLE NAME (OPTIONAL)"
                 Width: =320
                 X: =17
-                Y: =191
+                Y: =167
                 ZIndex: =8
 
         grpOCEPLName As group:
@@ -109,7 +109,7 @@
                 RadiusTopRight: =0
                 Width: =268
                 X: =17
-                Y: =324
+                Y: =287
                 ZIndex: =2
 
             Label5_3 As label:
@@ -119,7 +119,7 @@
                 Text: ="LAST NAME *"
                 Width: =320
                 X: =17
-                Y: =284
+                Y: =247
                 ZIndex: =9
 
         grpOCEPHireDate As group:
@@ -134,7 +134,7 @@
                 OnSelect: =Select(Parent)
                 Width: =268
                 X: =17
-                Y: =418
+                Y: =368
                 ZIndex: =3
 
             Label5_4 As label:
@@ -144,7 +144,7 @@
                 Text: ="HIRE DATE *"
                 Width: =320
                 X: =17
-                Y: =378
+                Y: =328
                 ZIndex: =10
 
         grpOCEPBusUnit As group:
@@ -194,7 +194,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =323
-                Y: =139
+                Y: =127
                 ZIndex: =11
 
             Label5_6 As label:
@@ -204,7 +204,7 @@
                 Text: ="SUB-UNIT *"
                 Width: =323
                 X: =323
-                Y: =99
+                Y: =87
                 ZIndex: =15
 
         grpOCEPPosition As group:
@@ -224,7 +224,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =323
-                Y: =231
+                Y: =207
                 ZIndex: =12
 
             Label5_7 As label:
@@ -234,7 +234,7 @@
                 Text: ="POSITION *"
                 Width: =323
                 X: =323
-                Y: =193
+                Y: =169
                 ZIndex: =16
 
         grpOCEPStatus As group:
@@ -251,7 +251,7 @@
                 Text: ="STATUS *"
                 Width: =320
                 X: =323
-                Y: =285
+                Y: =248
                 ZIndex: =18
 
             cbOCEPStatus As combobox:
@@ -264,7 +264,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =323
-                Y: =325
+                Y: =288
                 ZIndex: =19
 
         grpOCEPEmpStatus As group:
@@ -284,7 +284,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =323
-                Y: =418
+                Y: =368
                 ZIndex: =13
 
             Label5_8 As label:
@@ -294,7 +294,7 @@
                 Text: ="EMPLOYMENT STATUS *"
                 Width: =323
                 X: =323
-                Y: =378
+                Y: =328
                 ZIndex: =17
 
         grpOCEPClient As group:
@@ -314,7 +314,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =323
-                Y: =515
+                Y: =448
                 ZIndex: =20
 
             Label5_10 As label:
@@ -324,7 +324,7 @@
                 Text: ="CLIENT *"
                 Width: =323
                 X: =323
-                Y: =475
+                Y: =408
                 ZIndex: =24
 
         grpOCEPCampaign As group:
@@ -374,7 +374,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =681
-                Y: =138
+                Y: =126
                 ZIndex: =22
 
             Label5_12 As label:
@@ -384,7 +384,7 @@
                 Text: ="LOB *"
                 Width: =323
                 X: =681
-                Y: =100
+                Y: =88
                 ZIndex: =26
 
         grpOCEPSubLOB As group:
@@ -404,7 +404,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =681
-                Y: =231
+                Y: =207
                 ZIndex: =23
 
             Label5_13 As label:
@@ -414,7 +414,7 @@
                 Text: ="SUB-LOB *"
                 Width: =323
                 X: =681
-                Y: =191
+                Y: =167
                 ZIndex: =27
 
         grpOCEPSupervisor As group:
@@ -434,7 +434,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =681
-                Y: =420
+                Y: =370
                 ZIndex: =28
 
             Label5_14 As label:
@@ -444,7 +444,7 @@
                 Text: ="SUPERVISOR *"
                 Width: =323
                 X: =681
-                Y: =380
+                Y: =330
                 ZIndex: =32
 
         grpOCECountry As group:
@@ -463,8 +463,8 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPCountry.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
-                X: =681
-                Y: =515
+                X: =1037
+                Y: =46
                 ZIndex: =29
 
             Label5_15 As label:
@@ -473,8 +473,8 @@
                 OnSelect: =Select(Parent)
                 Text: ="COUNTRY *"
                 Width: =323
-                X: =681
-                Y: =475
+                X: =1037
+                Y: =6
                 ZIndex: =33
 
         grpOCEPSite As group:
@@ -493,8 +493,8 @@
                 SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPSite.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
-                X: =1040
-                Y: =46
+                X: =1037
+                Y: =124
                 ZIndex: =30
 
             Label5_16 As label:
@@ -503,8 +503,8 @@
                 OnSelect: =Select(Parent)
                 Text: ="SITE *"
                 Width: =323
-                X: =1040
-                Y: =8
+                X: =1037
+                Y: =86
                 ZIndex: =34
 
         grpOCEPBillability As group:
@@ -524,7 +524,7 @@
                 SelectMultiple: =false
                 Width: =323
                 X: =681
-                Y: =325
+                Y: =288
                 ZIndex: =36
 
             Label5_18 As label:
@@ -534,7 +534,7 @@
                 Text: ="BILLABILITY *"
                 Width: =323
                 X: =681
-                Y: =285
+                Y: =248
                 ZIndex: =39
 
         grpOCEPRole As group:
@@ -553,8 +553,8 @@
                 SearchItems: =Search(["Agent", "Support"],cbOCEPRole.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
-                X: =1040
-                Y: =139
+                X: =1037
+                Y: =205
                 ZIndex: =31
 
             Label5_17 As label:
@@ -563,8 +563,8 @@
                 OnSelect: =Select(Parent)
                 Text: ="ROLE *"
                 Width: =323
-                X: =1040
-                Y: =99
+                X: =1037
+                Y: =165
                 ZIndex: =35
 
         grpOCEPEmpId As group:
@@ -597,7 +597,7 @@
         Label54_1 As label:
             Color: =RGBA(39, 67, 125, 1)
             FontWeight: =FontWeight.Bold
-            Height: =191
+            Height: =153
             Italic: =true
             Size: =12
             Text: |-
@@ -612,7 +612,7 @@
                 - BI (Special Access)"
             Width: =329
             X: =1037
-            Y: =364
+            Y: =438
             ZIndex: =43
 
         grpOCEPRole_1 As group:
@@ -631,8 +631,8 @@
                 SearchItems: =Search(["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"],cbOCEPAlvariaID.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
-                X: =1040
-                Y: =231
+                X: =1037
+                Y: =285
                 ZIndex: =41
 
             Label5_19 As label:
@@ -641,9 +641,19 @@
                 OnSelect: =Select(Parent)
                 Text: ="ALVARIA ID *"
                 Width: =323
-                X: =1040
-                Y: =191
+                X: =1037
+                Y: =245
                 ZIndex: =42
+
+        Label5_20 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: ="SUPERVISOR EMP. ID *"
+            Width: =323
+            X: =681
+            Y: =410
+            ZIndex: =44
 
         grpOCEPInternalEmail As group:
             Height: =5
@@ -659,7 +669,7 @@
                 Text: ="INTERNAL EMAIL *"
                 Width: =320
                 X: =17
-                Y: =475
+                Y: =408
                 ZIndex: =37
 
             txtOCEPInternalEmail As text:
@@ -672,8 +682,22 @@
                 RadiusTopRight: =0
                 Width: =268
                 X: =17
-                Y: =515
+                Y: =448
                 ZIndex: =38
+
+        txtOCEPSupervisorEmpID As text:
+            Color: =RGBA(0, 18, 107, 1)
+            Default: =ThisItem.'SUPERVISOR EMP ID'
+            HintText: ="e.g., CSPH12345"
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =323
+            X: =681
+            Y: =448
+            ZIndex: =45
 
     grpOCEPButtons As group:
         Height: =5
@@ -688,7 +712,7 @@
             OnSelect: =Navigate(NewHireOnboarding_SecondPage,ScreenTransition.Cover)
             Text: ="Back"
             X: =1030
-            Y: =694
+            Y: =714
             ZIndex: =8
 
         btnOCEPUpdate As button:
@@ -756,6 +780,6 @@
                 )
             Text: ="Update"
             X: =1222
-            Y: =694
+            Y: =714
             ZIndex: =9
 

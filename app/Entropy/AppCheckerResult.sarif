@@ -4409,6 +4409,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPSupervisorEmpID.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewHireOnboarding_EditPage.galOCEP.txtOCEPSupervisorEmpID.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "NewHireOnboarding_EditPage",
+                "type": "NewHireOnboarding_EditPage.galOCEP.txtOCEPSupervisorEmpID"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.ttype"
                 }
               ],
@@ -4887,7 +4917,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"NewHireOnboarding_EditPage\" is 330, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"NewHireOnboarding_EditPage\" is 340, which exceeds the maximum threshold recommended (300)."
               }
             }
           ],
