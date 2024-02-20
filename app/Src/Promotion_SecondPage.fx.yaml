@@ -9,7 +9,7 @@
     "galleryPRMp2nd_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =849
+        Height: =899
         Items: =colPromotion
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedPRItemID_1, txtPRMultipleOmniapm2_1.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(96, Self.Height - 60)
         X: =42
-        Y: =250
+        Y: =200
         ZIndex: =1
 
         txtPRMultipleOmniapm2_1 As label:
@@ -82,8 +82,8 @@
         Size: =22
         Text: ="REVIEW PROMOTION FORM"
         Width: =412
-        X: =530
-        Y: =76
+        X: =555
+        Y: =43
         ZIndex: =4
 
     btnPRMultipleSubmitp2_1 As button:
@@ -140,13 +140,13 @@
     formPREDsp2_1 As form:
         BorderThickness: =1
         DataSource: =colPromotion
-        Height: =854
+        Height: =904
         Item: =If(!IsBlank(SelectedPRItemID_1), LookUp(colPromotion, USER=SelectedPRItemID_1))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =720
-        Y: =250
+        Y: =200
         ZIndex: =18
 
         "'EMPLOYEE NAME_PRMDataCard_3' As typedDataCard.textualViewCard":
@@ -578,7 +578,7 @@
                 Y: =20
                 ZIndex: =2
 
-        EffectivityDate As typedDataCard.blankCard:
+        SUPERVISOR_EMP_ID_PRMDataCard As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
@@ -586,6 +586,34 @@
             Width: =742
             X: =0
             Y: =12
+            ZIndex: =1
+
+            Label69 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR EMP. ID"
+                Width: =272.4
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label70 As label:
+                Height: =20
+                Text: =ThisItem.'SUPERVISOR EMP. ID'
+                Width: =408.6
+                X: =301
+                Y: =19
+                ZIndex: =2
+
+        EffectivityDate As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =13
             ZIndex: =1
 
             Label40 As label:
@@ -613,7 +641,7 @@
             Height: =50
             Width: =742
             X: =0
-            Y: =13
+            Y: =14
             ZIndex: =1
 
             btnPRRemovep2_3 As button:
@@ -628,7 +656,7 @@
         Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
-        Height: =108
+        Height: =90
         Size: =20
         Text: =Concatenate("UPDATED EMPLOYEE(S) UNDER ", Char(10),cbPRSearchMultipleLOB.Selected.Value)
         Width: =640
@@ -640,11 +668,11 @@
         Align: =Align.Center
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
-        Height: =67
+        Height: =55
         Size: =20
         Text: ="UPDATED EMPLOYEE DETAILS"
-        Width: =742
-        X: =713
-        Y: =133
+        Width: =604
+        X: =762
+        Y: =145
         ZIndex: =20
 
