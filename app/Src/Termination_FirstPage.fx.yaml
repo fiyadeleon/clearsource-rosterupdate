@@ -17,7 +17,7 @@ Termination_FirstPage As screen:
     "EmployeeGallery As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =447
+        Height: =514
         Items: =omnia_input.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinTermi, omniaID.Text)
@@ -27,7 +27,7 @@ Termination_FirstPage As screen:
         TemplateSize: =79
         Width: =323
         X: =60
-        Y: =217
+        Y: =191
         ZIndex: =1
 
         employeeName As label:
@@ -92,7 +92,7 @@ Termination_FirstPage As screen:
             ="LINE OF BUSINESS: "
         Width: =221
         X: =60
-        Y: =113
+        Y: =89
         ZIndex: =2
 
     lob_input As combobox:
@@ -116,7 +116,7 @@ Termination_FirstPage As screen:
         SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT),!IsBlank(Value)), Value),lob_input.SearchText,"Value")
         SelectMultiple: =false
         X: =281
-        Y: =113
+        Y: =89
         ZIndex: =19
 
     omnia_input As combobox:
@@ -137,7 +137,7 @@ Termination_FirstPage As screen:
         Size: |
             =13
         X: =816
-        Y: =113
+        Y: =89
         ZIndex: =20
 
     LineOfBusiness_Label_1 As label:
@@ -147,7 +147,7 @@ Termination_FirstPage As screen:
             ="EMPLOYEE ID:"
         Width: =151
         X: =685
-        Y: =113
+        Y: =89
         ZIndex: =21
 
     employeeList_label As label:
@@ -157,7 +157,7 @@ Termination_FirstPage As screen:
         Text: ="SELECTED EMPLOYEE(S)"
         Width: =323
         X: =60
-        Y: =174
+        Y: =142
         ZIndex: =22
 
     employeeInfo_label As label:
@@ -167,13 +167,13 @@ Termination_FirstPage As screen:
         Text: ="EMPLOYEE DETAILS"
         Width: =880
         X: =438
-        Y: =174
+        Y: =142
         ZIndex: =23
 
     EmployeeInfo_form As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =447
+        Height: =513
         Item: |
             =If(!IsBlank(SelectedItemIDinTermi), 
                 LookUp(Headcount_table, EMPLOYEEID=SelectedItemIDinTermi)
@@ -182,7 +182,7 @@ Termination_FirstPage As screen:
         OnReset: =true
         Width: =880
         X: =438
-        Y: =217
+        Y: =191
         ZIndex: =24
 
         fname_card As typedDataCard.richTextEditorViewCard:
@@ -263,7 +263,7 @@ Termination_FirstPage As screen:
                 PaddingTop: =0
                 Size: =10
                 Width: =(Parent.Width - 60) * 0.6
-                X: =lname_label.X + lname_label.Width
+                X: =193
                 Y: =15
                 ZIndex: =2
 
@@ -345,7 +345,7 @@ Termination_FirstPage As screen:
                 PaddingTop: =0
                 Size: =10
                 Width: =(Parent.Width - 60) * 0.6
-                X: =lob_label.X + lob_label.Width
+                X: =196
                 Y: =15
                 ZIndex: =2
 
@@ -427,18 +427,80 @@ Termination_FirstPage As screen:
                 PaddingTop: =0
                 Size: =10
                 Width: =(Parent.Width - 60) * 0.6
-                X: =campaign_label.X + campaign_label.Width
+                X: =191
                 Y: =15
+                ZIndex: =2
+
+        supervisor_card As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =439
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            Label71 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =28
+                Size: =10
+                Text: ="SUPERVISOR"
+                Width: =151.6
+                X: =14
+                Y: =12
+                ZIndex: =1
+
+            Label72 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                Height: =10
+                Size: =10
+                Text: =ThisItem.TEAM
+                Width: =256
+                X: =183
+                Y: =21
+                ZIndex: =2
+
+        supervisor_emp_id As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: |
+                =40
+            Width: =439
+            X: =1
+            Y: =3
+            ZIndex: =1
+
+            Label73 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =28
+                Size: =10
+                Text: ="SUPERVISOR EMP. ID"
+                X: =27
+                Y: =15
+                ZIndex: =1
+
+            Label74 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                Height: =10
+                Size: =10
+                Text: =ThisItem.'TEAMLEADEREMP.ID'
+                Width: =227.4
+                X: =187
+                Y: =24
                 ZIndex: =2
 
         terminationType_card As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =80
+            Height: =90
             Width: =439
             X: =0
-            Y: =3
+            Y: =4
             ZIndex: =1
 
             terminationType_cb As dropdown:
@@ -470,7 +532,7 @@ Termination_FirstPage As screen:
             Height: =90
             Width: =439
             X: =1
-            Y: =3
+            Y: =4
             ZIndex: =1
 
             terminationStatus_cb As dropdown:
@@ -501,7 +563,7 @@ Termination_FirstPage As screen:
             Height: =90
             Width: =439
             X: =0
-            Y: =4
+            Y: =5
             ZIndex: =1
 
             effectivityDate_label As label:
@@ -530,7 +592,7 @@ Termination_FirstPage As screen:
             Height: =90
             Width: =439
             X: =1
-            Y: =4
+            Y: =5
             ZIndex: =1
 
             lastDate_label As label:
@@ -559,7 +621,7 @@ Termination_FirstPage As screen:
             Height: =90
             Width: =439
             X: =0
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             address_label As label:
@@ -591,7 +653,7 @@ Termination_FirstPage As screen:
             Height: =90
             Width: =439
             X: =1
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             comment_label As label:
@@ -623,7 +685,7 @@ Termination_FirstPage As screen:
             Height: =49
             Width: =880
             X: =0
-            Y: =6
+            Y: =7
             ZIndex: =1
 
             Button2 As button:
@@ -683,7 +745,7 @@ Termination_FirstPage As screen:
             )
         Text: ="Review"
         X: =1158
-        Y: =690
+        Y: =714
         ZIndex: =25
 
     btnLTMultipleBack_3 As button:
@@ -692,6 +754,6 @@ Termination_FirstPage As screen:
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =969
-        Y: =690
+        Y: =714
         ZIndex: =26
 
