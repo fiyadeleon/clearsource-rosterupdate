@@ -778,7 +778,7 @@
             Height: =50
             MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "TEAMLEADEREMP_x002e_ID")
             Required: =false
-            Update: =DataCardValue1.Text
+            Update: =cbOTSupervisorEmpID.Text
             Width: =690
             X: =0
             Y: =8
@@ -793,10 +793,10 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
-                Y: =10 + (DataCardValue1.Height / 2) - (Self.Height / 2)
+                Y: =10 + (cbOTSupervisorEmpID.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            DataCardValue1 As text:
+            cbOTSupervisorEmpID As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -826,7 +826,7 @@
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue1.Y + DataCardValue1.Height
+                Y: =cbOTSupervisorEmpID.Y + cbOTSupervisorEmpID.Height
                 ZIndex: =3
 
             StarVisible2 As label:
@@ -960,7 +960,8 @@
                             (!IsBlank(cbOTPosition.Selected.Value) || !IsBlank(cbOTPosition.SearchText)) &&
                             (!IsBlank(cbOTClient.Selected.Value) || !IsBlank(cbOTClient.SearchText)) &&
                             (!IsBlank(cbOTLOB.Selected.Value) || !IsBlank(cbOTLOB.SearchText)) &&
-                            (!IsBlank(cbOTBillability.Selected.Value) || !IsBlank(cbOTBillability.SearchText))
+                            (!IsBlank(cbOTBillability.Selected.Value) || !IsBlank(cbOTBillability.SearchText)) &&
+                            (!IsBlank(cbOTSupervisorEmpID.Text))
                         ),
                         If(
                             //check if status is equivalent to !ACTIVE to require start and end date
@@ -1022,7 +1023,7 @@
                                     SCHEDULE:If(IsBlank(txtOTSchedule.Text), "N/A", txtOTSchedule.Text),
                                     'TIME ZONE': drpOTtimezone.Selected.Value,
                                     SUPERVISOR:If(IsBlank(cbOTSupervisor.Selected.Value), cbOTSupervisor.SearchText, cbOTSupervisor.Selected.Value),
-                    
+                                    'SUPERVISOR EMP ID': cbOTSupervisorEmpID.Text,
                                     'CLASS NAME':If(IsBlank(class_name), "N/A",Text(class_name.Text)),
                                     'TRAINER #1':If(IsBlank(trainer1.Selected.Value), trainer1.SearchText, trainer1.Selected.Value),
                                     'TRAINER #2':If(IsBlank(trainer2.Selected.Value), trainer2.SearchText, trainer2.Selected.Value),

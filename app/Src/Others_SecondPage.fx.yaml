@@ -9,7 +9,7 @@
     "galleryLTM_2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =722
+        Height: =760
         Items: =colOthers
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemIDinOT1, txtLTMultipleOmnia_2.Text)
@@ -18,7 +18,7 @@
         TemplateSize: =Min(104, Self.Height - 60)
         Width: =486
         X: =62
-        Y: =210
+        Y: =186
         ZIndex: =1
 
         txtLTMultipleName_2 As label:
@@ -124,7 +124,7 @@
             )
         Text: ="Submit"
         X: =1806
-        Y: =947
+        Y: =967
         ZIndex: =11
 
     btnLTMultipleBack_2 As button:
@@ -135,19 +135,19 @@
             Navigate(Others_FirstPage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1612
-        Y: =947
+        Y: =967
         ZIndex: =12
 
     formOT1 As form:
         BorderThickness: =1
         DataSource: =colOthers
-        Height: =722
+        Height: =760
         Item: =If(!IsBlank(SelectedItemIDinOT1), LookUp(colOthers, USER=SelectedItemIDinOT1))
         NumberOfColumns: =2
         OnReset: =true
         Width: =1382
         X: =584
-        Y: =210
+        Y: =186
         ZIndex: =18
 
         "'EMPLOYEE ID_OTDataCard1' As typedDataCard.textualViewCard":
@@ -184,42 +184,34 @@
                 Y: =20
                 ZIndex: =2
 
-        "'BUSINESS UNIT_OTDataCard1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =
+        "'SUB-LOB2_OTDataCard' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="BUSINESS UNIT"
-            Default: =ThisItem.'BUSINESS UNIT'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: ="BUSINESS UNIT"
+            DataField: ="SUB-LOB"
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-LOB")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Required: =false
-            Update: =
             Width: =600
             X: =1
             Y: =0
             ZIndex: =1
 
-            DataCardKey37_3 As label:
-                AutoHeight: =true
+            Label62 As label:
+                Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
+                Text: ="SUB-LOB"
                 X: =30
                 Y: =13
                 ZIndex: =1
 
-            txtOTBusUnit1 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
+            Label63 As label:
+                DisplayMode: =DisplayMode.View
+                Height: =20
+                Text: =ThisItem.'SUB-LOB'
+                Width: =324
                 X: =276
                 Y: =20
-                ZIndex: =3
+                ZIndex: =2
 
         SITE_OTDataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
@@ -259,21 +251,23 @@
                 Y: =20
                 ZIndex: =2
 
-        "'SUB-UNIT_OTDataCard1' As typedDataCard.textualViewCard":
+        "'BUSINESS UNIT_OTDataCard1' As typedDataCard.allowedValuesStringEditCard":
+            AllowedValues: =
             BorderStyle: =BorderStyle.Solid
-            DataField: ="SUB-UNIT"
-            Default: =ThisItem.'SUB UNIT'
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
+            DataField: ="BUSINESS UNIT"
+            Default: =ThisItem.'BUSINESS UNIT'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="BUSINESS UNIT"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
+            Update: =
             Width: =600
             X: =1
             Y: =1
             ZIndex: =1
 
-            DataCardKey36_1 As label:
+            DataCardKey37_3 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -284,18 +278,15 @@
                 Y: =13
                 ZIndex: =1
 
-            txtOTSubUnit1 As label:
+            txtOTBusUnit1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
                 Text: =Parent.Default
                 Width: =(Parent.Width - 60) * 0.6
                 X: =276
                 Y: =20
-                ZIndex: =2
+                ZIndex: =3
 
         STATUS_OTDataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
@@ -335,12 +326,12 @@
                 Y: =20
                 ZIndex: =2
 
-        POSITION_OTDataCard1 As typedDataCard.textualViewCard:
+        "'SUB-UNIT_OTDataCard1' As typedDataCard.textualViewCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="POSITION"
-            Default: =ThisItem.POSITION
+            DataField: ="SUB-UNIT"
+            Default: =ThisItem.'SUB UNIT'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -349,7 +340,7 @@
             Y: =2
             ZIndex: =1
 
-            DataCardKey44_1 As label:
+            DataCardKey36_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -360,7 +351,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtOTPosition1 As label:
+            txtOTSubUnit1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -487,12 +478,12 @@
                 Y: =20
                 ZIndex: =2
 
-        LOB_OTDataCard1 As typedDataCard.textualViewCard:
+        BILLABILITY_OTDataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="LOB"
-            Default: =ThisItem.LOB
+            DataField: ="BILLABILITY"
+            Default: =ThisItem.BILLABILITY
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -501,7 +492,7 @@
             Y: =4
             ZIndex: =1
 
-            DataCardKey7 As label:
+            DataCardKey50_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
@@ -512,7 +503,7 @@
                 Y: =13
                 ZIndex: =1
 
-            txtOTLOB1 As label:
+            txtOTBillability1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -562,61 +553,32 @@
                 Y: =20
                 ZIndex: =2
 
-        "'SUB-LOB2_OTDataCard' As typedDataCard.blankCard":
+        SCHEDULE_OTDataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="SUB-LOB"
-            DisplayMode: =DisplayMode.Edit
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-LOB")
+            DataField: ="MONDAY"
+            Default: =ThisItem.SCHEDULE
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
+            Required: =false
             Width: =600
             X: =1
             Y: =5
             ZIndex: =1
 
-            Label62 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Text: ="SUB-LOB"
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label63 As label:
-                DisplayMode: =DisplayMode.View
-                Height: =20
-                Text: =ThisItem.'SUB-LOB'
-                Width: =324
-                X: =276
-                Y: =20
-                ZIndex: =2
-
-        BILLABILITY_OTDataCard1 As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="BILLABILITY"
-            Default: =ThisItem.BILLABILITY
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Required: =false
-            Width: =600
-            X: =0
-            Y: =6
-            ZIndex: =1
-
-            DataCardKey50_1 As label:
+            DataCardKey51_1 As label:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =34
-                Text: =Parent.DisplayName
+                Text: ="SCHEDULE"
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =30
                 Y: =13
                 ZIndex: =1
 
-            txtOTBillability1 As label:
+            txtOTSchedule1 As label:
                 AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
                 Height: =27
@@ -639,7 +601,7 @@
             Height: =40
             Required: =false
             Width: =600
-            X: =1
+            X: =0
             Y: =6
             ZIndex: =1
 
@@ -667,42 +629,29 @@
                 Y: =20
                 ZIndex: =2
 
-        SCHEDULE_OTDataCard1 As typedDataCard.textualViewCard:
+        TIME_ZONE As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="MONDAY"
-            Default: =ThisItem.SCHEDULE
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
+            DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            Required: =false
             Width: =600
-            X: =0
-            Y: =7
+            X: =1
+            Y: =6
             ZIndex: =1
 
-            DataCardKey51_1 As label:
-                AutoHeight: =true
+            Label20 As label:
+                Color: =RGBA(39, 67, 125, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="SCHEDULE"
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
+                Text: ="TIME ZONE"
                 X: =30
                 Y: =13
                 ZIndex: =1
 
-            txtOTSchedule1 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
+            Label21 As label:
+                Text: =ThisItem.'TIME ZONE'
+                Width: =377
                 X: =276
-                Y: =20
+                Y: =13
                 ZIndex: =2
 
         SUPERVISOR_OTDataCard1 As typedDataCard.textualViewCard:
@@ -715,7 +664,7 @@
             Height: =60
             Required: =false
             Width: =600
-            X: =1
+            X: =0
             Y: =7
             ZIndex: =1
 
@@ -743,64 +692,14 @@
                 Y: =20
                 ZIndex: =2
 
-        TIME_ZONE As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =600
-            X: =0
-            Y: =8
-            ZIndex: =1
-
-            Label20 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Text: ="TIME ZONE"
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label21 As label:
-                Text: =ThisItem.'TIME ZONE'
-                Width: =377
-                X: =276
-                Y: =13
-                ZIndex: =2
-
-        Class_Name As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =600
-            X: =1
-            Y: =8
-            ZIndex: =1
-
-            Label14 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Text: ="CLASS NAME"
-                X: =30
-                Y: =13
-                ZIndex: =1
-
-            Label32 As label:
-                Text: =ThisItem.'CLASS NAME'
-                Width: =377
-                X: =276
-                Y: =10
-                ZIndex: =2
-
         Trainer1 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Width: =600
-            X: =0
-            Y: =9
+            X: =1
+            Y: =7
             ZIndex: =1
 
             Label17 As label:
@@ -820,6 +719,34 @@
                 Y: =20
                 ZIndex: =2
 
+        SUPERVISOR_EMP_ID As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =600
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            Label67 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="SUPERVISOR EMP. ID"
+                Width: =200
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label68 As label:
+                Height: =26
+                Text: |
+                    =ThisItem.'SUPERVISOR EMP ID'
+                Width: =324
+                X: =276
+                Y: =20
+                ZIndex: =2
+
         Trainer2 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
@@ -827,7 +754,7 @@
             Height: =60
             Width: =600
             X: =1
-            Y: =9
+            Y: =8
             ZIndex: =1
 
             Label26 As label:
@@ -847,14 +774,52 @@
                 Y: =20
                 ZIndex: =2
 
+        POSITION_OTDataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="POSITION"
+            Default: =ThisItem.POSITION
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =600
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKey44_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtOTPosition1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =276
+                Y: =20
+                ZIndex: =2
+
         Trainer3 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Width: =600
-            X: =0
-            Y: =10
+            X: =1
+            Y: =9
             ZIndex: =1
 
             Label28 As label:
@@ -872,6 +837,69 @@
                 Width: =377
                 X: =276
                 Y: =20
+                ZIndex: =2
+
+        LOB_OTDataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LOB"
+            Default: =ThisItem.LOB
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =600
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            DataCardKey7 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            txtOTLOB1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =276
+                Y: =20
+                ZIndex: =2
+
+        Class_Name As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =600
+            X: =1
+            Y: =10
+            ZIndex: =1
+
+            Label14 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="CLASS NAME"
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            Label32 As label:
+                Text: =ThisItem.'CLASS NAME'
+                Width: =377
+                X: =276
+                Y: =10
                 ZIndex: =2
 
         REMOVE_BUTTON As typedDataCard.blankCard:
