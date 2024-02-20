@@ -849,66 +849,6 @@
                     Y: =40
                     ZIndex: =2
 
-            Alvaria_ID As typedDataCard.blankCard:
-                BorderStyle: =BorderStyle.Solid
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =89
-                Width: =342
-                X: =0
-                Y: =3
-                ZIndex: =1
-
-                Label53 As label:
-                    Color: =RGBA(39, 67, 125, 1)
-                    FontWeight: =FontWeight.Bold
-                    Height: =30
-                    Text: ="ALVARIA ID *"
-                    Width: =281
-                    X: =15
-                    Y: =5
-                    ZIndex: =1
-
-                cbOCFPAlvariaID As combobox:
-                    DisplayFields: =["Value"]
-                    Items: =["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"]
-                    SearchFields: =["Value"]
-                    SearchItems: =Search(["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"],cbOCFPAlvariaID.SearchText,"Value")
-                    SelectMultiple: =false
-                    Width: =320
-                    X: =15
-                    Y: =40
-                    ZIndex: =2
-
-            DataCard10 As typedDataCard.blankCard:
-                BorderStyle: =BorderStyle.Solid
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =89
-                Width: =342
-                X: =0
-                Y: =4
-                ZIndex: =1
-
-                Label64 As label:
-                    Color: =RGBA(39, 67, 125, 1)
-                    FontWeight: =FontWeight.Bold
-                    Text: ="CLASS NAME *"
-                    X: =15
-                    Y: =5
-                    ZIndex: =1
-
-                txtOCFPClassName As text:
-                    Default: =""
-                    HintText: ="Class Name"
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    X: =15
-                    Y: =40
-                    ZIndex: =2
-
             Country_DataCard1 As typedDataCard.blankCard:
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
@@ -972,6 +912,66 @@
                     SearchItems: =Search(["Agent", "Support"],cbOCFPRole.SearchText,"Value")
                     SelectMultiple: =false
                     Width: =320
+                    X: =15
+                    Y: =40
+                    ZIndex: =2
+
+            Alvaria_ID As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =89
+                Width: =342
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                Label53 As label:
+                    Color: =RGBA(39, 67, 125, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =30
+                    Text: ="ALVARIA ID *"
+                    Width: =281
+                    X: =15
+                    Y: =5
+                    ZIndex: =1
+
+                cbOCFPAlvariaID As combobox:
+                    DisplayFields: =["Value"]
+                    Items: =["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"]
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"],cbOCFPAlvariaID.SearchText,"Value")
+                    SelectMultiple: =false
+                    Width: =320
+                    X: =15
+                    Y: =40
+                    ZIndex: =2
+
+            DataCard10 As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =89
+                Width: =342
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                Label64 As label:
+                    Color: =RGBA(39, 67, 125, 1)
+                    FontWeight: =FontWeight.Bold
+                    Text: ="CLASS NAME *"
+                    X: =15
+                    Y: =5
+                    ZIndex: =1
+
+                txtOCFPClassName As text:
+                    Default: =""
+                    HintText: ="Class Name"
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
                     X: =15
                     Y: =40
                     ZIndex: =2

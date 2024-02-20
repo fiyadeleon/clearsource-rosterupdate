@@ -147,36 +147,6 @@
                 Y: =378
                 ZIndex: =10
 
-        grpOCEPStatus As group:
-            Height: =5
-            Width: =5
-            X: =40
-            Y: =40
-            ZIndex: =22
-
-            Label5_9 As label:
-                Color: =RGBA(0, 18, 107, 1)
-                FontWeight: =FontWeight.Bold
-                OnSelect: =Select(Parent)
-                Text: ="STATUS *"
-                Width: =320
-                X: =323
-                Y: =285
-                ZIndex: =18
-
-            cbOCEPStatus As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),STATUS))
-                DisplayFields: =["Value"]
-                Items: =Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value)
-                OnSelect: =Select(Parent)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value),cbOCEPStatus.SearchText,"Value")
-                SelectMultiple: =false
-                Width: =323
-                X: =323
-                Y: =325
-                ZIndex: =19
-
         grpOCEPBusUnit As group:
             Height: =5
             Width: =5
@@ -266,6 +236,36 @@
                 X: =323
                 Y: =193
                 ZIndex: =16
+
+        grpOCEPStatus As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            Label5_9 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="STATUS *"
+                Width: =320
+                X: =323
+                Y: =285
+                ZIndex: =18
+
+            cbOCEPStatus As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),STATUS))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value),cbOCEPStatus.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =323
+                Y: =325
+                ZIndex: =19
 
         grpOCEPEmpStatus As group:
             Height: =5
@@ -597,8 +597,9 @@
         Label54_1 As label:
             Color: =RGBA(39, 67, 125, 1)
             FontWeight: =FontWeight.Bold
-            Height: =247
+            Height: =191
             Italic: =true
+            Size: =12
             Text: |-
                 ="Note:
                 
@@ -611,7 +612,7 @@
                 - BI (Special Access)"
             Width: =329
             X: =1037
-            Y: =294
+            Y: =364
             ZIndex: =43
 
         grpOCEPRole_1 As group:

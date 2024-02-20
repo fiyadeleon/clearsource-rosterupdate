@@ -114,20 +114,6 @@
             Y: =0
             ZIndex: =6
 
-        "'SUB UNIT_Column1_1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="SUB-UNIT"
-            FieldName: ="SUB UNIT"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =11
-            Text: =ThisItem.'SUB-UNIT'
-            Width: =100
-            X: =1605
-            Y: =0
-            ZIndex: =7
-
         POSITION_Column1_1 As dataTableColumn.textualColumn:
             AutoWidth: =true
             DisplayMode: =DisplayMode.Edit
@@ -136,7 +122,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =12
+            Order: =13
             Text: =ThisItem.POSITION
             Width: =220
             X: =0
@@ -150,7 +136,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =13
+            Order: =14
             Text: =ThisItem.CLIENT
             Width: =100
             X: =0
@@ -164,7 +150,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =14
+            Order: =15
             Text: =ThisItem.CAMPAIGN
             Width: =100
             X: =0
@@ -178,7 +164,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =15
+            Order: =17
             Text: =ThisItem.LOB
             Width: =100
             X: =0
@@ -192,7 +178,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =16
+            Order: =18
             Text: =ThisItem.'SUB-LOB'
             Width: =100
             X: =1180
@@ -206,7 +192,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =17
+            Order: =19
             Text: =ThisItem.BILLABILITY
             Width: =100
             X: =0
@@ -220,7 +206,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =18
+            Order: =20
             Text: =ThisItem.SUPERVISOR
             Width: =100
             X: =1180
@@ -234,7 +220,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =19
+            Order: =22
             Text: =ThisItem.COUNTRY
             Width: =100
             X: =0
@@ -248,7 +234,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =20
+            Order: =24
             Text: =ThisItem.SITE
             Width: =100
             X: =1180
@@ -262,7 +248,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =21
+            Order: =26
             Text: =ThisItem.ROLE
             Width: =100
             X: =0
@@ -332,7 +318,7 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =22
+            Order: =27
             Text: =ThisItem.'ALVARIA ID'
             Visible: =true
             Width: =100
@@ -347,27 +333,40 @@
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =24
+            Order: =16
             Text: =ThisItem.'CLASS NAME'
             Width: =100
             X: =0
             Y: =0
             ZIndex: =24
 
-        SUPERVISOR_EMP_ID_Column As dataTableColumn.textualColumn:
+        "'SUPERVISOR EMP ID_Column1' As dataTableColumn.textualColumn":
             DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="SUPERVISOR EMP. ID"
-            FieldName: ="ALVARIA ID"
+            FieldDisplayName: ="SUPERVISOR EMP ID"
+            FieldName: ="SUPERVISOR EMP ID"
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            Order: =25
-            Text: |
-                =ThisItem.'SUPERVISOR EMP ID'
+            Order: =21
+            Text: =ThisItem.'SUPERVISOR EMP ID'
             Width: =100
-            X: =1180
+            X: =0
             Y: =0
-            ZIndex: =25
+            ZIndex: =26
+
+        "'SUB-UNIT_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="SUB-UNIT"
+            FieldName: ="SUB-UNIT"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =12
+            Text: =ThisItem.'SUB-UNIT'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =27
 
     grpOCSPButtons As group:
         Height: =5
