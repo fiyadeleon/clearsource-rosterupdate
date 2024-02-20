@@ -452,7 +452,7 @@ Termination_FirstPage As screen:
                 Y: =12
                 ZIndex: =1
 
-            Label72 As label:
+            supervisor_value As label:
                 Color: =RGBA(39, 67, 125, 1)
                 Height: =10
                 Size: =10
@@ -483,7 +483,7 @@ Termination_FirstPage As screen:
                 Y: =15
                 ZIndex: =1
 
-            Label74 As label:
+            supervisorEmpID_value As label:
                 Color: =RGBA(39, 67, 125, 1)
                 Height: =10
                 Size: =10
@@ -715,6 +715,8 @@ Termination_FirstPage As screen:
                             CAMPAIGN: campaign_value.HtmlText,
                             'OLD LOB': lob_input.Selected.Value,
                             LOB: ThisItem.LOBNAMEIT, 
+                            SUPERVISOR: supervisor_value.Text,
+                            'SUPERVISOR EMP. ID': supervisorEmpID_value.Text,
                             CLIENT: ThisItem.CLIENT,
                             'INTERNAL EMAIL': ThisItem.INTERNALEMAIL,
                             'TERMINATION TYPE': terminationType_cb.Selected.Value, 
