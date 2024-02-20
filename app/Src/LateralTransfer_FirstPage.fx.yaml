@@ -9,7 +9,7 @@
     "galleryLTM As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         BorderThickness: =1
         Default: ={}
-        Height: =788
+        Height: =848
         Items: =cbLTSearchMultipleOmnia.SelectedItems
         Layout: =Layout.Vertical
         OnSelect: =Set(SelectedItemID, txtLTMultipleOmnia.Text)
@@ -17,7 +17,7 @@
         TemplatePadding: =0
         TemplateSize: =Min(104, Self.Height - 60)
         X: =42
-        Y: =341
+        Y: =304
         ZIndex: =1
 
         txtLTMultipleName As label:
@@ -97,7 +97,7 @@
             )
         Text: ="Review"
         X: =1269
-        Y: =1174
+        Y: =1183
         ZIndex: =11
 
     btnLTMultipleBack As button:
@@ -106,7 +106,7 @@
         OnSelect: =Navigate(HomePage,ScreenTransition.Cover)
         Text: ="Back"
         X: =1076
-        Y: =1174
+        Y: =1183
         ZIndex: =12
 
     grpLTSearchMultipleLOB As group:
@@ -185,13 +185,13 @@
     formLTM As form:
         BorderThickness: =1
         DataSource: =Headcount_table
-        Height: =788
+        Height: =847
         Item: =If(!IsBlank(SelectedItemID), LookUp(Headcount_table, EMPLOYEEID=SelectedItemID))
         NumberOfColumns: =1
         OnReset: =true
         Width: =742
         X: =716
-        Y: =341
+        Y: =304
         ZIndex: =18
 
         "'EMPLOYEE ID_LTMDataCard' As typedDataCard.textualViewCard":
@@ -639,33 +639,6 @@
                 Y: =10
                 ZIndex: =2
 
-        EFFECTIVITY_DATE_LT As typedDataCard.blankCard:
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =60
-            Width: =742
-            X: =0
-            Y: =12
-            ZIndex: =1
-
-            Label6 As label:
-                Color: =RGBA(39, 67, 125, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =34
-                Text: ="EFFECTIVITY DATE *"
-                Width: =272.8
-                X: =15
-                Y: =13
-                ZIndex: =1
-
-            dpLTEffectivityDate As datepicker:
-                DefaultDate: =
-                Width: =408.6
-                X: =302.8
-                Y: =10
-                ZIndex: =2
-
         SAVE_BUTTON_LT As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
@@ -673,7 +646,7 @@
             Height: =60
             Width: =742
             X: =0
-            Y: =13
+            Y: =14
             ZIndex: =1
 
             Button6 As button:
@@ -689,7 +662,8 @@
                             (!IsBlank(cbLTMultipleSupervisor.Selected.Value) || !IsBlank(cbLTMultipleSupervisor.SearchText)) &&
                             !IsBlank(dpLTEffectivityDate.SelectedDate)&&
                             (!IsBlank(cbLTMultipleSupervisorEmail_1.Text)) &&
-                            (!IsBlank(cbLTMultipleSubLOB.Selected.Value) || !IsBlank(cbLTMultipleSubLOB.SearchText))
+                            (!IsBlank(cbLTMultipleSubLOB.Selected.Value) || !IsBlank(cbLTMultipleSubLOB.SearchText))&&
+                            (!IsBlank(cbLTMultipleSupervisorEmail_1.Text))
                         ),
                         Collect(colOldLOB, ForAll(Filter(Headcount_table, USER=SelectedItemID),LOBNAMEIT));
                         If(
@@ -717,7 +691,8 @@
                                 SUPERVISOR:If(IsBlank(cbLTMultipleSupervisor.Selected.Value), cbLTMultipleSupervisor.SearchText, cbLTMultipleSupervisor.Selected.Value),
                                 'EFFECTIVITY DATE':dpLTEffectivityDate.SelectedDate,
                                 'SUBMITTED BY':User().Email,
-                                'SUPERVISOR EMAIL': If(IsBlank(cbLTMultipleSupervisorEmail_1.Text), "N/A", cbLTMultipleSupervisorEmail_1.Text)
+                                'SUPERVISOR EMAIL': If(IsBlank(cbLTMultipleSupervisorEmail_1.Text), "N/A", cbLTMultipleSupervisorEmail_1.Text),
+                                'SUPERVISOR EMP. ID': If(IsBlank(cbLTMultipleSupervisorEmail_1.Text), "N/A", cbLTMultipleSupervisorEmail_1.Text)
                             }
                         );
                         Notify("Successfully saved your changes locally.", NotificationType.Success),
@@ -728,14 +703,112 @@
                 Y: =8
                 ZIndex: =1
 
+        "'TEAMLEADEREMP.ID_DataCard1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TEAMLEADEREMP_x002e_ID"
+            Default: =ThisItem.'TEAMLEADEREMP.ID'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAMLEADEREMP_x002e_ID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "TEAMLEADEREMP_x002e_ID")
+            Required: =false
+            Update: =cbLTMultipleSupervisorEmpID_1.Text
+            Width: =742
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            DataCardKey12 As label:
+                AutoHeight: =true
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="SUPERVISOR EMP. ID *"
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =15
+                Y: =10 + (cbLTMultipleSupervisorEmpID_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            cbLTMultipleSupervisorEmpID_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: |
+                    =302.8
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =cbLTMultipleSupervisorEmpID_1.Y + cbLTMultipleSupervisorEmpID_1.Height
+                ZIndex: =3
+
+            StarVisible1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey12.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey12.Y
+                ZIndex: =4
+
+        EFFECTIVITY_DATE_LT As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Width: =742
+            X: =0
+            Y: =13
+            ZIndex: =1
+
+            Label6 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Text: ="EFFECTIVITY DATE *"
+                Width: =272.8
+                X: =15
+                Y: =13
+                ZIndex: =1
+
+            dpLTEffectivityDate As datepicker:
+                DefaultDate: =
+                Width: =408.6
+                X: =302.8
+                Y: =10
+                ZIndex: =2
+
     "'Lateral Transfer Form_2' As label":
         Color: =RGBA(0, 18, 107, 1)
         FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
         Text: ="SELECTED EMPLOYEE(S)"
-        Width: =316
-        X: =204
+        Width: =374
+        X: =175
         Y: =228
         ZIndex: =19
 
