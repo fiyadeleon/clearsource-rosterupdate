@@ -1093,7 +1093,7 @@
                                     SCHEDULE:If(IsBlank(txtOTSchedule.Text), "N/A", txtOTSchedule.Text),
                                     'TIME ZONE': drpOTtimezone.Selected.Value,
                                     SUPERVISOR:If(IsBlank(cbOTSupervisor.Selected.Value), cbOTSupervisor.SearchText, cbOTSupervisor.Selected.Value),
-                                    'SUPERVISOR EMP ID': cbOTSupervisorEmpID.Text,
+                                    'SUPERVISOR EMP. ID': cbOTSupervisorEmpID.Text,
                                     'CLASS NAME':If(IsBlank(class_name.Text), "N/A",Text(class_name.Text)),
                                     'TRAINER #1':If(IsBlank(trainer1.Selected.Value), trainer1.SearchText, trainer1.Selected.Value),
                                     'TRAINER #2':If(IsBlank(trainer2.Selected.Value), trainer2.SearchText, trainer2.Selected.Value),
