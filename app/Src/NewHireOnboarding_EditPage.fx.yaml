@@ -477,36 +477,6 @@
                 Y: =6
                 ZIndex: =33
 
-        grpOCEPBillability As group:
-            Height: =5
-            Width: =5
-            X: =-641
-            Y: =-251
-            ZIndex: =40
-
-            cbOCEPBillability As combobox:
-                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),BILLABILITY))
-                DisplayFields: =["Value"]
-                Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
-                OnSelect: =Select(Parent)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOCEPBillability.SearchText,"Value")
-                SelectMultiple: =false
-                Width: =323
-                X: =681
-                Y: =288
-                ZIndex: =36
-
-            Label5_18 As label:
-                Color: =RGBA(0, 18, 107, 1)
-                FontWeight: =FontWeight.Bold
-                OnSelect: =Select(Parent)
-                Text: ="BILLABILITY *"
-                Width: =323
-                X: =681
-                Y: =248
-                ZIndex: =39
-
         grpOCEPSite As group:
             Height: =5
             Width: =5
@@ -536,6 +506,36 @@
                 X: =1037
                 Y: =86
                 ZIndex: =34
+
+        grpOCEPBillability As group:
+            Height: =5
+            Width: =5
+            X: =-641
+            Y: =-251
+            ZIndex: =40
+
+            cbOCEPBillability As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),BILLABILITY))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOCEPBillability.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =681
+                Y: =288
+                ZIndex: =36
+
+            Label5_18 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="BILLABILITY *"
+                Width: =323
+                X: =681
+                Y: =248
+                ZIndex: =39
 
         grpOCEPRole As group:
             Height: =5
@@ -779,7 +779,6 @@
                                 'REGULARIZATION DATE':Text(DateAdd(dateOCEPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
                                 'BUSINESS UNIT':If(IsBlank(cbOCEPBusUnit.Selected.Value), cbOCEPBusUnit.SearchText, cbOCEPBusUnit.Selected.Value), 
                                 'SUB-UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
-                                'SUB UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
                                 POSITION:If(IsBlank(cbOCEPPosition.Selected.Value), cbOCEPPosition.SearchText, cbOCEPPosition.Selected.Value), 
                                 'EMPLOYMENT STATUS':If(IsBlank(cbOCEPEmpStatus.Selected.Value), cbOCEPEmpStatus.SearchText, cbOCEPEmpStatus.Selected.Value),
                                 CLIENT:If(IsBlank(cbOCEPClient.Selected.Value), cbOCEPClient.SearchText, cbOCEPClient.Selected.Value),
@@ -788,11 +787,13 @@
                                 LOB:If(IsBlank(cbOCEPLOB.Selected.Value), cbOCEPLOB.SearchText, cbOCEPLOB.Selected.Value),
                                 BILLABILITY:If(IsBlank(cbOCEPBillability.Selected.Value), cbOCEPBillability.SearchText, cbOCEPBillability.Selected.Value),
                                 SUPERVISOR:If(IsBlank(cbOCEPSupervisor.Selected.Value), cbOCEPSupervisor.SearchText, cbOCEPSupervisor.Selected.Value),
+                                'SUPERVISOR EMP ID': txtOCFPSupervisorEmpId.Text,
                                 COUNTRY:If(IsBlank(cbOCEPCountry.Selected.Value), cbOCEPCountry.SearchText, cbOCEPCountry.Selected.Value),
                                 SITE:If(IsBlank(cbOCEPSite.Selected.Value), cbOCEPSite.SearchText, cbOCEPSite.Selected.Value), 
                                 ROLE:If(IsBlank(cbOCEPRole.Selected.Value), cbOCEPRole.SearchText, cbOCEPRole.Selected.Value),
                                 'ALVARIA ID':If(IsBlank(cbOCEPAlvariaID.Selected.Value), cbOCEPAlvariaID.SearchText, cbOCEPAlvariaID.Selected.Value),
-                                'SUBMITTED BY':User().Email
+                                'SUBMITTED BY':User().Email,
+                                'CLASS NAME': txtOCFPClassName.Text
                             }
                         );
                         Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success) &&
