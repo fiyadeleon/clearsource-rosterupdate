@@ -787,13 +787,13 @@
                                 LOB:If(IsBlank(cbOCEPLOB.Selected.Value), cbOCEPLOB.SearchText, cbOCEPLOB.Selected.Value),
                                 BILLABILITY:If(IsBlank(cbOCEPBillability.Selected.Value), cbOCEPBillability.SearchText, cbOCEPBillability.Selected.Value),
                                 SUPERVISOR:If(IsBlank(cbOCEPSupervisor.Selected.Value), cbOCEPSupervisor.SearchText, cbOCEPSupervisor.Selected.Value),
-                                'SUPERVISOR EMP ID': txtOCFPSupervisorEmpId.Text,
+                                'SUPERVISOR EMP ID': txtOCEPSupervisorEmpID.Text,
                                 COUNTRY:If(IsBlank(cbOCEPCountry.Selected.Value), cbOCEPCountry.SearchText, cbOCEPCountry.Selected.Value),
                                 SITE:If(IsBlank(cbOCEPSite.Selected.Value), cbOCEPSite.SearchText, cbOCEPSite.Selected.Value), 
                                 ROLE:If(IsBlank(cbOCEPRole.Selected.Value), cbOCEPRole.SearchText, cbOCEPRole.Selected.Value),
                                 'ALVARIA ID':If(IsBlank(cbOCEPAlvariaID.Selected.Value), cbOCEPAlvariaID.SearchText, cbOCEPAlvariaID.Selected.Value),
                                 'SUBMITTED BY':User().Email,
-                                'CLASS NAME': txtOCFPClassName.Text
+                                'CLASS NAME': txtOCEPClassName.Text
                             }
                         );
                         Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success) &&
